@@ -49,16 +49,21 @@ jobs:
       - name: Unit tests
         run: npm run test
 
-      - name: Build static site
+      - name: Build static site for tests
         run: npm run build
-        env:
-          BASE_PATH: /${{ github.event.repository.name }}/
 
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
 
       - name: End-to-end tests
         run: npm run test:e2e
+
+      - name: Build Pages static site
+        run: |
+          rm -rf dist
+          npm run build
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/
 
       - name: Publish dist to gh-pages
         shell: bash
