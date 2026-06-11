@@ -1,22 +1,57 @@
 # AI Skills Live Ranking / AI Skills 实时排行榜
 
-一个双语 GitHub Pages 静态站点，用来分类整理开源 AI skills、Agent 工作流、MCP 工具、提示词方法论、数据研究和创作自动化项目，并按 GitHub 星标数生成排行榜。
+面向 AI 工具生态的开源 skills 排行榜与分类目录。项目会整理 AI Agent、MCP 工具、提示词工程、RAG/数据研究、创作工作流和生产力自动化相关仓库，并按照 GitHub 星标数生成可筛选、可搜索、可部署到 GitHub Pages 的实时榜单。
 
-This is a bilingual GitHub Pages dashboard for open-source AI skills, agent workflows, MCP tools, prompt methodologies, data/research tooling, and creative automation repositories.
+This is a bilingual GitHub Pages dashboard for open-source AI skills, agent workflows, MCP tools, prompt engineering resources, data/research tooling, creative automation projects, and productivity workflows.
 
-## Features / 功能
+- Repository: [XiaoABa-DIY/realtime-skills-ranking](https://github.com/XiaoABa-DIY/realtime-skills-ranking)
+- GitHub Pages: [https://xiaoaba-diy.github.io/realtime-skills-ranking/](https://xiaoaba-diy.github.io/realtime-skills-ranking/)
 
-- 双语仪表盘：中文和英文一键切换。
-- 分类目录：Coding Agents、Design & Media、Data & Research、Productivity、MCP & Tooling、Prompt & Workflow、Learning & Docs。
-- 星标排行榜：支持按 stars、forks、最近更新、仓库名称排序。
-- 多维筛选：分类、平台、标签、许可证、语言和关键词搜索。
-- 混合实时数据：GitHub Actions 定时生成快照，详情抽屉可实时刷新单个仓库。
-- 双轨数据源：人工维护正式榜单，自动发现候选仓库供审核。
-- GitHub Pages 部署：构建产物是纯静态 HTML/CSS/JS。
+## What It Does / 项目能力
+
+- **实时排行榜**：GitHub Actions 定时刷新 GitHub star、fork、language、license、更新时间等指标。
+- **双语界面**：站点 UI 和人工简介支持中文/英文一键切换。
+- **分类目录**：按 `Coding Agents`、`Design & Media`、`Data & Research`、`Productivity`、`MCP & Tooling`、`Prompt & Workflow`、`Learning & Docs` 分类浏览。
+- **多维筛选**：支持关键词、分类、平台、标签、许可证、语言过滤。
+- **多种排序**：支持按星标数、fork 数、最近更新、仓库名排序。
+- **详情实时刷新**：榜单使用静态快照，单个仓库详情可在浏览器里实时请求 GitHub API。
+- **候选发现**：自动搜索潜在仓库，写入候选列表，供后续人工审核后再加入正式榜单。
+- **纯静态部署**：最终产物是 HTML/CSS/JS/JSON，可直接部署到 GitHub Pages。
+
+## Architecture / 技术架构
+
+```text
+data/repositories.yml
+  -> 人工维护的正式收录清单
+
+data/discovery-queries.yml
+  -> 自动发现候选仓库的 GitHub 搜索查询
+
+scripts/update-data.mjs
+  -> 读取 YAML
+  -> 调用 GitHub REST API / fallback 数据源
+  -> 生成 public/data/snapshot.json 和 public/data/candidates.json
+
+src/
+  -> Vite + React + TypeScript 单页仪表盘
+
+.github/workflows/pages.yml
+  -> 刷新数据
+  -> 测试
+  -> 构建
+  -> 部署到 GitHub Pages
+```
+
+数据刷新采用混合策略：
+
+1. GitHub Actions 使用 `GITHUB_TOKEN` 读取 GitHub REST API，获取精确指标。
+2. 本地未认证请求被限流时，脚本会保留已有有效快照，避免榜单被 0 覆盖。
+3. 对没有旧快照的新仓库，脚本会尝试公开 GitHub 页面或搜索结果作为兜底数据。
+4. 前端详情抽屉可对单个仓库发起实时刷新；失败时继续显示快照数据。
 
 ## Data Model / 数据模型
 
-正式收录清单在 `data/repositories.yml`：
+正式收录清单位于 [data/repositories.yml](data/repositories.yml)：
 
 ```yaml
 repositories:
@@ -31,66 +66,125 @@ repositories:
     featured: true
 ```
 
-自动发现查询在 `data/discovery-queries.yml`。脚本会把查询结果写入 `public/data/candidates.json`，但候选仓库不会进入正式排行榜。
+字段说明：
 
-生成数据：
+- `repo`：GitHub 仓库，格式必须是 `owner/name`。
+- `category`：固定分类之一。
+- `platforms`：平台或生态，例如 `MCP`、`Python`、`Agents`、`Images`。
+- `tags`：能力标签，例如 `workflow`、`rag`、`prompt-engineering`。
+- `summary.zh` / `summary.en`：站点展示用的中英文简介。
+- `homepage`：可选，项目主页。
+- `featured`：可选，是否标记为精选。
 
-```bash
-npm run data:update
-```
-
-如果设置了 `GITHUB_TOKEN`，脚本会使用认证请求以获得更高的 GitHub API 限额：
-
-```bash
-GITHUB_TOKEN=ghp_xxx npm run data:update
-```
+候选发现查询位于 [data/discovery-queries.yml](data/discovery-queries.yml)。候选结果会生成到 `public/data/candidates.json`，但不会自动进入正式排行榜。
 
 ## Development / 本地开发
 
+安装依赖：
+
 ```bash
 npm install
+```
+
+刷新数据：
+
+```bash
 npm run data:update
+```
+
+启动开发服务器：
+
+```bash
 npm run dev
 ```
 
-常用检查：
+常用命令：
 
 ```bash
+npm run format:check
 npm run lint
 npm run test
 npm run build
 npm run test:e2e
 ```
 
-## GitHub Pages Deployment / 部署到 GitHub Pages
+如果本地有 GitHub token，可以提高 API 限额：
 
-仓库包含 `.github/workflows/pages.yml`：
+```bash
+GITHUB_TOKEN=ghp_xxx npm run data:update
+```
 
-- `push` 到 `main` 会刷新数据并部署。
-- `workflow_dispatch` 可手动刷新。
-- `schedule` 默认每 15 分钟刷新一次。
-- 构建时使用 `BASE_PATH=/${{ github.event.repository.name }}/`，适配项目型 Pages 地址。
+Windows PowerShell:
 
-启用步骤：
+```powershell
+$env:GITHUB_TOKEN="ghp_xxx"
+npm run data:update
+```
 
-1. 在 GitHub 创建仓库并推送代码。
-2. 打开仓库 Settings → Pages。
-3. Source 选择 GitHub Actions。
-4. 等待 `刷新数据并部署 Pages` 工作流完成。
-5. 访问 `https://<user>.github.io/<repo>/`。
+## Deployment / 部署
+
+本仓库已经配置 GitHub Pages 自动部署工作流：[.github/workflows/pages.yml](.github/workflows/pages.yml)。
+
+触发方式：
+
+- push 到 `main`：自动刷新数据、运行测试、构建并部署。
+- GitHub Actions 手动运行 `刷新数据并部署 Pages`：立即刷新数据并部署。
+- 定时任务：默认每 15 分钟刷新一次。
+
+GitHub Pages 配置：
+
+1. 打开仓库 Settings -> Pages。
+2. Source 选择 `GitHub Actions`。
+3. 推送到 `main` 后等待 workflow 完成。
+4. 访问 [https://xiaoaba-diy.github.io/realtime-skills-ranking/](https://xiaoaba-diy.github.io/realtime-skills-ranking/)。
+
+Vite 项目型 Pages 路径通过 `BASE_PATH=/${{ github.event.repository.name }}/` 注入，确保静态资源在 `/realtime-skills-ranking/` 下正常加载。
+
+## Tests / 测试
+
+当前测试覆盖：
+
+- 数据脚本：YAML 输入、GitHub API mock、候选去重、失败保留旧快照、HTML/search fallback。
+- 前端逻辑：排序、筛选、统计计算、语言切换。
+- 端到端：桌面和移动视口下的首页渲染、搜索筛选、详情抽屉、实时刷新。
+
+完整验证命令：
+
+```bash
+npm run data:update
+npm run format:check
+npm run lint
+npm run test
+npm run build
+npm run test:e2e
+```
+
+## Contributing / 贡献
+
+新增正式仓库请修改 `data/repositories.yml`，并确保：
+
+- 分类来自固定分类列表。
+- 中英文简介都已填写。
+- 标签保持短小、可复用、英文小写。
+- 仓库确实与 AI skills、Agent、MCP、提示词、RAG、创作工作流或 AI 自动化相关。
+
+更详细规则见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## Commit Convention / 提交规范
 
-提交日志必须使用中文，并遵循 Conventional Commits 风格，例如：
+提交日志必须使用中文，并遵循 Conventional Commits 风格：
 
 ```bash
-git commit -m "feat: 实现双语排行榜仪表盘"
+git commit -m "feat: 添加 AI skills 分类数据"
+git commit -m "fix: 修复 GitHub 数据刷新兜底逻辑"
+git commit -m "docs: 完善 README 部署说明"
 git commit -m "chore: 配置 GitHub Pages 自动部署"
 ```
 
-## Roadmap / 后续方向
+## Roadmap / 后续计划
 
-- 增加 7/30 天涨星趋势。
-- 增加 RSS 或静态 JSON API 文档。
-- 增加收录申请模板和自动校验。
-- 增加专题页面，例如 MCP、Agent、Prompt Engineering。
+- 增加 7 天 / 30 天涨星趋势。
+- 增加专题页，例如 MCP、Agent Frameworks、Prompt Engineering。
+- 增加静态 JSON API 文档。
+- 增加收录申请 issue 模板。
+- 增加排行榜变化历史。

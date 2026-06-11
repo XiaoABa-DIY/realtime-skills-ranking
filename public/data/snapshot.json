@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T09:44:48.250Z",
+  "generatedAt": "2026-06-11T09:48:33.825Z",
   "source": "github-rest",
   "repositories": [
     {
@@ -27,7 +27,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "AUTOMATIC1111/stable-diffusion-webui",
@@ -54,7 +54,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "open-webui/open-webui",
@@ -81,7 +81,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "Comfy-Org/ComfyUI",
@@ -108,7 +108,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "browser-use/browser-use",
@@ -135,7 +135,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "modelcontextprotocol/servers",
@@ -162,7 +162,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "mlabonne/llm-course",
@@ -189,7 +189,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "dair-ai/Prompt-Engineering-Guide",
@@ -216,7 +216,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "microsoft/ai-agents-for-beginners",
@@ -243,7 +243,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "microsoft/autogen",
@@ -270,7 +270,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "mem0ai/mem0",
@@ -297,7 +297,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "FlowiseAI/Flowise",
@@ -324,7 +324,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "crewAIInc/crewAI",
@@ -351,7 +351,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "run-llama/llama_index",
@@ -378,7 +378,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "microsoft/AI-For-Beginners",
@@ -405,7 +405,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "invoke-ai/InvokeAI",
@@ -432,7 +432,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "openai/openai-agents-python",
@@ -459,7 +459,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "deepset-ai/haystack",
@@ -486,7 +486,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "humanlayer/12-factor-agents",
@@ -513,7 +513,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "modelcontextprotocol/typescript-sdk",
@@ -540,7 +540,7 @@
       "disabled": false,
       "fetchStatus": "ok",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z"
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z"
     },
     {
       "repo": "trigaten/Learn_Prompting",
@@ -566,7 +566,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T09:44:48.250Z",
+      "lastFetchedAt": "2026-06-11T09:48:33.825Z",
       "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     }
   ]
