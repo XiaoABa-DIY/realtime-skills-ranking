@@ -7,8 +7,10 @@ import {
   Languages,
   RefreshCcw,
   Search,
+  SlidersHorizontal,
   Sparkles,
   Star,
+  UsersRound,
   X,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
@@ -57,11 +59,13 @@ const initialFilters: RepoFilters = {
 
 function SelectField({
   label,
+  allLabel,
   value,
   options,
   onChange,
 }: {
   label: string;
+  allLabel: string;
   value: string;
   options: string[];
   onChange: (value: string) => void;
@@ -69,8 +73,12 @@ function SelectField({
   return (
     <label className="field">
       <span>{label}</span>
-      <select value={value} onChange={(event) => onChange(event.target.value)}>
-        <option value="">{label}</option>
+      <select
+        aria-label={label}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+      >
+        <option value="">{allLabel}</option>
         {options.map((option) => (
           <option key={option} value={option}>
             {option}
@@ -78,6 +86,27 @@ function SelectField({
         ))}
       </select>
     </label>
+  );
+}
+
+function AudienceShortcut({
+  label,
+  active,
+  onClick,
+}: {
+  label: string;
+  active: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      className={active ? "audience-chip active" : "audience-chip"}
+      aria-pressed={active}
+      onClick={onClick}
+    >
+      {label}
+    </button>
   );
 }
 
@@ -148,27 +177,44 @@ function RepositoryTable({
             <th>{t(locale, "stars")}</th>
             <th>{t(locale, "forks")}</th>
             <th>{t(locale, "updatedAt")}</th>
+            <th>{t(locale, "viewDetails")}</th>
           </tr>
         </thead>
         <tbody>
           {repositories.map((repo, index) => (
-            <tr key={repo.repo} onClick={() => onSelect(repo)} tabIndex={0}>
-              <td className="rank-cell">{index + 1}</td>
-              <td>
+            <tr key={repo.repo} onClick={() => onSelect(repo)}>
+              <td className="rank-cell" data-label="#">
+                {index + 1}
+              </td>
+              <td className="repo-data" data-label={t(locale, "repository")}>
                 <div className="repo-cell">
                   <strong>{repo.repo}</strong>
                   <span>{repo.summary[locale]}</span>
                   <RepoBadges repo={repo} locale={locale} />
                 </div>
               </td>
-              <td>{repo.category}</td>
-              <td className="number-cell">
+              <td data-label={t(locale, "category")}>{repo.category}</td>
+              <td className="number-cell" data-label={t(locale, "stars")}>
                 {formatNumber(repo.stars, locale)}
               </td>
-              <td className="number-cell">
+              <td className="number-cell" data-label={t(locale, "forks")}>
                 {formatNumber(repo.forks, locale)}
               </td>
-              <td>{formatDate(repo.updatedAt, locale)}</td>
+              <td data-label={t(locale, "updatedAt")}>
+                {formatDate(repo.updatedAt, locale)}
+              </td>
+              <td data-label={t(locale, "viewDetails")}>
+                <button
+                  type="button"
+                  className="detail-link"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    onSelect(repo);
+                  }}
+                >
+                  {t(locale, "viewDetails")}
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -228,107 +274,127 @@ function DetailDrawer({
   onRefresh: () => void;
   onClose: () => void;
 }) {
+  useEffect(() => {
+    if (!repo) return;
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") onClose();
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose, repo]);
+
   if (!repo) return null;
 
   return (
-    <aside className="drawer" aria-label={repo.repo}>
-      <div className="drawer-head">
-        <div>
-          <p>{repo.category}</p>
-          <h2>{repo.repo}</h2>
+    <>
+      <div className="drawer-backdrop" aria-hidden="true" onClick={onClose} />
+      <aside
+        className="drawer"
+        aria-labelledby="drawer-title"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div className="drawer-head">
+          <div>
+            <p>{repo.category}</p>
+            <h2 id="drawer-title">{repo.repo}</h2>
+          </div>
+          <button
+            type="button"
+            className="icon-button"
+            onClick={onClose}
+            title={t(locale, "close")}
+            aria-label={t(locale, "close")}
+          >
+            <X size={18} />
+          </button>
         </div>
-        <button
-          type="button"
-          className="icon-button"
-          onClick={onClose}
-          title={t(locale, "close")}
-        >
-          <X size={18} />
-        </button>
-      </div>
 
-      <p className="drawer-summary">{repo.summary[locale]}</p>
-      {repo.description ? <p className="muted">{repo.description}</p> : null}
+        <p className="drawer-summary">{repo.summary[locale]}</p>
+        {repo.description ? <p className="muted">{repo.description}</p> : null}
 
-      <div className="drawer-actions">
-        <button
-          type="button"
-          className="primary-button"
-          onClick={onRefresh}
-          disabled={status === "loading"}
-        >
-          <RefreshCcw size={16} />
-          {status === "loading"
-            ? t(locale, "refreshing")
-            : t(locale, "realtimeRefresh")}
-        </button>
-        <a
-          className="secondary-button"
-          href={repo.htmlUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Code2 size={16} />
-          {t(locale, "openGithub")}
-        </a>
-        {repo.homepage ? (
+        <div className="drawer-actions">
+          <button
+            type="button"
+            className="primary-button"
+            onClick={onRefresh}
+            disabled={status === "loading"}
+          >
+            <RefreshCcw size={16} />
+            {status === "loading"
+              ? t(locale, "refreshing")
+              : t(locale, "realtimeRefresh")}
+          </button>
           <a
             className="secondary-button"
-            href={repo.homepage}
+            href={repo.htmlUrl}
             target="_blank"
             rel="noreferrer"
           >
-            <ExternalLink size={16} />
-            {t(locale, "homepage")}
+            <Code2 size={16} />
+            {t(locale, "openGithub")}
           </a>
+          {repo.homepage ? (
+            <a
+              className="secondary-button"
+              href={repo.homepage}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ExternalLink size={16} />
+              {t(locale, "homepage")}
+            </a>
+          ) : null}
+        </div>
+
+        {status === "success" ? (
+          <p className="notice success">{t(locale, "liveUpdated")}</p>
         ) : null}
-      </div>
+        {status === "error" ? (
+          <p className="notice error">{t(locale, "snapshotFallback")}</p>
+        ) : null}
+        {repo.fetchStatus === "error" ? (
+          <p className="notice error">{repo.errorMessage}</p>
+        ) : null}
 
-      {status === "success" ? (
-        <p className="notice success">{t(locale, "liveUpdated")}</p>
-      ) : null}
-      {status === "error" ? (
-        <p className="notice error">{t(locale, "snapshotFallback")}</p>
-      ) : null}
-      {repo.fetchStatus === "error" ? (
-        <p className="notice error">{repo.errorMessage}</p>
-      ) : null}
+        <dl className="detail-grid">
+          <div>
+            <dt>{t(locale, "stars")}</dt>
+            <dd>{formatNumber(repo.stars, locale)}</dd>
+          </div>
+          <div>
+            <dt>{t(locale, "forks")}</dt>
+            <dd>{formatNumber(repo.forks, locale)}</dd>
+          </div>
+          <div>
+            <dt>{t(locale, "issues")}</dt>
+            <dd>{formatNumber(repo.openIssues, locale)}</dd>
+          </div>
+          <div>
+            <dt>{t(locale, "language")}</dt>
+            <dd>{repo.language}</dd>
+          </div>
+          <div>
+            <dt>{t(locale, "license")}</dt>
+            <dd>{repo.license}</dd>
+          </div>
+          <div>
+            <dt>{t(locale, "updatedAt")}</dt>
+            <dd>{formatDateTime(repo.updatedAt, locale)}</dd>
+          </div>
+        </dl>
 
-      <dl className="detail-grid">
-        <div>
-          <dt>{t(locale, "stars")}</dt>
-          <dd>{formatNumber(repo.stars, locale)}</dd>
+        <div className="tag-cloud">
+          {[...repo.platforms, ...repo.tags].map((tag) => (
+            <span className="badge" key={tag}>
+              {tag}
+            </span>
+          ))}
         </div>
-        <div>
-          <dt>{t(locale, "forks")}</dt>
-          <dd>{formatNumber(repo.forks, locale)}</dd>
-        </div>
-        <div>
-          <dt>{t(locale, "issues")}</dt>
-          <dd>{formatNumber(repo.openIssues, locale)}</dd>
-        </div>
-        <div>
-          <dt>{t(locale, "language")}</dt>
-          <dd>{repo.language}</dd>
-        </div>
-        <div>
-          <dt>{t(locale, "license")}</dt>
-          <dd>{repo.license}</dd>
-        </div>
-        <div>
-          <dt>{t(locale, "updatedAt")}</dt>
-          <dd>{formatDateTime(repo.updatedAt, locale)}</dd>
-        </div>
-      </dl>
-
-      <div className="tag-cloud">
-        {[...repo.platforms, ...repo.tags].map((tag) => (
-          <span className="badge" key={tag}>
-            {tag}
-          </span>
-        ))}
-      </div>
-    </aside>
+      </aside>
+    </>
   );
 }
 
@@ -371,12 +437,28 @@ function App() {
     () => topCandidates(candidates.candidates, 8),
     [candidates.candidates],
   );
+  const activeFilters = useMemo(
+    () =>
+      [
+        filters.category,
+        filters.platform,
+        filters.tag,
+        filters.license,
+        filters.language,
+        filters.query ? `"${filters.query}"` : "",
+      ].filter(Boolean),
+    [filters],
+  );
 
   function setFilter<Key extends keyof RepoFilters>(
     key: Key,
     value: RepoFilters[Key],
   ) {
     setFilters((current) => ({ ...current, [key]: value }));
+  }
+
+  function clearFilters() {
+    setFilters(initialFilters);
   }
 
   async function refreshSelectedRepo() {
@@ -414,7 +496,10 @@ function App() {
           type="button"
           className="locale-button"
           onClick={() => setLocale(locale === "zh" ? "en" : "zh")}
-          title="Switch language"
+          title={locale === "zh" ? "Switch language to English" : "切换到中文"}
+          aria-label={
+            locale === "zh" ? "Switch language to English, EN" : "切换到中文"
+          }
         >
           <Languages size={16} />
           {locale === "zh" ? "EN" : "中文"}
@@ -454,38 +539,73 @@ function App() {
           <label className="search-box">
             <Search size={16} />
             <input
+              aria-label={t(locale, "searchPlaceholder")}
               value={filters.query}
               onChange={(event) => setFilter("query", event.target.value)}
               placeholder={t(locale, "searchPlaceholder")}
             />
           </label>
 
+          <div className="audience-block">
+            <div className="panel-title small">
+              <UsersRound size={15} />
+              <span>{t(locale, "audienceViews")}</span>
+            </div>
+            <div className="audience-grid">
+              <AudienceShortcut
+                label={t(locale, "audienceDeveloper")}
+                active={filters.category === "Developer Tools"}
+                onClick={() => setFilter("category", "Developer Tools")}
+              />
+              <AudienceShortcut
+                label={t(locale, "audienceCreator")}
+                active={filters.category === "Creator & Content"}
+                onClick={() => setFilter("category", "Creator & Content")}
+              />
+              <AudienceShortcut
+                label={t(locale, "audienceResearch")}
+                active={filters.category === "Data & Research"}
+                onClick={() => setFilter("category", "Data & Research")}
+              />
+              <AudienceShortcut
+                label={t(locale, "audienceWorkflow")}
+                active={filters.category === "Productivity"}
+                onClick={() => setFilter("category", "Productivity")}
+              />
+            </div>
+          </div>
+
           <SelectField
             label={t(locale, "category")}
+            allLabel={`${t(locale, "all")} ${t(locale, "category")}`}
             value={filters.category}
             options={options.categories}
             onChange={(value) => setFilter("category", value)}
           />
           <SelectField
             label={t(locale, "platform")}
+            allLabel={`${t(locale, "all")} ${t(locale, "platform")}`}
             value={filters.platform}
             options={options.platforms}
             onChange={(value) => setFilter("platform", value)}
           />
           <SelectField
             label={t(locale, "tag")}
+            allLabel={`${t(locale, "all")} ${t(locale, "tag")}`}
             value={filters.tag}
             options={options.tags}
             onChange={(value) => setFilter("tag", value)}
           />
           <SelectField
             label={t(locale, "license")}
+            allLabel={`${t(locale, "all")} ${t(locale, "license")}`}
             value={filters.license}
             options={options.licenses}
             onChange={(value) => setFilter("license", value)}
           />
           <SelectField
             label={t(locale, "language")}
+            allLabel={`${t(locale, "all")} ${t(locale, "language")}`}
             value={filters.language}
             options={options.languages}
             onChange={(value) => setFilter("language", value)}
@@ -505,6 +625,30 @@ function App() {
               <option value="name">{t(locale, "name")}</option>
             </select>
           </label>
+
+          {activeFilters.length > 0 ? (
+            <div
+              className="active-filters"
+              aria-label={t(locale, "selectedFilters")}
+            >
+              <span>{t(locale, "selectedFilters")}</span>
+              <div className="badge-row">
+                {activeFilters.map((filter) => (
+                  <span className="badge" key={filter}>
+                    {filter}
+                  </span>
+                ))}
+              </div>
+              <button
+                className="secondary-button full-width"
+                type="button"
+                onClick={clearFilters}
+              >
+                <SlidersHorizontal size={16} />
+                {t(locale, "clearFilters")}
+              </button>
+            </div>
+          ) : null}
         </aside>
 
         <section className="ranking-panel">
@@ -515,6 +659,9 @@ function App() {
                 <ArrowDownWideNarrow size={20} />
                 {filteredRepos.length} / {snapshot.repositories.length}
               </h2>
+              <span className="section-note">
+                {t(locale, "rankingInsight")}
+              </span>
             </div>
             <span className="source-pill">
               <Globe2 size={14} />

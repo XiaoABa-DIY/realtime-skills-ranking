@@ -4,7 +4,7 @@ export const messages = {
   zh: {
     appTitle: "AI Skills 实时排行榜",
     appSubtitle:
-      "分类整理开源 AI skills、Agent 工作流、MCP 工具和创作自动化项目。",
+      "为程序员、自媒体创作者和研究人员整理开源 AI skills、Agent 工作流、MCP 工具和创作自动化项目。",
     globalRank: "全站榜单",
     candidates: "候选发现",
     curatedRepos: "收录仓库",
@@ -41,11 +41,20 @@ export const messages = {
     featured: "精选",
     archived: "已归档",
     error: "数据异常",
+    audienceViews: "人群视图",
+    audienceDeveloper: "程序员",
+    audienceCreator: "自媒体",
+    audienceResearch: "研究/数据",
+    audienceWorkflow: "工作流",
+    clearFilters: "清空筛选",
+    selectedFilters: "当前筛选",
+    viewDetails: "查看详情",
+    rankingInsight: "按当前筛选展示正式收录仓库，候选发现不会混入榜单。",
   },
   en: {
     appTitle: "AI Skills Live Ranking",
     appSubtitle:
-      "A categorized directory for open-source AI skills, agent workflows, MCP tools, and creative automation projects.",
+      "A curated directory for developers, creators, and researchers tracking open-source AI skills, agent workflows, MCP tools, and creative automation projects.",
     globalRank: "Global ranking",
     candidates: "Discovery candidates",
     curatedRepos: "Curated repos",
@@ -84,6 +93,16 @@ export const messages = {
     featured: "Featured",
     archived: "Archived",
     error: "Data issue",
+    audienceViews: "Audience views",
+    audienceDeveloper: "Developers",
+    audienceCreator: "Creators",
+    audienceResearch: "Research/Data",
+    audienceWorkflow: "Workflows",
+    clearFilters: "Clear filters",
+    selectedFilters: "Active filters",
+    viewDetails: "View details",
+    rankingInsight:
+      "Official ranking reflects curated repositories only; discovery candidates stay separate until reviewed.",
   },
 } satisfies Record<Locale, Record<string, string>>;
 
