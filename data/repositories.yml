@@ -130,13 +130,13 @@ repositories:
       zh: 面向本地和远程模型的自托管 AI 聊天界面。
       en: Self-hosted AI chat interface for local and remote models.
 
-  - repo: f/awesome-chatgpt-prompts
+  - repo: trigaten/Learn_Prompting
     category: Prompt & Workflow
-    platforms: [Prompts, ChatGPT]
-    tags: [prompts, roleplay, templates]
+    platforms: [Prompts, Learning]
+    tags: [prompt-engineering, course, examples]
     summary:
-      zh: 社区维护的 ChatGPT 提示词模板集合。
-      en: Community-maintained collection of ChatGPT prompt templates.
+      zh: 面向提示工程学习的开源课程和示例集合。
+      en: Open-source course and examples for learning prompt engineering.
 
   - repo: dair-ai/Prompt-Engineering-Guide
     category: Prompt & Workflow

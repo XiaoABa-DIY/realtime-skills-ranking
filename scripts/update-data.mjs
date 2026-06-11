@@ -121,9 +121,17 @@ export async function readDiscoveryQueries(filePath = DEFAULT_DISCOVERY) {
     }));
 }
 
-export function createGitHubFetcher(token = process.env.GITHUB_TOKEN) {
+function timeoutSignal(timeoutMs) {
+  return AbortSignal.timeout(timeoutMs);
+}
+
+export function createGitHubFetcher(
+  token = process.env.GITHUB_TOKEN,
+  timeoutMs = 12_000,
+) {
   return async function githubFetch(url) {
     const response = await fetch(url, {
+      signal: timeoutSignal(timeoutMs),
       headers: {
         Accept: "application/vnd.github+json",
         "User-Agent": "realtime-ai-skills-ranking",
@@ -153,6 +161,17 @@ export function createGitHubFetcher(token = process.env.GITHUB_TOKEN) {
   };
 }
 
+export function createGitHubHtmlFetcher(timeoutMs = 8_000) {
+  return async function githubHtmlFetch(url) {
+    return fetch(url, {
+      signal: timeoutSignal(timeoutMs),
+      headers: {
+        "User-Agent": "realtime-ai-skills-ranking",
+      },
+    });
+  };
+}
+
 function mapRepoApiResponse(input, apiRepo, fetchedAt) {
   return {
     ...input,
@@ -176,6 +195,23 @@ function mapRepoApiResponse(input, apiRepo, fetchedAt) {
 }
 
 function mapRepoFailure(input, error, fetchedAt) {
+  return mapRepoFailureWithPrevious(input, error, fetchedAt);
+}
+
+function mapRepoFailureWithPrevious(input, error, fetchedAt, previous) {
+  if (previous && Number(previous.stars) > 0) {
+    return {
+      ...previous,
+      ...input,
+      fetchStatus:
+        previous.fetchStatus && previous.fetchStatus !== "error"
+          ? previous.fetchStatus
+          : "ok",
+      errorMessage: error?.message ?? "Unknown GitHub API error",
+      lastFetchedAt: fetchedAt,
+    };
+  }
+
   return {
     ...input,
     fullName: input.repo,
@@ -198,21 +234,194 @@ function mapRepoFailure(input, error, fetchedAt) {
   };
 }
 
+export function parseCompactNumber(value) {
+  const normalized = String(value ?? "")
+    .trim()
+    .replace(/,/g, "")
+    .toLowerCase();
+  const match = normalized.match(/^(\d+(?:\.\d+)?)([km])?$/);
+  if (!match) return 0;
+
+  const amount = Number(match[1]);
+  const suffix = match[2];
+  if (suffix === "m") return Math.round(amount * 1_000_000);
+  if (suffix === "k") return Math.round(amount * 1_000);
+  return Math.round(amount);
+}
+
+function decodeHtml(value) {
+  return String(value ?? "")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .trim();
+}
+
+export function parseGitHubRepoHtml(repo, html) {
+  const escapedRepo = repo.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const starsMatch = html.match(
+    new RegExp(
+      `href="/${escapedRepo}/stargazers"[\\s\\S]*?<strong>([^<]+)</strong>\\s*stars`,
+      "i",
+    ),
+  );
+  const forksMatch = html.match(
+    new RegExp(
+      `href="/${escapedRepo}/forks"[\\s\\S]*?<strong>([^<]+)</strong>\\s*forks`,
+      "i",
+    ),
+  );
+  const descriptionMatch =
+    html.match(/<meta\s+name="description"\s+content="([^"]+)"/i) ??
+    html.match(/<meta\s+property="og:description"\s+content="([^"]+)"/i);
+
+  return {
+    stars: parseCompactNumber(starsMatch?.[1]),
+    forks: parseCompactNumber(forksMatch?.[1]),
+    description: decodeHtml(descriptionMatch?.[1] ?? ""),
+  };
+}
+
+async function mapWithConcurrency(items, limit, mapper) {
+  const results = new Array(items.length);
+  let cursor = 0;
+
+  async function worker() {
+    while (cursor < items.length) {
+      const index = cursor;
+      cursor += 1;
+      results[index] = await mapper(items[index], index);
+    }
+  }
+
+  await Promise.all(
+    Array.from({ length: Math.min(limit, items.length) }, () => worker()),
+  );
+  return results;
+}
+
+async function mapRepoHtmlFallback(
+  input,
+  htmlFetch,
+  fetchedAt,
+  error,
+  previous,
+) {
+  const response = await htmlFetch(`https://github.com/${input.repo}`);
+  if (!response.ok) {
+    throw new Error(`GitHub HTML ${response.status}: ${response.statusText}`);
+  }
+
+  const html = await response.text();
+  const canonicalRepo = normalizeRepo(new URL(response.url).pathname);
+  const fallback = parseGitHubRepoHtml(canonicalRepo || input.repo, html);
+  if (!fallback.stars) {
+    throw new Error("GitHub HTML fallback did not expose stars");
+  }
+
+  return {
+    ...input,
+    repo: canonicalRepo || input.repo,
+    fullName: (previous?.fullName ?? canonicalRepo) || input.repo,
+    description: fallback.description || previous?.description || "",
+    stars: fallback.stars,
+    forks: fallback.forks || previous?.forks || 0,
+    openIssues: previous?.openIssues ?? 0,
+    watchers: previous?.watchers ?? 0,
+    language: previous?.language ?? "Unknown",
+    license: previous?.license ?? "NOASSERTION",
+    homepage: input.homepage ?? previous?.homepage ?? "",
+    htmlUrl:
+      previous?.htmlUrl ?? `https://github.com/${canonicalRepo || input.repo}`,
+    pushedAt: previous?.pushedAt ?? "",
+    updatedAt: previous?.updatedAt ?? "",
+    archived: Boolean(previous?.archived),
+    disabled: Boolean(previous?.disabled),
+    fetchStatus: "ok",
+    errorMessage: error?.message
+      ? `REST API unavailable; used public GitHub HTML fallback. ${error.message}`
+      : undefined,
+    lastFetchedAt: fetchedAt,
+  };
+}
+
+async function mapRepoSearchFallback(input, githubFetch, fetchedAt, error) {
+  const url = new URL(`${GITHUB_API}/search/repositories`);
+  url.searchParams.set("q", input.repo);
+  url.searchParams.set("sort", "stars");
+  url.searchParams.set("order", "desc");
+  url.searchParams.set("per_page", "5");
+
+  const result = await githubFetch(url.toString());
+  const items = Array.isArray(result?.items) ? result.items : [];
+  const apiRepo =
+    items.find(
+      (item) =>
+        normalizeRepo(item.full_name).toLowerCase() ===
+        input.repo.toLowerCase(),
+    ) ?? items[0];
+
+  if (!apiRepo) {
+    throw new Error("GitHub search fallback returned no repositories");
+  }
+
+  return {
+    ...mapRepoApiResponse(input, apiRepo, fetchedAt),
+    errorMessage: error?.message
+      ? `REST API unavailable; used GitHub Search fallback. ${error.message}`
+      : undefined,
+  };
+}
+
 export async function buildSnapshot(
   inputs,
   githubFetch = createGitHubFetcher(),
+  { previousRepositories = [], htmlFetch = null } = {},
 ) {
   const fetchedAt = nowIso();
-  const repositories = [];
+  const previousByRepo = new Map(
+    previousRepositories.map((repo) => [
+      normalizeRepo(repo.repo).toLowerCase(),
+      repo,
+    ]),
+  );
 
-  for (const input of inputs) {
+  const repositories = await mapWithConcurrency(inputs, 4, async (input) => {
+    const previous = previousByRepo.get(input.repo.toLowerCase());
     try {
       const apiRepo = await githubFetch(`${GITHUB_API}/repos/${input.repo}`);
-      repositories.push(mapRepoApiResponse(input, apiRepo, fetchedAt));
+      return mapRepoApiResponse(input, apiRepo, fetchedAt);
     } catch (error) {
-      repositories.push(mapRepoFailure(input, error, fetchedAt));
+      if (htmlFetch && (!previous || Number(previous.stars) === 0)) {
+        try {
+          return await mapRepoHtmlFallback(
+            input,
+            htmlFetch,
+            fetchedAt,
+            error,
+            previous,
+          );
+        } catch {
+          // Fall through to the ordinary failure path.
+        }
+      }
+      if (!previous || Number(previous.stars) === 0) {
+        try {
+          return await mapRepoSearchFallback(
+            input,
+            githubFetch,
+            fetchedAt,
+            error,
+          );
+        } catch {
+          // Fall through to the ordinary failure path.
+        }
+      }
+      return mapRepoFailureWithPrevious(input, error, fetchedAt, previous);
     }
-  }
+  });
 
   repositories.sort(
     (a, b) => b.stars - a.stars || a.repo.localeCompare(b.repo),
@@ -317,16 +526,31 @@ async function writeJson(filePath, value) {
   await fs.rename(`${filePath}.tmp`, filePath);
 }
 
+async function readPreviousRepositories(snapshotPath) {
+  try {
+    const raw = await fs.readFile(snapshotPath, "utf8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed?.repositories) ? parsed.repositories : [];
+  } catch {
+    return [];
+  }
+}
+
 export async function updateData({
   repositoriesPath = DEFAULT_REPOSITORIES,
   discoveryPath = DEFAULT_DISCOVERY,
   snapshotPath = DEFAULT_SNAPSHOT,
   candidatesPath = DEFAULT_CANDIDATES,
   githubFetch = createGitHubFetcher(),
+  htmlFetch = createGitHubHtmlFetcher(),
 } = {}) {
   const repositories = await readRepositoryInputs(repositoriesPath);
   const discoveryQueries = await readDiscoveryQueries(discoveryPath);
-  const snapshot = await buildSnapshot(repositories, githubFetch);
+  const previousRepositories = await readPreviousRepositories(snapshotPath);
+  const snapshot = await buildSnapshot(repositories, githubFetch, {
+    previousRepositories,
+    htmlFetch,
+  });
   const candidates = await buildCandidates(
     discoveryQueries,
     repositories,
