@@ -1,27 +1,7 @@
 {
-  "generatedAt": "2026-06-11T10:18:25.765Z",
+  "generatedAt": "2026-06-11T10:34:58.334Z",
   "source": "github-search",
   "candidates": [
-    {
-      "repo": "langchain-ai/langchain",
-      "fullName": "langchain-ai/langchain",
-      "category": "Coding Agents",
-      "matchedQuery": "ai-agent-frameworks",
-      "reason": {
-        "zh": "可能是可编排 AI Agent 的开源框架。",
-        "en": "Potential open-source framework for orchestrating AI agents."
-      },
-      "description": "The agent engineering platform.",
-      "stars": 139020,
-      "forks": 23035,
-      "language": "Python",
-      "license": "MIT",
-      "htmlUrl": "https://github.com/langchain-ai/langchain",
-      "pushedAt": "2026-06-11T07:50:24Z",
-      "updatedAt": "2026-06-11T10:12:34Z",
-      "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
-    },
     {
       "repo": "FoundationAgents/MetaGPT",
       "fullName": "FoundationAgents/MetaGPT",
@@ -32,35 +12,15 @@
         "en": "Potential open-source framework for orchestrating AI agents."
       },
       "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-      "stars": 68715,
+      "stars": 68716,
       "forks": 8780,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/FoundationAgents/MetaGPT",
       "pushedAt": "2026-01-21T10:12:33Z",
-      "updatedAt": "2026-06-11T10:17:15Z",
+      "updatedAt": "2026-06-11T10:29:51Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
-    },
-    {
-      "repo": "langchain-ai/langgraph",
-      "fullName": "langchain-ai/langgraph",
-      "category": "Coding Agents",
-      "matchedQuery": "ai-agent-frameworks",
-      "reason": {
-        "zh": "可能是可编排 AI Agent 的开源框架。",
-        "en": "Potential open-source framework for orchestrating AI agents."
-      },
-      "description": "Build resilient agents.",
-      "stars": 34430,
-      "forks": 5784,
-      "language": "Python",
-      "license": "MIT",
-      "htmlUrl": "https://github.com/langchain-ai/langgraph",
-      "pushedAt": "2026-06-11T00:10:15Z",
-      "updatedAt": "2026-06-11T10:11:28Z",
-      "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "AstrBotDevs/AstrBot",
@@ -73,14 +33,14 @@
       },
       "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
       "stars": 34422,
-      "forks": 2364,
+      "forks": 2365,
       "language": "Python",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/AstrBotDevs/AstrBot",
       "pushedAt": "2026-06-10T08:58:18Z",
       "updatedAt": "2026-06-11T10:12:43Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "zai-org/Open-AutoGLM",
@@ -100,7 +60,7 @@
       "pushedAt": "2026-03-06T08:38:39Z",
       "updatedAt": "2026-06-11T10:00:50Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "activepieces/activepieces",
@@ -120,7 +80,27 @@
       "pushedAt": "2026-06-11T09:48:23Z",
       "updatedAt": "2026-06-11T09:54:38Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "liyupi/ai-guide",
+      "fullName": "liyupi/ai-guide",
+      "category": "Prompt & Workflow",
+      "matchedQuery": "prompt-workflows",
+      "reason": {
+        "zh": "与提示词、工作流或技能方法论相关。",
+        "en": "Related to prompts, workflows, or skill methodology."
+      },
+      "description": "程序员鱼皮的 AI 资源大全 + Vibe Coding 零基础教程，分享 OpenClaw 保姆级教程、大模型玩法（DeepSeek / GPT / Gemini / Claude）、最新 AI 资讯、Prompt 提示词大全、AI 知识百科（Agent Skills / RAG / MCP / A2A）、AI 编程教程（Harness Engineering）、AI 工具用法（Cursor / Claude Code / TRAE / Codex / Copilot）、AI 开发框架教程（Spring AI / LangChain）、AI 产品变现指南，帮你快速掌握 AI 技术，走在时代前沿。本项目为开源文档，已升级为鱼皮 AI 导航网站",
+      "stars": 15582,
+      "forks": 1749,
+      "language": "JavaScript",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/liyupi/ai-guide",
+      "pushedAt": "2026-06-04T12:40:40Z",
+      "updatedAt": "2026-06-11T10:27:29Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "googleapis/mcp-toolbox",
@@ -140,27 +120,7 @@
       "pushedAt": "2026-06-11T09:56:15Z",
       "updatedAt": "2026-06-11T09:54:40Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
-    },
-    {
-      "repo": "liyupi/ai-guide",
-      "fullName": "liyupi/ai-guide",
-      "category": "Prompt & Workflow",
-      "matchedQuery": "prompt-workflows",
-      "reason": {
-        "zh": "与提示词、工作流或技能方法论相关。",
-        "en": "Related to prompts, workflows, or skill methodology."
-      },
-      "description": "程序员鱼皮的 AI 资源大全 + Vibe Coding 零基础教程，分享 OpenClaw 保姆级教程、大模型玩法（DeepSeek / GPT / Gemini / Claude）、最新 AI 资讯、Prompt 提示词大全、AI 知识百科（Agent Skills / RAG / MCP / A2A）、AI 编程教程（Harness Engineering）、AI 工具用法（Cursor / Claude Code / TRAE / Codex / Copilot）、AI 开发框架教程（Spring AI / LangChain）、AI 产品变现指南，帮你快速掌握 AI 技术，走在时代前沿。本项目为开源文档，已升级为鱼皮 AI 导航网站",
-      "stars": 15580,
-      "forks": 1748,
-      "language": "JavaScript",
-      "license": "NOASSERTION",
-      "htmlUrl": "https://github.com/liyupi/ai-guide",
-      "pushedAt": "2026-06-04T12:40:40Z",
-      "updatedAt": "2026-06-11T10:16:55Z",
-      "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "GLips/Figma-Context-MCP",
@@ -180,7 +140,7 @@
       "pushedAt": "2026-05-27T22:18:23Z",
       "updatedAt": "2026-06-11T09:33:31Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "mcp-use/mcp-use",
@@ -200,7 +160,7 @@
       "pushedAt": "2026-06-11T09:41:24Z",
       "updatedAt": "2026-06-11T03:45:12Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "0x4m4/hexstrike-ai",
@@ -220,7 +180,7 @@
       "pushedAt": "2026-04-27T08:56:07Z",
       "updatedAt": "2026-06-11T09:17:58Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "idosal/git-mcp",
@@ -240,7 +200,7 @@
       "pushedAt": "2026-05-08T14:21:24Z",
       "updatedAt": "2026-06-11T03:58:37Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "epiral/bb-browser",
@@ -252,15 +212,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "Your browser is the API. CLI + MCP server for AI agents to control Chrome with your login state.",
-      "stars": 5740,
+      "stars": 5741,
       "forks": 571,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/epiral/bb-browser",
       "pushedAt": "2026-05-29T08:14:51Z",
-      "updatedAt": "2026-06-11T08:00:11Z",
+      "updatedAt": "2026-06-11T10:24:13Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "agent-infra/sandbox",
@@ -272,15 +232,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "All-in-One Sandbox for AI Agents that combines Browser, Shell, File, MCP and VSCode Server in a single Docker container.",
-      "stars": 5039,
+      "stars": 5040,
       "forks": 447,
       "language": "Python",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/agent-infra/sandbox",
       "pushedAt": "2026-05-29T04:45:25Z",
-      "updatedAt": "2026-06-11T09:17:35Z",
+      "updatedAt": "2026-06-11T10:24:58Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "Meirtz/Awesome-Context-Engineering",
@@ -300,7 +260,7 @@
       "pushedAt": "2026-05-28T05:40:26Z",
       "updatedAt": "2026-06-10T20:10:19Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "sudoskys/StableDiffusionBook",
@@ -320,7 +280,7 @@
       "pushedAt": "2024-10-31T13:19:13Z",
       "updatedAt": "2026-06-10T08:39:05Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "Light-Heart-Labs/DreamServer",
@@ -332,15 +292,75 @@
         "en": "May provide AI image or media generation workflows."
       },
       "description": "Turn your PC, Mac, or Linux box into an AI server.  LLM inference, chat UI, voice, agents, workflows, RAG, and image generation.",
-      "stars": 1962,
+      "stars": 1963,
       "forks": 287,
       "language": "Shell",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/Light-Heart-Labs/DreamServer",
       "pushedAt": "2026-06-11T08:35:33Z",
-      "updatedAt": "2026-06-11T10:05:06Z",
+      "updatedAt": "2026-06-11T10:31:59Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "0xMassi/webclaw",
+      "fullName": "0xMassi/webclaw",
+      "category": "Data & Research",
+      "matchedQuery": "ai-web-research-tools",
+      "reason": {
+        "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
+        "en": "Tools for web research, crawling, extraction, and RAG knowledge preparation."
+      },
+      "description": "Fast, local-first web content extraction for LLMs. Scrape, crawl, extract structured data — all from Rust. CLI, REST API, and MCP server.",
+      "stars": 1325,
+      "forks": 150,
+      "language": "Rust",
+      "license": "AGPL-3.0",
+      "htmlUrl": "https://github.com/0xMassi/webclaw",
+      "pushedAt": "2026-06-11T09:50:25Z",
+      "updatedAt": "2026-06-11T09:50:31Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "study8677/antigravity-workspace-template",
+      "fullName": "study8677/antigravity-workspace-template",
+      "category": "Developer Tools",
+      "matchedQuery": "developer-ai-tools",
+      "reason": {
+        "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
+        "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
+      },
+      "description": "Give Claude Code, Cursor, Codex CLI a ChatGPT for your codebase. Multi-agent knowledge engine, grounded Q&A with file paths and line numbers. Works in any AI IDE.",
+      "stars": 1273,
+      "forks": 259,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/study8677/antigravity-workspace-template",
+      "pushedAt": "2026-06-09T08:04:17Z",
+      "updatedAt": "2026-06-10T10:35:23Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "elirantutia/vibeyard",
+      "fullName": "elirantutia/vibeyard",
+      "category": "Developer Tools",
+      "matchedQuery": "developer-ai-tools",
+      "reason": {
+        "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
+        "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
+      },
+      "description": "The IDE built for AI coding agents.",
+      "stars": 1093,
+      "forks": 140,
+      "language": "TypeScript",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/elirantutia/vibeyard",
+      "pushedAt": "2026-06-04T12:04:37Z",
+      "updatedAt": "2026-06-10T19:22:43Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "if-ai/ComfyUI-IF_AI_tools",
@@ -360,7 +380,27 @@
       "pushedAt": "2025-09-15T09:05:20Z",
       "updatedAt": "2026-06-04T15:14:33Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "funny-vibes/agent-vibes",
+      "fullName": "funny-vibes/agent-vibes",
+      "category": "Developer Tools",
+      "matchedQuery": "developer-ai-tools",
+      "reason": {
+        "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
+        "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
+      },
+      "description": "Unified Agent Gateway — Enables Claude Code CLI and Cursor IDE to use free AI backends (Antigravity, Codex) through protocol translation",
+      "stars": 328,
+      "forks": 68,
+      "language": "TypeScript",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/funny-vibes/agent-vibes",
+      "pushedAt": "2026-06-10T11:11:40Z",
+      "updatedAt": "2026-06-10T11:11:42Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "yohasebe/openai-chat-api-workflow",
@@ -380,7 +420,27 @@
       "pushedAt": "2026-04-25T09:20:43Z",
       "updatedAt": "2026-05-20T16:50:06Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "lanes-sh/app",
+      "fullName": "lanes-sh/app",
+      "category": "Developer Tools",
+      "matchedQuery": "developer-ai-tools",
+      "reason": {
+        "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
+        "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
+      },
+      "description": "Mission control for parallel AI coding agents",
+      "stars": 230,
+      "forks": 12,
+      "language": "Unknown",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/lanes-sh/app",
+      "pushedAt": "2026-06-10T12:04:25Z",
+      "updatedAt": "2026-06-11T02:41:35Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "arorarishi/Prompt-Engineering-Jumpstart",
@@ -400,7 +460,7 @@
       "pushedAt": "2025-12-23T18:41:04Z",
       "updatedAt": "2026-06-09T12:27:19Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "FilippoMB/Diffusion_models_tutorial",
@@ -420,7 +480,27 @@
       "pushedAt": "2026-04-21T19:05:59Z",
       "updatedAt": "2026-06-05T14:16:31Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "huanchong-99/SoloDawn",
+      "fullName": "huanchong-99/SoloDawn",
+      "category": "Developer Tools",
+      "matchedQuery": "developer-ai-tools",
+      "reason": {
+        "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
+        "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
+      },
+      "description": "GitCortex delivers production-grade software directly from social media conversations. It actively resolves ambiguity, architects solutions, and orchestrates multiple AI coding agents (Claude Code, Gemini CLI, Codex, etc.) in parallel with built-in three-layer quality gates. No IDE, no terminal, no manual intervention.",
+      "stars": 175,
+      "forks": 12,
+      "language": "Rust",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/huanchong-99/SoloDawn",
+      "pushedAt": "2026-05-07T16:00:51Z",
+      "updatedAt": "2026-06-08T23:49:24Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "JohnMwendwa/free-ai-resources",
@@ -440,7 +520,7 @@
       "pushedAt": "2025-05-24T05:51:40Z",
       "updatedAt": "2026-06-11T09:09:36Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "MushroomFleet/DJZ-Workflows",
@@ -460,7 +540,7 @@
       "pushedAt": "2026-04-07T17:36:53Z",
       "updatedAt": "2026-05-28T05:19:47Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "HiFoxAI/HiFox",
@@ -480,7 +560,7 @@
       "pushedAt": "2025-03-04T09:03:04Z",
       "updatedAt": "2026-04-19T20:53:08Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "qzw881130/AI-NovelFlow",
@@ -500,7 +580,47 @@
       "pushedAt": "2026-05-10T08:41:44Z",
       "updatedAt": "2026-06-07T04:00:37Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "workstream-labs/workstreams",
+      "fullName": "workstream-labs/workstreams",
+      "category": "Developer Tools",
+      "matchedQuery": "developer-ai-tools",
+      "reason": {
+        "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
+        "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
+      },
+      "description": "IDE for parallel AI coding agents",
+      "stars": 72,
+      "forks": 6,
+      "language": "TypeScript",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/workstream-labs/workstreams",
+      "pushedAt": "2026-04-22T07:05:44Z",
+      "updatedAt": "2026-06-08T09:25:14Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "ChanMeng666/echook",
+      "fullName": "ChanMeng666/echook",
+      "category": "Developer Tools",
+      "matchedQuery": "developer-ai-tools",
+      "reason": {
+        "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
+        "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
+      },
+      "description": "🔊 echook — AI-operated audio notifications for Claude Code, Cursor IDE & Codex CLI — 26 hooks, voice + chime themes, TTS, webhooks, rate-limit alerts, status line. Tell your AI agent to install — natural language forever after.",
+      "stars": 67,
+      "forks": 6,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/ChanMeng666/echook",
+      "pushedAt": "2026-06-05T10:02:23Z",
+      "updatedAt": "2026-06-11T10:11:04Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "ShunL12324/comfy-portal",
@@ -520,7 +640,27 @@
       "pushedAt": "2026-02-23T11:52:04Z",
       "updatedAt": "2026-06-05T16:01:38Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "vilmire/adhdev",
+      "fullName": "vilmire/adhdev",
+      "category": "Developer Tools",
+      "matchedQuery": "developer-ai-tools",
+      "reason": {
+        "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
+        "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
+      },
+      "description": "🦦 ADHDev — Agent Dashboard Hub. Monitor & control AI coding agents from a single dashboard. Self-hosted, open-source.",
+      "stars": 44,
+      "forks": 11,
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "htmlUrl": "https://github.com/vilmire/adhdev",
+      "pushedAt": "2026-06-11T09:38:36Z",
+      "updatedAt": "2026-06-11T09:38:40Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     },
     {
       "repo": "Anil-matcha/gpt-image-2-comfyui",
@@ -540,7 +680,167 @@
       "pushedAt": "2026-04-22T07:52:49Z",
       "updatedAt": "2026-05-30T04:50:16Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:18:25.765Z"
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "DLhugly/Clif-Code",
+      "fullName": "DLhugly/Clif-Code",
+      "category": "Developer Tools",
+      "matchedQuery": "developer-ai-tools",
+      "reason": {
+        "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
+        "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
+      },
+      "description": "AI code editor + terminal coding agent, built in Rust. Works with any LLM via OpenRouter, OpenAI, Anthropic, or Ollama. 20MB native binary, 20 themes, real terminal, git, agent sidebar with tool calling.",
+      "stars": 14,
+      "forks": 3,
+      "language": "TypeScript",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/DLhugly/Clif-Code",
+      "pushedAt": "2026-04-26T16:22:30Z",
+      "updatedAt": "2026-06-06T18:49:04Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "Nachx639/termide",
+      "fullName": "Nachx639/termide",
+      "category": "Developer Tools",
+      "matchedQuery": "developer-ai-tools",
+      "reason": {
+        "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
+        "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
+      },
+      "description": "🐜 Terminal-first IDE for AI coding agents. Built with Bun, React & OpenTUI.",
+      "stars": 11,
+      "forks": 2,
+      "language": "TypeScript",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/Nachx639/termide",
+      "pushedAt": "2026-04-30T18:39:56Z",
+      "updatedAt": "2026-05-25T18:46:33Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "jayeshmepani/python-web-scraping-libraries",
+      "fullName": "jayeshmepani/python-web-scraping-libraries",
+      "category": "Data & Research",
+      "matchedQuery": "ai-web-research-tools",
+      "reason": {
+        "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
+        "en": "Tools for web research, crawling, extraction, and RAG knowledge preparation."
+      },
+      "description": "The ultimate curated manifest of 50+ Python libraries for web scraping, data extraction, and autonomous AI agents. Synchronized for April 2026, covering everything from foundational frameworks to agentic browsing and RAG pipelines.",
+      "stars": 2,
+      "forks": 0,
+      "language": "Unknown",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/jayeshmepani/python-web-scraping-libraries",
+      "pushedAt": "2026-04-20T06:42:14Z",
+      "updatedAt": "2026-04-24T16:54:30Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "kush-agra-soni/advance_ai_web_crawler",
+      "fullName": "kush-agra-soni/advance_ai_web_crawler",
+      "category": "Data & Research",
+      "matchedQuery": "ai-web-research-tools",
+      "reason": {
+        "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
+        "en": "Tools for web research, crawling, extraction, and RAG knowledge preparation."
+      },
+      "description": "Advanced AI-powered web crawler built with Crawl4AI for adaptive, large-scale data extraction. Supports concurrent sessions, proxy rotation, identity management, and outputs clean Markdown optimized for LLMs, RAG, and fine-tuning. Fast, open-source, and deployable anywhere with Docker.",
+      "stars": 1,
+      "forks": 0,
+      "language": "Jupyter Notebook",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/kush-agra-soni/advance_ai_web_crawler",
+      "pushedAt": "2025-12-10T17:27:24Z",
+      "updatedAt": "2025-12-10T18:35:07Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "surya-koritala/phantombot",
+      "fullName": "surya-koritala/phantombot",
+      "category": "Data & Research",
+      "matchedQuery": "ai-web-research-tools",
+      "reason": {
+        "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
+        "en": "Tools for web research, crawling, extraction, and RAG knowledge preparation."
+      },
+      "description": "Open-source web crawler and knowledge extraction engine for the AI agentic era. Turns the web into structured, agent-queryable knowledge.",
+      "stars": 1,
+      "forks": 0,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/surya-koritala/phantombot",
+      "pushedAt": "2026-04-12T23:59:52Z",
+      "updatedAt": "2026-04-12T23:59:57Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "danhwang0623/crawler-ai",
+      "fullName": "danhwang0623/crawler-ai",
+      "category": "Data & Research",
+      "matchedQuery": "ai-web-research-tools",
+      "reason": {
+        "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
+        "en": "Tools for web research, crawling, extraction, and RAG knowledge preparation."
+      },
+      "description": "An AI-powered web crawler for intelligent data extraction and RAG-ready document generation.",
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/danhwang0623/crawler-ai",
+      "pushedAt": "2025-04-14T20:11:31Z",
+      "updatedAt": "2025-04-14T20:11:34Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "ojasviii14/rag-crawler_Ojasvi",
+      "fullName": "ojasviii14/rag-crawler_Ojasvi",
+      "category": "Data & Research",
+      "matchedQuery": "ai-web-research-tools",
+      "reason": {
+        "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
+        "en": "Tools for web research, crawling, extraction, and RAG knowledge preparation."
+      },
+      "description": "A smart Retrieval-Augmented Generation (RAG) web crawler that automatically collects, cleans, and structures website content for AI and NLP pipelines. Supports text extraction, chunking, and embedding-ready outputs for building intelligent search or knowledge-based applications.",
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/ojasviii14/rag-crawler_Ojasvi",
+      "pushedAt": "2025-10-14T12:31:12Z",
+      "updatedAt": "2025-10-14T12:31:15Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
+    },
+    {
+      "repo": "RemyDaubenfeld/web-seo-toolkit",
+      "fullName": "RemyDaubenfeld/web-seo-toolkit",
+      "category": "Data & Research",
+      "matchedQuery": "ai-web-research-tools",
+      "reason": {
+        "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
+        "en": "Tools for web research, crawling, extraction, and RAG knowledge preparation."
+      },
+      "description": "A comprehensive Python Tkinter toolkit for SEO auditing, deep web crawling, XML sitemap generation, and clean Markdown extraction optimized for AI knowledge bases (RAG).",
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/RemyDaubenfeld/web-seo-toolkit",
+      "pushedAt": "2026-05-29T13:37:46Z",
+      "updatedAt": "2026-05-29T13:37:43Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T10:34:58.334Z"
     }
   ]
 }

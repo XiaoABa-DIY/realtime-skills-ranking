@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T10:18:24.004Z",
+  "generatedAt": "2026-06-11T10:34:56.041Z",
   "source": "github-rest",
   "repositories": [
     {
@@ -15,19 +15,46 @@
       "featured": false,
       "fullName": "n8n-io/n8n",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 192029,
-      "forks": 58456,
-      "openIssues": 1473,
+      "stars": 192031,
+      "forks": 58457,
+      "openIssues": 1476,
       "watchers": 1107,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/n8n-io/n8n",
-      "pushedAt": "2026-06-11T10:16:08Z",
-      "updatedAt": "2026-06-11T10:16:09Z",
+      "pushedAt": "2026-06-11T10:34:08Z",
+      "updatedAt": "2026-06-11T10:31:53Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "category": "Developer Tools",
+      "platforms": ["CLI", "Agents", "Developers"],
+      "tags": ["coding-agent", "terminal", "automation"],
+      "summary": {
+        "zh": "面向终端的开源编程 Agent，适合程序员在仓库内协作完成代码任务。",
+        "en": "Open-source terminal coding agent for collaborating with AI inside software repositories."
+      },
+      "homepage": "https://opencode.ai",
+      "featured": true,
+      "fullName": "anomalyco/opencode",
+      "description": "The open source coding agent.",
+      "stars": 172996,
+      "forks": 20785,
+      "openIssues": 6907,
+      "watchers": 657,
+      "language": "TypeScript",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/anomalyco/opencode",
+      "pushedAt": "2026-06-11T10:28:07Z",
+      "updatedAt": "2026-06-11T10:31:45Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "AUTOMATIC1111/stable-diffusion-webui",
@@ -42,19 +69,100 @@
       "featured": false,
       "fullName": "AUTOMATIC1111/stable-diffusion-webui",
       "description": "Stable Diffusion web UI",
-      "stars": 163614,
+      "stars": 163610,
       "forks": 30364,
       "openIssues": 2490,
-      "watchers": 1222,
+      "watchers": 1218,
       "language": "Python",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
       "pushedAt": "2026-03-02T07:00:53Z",
-      "updatedAt": "2026-06-11T10:12:16Z",
+      "updatedAt": "2026-06-11T10:33:05Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "microsoft/markitdown",
+      "category": "Creator & Content",
+      "platforms": ["Documents", "Creators", "Developers"],
+      "tags": ["document-conversion", "markdown", "content"],
+      "summary": {
+        "zh": "将 PDF、Office 等文件转换为 Markdown，方便自媒体和知识工作者做 AI 素材整理。",
+        "en": "Converts files and office documents to Markdown for creator research and AI-ready content."
+      },
+      "homepage": "",
+      "featured": true,
+      "fullName": "microsoft/markitdown",
+      "description": "Python tool for converting files and office documents to Markdown.",
+      "stars": 150703,
+      "forks": 10372,
+      "openIssues": 832,
+      "watchers": 489,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/microsoft/markitdown",
+      "pushedAt": "2026-05-26T22:41:34Z",
+      "updatedAt": "2026-06-11T10:33:53Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "langflow-ai/langflow",
+      "category": "Productivity",
+      "platforms": ["Low-code", "Agents", "Workflows"],
+      "tags": ["low-code", "workflow", "ai-apps"],
+      "summary": {
+        "zh": "可视化构建和部署 AI Agent 与工作流的开源平台。",
+        "en": "Visual platform for building and deploying AI agents and workflows."
+      },
+      "homepage": "http://www.langflow.org",
+      "featured": false,
+      "fullName": "langflow-ai/langflow",
+      "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+      "stars": 149536,
+      "forks": 9238,
+      "openIssues": 949,
+      "watchers": 469,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/langflow-ai/langflow",
+      "pushedAt": "2026-06-11T10:19:47Z",
+      "updatedAt": "2026-06-11T10:09:49Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "langgenius/dify",
+      "category": "Productivity",
+      "platforms": ["Low-code", "Apps", "Agents"],
+      "tags": ["llm-apps", "agents", "workflow"],
+      "summary": {
+        "zh": "开源 LLM 应用开发平台，适合快速搭建聊天助手、知识库和 Agent 应用。",
+        "en": "Open-source LLM app platform for building chatbots, knowledge apps, and agent workflows."
+      },
+      "homepage": "https://dify.ai",
+      "featured": false,
+      "fullName": "langgenius/dify",
+      "description": "Production-ready platform for agentic workflow development.",
+      "stars": 144837,
+      "forks": 22793,
+      "openIssues": 747,
+      "watchers": 805,
+      "language": "TypeScript",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/langgenius/dify",
+      "pushedAt": "2026-06-11T10:26:44Z",
+      "updatedAt": "2026-06-11T10:32:33Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "open-webui/open-webui",
@@ -69,7 +177,7 @@
       "featured": false,
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 141066,
+      "stars": 141067,
       "forks": 20250,
       "openIssues": 413,
       "watchers": 619,
@@ -77,11 +185,65 @@
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/open-webui/open-webui",
       "pushedAt": "2026-06-11T00:29:43Z",
-      "updatedAt": "2026-06-11T10:14:45Z",
+      "updatedAt": "2026-06-11T10:19:45Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "category": "Data & Research",
+      "platforms": ["Python", "JavaScript", "RAG"],
+      "tags": ["llm-apps", "rag", "agents"],
+      "summary": {
+        "zh": "构建 LLM 应用、RAG、Agent 和工具调用流程的主流开源平台。",
+        "en": "Widely used platform for building LLM applications, RAG, agents, and tool workflows."
+      },
+      "homepage": "https://docs.langchain.com/langchain/",
+      "featured": false,
+      "fullName": "langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "stars": 139023,
+      "forks": 23035,
+      "openIssues": 434,
+      "watchers": 888,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/langchain-ai/langchain",
+      "pushedAt": "2026-06-11T07:50:24Z",
+      "updatedAt": "2026-06-11T10:33:22Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "firecrawl/firecrawl",
+      "category": "Data & Research",
+      "platforms": ["Web", "RAG", "Developers"],
+      "tags": ["web-crawling", "scraping", "rag"],
+      "summary": {
+        "zh": "面向 AI 和 RAG 场景的网页搜索、抓取与结构化提取工具。",
+        "en": "Web search, crawling, scraping, and extraction toolkit for AI and RAG workflows."
+      },
+      "homepage": "https://firecrawl.dev",
+      "featured": false,
+      "fullName": "firecrawl/firecrawl",
+      "description": "The API to search, scrape, and interact with the web at scale. 🔥",
+      "stars": 131328,
+      "forks": 7755,
+      "openIssues": 377,
+      "watchers": 374,
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "htmlUrl": "https://github.com/firecrawl/firecrawl",
+      "pushedAt": "2026-06-11T09:10:23Z",
+      "updatedAt": "2026-06-11T10:32:33Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "Comfy-Org/ComfyUI",
@@ -96,19 +258,46 @@
       "featured": true,
       "fullName": "Comfy-Org/ComfyUI",
       "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
-      "stars": 116565,
+      "stars": 116566,
       "forks": 13639,
       "openIssues": 4111,
-      "watchers": 763,
+      "watchers": 761,
       "language": "Python",
       "license": "GPL-3.0",
       "htmlUrl": "https://github.com/Comfy-Org/ComfyUI",
       "pushedAt": "2026-06-11T09:49:31Z",
-      "updatedAt": "2026-06-11T10:13:10Z",
+      "updatedAt": "2026-06-11T10:30:52Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "google-gemini/gemini-cli",
+      "category": "Developer Tools",
+      "platforms": ["CLI", "Gemini", "Developers"],
+      "tags": ["coding-agent", "terminal", "google"],
+      "summary": {
+        "zh": "Google Gemini 官方开源 CLI，把模型能力带到命令行开发流程中。",
+        "en": "Official open-source Gemini CLI that brings AI agent capabilities into terminal workflows."
+      },
+      "homepage": "https://geminicli.com",
+      "featured": true,
+      "fullName": "google-gemini/gemini-cli",
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "stars": 105157,
+      "forks": 14033,
+      "openIssues": 1300,
+      "watchers": 567,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/google-gemini/gemini-cli",
+      "pushedAt": "2026-06-10T18:38:14Z",
+      "updatedAt": "2026-06-11T10:30:32Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "browser-use/browser-use",
@@ -123,7 +312,7 @@
       "featured": false,
       "fullName": "browser-use/browser-use",
       "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
-      "stars": 98236,
+      "stars": 98238,
       "forks": 10955,
       "openIssues": 285,
       "watchers": 439,
@@ -131,11 +320,11 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/browser-use/browser-use",
       "pushedAt": "2026-06-11T02:59:48Z",
-      "updatedAt": "2026-06-11T10:12:45Z",
+      "updatedAt": "2026-06-11T10:24:22Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "modelcontextprotocol/servers",
@@ -162,7 +351,34 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "PaddlePaddle/PaddleOCR",
+      "category": "Creator & Content",
+      "platforms": ["OCR", "Documents", "Creators"],
+      "tags": ["ocr", "documents", "extraction"],
+      "summary": {
+        "zh": "多语言 OCR 工具包，可把图片和 PDF 文档转成结构化内容。",
+        "en": "Multilingual OCR toolkit for turning images and PDFs into structured content."
+      },
+      "homepage": "https://www.paddleocr.com",
+      "featured": false,
+      "fullName": "PaddlePaddle/PaddleOCR",
+      "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
+      "stars": 81820,
+      "forks": 10729,
+      "openIssues": 214,
+      "watchers": 550,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/PaddlePaddle/PaddleOCR",
+      "pushedAt": "2026-06-11T10:26:17Z",
+      "updatedAt": "2026-06-11T10:31:12Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "mlabonne/llm-course",
@@ -189,7 +405,34 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "OpenHands/OpenHands",
+      "category": "Developer Tools",
+      "platforms": ["Agents", "Browser", "Developers"],
+      "tags": ["coding-agent", "software-engineering", "automation"],
+      "summary": {
+        "zh": "面向软件工程任务的 AI 驱动开发平台，可执行代码、浏览网页并处理仓库任务。",
+        "en": "AI-driven development platform for executing code, browsing, and handling software tasks."
+      },
+      "homepage": "https://openhands.dev",
+      "featured": false,
+      "fullName": "OpenHands/OpenHands",
+      "description": "🙌 OpenHands: AI-Driven Development",
+      "stars": 76450,
+      "forks": 9714,
+      "openIssues": 335,
+      "watchers": 455,
+      "language": "Python",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/OpenHands/OpenHands",
+      "pushedAt": "2026-06-11T08:55:24Z",
+      "updatedAt": "2026-06-11T10:17:08Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "dair-ai/Prompt-Engineering-Guide",
@@ -216,7 +459,34 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "unclecode/crawl4ai",
+      "category": "Data & Research",
+      "platforms": ["Web", "RAG", "Developers"],
+      "tags": ["web-crawling", "markdown", "extraction"],
+      "summary": {
+        "zh": "面向 LLM 的开源网页爬取和抓取工具，适合把网页整理成可用知识。",
+        "en": "LLM-friendly open-source crawler and scraper for turning web pages into usable knowledge."
+      },
+      "homepage": "https://crawl4ai.com",
+      "featured": false,
+      "fullName": "unclecode/crawl4ai",
+      "description": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
+      "stars": 68259,
+      "forks": 6972,
+      "openIssues": 96,
+      "watchers": 375,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/unclecode/crawl4ai",
+      "pushedAt": "2026-06-04T06:19:50Z",
+      "updatedAt": "2026-06-11T09:59:58Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "microsoft/ai-agents-for-beginners",
@@ -231,7 +501,7 @@
       "featured": true,
       "fullName": "microsoft/ai-agents-for-beginners",
       "description": "12 Lessons to Get Started Building AI Agents",
-      "stars": 66983,
+      "stars": 66985,
       "forks": 22111,
       "openIssues": 22,
       "watchers": 554,
@@ -239,11 +509,38 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/microsoft/ai-agents-for-beginners",
       "pushedAt": "2026-05-25T17:28:39Z",
-      "updatedAt": "2026-06-11T10:09:32Z",
+      "updatedAt": "2026-06-11T10:27:16Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "cline/cline",
+      "category": "Developer Tools",
+      "platforms": ["VS Code", "Agents", "Developers"],
+      "tags": ["coding-agent", "ide", "automation"],
+      "summary": {
+        "zh": "可作为 VS Code 扩展、SDK 或 CLI 使用的自主编程 Agent。",
+        "en": "Autonomous coding agent available as a VS Code extension, SDK, or CLI assistant."
+      },
+      "homepage": "https://cline.bot",
+      "featured": true,
+      "fullName": "cline/cline",
+      "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
+      "stars": 63048,
+      "forks": 6657,
+      "openIssues": 1062,
+      "watchers": 277,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/cline/cline",
+      "pushedAt": "2026-06-11T10:00:50Z",
+      "updatedAt": "2026-06-11T10:31:39Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "microsoft/autogen",
@@ -258,7 +555,7 @@
       "featured": false,
       "fullName": "microsoft/autogen",
       "description": "A programming framework for agentic AI",
-      "stars": 58868,
+      "stars": 58869,
       "forks": 8882,
       "openIssues": 883,
       "watchers": 526,
@@ -266,11 +563,11 @@
       "license": "CC-BY-4.0",
       "htmlUrl": "https://github.com/microsoft/autogen",
       "pushedAt": "2026-04-15T11:59:09Z",
-      "updatedAt": "2026-06-11T10:09:08Z",
+      "updatedAt": "2026-06-11T10:30:18Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "mem0ai/mem0",
@@ -285,7 +582,7 @@
       "featured": false,
       "fullName": "mem0ai/mem0",
       "description": "Universal memory layer for AI Agents",
-      "stars": 58331,
+      "stars": 58334,
       "forks": 6701,
       "openIssues": 410,
       "watchers": 233,
@@ -293,11 +590,11 @@
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/mem0ai/mem0",
       "pushedAt": "2026-06-11T09:54:51Z",
-      "updatedAt": "2026-06-11T10:10:55Z",
+      "updatedAt": "2026-06-11T10:23:43Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "FlowiseAI/Flowise",
@@ -312,7 +609,7 @@
       "featured": false,
       "fullName": "FlowiseAI/Flowise",
       "description": "Build AI Agents, Visually",
-      "stars": 53475,
+      "stars": 53476,
       "forks": 24500,
       "openIssues": 908,
       "watchers": 357,
@@ -320,11 +617,11 @@
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/FlowiseAI/Flowise",
       "pushedAt": "2026-06-10T07:32:39Z",
-      "updatedAt": "2026-06-11T10:09:27Z",
+      "updatedAt": "2026-06-11T10:23:17Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "crewAIInc/crewAI",
@@ -339,19 +636,19 @@
       "featured": false,
       "fullName": "crewAIInc/crewAI",
       "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
-      "stars": 53258,
+      "stars": 53260,
       "forks": 7448,
-      "openIssues": 424,
+      "openIssues": 425,
       "watchers": 381,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/crewAIInc/crewAI",
       "pushedAt": "2026-06-11T05:21:38Z",
-      "updatedAt": "2026-06-11T10:09:56Z",
+      "updatedAt": "2026-06-11T10:32:21Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "run-llama/llama_index",
@@ -374,11 +671,11 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/run-llama/llama_index",
       "pushedAt": "2026-06-10T04:01:39Z",
-      "updatedAt": "2026-06-11T10:09:26Z",
+      "updatedAt": "2026-06-11T10:32:11Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "microsoft/AI-For-Beginners",
@@ -393,7 +690,7 @@
       "featured": false,
       "fullName": "microsoft/AI-For-Beginners",
       "description": "12 Weeks, 24 Lessons, AI for All!",
-      "stars": 48065,
+      "stars": 48066,
       "forks": 9952,
       "openIssues": 9,
       "watchers": 512,
@@ -401,11 +698,146 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/microsoft/AI-For-Beginners",
       "pushedAt": "2026-06-11T01:06:57Z",
-      "updatedAt": "2026-06-11T09:48:31Z",
+      "updatedAt": "2026-06-11T10:27:13Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "Aider-AI/aider",
+      "category": "Developer Tools",
+      "platforms": ["CLI", "Git", "Developers"],
+      "tags": ["coding-agent", "pair-programming", "terminal"],
+      "summary": {
+        "zh": "运行在终端里的 AI 结对编程工具，可直接基于 Git 仓库修改代码。",
+        "en": "Terminal AI pair programmer that edits code directly inside Git repositories."
+      },
+      "homepage": "https://aider.chat/",
+      "featured": false,
+      "fullName": "Aider-AI/aider",
+      "description": "aider is AI pair programming in your terminal",
+      "stars": 45993,
+      "forks": 4566,
+      "openIssues": 1615,
+      "watchers": 253,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/Aider-AI/aider",
+      "pushedAt": "2026-05-22T14:02:20Z",
+      "updatedAt": "2026-06-11T10:23:34Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "langchain-ai/langgraph",
+      "category": "Coding Agents",
+      "platforms": ["Agents", "Python", "Workflows"],
+      "tags": ["agent-graphs", "orchestration", "workflows"],
+      "summary": {
+        "zh": "用图结构构建可恢复、可编排的长期运行 Agent 工作流。",
+        "en": "Graph-based framework for building durable and orchestrated agent workflows."
+      },
+      "homepage": "https://docs.langchain.com/oss/python/langgraph/",
+      "featured": false,
+      "fullName": "langchain-ai/langgraph",
+      "description": "Build resilient agents.",
+      "stars": 34432,
+      "forks": 5785,
+      "openIssues": 562,
+      "watchers": 159,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/langchain-ai/langgraph",
+      "pushedAt": "2026-06-11T00:10:15Z",
+      "updatedAt": "2026-06-11T10:33:31Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "continuedev/continue",
+      "category": "Developer Tools",
+      "platforms": ["IDE", "CLI", "Developers"],
+      "tags": ["code-assistant", "ci", "autocomplete"],
+      "summary": {
+        "zh": "开源 AI 代码助手和可版本化检查工具，适合团队把 AI 编码规则纳入工程流程。",
+        "en": "Open-source AI code assistant and source-controlled checks for developer teams."
+      },
+      "homepage": "https://docs.continue.dev",
+      "featured": false,
+      "fullName": "continuedev/continue",
+      "description": "⏩ Source-controlled AI checks, enforceable in CI. Powered by the open-source Continue CLI",
+      "stars": 33650,
+      "forks": 4638,
+      "openIssues": 744,
+      "watchers": 157,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/continuedev/continue",
+      "pushedAt": "2026-06-11T07:36:12Z",
+      "updatedAt": "2026-06-11T10:02:49Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "fishaudio/fish-speech",
+      "category": "Creator & Content",
+      "platforms": ["Audio", "Voice", "Creators"],
+      "tags": ["tts", "voice", "audio"],
+      "summary": {
+        "zh": "开源语音合成项目，适合视频、播客和数字人内容制作工作流。",
+        "en": "Open-source TTS project for video, podcast, and avatar content workflows."
+      },
+      "homepage": "https://speech.fish.audio",
+      "featured": false,
+      "fullName": "fishaudio/fish-speech",
+      "description": "SOTA Open Source TTS",
+      "stars": 30750,
+      "forks": 2622,
+      "openIssues": 16,
+      "watchers": 159,
+      "language": "Python",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/fishaudio/fish-speech",
+      "pushedAt": "2026-06-09T10:04:07Z",
+      "updatedAt": "2026-06-11T10:06:21Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "stanford-oval/storm",
+      "category": "Creator & Content",
+      "platforms": ["Writing", "Research", "Creators"],
+      "tags": ["research-writing", "content", "knowledge"],
+      "summary": {
+        "zh": "面向长文写作和资料调研的 AI 系统，可辅助生成有结构的研究型内容。",
+        "en": "AI system for long-form research and structured article writing workflows."
+      },
+      "homepage": "http://storm.genie.stanford.edu",
+      "featured": false,
+      "fullName": "stanford-oval/storm",
+      "description": "An LLM-powered knowledge curation system that researches a topic and generates a full-length report with citations.",
+      "stars": 28351,
+      "forks": 2584,
+      "openIssues": 95,
+      "watchers": 189,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/stanford-oval/storm",
+      "pushedAt": "2025-09-30T18:07:21Z",
+      "updatedAt": "2026-06-11T09:42:06Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "invoke-ai/InvokeAI",
@@ -432,7 +864,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "openai/openai-agents-python",
@@ -459,7 +891,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "deepset-ai/haystack",
@@ -486,7 +918,61 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "resemble-ai/chatterbox",
+      "category": "Creator & Content",
+      "platforms": ["Audio", "Voice", "Creators"],
+      "tags": ["tts", "voice", "content"],
+      "summary": {
+        "zh": "高质量开源 TTS 项目，适合自媒体语音、旁白和角色对白生成。",
+        "en": "High-quality open-source TTS project for creator voiceovers, narration, and dialogue."
+      },
+      "homepage": "https://resemble-ai.github.io/chatterbox_demopage/",
+      "featured": false,
+      "fullName": "resemble-ai/chatterbox",
+      "description": "SoTA open-source TTS",
+      "stars": 25016,
+      "forks": 3319,
+      "openIssues": 340,
+      "watchers": 148,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/resemble-ai/chatterbox",
+      "pushedAt": "2026-06-10T16:18:41Z",
+      "updatedAt": "2026-06-11T05:44:04Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+    },
+    {
+      "repo": "RooCodeInc/Roo-Code",
+      "category": "Developer Tools",
+      "platforms": ["VS Code", "Agents", "Developers"],
+      "tags": ["coding-agent", "multi-agent", "ide"],
+      "summary": {
+        "zh": "在代码编辑器中组织一组 AI Agent 协助规划、编码、调试和审查。",
+        "en": "AI coding assistant that brings a team of specialized agents into the code editor."
+      },
+      "homepage": "https://roocode.com",
+      "featured": false,
+      "fullName": "RooCodeInc/Roo-Code",
+      "description": "Roo Code gives you a whole dev team of AI agents in your code editor.",
+      "stars": 24227,
+      "forks": 3312,
+      "openIssues": 1038,
+      "watchers": 140,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/RooCodeInc/Roo-Code",
+      "pushedAt": "2026-05-15T18:08:47Z",
+      "updatedAt": "2026-06-11T07:46:06Z",
+      "archived": true,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "humanlayer/12-factor-agents",
@@ -513,7 +999,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "modelcontextprotocol/typescript-sdk",
@@ -540,7 +1026,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     },
     {
       "repo": "trigaten/Learn_Prompting",
@@ -567,7 +1053,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:18:24.004Z"
+      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
     }
   ]
 }
