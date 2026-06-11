@@ -1,0 +1,32 @@
+queries:
+  - id: mcp-skills
+    query: "mcp server ai agents"
+    category: MCP & Tooling
+    limit: 8
+    reason:
+      zh: 与 MCP 工具连接和 Agent 能力扩展相关。
+      en: Related to MCP tool connections and agent capability extensions.
+
+  - id: ai-agent-frameworks
+    query: "ai agent framework language:Python"
+    category: Coding Agents
+    limit: 8
+    reason:
+      zh: 可能是可编排 AI Agent 的开源框架。
+      en: Potential open-source framework for orchestrating AI agents.
+
+  - id: prompt-workflows
+    query: "prompt engineering guide AI"
+    category: Prompt & Workflow
+    limit: 8
+    reason:
+      zh: 与提示词、工作流或技能方法论相关。
+      en: Related to prompts, workflows, or skill methodology.
+
+  - id: ai-media-workflows
+    query: "AI image generation workflow"
+    category: Design & Media
+    limit: 8
+    reason:
+      zh: 可能提供 AI 图像或媒体生成工作流。
+      en: May provide AI image or media generation workflows.

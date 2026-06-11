@@ -1,0 +1,566 @@
+{
+  "generatedAt": "2026-06-11T09:18:46.558Z",
+  "source": "github-search",
+  "candidates": [
+    {
+      "repo": "langchain-ai/langchain",
+      "fullName": "langchain-ai/langchain",
+      "category": "Coding Agents",
+      "matchedQuery": "ai-agent-frameworks",
+      "reason": {
+        "zh": "可能是可编排 AI Agent 的开源框架。",
+        "en": "Potential open-source framework for orchestrating AI agents."
+      },
+      "description": "The agent engineering platform.",
+      "stars": 139021,
+      "forks": 23035,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/langchain-ai/langchain",
+      "pushedAt": "2026-06-11T07:50:24Z",
+      "updatedAt": "2026-06-11T09:02:08Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "FoundationAgents/MetaGPT",
+      "fullName": "FoundationAgents/MetaGPT",
+      "category": "Coding Agents",
+      "matchedQuery": "ai-agent-frameworks",
+      "reason": {
+        "zh": "可能是可编排 AI Agent 的开源框架。",
+        "en": "Potential open-source framework for orchestrating AI agents."
+      },
+      "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+      "stars": 68711,
+      "forks": 8779,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/FoundationAgents/MetaGPT",
+      "pushedAt": "2026-01-21T10:12:33Z",
+      "updatedAt": "2026-06-11T09:13:23Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "langchain-ai/langgraph",
+      "fullName": "langchain-ai/langgraph",
+      "category": "Coding Agents",
+      "matchedQuery": "ai-agent-frameworks",
+      "reason": {
+        "zh": "可能是可编排 AI Agent 的开源框架。",
+        "en": "Potential open-source framework for orchestrating AI agents."
+      },
+      "description": "Build resilient agents.",
+      "stars": 34425,
+      "forks": 5784,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/langchain-ai/langgraph",
+      "pushedAt": "2026-06-11T00:10:15Z",
+      "updatedAt": "2026-06-11T09:14:11Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "AstrBotDevs/AstrBot",
+      "fullName": "AstrBotDevs/AstrBot",
+      "category": "Coding Agents",
+      "matchedQuery": "ai-agent-frameworks",
+      "reason": {
+        "zh": "可能是可编排 AI Agent 的开源框架。",
+        "en": "Potential open-source framework for orchestrating AI agents."
+      },
+      "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
+      "stars": 34419,
+      "forks": 2364,
+      "language": "Python",
+      "license": "AGPL-3.0",
+      "htmlUrl": "https://github.com/AstrBotDevs/AstrBot",
+      "pushedAt": "2026-06-10T08:58:18Z",
+      "updatedAt": "2026-06-11T09:18:02Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "zai-org/Open-AutoGLM",
+      "fullName": "zai-org/Open-AutoGLM",
+      "category": "Coding Agents",
+      "matchedQuery": "ai-agent-frameworks",
+      "reason": {
+        "zh": "可能是可编排 AI Agent 的开源框架。",
+        "en": "Potential open-source framework for orchestrating AI agents."
+      },
+      "description": "An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
+      "stars": 25490,
+      "forks": 3972,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/zai-org/Open-AutoGLM",
+      "pushedAt": "2026-03-06T08:38:39Z",
+      "updatedAt": "2026-06-11T08:30:55Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "activepieces/activepieces",
+      "fullName": "activepieces/activepieces",
+      "category": "MCP & Tooling",
+      "matchedQuery": "mcp-skills",
+      "reason": {
+        "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
+        "en": "Related to MCP tool connections and agent capability extensions."
+      },
+      "description": "AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents",
+      "stars": 22704,
+      "forks": 3788,
+      "language": "TypeScript",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/activepieces/activepieces",
+      "pushedAt": "2026-06-11T08:52:32Z",
+      "updatedAt": "2026-06-11T08:47:07Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "googleapis/mcp-toolbox",
+      "fullName": "googleapis/mcp-toolbox",
+      "category": "MCP & Tooling",
+      "matchedQuery": "mcp-skills",
+      "reason": {
+        "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
+        "en": "Related to MCP tool connections and agent capability extensions."
+      },
+      "description": "MCP Toolbox for Databases is an open source MCP server for databases.",
+      "stars": 15579,
+      "forks": 1595,
+      "language": "Go",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/googleapis/mcp-toolbox",
+      "pushedAt": "2026-06-11T07:13:01Z",
+      "updatedAt": "2026-06-11T09:14:01Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "liyupi/ai-guide",
+      "fullName": "liyupi/ai-guide",
+      "category": "Prompt & Workflow",
+      "matchedQuery": "prompt-workflows",
+      "reason": {
+        "zh": "与提示词、工作流或技能方法论相关。",
+        "en": "Related to prompts, workflows, or skill methodology."
+      },
+      "description": "程序员鱼皮的 AI 资源大全 + Vibe Coding 零基础教程，分享 OpenClaw 保姆级教程、大模型玩法（DeepSeek / GPT / Gemini / Claude）、最新 AI 资讯、Prompt 提示词大全、AI 知识百科（Agent Skills / RAG / MCP / A2A）、AI 编程教程（Harness Engineering）、AI 工具用法（Cursor / Claude Code / TRAE / Codex / Copilot）、AI 开发框架教程（Spring AI / LangChain）、AI 产品变现指南，帮你快速掌握 AI 技术，走在时代前沿。本项目为开源文档，已升级为鱼皮 AI 导航网站",
+      "stars": 15574,
+      "forks": 1745,
+      "language": "JavaScript",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/liyupi/ai-guide",
+      "pushedAt": "2026-06-04T12:40:40Z",
+      "updatedAt": "2026-06-11T08:35:01Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "GLips/Figma-Context-MCP",
+      "fullName": "GLips/Figma-Context-MCP",
+      "category": "MCP & Tooling",
+      "matchedQuery": "mcp-skills",
+      "reason": {
+        "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
+        "en": "Related to MCP tool connections and agent capability extensions."
+      },
+      "description": "MCP server to provide Figma layout information to AI coding agents like Cursor",
+      "stars": 15072,
+      "forks": 1194,
+      "language": "TypeScript",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/GLips/Figma-Context-MCP",
+      "pushedAt": "2026-05-27T22:18:23Z",
+      "updatedAt": "2026-06-11T08:34:41Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "mcp-use/mcp-use",
+      "fullName": "mcp-use/mcp-use",
+      "category": "MCP & Tooling",
+      "matchedQuery": "mcp-skills",
+      "reason": {
+        "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
+        "en": "Related to MCP tool connections and agent capability extensions."
+      },
+      "description": "The fullstack MCP framework to develop MCP Apps for ChatGPT / Claude & MCP Servers for AI Agents.",
+      "stars": 10086,
+      "forks": 1326,
+      "language": "TypeScript",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/mcp-use/mcp-use",
+      "pushedAt": "2026-06-10T22:20:53Z",
+      "updatedAt": "2026-06-11T03:45:12Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "0x4m4/hexstrike-ai",
+      "fullName": "0x4m4/hexstrike-ai",
+      "category": "MCP & Tooling",
+      "matchedQuery": "mcp-skills",
+      "reason": {
+        "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
+        "en": "Related to MCP tool connections and agent capability extensions."
+      },
+      "description": "HexStrike AI MCP Agents is an advanced MCP server that lets AI agents (Claude, GPT, Copilot, etc.) autonomously run 150+ cybersecurity tools for automated pentesting, vulnerability discovery, bug bounty automation, and security research. Seamlessly bridge LLMs with real-world offensive security capabilities.",
+      "stars": 9508,
+      "forks": 2046,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/0x4m4/hexstrike-ai",
+      "pushedAt": "2026-04-27T08:56:07Z",
+      "updatedAt": "2026-06-11T09:17:58Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "idosal/git-mcp",
+      "fullName": "idosal/git-mcp",
+      "category": "MCP & Tooling",
+      "matchedQuery": "mcp-skills",
+      "reason": {
+        "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
+        "en": "Related to MCP tool connections and agent capability extensions."
+      },
+      "description": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
+      "stars": 8160,
+      "forks": 722,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/idosal/git-mcp",
+      "pushedAt": "2026-05-08T14:21:24Z",
+      "updatedAt": "2026-06-11T03:58:37Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "epiral/bb-browser",
+      "fullName": "epiral/bb-browser",
+      "category": "MCP & Tooling",
+      "matchedQuery": "mcp-skills",
+      "reason": {
+        "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
+        "en": "Related to MCP tool connections and agent capability extensions."
+      },
+      "description": "Your browser is the API. CLI + MCP server for AI agents to control Chrome with your login state.",
+      "stars": 5740,
+      "forks": 571,
+      "language": "TypeScript",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/epiral/bb-browser",
+      "pushedAt": "2026-05-29T08:14:51Z",
+      "updatedAt": "2026-06-11T08:00:11Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "agent-infra/sandbox",
+      "fullName": "agent-infra/sandbox",
+      "category": "MCP & Tooling",
+      "matchedQuery": "mcp-skills",
+      "reason": {
+        "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
+        "en": "Related to MCP tool connections and agent capability extensions."
+      },
+      "description": "All-in-One Sandbox for AI Agents that combines Browser, Shell, File, MCP and VSCode Server in a single Docker container.",
+      "stars": 5039,
+      "forks": 447,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/agent-infra/sandbox",
+      "pushedAt": "2026-05-29T04:45:25Z",
+      "updatedAt": "2026-06-11T09:17:35Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "trigaten/Learn_Prompting",
+      "fullName": "trigaten/Learn_Prompting",
+      "category": "Prompt & Workflow",
+      "matchedQuery": "prompt-workflows",
+      "reason": {
+        "zh": "与提示词、工作流或技能方法论相关。",
+        "en": "Related to prompts, workflows, or skill methodology."
+      },
+      "description": "Prompt Engineering, Generative AI, and LLM Guide by Learn Prompting | Join our discord for the largest Prompt Engineering learning community",
+      "stars": 4707,
+      "forks": 667,
+      "language": "MDX",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/trigaten/Learn_Prompting",
+      "pushedAt": "2025-01-14T15:04:07Z",
+      "updatedAt": "2026-06-07T02:29:17Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "Meirtz/Awesome-Context-Engineering",
+      "fullName": "Meirtz/Awesome-Context-Engineering",
+      "category": "Prompt & Workflow",
+      "matchedQuery": "prompt-workflows",
+      "reason": {
+        "zh": "与提示词、工作流或技能方法论相关。",
+        "en": "Related to prompts, workflows, or skill methodology."
+      },
+      "description": " 🔥 Comprehensive survey on Context Engineering: from prompt engineering to production-grade AI systems. hundreds of papers, frameworks, and  implementation guides for LLMs and AI agents.",
+      "stars": 3174,
+      "forks": 242,
+      "language": "Unknown",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/Meirtz/Awesome-Context-Engineering",
+      "pushedAt": "2026-05-28T05:40:26Z",
+      "updatedAt": "2026-06-10T20:10:19Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "sudoskys/StableDiffusionBook",
+      "fullName": "sudoskys/StableDiffusionBook",
+      "category": "Prompt & Workflow",
+      "matchedQuery": "prompt-workflows",
+      "reason": {
+        "zh": "与提示词、工作流或技能方法论相关。",
+        "en": "Related to prompts, workflows, or skill methodology."
+      },
+      "description": "How do we integrate AI generation tools into actual work? | 关于 Ai 绘画的Wiki | Wiki about Ai painting | Prompts Engineering| 指南 Guide | Seeking Maintainer&Translator🙌",
+      "stars": 1975,
+      "forks": 117,
+      "language": "HTML",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/sudoskys/StableDiffusionBook",
+      "pushedAt": "2024-10-31T13:19:13Z",
+      "updatedAt": "2026-06-10T08:39:05Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "Light-Heart-Labs/DreamServer",
+      "fullName": "Light-Heart-Labs/DreamServer",
+      "category": "Design & Media",
+      "matchedQuery": "ai-media-workflows",
+      "reason": {
+        "zh": "可能提供 AI 图像或媒体生成工作流。",
+        "en": "May provide AI image or media generation workflows."
+      },
+      "description": "Turn your PC, Mac, or Linux box into an AI server.  LLM inference, chat UI, voice, agents, workflows, RAG, and image generation.",
+      "stars": 1959,
+      "forks": 287,
+      "language": "Shell",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/Light-Heart-Labs/DreamServer",
+      "pushedAt": "2026-06-11T08:35:33Z",
+      "updatedAt": "2026-06-11T09:11:08Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "if-ai/ComfyUI-IF_AI_tools",
+      "fullName": "if-ai/ComfyUI-IF_AI_tools",
+      "category": "Design & Media",
+      "matchedQuery": "ai-media-workflows",
+      "reason": {
+        "zh": "可能提供 AI 图像或媒体生成工作流。",
+        "en": "May provide AI image or media generation workflows."
+      },
+      "description": "ComfyUI-IF_AI_tools is a set of custom nodes for ComfyUI that allows you to generate prompts using a local Large Language Model (LLM) via Ollama. This tool enables you to enhance your image generation workflow by leveraging the power of language models.",
+      "stars": 699,
+      "forks": 56,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/if-ai/ComfyUI-IF_AI_tools",
+      "pushedAt": "2025-09-15T09:05:20Z",
+      "updatedAt": "2026-06-04T15:14:33Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "yohasebe/openai-chat-api-workflow",
+      "fullName": "yohasebe/openai-chat-api-workflow",
+      "category": "Design & Media",
+      "matchedQuery": "ai-media-workflows",
+      "reason": {
+        "zh": "可能提供 AI 图像或媒体生成工作流。",
+        "en": "May provide AI image or media generation workflows."
+      },
+      "description": "🎩 An Alfred 5 Workflow for using OpenAI Chat API to interact with GPT models 🤖💬 It also allows image generation/editing/understanding 🖼️, speech-to-text conversion 🎤, and text-to-speech synthesis 🔈",
+      "stars": 316,
+      "forks": 11,
+      "language": "Ruby",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/yohasebe/openai-chat-api-workflow",
+      "pushedAt": "2026-04-25T09:20:43Z",
+      "updatedAt": "2026-05-20T16:50:06Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "arorarishi/Prompt-Engineering-Jumpstart",
+      "fullName": "arorarishi/Prompt-Engineering-Jumpstart",
+      "category": "Prompt & Workflow",
+      "matchedQuery": "prompt-workflows",
+      "reason": {
+        "zh": "与提示词、工作流或技能方法论相关。",
+        "en": "Related to prompts, workflows, or skill methodology."
+      },
+      "description": "Prompt Engineering Jumpstart: The simplest beginner's guide to talking with AI. Learn universal prompt engineering principles with simple analogies & copy-paste examples for ChatGPT & DALL-E. No tech skills needed. Free, open-source eBook.",
+      "stars": 200,
+      "forks": 25,
+      "language": "Unknown",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/arorarishi/Prompt-Engineering-Jumpstart",
+      "pushedAt": "2025-12-23T18:41:04Z",
+      "updatedAt": "2026-06-09T12:27:19Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "FilippoMB/Diffusion_models_tutorial",
+      "fullName": "FilippoMB/Diffusion_models_tutorial",
+      "category": "Prompt & Workflow",
+      "matchedQuery": "prompt-workflows",
+      "reason": {
+        "zh": "与提示词、工作流或技能方法论相关。",
+        "en": "Related to prompts, workflows, or skill methodology."
+      },
+      "description": "Collection of tutorials on diffusion models, step-by-step implementation guide, scripts for generating images with AI, prompt engineering guide, and resources for further learning.",
+      "stars": 175,
+      "forks": 19,
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/FilippoMB/Diffusion_models_tutorial",
+      "pushedAt": "2026-04-21T19:05:59Z",
+      "updatedAt": "2026-06-05T14:16:31Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "JohnMwendwa/free-ai-resources",
+      "fullName": "JohnMwendwa/free-ai-resources",
+      "category": "Prompt & Workflow",
+      "matchedQuery": "prompt-workflows",
+      "reason": {
+        "zh": "与提示词、工作流或技能方法论相关。",
+        "en": "Related to prompts, workflows, or skill methodology."
+      },
+      "description": "A curated collection of free, high-quality resources for learning about AI, including ML, deep learning, generative AI, natural language processing, data science, prompt engineering & AI ethics. It provides links to courses, tutorials and guides from reputable platforms to help learners and practitioners at all levels expand their knowledge in AI",
+      "stars": 155,
+      "forks": 18,
+      "language": "Unknown",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/JohnMwendwa/free-ai-resources",
+      "pushedAt": "2025-05-24T05:51:40Z",
+      "updatedAt": "2026-06-11T09:09:36Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "MushroomFleet/DJZ-Workflows",
+      "fullName": "MushroomFleet/DJZ-Workflows",
+      "category": "Design & Media",
+      "matchedQuery": "ai-media-workflows",
+      "reason": {
+        "zh": "可能提供 AI 图像或媒体生成工作流。",
+        "en": "May provide AI image or media generation workflows."
+      },
+      "description": "1000+ ComfyUI workflows for AI image & video generation — Flux, SDXL, Hunyuan, CogVideo, upscaling, ControlNet & more",
+      "stars": 106,
+      "forks": 18,
+      "language": "Python",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/MushroomFleet/DJZ-Workflows",
+      "pushedAt": "2026-04-07T17:36:53Z",
+      "updatedAt": "2026-05-28T05:19:47Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "HiFoxAI/HiFox",
+      "fullName": "HiFoxAI/HiFox",
+      "category": "Design & Media",
+      "matchedQuery": "ai-media-workflows",
+      "reason": {
+        "zh": "可能提供 AI 图像或媒体生成工作流。",
+        "en": "May provide AI image or media generation workflows."
+      },
+      "description": "All-in-one AI platform for Content Creation, Copywriting, Q&A, Image/Video/Voice Generation, Intelligent Agents, Automated Workflows, and Custom AI Apps.",
+      "stars": 104,
+      "forks": 6,
+      "language": "Unknown",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/HiFoxAI/HiFox",
+      "pushedAt": "2025-03-04T09:03:04Z",
+      "updatedAt": "2026-04-19T20:53:08Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "qzw881130/AI-NovelFlow",
+      "fullName": "qzw881130/AI-NovelFlow",
+      "category": "Design & Media",
+      "matchedQuery": "ai-media-workflows",
+      "reason": {
+        "zh": "可能提供 AI 图像或媒体生成工作流。",
+        "en": "May provide AI image or media generation workflows."
+      },
+      "description": "NovelFlow 是一个将小说自动转换为视频的 AI 平台。文生图、图生图、图生视频都是基于开源模型及B站大佬分享的工作流。（NovelFlow is an AI platform that automatically converts novels into videos. Text-to-image, image-to-image, and image-to-video generation are all powered by open-source models and workflow templates shared by creators on Bilibili.）",
+      "stars": 82,
+      "forks": 23,
+      "language": "TypeScript",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/qzw881130/AI-NovelFlow",
+      "pushedAt": "2026-05-10T08:41:44Z",
+      "updatedAt": "2026-06-07T04:00:37Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "ShunL12324/comfy-portal",
+      "fullName": "ShunL12324/comfy-portal",
+      "category": "Design & Media",
+      "matchedQuery": "ai-media-workflows",
+      "reason": {
+        "zh": "可能提供 AI 图像或媒体生成工作流。",
+        "en": "May provide AI image or media generation workflows."
+      },
+      "description": "📱 A native iOS & Android client for ComfyUI — run AI image generation workflows from your phone",
+      "stars": 61,
+      "forks": 10,
+      "language": "TypeScript",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/ShunL12324/comfy-portal",
+      "pushedAt": "2026-02-23T11:52:04Z",
+      "updatedAt": "2026-06-05T16:01:38Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    },
+    {
+      "repo": "Anil-matcha/gpt-image-2-comfyui",
+      "fullName": "Anil-matcha/gpt-image-2-comfyui",
+      "category": "Design & Media",
+      "matchedQuery": "ai-media-workflows",
+      "reason": {
+        "zh": "可能提供 AI 图像或媒体生成工作流。",
+        "en": "May provide AI image or media generation workflows."
+      },
+      "description": "ComfyUI custom nodes for GPT-Image-2 image generation via muapi.ai — text-to-image and image-to-image",
+      "stars": 38,
+      "forks": 5,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/Anil-matcha/gpt-image-2-comfyui",
+      "pushedAt": "2026-04-22T07:52:49Z",
+      "updatedAt": "2026-05-30T04:50:16Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-11T09:18:46.558Z"
+    }
+  ]
+}
