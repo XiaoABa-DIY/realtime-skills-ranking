@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T10:34:56.041Z",
+  "generatedAt": "2026-06-11T11:08:30.592Z",
   "source": "github-rest",
   "repositories": [
     {
@@ -15,19 +15,19 @@
       "featured": false,
       "fullName": "n8n-io/n8n",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 192031,
-      "forks": 58457,
-      "openIssues": 1476,
+      "stars": 192033,
+      "forks": 58458,
+      "openIssues": 1474,
       "watchers": 1107,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/n8n-io/n8n",
-      "pushedAt": "2026-06-11T10:34:08Z",
-      "updatedAt": "2026-06-11T10:31:53Z",
+      "pushedAt": "2026-06-11T11:07:51Z",
+      "updatedAt": "2026-06-11T11:07:16Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "anomalyco/opencode",
@@ -42,19 +42,19 @@
       "featured": true,
       "fullName": "anomalyco/opencode",
       "description": "The open source coding agent.",
-      "stars": 172996,
-      "forks": 20785,
-      "openIssues": 6907,
+      "stars": 173003,
+      "forks": 20787,
+      "openIssues": 6909,
       "watchers": 657,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/anomalyco/opencode",
       "pushedAt": "2026-06-11T10:28:07Z",
-      "updatedAt": "2026-06-11T10:31:45Z",
+      "updatedAt": "2026-06-11T11:06:03Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "AUTOMATIC1111/stable-diffusion-webui",
@@ -69,19 +69,19 @@
       "featured": false,
       "fullName": "AUTOMATIC1111/stable-diffusion-webui",
       "description": "Stable Diffusion web UI",
-      "stars": 163610,
+      "stars": 163609,
       "forks": 30364,
       "openIssues": 2490,
-      "watchers": 1218,
+      "watchers": 1217,
       "language": "Python",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
       "pushedAt": "2026-03-02T07:00:53Z",
-      "updatedAt": "2026-06-11T10:33:05Z",
+      "updatedAt": "2026-06-11T11:01:58Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "microsoft/markitdown",
@@ -96,19 +96,19 @@
       "featured": true,
       "fullName": "microsoft/markitdown",
       "description": "Python tool for converting files and office documents to Markdown.",
-      "stars": 150703,
-      "forks": 10372,
+      "stars": 150721,
+      "forks": 10374,
       "openIssues": 832,
       "watchers": 489,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/microsoft/markitdown",
       "pushedAt": "2026-05-26T22:41:34Z",
-      "updatedAt": "2026-06-11T10:33:53Z",
+      "updatedAt": "2026-06-11T11:06:21Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "langflow-ai/langflow",
@@ -123,7 +123,7 @@
       "featured": false,
       "fullName": "langflow-ai/langflow",
       "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
-      "stars": 149536,
+      "stars": 149537,
       "forks": 9238,
       "openIssues": 949,
       "watchers": 469,
@@ -131,11 +131,11 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/langflow-ai/langflow",
       "pushedAt": "2026-06-11T10:19:47Z",
-      "updatedAt": "2026-06-11T10:09:49Z",
+      "updatedAt": "2026-06-11T10:59:31Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "langgenius/dify",
@@ -150,19 +150,19 @@
       "featured": false,
       "fullName": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
-      "stars": 144837,
-      "forks": 22793,
+      "stars": 144838,
+      "forks": 22794,
       "openIssues": 747,
       "watchers": 805,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/langgenius/dify",
-      "pushedAt": "2026-06-11T10:26:44Z",
-      "updatedAt": "2026-06-11T10:32:33Z",
+      "pushedAt": "2026-06-11T10:49:29Z",
+      "updatedAt": "2026-06-11T11:08:19Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "open-webui/open-webui",
@@ -178,18 +178,18 @@
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "stars": 141067,
-      "forks": 20250,
-      "openIssues": 413,
+      "forks": 20251,
+      "openIssues": 415,
       "watchers": 619,
       "language": "Python",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/open-webui/open-webui",
       "pushedAt": "2026-06-11T00:29:43Z",
-      "updatedAt": "2026-06-11T10:19:45Z",
+      "updatedAt": "2026-06-11T11:06:16Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "langchain-ai/langchain",
@@ -204,19 +204,19 @@
       "featured": false,
       "fullName": "langchain-ai/langchain",
       "description": "The agent engineering platform.",
-      "stars": 139023,
-      "forks": 23035,
+      "stars": 139029,
+      "forks": 23034,
       "openIssues": 434,
       "watchers": 888,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/langchain-ai/langchain",
       "pushedAt": "2026-06-11T07:50:24Z",
-      "updatedAt": "2026-06-11T10:33:22Z",
+      "updatedAt": "2026-06-11T11:08:15Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "firecrawl/firecrawl",
@@ -231,19 +231,19 @@
       "featured": false,
       "fullName": "firecrawl/firecrawl",
       "description": "The API to search, scrape, and interact with the web at scale. 🔥",
-      "stars": 131328,
-      "forks": 7755,
+      "stars": 131332,
+      "forks": 7754,
       "openIssues": 377,
       "watchers": 374,
       "language": "TypeScript",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/firecrawl/firecrawl",
       "pushedAt": "2026-06-11T09:10:23Z",
-      "updatedAt": "2026-06-11T10:32:33Z",
+      "updatedAt": "2026-06-11T11:06:09Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "Comfy-Org/ComfyUI",
@@ -258,19 +258,19 @@
       "featured": true,
       "fullName": "Comfy-Org/ComfyUI",
       "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
-      "stars": 116566,
+      "stars": 116568,
       "forks": 13639,
       "openIssues": 4111,
       "watchers": 761,
       "language": "Python",
       "license": "GPL-3.0",
       "htmlUrl": "https://github.com/Comfy-Org/ComfyUI",
-      "pushedAt": "2026-06-11T09:49:31Z",
-      "updatedAt": "2026-06-11T10:30:52Z",
+      "pushedAt": "2026-06-11T10:35:33Z",
+      "updatedAt": "2026-06-11T10:44:22Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "google-gemini/gemini-cli",
@@ -287,17 +287,17 @@
       "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
       "stars": 105157,
       "forks": 14033,
-      "openIssues": 1300,
-      "watchers": 567,
+      "openIssues": 1301,
+      "watchers": 566,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/google-gemini/gemini-cli",
       "pushedAt": "2026-06-10T18:38:14Z",
-      "updatedAt": "2026-06-11T10:30:32Z",
+      "updatedAt": "2026-06-11T10:59:05Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "browser-use/browser-use",
@@ -312,19 +312,19 @@
       "featured": false,
       "fullName": "browser-use/browser-use",
       "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
-      "stars": 98238,
-      "forks": 10955,
+      "stars": 98249,
+      "forks": 10958,
       "openIssues": 285,
       "watchers": 439,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/browser-use/browser-use",
       "pushedAt": "2026-06-11T02:59:48Z",
-      "updatedAt": "2026-06-11T10:24:22Z",
+      "updatedAt": "2026-06-11T11:04:30Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "modelcontextprotocol/servers",
@@ -339,7 +339,7 @@
       "featured": true,
       "fullName": "modelcontextprotocol/servers",
       "description": "Model Context Protocol Servers",
-      "stars": 87051,
+      "stars": 87052,
       "forks": 10976,
       "openIssues": 503,
       "watchers": 624,
@@ -347,11 +347,11 @@
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/modelcontextprotocol/servers",
       "pushedAt": "2026-06-07T22:29:30Z",
-      "updatedAt": "2026-06-11T10:13:42Z",
+      "updatedAt": "2026-06-11T11:04:18Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "PaddlePaddle/PaddleOCR",
@@ -366,19 +366,19 @@
       "featured": false,
       "fullName": "PaddlePaddle/PaddleOCR",
       "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
-      "stars": 81820,
+      "stars": 81821,
       "forks": 10729,
-      "openIssues": 214,
+      "openIssues": 215,
       "watchers": 550,
       "language": "Python",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/PaddlePaddle/PaddleOCR",
       "pushedAt": "2026-06-11T10:26:17Z",
-      "updatedAt": "2026-06-11T10:31:12Z",
+      "updatedAt": "2026-06-11T10:47:09Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "mlabonne/llm-course",
@@ -405,7 +405,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "OpenHands/OpenHands",
@@ -420,7 +420,7 @@
       "featured": false,
       "fullName": "OpenHands/OpenHands",
       "description": "🙌 OpenHands: AI-Driven Development",
-      "stars": 76450,
+      "stars": 76451,
       "forks": 9714,
       "openIssues": 335,
       "watchers": 455,
@@ -428,11 +428,11 @@
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/OpenHands/OpenHands",
       "pushedAt": "2026-06-11T08:55:24Z",
-      "updatedAt": "2026-06-11T10:17:08Z",
+      "updatedAt": "2026-06-11T10:52:54Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "dair-ai/Prompt-Engineering-Guide",
@@ -447,19 +447,19 @@
       "featured": false,
       "fullName": "dair-ai/Prompt-Engineering-Guide",
       "description": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
-      "stars": 75522,
-      "forks": 8206,
+      "stars": 75523,
+      "forks": 8205,
       "openIssues": 268,
       "watchers": 745,
       "language": "MDX",
       "license": "MIT",
       "htmlUrl": "https://github.com/dair-ai/Prompt-Engineering-Guide",
       "pushedAt": "2026-03-11T20:09:13Z",
-      "updatedAt": "2026-06-11T10:07:03Z",
+      "updatedAt": "2026-06-11T11:07:45Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "unclecode/crawl4ai",
@@ -474,7 +474,7 @@
       "featured": false,
       "fullName": "unclecode/crawl4ai",
       "description": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
-      "stars": 68259,
+      "stars": 68262,
       "forks": 6972,
       "openIssues": 96,
       "watchers": 375,
@@ -482,11 +482,11 @@
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/unclecode/crawl4ai",
       "pushedAt": "2026-06-04T06:19:50Z",
-      "updatedAt": "2026-06-11T09:59:58Z",
+      "updatedAt": "2026-06-11T10:55:22Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "microsoft/ai-agents-for-beginners",
@@ -501,7 +501,7 @@
       "featured": true,
       "fullName": "microsoft/ai-agents-for-beginners",
       "description": "12 Lessons to Get Started Building AI Agents",
-      "stars": 66985,
+      "stars": 66988,
       "forks": 22111,
       "openIssues": 22,
       "watchers": 554,
@@ -509,11 +509,11 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/microsoft/ai-agents-for-beginners",
       "pushedAt": "2026-05-25T17:28:39Z",
-      "updatedAt": "2026-06-11T10:27:16Z",
+      "updatedAt": "2026-06-11T11:07:10Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "cline/cline",
@@ -530,17 +530,17 @@
       "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
       "stars": 63048,
       "forks": 6657,
-      "openIssues": 1062,
+      "openIssues": 1063,
       "watchers": 277,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/cline/cline",
-      "pushedAt": "2026-06-11T10:00:50Z",
-      "updatedAt": "2026-06-11T10:31:39Z",
+      "pushedAt": "2026-06-11T11:07:54Z",
+      "updatedAt": "2026-06-11T11:07:57Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "microsoft/autogen",
@@ -555,7 +555,7 @@
       "featured": false,
       "fullName": "microsoft/autogen",
       "description": "A programming framework for agentic AI",
-      "stars": 58869,
+      "stars": 58871,
       "forks": 8882,
       "openIssues": 883,
       "watchers": 526,
@@ -563,11 +563,11 @@
       "license": "CC-BY-4.0",
       "htmlUrl": "https://github.com/microsoft/autogen",
       "pushedAt": "2026-04-15T11:59:09Z",
-      "updatedAt": "2026-06-11T10:30:18Z",
+      "updatedAt": "2026-06-11T11:07:14Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "mem0ai/mem0",
@@ -582,19 +582,19 @@
       "featured": false,
       "fullName": "mem0ai/mem0",
       "description": "Universal memory layer for AI Agents",
-      "stars": 58334,
-      "forks": 6701,
-      "openIssues": 410,
+      "stars": 58337,
+      "forks": 6703,
+      "openIssues": 412,
       "watchers": 233,
       "language": "Python",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/mem0ai/mem0",
       "pushedAt": "2026-06-11T09:54:51Z",
-      "updatedAt": "2026-06-11T10:23:43Z",
+      "updatedAt": "2026-06-11T11:07:32Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "FlowiseAI/Flowise",
@@ -609,7 +609,7 @@
       "featured": false,
       "fullName": "FlowiseAI/Flowise",
       "description": "Build AI Agents, Visually",
-      "stars": 53476,
+      "stars": 53478,
       "forks": 24500,
       "openIssues": 908,
       "watchers": 357,
@@ -617,11 +617,11 @@
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/FlowiseAI/Flowise",
       "pushedAt": "2026-06-10T07:32:39Z",
-      "updatedAt": "2026-06-11T10:23:17Z",
+      "updatedAt": "2026-06-11T10:55:42Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "crewAIInc/crewAI",
@@ -636,7 +636,7 @@
       "featured": false,
       "fullName": "crewAIInc/crewAI",
       "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
-      "stars": 53260,
+      "stars": 53263,
       "forks": 7448,
       "openIssues": 425,
       "watchers": 381,
@@ -644,11 +644,11 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/crewAIInc/crewAI",
       "pushedAt": "2026-06-11T05:21:38Z",
-      "updatedAt": "2026-06-11T10:32:21Z",
+      "updatedAt": "2026-06-11T11:01:55Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "run-llama/llama_index",
@@ -663,19 +663,19 @@
       "featured": false,
       "fullName": "run-llama/llama_index",
       "description": "LlamaIndex is the leading document agent and OCR platform",
-      "stars": 50075,
+      "stars": 50077,
       "forks": 7536,
-      "openIssues": 429,
+      "openIssues": 428,
       "watchers": 279,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/run-llama/llama_index",
-      "pushedAt": "2026-06-10T04:01:39Z",
-      "updatedAt": "2026-06-11T10:32:11Z",
+      "pushedAt": "2026-06-11T10:44:54Z",
+      "updatedAt": "2026-06-11T11:03:43Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "microsoft/AI-For-Beginners",
@@ -702,7 +702,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "Aider-AI/aider",
@@ -729,7 +729,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "langchain-ai/langgraph",
@@ -744,7 +744,7 @@
       "featured": false,
       "fullName": "langchain-ai/langgraph",
       "description": "Build resilient agents.",
-      "stars": 34432,
+      "stars": 34433,
       "forks": 5785,
       "openIssues": 562,
       "watchers": 159,
@@ -752,11 +752,11 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/langchain-ai/langgraph",
       "pushedAt": "2026-06-11T00:10:15Z",
-      "updatedAt": "2026-06-11T10:33:31Z",
+      "updatedAt": "2026-06-11T11:07:59Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "continuedev/continue",
@@ -772,7 +772,7 @@
       "fullName": "continuedev/continue",
       "description": "⏩ Source-controlled AI checks, enforceable in CI. Powered by the open-source Continue CLI",
       "stars": 33650,
-      "forks": 4638,
+      "forks": 4639,
       "openIssues": 744,
       "watchers": 157,
       "language": "TypeScript",
@@ -783,7 +783,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "fishaudio/fish-speech",
@@ -810,7 +810,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "stanford-oval/storm",
@@ -837,7 +837,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "invoke-ai/InvokeAI",
@@ -864,7 +864,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "openai/openai-agents-python",
@@ -891,7 +891,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "deepset-ai/haystack",
@@ -906,19 +906,19 @@
       "featured": false,
       "fullName": "deepset-ai/haystack",
       "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
-      "stars": 25533,
+      "stars": 25532,
       "forks": 2840,
       "openIssues": 111,
       "watchers": 162,
       "language": "MDX",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/deepset-ai/haystack",
-      "pushedAt": "2026-06-11T09:51:39Z",
-      "updatedAt": "2026-06-11T10:14:37Z",
+      "pushedAt": "2026-06-11T10:53:06Z",
+      "updatedAt": "2026-06-11T10:57:36Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "resemble-ai/chatterbox",
@@ -945,7 +945,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "RooCodeInc/Roo-Code",
@@ -972,7 +972,7 @@
       "archived": true,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "humanlayer/12-factor-agents",
@@ -999,7 +999,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "modelcontextprotocol/typescript-sdk",
@@ -1026,7 +1026,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     },
     {
       "repo": "trigaten/Learn_Prompting",
@@ -1053,7 +1053,7 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:34:56.041Z"
+      "lastFetchedAt": "2026-06-11T11:08:30.592Z"
     }
   ]
 }
