@@ -57,6 +57,73 @@ repositories:
       zh: OpenAI Agents SDK 的 Python 实现，用于构建带工具调用的 Agent 工作流。
       en: Python implementation of the OpenAI Agents SDK for tool-using agent workflows.
 
+  - repo: langchain-ai/langgraph
+    category: Coding Agents
+    platforms: [Agents, Python, Workflows]
+    tags: [agent-graphs, orchestration, workflows]
+    summary:
+      zh: 用图结构构建可恢复、可编排的长期运行 Agent 工作流。
+      en: Graph-based framework for building durable and orchestrated agent workflows.
+
+  - repo: anomalyco/opencode
+    category: Developer Tools
+    platforms: [CLI, Agents, Developers]
+    tags: [coding-agent, terminal, automation]
+    summary:
+      zh: 面向终端的开源编程 Agent，适合程序员在仓库内协作完成代码任务。
+      en: Open-source terminal coding agent for collaborating with AI inside software repositories.
+    featured: true
+
+  - repo: google-gemini/gemini-cli
+    category: Developer Tools
+    platforms: [CLI, Gemini, Developers]
+    tags: [coding-agent, terminal, google]
+    summary:
+      zh: Google Gemini 官方开源 CLI，把模型能力带到命令行开发流程中。
+      en: Official open-source Gemini CLI that brings AI agent capabilities into terminal workflows.
+    featured: true
+
+  - repo: cline/cline
+    category: Developer Tools
+    platforms: [VS Code, Agents, Developers]
+    tags: [coding-agent, ide, automation]
+    summary:
+      zh: 可作为 VS Code 扩展、SDK 或 CLI 使用的自主编程 Agent。
+      en: Autonomous coding agent available as a VS Code extension, SDK, or CLI assistant.
+    featured: true
+
+  - repo: RooCodeInc/Roo-Code
+    category: Developer Tools
+    platforms: [VS Code, Agents, Developers]
+    tags: [coding-agent, multi-agent, ide]
+    summary:
+      zh: 在代码编辑器中组织一组 AI Agent 协助规划、编码、调试和审查。
+      en: AI coding assistant that brings a team of specialized agents into the code editor.
+
+  - repo: Aider-AI/aider
+    category: Developer Tools
+    platforms: [CLI, Git, Developers]
+    tags: [coding-agent, pair-programming, terminal]
+    summary:
+      zh: 运行在终端里的 AI 结对编程工具，可直接基于 Git 仓库修改代码。
+      en: Terminal AI pair programmer that edits code directly inside Git repositories.
+
+  - repo: continuedev/continue
+    category: Developer Tools
+    platforms: [IDE, CLI, Developers]
+    tags: [code-assistant, ci, autocomplete]
+    summary:
+      zh: 开源 AI 代码助手和可版本化检查工具，适合团队把 AI 编码规则纳入工程流程。
+      en: Open-source AI code assistant and source-controlled checks for developer teams.
+
+  - repo: OpenHands/OpenHands
+    category: Developer Tools
+    platforms: [Agents, Browser, Developers]
+    tags: [coding-agent, software-engineering, automation]
+    summary:
+      zh: 面向软件工程任务的 AI 驱动开发平台，可执行代码、浏览网页并处理仓库任务。
+      en: AI-driven development platform for executing code, browsing, and handling software tasks.
+
   - repo: run-llama/llama_index
     category: Data & Research
     platforms: [Python, RAG, Agents]
@@ -64,6 +131,14 @@ repositories:
     summary:
       zh: 面向 RAG、知识检索和 Agent 数据编排的开源框架。
       en: Open-source framework for RAG, knowledge retrieval, and agent data orchestration.
+
+  - repo: langchain-ai/langchain
+    category: Data & Research
+    platforms: [Python, JavaScript, RAG]
+    tags: [llm-apps, rag, agents]
+    summary:
+      zh: 构建 LLM 应用、RAG、Agent 和工具调用流程的主流开源平台。
+      en: Widely used platform for building LLM applications, RAG, agents, and tool workflows.
 
   - repo: deepset-ai/haystack
     category: Data & Research
@@ -80,6 +155,22 @@ repositories:
     summary:
       zh: 面向 AI 应用和 Agent 的记忆层。
       en: Memory layer for AI applications and agent workflows.
+
+  - repo: firecrawl/firecrawl
+    category: Data & Research
+    platforms: [Web, RAG, Developers]
+    tags: [web-crawling, scraping, rag]
+    summary:
+      zh: 面向 AI 和 RAG 场景的网页搜索、抓取与结构化提取工具。
+      en: Web search, crawling, scraping, and extraction toolkit for AI and RAG workflows.
+
+  - repo: unclecode/crawl4ai
+    category: Data & Research
+    platforms: [Web, RAG, Developers]
+    tags: [web-crawling, markdown, extraction]
+    summary:
+      zh: 面向 LLM 的开源网页爬取和抓取工具，适合把网页整理成可用知识。
+      en: LLM-friendly open-source crawler and scraper for turning web pages into usable knowledge.
 
   - repo: Comfy-Org/ComfyUI
     category: Design & Media
@@ -106,6 +197,47 @@ repositories:
       zh: 面向创作者的 AI 图像生成、画布和工作流平台。
       en: AI image generation, canvas, and workflow platform for creators.
 
+  - repo: microsoft/markitdown
+    category: Creator & Content
+    platforms: [Documents, Creators, Developers]
+    tags: [document-conversion, markdown, content]
+    summary:
+      zh: 将 PDF、Office 等文件转换为 Markdown，方便自媒体和知识工作者做 AI 素材整理。
+      en: Converts files and office documents to Markdown for creator research and AI-ready content.
+    featured: true
+
+  - repo: PaddlePaddle/PaddleOCR
+    category: Creator & Content
+    platforms: [OCR, Documents, Creators]
+    tags: [ocr, documents, extraction]
+    summary:
+      zh: 多语言 OCR 工具包，可把图片和 PDF 文档转成结构化内容。
+      en: Multilingual OCR toolkit for turning images and PDFs into structured content.
+
+  - repo: fishaudio/fish-speech
+    category: Creator & Content
+    platforms: [Audio, Voice, Creators]
+    tags: [tts, voice, audio]
+    summary:
+      zh: 开源语音合成项目，适合视频、播客和数字人内容制作工作流。
+      en: Open-source TTS project for video, podcast, and avatar content workflows.
+
+  - repo: resemble-ai/chatterbox
+    category: Creator & Content
+    platforms: [Audio, Voice, Creators]
+    tags: [tts, voice, content]
+    summary:
+      zh: 高质量开源 TTS 项目，适合自媒体语音、旁白和角色对白生成。
+      en: High-quality open-source TTS project for creator voiceovers, narration, and dialogue.
+
+  - repo: stanford-oval/storm
+    category: Creator & Content
+    platforms: [Writing, Research, Creators]
+    tags: [research-writing, content, knowledge]
+    summary:
+      zh: 面向长文写作和资料调研的 AI 系统，可辅助生成有结构的研究型内容。
+      en: AI system for long-form research and structured article writing workflows.
+
   - repo: n8n-io/n8n
     category: Productivity
     platforms: [Automation, Workflows]
@@ -114,6 +246,14 @@ repositories:
       zh: 可视化自动化平台，可连接 AI、SaaS 和内部工具。
       en: Visual automation platform for connecting AI, SaaS, and internal tools.
 
+  - repo: langgenius/dify
+    category: Productivity
+    platforms: [Low-code, Apps, Agents]
+    tags: [llm-apps, agents, workflow]
+    summary:
+      zh: 开源 LLM 应用开发平台，适合快速搭建聊天助手、知识库和 Agent 应用。
+      en: Open-source LLM app platform for building chatbots, knowledge apps, and agent workflows.
+
   - repo: FlowiseAI/Flowise
     category: Productivity
     platforms: [Low-code, Agents]
@@ -121,6 +261,14 @@ repositories:
     summary:
       zh: 用可视化方式构建 LLM 应用和 Agent 流程的低代码工具。
       en: Low-code visual builder for LLM applications and agent workflows.
+
+  - repo: langflow-ai/langflow
+    category: Productivity
+    platforms: [Low-code, Agents, Workflows]
+    tags: [low-code, workflow, ai-apps]
+    summary:
+      zh: 可视化构建和部署 AI Agent 与工作流的开源平台。
+      en: Visual platform for building and deploying AI agents and workflows.
 
   - repo: open-webui/open-webui
     category: Productivity

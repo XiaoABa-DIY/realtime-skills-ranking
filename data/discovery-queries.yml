@@ -15,6 +15,30 @@ queries:
       zh: 可能是可编排 AI Agent 的开源框架。
       en: Potential open-source framework for orchestrating AI agents.
 
+  - id: developer-ai-tools
+    query: "AI coding agent IDE CLI"
+    category: Developer Tools
+    limit: 10
+    reason:
+      zh: 面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。
+      en: AI coding, IDE, CLI, or engineering automation tools for developers.
+
+  - id: creator-ai-tools
+    query: "AI creator tool TTS OCR content"
+    category: Creator & Content
+    limit: 10
+    reason:
+      zh: 面向自媒体和内容创作者的语音、OCR、素材整理或内容生成工具。
+      en: Voice, OCR, research, or content generation tools for creators.
+
+  - id: ai-web-research-tools
+    query: "AI web crawler RAG extraction"
+    category: Data & Research
+    limit: 8
+    reason:
+      zh: 适合资料调研、网页抓取和 RAG 知识整理的工具。
+      en: Tools for web research, crawling, extraction, and RAG knowledge preparation.
+
   - id: prompt-workflows
     query: "prompt engineering guide AI"
     category: Prompt & Workflow

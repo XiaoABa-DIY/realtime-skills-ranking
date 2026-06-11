@@ -13,7 +13,9 @@ const GITHUB_API = "https://api.github.com";
 
 export const CATEGORIES = [
   "Coding Agents",
+  "Developer Tools",
   "Design & Media",
+  "Creator & Content",
   "Data & Research",
   "Productivity",
   "MCP & Tooling",
@@ -487,24 +489,9 @@ export async function buildCandidates(
         candidates.push(mapCandidate(item, query, fetchedAt));
       }
     } catch (error) {
-      candidates.push({
-        repo: `query-error/${query.id}`,
-        fullName: `query-error/${query.id}`,
-        category: query.category,
-        matchedQuery: query.id,
-        reason: query.reason,
-        description: error?.message ?? "GitHub search failed",
-        stars: 0,
-        forks: 0,
-        language: "Unknown",
-        license: "NOASSERTION",
-        htmlUrl: "",
-        pushedAt: "",
-        updatedAt: "",
-        alreadyCurated: false,
-        fetchStatus: "error",
-        lastFetchedAt: fetchedAt,
-      });
+      console.warn(
+        `Skipping candidate query "${query.id}": ${error?.message ?? "GitHub search failed"}`,
+      );
     }
   }
 

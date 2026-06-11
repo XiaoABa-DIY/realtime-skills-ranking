@@ -1,6 +1,6 @@
 # AI Skills Live Ranking / AI Skills 实时排行榜
 
-面向 AI 工具生态的开源 skills 排行榜与分类目录。项目会整理 AI Agent、MCP 工具、提示词工程、RAG/数据研究、创作工作流和生产力自动化相关仓库，并按照 GitHub 星标数生成可筛选、可搜索、可部署到 GitHub Pages 的实时榜单。
+面向 AI 工具生态的开源 skills 排行榜与分类目录。项目会整理 AI Agent、程序员开发工具、MCP 工具、提示词工程、RAG/数据研究、自媒体创作工作流和生产力自动化相关仓库，并按照 GitHub 星标数生成可筛选、可搜索、可部署到 GitHub Pages 的实时榜单。
 
 This is a bilingual GitHub Pages dashboard for open-source AI skills, agent workflows, MCP tools, prompt engineering resources, data/research tooling, creative automation projects, and productivity workflows.
 
@@ -11,7 +11,8 @@ This is a bilingual GitHub Pages dashboard for open-source AI skills, agent work
 
 - **实时排行榜**：GitHub Actions 定时刷新 GitHub star、fork、language、license、更新时间等指标。
 - **双语界面**：站点 UI 和人工简介支持中文/英文一键切换。
-- **分类目录**：按 `Coding Agents`、`Design & Media`、`Data & Research`、`Productivity`、`MCP & Tooling`、`Prompt & Workflow`、`Learning & Docs` 分类浏览。
+- **分类目录**：按 `Coding Agents`、`Developer Tools`、`Design & Media`、`Creator & Content`、`Data & Research`、`Productivity`、`MCP & Tooling`、`Prompt & Workflow`、`Learning & Docs` 分类浏览。
+- **人群友好**：程序员可优先看 `Developer Tools`、`Coding Agents`、`MCP & Tooling`；自媒体和内容创作者可优先看 `Creator & Content`、`Design & Media`、`Prompt & Workflow`。
 - **多维筛选**：支持关键词、分类、平台、标签、许可证、语言过滤。
 - **多种排序**：支持按星标数、fork 数、最近更新、仓库名排序。
 - **详情实时刷新**：榜单使用静态快照，单个仓库详情可在浏览器里实时请求 GitHub API。
@@ -167,7 +168,7 @@ npm run test:e2e
 - 分类来自固定分类列表。
 - 中英文简介都已填写。
 - 标签保持短小、可复用、英文小写。
-- 仓库确实与 AI skills、Agent、MCP、提示词、RAG、创作工作流或 AI 自动化相关。
+- 仓库确实与 AI skills、Agent、MCP、提示词、RAG、程序员工具、自媒体创作工作流或 AI 自动化相关。
 
 更详细规则见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 

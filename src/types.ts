@@ -1,6 +1,8 @@
 export const categories = [
   "Coding Agents",
+  "Developer Tools",
   "Design & Media",
+  "Creator & Content",
   "Data & Research",
   "Productivity",
   "MCP & Tooling",

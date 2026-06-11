@@ -181,4 +181,23 @@ describe("update-data script helpers", () => {
       matchedQuery: "agents",
     });
   });
+
+  it("skips failed discovery queries without creating placeholder candidates", async () => {
+    const queries = [
+      {
+        id: "rate-limited",
+        query: "ai tools",
+        category: "Developer Tools",
+        limit: 10,
+        reason: { zh: "Candidate zh", en: "Candidate" },
+      },
+    ];
+    const fetcher = async () => {
+      throw new Error("GitHub API 403: rate limited");
+    };
+
+    const result = await buildCandidates(queries, curated, fetcher);
+
+    expect(result.candidates).toEqual([]);
+  });
 });

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T10:16:55.490Z",
+  "generatedAt": "2026-06-11T10:32:06.016Z",
   "source": "github-rest",
   "repositories": [
     {
@@ -11,7 +11,6 @@
         "zh": "可视化自动化平台，可连接 AI、SaaS 和内部工具。",
         "en": "Visual automation platform for connecting AI, SaaS, and internal tools."
       },
-      "homepage": "https://n8n.io",
       "featured": false,
       "fullName": "n8n-io/n8n",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
@@ -27,7 +26,35 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "category": "Developer Tools",
+      "platforms": ["CLI", "Agents", "Developers"],
+      "tags": ["coding-agent", "terminal", "automation"],
+      "summary": {
+        "zh": "面向终端的开源编程 Agent，适合程序员在仓库内协作完成代码任务。",
+        "en": "Open-source terminal coding agent for collaborating with AI inside software repositories."
+      },
+      "featured": true,
+      "fullName": "anomalyco/opencode",
+      "description": "The open source coding agent.",
+      "stars": 172994,
+      "forks": 20785,
+      "openIssues": 6907,
+      "watchers": 657,
+      "language": "TypeScript",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/anomalyco/opencode",
+      "pushedAt": "2026-06-11T10:28:07Z",
+      "updatedAt": "2026-06-11T10:29:36Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "AUTOMATIC1111/stable-diffusion-webui",
@@ -38,7 +65,6 @@
         "zh": "Stable Diffusion 社区常用的网页界面和扩展生态。",
         "en": "Popular Stable Diffusion web UI and extension ecosystem."
       },
-      "homepage": "",
       "featured": false,
       "fullName": "AUTOMATIC1111/stable-diffusion-webui",
       "description": "Stable Diffusion web UI",
@@ -54,7 +80,89 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "microsoft/markitdown",
+      "category": "Creator & Content",
+      "platforms": ["Documents", "Creators", "Developers"],
+      "tags": ["document-conversion", "markdown", "content"],
+      "summary": {
+        "zh": "将 PDF、Office 等文件转换为 Markdown，方便自媒体和知识工作者做 AI 素材整理。",
+        "en": "Converts files and office documents to Markdown for creator research and AI-ready content."
+      },
+      "featured": true,
+      "fullName": "microsoft/markitdown",
+      "description": "Python tool for converting files and office documents to Markdown.",
+      "stars": 150700,
+      "forks": 10372,
+      "openIssues": 832,
+      "watchers": 150700,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/microsoft/markitdown",
+      "pushedAt": "2026-05-26T22:41:34Z",
+      "updatedAt": "2026-06-11T10:29:43Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "langflow-ai/langflow",
+      "category": "Productivity",
+      "platforms": ["Low-code", "Agents", "Workflows"],
+      "tags": ["low-code", "workflow", "ai-apps"],
+      "summary": {
+        "zh": "可视化构建和部署 AI Agent 与工作流的开源平台。",
+        "en": "Visual platform for building and deploying AI agents and workflows."
+      },
+      "featured": false,
+      "fullName": "langflow-ai/langflow",
+      "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+      "stars": 149536,
+      "forks": 9238,
+      "openIssues": 949,
+      "watchers": 149536,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/langflow-ai/langflow",
+      "pushedAt": "2026-06-11T10:19:47Z",
+      "updatedAt": "2026-06-11T10:09:49Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "langgenius/dify",
+      "category": "Productivity",
+      "platforms": ["Low-code", "Apps", "Agents"],
+      "tags": ["llm-apps", "agents", "workflow"],
+      "summary": {
+        "zh": "开源 LLM 应用开发平台，适合快速搭建聊天助手、知识库和 Agent 应用。",
+        "en": "Open-source LLM app platform for building chatbots, knowledge apps, and agent workflows."
+      },
+      "featured": false,
+      "fullName": "langgenius/dify",
+      "description": "Production-ready platform for agentic workflow development.",
+      "stars": 144836,
+      "forks": 22793,
+      "openIssues": 747,
+      "watchers": 144836,
+      "language": "TypeScript",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/langgenius/dify",
+      "pushedAt": "2026-06-11T10:26:44Z",
+      "updatedAt": "2026-06-11T10:22:47Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "open-webui/open-webui",
@@ -65,7 +173,6 @@
         "zh": "面向本地和远程模型的自托管 AI 聊天界面。",
         "en": "Self-hosted AI chat interface for local and remote models."
       },
-      "homepage": "https://openwebui.com",
       "featured": false,
       "fullName": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
@@ -81,7 +188,62 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "category": "Data & Research",
+      "platforms": ["Python", "JavaScript", "RAG"],
+      "tags": ["llm-apps", "rag", "agents"],
+      "summary": {
+        "zh": "构建 LLM 应用、RAG、Agent 和工具调用流程的主流开源平台。",
+        "en": "Widely used platform for building LLM applications, RAG, agents, and tool workflows."
+      },
+      "featured": false,
+      "fullName": "langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "stars": 139021,
+      "forks": 23035,
+      "openIssues": 434,
+      "watchers": 888,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/langchain-ai/langchain",
+      "pushedAt": "2026-06-11T07:50:24Z",
+      "updatedAt": "2026-06-11T10:22:40Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "firecrawl/firecrawl",
+      "category": "Data & Research",
+      "platforms": ["Web", "RAG", "Developers"],
+      "tags": ["web-crawling", "scraping", "rag"],
+      "summary": {
+        "zh": "面向 AI 和 RAG 场景的网页搜索、抓取与结构化提取工具。",
+        "en": "Web search, crawling, scraping, and extraction toolkit for AI and RAG workflows."
+      },
+      "featured": false,
+      "fullName": "firecrawl/firecrawl",
+      "description": "The API to search, scrape, and interact with the web at scale. 🔥",
+      "stars": 131326,
+      "forks": 7754,
+      "openIssues": 377,
+      "watchers": 131326,
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "htmlUrl": "https://github.com/firecrawl/firecrawl",
+      "pushedAt": "2026-06-11T09:10:23Z",
+      "updatedAt": "2026-06-11T10:26:18Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "Comfy-Org/ComfyUI",
@@ -92,7 +254,6 @@
         "zh": "节点式 AI 图像和多媒体生成工作流工具。",
         "en": "Node-based workflow tool for AI image and media generation."
       },
-      "homepage": "https://www.comfy.org/",
       "featured": true,
       "fullName": "Comfy-Org/ComfyUI",
       "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
@@ -108,7 +269,35 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "google-gemini/gemini-cli",
+      "category": "Developer Tools",
+      "platforms": ["CLI", "Gemini", "Developers"],
+      "tags": ["coding-agent", "terminal", "google"],
+      "summary": {
+        "zh": "Google Gemini 官方开源 CLI，把模型能力带到命令行开发流程中。",
+        "en": "Official open-source Gemini CLI that brings AI agent capabilities into terminal workflows."
+      },
+      "featured": true,
+      "fullName": "google-gemini/gemini-cli",
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "stars": 105156,
+      "forks": 14032,
+      "openIssues": 1300,
+      "watchers": 567,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/google-gemini/gemini-cli",
+      "pushedAt": "2026-06-10T18:38:14Z",
+      "updatedAt": "2026-06-11T09:57:55Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "browser-use/browser-use",
@@ -119,11 +308,10 @@
         "zh": "让 AI Agent 操作浏览器并完成网页任务的自动化项目。",
         "en": "Browser automation project that helps AI agents operate websites and complete web tasks."
       },
-      "homepage": "https://browser-use.com",
       "featured": false,
       "fullName": "browser-use/browser-use",
       "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
-      "stars": 98236,
+      "stars": 98238,
       "forks": 10955,
       "openIssues": 285,
       "watchers": 439,
@@ -131,11 +319,12 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/browser-use/browser-use",
       "pushedAt": "2026-06-11T02:59:48Z",
-      "updatedAt": "2026-06-11T10:12:45Z",
+      "updatedAt": "2026-06-11T10:24:22Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "modelcontextprotocol/servers",
@@ -146,7 +335,6 @@
         "zh": "官方 MCP 服务器集合，覆盖文件系统、数据库、浏览器等常见工具连接。",
         "en": "Official MCP server collection for common tool integrations such as files, databases, and browsers."
       },
-      "homepage": "https://modelcontextprotocol.io",
       "featured": true,
       "fullName": "modelcontextprotocol/servers",
       "description": "Model Context Protocol Servers",
@@ -162,7 +350,35 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "PaddlePaddle/PaddleOCR",
+      "category": "Creator & Content",
+      "platforms": ["OCR", "Documents", "Creators"],
+      "tags": ["ocr", "documents", "extraction"],
+      "summary": {
+        "zh": "多语言 OCR 工具包，可把图片和 PDF 文档转成结构化内容。",
+        "en": "Multilingual OCR toolkit for turning images and PDFs into structured content."
+      },
+      "featured": false,
+      "fullName": "PaddlePaddle/PaddleOCR",
+      "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
+      "stars": 81819,
+      "forks": 10729,
+      "openIssues": 214,
+      "watchers": 81819,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/PaddlePaddle/PaddleOCR",
+      "pushedAt": "2026-06-11T10:26:17Z",
+      "updatedAt": "2026-06-11T10:25:11Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "mlabonne/llm-course",
@@ -173,7 +389,6 @@
         "zh": "覆盖 LLM 基础、微调和部署的课程资料。",
         "en": "Course materials covering LLM fundamentals, fine-tuning, and deployment."
       },
-      "homepage": "https://mlabonne.github.io/blog/",
       "featured": false,
       "fullName": "mlabonne/llm-course",
       "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
@@ -189,7 +404,35 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "OpenHands/OpenHands",
+      "category": "Developer Tools",
+      "platforms": ["Agents", "Browser", "Developers"],
+      "tags": ["coding-agent", "software-engineering", "automation"],
+      "summary": {
+        "zh": "面向软件工程任务的 AI 驱动开发平台，可执行代码、浏览网页并处理仓库任务。",
+        "en": "AI-driven development platform for executing code, browsing, and handling software tasks."
+      },
+      "featured": false,
+      "fullName": "OpenHands/OpenHands",
+      "description": "🙌 OpenHands: AI-Driven Development",
+      "stars": 76450,
+      "forks": 9714,
+      "openIssues": 335,
+      "watchers": 455,
+      "language": "Python",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/OpenHands/OpenHands",
+      "pushedAt": "2026-06-11T08:55:24Z",
+      "updatedAt": "2026-06-11T10:17:08Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "dair-ai/Prompt-Engineering-Guide",
@@ -200,7 +443,6 @@
         "zh": "系统化讲解提示工程方法、论文和实践案例的指南。",
         "en": "Structured guide to prompt engineering methods, papers, and practical examples."
       },
-      "homepage": "https://www.promptingguide.ai/",
       "featured": false,
       "fullName": "dair-ai/Prompt-Engineering-Guide",
       "description": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
@@ -216,7 +458,35 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "unclecode/crawl4ai",
+      "category": "Data & Research",
+      "platforms": ["Web", "RAG", "Developers"],
+      "tags": ["web-crawling", "markdown", "extraction"],
+      "summary": {
+        "zh": "面向 LLM 的开源网页爬取和抓取工具，适合把网页整理成可用知识。",
+        "en": "LLM-friendly open-source crawler and scraper for turning web pages into usable knowledge."
+      },
+      "featured": false,
+      "fullName": "unclecode/crawl4ai",
+      "description": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
+      "stars": 68259,
+      "forks": 6972,
+      "openIssues": 96,
+      "watchers": 68259,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/unclecode/crawl4ai",
+      "pushedAt": "2026-06-04T06:19:50Z",
+      "updatedAt": "2026-06-11T09:59:58Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "microsoft/ai-agents-for-beginners",
@@ -227,11 +497,10 @@
         "zh": "面向初学者的 AI Agent 课程，包含概念、模式和实战示例。",
         "en": "Beginner-friendly AI agent course with concepts, patterns, and practical examples."
       },
-      "homepage": "https://aka.ms/ai-agents-beginners",
       "featured": true,
       "fullName": "microsoft/ai-agents-for-beginners",
       "description": "12 Lessons to Get Started Building AI Agents",
-      "stars": 66983,
+      "stars": 66985,
       "forks": 22111,
       "openIssues": 22,
       "watchers": 554,
@@ -239,11 +508,39 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/microsoft/ai-agents-for-beginners",
       "pushedAt": "2026-05-25T17:28:39Z",
-      "updatedAt": "2026-06-11T10:09:32Z",
+      "updatedAt": "2026-06-11T10:27:16Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "cline/cline",
+      "category": "Developer Tools",
+      "platforms": ["VS Code", "Agents", "Developers"],
+      "tags": ["coding-agent", "ide", "automation"],
+      "summary": {
+        "zh": "可作为 VS Code 扩展、SDK 或 CLI 使用的自主编程 Agent。",
+        "en": "Autonomous coding agent available as a VS Code extension, SDK, or CLI assistant."
+      },
+      "featured": true,
+      "fullName": "cline/cline",
+      "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
+      "stars": 63047,
+      "forks": 6657,
+      "openIssues": 1062,
+      "watchers": 277,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/cline/cline",
+      "pushedAt": "2026-06-11T10:00:50Z",
+      "updatedAt": "2026-06-11T10:15:59Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "microsoft/autogen",
@@ -254,7 +551,6 @@
         "zh": "微软开源的多智能体编程和自动化框架。",
         "en": "Microsoft's open-source framework for multi-agent programming and automation."
       },
-      "homepage": "https://microsoft.github.io/autogen/",
       "featured": false,
       "fullName": "microsoft/autogen",
       "description": "A programming framework for agentic AI",
@@ -270,7 +566,8 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "mem0ai/mem0",
@@ -281,7 +578,6 @@
         "zh": "面向 AI 应用和 Agent 的记忆层。",
         "en": "Memory layer for AI applications and agent workflows."
       },
-      "homepage": "https://mem0.ai",
       "featured": false,
       "fullName": "mem0ai/mem0",
       "description": "Universal memory layer for AI Agents",
@@ -297,7 +593,8 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "FlowiseAI/Flowise",
@@ -308,7 +605,6 @@
         "zh": "用可视化方式构建 LLM 应用和 Agent 流程的低代码工具。",
         "en": "Low-code visual builder for LLM applications and agent workflows."
       },
-      "homepage": "https://flowiseai.com",
       "featured": false,
       "fullName": "FlowiseAI/Flowise",
       "description": "Build AI Agents, Visually",
@@ -324,7 +620,8 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "crewAIInc/crewAI",
@@ -335,23 +632,23 @@
         "zh": "用角色、任务和流程组织协作式 AI Agent 的框架。",
         "en": "Framework for orchestrating collaborative AI agents with roles, tasks, and workflows."
       },
-      "homepage": "https://crewai.com",
       "featured": false,
       "fullName": "crewAIInc/crewAI",
       "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
-      "stars": 53258,
+      "stars": 53259,
       "forks": 7448,
-      "openIssues": 424,
+      "openIssues": 425,
       "watchers": 381,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/crewAIInc/crewAI",
       "pushedAt": "2026-06-11T05:21:38Z",
-      "updatedAt": "2026-06-11T10:09:56Z",
+      "updatedAt": "2026-06-11T10:25:31Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "run-llama/llama_index",
@@ -362,11 +659,10 @@
         "zh": "面向 RAG、知识检索和 Agent 数据编排的开源框架。",
         "en": "Open-source framework for RAG, knowledge retrieval, and agent data orchestration."
       },
-      "homepage": "https://developers.llamaindex.ai",
       "featured": false,
       "fullName": "run-llama/llama_index",
       "description": "LlamaIndex is the leading document agent and OCR platform",
-      "stars": 50075,
+      "stars": 50076,
       "forks": 7536,
       "openIssues": 429,
       "watchers": 279,
@@ -374,11 +670,12 @@
       "license": "MIT",
       "htmlUrl": "https://github.com/run-llama/llama_index",
       "pushedAt": "2026-06-10T04:01:39Z",
-      "updatedAt": "2026-06-11T10:09:26Z",
+      "updatedAt": "2026-06-11T10:19:19Z",
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "microsoft/AI-For-Beginners",
@@ -389,7 +686,6 @@
         "zh": "微软开源的 AI 入门课程。",
         "en": "Microsoft's open-source AI fundamentals course."
       },
-      "homepage": "",
       "featured": false,
       "fullName": "microsoft/AI-For-Beginners",
       "description": "12 Weeks, 24 Lessons, AI for All!",
@@ -405,7 +701,143 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "Aider-AI/aider",
+      "category": "Developer Tools",
+      "platforms": ["CLI", "Git", "Developers"],
+      "tags": ["coding-agent", "pair-programming", "terminal"],
+      "summary": {
+        "zh": "运行在终端里的 AI 结对编程工具，可直接基于 Git 仓库修改代码。",
+        "en": "Terminal AI pair programmer that edits code directly inside Git repositories."
+      },
+      "featured": false,
+      "fullName": "Aider-AI/aider",
+      "description": "aider is AI pair programming in your terminal",
+      "stars": 45993,
+      "forks": 4566,
+      "openIssues": 1615,
+      "watchers": 253,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/Aider-AI/aider",
+      "pushedAt": "2026-05-22T14:02:20Z",
+      "updatedAt": "2026-06-11T10:23:34Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "langchain-ai/langgraph",
+      "category": "Coding Agents",
+      "platforms": ["Agents", "Python", "Workflows"],
+      "tags": ["agent-graphs", "orchestration", "workflows"],
+      "summary": {
+        "zh": "用图结构构建可恢复、可编排的长期运行 Agent 工作流。",
+        "en": "Graph-based framework for building durable and orchestrated agent workflows."
+      },
+      "featured": false,
+      "fullName": "langchain-ai/langgraph",
+      "description": "Build resilient agents.",
+      "stars": 34431,
+      "forks": 5785,
+      "openIssues": 562,
+      "watchers": 159,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/langchain-ai/langgraph",
+      "pushedAt": "2026-06-11T00:10:15Z",
+      "updatedAt": "2026-06-11T10:29:30Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "continuedev/continue",
+      "category": "Developer Tools",
+      "platforms": ["IDE", "CLI", "Developers"],
+      "tags": ["code-assistant", "ci", "autocomplete"],
+      "summary": {
+        "zh": "开源 AI 代码助手和可版本化检查工具，适合团队把 AI 编码规则纳入工程流程。",
+        "en": "Open-source AI code assistant and source-controlled checks for developer teams."
+      },
+      "featured": false,
+      "fullName": "continuedev/continue",
+      "description": "⏩ Source-controlled AI checks, enforceable in CI. Powered by the open-source Continue CLI",
+      "stars": 33650,
+      "forks": 4638,
+      "openIssues": 744,
+      "watchers": 157,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/continuedev/continue",
+      "pushedAt": "2026-06-11T07:36:12Z",
+      "updatedAt": "2026-06-11T10:02:49Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "fishaudio/fish-speech",
+      "category": "Creator & Content",
+      "platforms": ["Audio", "Voice", "Creators"],
+      "tags": ["tts", "voice", "audio"],
+      "summary": {
+        "zh": "开源语音合成项目，适合视频、播客和数字人内容制作工作流。",
+        "en": "Open-source TTS project for video, podcast, and avatar content workflows."
+      },
+      "featured": false,
+      "fullName": "fishaudio/fish-speech",
+      "description": "SOTA Open Source TTS",
+      "stars": 30750,
+      "forks": 2622,
+      "openIssues": 16,
+      "watchers": 30750,
+      "language": "Python",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/fishaudio/fish-speech",
+      "pushedAt": "2026-06-09T10:04:07Z",
+      "updatedAt": "2026-06-11T10:06:21Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "stanford-oval/storm",
+      "category": "Creator & Content",
+      "platforms": ["Writing", "Research", "Creators"],
+      "tags": ["research-writing", "content", "knowledge"],
+      "summary": {
+        "zh": "面向长文写作和资料调研的 AI 系统，可辅助生成有结构的研究型内容。",
+        "en": "AI system for long-form research and structured article writing workflows."
+      },
+      "featured": false,
+      "fullName": "stanford-oval/storm",
+      "description": "An LLM-powered knowledge curation system that researches a topic and generates a full-length report with citations.",
+      "stars": 28351,
+      "forks": 2584,
+      "openIssues": 95,
+      "watchers": 28351,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/stanford-oval/storm",
+      "pushedAt": "2025-09-30T18:07:21Z",
+      "updatedAt": "2026-06-11T09:42:06Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "invoke-ai/InvokeAI",
@@ -416,7 +848,6 @@
         "zh": "面向创作者的 AI 图像生成、画布和工作流平台。",
         "en": "AI image generation, canvas, and workflow platform for creators."
       },
-      "homepage": "https://invoke-ai.github.io/InvokeAI/",
       "featured": false,
       "fullName": "invoke-ai/InvokeAI",
       "description": "Invoke is a leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies. The solution offers an industry leading WebUI, and serves as the foundation for multiple commercial products.",
@@ -432,7 +863,8 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "openai/openai-agents-python",
@@ -443,7 +875,6 @@
         "zh": "OpenAI Agents SDK 的 Python 实现，用于构建带工具调用的 Agent 工作流。",
         "en": "Python implementation of the OpenAI Agents SDK for tool-using agent workflows."
       },
-      "homepage": "https://openai.github.io/openai-agents-python/",
       "featured": false,
       "fullName": "openai/openai-agents-python",
       "description": "A lightweight, powerful framework for multi-agent workflows",
@@ -459,7 +890,8 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "deepset-ai/haystack",
@@ -470,7 +902,6 @@
         "zh": "构建检索增强生成、问答和搜索管线的框架。",
         "en": "Framework for building retrieval-augmented generation, QA, and search pipelines."
       },
-      "homepage": "https://haystack.deepset.ai",
       "featured": false,
       "fullName": "deepset-ai/haystack",
       "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
@@ -486,7 +917,62 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "resemble-ai/chatterbox",
+      "category": "Creator & Content",
+      "platforms": ["Audio", "Voice", "Creators"],
+      "tags": ["tts", "voice", "content"],
+      "summary": {
+        "zh": "高质量开源 TTS 项目，适合自媒体语音、旁白和角色对白生成。",
+        "en": "High-quality open-source TTS project for creator voiceovers, narration, and dialogue."
+      },
+      "featured": false,
+      "fullName": "resemble-ai/chatterbox",
+      "description": "SoTA open-source TTS",
+      "stars": 25016,
+      "forks": 3319,
+      "openIssues": 340,
+      "watchers": 25016,
+      "language": "Python",
+      "license": "MIT",
+      "htmlUrl": "https://github.com/resemble-ai/chatterbox",
+      "pushedAt": "2026-06-10T16:18:41Z",
+      "updatedAt": "2026-06-11T05:44:04Z",
+      "archived": false,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+    },
+    {
+      "repo": "RooCodeInc/Roo-Code",
+      "category": "Developer Tools",
+      "platforms": ["VS Code", "Agents", "Developers"],
+      "tags": ["coding-agent", "multi-agent", "ide"],
+      "summary": {
+        "zh": "在代码编辑器中组织一组 AI Agent 协助规划、编码、调试和审查。",
+        "en": "AI coding assistant that brings a team of specialized agents into the code editor."
+      },
+      "featured": false,
+      "fullName": "RooCodeInc/Roo-Code",
+      "description": "Roo Code gives you a whole dev team of AI agents in your code editor.",
+      "stars": 24227,
+      "forks": 3312,
+      "openIssues": 1038,
+      "watchers": 140,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "htmlUrl": "https://github.com/RooCodeInc/Roo-Code",
+      "pushedAt": "2026-05-15T18:08:47Z",
+      "updatedAt": "2026-06-11T07:46:06Z",
+      "archived": true,
+      "disabled": false,
+      "fetchStatus": "ok",
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "humanlayer/12-factor-agents",
@@ -497,7 +983,6 @@
         "zh": "用工程化原则描述可靠 LLM Agent 的设计模式。",
         "en": "Engineering principles and patterns for reliable LLM agents."
       },
-      "homepage": "",
       "featured": false,
       "fullName": "humanlayer/12-factor-agents",
       "description": "What are the principles we can use to build LLM-powered software that is actually good enough to put in the hands of production customers?",
@@ -513,7 +998,8 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "modelcontextprotocol/typescript-sdk",
@@ -524,7 +1010,6 @@
         "zh": "用 TypeScript 构建 MCP 客户端和服务器的官方 SDK。",
         "en": "Official TypeScript SDK for building MCP clients and servers."
       },
-      "homepage": "https://modelcontextprotocol.io",
       "featured": false,
       "fullName": "modelcontextprotocol/typescript-sdk",
       "description": "The official TypeScript SDK for Model Context Protocol servers and clients",
@@ -540,7 +1025,8 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     },
     {
       "repo": "trigaten/Learn_Prompting",
@@ -551,7 +1037,6 @@
         "zh": "面向提示工程学习的开源课程和示例集合。",
         "en": "Open-source course and examples for learning prompt engineering."
       },
-      "homepage": "https://learnprompting.org",
       "featured": false,
       "fullName": "trigaten/Learn_Prompting",
       "description": "Prompt Engineering, Generative AI, and LLM Guide by Learn Prompting | Join our discord for the largest Prompt Engineering learning community",
@@ -567,7 +1052,8 @@
       "archived": false,
       "disabled": false,
       "fetchStatus": "ok",
-      "lastFetchedAt": "2026-06-11T10:16:55.490Z"
+      "lastFetchedAt": "2026-06-11T10:32:06.016Z",
+      "errorMessage": "GitHub API 403: API rate limit exceeded for 183.253.17.78. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
     }
   ]
 }

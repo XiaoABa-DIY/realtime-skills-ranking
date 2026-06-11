@@ -6,7 +6,7 @@
 
 适合收录的仓库应满足至少一项：
 
-- 提供 AI Agent、MCP、提示词、RAG、自动化、创作工作流或学习路径。
+- 提供 AI Agent、MCP、提示词、RAG、自动化、程序员工具、自媒体创作工作流或学习路径。
 - 能作为可复用的 skill、工具、模板、方法论或开源框架。
 - 有清晰 README、许可证或活跃社区信号。
 
@@ -22,7 +22,9 @@
 请从以下分类中选择一个：
 
 - `Coding Agents`
+- `Developer Tools`
 - `Design & Media`
+- `Creator & Content`
 - `Data & Research`
 - `Productivity`
 - `MCP & Tooling`
@@ -30,6 +32,13 @@
 - `Learning & Docs`
 
 如果一个仓库跨多个方向，选择最主要的用途，其他信息放进 `platforms` 或 `tags`。
+
+分类建议：
+
+- `Developer Tools`：面向程序员的 IDE、CLI、代码助手、测试、调试、工程自动化工具。
+- `Creator & Content`：面向自媒体、内容创作者、知识工作者的语音、OCR、文档整理、长文写作、素材生产工具。
+- `Design & Media`：以图像、视频、多媒体生成工作流为核心的创作工具。
+- `Data & Research`：RAG、网页抓取、知识库、检索、数据分析和资料研究工具。
 
 ## 新增正式仓库
 
