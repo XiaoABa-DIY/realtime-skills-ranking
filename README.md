@@ -123,20 +123,21 @@ npm run data:update
 
 ## Deployment / 部署
 
-本仓库已经配置 GitHub Pages 自动部署工作流：[.github/workflows/pages.yml](.github/workflows/pages.yml)。
+本仓库已经配置 GitHub Pages 自动部署工作流：[.github/workflows/pages.yml](.github/workflows/pages.yml)。工作流会刷新数据、检查格式、运行 lint、单元测试、构建、端到端测试，然后把 `dist/` 发布到 `gh-pages` 分支。
 
 触发方式：
 
-- push 到 `main`：自动刷新数据、运行测试、构建并部署。
-- GitHub Actions 手动运行 `刷新数据并部署 Pages`：立即刷新数据并部署。
+- push 到 `main`：自动刷新数据、完整验证、构建并部署到 `gh-pages`。
+- GitHub Actions 手动运行 `Refresh data and deploy Pages`：立即刷新数据并部署。
 - 定时任务：默认每 15 分钟刷新一次。
 
 GitHub Pages 配置：
 
 1. 打开仓库 Settings -> Pages。
-2. Source 选择 `GitHub Actions`。
-3. 推送到 `main` 后等待 workflow 完成。
-4. 访问 [https://xiaoaba-diy.github.io/realtime-skills-ranking/](https://xiaoaba-diy.github.io/realtime-skills-ranking/)。
+2. Source 选择 `Deploy from a branch`。
+3. Branch 选择 `gh-pages`，目录选择 `/ (root)`。
+4. 推送到 `main` 后等待 workflow 完成。
+5. 访问 [https://xiaoaba-diy.github.io/realtime-skills-ranking/](https://xiaoaba-diy.github.io/realtime-skills-ranking/)。
 
 Vite 项目型 Pages 路径通过 `BASE_PATH=/${{ github.event.repository.name }}/` 注入，确保静态资源在 `/realtime-skills-ranking/` 下正常加载。
 
