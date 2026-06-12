@@ -31,9 +31,12 @@ test("renders the dashboard and filters repositories", async ({ page }) => {
     page.getByRole("heading", { name: "AI Skills 实时排行榜" }),
   ).toBeVisible();
   await expect(page.getByText("modelcontextprotocol/servers")).toBeVisible();
+  await expect(page.getByText("人群视图")).toBeVisible();
+  await expect(page.getByText("专题榜单")).toBeVisible();
 
   await page.getByPlaceholder("搜索仓库、标签、平台或简介").fill("ComfyUI");
   await expect(page.getByText("Comfy-Org/ComfyUI")).toBeVisible();
+  await expect(page).toHaveURL(/q=ComfyUI/);
 });
 
 test("opens details and refreshes a repository live", async ({ page }) => {
@@ -43,4 +46,36 @@ test("opens details and refreshes a repository live", async ({ page }) => {
 
   await expect(page.getByText("已读取 GitHub 当前数据。")).toBeVisible();
   await expect(page.getByText("999").first()).toBeVisible();
+});
+
+test("persists audience filters and detail drawers in the URL", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: /程序员/ }).click();
+
+  await expect(page).toHaveURL(/audience=developer/);
+  await expect(page.getByRole("button", { name: /程序员/ })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(page.getByText("modelcontextprotocol/servers")).toBeVisible();
+
+  await page.goto("/?audience=creator&repo=Comfy-Org%2FComfyUI");
+  await expect(
+    page.getByRole("dialog", { name: "Comfy-Org/ComfyUI" }),
+  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "适合谁用" })).toBeVisible();
+});
+
+test("keeps the mobile ranking layout within the viewport", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.getByText("modelcontextprotocol/servers")).toBeVisible();
+
+  const overflow = await page.evaluate(
+    () => document.documentElement.scrollWidth - window.innerWidth,
+  );
+  expect(overflow).toBeLessThanOrEqual(1);
 });

@@ -1,271 +1,311 @@
 {
-  "generatedAt": "2026-06-11T10:32:07.110Z",
+  "generatedAt": "2026-06-12T08:21:52.140Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "FoundationAgents/MetaGPT",
       "fullName": "FoundationAgents/MetaGPT",
       "category": "Coding Agents",
+      "suggestedCategory": "Coding Agents",
       "matchedQuery": "ai-agent-frameworks",
       "reason": {
         "zh": "可能是可编排 AI Agent 的开源框架。",
         "en": "Potential open-source framework for orchestrating AI agents."
       },
       "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-      "stars": 68716,
-      "forks": 8780,
+      "stars": 68737,
+      "forks": 8783,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/FoundationAgents/MetaGPT",
       "pushedAt": "2026-01-21T10:12:33Z",
-      "updatedAt": "2026-06-11T10:29:51Z",
+      "updatedAt": "2026-06-12T07:45:09Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer"],
+      "confidence": 96
     },
     {
       "repo": "AstrBotDevs/AstrBot",
       "fullName": "AstrBotDevs/AstrBot",
       "category": "Coding Agents",
+      "suggestedCategory": "Coding Agents",
       "matchedQuery": "ai-agent-frameworks",
       "reason": {
         "zh": "可能是可编排 AI Agent 的开源框架。",
         "en": "Potential open-source framework for orchestrating AI agents."
       },
       "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
-      "stars": 34422,
-      "forks": 2365,
+      "stars": 34501,
+      "forks": 2368,
       "language": "Python",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/AstrBotDevs/AstrBot",
       "pushedAt": "2026-06-10T08:58:18Z",
-      "updatedAt": "2026-06-11T10:12:43Z",
+      "updatedAt": "2026-06-12T08:15:10Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer"],
+      "confidence": 96
     },
     {
       "repo": "zai-org/Open-AutoGLM",
       "fullName": "zai-org/Open-AutoGLM",
       "category": "Coding Agents",
+      "suggestedCategory": "Coding Agents",
       "matchedQuery": "ai-agent-frameworks",
       "reason": {
         "zh": "可能是可编排 AI Agent 的开源框架。",
         "en": "Potential open-source framework for orchestrating AI agents."
       },
       "description": "An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
-      "stars": 25490,
-      "forks": 3972,
+      "stars": 25494,
+      "forks": 3971,
       "language": "Python",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/zai-org/Open-AutoGLM",
       "pushedAt": "2026-03-06T08:38:39Z",
-      "updatedAt": "2026-06-11T10:00:50Z",
+      "updatedAt": "2026-06-12T07:49:58Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer"],
+      "confidence": 96
     },
     {
       "repo": "activepieces/activepieces",
       "fullName": "activepieces/activepieces",
       "category": "MCP & Tooling",
+      "suggestedCategory": "MCP & Tooling",
       "matchedQuery": "mcp-skills",
       "reason": {
         "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents",
-      "stars": 22704,
-      "forks": 3788,
+      "stars": 22717,
+      "forks": 3790,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/activepieces/activepieces",
-      "pushedAt": "2026-06-11T09:48:23Z",
-      "updatedAt": "2026-06-11T09:54:38Z",
+      "pushedAt": "2026-06-12T01:27:31Z",
+      "updatedAt": "2026-06-12T06:40:18Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 86
     },
     {
       "repo": "liyupi/ai-guide",
       "fullName": "liyupi/ai-guide",
       "category": "Prompt & Workflow",
+      "suggestedCategory": "Prompt & Workflow",
       "matchedQuery": "prompt-workflows",
       "reason": {
         "zh": "与提示词、工作流或技能方法论相关。",
         "en": "Related to prompts, workflows, or skill methodology."
       },
       "description": "程序员鱼皮的 AI 资源大全 + Vibe Coding 零基础教程，分享 OpenClaw 保姆级教程、大模型玩法（DeepSeek / GPT / Gemini / Claude）、最新 AI 资讯、Prompt 提示词大全、AI 知识百科（Agent Skills / RAG / MCP / A2A）、AI 编程教程（Harness Engineering）、AI 工具用法（Cursor / Claude Code / TRAE / Codex / Copilot）、AI 开发框架教程（Spring AI / LangChain）、AI 产品变现指南，帮你快速掌握 AI 技术，走在时代前沿。本项目为开源文档，已升级为鱼皮 AI 导航网站",
-      "stars": 15582,
-      "forks": 1749,
+      "stars": 15632,
+      "forks": 1753,
       "language": "JavaScript",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/liyupi/ai-guide",
       "pushedAt": "2026-06-04T12:40:40Z",
-      "updatedAt": "2026-06-11T10:27:29Z",
+      "updatedAt": "2026-06-12T08:17:01Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "productivity"],
+      "confidence": 86
     },
     {
       "repo": "googleapis/mcp-toolbox",
       "fullName": "googleapis/mcp-toolbox",
       "category": "MCP & Tooling",
+      "suggestedCategory": "MCP & Tooling",
       "matchedQuery": "mcp-skills",
       "reason": {
         "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "MCP Toolbox for Databases is an open source MCP server for databases.",
-      "stars": 15580,
-      "forks": 1595,
+      "stars": 15594,
+      "forks": 1596,
       "language": "Go",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/googleapis/mcp-toolbox",
-      "pushedAt": "2026-06-11T09:56:15Z",
-      "updatedAt": "2026-06-11T09:54:40Z",
+      "pushedAt": "2026-06-12T05:30:40Z",
+      "updatedAt": "2026-06-12T08:21:07Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 96
     },
     {
       "repo": "GLips/Figma-Context-MCP",
       "fullName": "GLips/Figma-Context-MCP",
       "category": "MCP & Tooling",
+      "suggestedCategory": "MCP & Tooling",
       "matchedQuery": "mcp-skills",
       "reason": {
         "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "MCP server to provide Figma layout information to AI coding agents like Cursor",
-      "stars": 15073,
-      "forks": 1194,
+      "stars": 15087,
+      "forks": 1196,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/GLips/Figma-Context-MCP",
       "pushedAt": "2026-05-27T22:18:23Z",
-      "updatedAt": "2026-06-11T09:33:31Z",
+      "updatedAt": "2026-06-12T08:17:12Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 96
     },
     {
       "repo": "mcp-use/mcp-use",
       "fullName": "mcp-use/mcp-use",
       "category": "MCP & Tooling",
+      "suggestedCategory": "MCP & Tooling",
       "matchedQuery": "mcp-skills",
       "reason": {
         "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "The fullstack MCP framework to develop MCP Apps for ChatGPT / Claude & MCP Servers for AI Agents.",
-      "stars": 10086,
+      "stars": 10091,
       "forks": 1325,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/mcp-use/mcp-use",
-      "pushedAt": "2026-06-11T09:41:24Z",
-      "updatedAt": "2026-06-11T03:45:12Z",
+      "pushedAt": "2026-06-11T22:14:17Z",
+      "updatedAt": "2026-06-12T07:46:35Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 96
     },
     {
       "repo": "0x4m4/hexstrike-ai",
       "fullName": "0x4m4/hexstrike-ai",
       "category": "MCP & Tooling",
+      "suggestedCategory": "MCP & Tooling",
       "matchedQuery": "mcp-skills",
       "reason": {
         "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "HexStrike AI MCP Agents is an advanced MCP server that lets AI agents (Claude, GPT, Copilot, etc.) autonomously run 150+ cybersecurity tools for automated pentesting, vulnerability discovery, bug bounty automation, and security research. Seamlessly bridge LLMs with real-world offensive security capabilities.",
-      "stars": 9508,
+      "stars": 9529,
       "forks": 2046,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/0x4m4/hexstrike-ai",
       "pushedAt": "2026-04-27T08:56:07Z",
-      "updatedAt": "2026-06-11T09:17:58Z",
+      "updatedAt": "2026-06-12T05:13:28Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 96
     },
     {
       "repo": "idosal/git-mcp",
       "fullName": "idosal/git-mcp",
       "category": "MCP & Tooling",
+      "suggestedCategory": "MCP & Tooling",
       "matchedQuery": "mcp-skills",
       "reason": {
         "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
-      "stars": 8160,
-      "forks": 722,
+      "stars": 8163,
+      "forks": 723,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/idosal/git-mcp",
       "pushedAt": "2026-05-08T14:21:24Z",
-      "updatedAt": "2026-06-11T03:58:37Z",
+      "updatedAt": "2026-06-12T08:04:25Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 96
     },
     {
       "repo": "epiral/bb-browser",
       "fullName": "epiral/bb-browser",
       "category": "MCP & Tooling",
+      "suggestedCategory": "MCP & Tooling",
       "matchedQuery": "mcp-skills",
       "reason": {
         "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "Your browser is the API. CLI + MCP server for AI agents to control Chrome with your login state.",
-      "stars": 5741,
-      "forks": 571,
+      "stars": 5753,
+      "forks": 573,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/epiral/bb-browser",
       "pushedAt": "2026-05-29T08:14:51Z",
-      "updatedAt": "2026-06-11T10:24:13Z",
+      "updatedAt": "2026-06-12T06:12:07Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 96
     },
     {
       "repo": "agent-infra/sandbox",
       "fullName": "agent-infra/sandbox",
       "category": "MCP & Tooling",
+      "suggestedCategory": "MCP & Tooling",
       "matchedQuery": "mcp-skills",
       "reason": {
         "zh": "与 MCP 工具连接和 Agent 能力扩展相关。",
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "All-in-One Sandbox for AI Agents that combines Browser, Shell, File, MCP and VSCode Server in a single Docker container.",
-      "stars": 5040,
-      "forks": 447,
+      "stars": 5076,
+      "forks": 452,
       "language": "Python",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/agent-infra/sandbox",
       "pushedAt": "2026-05-29T04:45:25Z",
-      "updatedAt": "2026-06-11T10:24:58Z",
+      "updatedAt": "2026-06-12T07:53:23Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 96
     },
     {
       "repo": "Meirtz/Awesome-Context-Engineering",
       "fullName": "Meirtz/Awesome-Context-Engineering",
       "category": "Prompt & Workflow",
+      "suggestedCategory": "Prompt & Workflow",
       "matchedQuery": "prompt-workflows",
       "reason": {
         "zh": "与提示词、工作流或技能方法论相关。",
         "en": "Related to prompts, workflows, or skill methodology."
       },
       "description": " 🔥 Comprehensive survey on Context Engineering: from prompt engineering to production-grade AI systems. hundreds of papers, frameworks, and  implementation guides for LLMs and AI agents.",
-      "stars": 3174,
-      "forks": 242,
+      "stars": 3176,
+      "forks": 244,
       "language": "Unknown",
       "license": "MIT",
       "htmlUrl": "https://github.com/Meirtz/Awesome-Context-Engineering",
       "pushedAt": "2026-05-28T05:40:26Z",
-      "updatedAt": "2026-06-10T20:10:19Z",
+      "updatedAt": "2026-06-12T02:40:06Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "productivity"],
+      "confidence": 96
     },
     {
       "repo": "sudoskys/StableDiffusionBook",
       "fullName": "sudoskys/StableDiffusionBook",
       "category": "Prompt & Workflow",
+      "suggestedCategory": "Prompt & Workflow",
       "matchedQuery": "prompt-workflows",
       "reason": {
         "zh": "与提示词、工作流或技能方法论相关。",
@@ -280,92 +320,107 @@
       "pushedAt": "2024-10-31T13:19:13Z",
       "updatedAt": "2026-06-10T08:39:05Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "productivity"],
+      "confidence": 86
     },
     {
       "repo": "Light-Heart-Labs/DreamServer",
       "fullName": "Light-Heart-Labs/DreamServer",
       "category": "Design & Media",
+      "suggestedCategory": "Design & Media",
       "matchedQuery": "ai-media-workflows",
       "reason": {
         "zh": "可能提供 AI 图像或媒体生成工作流。",
         "en": "May provide AI image or media generation workflows."
       },
       "description": "Turn your PC, Mac, or Linux box into an AI server.  LLM inference, chat UI, voice, agents, workflows, RAG, and image generation.",
-      "stars": 1963,
-      "forks": 287,
+      "stars": 1973,
+      "forks": 293,
       "language": "Shell",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/Light-Heart-Labs/DreamServer",
       "pushedAt": "2026-06-11T08:35:33Z",
-      "updatedAt": "2026-06-11T10:31:59Z",
+      "updatedAt": "2026-06-12T03:00:00Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "designMarketing"],
+      "confidence": 96
     },
     {
       "repo": "0xMassi/webclaw",
       "fullName": "0xMassi/webclaw",
       "category": "Data & Research",
+      "suggestedCategory": "Data & Research",
       "matchedQuery": "ai-web-research-tools",
       "reason": {
         "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
         "en": "Tools for web research, crawling, extraction, and RAG knowledge preparation."
       },
       "description": "Fast, local-first web content extraction for LLMs. Scrape, crawl, extract structured data — all from Rust. CLI, REST API, and MCP server.",
-      "stars": 1325,
-      "forks": 150,
+      "stars": 1339,
+      "forks": 151,
       "language": "Rust",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/0xMassi/webclaw",
-      "pushedAt": "2026-06-11T09:50:25Z",
-      "updatedAt": "2026-06-11T09:50:31Z",
+      "pushedAt": "2026-06-11T13:16:58Z",
+      "updatedAt": "2026-06-12T06:23:20Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["research"],
+      "confidence": 96
     },
     {
       "repo": "study8677/antigravity-workspace-template",
       "fullName": "study8677/antigravity-workspace-template",
       "category": "Developer Tools",
+      "suggestedCategory": "Developer Tools",
       "matchedQuery": "developer-ai-tools",
       "reason": {
         "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
         "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
       },
       "description": "Give Claude Code, Cursor, Codex CLI a ChatGPT for your codebase. Multi-agent knowledge engine, grounded Q&A with file paths and line numbers. Works in any AI IDE.",
-      "stars": 1273,
+      "stars": 1274,
       "forks": 259,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/study8677/antigravity-workspace-template",
       "pushedAt": "2026-06-09T08:04:17Z",
-      "updatedAt": "2026-06-10T10:35:23Z",
+      "updatedAt": "2026-06-11T11:00:19Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 96
     },
     {
       "repo": "elirantutia/vibeyard",
       "fullName": "elirantutia/vibeyard",
       "category": "Developer Tools",
+      "suggestedCategory": "Developer Tools",
       "matchedQuery": "developer-ai-tools",
       "reason": {
         "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
         "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
       },
       "description": "The IDE built for AI coding agents.",
-      "stars": 1093,
-      "forks": 140,
+      "stars": 1148,
+      "forks": 141,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/elirantutia/vibeyard",
       "pushedAt": "2026-06-04T12:04:37Z",
-      "updatedAt": "2026-06-10T19:22:43Z",
+      "updatedAt": "2026-06-12T08:12:51Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 96
     },
     {
       "repo": "if-ai/ComfyUI-IF_AI_tools",
       "fullName": "if-ai/ComfyUI-IF_AI_tools",
       "category": "Design & Media",
+      "suggestedCategory": "Design & Media",
       "matchedQuery": "ai-media-workflows",
       "reason": {
         "zh": "可能提供 AI 图像或媒体生成工作流。",
@@ -380,12 +435,15 @@
       "pushedAt": "2025-09-15T09:05:20Z",
       "updatedAt": "2026-06-04T15:14:33Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "designMarketing"],
+      "confidence": 96
     },
     {
       "repo": "funny-vibes/agent-vibes",
       "fullName": "funny-vibes/agent-vibes",
       "category": "Developer Tools",
+      "suggestedCategory": "Developer Tools",
       "matchedQuery": "developer-ai-tools",
       "reason": {
         "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
@@ -400,12 +458,15 @@
       "pushedAt": "2026-06-10T11:11:40Z",
       "updatedAt": "2026-06-10T11:11:42Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 95
     },
     {
       "repo": "yohasebe/openai-chat-api-workflow",
       "fullName": "yohasebe/openai-chat-api-workflow",
       "category": "Design & Media",
+      "suggestedCategory": "Design & Media",
       "matchedQuery": "ai-media-workflows",
       "reason": {
         "zh": "可能提供 AI 图像或媒体生成工作流。",
@@ -420,32 +481,38 @@
       "pushedAt": "2026-04-25T09:20:43Z",
       "updatedAt": "2026-05-20T16:50:06Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "designMarketing"],
+      "confidence": 95
     },
     {
       "repo": "lanes-sh/app",
       "fullName": "lanes-sh/app",
       "category": "Developer Tools",
+      "suggestedCategory": "Developer Tools",
       "matchedQuery": "developer-ai-tools",
       "reason": {
         "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
         "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
       },
       "description": "Mission control for parallel AI coding agents",
-      "stars": 230,
-      "forks": 12,
+      "stars": 232,
+      "forks": 13,
       "language": "Unknown",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/lanes-sh/app",
       "pushedAt": "2026-06-10T12:04:25Z",
-      "updatedAt": "2026-06-11T02:41:35Z",
+      "updatedAt": "2026-06-11T15:24:08Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 81
     },
     {
       "repo": "arorarishi/Prompt-Engineering-Jumpstart",
       "fullName": "arorarishi/Prompt-Engineering-Jumpstart",
       "category": "Prompt & Workflow",
+      "suggestedCategory": "Prompt & Workflow",
       "matchedQuery": "prompt-workflows",
       "reason": {
         "zh": "与提示词、工作流或技能方法论相关。",
@@ -460,12 +527,15 @@
       "pushedAt": "2025-12-23T18:41:04Z",
       "updatedAt": "2026-06-09T12:27:19Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "productivity"],
+      "confidence": 91
     },
     {
       "repo": "FilippoMB/Diffusion_models_tutorial",
       "fullName": "FilippoMB/Diffusion_models_tutorial",
       "category": "Prompt & Workflow",
+      "suggestedCategory": "Prompt & Workflow",
       "matchedQuery": "prompt-workflows",
       "reason": {
         "zh": "与提示词、工作流或技能方法论相关。",
@@ -480,12 +550,15 @@
       "pushedAt": "2026-04-21T19:05:59Z",
       "updatedAt": "2026-06-05T14:16:31Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "productivity"],
+      "confidence": 90
     },
     {
       "repo": "huanchong-99/SoloDawn",
       "fullName": "huanchong-99/SoloDawn",
       "category": "Developer Tools",
+      "suggestedCategory": "Developer Tools",
       "matchedQuery": "developer-ai-tools",
       "reason": {
         "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
@@ -500,32 +573,38 @@
       "pushedAt": "2026-05-07T16:00:51Z",
       "updatedAt": "2026-06-08T23:49:24Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 78
     },
     {
       "repo": "JohnMwendwa/free-ai-resources",
       "fullName": "JohnMwendwa/free-ai-resources",
       "category": "Prompt & Workflow",
+      "suggestedCategory": "Prompt & Workflow",
       "matchedQuery": "prompt-workflows",
       "reason": {
         "zh": "与提示词、工作流或技能方法论相关。",
         "en": "Related to prompts, workflows, or skill methodology."
       },
       "description": "A curated collection of free, high-quality resources for learning about AI, including ML, deep learning, generative AI, natural language processing, data science, prompt engineering & AI ethics. It provides links to courses, tutorials and guides from reputable platforms to help learners and practitioners at all levels expand their knowledge in AI",
-      "stars": 155,
+      "stars": 157,
       "forks": 18,
       "language": "Unknown",
       "license": "MIT",
       "htmlUrl": "https://github.com/JohnMwendwa/free-ai-resources",
       "pushedAt": "2025-05-24T05:51:40Z",
-      "updatedAt": "2026-06-11T09:09:36Z",
+      "updatedAt": "2026-06-11T12:08:56Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "productivity"],
+      "confidence": 90
     },
     {
       "repo": "MushroomFleet/DJZ-Workflows",
       "fullName": "MushroomFleet/DJZ-Workflows",
       "category": "Design & Media",
+      "suggestedCategory": "Design & Media",
       "matchedQuery": "ai-media-workflows",
       "reason": {
         "zh": "可能提供 AI 图像或媒体生成工作流。",
@@ -540,12 +619,15 @@
       "pushedAt": "2026-04-07T17:36:53Z",
       "updatedAt": "2026-05-28T05:19:47Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "designMarketing"],
+      "confidence": 75
     },
     {
       "repo": "HiFoxAI/HiFox",
       "fullName": "HiFoxAI/HiFox",
       "category": "Design & Media",
+      "suggestedCategory": "Design & Media",
       "matchedQuery": "ai-media-workflows",
       "reason": {
         "zh": "可能提供 AI 图像或媒体生成工作流。",
@@ -560,12 +642,15 @@
       "pushedAt": "2025-03-04T09:03:04Z",
       "updatedAt": "2026-04-19T20:53:08Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "designMarketing"],
+      "confidence": 74
     },
     {
       "repo": "qzw881130/AI-NovelFlow",
       "fullName": "qzw881130/AI-NovelFlow",
       "category": "Design & Media",
+      "suggestedCategory": "Design & Media",
       "matchedQuery": "ai-media-workflows",
       "reason": {
         "zh": "可能提供 AI 图像或媒体生成工作流。",
@@ -580,12 +665,15 @@
       "pushedAt": "2026-05-10T08:41:44Z",
       "updatedAt": "2026-06-07T04:00:37Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "designMarketing"],
+      "confidence": 73
     },
     {
       "repo": "workstream-labs/workstreams",
       "fullName": "workstream-labs/workstreams",
       "category": "Developer Tools",
+      "suggestedCategory": "Developer Tools",
       "matchedQuery": "developer-ai-tools",
       "reason": {
         "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
@@ -600,12 +688,15 @@
       "pushedAt": "2026-04-22T07:05:44Z",
       "updatedAt": "2026-06-08T09:25:14Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 72
     },
     {
       "repo": "ChanMeng666/echook",
       "fullName": "ChanMeng666/echook",
       "category": "Developer Tools",
+      "suggestedCategory": "Developer Tools",
       "matchedQuery": "developer-ai-tools",
       "reason": {
         "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
@@ -617,15 +708,18 @@
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/ChanMeng666/echook",
-      "pushedAt": "2026-06-05T10:02:23Z",
-      "updatedAt": "2026-06-11T10:11:04Z",
+      "pushedAt": "2026-06-12T07:09:11Z",
+      "updatedAt": "2026-06-12T07:09:15Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 83
     },
     {
       "repo": "ShunL12324/comfy-portal",
       "fullName": "ShunL12324/comfy-portal",
       "category": "Design & Media",
+      "suggestedCategory": "Design & Media",
       "matchedQuery": "ai-media-workflows",
       "reason": {
         "zh": "可能提供 AI 图像或媒体生成工作流。",
@@ -640,12 +734,15 @@
       "pushedAt": "2026-02-23T11:52:04Z",
       "updatedAt": "2026-06-05T16:01:38Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "designMarketing"],
+      "confidence": 70
     },
     {
       "repo": "vilmire/adhdev",
       "fullName": "vilmire/adhdev",
       "category": "Developer Tools",
+      "suggestedCategory": "Developer Tools",
       "matchedQuery": "developer-ai-tools",
       "reason": {
         "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
@@ -657,15 +754,18 @@
       "language": "TypeScript",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/vilmire/adhdev",
-      "pushedAt": "2026-06-11T09:38:36Z",
-      "updatedAt": "2026-06-11T09:38:40Z",
+      "pushedAt": "2026-06-12T08:05:42Z",
+      "updatedAt": "2026-06-12T08:05:46Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 80
     },
     {
       "repo": "Anil-matcha/gpt-image-2-comfyui",
       "fullName": "Anil-matcha/gpt-image-2-comfyui",
       "category": "Design & Media",
+      "suggestedCategory": "Design & Media",
       "matchedQuery": "ai-media-workflows",
       "reason": {
         "zh": "可能提供 AI 图像或媒体生成工作流。",
@@ -680,12 +780,15 @@
       "pushedAt": "2026-04-22T07:52:49Z",
       "updatedAt": "2026-05-30T04:50:16Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["creator", "designMarketing"],
+      "confidence": 79
     },
     {
       "repo": "DLhugly/Clif-Code",
       "fullName": "DLhugly/Clif-Code",
       "category": "Developer Tools",
+      "suggestedCategory": "Developer Tools",
       "matchedQuery": "developer-ai-tools",
       "reason": {
         "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
@@ -700,12 +803,15 @@
       "pushedAt": "2026-04-26T16:22:30Z",
       "updatedAt": "2026-06-06T18:49:04Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 59
     },
     {
       "repo": "Nachx639/termide",
       "fullName": "Nachx639/termide",
       "category": "Developer Tools",
+      "suggestedCategory": "Developer Tools",
       "matchedQuery": "developer-ai-tools",
       "reason": {
         "zh": "面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。",
@@ -720,12 +826,15 @@
       "pushedAt": "2026-04-30T18:39:56Z",
       "updatedAt": "2026-05-25T18:46:33Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["developer", "mcp"],
+      "confidence": 69
     },
     {
       "repo": "jayeshmepani/python-web-scraping-libraries",
       "fullName": "jayeshmepani/python-web-scraping-libraries",
       "category": "Data & Research",
+      "suggestedCategory": "Data & Research",
       "matchedQuery": "ai-web-research-tools",
       "reason": {
         "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
@@ -740,12 +849,15 @@
       "pushedAt": "2026-04-20T06:42:14Z",
       "updatedAt": "2026-04-24T16:54:30Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["research"],
+      "confidence": 59
     },
     {
       "repo": "kush-agra-soni/advance_ai_web_crawler",
       "fullName": "kush-agra-soni/advance_ai_web_crawler",
       "category": "Data & Research",
+      "suggestedCategory": "Data & Research",
       "matchedQuery": "ai-web-research-tools",
       "reason": {
         "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
@@ -760,12 +872,15 @@
       "pushedAt": "2025-12-10T17:27:24Z",
       "updatedAt": "2025-12-10T18:35:07Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["research"],
+      "confidence": 43
     },
     {
       "repo": "surya-koritala/phantombot",
       "fullName": "surya-koritala/phantombot",
       "category": "Data & Research",
+      "suggestedCategory": "Data & Research",
       "matchedQuery": "ai-web-research-tools",
       "reason": {
         "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
@@ -780,12 +895,15 @@
       "pushedAt": "2026-04-12T23:59:52Z",
       "updatedAt": "2026-04-12T23:59:57Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["research"],
+      "confidence": 55
     },
     {
       "repo": "danhwang0623/crawler-ai",
       "fullName": "danhwang0623/crawler-ai",
       "category": "Data & Research",
+      "suggestedCategory": "Data & Research",
       "matchedQuery": "ai-web-research-tools",
       "reason": {
         "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
@@ -800,12 +918,15 @@
       "pushedAt": "2025-04-14T20:11:31Z",
       "updatedAt": "2025-04-14T20:11:34Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["research"],
+      "confidence": 50
     },
     {
       "repo": "ojasviii14/rag-crawler_Ojasvi",
       "fullName": "ojasviii14/rag-crawler_Ojasvi",
       "category": "Data & Research",
+      "suggestedCategory": "Data & Research",
       "matchedQuery": "ai-web-research-tools",
       "reason": {
         "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
@@ -820,12 +941,15 @@
       "pushedAt": "2025-10-14T12:31:12Z",
       "updatedAt": "2025-10-14T12:31:15Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["research"],
+      "confidence": 50
     },
     {
       "repo": "RemyDaubenfeld/web-seo-toolkit",
       "fullName": "RemyDaubenfeld/web-seo-toolkit",
       "category": "Data & Research",
+      "suggestedCategory": "Data & Research",
       "matchedQuery": "ai-web-research-tools",
       "reason": {
         "zh": "适合资料调研、网页抓取和 RAG 知识整理的工具。",
@@ -840,7 +964,9 @@
       "pushedAt": "2026-05-29T13:37:46Z",
       "updatedAt": "2026-05-29T13:37:43Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T10:32:07.110Z"
+      "lastFetchedAt": "2026-06-12T08:21:52.140Z",
+      "suggestedAudiences": ["research"],
+      "confidence": 50
     }
   ]
 }

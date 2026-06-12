@@ -13,10 +13,35 @@ export const categories = [
 export type Category = (typeof categories)[number];
 export type Locale = "zh" | "en";
 export type SortKey = "stars" | "forks" | "updated" | "name";
+export type AudienceKey =
+  | "developer"
+  | "creator"
+  | "designMarketing"
+  | "research"
+  | "productivity"
+  | "mcp";
+export type SpotlightKey =
+  | "weeklyHot"
+  | "classicStars"
+  | "recentlyActive"
+  | "beginnerFriendly"
+  | "creatorPicks"
+  | "developerStack";
+export type Difficulty = "Beginner" | "Intermediate" | "Advanced";
+export type SkillStatus = "active" | "experimental" | "archived";
+export type Freshness = "fresh" | "active" | "quiet" | "stale" | "unknown";
 
 export interface LocalizedText {
   zh: string;
   en: string;
+}
+
+export interface QualitySignals {
+  hasLicense: boolean;
+  hasHomepage: boolean;
+  recentlyPushed: boolean;
+  archived: boolean;
+  issueLoad: "low" | "medium" | "high" | "unknown";
 }
 
 export interface SkillRepoInput {
@@ -27,6 +52,10 @@ export interface SkillRepoInput {
   summary: LocalizedText;
   homepage?: string;
   featured?: boolean;
+  audiences?: AudienceKey[];
+  useCases?: LocalizedText[];
+  difficulty?: Difficulty;
+  status?: SkillStatus;
 }
 
 export interface SkillRepoSnapshot extends SkillRepoInput {
@@ -46,6 +75,10 @@ export interface SkillRepoSnapshot extends SkillRepoInput {
   fetchStatus: "ok" | "error";
   errorMessage?: string;
   lastFetchedAt: string;
+  rank?: number;
+  rankByCategory?: number;
+  freshness?: Freshness;
+  qualitySignals?: QualitySignals;
 }
 
 export interface CandidateRepo {
@@ -65,6 +98,9 @@ export interface CandidateRepo {
   alreadyCurated: boolean;
   fetchStatus?: "ok" | "error";
   lastFetchedAt: string;
+  suggestedCategory?: Category;
+  suggestedAudiences?: AudienceKey[];
+  confidence?: number;
 }
 
 export interface SnapshotPayload {

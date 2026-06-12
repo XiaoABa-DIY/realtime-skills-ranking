@@ -59,6 +59,7 @@ const candidates = {
 
 describe("App", () => {
   beforeEach(() => {
+    window.history.pushState({}, "", "/");
     vi.stubGlobal(
       "fetch",
       vi.fn((url: string) => {
@@ -100,7 +101,11 @@ describe("App", () => {
     expect(await screen.findByText("alpha/agents")).toBeInTheDocument();
     expect(screen.getByText("new/skill")).toBeInTheDocument();
 
-    await user.click(screen.getByRole("button", { name: /EN/i }));
+    await user.click(
+      screen.getByRole("button", {
+        name: "Switch language to English, EN",
+      }),
+    );
 
     expect(screen.getByText("AI Skills Live Ranking")).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/Search repos/i)).toBeInTheDocument();

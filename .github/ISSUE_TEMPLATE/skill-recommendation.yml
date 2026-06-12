@@ -1,0 +1,77 @@
+name: 推荐 AI Skill 仓库
+description: 推荐一个适合加入 AI Skills 实时排行榜的开源仓库
+title: "feat: 推荐 skill 仓库 "
+labels: ["skill-candidate"]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: GitHub 仓库
+      description: 必须使用 owner/name 格式。
+      placeholder: owner/name
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 建议分类
+      options:
+        - Coding Agents
+        - Developer Tools
+        - Design & Media
+        - Creator & Content
+        - Data & Research
+        - Productivity
+        - MCP & Tooling
+        - Prompt & Workflow
+        - Learning & Docs
+    validations:
+      required: true
+  - type: checkboxes
+    id: audiences
+    attributes:
+      label: 适合人群
+      options:
+        - label: 程序员 / Developers
+        - label: 自媒体创作者 / Creators
+        - label: 设计营销 / Design & Marketing
+        - label: 研究分析 / Research
+        - label: 效率办公 / Productivity
+        - label: MCP 玩家 / MCP builders
+  - type: input
+    id: platforms
+    attributes:
+      label: 平台或生态
+      description: 用英文逗号分隔，例如 MCP, Python, CLI。
+      placeholder: MCP, Python, CLI
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: 标签
+      description: 用英文逗号分隔，尽量短小可复用。
+      placeholder: coding-agent, workflow, rag
+    validations:
+      required: true
+  - type: textarea
+    id: summary_zh
+    attributes:
+      label: 中文简介
+      description: 一句话说明这个仓库为什么值得收录。
+    validations:
+      required: true
+  - type: textarea
+    id: summary_en
+    attributes:
+      label: English summary
+      description: One sentence explaining why this repository belongs here.
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: 推荐理由
+      description: 请说明它适合哪些工作流、是否开源、近期是否还活跃。
+    validations:
+      required: true

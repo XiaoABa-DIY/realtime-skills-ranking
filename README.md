@@ -12,11 +12,16 @@ This is a bilingual GitHub Pages dashboard for open-source AI skills, agent work
 - **实时排行榜**：GitHub Actions 定时刷新 GitHub star、fork、language、license、更新时间等指标。
 - **双语界面**：站点 UI 和人工简介支持中文/英文一键切换。
 - **分类目录**：按 `Coding Agents`、`Developer Tools`、`Design & Media`、`Creator & Content`、`Data & Research`、`Productivity`、`MCP & Tooling`、`Prompt & Workflow`、`Learning & Docs` 分类浏览。
-- **人群友好**：程序员可优先看 `Developer Tools`、`Coding Agents`、`MCP & Tooling`；自媒体和内容创作者可优先看 `Creator & Content`、`Design & Media`、`Prompt & Workflow`。
+- **人群入口**：支持 `程序员`、`自媒体创作者`、`设计/营销`、`研究分析`、`效率办公`、`MCP 玩家` 六类视图。
+- **专题榜单**：支持 `本周热门`、`高星经典`、`最近活跃`、`适合入门`、`内容创作者精选`、`开发者工具链`。
 - **多维筛选**：支持关键词、分类、平台、标签、许可证、语言过滤。
 - **多种排序**：支持按星标数、fork 数、最近更新、仓库名排序。
+- **分享链接**：语言、搜索、筛选、人群、专题、排序和详情仓库都会写入 URL，方便复制给他人。
 - **详情实时刷新**：榜单使用静态快照，单个仓库详情可在浏览器里实时请求 GitHub API。
+- **增强详情**：详情抽屉展示适合人群、核心场景、上榜理由、质量信号和相似 skill。
 - **候选发现**：自动搜索潜在仓库，写入候选列表，供后续人工审核后再加入正式榜单。
+- **投稿入口**：站内按钮会打开 GitHub Issue 表单，字段与 `data/repositories.yml` 对齐。
+- **SEO 友好**：包含 description、Open Graph、Twitter Card、canonical、sitemap 和 robots。
 - **纯静态部署**：最终产物是 HTML/CSS/JS/JSON，可直接部署到 GitHub Pages。
 
 ## Architecture / 技术架构
@@ -63,6 +68,12 @@ repositories:
     summary:
       zh: 中文简介
       en: English summary
+    audiences: [developer, mcp]
+    useCases:
+      - zh: 适合连接工具、服务和 Agent。
+        en: Useful for connecting tools, services, and agents.
+    difficulty: Beginner
+    status: active
     homepage: https://example.com
     featured: true
 ```
@@ -74,10 +85,36 @@ repositories:
 - `platforms`：平台或生态，例如 `MCP`、`Python`、`Agents`、`Images`。
 - `tags`：能力标签，例如 `workflow`、`rag`、`prompt-engineering`。
 - `summary.zh` / `summary.en`：站点展示用的中英文简介。
+- `audiences`：可选，人群视图，可选值为 `developer`、`creator`、`designMarketing`、`research`、`productivity`、`mcp`。
+- `useCases`：可选，中英文核心使用场景列表。
+- `difficulty`：可选，`Beginner`、`Intermediate` 或 `Advanced`。
+- `status`：可选，`active`、`experimental` 或 `archived`。
 - `homepage`：可选，项目主页。
 - `featured`：可选，是否标记为精选。
 
-候选发现查询位于 [data/discovery-queries.yml](data/discovery-queries.yml)。候选结果会生成到 `public/data/candidates.json`，但不会自动进入正式排行榜。
+生成后的 `public/data/snapshot.json` 会额外包含 `rank`、`rankByCategory`、`freshness`、`qualitySignals` 等派生字段，供前端展示排名、活跃度和质量信号。
+
+候选发现查询位于 [data/discovery-queries.yml](data/discovery-queries.yml)。候选结果会生成到 `public/data/candidates.json`，并带有 `suggestedCategory`、`suggestedAudiences`、`confidence`，但不会自动进入正式排行榜。
+
+## Sharing & SEO / 分享与搜索收录
+
+前端会把用户当前视图写入 URL query：
+
+```text
+?lang=en&q=mcp&audience=developer&spotlight=developerStack&sort=updated&repo=modelcontextprotocol%2Fservers
+```
+
+可分享字段包括：
+
+- `lang`：界面语言。
+- `q`：搜索关键词。
+- `audience`：人群入口。
+- `spotlight`：专题榜单。
+- `category`、`platform`、`tag`、`license`、`language`：筛选条件。
+- `sort`：排序方式。
+- `repo`：打开详情抽屉的仓库。
+
+SEO 文件位于 `index.html`、`public/sitemap.xml`、`public/robots.txt`。当前站点是 GitHub Pages 单页应用，根页面作为主要可索引入口，分享链接负责恢复具体视图。
 
 ## Development / 本地开发
 
@@ -170,6 +207,8 @@ npm run test:e2e
 - 标签保持短小、可复用、英文小写。
 - 仓库确实与 AI skills、Agent、MCP、提示词、RAG、程序员工具、自媒体创作工作流或 AI 自动化相关。
 
+也可以在站点点击“推荐 skill”，通过 GitHub Issue 表单提交候选仓库。维护者审核后再把它加入正式清单。
+
 更详细规则见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## Commit Convention / 提交规范
@@ -188,5 +227,4 @@ git commit -m "chore: 配置 GitHub Pages 自动部署"
 - 增加 7 天 / 30 天涨星趋势。
 - 增加专题页，例如 MCP、Agent Frameworks、Prompt Engineering。
 - 增加静态 JSON API 文档。
-- 增加收录申请 issue 模板。
 - 增加排行榜变化历史。

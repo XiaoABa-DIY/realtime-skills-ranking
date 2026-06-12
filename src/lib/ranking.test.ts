@@ -1,8 +1,12 @@
 import { describe, expect, it } from "vitest";
 import {
   calculateStats,
+  defaultRepoFilters,
+  enrichRepositories,
   filterAndSortRepositories,
+  getRelatedRepositories,
   getFilterOptions,
+  inferAudiences,
 } from "./ranking";
 import type { SkillRepoSnapshot } from "../types";
 
@@ -46,8 +50,8 @@ const repositories: SkillRepoSnapshot[] = [
     license: "Apache-2.0",
     homepage: "",
     htmlUrl: "https://github.com/beta/media",
-    pushedAt: "2026-01-04T00:00:00Z",
-    updatedAt: "2026-01-05T00:00:00Z",
+    pushedAt: "2026-06-10T00:00:00Z",
+    updatedAt: "2026-06-11T00:00:00Z",
     archived: false,
     disabled: false,
     fetchStatus: "ok",
@@ -60,13 +64,8 @@ describe("ranking helpers", () => {
     const result = filterAndSortRepositories(
       repositories,
       {
+        ...defaultRepoFilters,
         query: "workflow",
-        category: "",
-        platform: "",
-        tag: "",
-        license: "",
-        language: "",
-        sortKey: "stars",
       },
       "en",
     );
@@ -91,6 +90,48 @@ describe("ranking helpers", () => {
       totalRepos: 2,
       totalStars: 80,
       totalCategories: 2,
+      activeCount: 2,
     });
+  });
+
+  it("filters by inferred audience and spotlight lists", () => {
+    const developerRepos = filterAndSortRepositories(
+      repositories,
+      {
+        ...defaultRepoFilters,
+        audience: "developer",
+      },
+      "zh",
+    );
+    const creatorRepos = filterAndSortRepositories(
+      repositories,
+      {
+        ...defaultRepoFilters,
+        spotlight: "creatorPicks",
+      },
+      "zh",
+    );
+
+    expect(developerRepos.map((repo) => repo.repo)).toEqual(["alpha/agents"]);
+    expect(creatorRepos.map((repo) => repo.repo)).toEqual(["beta/media"]);
+  });
+
+  it("derives ranks, freshness, audiences, and related repositories", () => {
+    const enriched = enrichRepositories(repositories);
+    const media = enriched.find((repo) => repo.repo === "beta/media")!;
+
+    expect(media).toMatchObject({
+      rank: 1,
+      rankByCategory: 1,
+      freshness: "fresh",
+      qualitySignals: {
+        hasLicense: true,
+        recentlyPushed: true,
+      },
+    });
+    expect(inferAudiences(media)).toContain("designMarketing");
+    expect(getRelatedRepositories(media, enriched, 1)[0].repo).toBe(
+      "alpha/agents",
+    );
   });
 });

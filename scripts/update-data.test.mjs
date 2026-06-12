@@ -67,8 +67,8 @@ describe("update-data script helpers", () => {
         license: { spdx_id: "MIT" },
         homepage: "https://example.com",
         html_url: "https://github.com/owner/good",
-        pushed_at: "2026-01-01T00:00:00Z",
-        updated_at: "2026-01-02T00:00:00Z",
+        pushed_at: "2026-06-10T00:00:00Z",
+        updated_at: "2026-06-11T00:00:00Z",
         archived: false,
         disabled: false,
       };
@@ -81,11 +81,23 @@ describe("update-data script helpers", () => {
       repo: "owner/good",
       stars: 42,
       fetchStatus: "ok",
+      audiences: ["developer"],
+      rank: 1,
+      rankByCategory: 1,
+      freshness: "fresh",
+      qualitySignals: {
+        hasLicense: true,
+        hasHomepage: true,
+        recentlyPushed: true,
+      },
     });
     expect(snapshot.repositories[1]).toMatchObject({
       repo: "owner/missing",
       stars: 0,
       fetchStatus: "error",
+      rank: 2,
+      rankByCategory: 1,
+      freshness: "unknown",
     });
   });
 
@@ -179,7 +191,10 @@ describe("update-data script helpers", () => {
       repo: "new/skill",
       alreadyCurated: false,
       matchedQuery: "agents",
+      suggestedCategory: "Coding Agents",
+      suggestedAudiences: ["developer"],
     });
+    expect(result.candidates[0].confidence).toBeGreaterThanOrEqual(42);
   });
 
   it("skips failed discovery queries without creating placeholder candidates", async () => {

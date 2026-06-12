@@ -23,6 +23,49 @@ export const CATEGORIES = [
   "Learning & Docs",
 ];
 
+const AUDIENCE_KEYS = [
+  "developer",
+  "creator",
+  "designMarketing",
+  "research",
+  "productivity",
+  "mcp",
+];
+const DIFFICULTIES = ["Beginner", "Intermediate", "Advanced"];
+const STATUSES = ["active", "experimental", "archived"];
+const AUDIENCE_PROFILES = {
+  developer: {
+    categories: ["Developer Tools", "Coding Agents", "MCP & Tooling"],
+    platforms: ["CLI", "VS Code", "IDE", "Git", "Developers", "Agents"],
+    tags: ["coding-agent", "terminal", "sdk", "software-engineering"],
+  },
+  creator: {
+    categories: ["Creator & Content", "Design & Media", "Prompt & Workflow"],
+    platforms: ["Creators", "Audio", "Voice", "Documents", "Writing", "Images"],
+    tags: ["content", "tts", "ocr", "research-writing", "document-conversion"],
+  },
+  designMarketing: {
+    categories: ["Design & Media", "Creator & Content", "Productivity"],
+    platforms: ["Images", "Workflows", "Creators", "Low-code"],
+    tags: ["image-generation", "nodes", "content"],
+  },
+  research: {
+    categories: ["Data & Research", "Learning & Docs"],
+    platforms: ["RAG", "Web", "Learning", "Python"],
+    tags: ["rag", "data", "knowledge", "web-crawling", "course"],
+  },
+  productivity: {
+    categories: ["Productivity", "Prompt & Workflow"],
+    platforms: ["Automation", "Low-code", "Workflows", "Apps", "Chat"],
+    tags: ["automation", "low-code", "ai-workflows"],
+  },
+  mcp: {
+    categories: ["MCP & Tooling", "Developer Tools"],
+    platforms: ["MCP", "TypeScript"],
+    tags: ["mcp", "tools", "integrations", "sdk"],
+  },
+};
+
 function nowIso() {
   return new Date().toISOString();
 }
@@ -41,6 +84,20 @@ function isRecord(value) {
 function asArray(value) {
   if (!Array.isArray(value)) return [];
   return value.map((item) => String(item).trim()).filter(Boolean);
+}
+
+function asAudienceArray(value) {
+  return asArray(value).filter((item) => AUDIENCE_KEYS.includes(item));
+}
+
+function asUseCases(value) {
+  if (!Array.isArray(value)) return [];
+  return value
+    .filter((item) => isRecord(item) && item.zh && item.en)
+    .map((item) => ({
+      zh: String(item.zh),
+      en: String(item.en),
+    }));
 }
 
 function validateRepoInput(entry, index) {
@@ -73,6 +130,12 @@ function validateRepoInput(entry, index) {
     },
     homepage: entry.homepage ? String(entry.homepage) : undefined,
     featured: Boolean(entry.featured),
+    audiences: asAudienceArray(entry.audiences),
+    useCases: asUseCases(entry.useCases),
+    difficulty: DIFFICULTIES.includes(entry.difficulty)
+      ? entry.difficulty
+      : undefined,
+    status: STATUSES.includes(entry.status) ? entry.status : undefined,
   };
 }
 
@@ -198,6 +261,119 @@ function mapRepoApiResponse(input, apiRepo, fetchedAt) {
 
 function mapRepoFailure(input, error, fetchedAt) {
   return mapRepoFailureWithPrevious(input, error, fetchedAt);
+}
+
+function hasAny(source, targets) {
+  const normalized = new Set(source.map((item) => String(item).toLowerCase()));
+  return targets.some((target) => normalized.has(String(target).toLowerCase()));
+}
+
+function matchesAudience(repo, audience) {
+  if (repo.audiences?.includes(audience)) return true;
+  const profile = AUDIENCE_PROFILES[audience];
+  return (
+    profile.categories.includes(repo.category) ||
+    hasAny(repo.platforms ?? [], profile.platforms) ||
+    hasAny(repo.tags ?? [], profile.tags)
+  );
+}
+
+function inferAudiences(repo) {
+  const explicit = Array.isArray(repo.audiences)
+    ? repo.audiences.filter((audience) => AUDIENCE_KEYS.includes(audience))
+    : [];
+  if (explicit.length) return explicit;
+
+  const inferred = AUDIENCE_KEYS.filter((audience) =>
+    matchesAudience(repo, audience),
+  );
+  return inferred.length ? inferred : ["productivity"];
+}
+
+function daysSince(value, referenceIso) {
+  const timestamp = Date.parse(value || "");
+  const reference = Date.parse(referenceIso || "");
+  if (!Number.isFinite(timestamp) || !Number.isFinite(reference)) {
+    return Number.POSITIVE_INFINITY;
+  }
+  return Math.floor((reference - timestamp) / 86_400_000);
+}
+
+function recentActivityDays(repo, referenceIso) {
+  return Math.min(
+    daysSince(repo.pushedAt, referenceIso),
+    daysSince(repo.updatedAt, referenceIso),
+  );
+}
+
+function inferFreshness(repo, referenceIso) {
+  if (repo.archived || repo.disabled) return "stale";
+  const age = recentActivityDays(repo, referenceIso);
+  if (!Number.isFinite(age)) return "unknown";
+  if (age <= 30) return "fresh";
+  if (age <= 180) return "active";
+  if (age <= 540) return "quiet";
+  return "stale";
+}
+
+function buildQualitySignals(repo, referenceIso) {
+  const age = recentActivityDays(repo, referenceIso);
+  const issueLoad =
+    repo.openIssues === undefined
+      ? "unknown"
+      : repo.openIssues < 10
+        ? "low"
+        : repo.openIssues < 50
+          ? "medium"
+          : "high";
+
+  return {
+    hasLicense: Boolean(repo.license && repo.license !== "NOASSERTION"),
+    hasHomepage: Boolean(repo.homepage),
+    recentlyPushed: Number.isFinite(age) ? age <= 90 : false,
+    archived: Boolean(repo.archived || repo.disabled),
+    issueLoad,
+  };
+}
+
+function inferCandidateConfidence(candidate) {
+  const starScore = Math.min(
+    48,
+    Math.round(Math.log10(Number(candidate.stars ?? 0) + 1) * 18),
+  );
+  const freshnessScore = Date.parse(candidate.updatedAt || "") ? 14 : 0;
+  const licenseScore =
+    candidate.license && candidate.license !== "NOASSERTION" ? 12 : 0;
+  return Math.max(
+    42,
+    Math.min(96, starScore + freshnessScore + licenseScore + 24),
+  );
+}
+
+function addRepositoryDerivedFields(repositories, fetchedAt) {
+  const globalRanks = new Map(
+    [...repositories]
+      .sort((a, b) => b.stars - a.stars || a.repo.localeCompare(b.repo))
+      .map((repo, index) => [repo.repo, index + 1]),
+  );
+  const categoryRanks = new Map();
+
+  for (const category of CATEGORIES) {
+    [...repositories]
+      .filter((repo) => repo.category === category)
+      .sort((a, b) => b.stars - a.stars || a.repo.localeCompare(b.repo))
+      .forEach((repo, index) => categoryRanks.set(repo.repo, index + 1));
+  }
+
+  return repositories.map((repo) => ({
+    ...repo,
+    audiences: inferAudiences(repo),
+    status: repo.status ?? (repo.archived ? "archived" : "active"),
+    rank: globalRanks.get(repo.repo),
+    rankByCategory: categoryRanks.get(repo.repo),
+    freshness: inferFreshness(repo, fetchedAt),
+    qualitySignals: buildQualitySignals(repo, fetchedAt),
+  }));
 }
 
 function mapRepoFailureWithPrevious(input, error, fetchedAt, previous) {
@@ -432,15 +608,16 @@ export async function buildSnapshot(
   return {
     generatedAt: fetchedAt,
     source: "github-rest",
-    repositories,
+    repositories: addRepositoryDerivedFields(repositories, fetchedAt),
   };
 }
 
 function mapCandidate(item, query, fetchedAt) {
-  return {
+  const candidate = {
     repo: item.full_name,
     fullName: item.full_name,
     category: query.category,
+    suggestedCategory: query.category,
     matchedQuery: query.id,
     reason: query.reason,
     description: item.description ?? "",
@@ -453,6 +630,12 @@ function mapCandidate(item, query, fetchedAt) {
     updatedAt: item.updated_at ?? "",
     alreadyCurated: false,
     lastFetchedAt: fetchedAt,
+  };
+
+  return {
+    ...candidate,
+    suggestedAudiences: inferAudiences(candidate),
+    confidence: inferCandidateConfidence(candidate),
   };
 }
 

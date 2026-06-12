@@ -52,6 +52,12 @@
   summary:
     zh: 一句话说明它为什么值得收录。
     en: One sentence explaining why it belongs here.
+  audiences: [developer]
+  useCases:
+    - zh: 辅助编码、调试或 Agent 编排。
+      en: Coding, debugging, or agent orchestration.
+  difficulty: Intermediate
+  status: active
   homepage: https://example.com
   featured: false
 ```
@@ -63,7 +69,25 @@
 - `platforms`：使用产品、生态或运行平台，例如 `MCP`、`Python`、`Images`。
 - `tags`：使用功能标签，例如 `workflow`、`rag`、`prompt-engineering`。
 - `summary.zh` 和 `summary.en`：必须同时提供。
+- `audiences`：可选，使用 `developer`、`creator`、`designMarketing`、`research`、`productivity`、`mcp`。
+- `useCases`：可选，写 1-3 个中英文核心使用场景。
+- `difficulty`：可选，使用 `Beginner`、`Intermediate`、`Advanced`。
+- `status`：可选，使用 `active`、`experimental`、`archived`。
 - `homepage` 和 `featured` 可选。
+
+如果不填写 `audiences`，数据脚本会按分类、平台和标签推断。为了减少误判，建议对跨界项目手动填写。
+
+## 通过 Issue 推荐仓库
+
+也可以通过站点里的“推荐 skill”按钮打开 GitHub Issue 表单。审核时请检查：
+
+- 仓库是否真实开源，README 是否能说明使用方式。
+- 是否与 AI skills、Agent、MCP、RAG、创作工作流、程序员工具或效率自动化相关。
+- 是否存在明显恶意、侵权、钓鱼或纯营销问题。
+- 建议分类、人群、平台和标签是否清晰。
+- 中英文简介是否准确且不夸张。
+
+审核通过后，把 Issue 内容整理进 `data/repositories.yml`，再运行数据刷新和测试。
 
 ## 更新候选发现
 
@@ -85,6 +109,7 @@
 
 ```bash
 npm run data:update
+npm run format:check
 npm run lint
 npm run test
 npm run build
