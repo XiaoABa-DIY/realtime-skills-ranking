@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T19:45:11.841Z",
+  "generatedAt": "2026-06-12T11:09:29.124Z",
   "source": "github-search",
   "candidates": [
     {
@@ -12,15 +12,15 @@
         "en": "Potential open-source framework for orchestrating AI agents."
       },
       "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-      "stars": 68726,
-      "forks": 8782,
+      "stars": 68744,
+      "forks": 8783,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/FoundationAgents/MetaGPT",
       "pushedAt": "2026-01-21T10:12:33Z",
-      "updatedAt": "2026-06-11T18:27:50Z",
+      "updatedAt": "2026-06-12T11:04:49Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "AstrBotDevs/AstrBot",
@@ -32,15 +32,15 @@
         "en": "Potential open-source framework for orchestrating AI agents."
       },
       "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
-      "stars": 34448,
-      "forks": 2367,
+      "stars": 34513,
+      "forks": 2369,
       "language": "Python",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/AstrBotDevs/AstrBot",
       "pushedAt": "2026-06-10T08:58:18Z",
-      "updatedAt": "2026-06-11T19:30:26Z",
+      "updatedAt": "2026-06-12T11:02:43Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "zai-org/Open-AutoGLM",
@@ -52,15 +52,15 @@
         "en": "Potential open-source framework for orchestrating AI agents."
       },
       "description": "An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
-      "stars": 25493,
-      "forks": 3972,
+      "stars": 25496,
+      "forks": 3971,
       "language": "Python",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/zai-org/Open-AutoGLM",
       "pushedAt": "2026-03-06T08:38:39Z",
-      "updatedAt": "2026-06-11T19:18:54Z",
+      "updatedAt": "2026-06-12T10:52:37Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "activepieces/activepieces",
@@ -72,15 +72,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents",
-      "stars": 22710,
-      "forks": 3788,
+      "stars": 22720,
+      "forks": 3791,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/activepieces/activepieces",
-      "pushedAt": "2026-06-11T18:40:18Z",
-      "updatedAt": "2026-06-11T18:27:26Z",
+      "pushedAt": "2026-06-12T01:27:31Z",
+      "updatedAt": "2026-06-12T09:52:43Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "liyupi/ai-guide",
@@ -92,15 +92,15 @@
         "en": "Related to prompts, workflows, or skill methodology."
       },
       "description": "程序员鱼皮的 AI 资源大全 + Vibe Coding 零基础教程，分享 OpenClaw 保姆级教程、大模型玩法（DeepSeek / GPT / Gemini / Claude）、最新 AI 资讯、Prompt 提示词大全、AI 知识百科（Agent Skills / RAG / MCP / A2A）、AI 编程教程（Harness Engineering）、AI 工具用法（Cursor / Claude Code / TRAE / Codex / Copilot）、AI 开发框架教程（Spring AI / LangChain）、AI 产品变现指南，帮你快速掌握 AI 技术，走在时代前沿。本项目为开源文档，已升级为鱼皮 AI 导航网站",
-      "stars": 15607,
-      "forks": 1751,
+      "stars": 15646,
+      "forks": 1754,
       "language": "JavaScript",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/liyupi/ai-guide",
       "pushedAt": "2026-06-04T12:40:40Z",
-      "updatedAt": "2026-06-11T17:17:01Z",
+      "updatedAt": "2026-06-12T11:09:23Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "googleapis/mcp-toolbox",
@@ -112,15 +112,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "MCP Toolbox for Databases is an open source MCP server for databases.",
-      "stars": 15587,
+      "stars": 15595,
       "forks": 1596,
       "language": "Go",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/googleapis/mcp-toolbox",
-      "pushedAt": "2026-06-11T18:51:18Z",
-      "updatedAt": "2026-06-11T18:35:09Z",
+      "pushedAt": "2026-06-12T11:09:01Z",
+      "updatedAt": "2026-06-12T11:08:13Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "GLips/Figma-Context-MCP",
@@ -132,15 +132,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "MCP server to provide Figma layout information to AI coding agents like Cursor",
-      "stars": 15080,
-      "forks": 1195,
+      "stars": 15089,
+      "forks": 1196,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/GLips/Figma-Context-MCP",
       "pushedAt": "2026-05-27T22:18:23Z",
-      "updatedAt": "2026-06-11T18:29:07Z",
+      "updatedAt": "2026-06-12T11:07:01Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "mcp-use/mcp-use",
@@ -152,15 +152,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "The fullstack MCP framework to develop MCP Apps for ChatGPT / Claude & MCP Servers for AI Agents.",
-      "stars": 10088,
+      "stars": 10093,
       "forks": 1326,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/mcp-use/mcp-use",
-      "pushedAt": "2026-06-11T18:43:22Z",
-      "updatedAt": "2026-06-11T13:57:02Z",
+      "pushedAt": "2026-06-12T10:12:36Z",
+      "updatedAt": "2026-06-12T08:37:43Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "0x4m4/hexstrike-ai",
@@ -172,15 +172,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "HexStrike AI MCP Agents is an advanced MCP server that lets AI agents (Claude, GPT, Copilot, etc.) autonomously run 150+ cybersecurity tools for automated pentesting, vulnerability discovery, bug bounty automation, and security research. Seamlessly bridge LLMs with real-world offensive security capabilities.",
-      "stars": 9520,
-      "forks": 2047,
+      "stars": 9532,
+      "forks": 2046,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/0x4m4/hexstrike-ai",
       "pushedAt": "2026-04-27T08:56:07Z",
-      "updatedAt": "2026-06-11T18:29:39Z",
+      "updatedAt": "2026-06-12T10:24:24Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "idosal/git-mcp",
@@ -192,15 +192,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
-      "stars": 8160,
-      "forks": 722,
+      "stars": 8163,
+      "forks": 723,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/idosal/git-mcp",
       "pushedAt": "2026-05-08T14:21:24Z",
-      "updatedAt": "2026-06-11T03:58:37Z",
+      "updatedAt": "2026-06-12T08:04:25Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "epiral/bb-browser",
@@ -212,15 +212,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "Your browser is the API. CLI + MCP server for AI agents to control Chrome with your login state.",
-      "stars": 5746,
-      "forks": 571,
+      "stars": 5754,
+      "forks": 573,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/epiral/bb-browser",
       "pushedAt": "2026-05-29T08:14:51Z",
-      "updatedAt": "2026-06-11T18:30:55Z",
+      "updatedAt": "2026-06-12T10:57:23Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "agent-infra/sandbox",
@@ -232,15 +232,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "All-in-One Sandbox for AI Agents that combines Browser, Shell, File, MCP and VSCode Server in a single Docker container.",
-      "stars": 5061,
-      "forks": 450,
+      "stars": 5079,
+      "forks": 452,
       "language": "Python",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/agent-infra/sandbox",
       "pushedAt": "2026-05-29T04:45:25Z",
-      "updatedAt": "2026-06-11T19:08:04Z",
+      "updatedAt": "2026-06-12T10:57:43Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "Meirtz/Awesome-Context-Engineering",
@@ -252,35 +252,15 @@
         "en": "Related to prompts, workflows, or skill methodology."
       },
       "description": " 🔥 Comprehensive survey on Context Engineering: from prompt engineering to production-grade AI systems. hundreds of papers, frameworks, and  implementation guides for LLMs and AI agents.",
-      "stars": 3174,
-      "forks": 242,
+      "stars": 3176,
+      "forks": 244,
       "language": "Unknown",
       "license": "MIT",
       "htmlUrl": "https://github.com/Meirtz/Awesome-Context-Engineering",
       "pushedAt": "2026-05-28T05:40:26Z",
-      "updatedAt": "2026-06-10T20:10:19Z",
+      "updatedAt": "2026-06-12T02:40:06Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
-    },
-    {
-      "repo": "sudoskys/StableDiffusionBook",
-      "fullName": "sudoskys/StableDiffusionBook",
-      "category": "Prompt & Workflow",
-      "matchedQuery": "prompt-workflows",
-      "reason": {
-        "zh": "与提示词、工作流或技能方法论相关。",
-        "en": "Related to prompts, workflows, or skill methodology."
-      },
-      "description": "How do we integrate AI generation tools into actual work? | 关于 Ai 绘画的Wiki | Wiki about Ai painting | Prompts Engineering| 指南 Guide | Seeking Maintainer&Translator🙌",
-      "stars": 1975,
-      "forks": 117,
-      "language": "HTML",
-      "license": "NOASSERTION",
-      "htmlUrl": "https://github.com/sudoskys/StableDiffusionBook",
-      "pushedAt": "2024-10-31T13:19:13Z",
-      "updatedAt": "2026-06-10T08:39:05Z",
-      "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "Light-Heart-Labs/DreamServer",
@@ -292,15 +272,35 @@
         "en": "May provide AI image or media generation workflows."
       },
       "description": "Turn your PC, Mac, or Linux box into an AI server.  LLM inference, chat UI, voice, agents, workflows, RAG, and image generation.",
-      "stars": 1971,
-      "forks": 289,
+      "stars": 1976,
+      "forks": 293,
       "language": "Shell",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/Light-Heart-Labs/DreamServer",
       "pushedAt": "2026-06-11T08:35:33Z",
-      "updatedAt": "2026-06-11T18:54:51Z",
+      "updatedAt": "2026-06-12T11:01:08Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
+    },
+    {
+      "repo": "sudoskys/StableDiffusionBook",
+      "fullName": "sudoskys/StableDiffusionBook",
+      "category": "Prompt & Workflow",
+      "matchedQuery": "prompt-workflows",
+      "reason": {
+        "zh": "与提示词、工作流或技能方法论相关。",
+        "en": "Related to prompts, workflows, or skill methodology."
+      },
+      "description": "How do we integrate AI generation tools into actual work? | 关于 Ai 绘画的Wiki | Wiki about Ai painting | Prompts Engineering| 指南 Guide | Seeking Maintainer&Translator🙌",
+      "stars": 1974,
+      "forks": 117,
+      "language": "HTML",
+      "license": "NOASSERTION",
+      "htmlUrl": "https://github.com/sudoskys/StableDiffusionBook",
+      "pushedAt": "2024-10-31T13:19:13Z",
+      "updatedAt": "2026-06-12T10:43:23Z",
+      "alreadyCurated": false,
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "0xMassi/webclaw",
@@ -312,15 +312,15 @@
         "en": "Tools for web research, crawling, extraction, and RAG knowledge preparation."
       },
       "description": "Fast, local-first web content extraction for LLMs. Scrape, crawl, extract structured data — all from Rust. CLI, REST API, and MCP server.",
-      "stars": 1331,
-      "forks": 150,
+      "stars": 1341,
+      "forks": 151,
       "language": "Rust",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/0xMassi/webclaw",
       "pushedAt": "2026-06-11T13:16:58Z",
-      "updatedAt": "2026-06-11T18:49:53Z",
+      "updatedAt": "2026-06-12T10:45:29Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "study8677/antigravity-workspace-template",
@@ -332,15 +332,15 @@
         "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
       },
       "description": "Give Claude Code, Cursor, Codex CLI a ChatGPT for your codebase. Multi-agent knowledge engine, grounded Q&A with file paths and line numbers. Works in any AI IDE.",
-      "stars": 1274,
+      "stars": 1275,
       "forks": 259,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/study8677/antigravity-workspace-template",
       "pushedAt": "2026-06-09T08:04:17Z",
-      "updatedAt": "2026-06-11T11:00:19Z",
+      "updatedAt": "2026-06-12T11:07:43Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "elirantutia/vibeyard",
@@ -352,15 +352,15 @@
         "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
       },
       "description": "The IDE built for AI coding agents.",
-      "stars": 1097,
+      "stars": 1153,
       "forks": 141,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/elirantutia/vibeyard",
       "pushedAt": "2026-06-04T12:04:37Z",
-      "updatedAt": "2026-06-11T18:41:11Z",
+      "updatedAt": "2026-06-12T10:55:06Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "if-ai/ComfyUI-IF_AI_tools",
@@ -380,7 +380,7 @@
       "pushedAt": "2025-09-15T09:05:20Z",
       "updatedAt": "2026-06-04T15:14:33Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "funny-vibes/agent-vibes",
@@ -400,7 +400,7 @@
       "pushedAt": "2026-06-10T11:11:40Z",
       "updatedAt": "2026-06-10T11:11:42Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "yohasebe/openai-chat-api-workflow",
@@ -420,7 +420,7 @@
       "pushedAt": "2026-04-25T09:20:43Z",
       "updatedAt": "2026-05-20T16:50:06Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "lanes-sh/app",
@@ -440,7 +440,7 @@
       "pushedAt": "2026-06-10T12:04:25Z",
       "updatedAt": "2026-06-11T15:24:08Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "arorarishi/Prompt-Engineering-Jumpstart",
@@ -460,7 +460,7 @@
       "pushedAt": "2025-12-23T18:41:04Z",
       "updatedAt": "2026-06-09T12:27:19Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "FilippoMB/Diffusion_models_tutorial",
@@ -480,7 +480,7 @@
       "pushedAt": "2026-04-21T19:05:59Z",
       "updatedAt": "2026-06-05T14:16:31Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "huanchong-99/SoloDawn",
@@ -500,7 +500,7 @@
       "pushedAt": "2026-05-07T16:00:51Z",
       "updatedAt": "2026-06-08T23:49:24Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "JohnMwendwa/free-ai-resources",
@@ -520,7 +520,7 @@
       "pushedAt": "2025-05-24T05:51:40Z",
       "updatedAt": "2026-06-11T12:08:56Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "MushroomFleet/DJZ-Workflows",
@@ -540,7 +540,7 @@
       "pushedAt": "2026-04-07T17:36:53Z",
       "updatedAt": "2026-05-28T05:19:47Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "HiFoxAI/HiFox",
@@ -560,7 +560,7 @@
       "pushedAt": "2025-03-04T09:03:04Z",
       "updatedAt": "2026-04-19T20:53:08Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "qzw881130/AI-NovelFlow",
@@ -580,7 +580,7 @@
       "pushedAt": "2026-05-10T08:41:44Z",
       "updatedAt": "2026-06-07T04:00:37Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "workstream-labs/workstreams",
@@ -600,7 +600,7 @@
       "pushedAt": "2026-04-22T07:05:44Z",
       "updatedAt": "2026-06-08T09:25:14Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "ChanMeng666/echook",
@@ -612,15 +612,15 @@
         "en": "AI coding, IDE, CLI, or engineering automation tools for developers."
       },
       "description": "🔊 echook — AI-operated audio notifications for Claude Code, Cursor IDE & Codex CLI — 26 hooks, voice + chime themes, TTS, webhooks, rate-limit alerts, status line. Tell your AI agent to install — natural language forever after.",
-      "stars": 67,
+      "stars": 68,
       "forks": 6,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/ChanMeng666/echook",
-      "pushedAt": "2026-06-05T10:02:23Z",
-      "updatedAt": "2026-06-11T10:11:04Z",
+      "pushedAt": "2026-06-12T07:09:11Z",
+      "updatedAt": "2026-06-12T08:39:08Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "ShunL12324/comfy-portal",
@@ -640,7 +640,7 @@
       "pushedAt": "2026-02-23T11:52:04Z",
       "updatedAt": "2026-06-05T16:01:38Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "vilmire/adhdev",
@@ -657,10 +657,10 @@
       "language": "TypeScript",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/vilmire/adhdev",
-      "pushedAt": "2026-06-11T16:45:35Z",
-      "updatedAt": "2026-06-11T16:52:22Z",
+      "pushedAt": "2026-06-12T09:48:13Z",
+      "updatedAt": "2026-06-12T09:48:17Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "Anil-matcha/gpt-image-2-comfyui",
@@ -680,7 +680,7 @@
       "pushedAt": "2026-04-22T07:52:49Z",
       "updatedAt": "2026-05-30T04:50:16Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "DLhugly/Clif-Code",
@@ -700,7 +700,7 @@
       "pushedAt": "2026-04-26T16:22:30Z",
       "updatedAt": "2026-06-06T18:49:04Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "Nachx639/termide",
@@ -720,7 +720,7 @@
       "pushedAt": "2026-04-30T18:39:56Z",
       "updatedAt": "2026-05-25T18:46:33Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "jayeshmepani/python-web-scraping-libraries",
@@ -740,7 +740,7 @@
       "pushedAt": "2026-04-20T06:42:14Z",
       "updatedAt": "2026-04-24T16:54:30Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "kush-agra-soni/advance_ai_web_crawler",
@@ -760,7 +760,7 @@
       "pushedAt": "2025-12-10T17:27:24Z",
       "updatedAt": "2025-12-10T18:35:07Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "surya-koritala/phantombot",
@@ -780,7 +780,7 @@
       "pushedAt": "2026-04-12T23:59:52Z",
       "updatedAt": "2026-04-12T23:59:57Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "danhwang0623/crawler-ai",
@@ -800,7 +800,7 @@
       "pushedAt": "2025-04-14T20:11:31Z",
       "updatedAt": "2025-04-14T20:11:34Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "ojasviii14/rag-crawler_Ojasvi",
@@ -820,7 +820,7 @@
       "pushedAt": "2025-10-14T12:31:12Z",
       "updatedAt": "2025-10-14T12:31:15Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     },
     {
       "repo": "RemyDaubenfeld/web-seo-toolkit",
@@ -840,7 +840,7 @@
       "pushedAt": "2026-05-29T13:37:46Z",
       "updatedAt": "2026-05-29T13:37:43Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-11T19:45:11.841Z"
+      "lastFetchedAt": "2026-06-12T11:09:29.124Z"
     }
   ]
 }
