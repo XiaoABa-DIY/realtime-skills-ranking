@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T09:17:09.011Z",
+  "generatedAt": "2026-06-15T09:29:02.395Z",
   "source": "github-search",
   "candidates": [
     {
@@ -13,15 +13,15 @@
         "en": "Potential open-source framework for orchestrating AI agents."
       },
       "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-      "stars": 68812,
+      "stars": 68813,
       "forks": 8790,
       "language": "Python",
       "license": "MIT",
       "htmlUrl": "https://github.com/FoundationAgents/MetaGPT",
       "pushedAt": "2026-01-21T10:12:33Z",
-      "updatedAt": "2026-06-15T09:00:06Z",
+      "updatedAt": "2026-06-15T09:27:43Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer"],
       "confidence": 96
     },
@@ -42,9 +42,9 @@
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/AstrBotDevs/AstrBot",
       "pushedAt": "2026-06-15T05:41:25Z",
-      "updatedAt": "2026-06-15T09:08:23Z",
+      "updatedAt": "2026-06-15T09:28:28Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer"],
       "confidence": 96
     },
@@ -67,7 +67,7 @@
       "pushedAt": "2026-03-06T08:38:39Z",
       "updatedAt": "2026-06-15T08:51:03Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer"],
       "confidence": 96
     },
@@ -87,10 +87,10 @@
       "language": "TypeScript",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/activepieces/activepieces",
-      "pushedAt": "2026-06-15T09:13:23Z",
+      "pushedAt": "2026-06-15T09:20:18Z",
       "updatedAt": "2026-06-15T08:47:05Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 86
     },
@@ -113,7 +113,7 @@
       "pushedAt": "2026-06-04T12:40:40Z",
       "updatedAt": "2026-06-15T09:11:02Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "productivity"],
       "confidence": 86
     },
@@ -133,10 +133,10 @@
       "language": "Go",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/googleapis/mcp-toolbox",
-      "pushedAt": "2026-06-15T09:16:21Z",
-      "updatedAt": "2026-06-15T09:11:49Z",
+      "pushedAt": "2026-06-15T09:27:31Z",
+      "updatedAt": "2026-06-15T09:23:01Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 96
     },
@@ -151,15 +151,15 @@
         "en": "Related to MCP tool connections and agent capability extensions."
       },
       "description": "MCP server to provide Figma layout information to AI coding agents like Cursor",
-      "stars": 15108,
+      "stars": 15109,
       "forks": 1195,
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/GLips/Figma-Context-MCP",
       "pushedAt": "2026-05-27T22:18:23Z",
-      "updatedAt": "2026-06-15T08:10:05Z",
+      "updatedAt": "2026-06-15T09:23:18Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 96
     },
@@ -179,10 +179,10 @@
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/mcp-use/mcp-use",
-      "pushedAt": "2026-06-15T09:05:30Z",
+      "pushedAt": "2026-06-15T09:28:20Z",
       "updatedAt": "2026-06-15T06:08:10Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 96
     },
@@ -205,7 +205,7 @@
       "pushedAt": "2026-04-27T08:56:07Z",
       "updatedAt": "2026-06-15T08:51:40Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 96
     },
@@ -228,7 +228,7 @@
       "pushedAt": "2026-05-08T14:21:24Z",
       "updatedAt": "2026-06-15T08:12:38Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 96
     },
@@ -251,7 +251,7 @@
       "pushedAt": "2026-05-29T08:14:51Z",
       "updatedAt": "2026-06-15T07:50:53Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 96
     },
@@ -274,7 +274,7 @@
       "pushedAt": "2026-06-15T08:45:43Z",
       "updatedAt": "2026-06-15T09:05:25Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 96
     },
@@ -297,7 +297,7 @@
       "pushedAt": "2026-05-28T05:40:26Z",
       "updatedAt": "2026-06-15T02:23:58Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "productivity"],
       "confidence": 96
     },
@@ -312,15 +312,15 @@
         "en": "May provide AI image or media generation workflows."
       },
       "description": "Turn your PC, Mac, or Linux box into an AI server.  LLM inference, chat UI, voice, agents, workflows, RAG, and image generation.",
-      "stars": 2033,
+      "stars": 2034,
       "forks": 306,
       "language": "Shell",
       "license": "Apache-2.0",
       "htmlUrl": "https://github.com/Light-Heart-Labs/DreamServer",
       "pushedAt": "2026-06-15T02:24:06Z",
-      "updatedAt": "2026-06-15T08:05:01Z",
+      "updatedAt": "2026-06-15T09:20:41Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "designMarketing"],
       "confidence": 96
     },
@@ -343,7 +343,7 @@
       "pushedAt": "2024-10-31T13:19:13Z",
       "updatedAt": "2026-06-12T10:43:23Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "productivity"],
       "confidence": 86
     },
@@ -363,10 +363,10 @@
       "language": "Rust",
       "license": "AGPL-3.0",
       "htmlUrl": "https://github.com/0xMassi/webclaw",
-      "pushedAt": "2026-06-12T15:59:56Z",
-      "updatedAt": "2026-06-15T08:29:21Z",
+      "pushedAt": "2026-06-15T09:27:06Z",
+      "updatedAt": "2026-06-15T09:27:10Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["research"],
       "confidence": 96
     },
@@ -389,7 +389,7 @@
       "pushedAt": "2026-06-09T08:04:17Z",
       "updatedAt": "2026-06-13T18:24:50Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 96
     },
@@ -412,7 +412,7 @@
       "pushedAt": "2026-06-04T12:04:37Z",
       "updatedAt": "2026-06-15T08:05:17Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 96
     },
@@ -435,7 +435,7 @@
       "pushedAt": "2025-09-15T09:05:20Z",
       "updatedAt": "2026-06-04T15:14:33Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "designMarketing"],
       "confidence": 96
     },
@@ -455,10 +455,10 @@
       "language": "TypeScript",
       "license": "MIT",
       "htmlUrl": "https://github.com/funny-vibes/agent-vibes",
-      "pushedAt": "2026-06-15T08:04:09Z",
-      "updatedAt": "2026-06-15T08:04:04Z",
+      "pushedAt": "2026-06-15T09:17:27Z",
+      "updatedAt": "2026-06-15T09:17:49Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 95
     },
@@ -481,7 +481,7 @@
       "pushedAt": "2026-04-25T09:20:43Z",
       "updatedAt": "2026-05-20T16:50:06Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "designMarketing"],
       "confidence": 95
     },
@@ -504,7 +504,7 @@
       "pushedAt": "2026-06-10T12:04:25Z",
       "updatedAt": "2026-06-13T20:21:38Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 81
     },
@@ -527,7 +527,7 @@
       "pushedAt": "2025-12-23T18:41:04Z",
       "updatedAt": "2026-06-09T12:27:19Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "productivity"],
       "confidence": 91
     },
@@ -550,7 +550,7 @@
       "pushedAt": "2026-04-21T19:05:59Z",
       "updatedAt": "2026-06-05T14:16:31Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "productivity"],
       "confidence": 90
     },
@@ -570,10 +570,10 @@
       "language": "Rust",
       "license": "NOASSERTION",
       "htmlUrl": "https://github.com/huanchong-99/SoloDawn",
-      "pushedAt": "2026-06-15T08:29:14Z",
-      "updatedAt": "2026-06-15T07:22:57Z",
+      "pushedAt": "2026-06-15T09:17:51Z",
+      "updatedAt": "2026-06-15T09:18:07Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 78
     },
@@ -596,7 +596,7 @@
       "pushedAt": "2025-05-24T05:51:40Z",
       "updatedAt": "2026-06-13T13:38:44Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "productivity"],
       "confidence": 90
     },
@@ -619,7 +619,7 @@
       "pushedAt": "2026-04-07T17:36:53Z",
       "updatedAt": "2026-05-28T05:19:47Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "designMarketing"],
       "confidence": 75
     },
@@ -642,7 +642,7 @@
       "pushedAt": "2025-03-04T09:03:04Z",
       "updatedAt": "2026-04-19T20:53:08Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "designMarketing"],
       "confidence": 74
     },
@@ -665,7 +665,7 @@
       "pushedAt": "2026-05-10T08:41:44Z",
       "updatedAt": "2026-06-14T09:19:38Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "designMarketing"],
       "confidence": 73
     },
@@ -688,7 +688,7 @@
       "pushedAt": "2026-04-22T07:05:44Z",
       "updatedAt": "2026-06-08T09:25:14Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 72
     },
@@ -711,7 +711,7 @@
       "pushedAt": "2026-06-12T07:09:11Z",
       "updatedAt": "2026-06-14T04:33:25Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 83
     },
@@ -734,7 +734,7 @@
       "pushedAt": "2026-02-23T11:52:04Z",
       "updatedAt": "2026-06-05T16:01:38Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "designMarketing"],
       "confidence": 70
     },
@@ -757,7 +757,7 @@
       "pushedAt": "2026-06-15T09:10:18Z",
       "updatedAt": "2026-06-15T09:10:23Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 80
     },
@@ -780,7 +780,7 @@
       "pushedAt": "2026-04-22T07:52:49Z",
       "updatedAt": "2026-05-30T04:50:16Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["creator", "designMarketing"],
       "confidence": 79
     },
@@ -803,7 +803,7 @@
       "pushedAt": "2026-04-26T16:22:30Z",
       "updatedAt": "2026-06-06T18:49:04Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 59
     },
@@ -826,7 +826,7 @@
       "pushedAt": "2026-04-30T18:39:56Z",
       "updatedAt": "2026-05-25T18:46:33Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["developer", "mcp"],
       "confidence": 69
     },
@@ -849,7 +849,7 @@
       "pushedAt": "2026-04-20T06:42:14Z",
       "updatedAt": "2026-04-24T16:54:30Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["research"],
       "confidence": 59
     },
@@ -872,7 +872,7 @@
       "pushedAt": "2025-12-10T17:27:24Z",
       "updatedAt": "2025-12-10T18:35:07Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["research"],
       "confidence": 43
     },
@@ -895,7 +895,7 @@
       "pushedAt": "2026-04-12T23:59:52Z",
       "updatedAt": "2026-04-12T23:59:57Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["research"],
       "confidence": 55
     },
@@ -918,7 +918,7 @@
       "pushedAt": "2025-04-14T20:11:31Z",
       "updatedAt": "2025-04-14T20:11:34Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["research"],
       "confidence": 50
     },
@@ -941,7 +941,7 @@
       "pushedAt": "2025-10-14T12:31:12Z",
       "updatedAt": "2025-10-14T12:31:15Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["research"],
       "confidence": 50
     },
@@ -964,7 +964,7 @@
       "pushedAt": "2026-05-29T13:37:46Z",
       "updatedAt": "2026-05-29T13:37:43Z",
       "alreadyCurated": false,
-      "lastFetchedAt": "2026-06-15T09:17:09.011Z",
+      "lastFetchedAt": "2026-06-15T09:29:02.395Z",
       "suggestedAudiences": ["research"],
       "confidence": 50
     }

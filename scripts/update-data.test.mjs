@@ -4,6 +4,7 @@ import {
   buildCandidates,
   buildSnapshot,
   createHistoryFromSnapshot,
+  mergeHistoryPayloads,
   mergeSnapshotIntoHistory,
   normalizeRepo,
   parseCompactNumber,
@@ -287,6 +288,64 @@ describe("update-data script helpers", () => {
     const merged = mergeSnapshotIntoHistory(history, snapshot);
 
     expect(merged.repositories[0].samples).toEqual([
+      {
+        date: "2026-06-15",
+        stars: 14,
+        forks: 3,
+        rank: 2,
+        rankByCategory: 1,
+      },
+    ]);
+  });
+
+  it("merges committed seed history with deployed history without dropping samples", () => {
+    const committedHistory = {
+      generatedAt: "2026-06-12T00:00:00.000Z",
+      retentionDays: 180,
+      repositories: [
+        {
+          repo: "owner/good",
+          samples: [
+            {
+              date: "2026-06-12",
+              stars: 10,
+              forks: 2,
+              rank: 3,
+              rankByCategory: 1,
+            },
+          ],
+        },
+      ],
+    };
+    const deployedHistory = {
+      generatedAt: "2026-06-15T00:00:00.000Z",
+      retentionDays: 180,
+      repositories: [
+        {
+          repo: "owner/good",
+          samples: [
+            {
+              date: "2026-06-15",
+              stars: 14,
+              forks: 3,
+              rank: 2,
+              rankByCategory: 1,
+            },
+          ],
+        },
+      ],
+    };
+
+    const merged = mergeHistoryPayloads([committedHistory, deployedHistory]);
+
+    expect(merged.repositories[0].samples).toEqual([
+      {
+        date: "2026-06-12",
+        stars: 10,
+        forks: 2,
+        rank: 3,
+        rankByCategory: 1,
+      },
       {
         date: "2026-06-15",
         stars: 14,

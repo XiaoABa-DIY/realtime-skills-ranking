@@ -756,6 +756,50 @@ function normalizeHistory(history, retentionDays = HISTORY_RETENTION_DAYS) {
   };
 }
 
+export function mergeHistoryPayloads(
+  histories,
+  retentionDays = HISTORY_RETENTION_DAYS,
+) {
+  const normalizedHistories = histories
+    .filter(Boolean)
+    .map((history) =>
+      normalizeHistory(history, history?.retentionDays ?? retentionDays),
+    )
+    .filter((history) => history.repositories.length > 0);
+  const generatedAt =
+    normalizedHistories
+      .map((history) => history.generatedAt)
+      .filter(Boolean)
+      .sort()
+      .at(-1) ?? nowIso();
+  const historyByRepo = new Map();
+
+  for (const history of normalizedHistories) {
+    for (const repoHistory of history.repositories) {
+      const key = repoHistory.repo.toLowerCase();
+      const existing = historyByRepo.get(key) ?? {
+        repo: repoHistory.repo,
+        samples: new Map(),
+      };
+      for (const sample of repoHistory.samples) {
+        existing.samples.set(sample.date, sample);
+      }
+      historyByRepo.set(key, existing);
+    }
+  }
+
+  return {
+    generatedAt,
+    retentionDays,
+    repositories: [...historyByRepo.values()]
+      .map((repoHistory) => ({
+        repo: repoHistory.repo,
+        samples: [...repoHistory.samples.values()].sort(byDateThenRepo),
+      }))
+      .sort((a, b) => a.repo.localeCompare(b.repo)),
+  };
+}
+
 export function createHistoryFromSnapshot(
   snapshot,
   retentionDays = HISTORY_RETENTION_DAYS,
@@ -914,18 +958,21 @@ async function readPreviousSnapshot(snapshotPath) {
   }
 }
 
-async function readHistory(historyPath, seedSnapshot) {
+async function readJsonIfExists(filePath) {
+  if (!filePath) return null;
   try {
-    const raw = await fs.readFile(historyPath, "utf8");
-    const parsed = JSON.parse(raw);
-    const history = normalizeHistory(
-      parsed,
-      parsed?.retentionDays ?? HISTORY_RETENTION_DAYS,
-    );
-    if (history.repositories.length > 0) return history;
+    const raw = await fs.readFile(filePath, "utf8");
+    return JSON.parse(raw);
   } catch {
-    // Fall back to seeding from the checked-out snapshot below.
+    return null;
   }
+}
+
+async function readHistory(historyPath, seedSnapshot, deployedHistoryPath) {
+  const committedHistory = await readJsonIfExists(historyPath);
+  const deployedHistory = await readJsonIfExists(deployedHistoryPath);
+  const merged = mergeHistoryPayloads([committedHistory, deployedHistory]);
+  if (merged.repositories.length > 0) return merged;
 
   return createHistoryFromSnapshot(seedSnapshot);
 }
@@ -936,6 +983,7 @@ export async function updateData({
   snapshotPath = DEFAULT_SNAPSHOT,
   candidatesPath = DEFAULT_CANDIDATES,
   historyPath = DEFAULT_HISTORY,
+  deployedHistoryPath = process.env.DEPLOYED_HISTORY_PATH,
   githubFetch = createGitHubFetcher(),
   htmlFetch = createGitHubHtmlFetcher(),
 } = {}) {
@@ -945,7 +993,11 @@ export async function updateData({
   const previousRepositories = Array.isArray(previousSnapshot?.repositories)
     ? previousSnapshot.repositories
     : [];
-  const previousHistory = await readHistory(historyPath, previousSnapshot);
+  const previousHistory = await readHistory(
+    historyPath,
+    previousSnapshot,
+    deployedHistoryPath,
+  );
   const snapshot = await buildSnapshot(repositories, githubFetch, {
     previousRepositories,
     htmlFetch,

@@ -39,16 +39,17 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p public/data
+          mkdir -p .history-source
           git fetch origin gh-pages || true
           if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
-            git show origin/gh-pages:data/history.json > public/data/history.json || true
+            git show origin/gh-pages:data/history.json > .history-source/history.json || true
           fi
 
       - name: Refresh GitHub data snapshot
         run: npm run data:update
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          DEPLOYED_HISTORY_PATH: .history-source/history.json
 
       - name: Check formatting
         run: npm run format:check
