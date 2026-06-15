@@ -1,14 +1,21 @@
 {
-  "generatedAt": "2026-06-15T09:24:52.036Z",
+  "generatedAt": "2026-06-15T09:30:50.888Z",
   "retentionDays": 180,
   "repositories": [
     {
       "repo": "Aider-AI/aider",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 46026,
+          "forks": 4570,
+          "rank": 27,
+          "rankByCategory": 5
+        },
+        {
           "date": "2026-06-15",
           "stars": 46224,
-          "forks": 4583,
+          "forks": 4584,
           "rank": 27,
           "rankByCategory": 5
         }
@@ -18,8 +25,15 @@
       "repo": "anomalyco/opencode",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 173452,
+          "forks": 20860,
+          "rank": 2,
+          "rankByCategory": 1
+        },
+        {
           "date": "2026-06-15",
-          "stars": 174610,
+          "stars": 174611,
           "forks": 21127,
           "rank": 2,
           "rankByCategory": 1
@@ -29,6 +43,13 @@
     {
       "repo": "AUTOMATIC1111/stable-diffusion-webui",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 163633,
+          "forks": 30364,
+          "rank": 3,
+          "rankByCategory": 1
+        },
         {
           "date": "2026-06-15",
           "stars": 163722,
@@ -42,8 +63,15 @@
       "repo": "browser-use/browser-use",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 98402,
+          "forks": 10979,
+          "rank": 12,
+          "rankByCategory": 5
+        },
+        {
           "date": "2026-06-15",
-          "stars": 98892,
+          "stars": 98895,
           "forks": 11040,
           "rank": 12,
           "rankByCategory": 5
@@ -54,8 +82,15 @@
       "repo": "cline/cline",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 63091,
+          "forks": 6663,
+          "rank": 20,
+          "rankByCategory": 4
+        },
+        {
           "date": "2026-06-15",
-          "stars": 63311,
+          "stars": 63312,
           "forks": 6692,
           "rank": 20,
           "rankByCategory": 4
@@ -66,8 +101,15 @@
       "repo": "Comfy-Org/ComfyUI",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 116675,
+          "forks": 13651,
+          "rank": 10,
+          "rankByCategory": 2
+        },
+        {
           "date": "2026-06-15",
-          "stars": 117053,
+          "stars": 117056,
           "forks": 13695,
           "rank": 10,
           "rankByCategory": 2
@@ -78,8 +120,15 @@
       "repo": "continuedev/continue",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 33660,
+          "forks": 4642,
+          "rank": 29,
+          "rankByCategory": 6
+        },
+        {
           "date": "2026-06-15",
-          "stars": 33694,
+          "stars": 33693,
           "forks": 4657,
           "rank": 29,
           "rankByCategory": 6
@@ -89,6 +138,13 @@
     {
       "repo": "crewAIInc/crewAI",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 53306,
+          "forks": 7459,
+          "rank": 24,
+          "rankByCategory": 2
+        },
         {
           "date": "2026-06-15",
           "stars": 53589,
@@ -102,6 +158,13 @@
       "repo": "dair-ai/Prompt-Engineering-Guide",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 75557,
+          "forks": 8210,
+          "rank": 17,
+          "rankByCategory": 1
+        },
+        {
           "date": "2026-06-15",
           "stars": 75630,
           "forks": 8214,
@@ -114,9 +177,16 @@
       "repo": "deepset-ai/haystack",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 25547,
+          "forks": 2840,
+          "rank": 34,
+          "rankByCategory": 6
+        },
+        {
           "date": "2026-06-15",
           "stars": 25572,
-          "forks": 2855,
+          "forks": 2856,
           "rank": 34,
           "rankByCategory": 6
         }
@@ -126,8 +196,15 @@
       "repo": "firecrawl/firecrawl",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 131679,
+          "forks": 7762,
+          "rank": 9,
+          "rankByCategory": 2
+        },
+        {
           "date": "2026-06-15",
-          "stars": 132939,
+          "stars": 132940,
           "forks": 7798,
           "rank": 9,
           "rankByCategory": 2
@@ -138,8 +215,15 @@
       "repo": "fishaudio/fish-speech",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 30765,
+          "forks": 2625,
+          "rank": 30,
+          "rankByCategory": 3
+        },
+        {
           "date": "2026-06-15",
-          "stars": 30823,
+          "stars": 30824,
           "forks": 2632,
           "rank": 30,
           "rankByCategory": 3
@@ -149,6 +233,13 @@
     {
       "repo": "FlowiseAI/Flowise",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 53507,
+          "forks": 24499,
+          "rank": 23,
+          "rankByCategory": 6
+        },
         {
           "date": "2026-06-15",
           "stars": 53588,
@@ -162,8 +253,15 @@
       "repo": "google-gemini/gemini-cli",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 105182,
+          "forks": 14041,
+          "rank": 11,
+          "rankByCategory": 2
+        },
+        {
           "date": "2026-06-15",
-          "stars": 105292,
+          "stars": 105293,
           "forks": 14068,
           "rank": 11,
           "rankByCategory": 2
@@ -173,6 +271,13 @@
     {
       "repo": "humanlayer/12-factor-agents",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 23203,
+          "forks": 1775,
+          "rank": 37,
+          "rankByCategory": 2
+        },
         {
           "date": "2026-06-15",
           "stars": 23315,
@@ -186,6 +291,13 @@
       "repo": "invoke-ai/InvokeAI",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 27418,
+          "forks": 2876,
+          "rank": 32,
+          "rankByCategory": 3
+        },
+        {
           "date": "2026-06-15",
           "stars": 27432,
           "forks": 2876,
@@ -198,8 +310,15 @@
       "repo": "langchain-ai/langchain",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 139099,
+          "forks": 23052,
+          "rank": 8,
+          "rankByCategory": 1
+        },
+        {
           "date": "2026-06-15",
-          "stars": 139340,
+          "stars": 139342,
           "forks": 23092,
           "rank": 8,
           "rankByCategory": 1
@@ -210,9 +329,16 @@
       "repo": "langchain-ai/langgraph",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 34502,
+          "forks": 5795,
+          "rank": 28,
+          "rankByCategory": 3
+        },
+        {
           "date": "2026-06-15",
           "stars": 34793,
-          "forks": 5832,
+          "forks": 5833,
           "rank": 28,
           "rankByCategory": 3
         }
@@ -221,6 +347,13 @@
     {
       "repo": "langflow-ai/langflow",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 149574,
+          "forks": 9241,
+          "rank": 5,
+          "rankByCategory": 2
+        },
         {
           "date": "2026-06-15",
           "stars": 149690,
@@ -234,8 +367,15 @@
       "repo": "langgenius/dify",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 144934,
+          "forks": 22807,
+          "rank": 6,
+          "rankByCategory": 3
+        },
+        {
           "date": "2026-06-15",
-          "stars": 145285,
+          "stars": 145286,
           "forks": 22854,
           "rank": 6,
           "rankByCategory": 3
@@ -246,9 +386,16 @@
       "repo": "mem0ai/mem0",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 58406,
+          "forks": 6708,
+          "rank": 22,
+          "rankByCategory": 4
+        },
+        {
           "date": "2026-06-15",
-          "stars": 58598,
-          "forks": 6730,
+          "stars": 58599,
+          "forks": 6731,
           "rank": 22,
           "rankByCategory": 4
         }
@@ -258,8 +405,15 @@
       "repo": "microsoft/ai-agents-for-beginners",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 67053,
+          "forks": 22137,
+          "rank": 19,
+          "rankByCategory": 2
+        },
+        {
           "date": "2026-06-15",
-          "stars": 67272,
+          "stars": 67273,
           "forks": 22211,
           "rank": 19,
           "rankByCategory": 2
@@ -270,8 +424,15 @@
       "repo": "microsoft/AI-For-Beginners",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 48081,
+          "forks": 9956,
+          "rank": 26,
+          "rankByCategory": 3
+        },
+        {
           "date": "2026-06-15",
-          "stars": 48146,
+          "stars": 48147,
           "forks": 9973,
           "rank": 26,
           "rankByCategory": 3
@@ -281,6 +442,13 @@
     {
       "repo": "microsoft/autogen",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 58894,
+          "forks": 8888,
+          "rank": 21,
+          "rankByCategory": 1
+        },
         {
           "date": "2026-06-15",
           "stars": 58963,
@@ -294,8 +462,15 @@
       "repo": "microsoft/markitdown",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 151554,
+          "forks": 10454,
+          "rank": 4,
+          "rankByCategory": 1
+        },
+        {
           "date": "2026-06-15",
-          "stars": 153700,
+          "stars": 153701,
           "forks": 10627,
           "rank": 4,
           "rankByCategory": 1
@@ -305,6 +480,13 @@
     {
       "repo": "mlabonne/llm-course",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 80041,
+          "forks": 9317,
+          "rank": 15,
+          "rankByCategory": 1
+        },
         {
           "date": "2026-06-15",
           "stars": 80149,
@@ -318,6 +500,13 @@
       "repo": "modelcontextprotocol/servers",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 87093,
+          "forks": 10980,
+          "rank": 13,
+          "rankByCategory": 1
+        },
+        {
           "date": "2026-06-15",
           "stars": 87245,
           "forks": 11008,
@@ -329,6 +518,13 @@
     {
       "repo": "modelcontextprotocol/typescript-sdk",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 12649,
+          "forks": 1918,
+          "rank": 38,
+          "rankByCategory": 2
+        },
         {
           "date": "2026-06-15",
           "stars": 12669,
@@ -342,8 +538,15 @@
       "repo": "n8n-io/n8n",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 192134,
+          "forks": 58474,
+          "rank": 1,
+          "rankByCategory": 1
+        },
+        {
           "date": "2026-06-15",
-          "stars": 192578,
+          "stars": 192579,
           "forks": 58559,
           "rank": 1,
           "rankByCategory": 1
@@ -354,9 +557,16 @@
       "repo": "open-webui/open-webui",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 141172,
+          "forks": 20269,
+          "rank": 7,
+          "rankByCategory": 4
+        },
+        {
           "date": "2026-06-15",
-          "stars": 141579,
-          "forks": 20347,
+          "stars": 141582,
+          "forks": 20348,
           "rank": 7,
           "rankByCategory": 4
         }
@@ -366,8 +576,15 @@
       "repo": "openai/openai-agents-python",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 27097,
+          "forks": 4183,
+          "rank": 33,
+          "rankByCategory": 4
+        },
+        {
           "date": "2026-06-15",
-          "stars": 27158,
+          "stars": 27160,
           "forks": 4191,
           "rank": 33,
           "rankByCategory": 4
@@ -378,9 +595,16 @@
       "repo": "OpenHands/OpenHands",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 76542,
+          "forks": 9728,
+          "rank": 16,
+          "rankByCategory": 3
+        },
+        {
           "date": "2026-06-15",
-          "stars": 77136,
-          "forks": 9802,
+          "stars": 77138,
+          "forks": 9801,
           "rank": 16,
           "rankByCategory": 3
         }
@@ -389,6 +613,13 @@
     {
       "repo": "PaddlePaddle/PaddleOCR",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 81920,
+          "forks": 10737,
+          "rank": 14,
+          "rankByCategory": 2
+        },
         {
           "date": "2026-06-15",
           "stars": 82263,
@@ -402,6 +633,13 @@
       "repo": "resemble-ai/chatterbox",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 25027,
+          "forks": 3320,
+          "rank": 35,
+          "rankByCategory": 5
+        },
+        {
           "date": "2026-06-15",
           "stars": 25065,
           "forks": 3322,
@@ -413,6 +651,13 @@
     {
       "repo": "RooCodeInc/Roo-Code",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 24233,
+          "forks": 3315,
+          "rank": 36,
+          "rankByCategory": 7
+        },
         {
           "date": "2026-06-15",
           "stars": 24232,
@@ -426,6 +671,13 @@
       "repo": "run-llama/llama_index",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 50093,
+          "forks": 7539,
+          "rank": 25,
+          "rankByCategory": 5
+        },
+        {
           "date": "2026-06-15",
           "stars": 50137,
           "forks": 7564,
@@ -437,6 +689,13 @@
     {
       "repo": "stanford-oval/storm",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 28354,
+          "forks": 2583,
+          "rank": 31,
+          "rankByCategory": 4
+        },
         {
           "date": "2026-06-15",
           "stars": 28370,
@@ -450,6 +709,13 @@
       "repo": "trigaten/Learn_Prompting",
       "samples": [
         {
+          "date": "2026-06-12",
+          "stars": 4707,
+          "forks": 667,
+          "rank": 39,
+          "rankByCategory": 3
+        },
+        {
           "date": "2026-06-15",
           "stars": 4708,
           "forks": 669,
@@ -461,6 +727,13 @@
     {
       "repo": "unclecode/crawl4ai",
       "samples": [
+        {
+          "date": "2026-06-12",
+          "stars": 68301,
+          "forks": 6975,
+          "rank": 18,
+          "rankByCategory": 3
+        },
         {
           "date": "2026-06-15",
           "stars": 68521,
