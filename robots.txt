@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xiaoaba-diy.github.io/realtime-skills-ranking/sitemap.xml
