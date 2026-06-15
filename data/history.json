@@ -1,0 +1,474 @@
+{
+  "generatedAt": "2026-06-15T09:24:52.036Z",
+  "retentionDays": 180,
+  "repositories": [
+    {
+      "repo": "Aider-AI/aider",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 46224,
+          "forks": 4583,
+          "rank": 27,
+          "rankByCategory": 5
+        }
+      ]
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 174610,
+          "forks": 21127,
+          "rank": 2,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "AUTOMATIC1111/stable-diffusion-webui",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 163722,
+          "forks": 30369,
+          "rank": 3,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 98892,
+          "forks": 11040,
+          "rank": 12,
+          "rankByCategory": 5
+        }
+      ]
+    },
+    {
+      "repo": "cline/cline",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 63311,
+          "forks": 6692,
+          "rank": 20,
+          "rankByCategory": 4
+        }
+      ]
+    },
+    {
+      "repo": "Comfy-Org/ComfyUI",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 117053,
+          "forks": 13695,
+          "rank": 10,
+          "rankByCategory": 2
+        }
+      ]
+    },
+    {
+      "repo": "continuedev/continue",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 33694,
+          "forks": 4657,
+          "rank": 29,
+          "rankByCategory": 6
+        }
+      ]
+    },
+    {
+      "repo": "crewAIInc/crewAI",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 53589,
+          "forks": 7502,
+          "rank": 23,
+          "rankByCategory": 2
+        }
+      ]
+    },
+    {
+      "repo": "dair-ai/Prompt-Engineering-Guide",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 75630,
+          "forks": 8214,
+          "rank": 17,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "deepset-ai/haystack",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 25572,
+          "forks": 2855,
+          "rank": 34,
+          "rankByCategory": 6
+        }
+      ]
+    },
+    {
+      "repo": "firecrawl/firecrawl",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 132939,
+          "forks": 7798,
+          "rank": 9,
+          "rankByCategory": 2
+        }
+      ]
+    },
+    {
+      "repo": "fishaudio/fish-speech",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 30823,
+          "forks": 2632,
+          "rank": 30,
+          "rankByCategory": 3
+        }
+      ]
+    },
+    {
+      "repo": "FlowiseAI/Flowise",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 53588,
+          "forks": 24513,
+          "rank": 24,
+          "rankByCategory": 6
+        }
+      ]
+    },
+    {
+      "repo": "google-gemini/gemini-cli",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 105292,
+          "forks": 14068,
+          "rank": 11,
+          "rankByCategory": 2
+        }
+      ]
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 23315,
+          "forks": 1785,
+          "rank": 37,
+          "rankByCategory": 2
+        }
+      ]
+    },
+    {
+      "repo": "invoke-ai/InvokeAI",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 27432,
+          "forks": 2876,
+          "rank": 32,
+          "rankByCategory": 3
+        }
+      ]
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 139340,
+          "forks": 23092,
+          "rank": 8,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "langchain-ai/langgraph",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 34793,
+          "forks": 5832,
+          "rank": 28,
+          "rankByCategory": 3
+        }
+      ]
+    },
+    {
+      "repo": "langflow-ai/langflow",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 149690,
+          "forks": 9274,
+          "rank": 5,
+          "rankByCategory": 2
+        }
+      ]
+    },
+    {
+      "repo": "langgenius/dify",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 145285,
+          "forks": 22854,
+          "rank": 6,
+          "rankByCategory": 3
+        }
+      ]
+    },
+    {
+      "repo": "mem0ai/mem0",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 58598,
+          "forks": 6730,
+          "rank": 22,
+          "rankByCategory": 4
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/ai-agents-for-beginners",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 67272,
+          "forks": 22211,
+          "rank": 19,
+          "rankByCategory": 2
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/AI-For-Beginners",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 48146,
+          "forks": 9973,
+          "rank": 26,
+          "rankByCategory": 3
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/autogen",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 58963,
+          "forks": 8896,
+          "rank": 21,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/markitdown",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 153700,
+          "forks": 10627,
+          "rank": 4,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "mlabonne/llm-course",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 80149,
+          "forks": 9332,
+          "rank": 15,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "modelcontextprotocol/servers",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 87245,
+          "forks": 11008,
+          "rank": 13,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "modelcontextprotocol/typescript-sdk",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 12669,
+          "forks": 1929,
+          "rank": 38,
+          "rankByCategory": 2
+        }
+      ]
+    },
+    {
+      "repo": "n8n-io/n8n",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 192578,
+          "forks": 58559,
+          "rank": 1,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "open-webui/open-webui",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 141579,
+          "forks": 20347,
+          "rank": 7,
+          "rankByCategory": 4
+        }
+      ]
+    },
+    {
+      "repo": "openai/openai-agents-python",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 27158,
+          "forks": 4191,
+          "rank": 33,
+          "rankByCategory": 4
+        }
+      ]
+    },
+    {
+      "repo": "OpenHands/OpenHands",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 77136,
+          "forks": 9802,
+          "rank": 16,
+          "rankByCategory": 3
+        }
+      ]
+    },
+    {
+      "repo": "PaddlePaddle/PaddleOCR",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 82263,
+          "forks": 10770,
+          "rank": 14,
+          "rankByCategory": 2
+        }
+      ]
+    },
+    {
+      "repo": "resemble-ai/chatterbox",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 25065,
+          "forks": 3322,
+          "rank": 35,
+          "rankByCategory": 5
+        }
+      ]
+    },
+    {
+      "repo": "RooCodeInc/Roo-Code",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 24232,
+          "forks": 3319,
+          "rank": 36,
+          "rankByCategory": 7
+        }
+      ]
+    },
+    {
+      "repo": "run-llama/llama_index",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 50137,
+          "forks": 7564,
+          "rank": 25,
+          "rankByCategory": 5
+        }
+      ]
+    },
+    {
+      "repo": "stanford-oval/storm",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 28370,
+          "forks": 2586,
+          "rank": 31,
+          "rankByCategory": 4
+        }
+      ]
+    },
+    {
+      "repo": "trigaten/Learn_Prompting",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 4708,
+          "forks": 669,
+          "rank": 39,
+          "rankByCategory": 3
+        }
+      ]
+    },
+    {
+      "repo": "unclecode/crawl4ai",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 68521,
+          "forks": 6998,
+          "rank": 18,
+          "rankByCategory": 3
+        }
+      ]
+    }
+  ]
+}
