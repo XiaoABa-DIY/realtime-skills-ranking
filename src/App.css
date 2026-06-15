@@ -890,6 +890,13 @@ tbody tr:last-child td {
 }
 
 .number-cell {
+  display: grid;
+  gap: 5px;
+}
+
+.number-cell > span {
+  display: inline-flex;
+  align-items: center;
   gap: 5px;
 }
 
@@ -991,6 +998,38 @@ tbody tr:last-child td {
   font-size: 11px;
   font-weight: 750;
   line-height: 1.3;
+}
+
+.trend-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.trend-badges.compact {
+  margin-top: 5px;
+}
+
+.trend-badge {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  border: 1px solid #b8dfd2;
+  border-radius: 999px;
+  padding: 4px 7px;
+  color: var(--primary-strong);
+  background: var(--primary-soft);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.trend-badge.collecting {
+  border-color: #f0cf9d;
+  color: var(--gold);
+  background: var(--gold-soft);
 }
 
 .badge.accent,

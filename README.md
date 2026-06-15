@@ -13,6 +13,7 @@ This is a bilingual GitHub Pages dashboard for open-source AI skills, agent work
 - **今日推荐**：自动挑选全站 Top、开发者首选、创作者首选和 MCP 首选四张入口卡片。
 - **快速问题入口**：通过 chip 直达程序员工具、自媒体创作、MCP 工具、研究/RAG、入门友好和最近活跃视图。
 - **本地收藏**：收藏保存在当前浏览器 `localStorage` 中；URL 只用 `favorites=1` 恢复“只看收藏”视图，不暴露收藏列表。
+- **涨星趋势榜**：基于每日压缩历史快照展示 7 天涨星、30 天涨星和排名上升最快专题；首日历史不足时会明确显示“趋势数据收集中”。
 - **行动型详情抽屉**：详情顶部优先提供打开 GitHub、打开主页、复制 skill 链接、收藏和实时刷新。
 - **移动端卡片榜单**：小屏使用卡片流展示仓库，避免横向表格阅读压力。
 
@@ -22,7 +23,7 @@ This is a bilingual GitHub Pages dashboard for open-source AI skills, agent work
 - **双语界面**：站点 UI 和人工简介支持中文/英文一键切换。
 - **分类目录**：按 `Coding Agents`、`Developer Tools`、`Design & Media`、`Creator & Content`、`Data & Research`、`Productivity`、`MCP & Tooling`、`Prompt & Workflow`、`Learning & Docs` 分类浏览。
 - **人群入口**：支持 `程序员`、`自媒体创作者`、`设计/营销`、`研究分析`、`效率办公`、`MCP 玩家` 六类视图。
-- **专题榜单**：支持 `本周热门`、`高星经典`、`最近活跃`、`适合入门`、`内容创作者精选`、`开发者工具链`。
+- **专题榜单**：支持 `本周热门`、`7 天涨星榜`、`30 天涨星榜`、`排名上升最快`、`高星经典`、`最近活跃`、`适合入门`、`内容创作者精选`、`开发者工具链`。
 - **多维筛选**：支持关键词、分类、平台、标签、许可证、语言过滤。
 - **多种排序**：支持按星标数、fork 数、最近更新、仓库名排序。
 - **分享链接**：语言、搜索、筛选、人群、专题、排序和详情仓库都会写入 URL，方便复制给他人。
@@ -45,7 +46,7 @@ data/discovery-queries.yml
 scripts/update-data.mjs
   -> 读取 YAML
   -> 调用 GitHub REST API / fallback 数据源
-  -> 生成 public/data/snapshot.json 和 public/data/candidates.json
+  -> 生成 public/data/snapshot.json、public/data/candidates.json 和 public/data/history.json
 
 src/
   -> Vite + React + TypeScript 单页仪表盘
@@ -63,6 +64,7 @@ src/
 2. 本地未认证请求被限流时，脚本会保留已有有效快照，避免榜单被 0 覆盖。
 3. 对没有旧快照的新仓库，脚本会尝试公开 GitHub 页面或搜索结果作为兜底数据。
 4. 前端详情抽屉可对单个仓库发起实时刷新；失败时继续显示快照数据。
+5. GitHub Actions 每次刷新前会从已部署的 `gh-pages` 读取 `data/history.json`，合并当天样本后保留每日 1 条、180 天。
 
 ## Data Model / 数据模型
 
@@ -101,7 +103,32 @@ repositories:
 - `homepage`：可选，项目主页。
 - `featured`：可选，是否标记为精选。
 
-生成后的 `public/data/snapshot.json` 会额外包含 `rank`、`rankByCategory`、`freshness`、`qualitySignals` 等派生字段，供前端展示排名、活跃度和质量信号。
+生成后的 `public/data/snapshot.json` 会额外包含 `rank`、`rankByCategory`、`freshness`、`qualitySignals`、`growth7d`、`growth30d`、`rankDelta7d`、`rankDelta30d`、`trendStatus` 等派生字段，供前端展示排名、活跃度、质量信号和涨星趋势。
+
+历史快照位于 `public/data/history.json`，结构为：
+
+```json
+{
+  "generatedAt": "2026-06-15T00:00:00.000Z",
+  "retentionDays": 180,
+  "repositories": [
+    {
+      "repo": "owner/name",
+      "samples": [
+        {
+          "date": "2026-06-15",
+          "stars": 1234,
+          "forks": 56,
+          "rank": 7,
+          "rankByCategory": 2
+        }
+      ]
+    }
+  ]
+}
+```
+
+趋势指标语义固定为：`growth7d = 当前 stars - 7 天前或更早最近样本 stars`，`growth30d = 当前 stars - 30 天前或更早最近样本 stars`，`rankDelta7d/rankDelta30d = 历史排名 - 当前排名`，正数表示排名上升。历史不足时趋势字段为 `null`，`trendStatus` 为 `collecting`。
 
 候选发现查询位于 [data/discovery-queries.yml](data/discovery-queries.yml)。候选结果会生成到 `public/data/candidates.json`，并带有 `suggestedCategory`、`suggestedAudiences`、`confidence`，但不会自动进入正式排行榜。
 
@@ -111,6 +138,9 @@ repositories:
 
 ```text
 ?lang=en&q=mcp&audience=developer&spotlight=developerStack&sort=updated&favorites=1&repo=modelcontextprotocol%2Fservers
+?spotlight=growth7d
+?spotlight=growth30d
+?spotlight=rankRisers
 ```
 
 可分享字段包括：
@@ -171,7 +201,7 @@ npm run data:update
 
 ## Deployment / 部署
 
-本仓库已经配置 GitHub Pages 自动部署工作流：[.github/workflows/pages.yml](.github/workflows/pages.yml)。工作流会刷新数据、检查格式、运行 lint、单元测试、构建、端到端测试，然后把 `dist/` 发布到 `gh-pages` 分支。
+本仓库已经配置 GitHub Pages 自动部署工作流：[.github/workflows/pages.yml](.github/workflows/pages.yml)。工作流会先从 `gh-pages` 恢复已部署的 `data/history.json`，再刷新数据、检查格式、运行 lint、单元测试、构建、端到端测试，然后把 `dist/` 发布到 `gh-pages` 分支。
 
 触发方式：
 
@@ -193,8 +223,8 @@ Vite 项目型 Pages 路径通过 `BASE_PATH=/${{ github.event.repository.name }
 
 当前测试覆盖：
 
-- 数据脚本：YAML 输入、GitHub API mock、候选去重、失败保留旧快照、HTML/search fallback。
-- 前端逻辑：排序、筛选、统计计算、语言切换。
+- 数据脚本：YAML 输入、GitHub API mock、候选去重、失败保留旧快照、HTML/search fallback、历史快照合并、保留期裁剪、涨星和排名变化计算。
+- 前端逻辑：排序、筛选、统计计算、语言切换、趋势榜排序、URL 状态同步。
 - 端到端：桌面和移动视口下的首页渲染、搜索筛选、详情抽屉、实时刷新。
 
 完整验证命令：
@@ -234,7 +264,7 @@ git commit -m "chore: 配置 GitHub Pages 自动部署"
 
 ## Roadmap / 后续计划
 
-- 增加 7 天 / 30 天涨星趋势。
+- 增加趋势折线图和历史数据导出。
 - 增加专题页，例如 MCP、Agent Frameworks、Prompt Engineering。
 - 增加静态 JSON API 文档。
 - 增加排行榜变化历史。

@@ -35,4 +35,16 @@ describe("url state helpers", () => {
       "?tag=tts&audience=creator&favorites=1&repo=fishaudio%2Ffish-speech",
     );
   });
+
+  it("parses and serializes trend spotlight links", () => {
+    const state = parseUrlState("?spotlight=growth7d&sort=forks");
+
+    expect(state.filters.spotlight).toBe("growth7d");
+    expect(
+      buildSearchParams(
+        { ...defaultRepoFilters, spotlight: "rankRisers" },
+        "en",
+      ),
+    ).toBe("?lang=en&spotlight=rankRisers");
+  });
 });

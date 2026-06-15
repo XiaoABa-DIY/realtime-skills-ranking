@@ -48,6 +48,9 @@ export const audienceKeys: AudienceKey[] = [
 
 export const spotlightKeys: SpotlightKey[] = [
   "weeklyHot",
+  "growth7d",
+  "growth30d",
+  "rankRisers",
   "classicStars",
   "recentlyActive",
   "beginnerFriendly",
@@ -146,6 +149,30 @@ export const spotlightViews: Record<SpotlightKey, SpotlightView> = {
     description: {
       zh: "用当前星标、精选和近期活跃度估算，历史涨星会在 V2 接入。",
       en: "Estimated from current stars, featured status, and recent activity; star growth lands in V2.",
+    },
+  },
+  growth7d: {
+    key: "growth7d",
+    label: { zh: "7 天涨星榜", en: "7-day growth" },
+    description: {
+      zh: "按过去 7 天新增 star 排序；历史不足时回退到当前星标。",
+      en: "Ranks by stars gained over the last 7 days; falls back to current stars while collecting.",
+    },
+  },
+  growth30d: {
+    key: "growth30d",
+    label: { zh: "30 天涨星榜", en: "30-day growth" },
+    description: {
+      zh: "按过去 30 天新增 star 排序，适合观察持续热度。",
+      en: "Ranks by stars gained over 30 days for steadier momentum signals.",
+    },
+  },
+  rankRisers: {
+    key: "rankRisers",
+    label: { zh: "排名上升最快", en: "Fastest risers" },
+    description: {
+      zh: "优先看 7 天排名提升，其次看 7 天涨星。",
+      en: "Prioritizes 7-day rank movement, then 7-day star growth.",
     },
   },
   classicStars: {
@@ -335,6 +362,13 @@ function matchesSpotlight(repo: SkillRepoSnapshot, spotlight: SpotlightKey) {
   const tagText = repo.tags.join(" ").toLowerCase();
   const age = recentActivityDays(repo);
 
+  if (
+    spotlight === "growth7d" ||
+    spotlight === "growth30d" ||
+    spotlight === "rankRisers"
+  ) {
+    return true;
+  }
   if (spotlight === "weeklyHot") return repo.featured || age <= 120;
   if (spotlight === "classicStars")
     return repo.stars >= 10_000 || repo.featured;
@@ -352,6 +386,48 @@ function matchesSpotlight(repo: SkillRepoSnapshot, spotlight: SpotlightKey) {
     );
   }
   return audiences.includes("developer") || audiences.includes("mcp");
+}
+
+function nullableNumber(value: number | null | undefined) {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+function compareNullableDesc(
+  aValue: number | null | undefined,
+  bValue: number | null | undefined,
+) {
+  const aNumber = nullableNumber(aValue);
+  const bNumber = nullableNumber(bValue);
+  if (aNumber === null && bNumber === null) return 0;
+  if (aNumber === null) return 1;
+  if (bNumber === null) return -1;
+  return bNumber - aNumber;
+}
+
+function compareTrendSpotlight(
+  a: SkillRepoSnapshot,
+  b: SkillRepoSnapshot,
+  spotlight: SpotlightKey,
+) {
+  if (spotlight === "growth7d") {
+    return (
+      compareNullableDesc(a.growth7d, b.growth7d) ||
+      compareNullableDesc(a.rankDelta7d, b.rankDelta7d)
+    );
+  }
+  if (spotlight === "growth30d") {
+    return (
+      compareNullableDesc(a.growth30d, b.growth30d) ||
+      compareNullableDesc(a.rankDelta30d, b.rankDelta30d)
+    );
+  }
+  if (spotlight === "rankRisers") {
+    return (
+      compareNullableDesc(a.rankDelta7d, b.rankDelta7d) ||
+      compareNullableDesc(a.growth7d, b.growth7d)
+    );
+  }
+  return 0;
 }
 
 function spotlightScore(repo: SkillRepoSnapshot, spotlight: SpotlightKey) {
@@ -392,6 +468,9 @@ export function filterAndSortRepositories(
     })
     .sort((a, b) => {
       if (filters.spotlight) {
+        const trendScore = compareTrendSpotlight(a, b, filters.spotlight);
+        if (trendScore !== 0) return trendScore;
+
         return (
           spotlightScore(b, filters.spotlight) -
             spotlightScore(a, filters.spotlight) ||
@@ -451,6 +530,18 @@ export function enrichRepositories(repositories: SkillRepoSnapshot[]) {
     rankByCategory: categoryRanks.get(repo.repo) ?? repo.rankByCategory,
     freshness: inferFreshness(repo),
     qualitySignals: buildQualitySignals(repo),
+    growth7d: repo.growth7d ?? null,
+    growth30d: repo.growth30d ?? null,
+    rankDelta7d: repo.rankDelta7d ?? null,
+    rankDelta30d: repo.rankDelta30d ?? null,
+    trendStatus:
+      repo.trendStatus ??
+      (repo.growth7d === null ||
+      repo.growth7d === undefined ||
+      repo.growth30d === null ||
+      repo.growth30d === undefined
+        ? "collecting"
+        : "ready"),
   }));
 }
 

@@ -9,7 +9,9 @@ const DEFAULT_REPOSITORIES = path.join(ROOT, "data", "repositories.yml");
 const DEFAULT_DISCOVERY = path.join(ROOT, "data", "discovery-queries.yml");
 const DEFAULT_SNAPSHOT = path.join(ROOT, "public", "data", "snapshot.json");
 const DEFAULT_CANDIDATES = path.join(ROOT, "public", "data", "candidates.json");
+const DEFAULT_HISTORY = path.join(ROOT, "public", "data", "history.json");
 const GITHUB_API = "https://api.github.com";
+export const HISTORY_RETENTION_DAYS = 180;
 
 export const CATEGORIES = [
   "Coding Agents",
@@ -68,6 +70,34 @@ const AUDIENCE_PROFILES = {
 
 function nowIso() {
   return new Date().toISOString();
+}
+
+function toUtcDate(value) {
+  const timestamp = Date.parse(value || "");
+  if (!Number.isFinite(timestamp)) return new Date().toISOString().slice(0, 10);
+  return new Date(timestamp).toISOString().slice(0, 10);
+}
+
+function addUtcDays(date, days) {
+  const timestamp = Date.parse(`${date}T00:00:00.000Z`);
+  if (!Number.isFinite(timestamp)) return date;
+  return new Date(timestamp + days * 86_400_000).toISOString().slice(0, 10);
+}
+
+function asFiniteNumber(value, fallback = 0) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : fallback;
+}
+
+function byDateThenRepo(a, b) {
+  return a.date.localeCompare(b.date);
+}
+
+function isReliableHistoryRepo(repo) {
+  if (!repo?.errorMessage) return repo?.fetchStatus !== "error";
+  return /used public GitHub HTML fallback|used GitHub Search fallback/i.test(
+    repo.errorMessage,
+  );
 }
 
 export function normalizeRepo(repo) {
@@ -687,6 +717,185 @@ export async function buildCandidates(
   };
 }
 
+function createSampleFromRepo(repo, generatedAt) {
+  return {
+    date: toUtcDate(generatedAt),
+    stars: asFiniteNumber(repo.stars),
+    forks: asFiniteNumber(repo.forks),
+    rank: asFiniteNumber(repo.rank),
+    rankByCategory: asFiniteNumber(repo.rankByCategory),
+  };
+}
+
+function normalizeHistory(history, retentionDays = HISTORY_RETENTION_DAYS) {
+  const repositories = Array.isArray(history?.repositories)
+    ? history.repositories
+    : [];
+
+  return {
+    generatedAt: String(history?.generatedAt ?? nowIso()),
+    retentionDays,
+    repositories: repositories
+      .filter((repoHistory) => repoHistory?.repo)
+      .map((repoHistory) => ({
+        repo: normalizeRepo(repoHistory.repo),
+        samples: Array.isArray(repoHistory.samples)
+          ? repoHistory.samples
+              .filter((sample) => sample?.date)
+              .map((sample) => ({
+                date: String(sample.date).slice(0, 10),
+                stars: asFiniteNumber(sample.stars),
+                forks: asFiniteNumber(sample.forks),
+                rank: asFiniteNumber(sample.rank),
+                rankByCategory: asFiniteNumber(sample.rankByCategory),
+              }))
+              .sort(byDateThenRepo)
+          : [],
+      }))
+      .filter((repoHistory) => repoHistory.samples.length > 0),
+  };
+}
+
+export function createHistoryFromSnapshot(
+  snapshot,
+  retentionDays = HISTORY_RETENTION_DAYS,
+) {
+  const generatedAt = snapshot?.generatedAt ?? nowIso();
+  const repositories = Array.isArray(snapshot?.repositories)
+    ? snapshot.repositories
+    : [];
+
+  return normalizeHistory(
+    {
+      generatedAt,
+      retentionDays,
+      repositories: repositories
+        .filter((repo) => repo?.repo && isReliableHistoryRepo(repo))
+        .map((repo) => ({
+          repo: normalizeRepo(repo.repo),
+          samples: [createSampleFromRepo(repo, generatedAt)],
+        })),
+    },
+    retentionDays,
+  );
+}
+
+function findSampleAtOrBefore(samples, targetDate) {
+  return [...samples]
+    .filter((sample) => sample.date <= targetDate)
+    .sort((a, b) => b.date.localeCompare(a.date))[0];
+}
+
+function buildTrendMetric(repo, history, generatedAt, days) {
+  const currentDate = toUtcDate(generatedAt);
+  const targetDate = addUtcDays(currentDate, -days);
+  const previous = findSampleAtOrBefore(history?.samples ?? [], targetDate);
+
+  if (!previous || !isReliableHistoryRepo(repo)) {
+    return {
+      growth: null,
+      rankDelta: null,
+    };
+  }
+
+  return {
+    growth: asFiniteNumber(repo.stars) - previous.stars,
+    rankDelta: previous.rank - asFiniteNumber(repo.rank),
+  };
+}
+
+export function addTrendMetricsToSnapshot(snapshot, history) {
+  const normalizedHistory = normalizeHistory(
+    history,
+    history?.retentionDays ?? HISTORY_RETENTION_DAYS,
+  );
+  const historyByRepo = new Map(
+    normalizedHistory.repositories.map((repoHistory) => [
+      repoHistory.repo.toLowerCase(),
+      repoHistory,
+    ]),
+  );
+  const generatedAt = snapshot?.generatedAt ?? nowIso();
+
+  return {
+    ...snapshot,
+    generatedAt,
+    repositories: (snapshot?.repositories ?? []).map((repo) => {
+      const repoHistory = historyByRepo.get(
+        normalizeRepo(repo.repo).toLowerCase(),
+      );
+      const sevenDay = buildTrendMetric(repo, repoHistory, generatedAt, 7);
+      const thirtyDay = buildTrendMetric(repo, repoHistory, generatedAt, 30);
+      const trendStatus =
+        sevenDay.growth === null || thirtyDay.growth === null
+          ? "collecting"
+          : "ready";
+
+      return {
+        ...repo,
+        growth7d: sevenDay.growth,
+        growth30d: thirtyDay.growth,
+        rankDelta7d: sevenDay.rankDelta,
+        rankDelta30d: thirtyDay.rankDelta,
+        trendStatus,
+      };
+    }),
+  };
+}
+
+export function mergeSnapshotIntoHistory(
+  history,
+  snapshot,
+  retentionDays = HISTORY_RETENTION_DAYS,
+) {
+  const normalizedHistory = normalizeHistory(history, retentionDays);
+  const generatedAt = snapshot?.generatedAt ?? nowIso();
+  const currentDate = toUtcDate(generatedAt);
+  const cutoffDate = addUtcDays(currentDate, -(retentionDays - 1));
+  const historyByRepo = new Map(
+    normalizedHistory.repositories.map((repoHistory) => [
+      repoHistory.repo.toLowerCase(),
+      {
+        repo: repoHistory.repo,
+        samples: new Map(
+          repoHistory.samples
+            .filter((sample) => sample.date >= cutoffDate)
+            .map((sample) => [sample.date, sample]),
+        ),
+      },
+    ]),
+  );
+
+  for (const repo of snapshot?.repositories ?? []) {
+    if (!repo?.repo || !isReliableHistoryRepo(repo)) continue;
+
+    const key = normalizeRepo(repo.repo).toLowerCase();
+    const repoHistory = historyByRepo.get(key) ?? {
+      repo: normalizeRepo(repo.repo),
+      samples: new Map(),
+    };
+    repoHistory.samples.set(
+      currentDate,
+      createSampleFromRepo(repo, generatedAt),
+    );
+    historyByRepo.set(key, repoHistory);
+  }
+
+  return {
+    generatedAt,
+    retentionDays,
+    repositories: [...historyByRepo.values()]
+      .map((repoHistory) => ({
+        repo: repoHistory.repo,
+        samples: [...repoHistory.samples.values()]
+          .filter((sample) => sample.date >= cutoffDate)
+          .sort(byDateThenRepo),
+      }))
+      .filter((repoHistory) => repoHistory.samples.length > 0)
+      .sort((a, b) => a.repo.localeCompare(b.repo)),
+  };
+}
+
 async function writeJson(filePath, value) {
   await fs.mkdir(path.dirname(filePath), { recursive: true });
   const formatted = await prettier.format(JSON.stringify(value), {
@@ -696,14 +905,29 @@ async function writeJson(filePath, value) {
   await fs.rename(`${filePath}.tmp`, filePath);
 }
 
-async function readPreviousRepositories(snapshotPath) {
+async function readPreviousSnapshot(snapshotPath) {
   try {
     const raw = await fs.readFile(snapshotPath, "utf8");
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed?.repositories) ? parsed.repositories : [];
+    return JSON.parse(raw);
   } catch {
-    return [];
+    return null;
   }
+}
+
+async function readHistory(historyPath, seedSnapshot) {
+  try {
+    const raw = await fs.readFile(historyPath, "utf8");
+    const parsed = JSON.parse(raw);
+    const history = normalizeHistory(
+      parsed,
+      parsed?.retentionDays ?? HISTORY_RETENTION_DAYS,
+    );
+    if (history.repositories.length > 0) return history;
+  } catch {
+    // Fall back to seeding from the checked-out snapshot below.
+  }
+
+  return createHistoryFromSnapshot(seedSnapshot);
 }
 
 export async function updateData({
@@ -711,28 +935,44 @@ export async function updateData({
   discoveryPath = DEFAULT_DISCOVERY,
   snapshotPath = DEFAULT_SNAPSHOT,
   candidatesPath = DEFAULT_CANDIDATES,
+  historyPath = DEFAULT_HISTORY,
   githubFetch = createGitHubFetcher(),
   htmlFetch = createGitHubHtmlFetcher(),
 } = {}) {
   const repositories = await readRepositoryInputs(repositoriesPath);
   const discoveryQueries = await readDiscoveryQueries(discoveryPath);
-  const previousRepositories = await readPreviousRepositories(snapshotPath);
+  const previousSnapshot = await readPreviousSnapshot(snapshotPath);
+  const previousRepositories = Array.isArray(previousSnapshot?.repositories)
+    ? previousSnapshot.repositories
+    : [];
+  const previousHistory = await readHistory(historyPath, previousSnapshot);
   const snapshot = await buildSnapshot(repositories, githubFetch, {
     previousRepositories,
     htmlFetch,
   });
+  const snapshotWithTrends = addTrendMetricsToSnapshot(
+    snapshot,
+    previousHistory,
+  );
+  const history = mergeSnapshotIntoHistory(
+    previousHistory,
+    snapshotWithTrends,
+    HISTORY_RETENTION_DAYS,
+  );
   const candidates = await buildCandidates(
     discoveryQueries,
     repositories,
     githubFetch,
   );
 
-  await writeJson(snapshotPath, snapshot);
+  await writeJson(snapshotPath, snapshotWithTrends);
   await writeJson(candidatesPath, candidates);
+  await writeJson(historyPath, history);
 
   return {
-    snapshot,
+    snapshot: snapshotWithTrends,
     candidates,
+    history,
   };
 }
 
@@ -741,9 +981,9 @@ if (
   import.meta.url === pathToFileURL(process.argv[1]).href
 ) {
   updateData()
-    .then(({ snapshot, candidates }) => {
+    .then(({ snapshot, candidates, history }) => {
       console.log(
-        `Updated ${snapshot.repositories.length} curated repositories and ${candidates.candidates.length} candidates.`,
+        `Updated ${snapshot.repositories.length} curated repositories, ${candidates.candidates.length} candidates, and ${history.repositories.length} history timelines.`,
       );
     })
     .catch((error) => {

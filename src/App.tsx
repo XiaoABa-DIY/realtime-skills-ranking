@@ -267,6 +267,63 @@ function RepoBadges({
   );
 }
 
+function formatSigned(value: number, locale: Locale) {
+  return `${value >= 0 ? "+" : ""}${formatNumber(value, locale)}`;
+}
+
+function formatRankDelta(value: number | null | undefined) {
+  if (value === null || value === undefined) return "";
+  if (value > 0) return `↑${value}`;
+  if (value < 0) return `↓${Math.abs(value)}`;
+  return "0";
+}
+
+function trendCollectingLabel(locale: Locale) {
+  return locale === "zh" ? "趋势数据收集中" : "Trend data collecting";
+}
+
+function TrendBadges({
+  repo,
+  locale,
+  compact = false,
+}: {
+  repo: SkillRepoSnapshot;
+  locale: Locale;
+  compact?: boolean;
+}) {
+  const badges = [
+    repo.growth7d !== null && repo.growth7d !== undefined
+      ? `${formatSigned(repo.growth7d, locale)} / 7d`
+      : "",
+    repo.growth30d !== null && repo.growth30d !== undefined
+      ? `${formatSigned(repo.growth30d, locale)} / 30d`
+      : "",
+    repo.rankDelta7d !== null && repo.rankDelta7d !== undefined
+      ? formatRankDelta(repo.rankDelta7d)
+      : "",
+  ].filter(Boolean);
+
+  if (!badges.length) {
+    return (
+      <div className={compact ? "trend-badges compact" : "trend-badges"}>
+        <span className="trend-badge collecting">
+          {trendCollectingLabel(locale)}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div className={compact ? "trend-badges compact" : "trend-badges"}>
+      {badges.map((badge, index) => (
+        <span className="trend-badge" key={`${repo.repo}-${index}`}>
+          {badge}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function RepositoryTable({
   repositories,
   locale,
@@ -330,8 +387,11 @@ function RepositoryTable({
                   </div>
                 </td>
                 <td className="number-cell" data-label={t(locale, "stars")}>
-                  <Star size={14} />
-                  {formatNumber(repo.stars, locale)}
+                  <span>
+                    <Star size={14} />
+                    {formatNumber(repo.stars, locale)}
+                  </span>
+                  <TrendBadges repo={repo} locale={locale} compact />
                 </td>
                 <td data-label={t(locale, "updatedAt")}>
                   {formatDate(repo.updatedAt, locale)}
@@ -414,6 +474,7 @@ function MobileRepoCard({
         <span>{repo.language}</span>
         <span>{formatDate(repo.updatedAt, locale)}</span>
       </div>
+      <TrendBadges repo={repo} locale={locale} compact />
       <div className="mobile-card-actions">
         <FavoriteButton
           active={favorite}
@@ -870,6 +931,8 @@ function DetailDrawer({
               : t(locale, "realtimeRefresh")}
           </button>
         </div>
+
+        <TrendBadges repo={repo} locale={locale} />
 
         {status === "success" ? (
           <p className="notice success">{t(locale, "liveUpdated")}</p>

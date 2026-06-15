@@ -48,6 +48,15 @@ test("renders the product dashboard and filters repositories", async ({
   await expect(page.getByText("Top 3 trending projects")).toBeVisible();
   await expect(page.getByText("Today picks")).toBeVisible();
   await expect(
+    page.getByRole("button", { name: /7-day growth/i }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: /30-day growth/i }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: /Fastest risers/i }),
+  ).toBeVisible();
+  await expect(
     page.getByRole("button", { name: "Developer tools" }),
   ).toBeVisible();
   await expect(
@@ -59,6 +68,21 @@ test("renders the product dashboard and filters repositories", async ({
     .fill("ComfyUI");
   await expect(getRepoEntry(page, "Comfy-Org/ComfyUI")).toBeVisible();
   await expect(page).toHaveURL(/q=ComfyUI/);
+});
+
+test("opens trend spotlights and keeps details available", async ({ page }) => {
+  await page.goto("/?lang=en");
+
+  await page.getByRole("button", { name: /7-day growth/i }).click();
+  await expect(page).toHaveURL(/spotlight=growth7d/);
+  await expect(
+    getRepoEntry(page, "modelcontextprotocol/servers"),
+  ).toBeVisible();
+
+  await getRepoEntry(page, "modelcontextprotocol/servers").click();
+  await expect(
+    page.getByRole("dialog", { name: "modelcontextprotocol/servers" }),
+  ).toBeVisible();
 });
 
 test("opens details and refreshes a repository live", async ({ page }) => {

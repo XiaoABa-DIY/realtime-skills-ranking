@@ -26,10 +26,14 @@ export type SpotlightKey =
   | "recentlyActive"
   | "beginnerFriendly"
   | "creatorPicks"
-  | "developerStack";
+  | "developerStack"
+  | "growth7d"
+  | "growth30d"
+  | "rankRisers";
 export type Difficulty = "Beginner" | "Intermediate" | "Advanced";
 export type SkillStatus = "active" | "experimental" | "archived";
 export type Freshness = "fresh" | "active" | "quiet" | "stale" | "unknown";
+export type TrendStatus = "ready" | "collecting";
 
 export interface LocalizedText {
   zh: string;
@@ -79,6 +83,11 @@ export interface SkillRepoSnapshot extends SkillRepoInput {
   rankByCategory?: number;
   freshness?: Freshness;
   qualitySignals?: QualitySignals;
+  growth7d?: number | null;
+  growth30d?: number | null;
+  rankDelta7d?: number | null;
+  rankDelta30d?: number | null;
+  trendStatus?: TrendStatus;
 }
 
 export interface CandidateRepo {
@@ -113,4 +122,23 @@ export interface CandidatesPayload {
   generatedAt: string;
   source: string;
   candidates: CandidateRepo[];
+}
+
+export interface TrendSample {
+  date: string;
+  stars: number;
+  forks: number;
+  rank: number;
+  rankByCategory: number;
+}
+
+export interface RepoHistory {
+  repo: string;
+  samples: TrendSample[];
+}
+
+export interface HistoryPayload {
+  generatedAt: string;
+  retentionDays: number;
+  repositories: RepoHistory[];
 }

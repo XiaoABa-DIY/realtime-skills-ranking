@@ -29,6 +29,11 @@ const snapshot = {
       disabled: false,
       fetchStatus: "ok",
       lastFetchedAt: "2026-01-04T00:00:00Z",
+      growth7d: 5,
+      growth30d: 13,
+      rankDelta7d: 2,
+      rankDelta30d: 4,
+      trendStatus: "ready",
     },
   ],
 };
@@ -105,6 +110,9 @@ describe("App", () => {
     expect(screen.getByText("Top 3 trending projects")).toBeInTheDocument();
     expect(screen.getByText("Today picks")).toBeInTheDocument();
     expect(screen.getByText("Developer tools")).toBeInTheDocument();
+    expect(screen.getByText("7-day growth")).toBeInTheDocument();
+    expect(screen.getByText("30-day growth")).toBeInTheDocument();
+    expect(screen.getByText("Fastest risers")).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/Search repos/i)).toBeInTheDocument();
   });
 
@@ -120,6 +128,9 @@ describe("App", () => {
     expect(
       screen.getByRole("button", { name: /Copy skill link/i }),
     ).toBeInTheDocument();
+    expect(screen.getAllByText("+5 / 7d").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("+13 / 30d").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("↑2").length).toBeGreaterThan(0);
 
     await user.click(
       screen.getByRole("button", { name: /Refresh this repo/i }),
@@ -152,6 +163,11 @@ describe("App", () => {
     await user.click(screen.getByRole("button", { name: "View hot now" }));
     await waitFor(() =>
       expect(window.location.search).toContain("spotlight=weeklyHot"),
+    );
+
+    await user.click(screen.getByRole("button", { name: /7-day growth/i }));
+    await waitFor(() =>
+      expect(window.location.search).toContain("spotlight=growth7d"),
     );
 
     unmount();

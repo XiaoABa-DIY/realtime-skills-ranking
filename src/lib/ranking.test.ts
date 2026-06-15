@@ -131,6 +131,71 @@ describe("ranking helpers", () => {
     expect(result.map((repo) => repo.repo)).toEqual(["alpha/agents"]);
   });
 
+  it("sorts trend spotlights by star growth and rank movement", () => {
+    const trendRepos: SkillRepoSnapshot[] = [
+      {
+        ...repositories[0],
+        growth7d: 12,
+        growth30d: 80,
+        rankDelta7d: 4,
+        rankDelta30d: 10,
+        trendStatus: "ready",
+      },
+      {
+        ...repositories[1],
+        growth7d: 40,
+        growth30d: 42,
+        rankDelta7d: 1,
+        rankDelta30d: 2,
+        trendStatus: "ready",
+      },
+    ];
+
+    expect(
+      filterAndSortRepositories(
+        trendRepos,
+        { ...defaultRepoFilters, spotlight: "growth7d" },
+        "en",
+      ).map((repo) => repo.repo),
+    ).toEqual(["beta/media", "alpha/agents"]);
+    expect(
+      filterAndSortRepositories(
+        trendRepos,
+        { ...defaultRepoFilters, spotlight: "growth30d" },
+        "en",
+      ).map((repo) => repo.repo),
+    ).toEqual(["alpha/agents", "beta/media"]);
+    expect(
+      filterAndSortRepositories(
+        trendRepos,
+        { ...defaultRepoFilters, spotlight: "rankRisers" },
+        "en",
+      ).map((repo) => repo.repo),
+    ).toEqual(["alpha/agents", "beta/media"]);
+  });
+
+  it("keeps trend spotlights useful while history is still collecting", () => {
+    const collectingRepos: SkillRepoSnapshot[] = repositories.map((repo) => ({
+      ...repo,
+      growth7d: null,
+      growth30d: null,
+      rankDelta7d: null,
+      rankDelta30d: null,
+      trendStatus: "collecting",
+    }));
+
+    const result = filterAndSortRepositories(
+      collectingRepos,
+      { ...defaultRepoFilters, spotlight: "growth7d" },
+      "en",
+    );
+
+    expect(result.map((repo) => repo.repo)).toEqual([
+      "beta/media",
+      "alpha/agents",
+    ]);
+  });
+
   it("derives ranks, freshness, audiences, and related repositories", () => {
     const enriched = enrichRepositories(repositories);
     const media = enriched.find((repo) => repo.repo === "beta/media")!;
