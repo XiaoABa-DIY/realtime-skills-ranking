@@ -59,7 +59,8 @@ const candidates = {
 
 describe("App", () => {
   beforeEach(() => {
-    window.history.pushState({}, "", "/");
+    window.history.pushState({}, "", "/?lang=en");
+    window.localStorage.clear();
     vi.stubGlobal(
       "fetch",
       vi.fn((url: string) => {
@@ -94,20 +95,16 @@ describe("App", () => {
     );
   });
 
-  it("renders loaded ranking data and switches language", async () => {
-    const user = userEvent.setup();
+  it("renders the product exploration sections", async () => {
     render(<App />);
 
-    expect(await screen.findByText("alpha/agents")).toBeInTheDocument();
-    expect(screen.getByText("new/skill")).toBeInTheDocument();
-
-    await user.click(
-      screen.getByRole("button", {
-        name: "Switch language to English, EN",
-      }),
+    expect((await screen.findAllByText("alpha/agents")).length).toBeGreaterThan(
+      0,
     );
-
-    expect(screen.getByText("AI Skills Live Ranking")).toBeInTheDocument();
+    expect(screen.getByText("new/skill")).toBeInTheDocument();
+    expect(screen.getByText("Top 3 trending projects")).toBeInTheDocument();
+    expect(screen.getByText("Today picks")).toBeInTheDocument();
+    expect(screen.getByText("Developer tools")).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/Search repos/i)).toBeInTheDocument();
   });
 
@@ -115,12 +112,53 @@ describe("App", () => {
     const user = userEvent.setup();
     render(<App />);
 
-    await user.click(await screen.findByText("alpha/agents"));
-    await user.click(screen.getByRole("button", { name: /刷新此仓库/i }));
+    await user.click((await screen.findAllByText("alpha/agents"))[0]);
+
+    expect(
+      screen.getAllByRole("link", { name: /Open GitHub/i }).length,
+    ).toBeGreaterThan(0);
+    expect(
+      screen.getByRole("button", { name: /Copy skill link/i }),
+    ).toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole("button", { name: /Refresh this repo/i }),
+    );
 
     await waitFor(() =>
-      expect(screen.getByText("已读取 GitHub 当前数据。")).toBeInTheDocument(),
+      expect(
+        screen.getByText("Loaded current GitHub data."),
+      ).toBeInTheDocument(),
     );
     expect(screen.getAllByText("25")[0]).toBeInTheDocument();
+  });
+
+  it("keeps quick filters in the URL and persists local favorites", async () => {
+    const user = userEvent.setup();
+    const { unmount } = render(<App />);
+
+    await screen.findByText("Developer tools");
+
+    await user.click(
+      screen.getAllByRole("button", { name: "Save this skill" })[0],
+    );
+    expect(screen.getAllByText(/My favorites 1/).length).toBeGreaterThan(0);
+
+    await user.click(
+      screen.getAllByRole("button", { name: /My favorites 1/ })[0],
+    );
+    expect(window.location.search).toContain("favorites=1");
+
+    await user.click(screen.getByRole("button", { name: "View hot now" }));
+    await waitFor(() =>
+      expect(window.location.search).toContain("spotlight=weeklyHot"),
+    );
+
+    unmount();
+    render(<App />);
+
+    expect(
+      (await screen.findAllByText(/My favorites 1/)).length,
+    ).toBeGreaterThan(0);
   });
 });

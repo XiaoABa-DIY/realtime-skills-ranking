@@ -47,6 +47,7 @@ export function parseUrlState(search: string): UrlState {
       spotlight:
         oneOf(params.get("spotlight"), spotlightKeys) ||
         defaultRepoFilters.spotlight,
+      favoritesOnly: params.get("favorites") === "1",
     },
   };
 }
@@ -68,6 +69,7 @@ export function buildSearchParams(
   if (filters.sortKey !== "stars") params.set("sort", filters.sortKey);
   if (filters.audience) params.set("audience", filters.audience);
   if (filters.spotlight) params.set("spotlight", filters.spotlight);
+  if (filters.favoritesOnly) params.set("favorites", "1");
   if (selectedRepo) params.set("repo", selectedRepo);
 
   const serialized = params.toString();

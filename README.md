@@ -7,6 +7,15 @@ This is a bilingual GitHub Pages dashboard for open-source AI skills, agent work
 - Repository: [XiaoABa-DIY/realtime-skills-ranking](https://github.com/XiaoABa-DIY/realtime-skills-ranking)
 - GitHub Pages: [https://xiaoaba-diy.github.io/realtime-skills-ranking/](https://xiaoaba-diy.github.io/realtime-skills-ranking/)
 
+## Product Highlights / 产品亮点
+
+- **探索型首屏**：首屏展示价值主张、Top 3 热门项目、关键 CTA 和数据新鲜度。
+- **今日推荐**：自动挑选全站 Top、开发者首选、创作者首选和 MCP 首选四张入口卡片。
+- **快速问题入口**：通过 chip 直达程序员工具、自媒体创作、MCP 工具、研究/RAG、入门友好和最近活跃视图。
+- **本地收藏**：收藏保存在当前浏览器 `localStorage` 中；URL 只用 `favorites=1` 恢复“只看收藏”视图，不暴露收藏列表。
+- **行动型详情抽屉**：详情顶部优先提供打开 GitHub、打开主页、复制 skill 链接、收藏和实时刷新。
+- **移动端卡片榜单**：小屏使用卡片流展示仓库，避免横向表格阅读压力。
+
 ## What It Does / 项目能力
 
 - **实时排行榜**：GitHub Actions 定时刷新 GitHub star、fork、language、license、更新时间等指标。
@@ -101,7 +110,7 @@ repositories:
 前端会把用户当前视图写入 URL query：
 
 ```text
-?lang=en&q=mcp&audience=developer&spotlight=developerStack&sort=updated&repo=modelcontextprotocol%2Fservers
+?lang=en&q=mcp&audience=developer&spotlight=developerStack&sort=updated&favorites=1&repo=modelcontextprotocol%2Fservers
 ```
 
 可分享字段包括：
@@ -112,6 +121,7 @@ repositories:
 - `spotlight`：专题榜单。
 - `category`、`platform`、`tag`、`license`、`language`：筛选条件。
 - `sort`：排序方式。
+- `favorites`：值为 `1` 时恢复“只看收藏”视图；收藏列表只保存在本机浏览器。
 - `repo`：打开详情抽屉的仓库。
 
 SEO 文件位于 `index.html`、`public/sitemap.xml`、`public/robots.txt`。当前站点是 GitHub Pages 单页应用，根页面作为主要可索引入口，分享链接负责恢复具体视图。

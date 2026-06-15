@@ -21,6 +21,7 @@ export interface RepoFilters {
   sortKey: SortKey;
   audience: AudienceKey | "";
   spotlight: SpotlightKey | "";
+  favoritesOnly: boolean;
 }
 
 export const defaultRepoFilters: RepoFilters = {
@@ -33,6 +34,7 @@ export const defaultRepoFilters: RepoFilters = {
   sortKey: "stars",
   audience: "",
   spotlight: "",
+  favoritesOnly: false,
 };
 
 export const audienceKeys: AudienceKey[] = [
@@ -367,11 +369,14 @@ export function filterAndSortRepositories(
   repositories: SkillRepoSnapshot[],
   filters: RepoFilters,
   locale: Locale,
+  favoriteRepos: ReadonlySet<string> = new Set(),
 ) {
   const query = filters.query.trim().toLowerCase();
 
   return repositories
     .filter((repo) => {
+      if (filters.favoritesOnly && !favoriteRepos.has(repo.repo.toLowerCase()))
+        return false;
       if (query && !searchableText(repo, locale).includes(query)) return false;
       if (filters.category && repo.category !== filters.category) return false;
       if (filters.platform && !repo.platforms.includes(filters.platform))

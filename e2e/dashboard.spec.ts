@@ -1,4 +1,16 @@
-import { expect, test } from "@playwright/test";
+import { expect, type Page, test } from "@playwright/test";
+
+function repoPattern(repo: string) {
+  return new RegExp(repo.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+}
+
+function getRepoEntry(page: Page, repo: string) {
+  const viewport = page.viewportSize();
+  if (viewport && viewport.width <= 600) {
+    return page.getByRole("button", { name: repoPattern(repo) });
+  }
+  return page.getByRole("row", { name: repoPattern(repo) });
+}
 
 test.beforeEach(async ({ page }) => {
   await page.route("https://api.github.com/repos/**", async (route) => {
@@ -25,54 +37,96 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-test("renders the dashboard and filters repositories", async ({ page }) => {
-  await page.goto("/");
-  await expect(
-    page.getByRole("heading", { name: "AI Skills 实时排行榜" }),
-  ).toBeVisible();
-  await expect(page.getByText("modelcontextprotocol/servers")).toBeVisible();
-  await expect(page.getByText("人群视图")).toBeVisible();
-  await expect(page.getByText("专题榜单")).toBeVisible();
+test("renders the product dashboard and filters repositories", async ({
+  page,
+}) => {
+  await page.goto("/?lang=en");
 
-  await page.getByPlaceholder("搜索仓库、标签、平台或简介").fill("ComfyUI");
-  await expect(page.getByText("Comfy-Org/ComfyUI")).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "AI Skills Live Ranking" }),
+  ).toBeVisible();
+  await expect(page.getByText("Top 3 trending projects")).toBeVisible();
+  await expect(page.getByText("Today picks")).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Developer tools" }),
+  ).toBeVisible();
+  await expect(
+    getRepoEntry(page, "modelcontextprotocol/servers"),
+  ).toBeVisible();
+
+  await page
+    .getByPlaceholder("Search repos, tags, platforms, or summaries")
+    .fill("ComfyUI");
+  await expect(getRepoEntry(page, "Comfy-Org/ComfyUI")).toBeVisible();
   await expect(page).toHaveURL(/q=ComfyUI/);
 });
 
 test("opens details and refreshes a repository live", async ({ page }) => {
-  await page.goto("/");
-  await page.getByText("modelcontextprotocol/servers").first().click();
-  await page.getByRole("button", { name: /刷新此仓库/ }).click();
+  await page.goto("/?lang=en");
+  await getRepoEntry(page, "modelcontextprotocol/servers").click();
 
-  await expect(page.getByText("已读取 GitHub 当前数据。")).toBeVisible();
-  await expect(page.getByText("999").first()).toBeVisible();
+  const drawer = page.getByRole("dialog", {
+    name: "modelcontextprotocol/servers",
+  });
+
+  await expect(
+    drawer.getByRole("button", { name: /Copy skill link/i }),
+  ).toBeVisible();
+  await expect(
+    drawer.getByRole("button", { name: /Save this skill/i }),
+  ).toBeVisible();
+
+  await drawer.getByRole("button", { name: /Refresh this repo/i }).click();
+
+  await expect(page.getByText("Loaded current GitHub data.")).toBeVisible();
+  await expect(drawer.getByText("999").first()).toBeVisible();
 });
 
-test("persists audience filters and detail drawers in the URL", async ({
+test("persists quick filters, favorites, and detail drawers in the URL", async ({
   page,
 }) => {
-  await page.goto("/");
-  await page.getByRole("button", { name: /程序员/ }).click();
+  await page.goto("/?lang=en");
 
+  await page.getByRole("button", { name: "Developer tools" }).click();
   await expect(page).toHaveURL(/audience=developer/);
-  await expect(page.getByRole("button", { name: /程序员/ })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
-  await expect(page.getByText("modelcontextprotocol/servers")).toBeVisible();
+  await expect(page).toHaveURL(/spotlight=developerStack/);
 
-  await page.goto("/?audience=creator&repo=Comfy-Org%2FComfyUI");
+  await page
+    .getByRole("button", { name: /Save this skill/i })
+    .first()
+    .click();
+  await expect(page.getByText(/My favorites 1/).first()).toBeVisible();
+
+  await page
+    .getByRole("button", { name: /My favorites 1/ })
+    .first()
+    .click();
+  await expect(page).toHaveURL(/favorites=1/);
+
+  await page.reload();
+  await expect(page.getByText(/My favorites 1/).first()).toBeVisible();
+
+  await page.goto("/?lang=en&audience=creator&repo=Comfy-Org%2FComfyUI");
   await expect(
     page.getByRole("dialog", { name: "Comfy-Org/ComfyUI" }),
   ).toBeVisible();
-  await expect(page.getByRole("heading", { name: "适合谁用" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Who it fits" }),
+  ).toBeVisible();
 });
 
 test("keeps the mobile ranking layout within the viewport", async ({
   page,
 }) => {
-  await page.goto("/");
-  await expect(page.getByText("modelcontextprotocol/servers")).toBeVisible();
+  await page.goto("/?lang=en");
+  await expect(
+    getRepoEntry(page, "modelcontextprotocol/servers"),
+  ).toBeVisible();
+
+  const viewport = page.viewportSize();
+  if (viewport && viewport.width <= 600) {
+    await expect(page.locator(".mobile-repo-card").first()).toBeVisible();
+  }
 
   const overflow = await page.evaluate(
     () => document.documentElement.scrollWidth - window.innerWidth,

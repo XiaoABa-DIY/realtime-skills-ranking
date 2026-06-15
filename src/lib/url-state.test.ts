@@ -5,7 +5,7 @@ import { defaultRepoFilters } from "./ranking";
 describe("url state helpers", () => {
   it("parses supported filters from query strings", () => {
     const state = parseUrlState(
-      "?lang=en&q=mcp&audience=developer&spotlight=developerStack&sort=updated&repo=modelcontextprotocol%2Fservers",
+      "?lang=en&q=mcp&audience=developer&spotlight=developerStack&sort=updated&favorites=1&repo=modelcontextprotocol%2Fservers",
     );
 
     expect(state.locale).toBe("en");
@@ -15,6 +15,7 @@ describe("url state helpers", () => {
       audience: "developer",
       spotlight: "developerStack",
       sortKey: "updated",
+      favoritesOnly: true,
     });
   });
 
@@ -25,10 +26,13 @@ describe("url state helpers", () => {
           ...defaultRepoFilters,
           audience: "creator",
           tag: "tts",
+          favoritesOnly: true,
         },
         "zh",
         "fishaudio/fish-speech",
       ),
-    ).toBe("?tag=tts&audience=creator&repo=fishaudio%2Ffish-speech");
+    ).toBe(
+      "?tag=tts&audience=creator&favorites=1&repo=fishaudio%2Ffish-speech",
+    );
   });
 });

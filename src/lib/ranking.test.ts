@@ -116,6 +116,21 @@ describe("ranking helpers", () => {
     expect(creatorRepos.map((repo) => repo.repo)).toEqual(["beta/media"]);
   });
 
+  it("filters to local favorites before sorting", () => {
+    const result = filterAndSortRepositories(
+      repositories,
+      {
+        ...defaultRepoFilters,
+        query: "workflow",
+        favoritesOnly: true,
+      },
+      "en",
+      new Set(["alpha/agents"]),
+    );
+
+    expect(result.map((repo) => repo.repo)).toEqual(["alpha/agents"]);
+  });
+
   it("derives ranks, freshness, audiences, and related repositories", () => {
     const enriched = enrichRepositories(repositories);
     const media = enriched.find((repo) => repo.repo === "beta/media")!;
