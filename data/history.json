@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-06-16T18:15:10.876Z",
+  "generatedAt": "2026-06-16T23:52:23.544Z",
   "retentionDays": 180,
   "skills": [
     {
@@ -8,9 +8,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 39728,
-          "viewCount": 23739,
-          "heatScore": 1070,
+          "downloadCount": 40303,
+          "viewCount": 24528,
+          "heatScore": 1071,
           "rank": 22,
           "rankByCategory": 4
         }
@@ -21,9 +21,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 24871,
-          "viewCount": 13203,
-          "heatScore": 1033,
+          "downloadCount": 24986,
+          "viewCount": 13457,
+          "heatScore": 1034,
           "rank": 43,
           "rankByCategory": 9
         }
@@ -34,9 +34,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 42567,
-          "viewCount": 26272,
-          "heatScore": 1075,
+          "downloadCount": 43297,
+          "viewCount": 26603,
+          "heatScore": 1076,
           "rank": 21,
           "rankByCategory": 3
         }
@@ -47,9 +47,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 61009,
-          "viewCount": 62919,
-          "heatScore": 1162,
+          "downloadCount": 61939,
+          "viewCount": 64026,
+          "heatScore": 1164,
           "rank": 6,
           "rankByCategory": 2
         }
@@ -60,9 +60,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 58581,
-          "viewCount": 25958,
-          "heatScore": 1097,
+          "downloadCount": 59776,
+          "viewCount": 26159,
+          "heatScore": 1098,
           "rank": 15,
           "rankByCategory": 2
         }
@@ -73,9 +73,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 51659,
-          "viewCount": 94428,
-          "heatScore": 1039,
+          "downloadCount": 52344,
+          "viewCount": 95553,
+          "heatScore": 1040,
           "rank": 39,
           "rankByCategory": 6
         }
@@ -86,9 +86,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 54909,
-          "viewCount": 47518,
-          "heatScore": 1037,
+          "downloadCount": 55924,
+          "viewCount": 48960,
+          "heatScore": 1039,
           "rank": 40,
           "rankByCategory": 8
         }
@@ -99,9 +99,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 47991,
-          "viewCount": 57895,
-          "heatScore": 1116,
+          "downloadCount": 48521,
+          "viewCount": 58602,
+          "heatScore": 1117,
           "rank": 13,
           "rankByCategory": 3
         }
@@ -112,9 +112,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 20621,
-          "viewCount": 93163,
-          "heatScore": 974,
+          "downloadCount": 20756,
+          "viewCount": 94408,
+          "heatScore": 975,
           "rank": 57,
           "rankByCategory": 11
         }
@@ -125,9 +125,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 74836,
-          "viewCount": 38195,
-          "heatScore": 1047,
+          "downloadCount": 75981,
+          "viewCount": 38661,
+          "heatScore": 1048,
           "rank": 35,
           "rankByCategory": 3
         }
@@ -138,8 +138,8 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 43377,
-          "viewCount": 66883,
+          "downloadCount": 43607,
+          "viewCount": 67525,
           "heatScore": 1020,
           "rank": 48,
           "rankByCategory": 11
@@ -151,9 +151,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 72050,
-          "viewCount": 70830,
-          "heatScore": 1056,
+          "downloadCount": 73050,
+          "viewCount": 71672,
+          "heatScore": 1058,
           "rank": 31,
           "rankByCategory": 5
         }
@@ -164,9 +164,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 15626,
-          "viewCount": 75088,
-          "heatScore": 959,
+          "downloadCount": 15831,
+          "viewCount": 75909,
+          "heatScore": 960,
           "rank": 59,
           "rankByCategory": 13
         }
@@ -177,9 +177,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 32214,
-          "viewCount": 33030,
-          "heatScore": 985,
+          "downloadCount": 32634,
+          "viewCount": 33740,
+          "heatScore": 986,
           "rank": 55,
           "rankByCategory": 10
         }
@@ -190,9 +190,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 38192,
-          "viewCount": 58443,
-          "heatScore": 1098,
+          "downloadCount": 38577,
+          "viewCount": 59928,
+          "heatScore": 1099,
           "rank": 14,
           "rankByCategory": 3
         }
@@ -203,9 +203,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 61602,
-          "viewCount": 65295,
-          "heatScore": 1164,
+          "downloadCount": 62507,
+          "viewCount": 65964,
+          "heatScore": 1165,
           "rank": 5,
           "rankByCategory": 1
         }
@@ -216,9 +216,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 99073,
-          "viewCount": 103191,
-          "heatScore": 1086,
+          "downloadCount": 100333,
+          "viewCount": 104436,
+          "heatScore": 1087,
           "rank": 18,
           "rankByCategory": 4
         }
@@ -229,9 +229,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 90827,
-          "viewCount": 17064,
-          "heatScore": 1046,
+          "downloadCount": 92272,
+          "viewCount": 17155,
+          "heatScore": 1047,
           "rank": 36,
           "rankByCategory": 6
         }
@@ -242,9 +242,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 65822,
-          "viewCount": 24456,
-          "heatScore": 1031,
+          "downloadCount": 66707,
+          "viewCount": 24824,
+          "heatScore": 1032,
           "rank": 44,
           "rankByCategory": 10
         }
@@ -255,8 +255,8 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 53215,
-          "viewCount": 34267,
+          "downloadCount": 53650,
+          "viewCount": 34669,
           "heatScore": 1023,
           "rank": 47,
           "rankByCategory": 1
@@ -268,9 +268,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 61986,
-          "viewCount": 50903,
-          "heatScore": 1161,
+          "downloadCount": 63376,
+          "viewCount": 51636,
+          "heatScore": 1163,
           "rank": 7,
           "rankByCategory": 2
         }
@@ -281,10 +281,10 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 16748,
-          "viewCount": 10899,
-          "heatScore": 1002,
-          "rank": 53,
+          "downloadCount": 17653,
+          "viewCount": 11161,
+          "heatScore": 1006,
+          "rank": 52,
           "rankByCategory": 12
         }
       ]
@@ -294,9 +294,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 87382,
-          "viewCount": 39327,
-          "heatScore": 1058,
+          "downloadCount": 88767,
+          "viewCount": 39783,
+          "heatScore": 1059,
           "rank": 30,
           "rankByCategory": 6
         }
@@ -307,9 +307,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 47166,
-          "viewCount": 41344,
-          "heatScore": 1026,
+          "downloadCount": 47861,
+          "viewCount": 41625,
+          "heatScore": 1027,
           "rank": 45,
           "rankByCategory": 4
         }
@@ -320,9 +320,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 46987,
-          "viewCount": 41456,
-          "heatScore": 1024,
+          "downloadCount": 48067,
+          "viewCount": 42501,
+          "heatScore": 1026,
           "rank": 46,
           "rankByCategory": 5
         }
@@ -333,9 +333,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 88569,
-          "viewCount": 31958,
-          "heatScore": 1063,
+          "downloadCount": 89939,
+          "viewCount": 32328,
+          "heatScore": 1064,
           "rank": 27,
           "rankByCategory": 2
         }
@@ -346,10 +346,10 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 85601,
-          "viewCount": 31850,
-          "heatScore": 1180,
-          "rank": 2,
+          "downloadCount": 86711,
+          "viewCount": 32209,
+          "heatScore": 1182,
+          "rank": 1,
           "rankByCategory": 1
         }
       ]
@@ -359,9 +359,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 27933,
-          "viewCount": 43884,
-          "heatScore": 982,
+          "downloadCount": 28313,
+          "viewCount": 44799,
+          "heatScore": 984,
           "rank": 56,
           "rankByCategory": 7
         }
@@ -372,10 +372,10 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 15395,
-          "viewCount": 10045,
-          "heatScore": 1007,
-          "rank": 50,
+          "downloadCount": 15450,
+          "viewCount": 10241,
+          "heatScore": 1008,
+          "rank": 51,
           "rankByCategory": 8
         }
       ]
@@ -385,9 +385,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 25334,
-          "viewCount": 41504,
-          "heatScore": 1092,
+          "downloadCount": 25419,
+          "viewCount": 41836,
+          "heatScore": 1093,
           "rank": 16,
           "rankByCategory": 3
         }
@@ -398,9 +398,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 95639,
-          "viewCount": 34091,
-          "heatScore": 1062,
+          "downloadCount": 97089,
+          "viewCount": 34317,
+          "heatScore": 1063,
           "rank": 28,
           "rankByCategory": 5
         }
@@ -411,9 +411,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 81491,
-          "viewCount": 62725,
-          "heatScore": 1065,
+          "downloadCount": 82456,
+          "viewCount": 63640,
+          "heatScore": 1066,
           "rank": 26,
           "rankByCategory": 1
         }
@@ -424,9 +424,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 66368,
-          "viewCount": 82322,
-          "heatScore": 1174,
+          "downloadCount": 67123,
+          "viewCount": 83389,
+          "heatScore": 1175,
           "rank": 4,
           "rankByCategory": 1
         }
@@ -437,10 +437,10 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 41710,
-          "viewCount": 35794,
-          "heatScore": 1006,
-          "rank": 51,
+          "downloadCount": 42275,
+          "viewCount": 36253,
+          "heatScore": 1008,
+          "rank": 50,
           "rankByCategory": 9
         }
       ]
@@ -450,9 +450,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 13503,
-          "viewCount": 5766,
-          "heatScore": 899,
+          "downloadCount": 14028,
+          "viewCount": 5990,
+          "heatScore": 902,
           "rank": 62,
           "rankByCategory": 14
         }
@@ -463,9 +463,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 54280,
-          "viewCount": 70519,
-          "heatScore": 1156,
+          "downloadCount": 54875,
+          "viewCount": 71254,
+          "heatScore": 1157,
           "rank": 8,
           "rankByCategory": 2
         }
@@ -476,9 +476,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 65044,
-          "viewCount": 111886,
-          "heatScore": 1148,
+          "downloadCount": 65879,
+          "viewCount": 113353,
+          "heatScore": 1149,
           "rank": 9,
           "rankByCategory": 3
         }
@@ -489,9 +489,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 76007,
-          "viewCount": 66483,
-          "heatScore": 1059,
+          "downloadCount": 76977,
+          "viewCount": 67196,
+          "heatScore": 1060,
           "rank": 29,
           "rankByCategory": 5
         }
@@ -502,9 +502,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 77375,
-          "viewCount": 91033,
-          "heatScore": 1066,
+          "downloadCount": 78245,
+          "viewCount": 92103,
+          "heatScore": 1067,
           "rank": 25,
           "rankByCategory": 6
         }
@@ -515,9 +515,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 22632,
-          "viewCount": 30015,
-          "heatScore": 958,
+          "downloadCount": 22802,
+          "viewCount": 30330,
+          "heatScore": 959,
           "rank": 60,
           "rankByCategory": 11
         }
@@ -528,9 +528,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 35261,
-          "viewCount": 84809,
-          "heatScore": 1130,
+          "downloadCount": 35441,
+          "viewCount": 86159,
+          "heatScore": 1131,
           "rank": 12,
           "rankByCategory": 4
         }
@@ -541,9 +541,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 62487,
-          "viewCount": 63480,
-          "heatScore": 1052,
+          "downloadCount": 63442,
+          "viewCount": 64706,
+          "heatScore": 1054,
           "rank": 34,
           "rankByCategory": 8
         }
@@ -554,10 +554,10 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 86224,
-          "viewCount": 64511,
-          "heatScore": 1067,
-          "rank": 23,
+          "downloadCount": 87199,
+          "viewCount": 65531,
+          "heatScore": 1068,
+          "rank": 24,
           "rankByCategory": 5
         }
       ]
@@ -567,9 +567,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 18672,
-          "viewCount": 111745,
-          "heatScore": 971,
+          "downloadCount": 18827,
+          "viewCount": 113201,
+          "heatScore": 972,
           "rank": 58,
           "rankByCategory": 10
         }
@@ -580,9 +580,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 67381,
-          "viewCount": 82159,
-          "heatScore": 1055,
+          "downloadCount": 68141,
+          "viewCount": 83345,
+          "heatScore": 1056,
           "rank": 32,
           "rankByCategory": 7
         }
@@ -593,9 +593,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 111457,
-          "viewCount": 49810,
-          "heatScore": 1080,
+          "downloadCount": 112917,
+          "viewCount": 50180,
+          "heatScore": 1081,
           "rank": 19,
           "rankByCategory": 4
         }
@@ -606,8 +606,8 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 12718,
-          "viewCount": 27201,
+          "downloadCount": 12788,
+          "viewCount": 27460,
           "heatScore": 916,
           "rank": 61,
           "rankByCategory": 9
@@ -619,9 +619,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 21366,
-          "viewCount": 53190,
-          "heatScore": 1043,
+          "downloadCount": 21576,
+          "viewCount": 54473,
+          "heatScore": 1044,
           "rank": 37,
           "rankByCategory": 7
         }
@@ -632,9 +632,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 24536,
-          "viewCount": 34491,
-          "heatScore": 1087,
+          "downloadCount": 25041,
+          "viewCount": 34880,
+          "heatScore": 1088,
           "rank": 17,
           "rankByCategory": 2
         }
@@ -645,9 +645,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 56114,
-          "viewCount": 39710,
-          "heatScore": 1147,
+          "downloadCount": 56619,
+          "viewCount": 40096,
+          "heatScore": 1148,
           "rank": 10,
           "rankByCategory": 1
         }
@@ -658,10 +658,10 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 68660,
-          "viewCount": 104170,
-          "heatScore": 1181,
-          "rank": 1,
+          "downloadCount": 69730,
+          "viewCount": 105654,
+          "heatScore": 1182,
+          "rank": 2,
           "rankByCategory": 1
         }
       ]
@@ -671,9 +671,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 101154,
-          "viewCount": 23160,
-          "heatScore": 1178,
+          "downloadCount": 102449,
+          "viewCount": 23250,
+          "heatScore": 1179,
           "rank": 3,
           "rankByCategory": 2
         }
@@ -684,9 +684,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 34748,
-          "viewCount": 91833,
-          "heatScore": 1010,
+          "downloadCount": 35013,
+          "viewCount": 92867,
+          "heatScore": 1011,
           "rank": 49,
           "rankByCategory": 8
         }
@@ -697,9 +697,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 25315,
-          "viewCount": 88009,
-          "heatScore": 987,
+          "downloadCount": 25380,
+          "viewCount": 89104,
+          "heatScore": 988,
           "rank": 54,
           "rankByCategory": 6
         }
@@ -710,9 +710,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 66412,
-          "viewCount": 88795,
-          "heatScore": 1055,
+          "downloadCount": 67117,
+          "viewCount": 90120,
+          "heatScore": 1056,
           "rank": 33,
           "rankByCategory": 7
         }
@@ -723,9 +723,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 46971,
-          "viewCount": 44862,
-          "heatScore": 1137,
+          "downloadCount": 47676,
+          "viewCount": 45208,
+          "heatScore": 1138,
           "rank": 11,
           "rankByCategory": 1
         }
@@ -736,10 +736,10 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 74471,
-          "viewCount": 110041,
-          "heatScore": 1067,
-          "rank": 24,
+          "downloadCount": 75661,
+          "viewCount": 111502,
+          "heatScore": 1069,
+          "rank": 23,
           "rankByCategory": 4
         }
       ]
@@ -749,9 +749,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 61681,
-          "viewCount": 41652,
-          "heatScore": 1035,
+          "downloadCount": 62396,
+          "viewCount": 41996,
+          "heatScore": 1036,
           "rank": 41,
           "rankByCategory": 6
         }
@@ -762,9 +762,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 91626,
-          "viewCount": 91728,
-          "heatScore": 1078,
+          "downloadCount": 92901,
+          "viewCount": 92993,
+          "heatScore": 1080,
           "rank": 20,
           "rankByCategory": 3
         }
@@ -775,9 +775,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 65054,
-          "viewCount": 33889,
-          "heatScore": 1034,
+          "downloadCount": 65824,
+          "viewCount": 34312,
+          "heatScore": 1035,
           "rank": 42,
           "rankByCategory": 7
         }
@@ -788,9 +788,9 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 74063,
-          "viewCount": 30479,
-          "heatScore": 1041,
+          "downloadCount": 75193,
+          "viewCount": 30679,
+          "heatScore": 1043,
           "rank": 38,
           "rankByCategory": 5
         }
@@ -801,10 +801,10 @@
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 37341,
-          "viewCount": 50178,
-          "heatScore": 1003,
-          "rank": 52,
+          "downloadCount": 37486,
+          "viewCount": 50873,
+          "heatScore": 1004,
+          "rank": 53,
           "rankByCategory": 9
         }
       ]
