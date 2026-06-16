@@ -1,18 +1,18 @@
-export const favoritesStorageKey = "realtime-skills-ranking:favorites:v1";
+export const favoritesStorageKey = "redfox-skills-ranking:favorites:v1";
 
 type StorageLike = Pick<Storage, "getItem" | "setItem">;
 
-export function normalizeRepoId(repo: string) {
-  return repo.trim().toLowerCase();
+export function normalizeSkillId(skillCode: string) {
+  return skillCode.trim().toLowerCase();
 }
 
-export function uniqueFavoriteRepos(repos: string[]) {
+export function uniqueFavoriteSkills(skillCodes: string[]) {
   const seen = new Set<string>();
   const unique: string[] = [];
 
-  for (const repo of repos) {
-    const trimmed = repo.trim();
-    const normalized = normalizeRepoId(trimmed);
+  for (const skillCode of skillCodes) {
+    const trimmed = skillCode.trim();
+    const normalized = normalizeSkillId(trimmed);
     if (!trimmed || seen.has(normalized)) continue;
     seen.add(normalized);
     unique.push(trimmed);
@@ -21,13 +21,13 @@ export function uniqueFavoriteRepos(repos: string[]) {
   return unique;
 }
 
-export function parseFavoriteRepos(value: string | null) {
+export function parseFavoriteSkills(value: string | null) {
   if (!value) return [];
 
   try {
     const parsed: unknown = JSON.parse(value);
     if (!Array.isArray(parsed)) return [];
-    return uniqueFavoriteRepos(
+    return uniqueFavoriteSkills(
       parsed.filter((item): item is string => typeof item === "string"),
     );
   } catch {
@@ -35,21 +35,21 @@ export function parseFavoriteRepos(value: string | null) {
   }
 }
 
-export function readFavoriteRepos(storage = getBrowserStorage()) {
+export function readFavoriteSkills(storage = getBrowserStorage()) {
   if (!storage) return [];
 
   try {
-    return parseFavoriteRepos(storage.getItem(favoritesStorageKey));
+    return parseFavoriteSkills(storage.getItem(favoritesStorageKey));
   } catch {
     return [];
   }
 }
 
-export function writeFavoriteRepos(
-  repos: string[],
+export function writeFavoriteSkills(
+  skillCodes: string[],
   storage: StorageLike | null = getBrowserStorage(),
 ) {
-  const unique = uniqueFavoriteRepos(repos);
+  const unique = uniqueFavoriteSkills(skillCodes);
   if (!storage) return unique;
 
   try {
@@ -61,13 +61,15 @@ export function writeFavoriteRepos(
   return unique;
 }
 
-export function toggleFavoriteRepo(repos: string[], repo: string) {
-  const normalized = normalizeRepoId(repo);
-  const exists = repos.some((item) => normalizeRepoId(item) === normalized);
+export function toggleFavoriteSkill(skillCodes: string[], skillCode: string) {
+  const normalized = normalizeSkillId(skillCode);
+  const exists = skillCodes.some(
+    (item) => normalizeSkillId(item) === normalized,
+  );
   if (exists) {
-    return repos.filter((item) => normalizeRepoId(item) !== normalized);
+    return skillCodes.filter((item) => normalizeSkillId(item) !== normalized);
   }
-  return uniqueFavoriteRepos([...repos, repo]);
+  return uniqueFavoriteSkills([...skillCodes, skillCode]);
 }
 
 function getBrowserStorage(): StorageLike | null {

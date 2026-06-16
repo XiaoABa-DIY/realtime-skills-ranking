@@ -1,70 +1,58 @@
 import type {
   AudienceKey,
-  CandidateRepo,
-  Category,
   Locale,
   LocalizedText,
-  QualitySignals,
-  Freshness,
-  SkillRepoSnapshot,
-  SpotlightKey,
+  RedfoxSkillSnapshot,
   SortKey,
+  SpotlightKey,
 } from "../types";
 
-export interface RepoFilters {
+export interface SkillFilters {
   query: string;
   category: string;
-  platform: string;
   tag: string;
-  license: string;
-  language: string;
   sortKey: SortKey;
   audience: AudienceKey | "";
   spotlight: SpotlightKey | "";
   favoritesOnly: boolean;
 }
 
-export const defaultRepoFilters: RepoFilters = {
+export const defaultSkillFilters: SkillFilters = {
   query: "",
   category: "",
-  platform: "",
   tag: "",
-  license: "",
-  language: "",
-  sortKey: "stars",
+  sortKey: "heat",
   audience: "",
   spotlight: "",
   favoritesOnly: false,
 };
 
 export const audienceKeys: AudienceKey[] = [
-  "developer",
-  "creator",
-  "designMarketing",
-  "research",
+  "media",
+  "wechat",
+  "xiaohongshu",
+  "douyin",
+  "data",
   "productivity",
-  "mcp",
+  "developer",
 ];
 
 export const spotlightKeys: SpotlightKey[] = [
-  "weeklyHot",
+  "hot",
+  "recommended",
+  "new",
+  "topUses",
+  "recentlyUpdated",
   "growth7d",
   "growth30d",
   "rankRisers",
-  "classicStars",
-  "recentlyActive",
-  "beginnerFriendly",
-  "creatorPicks",
-  "developerStack",
 ];
 
 export interface AudienceProfile {
   key: AudienceKey;
   label: LocalizedText;
   description: LocalizedText;
-  categories: Category[];
-  platforms: string[];
-  tags: string[];
+  matchers: string[];
 }
 
 export interface SpotlightView {
@@ -74,318 +62,226 @@ export interface SpotlightView {
 }
 
 export const audienceProfiles: Record<AudienceKey, AudienceProfile> = {
-  developer: {
-    key: "developer",
-    label: { zh: "程序员", en: "Developers" },
+  media: {
+    key: "media",
+    label: { zh: "自媒体", en: "Media creators" },
     description: {
-      zh: "代码助手、CLI、IDE、Agent 框架和工程自动化。",
-      en: "Coding assistants, CLIs, IDE tools, agent frameworks, and engineering automation.",
+      zh: "选题、改写、素材处理和跨平台内容生产。",
+      en: "Topics, rewriting, asset work, and cross-platform publishing.",
     },
-    categories: ["Developer Tools", "Coding Agents", "MCP & Tooling"],
-    platforms: ["CLI", "VS Code", "IDE", "Git", "Developers", "Agents"],
-    tags: ["coding-agent", "terminal", "sdk", "software-engineering"],
+    matchers: ["自媒体", "创作", "内容", "文案", "rewrite", "creator"],
   },
-  creator: {
-    key: "creator",
-    label: { zh: "自媒体创作者", en: "Creators" },
+  wechat: {
+    key: "wechat",
+    label: { zh: "公众号运营", en: "WeChat operators" },
     description: {
-      zh: "文档整理、语音、OCR、长文研究和内容生产工作流。",
-      en: "Document processing, voice, OCR, long-form research, and content production workflows.",
+      zh: "公众号选题、爆文分析、订阅监控和推文生产。",
+      en: "WeChat article ideas, analysis, monitoring, and publishing.",
     },
-    categories: ["Creator & Content", "Design & Media", "Prompt & Workflow"],
-    platforms: ["Creators", "Audio", "Voice", "Documents", "Writing", "Images"],
-    tags: ["content", "tts", "ocr", "research-writing", "document-conversion"],
+    matchers: ["公众号", "gzh", "wechat"],
   },
-  designMarketing: {
-    key: "designMarketing",
-    label: { zh: "设计/营销", en: "Design/Marketing" },
+  xiaohongshu: {
+    key: "xiaohongshu",
+    label: { zh: "小红书创作者", en: "Xiaohongshu creators" },
     description: {
-      zh: "图像生成、创意工作流、广告素材和商业视觉工具。",
-      en: "Image generation, creative workflows, campaign assets, and commercial visual tooling.",
+      zh: "笔记选题、账号诊断、文案改写和趋势跟踪。",
+      en: "RED notes, account diagnosis, copy rewriting, and trend tracking.",
     },
-    categories: ["Design & Media", "Creator & Content", "Productivity"],
-    platforms: ["Images", "Workflows", "Creators", "Low-code"],
-    tags: ["image-generation", "nodes", "content"],
+    matchers: ["小红书", "xiaohongshu", "xhs", "red"],
   },
-  research: {
-    key: "research",
-    label: { zh: "研究分析", en: "Research" },
+  douyin: {
+    key: "douyin",
+    label: { zh: "抖音运营", en: "Douyin operators" },
     description: {
-      zh: "RAG、网页抓取、知识库、课程和资料研究工具。",
-      en: "RAG, crawling, knowledge bases, courses, and research tooling.",
+      zh: "抖音搜索、榜单、账号分析和视频内容复盘。",
+      en: "Douyin search, rankings, account analysis, and video review.",
     },
-    categories: ["Data & Research", "Learning & Docs"],
-    platforms: ["RAG", "Web", "Learning", "Python"],
-    tags: ["rag", "data", "knowledge", "web-crawling", "course"],
+    matchers: ["抖音", "douyin", "tiktok"],
+  },
+  data: {
+    key: "data",
+    label: { zh: "数据分析", en: "Data analysts" },
+    description: {
+      zh: "榜单、搜索、采集、趋势和账号数据洞察。",
+      en: "Rankings, search, crawling, trends, and account insights.",
+    },
+    matchers: ["数据", "榜单", "查询", "分析", "搜索", "ranking", "search"],
   },
   productivity: {
     key: "productivity",
-    label: { zh: "效率办公", en: "Productivity" },
+    label: { zh: "效率工具", en: "Productivity" },
     description: {
-      zh: "低代码、自动化、知识库、聊天界面和工作流编排。",
-      en: "Low-code builders, automation, knowledge apps, chat UIs, and workflow orchestration.",
+      zh: "提取、检测、下载、改写和批处理工具。",
+      en: "Extraction, checking, downloading, rewriting, and batch work.",
     },
-    categories: ["Productivity", "Prompt & Workflow"],
-    platforms: ["Automation", "Low-code", "Workflows", "Apps", "Chat"],
-    tags: ["automation", "low-code", "ai-workflows"],
+    matchers: ["效率", "工具", "检测", "提取", "下载", "pdf", "tool"],
   },
-  mcp: {
-    key: "mcp",
-    label: { zh: "MCP 玩家", en: "MCP Builders" },
+  developer: {
+    key: "developer",
+    label: { zh: "Agent/开发者", en: "Agent builders" },
     description: {
-      zh: "MCP 服务、SDK、工具连接和 Agent 集成生态。",
-      en: "MCP servers, SDKs, tool connections, and agent integration ecosystems.",
+      zh: "适合用 SKILL.md、CLI、API Key 和开源源码扩展 Agent。",
+      en: "SKILL.md, CLI, API-key, and open-source agent extension users.",
     },
-    categories: ["MCP & Tooling", "Developer Tools"],
-    platforms: ["MCP", "TypeScript"],
-    tags: ["mcp", "tools", "integrations", "sdk"],
+    matchers: ["skill", "api", "github", "cli", "agent", "开发"],
   },
 };
 
 export const spotlightViews: Record<SpotlightKey, SpotlightView> = {
-  weeklyHot: {
-    key: "weeklyHot",
-    label: { zh: "本周热门", en: "Hot now" },
+  hot: {
+    key: "hot",
+    label: { zh: "热门", en: "Hot" },
     description: {
-      zh: "用当前星标、精选和近期活跃度估算，历史涨星会在 V2 接入。",
-      en: "Estimated from current stars, featured status, and recent activity; star growth lands in V2.",
+      zh: "RedFox 标记为热门或综合热度靠前的 skills。",
+      en: "Skills marked hot by RedFox or ranking high by heat score.",
+    },
+  },
+  recommended: {
+    key: "recommended",
+    label: { zh: "推荐", en: "Recommended" },
+    description: {
+      zh: "RedFox 推荐技能，适合直接试用。",
+      en: "RedFox recommended skills worth trying first.",
+    },
+  },
+  new: {
+    key: "new",
+    label: { zh: "上新", en: "New" },
+    description: {
+      zh: "新发布或最近更新的 skills。",
+      en: "Newly published or recently updated skills.",
+    },
+  },
+  topUses: {
+    key: "topUses",
+    label: { zh: "使用量榜", en: "Most used" },
+    description: {
+      zh: "按 RedFox 页面展示的使用量排序。",
+      en: "Sorted by the usage count displayed on RedFox.",
+    },
+  },
+  recentlyUpdated: {
+    key: "recentlyUpdated",
+    label: { zh: "最近更新", en: "Recently updated" },
+    description: {
+      zh: "优先看最近维护的 skills。",
+      en: "Skills with the freshest update time.",
     },
   },
   growth7d: {
     key: "growth7d",
-    label: { zh: "7 天涨星榜", en: "7-day growth" },
+    label: { zh: "7 天使用增长", en: "7-day usage growth" },
     description: {
-      zh: "按过去 7 天新增 star 排序；历史不足时回退到当前星标。",
-      en: "Ranks by stars gained over the last 7 days; falls back to current stars while collecting.",
+      zh: "历史足够时按 7 天新增使用量排序。",
+      en: "Ranks by 7-day usage growth once history is available.",
     },
   },
   growth30d: {
     key: "growth30d",
-    label: { zh: "30 天涨星榜", en: "30-day growth" },
+    label: { zh: "30 天使用增长", en: "30-day usage growth" },
     description: {
-      zh: "按过去 30 天新增 star 排序，适合观察持续热度。",
-      en: "Ranks by stars gained over 30 days for steadier momentum signals.",
+      zh: "历史足够时按 30 天新增使用量排序。",
+      en: "Ranks by 30-day usage growth once history is available.",
     },
   },
   rankRisers: {
     key: "rankRisers",
     label: { zh: "排名上升最快", en: "Fastest risers" },
     description: {
-      zh: "优先看 7 天排名提升，其次看 7 天涨星。",
-      en: "Prioritizes 7-day rank movement, then 7-day star growth.",
-    },
-  },
-  classicStars: {
-    key: "classicStars",
-    label: { zh: "高星经典", en: "Star classics" },
-    description: {
-      zh: "星标基础强、长期被社区验证的项目。",
-      en: "Projects with strong star bases and long-running community validation.",
-    },
-  },
-  recentlyActive: {
-    key: "recentlyActive",
-    label: { zh: "最近活跃", en: "Recently active" },
-    description: {
-      zh: "近期仍在更新或推送的仓库，适合优先试用。",
-      en: "Repositories with recent updates or pushes, good for first evaluation.",
-    },
-  },
-  beginnerFriendly: {
-    key: "beginnerFriendly",
-    label: { zh: "适合入门", en: "Beginner friendly" },
-    description: {
-      zh: "课程、指南、示例和低门槛工具。",
-      en: "Courses, guides, examples, and approachable tools.",
-    },
-  },
-  creatorPicks: {
-    key: "creatorPicks",
-    label: { zh: "内容创作者精选", en: "Creator picks" },
-    description: {
-      zh: "适合选题、资料整理、图像、语音和内容生产。",
-      en: "Useful for topic research, asset preparation, visuals, voice, and content production.",
-    },
-  },
-  developerStack: {
-    key: "developerStack",
-    label: { zh: "开发者工具链", en: "Developer stack" },
-    description: {
-      zh: "从代码助手到 MCP 集成的开发者工作台。",
-      en: "A developer bench from coding assistants to MCP integrations.",
+      zh: "按 7 天排名变化排序，历史不足时回退综合热度。",
+      en: "Sorts by 7-day rank movement, falling back to heat score.",
     },
   },
 };
 
 export function uniqueSorted(values: string[]) {
   return Array.from(new Set(values.filter(Boolean))).sort((a, b) =>
-    a.localeCompare(b),
+    a.localeCompare(b, "zh-CN"),
   );
 }
 
-export function getFilterOptions(repositories: SkillRepoSnapshot[]) {
+export function getFilterOptions(skills: RedfoxSkillSnapshot[]) {
   return {
-    categories: uniqueSorted(repositories.map((repo) => repo.category)),
-    platforms: uniqueSorted(repositories.flatMap((repo) => repo.platforms)),
-    tags: uniqueSorted(repositories.flatMap((repo) => repo.tags)),
-    licenses: uniqueSorted(repositories.map((repo) => repo.license)),
-    languages: uniqueSorted(repositories.map((repo) => repo.language)),
+    categories: uniqueSorted(skills.map((skill) => skill.categoryCode)),
+    tags: uniqueSorted(skills.flatMap((skill) => skill.tags)),
   };
 }
 
-function searchableText(repo: SkillRepoSnapshot, locale: Locale) {
+function skillText(skill: RedfoxSkillSnapshot, locale: Locale) {
   return [
-    repo.repo,
-    repo.fullName,
-    repo.category,
-    repo.language,
-    repo.license,
-    repo.description,
-    repo.summary.zh,
-    repo.summary.en,
-    repo.summary[locale],
-    repo.difficulty ?? "",
-    repo.status ?? "",
-    ...(repo.audiences ?? []),
-    ...(repo.useCases ?? []).flatMap((useCase) => [useCase.zh, useCase.en]),
-    ...repo.platforms,
-    ...repo.tags,
+    skill.skillCode,
+    skill.skillNo,
+    skill.name.zh,
+    skill.name.en,
+    skill.name[locale],
+    skill.categoryCode,
+    skill.categoryName.zh,
+    skill.categoryName.en,
+    skill.description.zh,
+    skill.description.en,
+    skill.introduce.zh,
+    skill.introduce.en,
+    skill.displayBadge?.zh ?? "",
+    skill.displayBadge?.en ?? "",
+    ...(skill.audiences ?? []),
+    ...(skill.useCases ?? []).flatMap((item) => [item.zh, item.en]),
+    ...skill.tags,
+    ...skill.accessMethods.flatMap((method) => [method.name, method.value]),
   ]
     .join(" ")
     .toLowerCase();
 }
 
-function hasAny(source: string[], targets: string[]) {
-  const normalized = new Set(source.map((item) => item.toLowerCase()));
-  return targets.some((target) => normalized.has(target.toLowerCase()));
+function matcherText(skill: RedfoxSkillSnapshot) {
+  return [
+    skill.skillCode,
+    skill.name.zh,
+    skill.name.en,
+    skill.categoryCode,
+    skill.categoryName.zh,
+    skill.categoryName.en,
+    skill.description.zh,
+    skill.introduce.zh,
+    ...skill.tags,
+    ...skill.accessMethods.map((method) => method.name),
+  ]
+    .join(" ")
+    .toLowerCase();
+}
+
+export function inferAudiences(skill: RedfoxSkillSnapshot): AudienceKey[] {
+  if (skill.audiences?.length) return skill.audiences;
+
+  const text = matcherText(skill);
+  const inferred = audienceKeys.filter((audience) =>
+    audienceProfiles[audience].matchers.some((matcher) =>
+      text.includes(matcher.toLowerCase()),
+    ),
+  );
+
+  return inferred.length ? inferred : ["media"];
 }
 
 export function matchesAudience(
-  repo: SkillRepoSnapshot,
+  skill: RedfoxSkillSnapshot,
   audience: AudienceKey,
 ) {
-  if (repo.audiences?.includes(audience)) return true;
-  const profile = audienceProfiles[audience];
-  return (
-    profile.categories.includes(repo.category) ||
-    hasAny(repo.platforms, profile.platforms) ||
-    hasAny(repo.tags, profile.tags)
-  );
+  return inferAudiences(skill).includes(audience);
 }
 
-export function inferAudiences(repo: SkillRepoSnapshot): AudienceKey[] {
-  const explicit = repo.audiences?.filter((audience) =>
-    audienceKeys.includes(audience),
-  );
-  if (explicit?.length) return explicit;
-
-  const inferred = audienceKeys.filter((audience) =>
-    matchesAudience(repo, audience),
-  );
-  return inferred.length ? inferred : ["productivity"];
-}
-
-export function deriveUseCases(repo: SkillRepoSnapshot): LocalizedText[] {
-  if (repo.useCases?.length) return repo.useCases;
-
-  const audiences = inferAudiences(repo);
-  const useCases: LocalizedText[] = [];
-  if (audiences.includes("developer")) {
-    useCases.push({
-      zh: "辅助编码、调试、工程自动化或 Agent 编排",
-      en: "Coding, debugging, engineering automation, or agent orchestration",
-    });
-  }
-  if (audiences.includes("creator") || audiences.includes("designMarketing")) {
-    useCases.push({
-      zh: "内容生产、素材整理、图像/语音工作流",
-      en: "Content production, asset preparation, image or voice workflows",
-    });
-  }
-  if (audiences.includes("research")) {
-    useCases.push({
-      zh: "资料研究、RAG、网页抓取或知识库搭建",
-      en: "Research, RAG, web crawling, or knowledge base building",
-    });
-  }
-  if (audiences.includes("mcp")) {
-    useCases.push({
-      zh: "连接工具、服务和 Agent 的 MCP 集成",
-      en: "MCP integrations connecting tools, services, and agents",
-    });
-  }
-  return useCases.slice(0, 3);
-}
-
-function daysSince(value: string) {
-  const timestamp = Date.parse(value || "");
-  if (!Number.isFinite(timestamp)) return Number.POSITIVE_INFINITY;
-  return Math.floor((Date.now() - timestamp) / 86_400_000);
-}
-
-function recentActivityDays(repo: SkillRepoSnapshot) {
-  return Math.min(daysSince(repo.pushedAt), daysSince(repo.updatedAt));
-}
-
-export function inferFreshness(repo: SkillRepoSnapshot): Freshness {
-  if (repo.archived || repo.disabled) return "stale";
-  const age = recentActivityDays(repo);
-  if (!Number.isFinite(age)) return "unknown";
-  if (age <= 30) return "fresh";
-  if (age <= 180) return "active";
-  if (age <= 540) return "quiet";
-  return "stale";
-}
-
-export function buildQualitySignals(repo: SkillRepoSnapshot): QualitySignals {
-  const age = recentActivityDays(repo);
-  const issueLoad =
-    repo.openIssues === undefined
-      ? "unknown"
-      : repo.openIssues < 10
-        ? "low"
-        : repo.openIssues < 50
-          ? "medium"
-          : "high";
-
-  return {
-    hasLicense: Boolean(repo.license && repo.license !== "NOASSERTION"),
-    hasHomepage: Boolean(repo.homepage),
-    recentlyPushed: Number.isFinite(age) ? age <= 90 : false,
-    archived: Boolean(repo.archived || repo.disabled),
-    issueLoad,
-  };
-}
-
-function matchesSpotlight(repo: SkillRepoSnapshot, spotlight: SpotlightKey) {
-  const audiences = inferAudiences(repo);
-  const tagText = repo.tags.join(" ").toLowerCase();
-  const age = recentActivityDays(repo);
-
+function matchesSpotlight(skill: RedfoxSkillSnapshot, spotlight: SpotlightKey) {
   if (
     spotlight === "growth7d" ||
     spotlight === "growth30d" ||
-    spotlight === "rankRisers"
+    spotlight === "rankRisers" ||
+    spotlight === "topUses" ||
+    spotlight === "recentlyUpdated"
   ) {
     return true;
   }
-  if (spotlight === "weeklyHot") return repo.featured || age <= 120;
-  if (spotlight === "classicStars")
-    return repo.stars >= 10_000 || repo.featured;
-  if (spotlight === "recentlyActive") return age <= 180;
-  if (spotlight === "beginnerFriendly") {
-    return (
-      repo.difficulty === "Beginner" ||
-      repo.category === "Learning & Docs" ||
-      /\b(course|guide|learning|examples?|prompt-engineering)\b/.test(tagText)
-    );
-  }
-  if (spotlight === "creatorPicks") {
-    return (
-      audiences.includes("creator") || audiences.includes("designMarketing")
-    );
-  }
-  return audiences.includes("developer") || audiences.includes("mcp");
+  if (spotlight === "hot") return skill.displayStatus === 1;
+  if (spotlight === "recommended") return skill.displayStatus === 2;
+  return skill.displayStatus === 3;
 }
 
 function nullableNumber(value: number | null | undefined) {
@@ -404,183 +300,246 @@ function compareNullableDesc(
   return bNumber - aNumber;
 }
 
+function compareByUpdated(a: RedfoxSkillSnapshot, b: RedfoxSkillSnapshot) {
+  return Date.parse(b.updatedAt || "0") - Date.parse(a.updatedAt || "0");
+}
+
+function compareByCreated(a: RedfoxSkillSnapshot, b: RedfoxSkillSnapshot) {
+  return Date.parse(b.createdAt || "0") - Date.parse(a.createdAt || "0");
+}
+
+function compareDefault(a: RedfoxSkillSnapshot, b: RedfoxSkillSnapshot) {
+  return (
+    b.heatScore - a.heatScore ||
+    b.downloadCount - a.downloadCount ||
+    compareByUpdated(a, b) ||
+    a.skillCode.localeCompare(b.skillCode)
+  );
+}
+
 function compareTrendSpotlight(
-  a: SkillRepoSnapshot,
-  b: SkillRepoSnapshot,
+  a: RedfoxSkillSnapshot,
+  b: RedfoxSkillSnapshot,
   spotlight: SpotlightKey,
 ) {
   if (spotlight === "growth7d") {
     return (
-      compareNullableDesc(a.growth7d, b.growth7d) ||
+      compareNullableDesc(a.downloadGrowth7d, b.downloadGrowth7d) ||
       compareNullableDesc(a.rankDelta7d, b.rankDelta7d)
     );
   }
   if (spotlight === "growth30d") {
     return (
-      compareNullableDesc(a.growth30d, b.growth30d) ||
+      compareNullableDesc(a.downloadGrowth30d, b.downloadGrowth30d) ||
       compareNullableDesc(a.rankDelta30d, b.rankDelta30d)
     );
   }
   if (spotlight === "rankRisers") {
     return (
       compareNullableDesc(a.rankDelta7d, b.rankDelta7d) ||
-      compareNullableDesc(a.growth7d, b.growth7d)
+      compareNullableDesc(a.downloadGrowth7d, b.downloadGrowth7d)
     );
   }
   return 0;
 }
 
-function spotlightScore(repo: SkillRepoSnapshot, spotlight: SpotlightKey) {
-  const age = recentActivityDays(repo);
-  const recencyBoost = Number.isFinite(age) ? Math.max(0, 240 - age) * 25 : 0;
-  const featuredBoost = repo.featured ? 12_000 : 0;
-  if (spotlight === "weeklyHot")
-    return repo.stars + recencyBoost + featuredBoost;
-  if (spotlight === "recentlyActive") return recencyBoost + repo.stars / 8;
-  if (spotlight === "beginnerFriendly") return featuredBoost + repo.stars;
-  return repo.stars + featuredBoost;
-}
-
-export function filterAndSortRepositories(
-  repositories: SkillRepoSnapshot[],
-  filters: RepoFilters,
+export function filterAndSortSkills(
+  skills: RedfoxSkillSnapshot[],
+  filters: SkillFilters,
   locale: Locale,
-  favoriteRepos: ReadonlySet<string> = new Set(),
+  favoriteSkills: ReadonlySet<string> = new Set(),
 ) {
   const query = filters.query.trim().toLowerCase();
 
-  return repositories
-    .filter((repo) => {
-      if (filters.favoritesOnly && !favoriteRepos.has(repo.repo.toLowerCase()))
+  return skills
+    .filter((skill) => {
+      if (
+        filters.favoritesOnly &&
+        !favoriteSkills.has(skill.skillCode.toLowerCase())
+      ) {
         return false;
-      if (query && !searchableText(repo, locale).includes(query)) return false;
-      if (filters.category && repo.category !== filters.category) return false;
-      if (filters.platform && !repo.platforms.includes(filters.platform))
+      }
+      if (query && !skillText(skill, locale).includes(query)) return false;
+      if (filters.category && skill.categoryCode !== filters.category) {
         return false;
-      if (filters.tag && !repo.tags.includes(filters.tag)) return false;
-      if (filters.license && repo.license !== filters.license) return false;
-      if (filters.language && repo.language !== filters.language) return false;
-      if (filters.audience && !matchesAudience(repo, filters.audience))
+      }
+      if (filters.tag && !skill.tags.includes(filters.tag)) return false;
+      if (filters.audience && !matchesAudience(skill, filters.audience)) {
         return false;
-      if (filters.spotlight && !matchesSpotlight(repo, filters.spotlight))
+      }
+      if (filters.spotlight && !matchesSpotlight(skill, filters.spotlight)) {
         return false;
+      }
       return true;
     })
     .sort((a, b) => {
       if (filters.spotlight) {
-        const trendScore = compareTrendSpotlight(a, b, filters.spotlight);
-        if (trendScore !== 0) return trendScore;
+        const trend = compareTrendSpotlight(a, b, filters.spotlight);
+        if (trend !== 0) return trend;
+        if (filters.spotlight === "topUses") {
+          return b.downloadCount - a.downloadCount || compareDefault(a, b);
+        }
+        if (filters.spotlight === "recentlyUpdated") {
+          return compareByUpdated(a, b) || compareDefault(a, b);
+        }
+        if (filters.spotlight === "new") {
+          return compareByCreated(a, b) || compareByUpdated(a, b);
+        }
+        return compareDefault(a, b);
+      }
 
-        return (
-          spotlightScore(b, filters.spotlight) -
-            spotlightScore(a, filters.spotlight) ||
-          b.stars - a.stars ||
-          a.repo.localeCompare(b.repo)
+      if (filters.sortKey === "uses") {
+        return b.downloadCount - a.downloadCount || compareDefault(a, b);
+      }
+      if (filters.sortKey === "views") {
+        return b.viewCount - a.viewCount || compareDefault(a, b);
+      }
+      if (filters.sortKey === "updated") {
+        return compareByUpdated(a, b) || compareDefault(a, b);
+      }
+      if (filters.sortKey === "name") {
+        return skillName(a, locale).localeCompare(
+          skillName(b, locale),
+          "zh-CN",
         );
       }
-      if (filters.sortKey === "forks")
-        return b.forks - a.forks || a.repo.localeCompare(b.repo);
-      if (filters.sortKey === "updated") {
-        return Date.parse(b.updatedAt || "0") - Date.parse(a.updatedAt || "0");
-      }
-      if (filters.sortKey === "name") return a.repo.localeCompare(b.repo);
-      return b.stars - a.stars || a.repo.localeCompare(b.repo);
+      return compareDefault(a, b);
     });
 }
 
+export function skillName(skill: RedfoxSkillSnapshot, locale: Locale) {
+  return skill.name[locale] || skill.name.zh || skill.skillCode;
+}
+
+export function skillSummary(skill: RedfoxSkillSnapshot, locale: Locale) {
+  return (
+    skill.introduce[locale] ||
+    skill.description[locale] ||
+    skill.description.zh ||
+    skill.skillCode
+  );
+}
+
 export function calculateStats(
-  repositories: SkillRepoSnapshot[],
+  skills: RedfoxSkillSnapshot[],
   generatedAt: string,
 ) {
-  const activeCount = repositories.filter(
-    (repo) =>
-      inferFreshness(repo) === "fresh" || inferFreshness(repo) === "active",
-  ).length;
   return {
-    totalRepos: repositories.length,
-    totalStars: repositories.reduce((sum, repo) => sum + repo.stars, 0),
-    totalCategories: new Set(repositories.map((repo) => repo.category)).size,
-    activeCount,
+    totalSkills: skills.length,
+    totalDownloads: skills.reduce((sum, skill) => sum + skill.downloadCount, 0),
+    totalViews: skills.reduce((sum, skill) => sum + skill.viewCount, 0),
+    totalCategories: new Set(skills.map((skill) => skill.categoryCode)).size,
+    apiKeySkills: skills.filter((skill) => skill.hasApiKey).length,
     generatedAt,
   };
 }
 
-export function enrichRepositories(repositories: SkillRepoSnapshot[]) {
+export function enrichSkills(skills: RedfoxSkillSnapshot[]) {
   const globalRanks = new Map(
-    [...repositories]
-      .sort((a, b) => b.stars - a.stars || a.repo.localeCompare(b.repo))
-      .map((repo, index) => [repo.repo, index + 1]),
+    [...skills]
+      .sort(compareDefault)
+      .map((skill, index) => [skill.skillCode, index + 1]),
   );
   const categoryRanks = new Map<string, number>();
 
   for (const category of uniqueSorted(
-    repositories.map((repo) => repo.category),
+    skills.map((skill) => skill.categoryCode),
   )) {
-    [...repositories]
-      .filter((repo) => repo.category === category)
-      .sort((a, b) => b.stars - a.stars || a.repo.localeCompare(b.repo))
-      .forEach((repo, index) => {
-        categoryRanks.set(repo.repo, index + 1);
+    [...skills]
+      .filter((skill) => skill.categoryCode === category)
+      .sort(compareDefault)
+      .forEach((skill, index) => {
+        categoryRanks.set(skill.skillCode, index + 1);
       });
   }
 
-  return repositories.map((repo) => ({
-    ...repo,
-    rank: globalRanks.get(repo.repo) ?? repo.rank,
-    rankByCategory: categoryRanks.get(repo.repo) ?? repo.rankByCategory,
-    freshness: inferFreshness(repo),
-    qualitySignals: buildQualitySignals(repo),
-    growth7d: repo.growth7d ?? null,
-    growth30d: repo.growth30d ?? null,
-    rankDelta7d: repo.rankDelta7d ?? null,
-    rankDelta30d: repo.rankDelta30d ?? null,
+  return skills.map((skill) => ({
+    ...skill,
+    rank: globalRanks.get(skill.skillCode) ?? skill.rank,
+    rankByCategory: categoryRanks.get(skill.skillCode) ?? skill.rankByCategory,
+    audiences: inferAudiences(skill),
+    downloadGrowth7d: skill.downloadGrowth7d ?? null,
+    downloadGrowth30d: skill.downloadGrowth30d ?? null,
+    rankDelta7d: skill.rankDelta7d ?? null,
+    rankDelta30d: skill.rankDelta30d ?? null,
     trendStatus:
-      repo.trendStatus ??
-      (repo.growth7d === null ||
-      repo.growth7d === undefined ||
-      repo.growth30d === null ||
-      repo.growth30d === undefined
+      skill.trendStatus ??
+      (skill.downloadGrowth7d === null ||
+      skill.downloadGrowth7d === undefined ||
+      skill.downloadGrowth30d === null ||
+      skill.downloadGrowth30d === undefined
         ? "collecting"
         : "ready"),
   }));
 }
 
-export function topCandidates(candidates: CandidateRepo[], limit = 8) {
-  return [...candidates]
-    .filter(
-      (candidate) =>
-        !candidate.alreadyCurated && candidate.fetchStatus !== "error",
-    )
-    .sort((a, b) => b.stars - a.stars || a.repo.localeCompare(b.repo))
-    .slice(0, limit);
-}
-
-export function getRelatedRepositories(
-  target: SkillRepoSnapshot,
-  repositories: SkillRepoSnapshot[],
+export function getRelatedSkills(
+  target: RedfoxSkillSnapshot,
+  skills: RedfoxSkillSnapshot[],
   limit = 4,
 ) {
   const targetAudiences = inferAudiences(target);
-  return repositories
-    .filter((repo) => repo.repo !== target.repo)
-    .map((repo) => {
-      const sharedTags = repo.tags.filter((tag) => target.tags.includes(tag));
-      const sharedPlatforms = repo.platforms.filter((platform) =>
-        target.platforms.includes(platform),
-      );
-      const sharedAudiences = inferAudiences(repo).filter((audience) =>
+  return skills
+    .filter((skill) => skill.skillCode !== target.skillCode)
+    .map((skill) => {
+      const sharedTags = skill.tags.filter((tag) => target.tags.includes(tag));
+      const sharedAudiences = inferAudiences(skill).filter((audience) =>
         targetAudiences.includes(audience),
       );
       const score =
-        (repo.category === target.category ? 6 : 0) +
+        (skill.categoryCode === target.categoryCode ? 6 : 0) +
         sharedTags.length * 3 +
-        sharedPlatforms.length * 2 +
-        sharedAudiences.length +
-        Math.min(repo.stars / 10_000, 4);
-      return { repo, score };
+        sharedAudiences.length * 2 +
+        Math.min(skill.heatScore / 250, 4);
+      return { skill, score };
     })
     .filter((item) => item.score > 0)
-    .sort((a, b) => b.score - a.score || b.repo.stars - a.repo.stars)
+    .sort((a, b) => b.score - a.score || compareDefault(a.skill, b.skill))
     .slice(0, limit)
-    .map((item) => item.repo);
+    .map((item) => item.skill);
+}
+
+export function deriveUseCases(skill: RedfoxSkillSnapshot): LocalizedText[] {
+  if (skill.useCases?.length) return skill.useCases;
+  const audiences = inferAudiences(skill);
+  const useCases: LocalizedText[] = [];
+
+  if (audiences.includes("media")) {
+    useCases.push({
+      zh: "适合自媒体创作者做选题、改写、检测和内容生产。",
+      en: "Good for creators doing topic work, rewriting, checks, and production.",
+    });
+  }
+  if (audiences.includes("wechat")) {
+    useCases.push({
+      zh: "适合公众号运营做爆文分析、订阅监控和推文生产。",
+      en: "Useful for WeChat article analysis, monitoring, and publishing.",
+    });
+  }
+  if (audiences.includes("xiaohongshu")) {
+    useCases.push({
+      zh: "适合小红书笔记、账号诊断和种草文案优化。",
+      en: "Useful for RED notes, account diagnosis, and copy optimization.",
+    });
+  }
+  if (audiences.includes("douyin")) {
+    useCases.push({
+      zh: "适合抖音热点、账号、视频作品和搜索数据分析。",
+      en: "Useful for Douyin trends, accounts, videos, and search analysis.",
+    });
+  }
+  if (audiences.includes("data")) {
+    useCases.push({
+      zh: "适合研究热榜、搜索结果、账号数据和内容趋势。",
+      en: "Useful for rankings, search results, account data, and content trends.",
+    });
+  }
+  if (audiences.includes("developer")) {
+    useCases.push({
+      zh: "适合 Agent/CLI 用户直接复用 SKILL.md 与脚本能力。",
+      en: "Useful for Agent and CLI users reusing SKILL.md and scripts.",
+    });
+  }
+
+  return useCases.slice(0, 3);
 }

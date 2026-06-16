@@ -1,12 +1,12 @@
 import type { Locale, SortKey } from "../types";
 import {
   audienceKeys,
-  defaultRepoFilters,
+  defaultSkillFilters,
   spotlightKeys,
-  type RepoFilters,
+  type SkillFilters,
 } from "./ranking";
 
-const sortKeys: SortKey[] = ["stars", "forks", "updated", "name"];
+const sortKeys: SortKey[] = ["heat", "uses", "views", "updated", "name"];
 const locales: Locale[] = ["zh", "en"];
 
 function safeValue(value: string | null) {
@@ -19,58 +19,53 @@ function oneOf<T extends string>(value: string | null, allowed: readonly T[]) {
 }
 
 export interface UrlState {
-  filters: RepoFilters;
+  filters: SkillFilters;
   locale: Locale;
-  selectedRepo: string;
+  selectedSkill: string;
 }
 
 export function parseUrlState(search: string): UrlState {
   const params = new URLSearchParams(search);
-  const sortKey = oneOf(params.get("sort"), sortKeys) || "stars";
+  const sortKey = oneOf(params.get("sort"), sortKeys) || "heat";
   const locale = oneOf(params.get("lang"), locales) || "zh";
 
   return {
     locale,
-    selectedRepo: safeValue(params.get("repo")),
+    selectedSkill:
+      safeValue(params.get("skill")) || safeValue(params.get("repo")),
     filters: {
-      ...defaultRepoFilters,
+      ...defaultSkillFilters,
       query: safeValue(params.get("q")),
       category: safeValue(params.get("category")),
-      platform: safeValue(params.get("platform")),
       tag: safeValue(params.get("tag")),
-      license: safeValue(params.get("license")),
-      language: safeValue(params.get("language")),
       sortKey,
       audience:
         oneOf(params.get("audience"), audienceKeys) ||
-        defaultRepoFilters.audience,
+        defaultSkillFilters.audience,
       spotlight:
         oneOf(params.get("spotlight"), spotlightKeys) ||
-        defaultRepoFilters.spotlight,
+        defaultSkillFilters.spotlight,
       favoritesOnly: params.get("favorites") === "1",
     },
   };
 }
 
 export function buildSearchParams(
-  filters: RepoFilters,
+  filters: SkillFilters,
   locale: Locale,
-  selectedRepo = "",
+  selectedSkill = "",
 ) {
   const params = new URLSearchParams();
 
   if (locale !== "zh") params.set("lang", locale);
   if (filters.query) params.set("q", filters.query);
   if (filters.category) params.set("category", filters.category);
-  if (filters.platform) params.set("platform", filters.platform);
   if (filters.tag) params.set("tag", filters.tag);
-  if (filters.license) params.set("license", filters.license);
-  if (filters.language) params.set("language", filters.language);
-  if (filters.sortKey !== "stars") params.set("sort", filters.sortKey);
+  if (filters.sortKey !== "heat") params.set("sort", filters.sortKey);
   if (filters.audience) params.set("audience", filters.audience);
   if (filters.spotlight) params.set("spotlight", filters.spotlight);
   if (filters.favoritesOnly) params.set("favorites", "1");
-  if (selectedRepo) params.set("repo", selectedRepo);
+  if (selectedSkill) params.set("skill", selectedSkill);
 
   const serialized = params.toString();
   return serialized ? `?${serialized}` : "";
@@ -78,11 +73,11 @@ export function buildSearchParams(
 
 export function makeShareUrl(
   baseHref: string,
-  filters: RepoFilters,
+  filters: SkillFilters,
   locale: Locale,
-  selectedRepo = "",
+  selectedSkill = "",
 ) {
   const url = new URL(baseHref);
-  url.search = buildSearchParams(filters, locale, selectedRepo);
+  url.search = buildSearchParams(filters, locale, selectedSkill);
   return url.toString();
 }

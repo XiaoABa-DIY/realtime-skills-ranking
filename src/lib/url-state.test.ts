@@ -1,48 +1,54 @@
 import { describe, expect, it } from "vitest";
 import { buildSearchParams, parseUrlState } from "./url-state";
-import { defaultRepoFilters } from "./ranking";
+import { defaultSkillFilters } from "./ranking";
 
 describe("url state helpers", () => {
-  it("parses supported filters from query strings", () => {
+  it("parses supported RedFox skill filters from query strings", () => {
     const state = parseUrlState(
-      "?lang=en&q=mcp&audience=developer&spotlight=developerStack&sort=updated&favorites=1&repo=modelcontextprotocol%2Fservers",
+      "?lang=en&q=douyin&audience=douyin&spotlight=topUses&sort=views&favorites=1&skill=douyin-search",
     );
 
     expect(state.locale).toBe("en");
-    expect(state.selectedRepo).toBe("modelcontextprotocol/servers");
+    expect(state.selectedSkill).toBe("douyin-search");
     expect(state.filters).toMatchObject({
-      query: "mcp",
-      audience: "developer",
-      spotlight: "developerStack",
-      sortKey: "updated",
+      query: "douyin",
+      audience: "douyin",
+      spotlight: "topUses",
+      sortKey: "views",
       favoritesOnly: true,
     });
+  });
+
+  it("keeps old repo detail links as a compatibility fallback", () => {
+    expect(parseUrlState("?repo=multi-wordcheck").selectedSkill).toBe(
+      "multi-wordcheck",
+    );
   });
 
   it("serializes only non-default state for shareable links", () => {
     expect(
       buildSearchParams(
         {
-          ...defaultRepoFilters,
-          audience: "creator",
-          tag: "tts",
+          ...defaultSkillFilters,
+          audience: "media",
+          tag: "内容改写",
           favoritesOnly: true,
         },
         "zh",
-        "fishaudio/fish-speech",
+        "multi-wordcheck",
       ),
     ).toBe(
-      "?tag=tts&audience=creator&favorites=1&repo=fishaudio%2Ffish-speech",
+      "?tag=%E5%86%85%E5%AE%B9%E6%94%B9%E5%86%99&audience=media&favorites=1&skill=multi-wordcheck",
     );
   });
 
   it("parses and serializes trend spotlight links", () => {
-    const state = parseUrlState("?spotlight=growth7d&sort=forks");
+    const state = parseUrlState("?spotlight=growth7d&sort=uses");
 
     expect(state.filters.spotlight).toBe("growth7d");
     expect(
       buildSearchParams(
-        { ...defaultRepoFilters, spotlight: "rankRisers" },
+        { ...defaultSkillFilters, spotlight: "rankRisers" },
         "en",
       ),
     ).toBe("?lang=en&spotlight=rankRisers");

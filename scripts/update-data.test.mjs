@@ -3,411 +3,298 @@ import {
   addTrendMetricsToSnapshot,
   buildCandidates,
   buildSnapshot,
+  calculateHeatScore,
   createHistoryFromSnapshot,
+  displayStatusToBadge,
   mergeHistoryPayloads,
   mergeSnapshotIntoHistory,
-  normalizeRepo,
-  parseCompactNumber,
-  parseGitHubRepoHtml,
+  normalizeSkillCode,
+  parsePlatformInfo,
 } from "./update-data.mjs";
 
-const curated = [
-  {
-    repo: "owner/good",
-    category: "Coding Agents",
-    platforms: ["Agents"],
-    tags: ["workflow"],
-    summary: { zh: "Good repo zh", en: "Good repo" },
-    featured: true,
-  },
-  {
-    repo: "owner/missing",
-    category: "MCP & Tooling",
-    platforms: ["MCP"],
-    tags: ["tools"],
-    summary: { zh: "Missing repo zh", en: "Missing repo" },
-    featured: false,
-  },
-];
+function redfoxSkill(overrides = {}) {
+  return {
+    skillNo: overrides.skillNo ?? "wn2Hrw42",
+    skillName: overrides.skillName ?? "多平台违禁词检测",
+    nameEn: overrides.nameEn ?? "Multi-Platform Word Check",
+    skillCode: overrides.skillCode ?? "multi-wordcheck",
+    categoryId: overrides.categoryId ?? 8,
+    categories: overrides.categories ?? [
+      {
+        categoryCode: "efficiency_tools",
+        categoryName: "效率工具",
+      },
+    ],
+    description: overrides.description ?? null,
+    iconUrl: null,
+    icon: "iconfont:narrow",
+    price: 0,
+    usageCount: 0,
+    viewCount: overrides.viewCount ?? 400,
+    downloadCount: overrides.downloadCount ?? 300,
+    displayStatus: overrides.displayStatus ?? 1,
+    status: 1,
+    tags: overrides.tags ?? ["合规审核", "内容改写", "违禁词检测"],
+    introduce: overrides.introduce ?? "覆盖公众号、小红书、抖音的违禁词检测。",
+    introduceEn:
+      overrides.introduceEn ??
+      "Compliance checks for WeChat, Xiaohongshu, and Douyin.",
+    readme: overrides.readme ?? "# 多平台违禁词检测\n\n使用说明",
+    readmeEn: overrides.readmeEn ?? "# Multi-Platform Word Check\n\nUsage",
+    hasApiKey: true,
+    platformInfo:
+      overrides.platformInfo ??
+      '[{"name":"github","repo":"https://github.com/redfox-data/redfox-community/tree/main/skills/multi-wordcheck"},{"name":"skills-cli","repo":"redfox-data/redfox-community"}]',
+    sortOrder: 0,
+    createTime: overrides.createTime ?? "2026-05-27 20:27:54",
+    updateTime: overrides.updateTime ?? "2026-06-16 10:08:20",
+  };
+}
+
+function createRedfoxFetch(recordsByPage) {
+  return async (url) => {
+    if (url.includes("/skills/categories")) {
+      return {
+        code: 2000,
+        data: [
+          {
+            id: 1,
+            categoryName: "全部",
+            nameEn: "All",
+            categoryCode: "all",
+            sortOrder: 0,
+          },
+          {
+            id: 8,
+            categoryName: "效率工具",
+            nameEn: "Efficiency Tools",
+            categoryCode: "efficiency_tools",
+            sortOrder: 7,
+          },
+        ],
+      };
+    }
+
+    const pageNum = Number(new URL(url).searchParams.get("pageNum"));
+    return {
+      code: 2000,
+      data: {
+        records: recordsByPage[pageNum] ?? [],
+        total: Object.values(recordsByPage).flat().length,
+        pages: Object.keys(recordsByPage).length,
+      },
+    };
+  };
+}
+
+function createGitHubFetch() {
+  return async (url) => {
+    if (url.endsWith("/contents/skills")) {
+      return [
+        {
+          name: "multi-wordcheck",
+          path: "skills/multi-wordcheck",
+          type: "dir",
+          html_url:
+            "https://github.com/redfox-data/redfox-community/tree/main/skills/multi-wordcheck",
+        },
+      ];
+    }
+
+    if (url.endsWith("/contents/skills/multi-wordcheck/SKILL.md")) {
+      return {
+        content: Buffer.from(
+          "---\nname: multi-wordcheck\ndescription: 多平台检测\n---\n",
+        ).toString("base64"),
+      };
+    }
+
+    throw new Error(`Unexpected GitHub URL: ${url}`);
+  };
+}
 
 describe("update-data script helpers", () => {
-  it("normalizes GitHub repository strings", () => {
-    expect(normalizeRepo(" https://github.com/Owner/Repo/ ")).toBe(
-      "Owner/Repo",
+  it("normalizes RedFox skill codes and platform info", () => {
+    expect(normalizeSkillCode(" skills/douyin-search/ ")).toBe("douyin-search");
+    expect(
+      parsePlatformInfo(
+        '[{"name":"github","repo":"https://example.com"},{"name":"skills-cli","repo":"redfox-data/redfox-community"}]',
+      ),
+    ).toEqual([
+      {
+        name: "github",
+        value: "https://example.com",
+        url: "https://example.com",
+      },
+      {
+        name: "skills-cli",
+        value: "redfox-data/redfox-community",
+      },
+    ]);
+    expect(parsePlatformInfo("{broken")).toEqual([]);
+  });
+
+  it("maps display badges and calculates deterministic heat score", () => {
+    expect(displayStatusToBadge(1)).toEqual({ zh: "热门", en: "Hot" });
+    expect(displayStatusToBadge(2)).toEqual({ zh: "推荐", en: "Recommended" });
+    expect(displayStatusToBadge(3)).toEqual({ zh: "上新", en: "New" });
+    expect(
+      calculateHeatScore(
+        {
+          downloadCount: 300,
+          viewCount: 400,
+          displayStatus: 1,
+          updatedAt: "2026-06-16T02:08:20.000Z",
+        },
+        "2026-06-16T10:00:00.000Z",
+      ),
+    ).toBeGreaterThan(600);
+  });
+
+  it("builds RedFox snapshots from paginated API and GitHub metadata", async () => {
+    const snapshot = await buildSnapshot({
+      redfoxFetch: createRedfoxFetch({
+        1: [redfoxSkill({ downloadCount: 300 })],
+        2: [
+          redfoxSkill({
+            skillNo: "abc",
+            skillCode: "douyin-search",
+            skillName: "抖音作品查询",
+            nameEn: "Douyin Search",
+            downloadCount: 200,
+            viewCount: 100,
+            displayStatus: 0,
+            platformInfo: "[]",
+          }),
+        ],
+      }),
+      githubFetch: createGitHubFetch(),
+    });
+
+    expect(snapshot.schemaVersion).toBe(2);
+    expect(snapshot.skills).toHaveLength(2);
+    expect(snapshot.skills[0]).toMatchObject({
+      skillCode: "multi-wordcheck",
+      displayBadge: { zh: "热门", en: "Hot" },
+      categoryCode: "efficiency_tools",
+      githubUrl:
+        "https://github.com/redfox-data/redfox-community/tree/main/skills/multi-wordcheck",
+      fetchStatus: "ok",
+      rank: 1,
+      rankByCategory: 1,
+    });
+    expect(snapshot.skills[0].heatScore).toBeGreaterThan(
+      snapshot.skills[1].heatScore,
     );
   });
 
-  it("parses compact GitHub numbers and repository HTML", () => {
-    expect(parseCompactNumber("13.9k")).toBe(13900);
-    expect(parseCompactNumber("2m")).toBe(2000000);
-    expect(
-      parseGitHubRepoHtml(
-        "owner/repo",
-        '<a href="/owner/repo/stargazers"><strong>13.9k</strong> stars</a><a href="/owner/repo/forks"><strong>2.1k</strong> forks</a><meta name="description" content="Useful &amp; focused">',
-      ),
-    ).toMatchObject({
-      stars: 13900,
-      forks: 2100,
-      description: "Useful & focused",
-    });
-  });
-
-  it("builds snapshots and marks failed repositories without aborting", async () => {
-    const fetcher = async (url) => {
-      if (url.endsWith("/owner/missing")) {
-        const error = new Error("GitHub API 404: Not Found");
-        error.status = 404;
-        throw error;
-      }
-
-      return {
-        full_name: "owner/good",
-        description: "A useful skill repo",
-        stargazers_count: 42,
-        forks_count: 7,
-        open_issues_count: 3,
-        subscribers_count: 4,
-        language: "TypeScript",
-        license: { spdx_id: "MIT" },
-        homepage: "https://example.com",
-        html_url: "https://github.com/owner/good",
-        pushed_at: "2026-06-10T00:00:00Z",
-        updated_at: "2026-06-11T00:00:00Z",
-        archived: false,
-        disabled: false,
-      };
-    };
-
-    const snapshot = await buildSnapshot(curated, fetcher);
-
-    expect(snapshot.repositories).toHaveLength(2);
-    expect(snapshot.repositories[0]).toMatchObject({
-      repo: "owner/good",
-      stars: 42,
-      fetchStatus: "ok",
-      audiences: ["developer"],
-      rank: 1,
-      rankByCategory: 1,
-      freshness: "fresh",
-      qualitySignals: {
-        hasLicense: true,
-        hasHomepage: true,
-        recentlyPushed: true,
+  it("reuses previous v2 snapshot when RedFox API fails", async () => {
+    const previousSnapshot = {
+      schemaVersion: 2,
+      generatedAt: "2026-06-01T00:00:00.000Z",
+      source: "redfox-api+github",
+      categories: [],
+      sourceRepo: {
+        fullName: "redfox-data/redfox-community",
+        htmlUrl: "https://github.com/redfox-data/redfox-community",
       },
-    });
-    expect(snapshot.repositories[1]).toMatchObject({
-      repo: "owner/missing",
-      stars: 0,
-      fetchStatus: "error",
-      rank: 2,
-      rankByCategory: 1,
-      freshness: "unknown",
-    });
-  });
-
-  it("preserves previous metrics when repository refresh fails", async () => {
-    const fetcher = async () => {
-      throw new Error("GitHub API 403: rate limited");
-    };
-
-    const snapshot = await buildSnapshot([curated[0]], fetcher, {
-      previousRepositories: [
+      skills: [
         {
-          ...curated[0],
-          fullName: "owner/good",
-          description: "Previous data",
-          stars: 88,
-          forks: 9,
-          openIssues: 1,
-          watchers: 2,
-          language: "TypeScript",
-          license: "MIT",
-          htmlUrl: "https://github.com/owner/good",
-          pushedAt: "2026-01-01T00:00:00Z",
-          updatedAt: "2026-01-01T00:00:00Z",
-          archived: false,
-          disabled: false,
-          fetchStatus: "ok",
-          lastFetchedAt: "2026-01-01T00:00:00Z",
-        },
-      ],
-    });
-
-    expect(snapshot.repositories[0]).toMatchObject({
-      repo: "owner/good",
-      stars: 88,
-      fetchStatus: "ok",
-    });
-  });
-
-  it("deduplicates and excludes curated repositories from candidates", async () => {
-    const queries = [
-      {
-        id: "agents",
-        query: "ai agent",
-        category: "Coding Agents",
-        limit: 10,
-        reason: { zh: "Candidate zh", en: "Candidate" },
-      },
-    ];
-    const fetcher = async () => ({
-      items: [
-        {
-          full_name: "owner/good",
-          description: "Already curated",
-          stargazers_count: 100,
-          forks_count: 10,
-          language: "TypeScript",
-          license: { spdx_id: "MIT" },
-          html_url: "https://github.com/owner/good",
-          pushed_at: "2026-01-01T00:00:00Z",
-          updated_at: "2026-01-02T00:00:00Z",
-        },
-        {
-          full_name: "new/skill",
-          description: "New candidate",
-          stargazers_count: 12,
-          forks_count: 2,
-          language: "Python",
-          license: { spdx_id: "Apache-2.0" },
-          html_url: "https://github.com/new/skill",
-          pushed_at: "2026-01-01T00:00:00Z",
-          updated_at: "2026-01-02T00:00:00Z",
-        },
-        {
-          full_name: "new/skill",
-          description: "Duplicate candidate",
-          stargazers_count: 12,
-          forks_count: 2,
-          language: "Python",
-          license: { spdx_id: "Apache-2.0" },
-          html_url: "https://github.com/new/skill",
-          pushed_at: "2026-01-01T00:00:00Z",
-          updated_at: "2026-01-02T00:00:00Z",
-        },
-      ],
-    });
-
-    const result = await buildCandidates(queries, curated, fetcher);
-
-    expect(result.candidates).toHaveLength(1);
-    expect(result.candidates[0]).toMatchObject({
-      repo: "new/skill",
-      alreadyCurated: false,
-      matchedQuery: "agents",
-      suggestedCategory: "Coding Agents",
-      suggestedAudiences: ["developer"],
-    });
-    expect(result.candidates[0].confidence).toBeGreaterThanOrEqual(42);
-  });
-
-  it("skips failed discovery queries without creating placeholder candidates", async () => {
-    const queries = [
-      {
-        id: "rate-limited",
-        query: "ai tools",
-        category: "Developer Tools",
-        limit: 10,
-        reason: { zh: "Candidate zh", en: "Candidate" },
-      },
-    ];
-    const fetcher = async () => {
-      throw new Error("GitHub API 403: rate limited");
-    };
-
-    const result = await buildCandidates(queries, curated, fetcher);
-
-    expect(result.candidates).toEqual([]);
-  });
-
-  it("seeds repository history from an existing snapshot when no history exists", () => {
-    const history = createHistoryFromSnapshot({
-      generatedAt: "2026-06-01T12:00:00.000Z",
-      repositories: [
-        {
-          repo: "owner/good",
-          stars: 10,
-          forks: 2,
-          rank: 3,
-          rankByCategory: 1,
-        },
-      ],
-    });
-
-    expect(history).toMatchObject({
-      retentionDays: 180,
-      repositories: [
-        {
-          repo: "owner/good",
-          samples: [
-            {
-              date: "2026-06-01",
-              stars: 10,
-              forks: 2,
-              rank: 3,
-              rankByCategory: 1,
-            },
-          ],
-        },
-      ],
-    });
-  });
-
-  it("merges one UTC sample per day and overwrites repeated daily refreshes", () => {
-    const history = {
-      generatedAt: "2026-06-15T00:00:00.000Z",
-      retentionDays: 180,
-      repositories: [
-        {
-          repo: "owner/good",
-          samples: [
-            {
-              date: "2026-06-15",
-              stars: 10,
-              forks: 2,
-              rank: 3,
-              rankByCategory: 1,
-            },
-          ],
-        },
-      ],
-    };
-    const snapshot = {
-      generatedAt: "2026-06-15T12:00:00.000Z",
-      repositories: [
-        {
-          repo: "owner/good",
-          stars: 14,
-          forks: 3,
-          rank: 2,
-          rankByCategory: 1,
-        },
-      ],
-    };
-
-    const merged = mergeSnapshotIntoHistory(history, snapshot);
-
-    expect(merged.repositories[0].samples).toEqual([
-      {
-        date: "2026-06-15",
-        stars: 14,
-        forks: 3,
-        rank: 2,
-        rankByCategory: 1,
-      },
-    ]);
-  });
-
-  it("merges committed seed history with deployed history without dropping samples", () => {
-    const committedHistory = {
-      generatedAt: "2026-06-12T00:00:00.000Z",
-      retentionDays: 180,
-      repositories: [
-        {
-          repo: "owner/good",
-          samples: [
-            {
-              date: "2026-06-12",
-              stars: 10,
-              forks: 2,
-              rank: 3,
-              rankByCategory: 1,
-            },
-          ],
-        },
-      ],
-    };
-    const deployedHistory = {
-      generatedAt: "2026-06-15T00:00:00.000Z",
-      retentionDays: 180,
-      repositories: [
-        {
-          repo: "owner/good",
-          samples: [
-            {
-              date: "2026-06-15",
-              stars: 14,
-              forks: 3,
-              rank: 2,
-              rankByCategory: 1,
-            },
-          ],
-        },
-      ],
-    };
-
-    const merged = mergeHistoryPayloads([committedHistory, deployedHistory]);
-
-    expect(merged.repositories[0].samples).toEqual([
-      {
-        date: "2026-06-12",
-        stars: 10,
-        forks: 2,
-        rank: 3,
-        rankByCategory: 1,
-      },
-      {
-        date: "2026-06-15",
-        stars: 14,
-        forks: 3,
-        rank: 2,
-        rankByCategory: 1,
-      },
-    ]);
-  });
-
-  it("keeps only samples within the retention window", () => {
-    const oldSamples = Array.from({ length: 182 }, (_, index) => ({
-      date: new Date(Date.UTC(2025, 0, 1 + index)).toISOString().slice(0, 10),
-      stars: index,
-      forks: 0,
-      rank: 1,
-      rankByCategory: 1,
-    }));
-    const history = {
-      generatedAt: "2026-06-15T00:00:00.000Z",
-      retentionDays: 180,
-      repositories: [{ repo: "owner/good", samples: oldSamples }],
-    };
-    const snapshot = {
-      generatedAt: "2026-06-15T12:00:00.000Z",
-      repositories: [
-        {
-          repo: "owner/good",
-          stars: 200,
-          forks: 4,
+          ...redfoxSkill(),
+          skillCode: "multi-wordcheck",
+          name: { zh: "多平台违禁词检测", en: "Word Check" },
+          description: { zh: "", en: "" },
+          introduce: { zh: "", en: "" },
+          readme: { zh: "", en: "" },
+          categoryCode: "efficiency_tools",
+          categoryName: { zh: "效率工具", en: "Efficiency Tools" },
+          categories: [],
+          tags: [],
+          accessMethods: [],
+          redfoxUrl: "https://redfox.hk/skills/no/wn2Hrw42",
+          githubUrl: "",
+          githubPath: "",
+          heatScore: 10,
           rank: 1,
           rankByCategory: 1,
+          createdAt: "",
+          updatedAt: "",
+          lastFetchedAt: "",
+          fetchStatus: "ok",
+          downloadGrowth7d: null,
+          downloadGrowth30d: null,
+          rankDelta7d: null,
+          rankDelta30d: null,
+          trendStatus: "collecting",
+          audiences: [],
+          useCases: [],
         },
       ],
     };
 
-    const merged = mergeSnapshotIntoHistory(history, snapshot, 30);
+    const snapshot = await buildSnapshot({
+      redfoxFetch: async () => {
+        throw new Error("RedFox unavailable");
+      },
+      githubFetch: createGitHubFetch(),
+      previousSnapshot,
+    });
 
-    expect(merged.retentionDays).toBe(30);
-    expect(merged.repositories[0].samples.at(0).date).toBe("2026-06-15");
-    expect(merged.repositories[0].samples).toHaveLength(1);
+    expect(snapshot.source).toBe("redfox-api-fallback");
+    expect(snapshot.skills[0]).toMatchObject({
+      skillCode: "multi-wordcheck",
+      fetchStatus: "fallback",
+    });
   });
 
-  it("calculates 7-day and 30-day star growth and rank deltas", () => {
-    const history = {
-      generatedAt: "2026-06-14T00:00:00.000Z",
-      retentionDays: 180,
-      repositories: [
+  it("builds an empty candidate payload for compatibility", () => {
+    expect(buildCandidates("2026-06-01T00:00:00.000Z")).toEqual({
+      generatedAt: "2026-06-01T00:00:00.000Z",
+      source: "redfox-skills",
+      candidates: [],
+    });
+  });
+
+  it("seeds, merges, trims, and calculates usage growth history", () => {
+    const snapshot = {
+      schemaVersion: 2,
+      generatedAt: "2026-06-15T12:00:00.000Z",
+      skills: [
         {
-          repo: "owner/good",
+          skillCode: "multi-wordcheck",
+          downloadCount: 300,
+          viewCount: 400,
+          heatScore: 900,
+          rank: 2,
+          rankByCategory: 1,
+          fetchStatus: "ok",
+        },
+      ],
+    };
+    const seeded = createHistoryFromSnapshot(snapshot);
+
+    expect(seeded.skills[0].samples[0]).toMatchObject({
+      date: "2026-06-15",
+      downloadCount: 300,
+      viewCount: 400,
+      heatScore: 900,
+      rank: 2,
+      rankByCategory: 1,
+    });
+
+    const history = {
+      schemaVersion: 2,
+      generatedAt: "2026-06-08T00:00:00.000Z",
+      retentionDays: 180,
+      skills: [
+        {
+          skillCode: "multi-wordcheck",
           samples: [
             {
-              date: "2026-05-16",
-              stars: 50,
-              forks: 1,
-              rank: 10,
-              rankByCategory: 2,
-            },
-            {
               date: "2026-06-08",
-              stars: 80,
-              forks: 2,
+              downloadCount: 210,
+              viewCount: 300,
+              heatScore: 810,
               rank: 5,
               rankByCategory: 1,
             },
@@ -415,111 +302,62 @@ describe("update-data script helpers", () => {
         },
       ],
     };
-    const snapshot = {
-      generatedAt: "2026-06-15T12:00:00.000Z",
-      repositories: [
-        {
-          repo: "owner/good",
-          stars: 100,
-          forks: 3,
-          rank: 3,
-          rankByCategory: 1,
-        },
-      ],
-    };
-
-    const trended = addTrendMetricsToSnapshot(snapshot, history);
-
-    expect(trended.repositories[0]).toMatchObject({
-      growth7d: 20,
-      growth30d: 50,
-      rankDelta7d: 2,
-      rankDelta30d: 7,
-      trendStatus: "ready",
-    });
-  });
-
-  it("marks trend fields as collecting when history is too young", () => {
-    const history = {
-      generatedAt: "2026-06-14T00:00:00.000Z",
-      retentionDays: 180,
-      repositories: [
-        {
-          repo: "owner/good",
-          samples: [
-            {
-              date: "2026-06-14",
-              stars: 99,
-              forks: 2,
-              rank: 3,
-              rankByCategory: 1,
-            },
-          ],
-        },
-      ],
-    };
-    const snapshot = {
-      generatedAt: "2026-06-15T12:00:00.000Z",
-      repositories: [
-        {
-          repo: "owner/good",
-          stars: 100,
-          forks: 3,
-          rank: 3,
-          rankByCategory: 1,
-        },
-      ],
-    };
-
-    const trended = addTrendMetricsToSnapshot(snapshot, history);
-
-    expect(trended.repositories[0]).toMatchObject({
-      growth7d: null,
-      growth30d: null,
-      rankDelta7d: null,
-      rankDelta30d: null,
-      trendStatus: "collecting",
-    });
-  });
-
-  it("does not write fake history samples when refresh only reused stale snapshot data", () => {
-    const history = {
-      generatedAt: "2026-06-14T00:00:00.000Z",
-      retentionDays: 180,
-      repositories: [
-        {
-          repo: "owner/good",
-          samples: [
-            {
-              date: "2026-06-08",
-              stars: 80,
-              forks: 2,
-              rank: 5,
-              rankByCategory: 1,
-            },
-          ],
-        },
-      ],
-    };
-    const snapshot = {
-      generatedAt: "2026-06-15T12:00:00.000Z",
-      repositories: [
-        {
-          repo: "owner/good",
-          stars: 80,
-          forks: 2,
-          rank: 5,
-          rankByCategory: 1,
-          errorMessage: "GitHub API 403: rate limited",
-        },
-      ],
-    };
-
     const trended = addTrendMetricsToSnapshot(snapshot, history);
     const merged = mergeSnapshotIntoHistory(history, trended);
 
-    expect(trended.repositories[0].trendStatus).toBe("collecting");
-    expect(merged.repositories[0].samples).toHaveLength(1);
-    expect(merged.repositories[0].samples[0].date).toBe("2026-06-08");
+    expect(trended.skills[0]).toMatchObject({
+      downloadGrowth7d: 90,
+      rankDelta7d: 3,
+      trendStatus: "collecting",
+    });
+    expect(merged.skills[0].samples).toHaveLength(2);
+  });
+
+  it("merges committed and deployed history payloads", () => {
+    const merged = mergeHistoryPayloads([
+      {
+        schemaVersion: 2,
+        generatedAt: "2026-06-01T00:00:00.000Z",
+        retentionDays: 180,
+        skills: [
+          {
+            skillCode: "a",
+            samples: [
+              {
+                date: "2026-06-01",
+                downloadCount: 1,
+                viewCount: 1,
+                heatScore: 1,
+                rank: 2,
+                rankByCategory: 1,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        schemaVersion: 2,
+        generatedAt: "2026-06-02T00:00:00.000Z",
+        retentionDays: 180,
+        skills: [
+          {
+            skillCode: "a",
+            samples: [
+              {
+                date: "2026-06-02",
+                downloadCount: 2,
+                viewCount: 2,
+                heatScore: 2,
+                rank: 1,
+                rankByCategory: 1,
+              },
+            ],
+          },
+        ],
+      },
+    ]);
+
+    expect(merged.skills[0].samples).toHaveLength(2);
+    expect(merged.generatedAt).toBe("2026-06-02T00:00:00.000Z");
   });
 });

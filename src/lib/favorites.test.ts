@@ -1,27 +1,27 @@
 import { describe, expect, it, vi } from "vitest";
 import {
   favoritesStorageKey,
-  parseFavoriteRepos,
-  readFavoriteRepos,
-  toggleFavoriteRepo,
-  writeFavoriteRepos,
+  parseFavoriteSkills,
+  readFavoriteSkills,
+  toggleFavoriteSkill,
+  writeFavoriteSkills,
 } from "./favorites";
 
-describe("favorite repository helpers", () => {
+describe("favorite skill helpers", () => {
   it("parses stored favorites defensively", () => {
-    expect(parseFavoriteRepos('["alpha/agents","alpha/agents",""]')).toEqual([
-      "alpha/agents",
-    ]);
-    expect(parseFavoriteRepos("{broken")).toEqual([]);
-    expect(parseFavoriteRepos('{"repo":"alpha/agents"}')).toEqual([]);
+    expect(parseFavoriteSkills('["douyin-search","douyin-search",""]')).toEqual(
+      ["douyin-search"],
+    );
+    expect(parseFavoriteSkills("{broken")).toEqual([]);
+    expect(parseFavoriteSkills('{"skill":"douyin-search"}')).toEqual([]);
   });
 
   it("toggles favorites without duplicates", () => {
-    expect(toggleFavoriteRepo(["alpha/agents"], "beta/media")).toEqual([
-      "alpha/agents",
-      "beta/media",
+    expect(toggleFavoriteSkill(["douyin-search"], "multi-wordcheck")).toEqual([
+      "douyin-search",
+      "multi-wordcheck",
     ]);
-    expect(toggleFavoriteRepo(["alpha/agents"], "ALPHA/agents")).toEqual([]);
+    expect(toggleFavoriteSkill(["douyin-search"], "DOUYIN-SEARCH")).toEqual([]);
   });
 
   it("reads and writes through storage when available", () => {
@@ -31,12 +31,12 @@ describe("favorite repository helpers", () => {
       setItem: vi.fn((key: string, value: string) => values.set(key, value)),
     };
 
-    writeFavoriteRepos(["alpha/agents", "alpha/agents"], storage);
+    writeFavoriteSkills(["douyin-search", "douyin-search"], storage);
 
     expect(storage.setItem).toHaveBeenCalledWith(
       favoritesStorageKey,
-      JSON.stringify(["alpha/agents"]),
+      JSON.stringify(["douyin-search"]),
     );
-    expect(readFavoriteRepos(storage)).toEqual(["alpha/agents"]);
+    expect(readFavoriteSkills(storage)).toEqual(["douyin-search"]);
   });
 });
