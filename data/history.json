@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-06-16T23:52:23.544Z",
+  "generatedAt": "2026-06-17T13:03:33.212Z",
   "retentionDays": 180,
   "skills": [
     {
@@ -12,6 +12,14 @@
           "viewCount": 24528,
           "heatScore": 1071,
           "rank": 22,
+          "rankByCategory": 4
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 41913,
+          "viewCount": 26749,
+          "heatScore": 1074,
+          "rank": 23,
           "rankByCategory": 4
         }
       ]
@@ -26,6 +34,14 @@
           "heatScore": 1034,
           "rank": 43,
           "rankByCategory": 9
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 25308,
+          "viewCount": 14191,
+          "heatScore": 1034,
+          "rank": 44,
+          "rankByCategory": 9
         }
       ]
     },
@@ -39,6 +55,14 @@
           "heatScore": 1076,
           "rank": 21,
           "rankByCategory": 3
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 45341,
+          "viewCount": 27552,
+          "heatScore": 1090,
+          "rank": 17,
+          "rankByCategory": 3
         }
       ]
     },
@@ -50,6 +74,14 @@
           "downloadCount": 61939,
           "viewCount": 64026,
           "heatScore": 1164,
+          "rank": 6,
+          "rankByCategory": 2
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 64543,
+          "viewCount": 67156,
+          "heatScore": 1166,
           "rank": 6,
           "rankByCategory": 2
         }
@@ -65,6 +97,14 @@
           "heatScore": 1098,
           "rank": 15,
           "rankByCategory": 2
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 63122,
+          "viewCount": 26738,
+          "heatScore": 1101,
+          "rank": 13,
+          "rankByCategory": 2
         }
       ]
     },
@@ -78,6 +118,14 @@
           "heatScore": 1040,
           "rank": 39,
           "rankByCategory": 6
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 54262,
+          "viewCount": 98704,
+          "heatScore": 1041,
+          "rank": 41,
+          "rankByCategory": 6
         }
       ]
     },
@@ -89,6 +137,14 @@
           "downloadCount": 55924,
           "viewCount": 48960,
           "heatScore": 1039,
+          "rank": 40,
+          "rankByCategory": 8
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 58766,
+          "viewCount": 53053,
+          "heatScore": 1042,
           "rank": 40,
           "rankByCategory": 8
         }
@@ -104,6 +160,14 @@
           "heatScore": 1117,
           "rank": 13,
           "rankByCategory": 3
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 50005,
+          "viewCount": 60631,
+          "heatScore": 1118,
+          "rank": 12,
+          "rankByCategory": 3
         }
       ]
     },
@@ -117,6 +181,14 @@
           "heatScore": 975,
           "rank": 57,
           "rankByCategory": 11
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 21134,
+          "viewCount": 97902,
+          "heatScore": 975,
+          "rank": 57,
+          "rankByCategory": 9
         }
       ]
     },
@@ -130,6 +202,14 @@
           "heatScore": 1048,
           "rank": 35,
           "rankByCategory": 3
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 79187,
+          "viewCount": 39968,
+          "heatScore": 1049,
+          "rank": 37,
+          "rankByCategory": 5
         }
       ]
     },
@@ -143,6 +223,14 @@
           "heatScore": 1020,
           "rank": 48,
           "rankByCategory": 11
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 44251,
+          "viewCount": 69324,
+          "heatScore": 1020,
+          "rank": 49,
+          "rankByCategory": 11
         }
       ]
     },
@@ -154,6 +242,14 @@
           "downloadCount": 73050,
           "viewCount": 71672,
           "heatScore": 1058,
+          "rank": 31,
+          "rankByCategory": 5
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 75850,
+          "viewCount": 74030,
+          "heatScore": 1059,
           "rank": 31,
           "rankByCategory": 5
         }
@@ -169,6 +265,14 @@
           "heatScore": 960,
           "rank": 59,
           "rankByCategory": 13
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 16405,
+          "viewCount": 78289,
+          "heatScore": 961,
+          "rank": 59,
+          "rankByCategory": 14
         }
       ]
     },
@@ -182,6 +286,14 @@
           "heatScore": 986,
           "rank": 55,
           "rankByCategory": 10
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 33810,
+          "viewCount": 35735,
+          "heatScore": 988,
+          "rank": 55,
+          "rankByCategory": 8
         }
       ]
     },
@@ -193,6 +305,14 @@
           "downloadCount": 38577,
           "viewCount": 59928,
           "heatScore": 1099,
+          "rank": 14,
+          "rankByCategory": 3
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 39655,
+          "viewCount": 64102,
+          "heatScore": 1101,
           "rank": 14,
           "rankByCategory": 3
         }
@@ -208,6 +328,14 @@
           "heatScore": 1165,
           "rank": 5,
           "rankByCategory": 1
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 65041,
+          "viewCount": 67871,
+          "heatScore": 1166,
+          "rank": 5,
+          "rankByCategory": 1
         }
       ]
     },
@@ -219,6 +347,14 @@
           "downloadCount": 100333,
           "viewCount": 104436,
           "heatScore": 1087,
+          "rank": 18,
+          "rankByCategory": 4
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 103861,
+          "viewCount": 107933,
+          "heatScore": 1088,
           "rank": 18,
           "rankByCategory": 4
         }
@@ -234,6 +370,14 @@
           "heatScore": 1047,
           "rank": 36,
           "rankByCategory": 6
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 96318,
+          "viewCount": 17427,
+          "heatScore": 1049,
+          "rank": 36,
+          "rankByCategory": 6
         }
       ]
     },
@@ -246,6 +390,14 @@
           "viewCount": 24824,
           "heatScore": 1032,
           "rank": 44,
+          "rankByCategory": 10
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 69185,
+          "viewCount": 25891,
+          "heatScore": 1033,
+          "rank": 45,
           "rankByCategory": 10
         }
       ]
@@ -260,6 +412,14 @@
           "heatScore": 1023,
           "rank": 47,
           "rankByCategory": 1
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 54868,
+          "viewCount": 35819,
+          "heatScore": 1024,
+          "rank": 48,
+          "rankByCategory": 1
         }
       ]
     },
@@ -273,6 +433,14 @@
           "heatScore": 1163,
           "rank": 7,
           "rankByCategory": 2
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 67268,
+          "viewCount": 53753,
+          "heatScore": 1056,
+          "rank": 34,
+          "rankByCategory": 4
         }
       ]
     },
@@ -286,6 +454,14 @@
           "heatScore": 1006,
           "rank": 52,
           "rankByCategory": 12
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 20187,
+          "viewCount": 11924,
+          "heatScore": 1015,
+          "rank": 51,
+          "rankByCategory": 13
         }
       ]
     },
@@ -299,6 +475,14 @@
           "heatScore": 1059,
           "rank": 30,
           "rankByCategory": 6
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 92645,
+          "viewCount": 41053,
+          "heatScore": 1061,
+          "rank": 29,
+          "rankByCategory": 5
         }
       ]
     },
@@ -312,6 +496,14 @@
           "heatScore": 1027,
           "rank": 45,
           "rankByCategory": 4
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 49807,
+          "viewCount": 42455,
+          "heatScore": 1028,
+          "rank": 47,
+          "rankByCategory": 7
         }
       ]
     },
@@ -325,6 +517,14 @@
           "heatScore": 1026,
           "rank": 46,
           "rankByCategory": 5
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 51091,
+          "viewCount": 45438,
+          "heatScore": 1029,
+          "rank": 46,
+          "rankByCategory": 6
         }
       ]
     },
@@ -338,6 +538,14 @@
           "heatScore": 1064,
           "rank": 27,
           "rankByCategory": 2
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 93775,
+          "viewCount": 33378,
+          "heatScore": 1066,
+          "rank": 27,
+          "rankByCategory": 3
         }
       ]
     },
@@ -349,6 +557,14 @@
           "downloadCount": 86711,
           "viewCount": 32209,
           "heatScore": 1182,
+          "rank": 1,
+          "rankByCategory": 1
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 89819,
+          "viewCount": 33362,
+          "heatScore": 1187,
           "rank": 1,
           "rankByCategory": 1
         }
@@ -364,6 +580,14 @@
           "heatScore": 984,
           "rank": 56,
           "rankByCategory": 7
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 29377,
+          "viewCount": 47405,
+          "heatScore": 1085,
+          "rank": 19,
+          "rankByCategory": 1
         }
       ]
     },
@@ -381,6 +605,19 @@
       ]
     },
     {
+      "skillCode": "stock-feed",
+      "samples": [
+        {
+          "date": "2026-06-17",
+          "downloadCount": 27166,
+          "viewCount": 3937,
+          "heatScore": 1015,
+          "rank": 50,
+          "rankByCategory": 12
+        }
+      ]
+    },
+    {
       "skillCode": "trending-hub",
       "samples": [
         {
@@ -390,6 +627,14 @@
           "heatScore": 1093,
           "rank": 16,
           "rankByCategory": 3
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 25657,
+          "viewCount": 42810,
+          "heatScore": 1092,
+          "rank": 15,
+          "rankByCategory": 2
         }
       ]
     },
@@ -403,6 +648,14 @@
           "heatScore": 1063,
           "rank": 28,
           "rankByCategory": 5
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 101149,
+          "viewCount": 34973,
+          "heatScore": 1064,
+          "rank": 28,
+          "rankByCategory": 4
         }
       ]
     },
@@ -416,6 +669,14 @@
           "heatScore": 1066,
           "rank": 26,
           "rankByCategory": 1
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 85158,
+          "viewCount": 66242,
+          "heatScore": 1077,
+          "rank": 22,
+          "rankByCategory": 2
         }
       ]
     },
@@ -427,6 +688,14 @@
           "downloadCount": 67123,
           "viewCount": 83389,
           "heatScore": 1175,
+          "rank": 4,
+          "rankByCategory": 1
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 69237,
+          "viewCount": 86481,
+          "heatScore": 1176,
           "rank": 4,
           "rankByCategory": 1
         }
@@ -442,6 +711,14 @@
           "heatScore": 1008,
           "rank": 50,
           "rankByCategory": 9
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 43857,
+          "viewCount": 37566,
+          "heatScore": 1009,
+          "rank": 53,
+          "rankByCategory": 9
         }
       ]
     },
@@ -455,6 +732,14 @@
           "heatScore": 902,
           "rank": 62,
           "rankByCategory": 14
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 15498,
+          "viewCount": 6755,
+          "heatScore": 910,
+          "rank": 62,
+          "rankByCategory": 15
         }
       ]
     },
@@ -467,6 +752,14 @@
           "viewCount": 71254,
           "heatScore": 1157,
           "rank": 8,
+          "rankByCategory": 2
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 56541,
+          "viewCount": 73317,
+          "heatScore": 1158,
+          "rank": 7,
           "rankByCategory": 2
         }
       ]
@@ -481,6 +774,14 @@
           "heatScore": 1149,
           "rank": 9,
           "rankByCategory": 3
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 68217,
+          "viewCount": 117490,
+          "heatScore": 1151,
+          "rank": 8,
+          "rankByCategory": 3
         }
       ]
     },
@@ -493,6 +794,14 @@
           "viewCount": 67196,
           "heatScore": 1060,
           "rank": 29,
+          "rankByCategory": 5
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 79693,
+          "viewCount": 69201,
+          "heatScore": 1061,
+          "rank": 30,
           "rankByCategory": 5
         }
       ]
@@ -507,6 +816,14 @@
           "heatScore": 1067,
           "rank": 25,
           "rankByCategory": 6
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 80681,
+          "viewCount": 95107,
+          "heatScore": 1068,
+          "rank": 26,
+          "rankByCategory": 6
         }
       ]
     },
@@ -517,6 +834,14 @@
           "date": "2026-06-16",
           "downloadCount": 22802,
           "viewCount": 30330,
+          "heatScore": 959,
+          "rank": 60,
+          "rankByCategory": 11
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 23278,
+          "viewCount": 31229,
           "heatScore": 959,
           "rank": 60,
           "rankByCategory": 11
@@ -533,6 +858,14 @@
           "heatScore": 1131,
           "rank": 12,
           "rankByCategory": 4
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 35945,
+          "viewCount": 89968,
+          "heatScore": 1130,
+          "rank": 11,
+          "rankByCategory": 4
         }
       ]
     },
@@ -545,6 +878,14 @@
           "viewCount": 64706,
           "heatScore": 1054,
           "rank": 34,
+          "rankByCategory": 8
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 66116,
+          "viewCount": 68176,
+          "heatScore": 1056,
+          "rank": 35,
           "rankByCategory": 8
         }
       ]
@@ -559,6 +900,14 @@
           "heatScore": 1068,
           "rank": 24,
           "rankByCategory": 5
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 89929,
+          "viewCount": 68399,
+          "heatScore": 1069,
+          "rank": 25,
+          "rankByCategory": 5
         }
       ]
     },
@@ -569,6 +918,14 @@
           "date": "2026-06-16",
           "downloadCount": 18827,
           "viewCount": 113201,
+          "heatScore": 972,
+          "rank": 58,
+          "rankByCategory": 10
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 19261,
+          "viewCount": 117279,
           "heatScore": 972,
           "rank": 58,
           "rankByCategory": 10
@@ -585,6 +942,14 @@
           "heatScore": 1056,
           "rank": 32,
           "rankByCategory": 7
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 70269,
+          "viewCount": 86692,
+          "heatScore": 1057,
+          "rank": 32,
+          "rankByCategory": 7
         }
       ]
     },
@@ -598,6 +963,14 @@
           "heatScore": 1081,
           "rank": 19,
           "rankByCategory": 4
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 117005,
+          "viewCount": 51216,
+          "heatScore": 1082,
+          "rank": 20,
+          "rankByCategory": 3
         }
       ]
     },
@@ -608,6 +981,14 @@
           "date": "2026-06-16",
           "downloadCount": 12788,
           "viewCount": 27460,
+          "heatScore": 916,
+          "rank": 61,
+          "rankByCategory": 9
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 12984,
+          "viewCount": 28203,
           "heatScore": 916,
           "rank": 61,
           "rankByCategory": 9
@@ -624,6 +1005,14 @@
           "heatScore": 1044,
           "rank": 37,
           "rankByCategory": 7
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 22164,
+          "viewCount": 58138,
+          "heatScore": 1045,
+          "rank": 38,
+          "rankByCategory": 7
         }
       ]
     },
@@ -636,6 +1025,14 @@
           "viewCount": 34880,
           "heatScore": 1088,
           "rank": 17,
+          "rankByCategory": 2
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 26455,
+          "viewCount": 35979,
+          "heatScore": 1091,
+          "rank": 16,
           "rankByCategory": 2
         }
       ]
@@ -650,6 +1047,14 @@
           "heatScore": 1148,
           "rank": 10,
           "rankByCategory": 1
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 58033,
+          "viewCount": 41191,
+          "heatScore": 1148,
+          "rank": 9,
+          "rankByCategory": 1
         }
       ]
     },
@@ -663,6 +1068,14 @@
           "heatScore": 1182,
           "rank": 2,
           "rankByCategory": 1
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 72726,
+          "viewCount": 109815,
+          "heatScore": 1184,
+          "rank": 2,
+          "rankByCategory": 1
         }
       ]
     },
@@ -673,6 +1086,14 @@
           "date": "2026-06-16",
           "downloadCount": 102449,
           "viewCount": 23250,
+          "heatScore": 1179,
+          "rank": 3,
+          "rankByCategory": 2
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 106075,
+          "viewCount": 23595,
           "heatScore": 1179,
           "rank": 3,
           "rankByCategory": 2
@@ -689,6 +1110,14 @@
           "heatScore": 1011,
           "rank": 49,
           "rankByCategory": 8
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 35755,
+          "viewCount": 95766,
+          "heatScore": 1011,
+          "rank": 52,
+          "rankByCategory": 8
         }
       ]
     },
@@ -702,6 +1131,14 @@
           "heatScore": 988,
           "rank": 54,
           "rankByCategory": 6
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 25562,
+          "viewCount": 92163,
+          "heatScore": 987,
+          "rank": 56,
+          "rankByCategory": 8
         }
       ]
     },
@@ -715,6 +1152,14 @@
           "heatScore": 1056,
           "rank": 33,
           "rankByCategory": 7
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 69091,
+          "viewCount": 93821,
+          "heatScore": 1057,
+          "rank": 33,
+          "rankByCategory": 6
         }
       ]
     },
@@ -727,6 +1172,14 @@
           "viewCount": 45208,
           "heatScore": 1138,
           "rank": 11,
+          "rankByCategory": 1
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 49650,
+          "viewCount": 46227,
+          "heatScore": 1140,
+          "rank": 10,
           "rankByCategory": 1
         }
       ]
@@ -741,6 +1194,14 @@
           "heatScore": 1069,
           "rank": 23,
           "rankByCategory": 4
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 78993,
+          "viewCount": 115626,
+          "heatScore": 1071,
+          "rank": 24,
+          "rankByCategory": 4
         }
       ]
     },
@@ -754,6 +1215,14 @@
           "heatScore": 1036,
           "rank": 41,
           "rankByCategory": 6
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 64398,
+          "viewCount": 42959,
+          "heatScore": 1036,
+          "rank": 43,
+          "rankByCategory": 7
         }
       ]
     },
@@ -766,6 +1235,14 @@
           "viewCount": 92993,
           "heatScore": 1080,
           "rank": 20,
+          "rankByCategory": 3
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 96471,
+          "viewCount": 96548,
+          "heatScore": 1081,
+          "rank": 21,
           "rankByCategory": 3
         }
       ]
@@ -780,6 +1257,14 @@
           "heatScore": 1035,
           "rank": 42,
           "rankByCategory": 7
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 67980,
+          "viewCount": 35535,
+          "heatScore": 1036,
+          "rank": 42,
+          "rankByCategory": 6
         }
       ]
     },
@@ -792,6 +1277,14 @@
           "viewCount": 30679,
           "heatScore": 1043,
           "rank": 38,
+          "rankByCategory": 5
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 78357,
+          "viewCount": 31286,
+          "heatScore": 1044,
+          "rank": 39,
           "rankByCategory": 5
         }
       ]
@@ -806,6 +1299,14 @@
           "heatScore": 1004,
           "rank": 53,
           "rankByCategory": 9
+        },
+        {
+          "date": "2026-06-17",
+          "downloadCount": 37892,
+          "viewCount": 52821,
+          "heatScore": 1003,
+          "rank": 54,
+          "rankByCategory": 7
         }
       ]
     }
