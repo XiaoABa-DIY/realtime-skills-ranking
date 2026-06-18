@@ -1,4 +1,4 @@
-name: Refresh RedFox data and deploy Pages
+name: Refresh GitHub Skills data and deploy Pages
 
 on:
   push:
@@ -45,7 +45,7 @@ jobs:
             git show origin/gh-pages:data/history.json > .history-source/history.json || true
           fi
 
-      - name: Refresh RedFox data snapshot
+      - name: Refresh GitHub Skills data snapshot
         run: npm run data:update
         env:
           GITHUB_TOKEN: ${{ github.token }}

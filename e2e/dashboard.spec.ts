@@ -1,133 +1,107 @@
 import { expect, type Page, test } from "@playwright/test";
 
 const snapshot = {
-  schemaVersion: 2,
+  schemaVersion: 3,
   generatedAt: "2026-06-16T02:00:00.000Z",
-  source: "redfox-api+github",
-  sourceRepo: {
-    fullName: "redfox-data/redfox-community",
-    htmlUrl: "https://github.com/redfox-data/redfox-community",
-  },
+  source: "github-skills",
   categories: [
     {
-      id: 1,
-      code: "all",
-      name: { zh: "全部", en: "All" },
-      sortOrder: 0,
+      code: "content",
+      name: { zh: "内容创作", en: "Content Creation" },
+      sortOrder: 1,
     },
     {
-      id: 8,
-      code: "efficiency_tools",
-      name: { zh: "效率工具", en: "Efficiency Tools" },
-      sortOrder: 7,
-    },
-    {
-      id: 4,
-      code: "data_query",
-      name: { zh: "数据查询", en: "Data Query" },
-      sortOrder: 3,
+      code: "data",
+      name: { zh: "数据研究", en: "Data Research" },
+      sortOrder: 5,
     },
   ],
   skills: [
     {
-      skillNo: "wn2Hrw42",
-      skillCode: "multi-wordcheck",
-      name: { zh: "多平台违禁词检测", en: "Multi-Platform Word Check" },
-      description: { zh: "违禁词检测", en: "Prohibited word check" },
-      introduce: {
-        zh: "覆盖公众号、小红书、抖音的违禁词检测。",
-        en: "Compliance checks for WeChat, Xiaohongshu, and Douyin.",
-      },
-      readme: { zh: "# 多平台违禁词检测", en: "# Multi-Platform Word Check" },
-      categoryCode: "efficiency_tools",
-      categoryName: { zh: "效率工具", en: "Efficiency Tools" },
-      categories: [],
-      tags: ["合规审核", "内容改写", "违禁词检测"],
-      icon: "",
-      iconUrl: "",
-      price: 0,
-      usageCount: 0,
-      viewCount: 40362,
-      downloadCount: 44942,
-      displayStatus: 1,
-      displayBadge: { zh: "热门", en: "Hot" },
-      status: 1,
-      hasApiKey: true,
-      platformInfoRaw: "",
-      accessMethods: [
+      repo: "owner/content-skill",
+      name: "content-skill",
+      descriptionZh: "面向公众号、小红书和长文创作的中文写作 Skill。",
+      descriptionEn: "Chinese writing skill for creators.",
+      readmeSnippetZh: "# 中文写作 Skill",
+      readmeSnippetEn: "# Chinese Writing Skill",
+      categoryCode: "content",
+      categoryName: { zh: "内容创作", en: "Content Creation" },
+      tags: ["写作", "中文"],
+      audiences: ["media", "writing"],
+      useCases: [
         {
-          name: "github",
-          value:
-            "https://github.com/redfox-data/redfox-community/tree/main/skills/multi-wordcheck",
-          url: "https://github.com/redfox-data/redfox-community/tree/main/skills/multi-wordcheck",
+          zh: "适合自媒体创作者做选题、改写和长文生产。",
+          en: "Good for creator writing workflows.",
         },
       ],
-      redfoxUrl: "https://redfox.hk/skills/no/wn2Hrw42",
-      githubUrl:
-        "https://github.com/redfox-data/redfox-community/tree/main/skills/multi-wordcheck",
-      githubPath: "skills/multi-wordcheck",
-      heatScore: 1234,
-      rank: 1,
-      rankByCategory: 1,
-      createdAt: "2026-05-27T12:27:54.000Z",
-      updatedAt: "2026-06-16T02:08:20.000Z",
+      skillMdPaths: ["skills/writing/SKILL.md"],
+      stars: 900,
+      forks: 88,
+      openIssues: 2,
+      watchers: 900,
+      language: "Markdown",
+      license: "MIT",
+      topics: ["skills", "content"],
+      homepage: "https://example.com/content-skill",
+      htmlUrl: "https://github.com/owner/content-skill",
+      createdAt: "2026-05-01T00:00:00.000Z",
+      updatedAt: "2026-06-15T00:00:00.000Z",
+      pushedAt: "2026-06-15T00:00:00.000Z",
       lastFetchedAt: "2026-06-16T02:00:00.000Z",
       fetchStatus: "ok",
-      downloadGrowth7d: 90,
-      downloadGrowth30d: null,
+      rank: 1,
+      rankByCategory: 1,
+      growth7d: 90,
+      growth30d: null,
       rankDelta7d: 2,
       rankDelta30d: null,
       trendStatus: "collecting",
-      audiences: ["media", "wechat", "xiaohongshu", "douyin", "productivity"],
-      useCases: [
-        { zh: "适合内容合规检查。", en: "Useful for compliance checks." },
-      ],
+      chineseScore: 95,
+      skillSignalScore: 100,
+      featured: true,
     },
     {
-      skillNo: "abc",
-      skillCode: "douyin-search",
-      name: { zh: "抖音作品查询", en: "Douyin Work Search" },
-      description: { zh: "查询抖音作品", en: "Search Douyin works" },
-      introduce: {
-        zh: "查询抖音作品数据和内容表现。",
-        en: "Search Douyin work data and performance.",
-      },
-      readme: { zh: "# 抖音作品查询", en: "# Douyin Work Search" },
-      categoryCode: "data_query",
-      categoryName: { zh: "数据查询", en: "Data Query" },
-      categories: [],
-      tags: ["抖音", "数据查询"],
-      icon: "",
-      iconUrl: "",
-      price: 0,
-      usageCount: 0,
-      viewCount: 1000,
-      downloadCount: 500,
-      displayStatus: 0,
-      displayBadge: null,
-      status: 1,
-      hasApiKey: true,
-      platformInfoRaw: "",
-      accessMethods: [],
-      redfoxUrl: "https://redfox.hk/skills/no/abc",
-      githubUrl: "",
-      githubPath: "",
-      heatScore: 900,
-      rank: 2,
-      rankByCategory: 1,
-      createdAt: "2026-05-28T12:27:54.000Z",
-      updatedAt: "2026-06-15T02:08:20.000Z",
+      repo: "owner/research-skill",
+      name: "research-skill",
+      descriptionZh: "用于资料研究、结构化报告和数据分析的 Skill。",
+      descriptionEn: "Research and report skill.",
+      readmeSnippetZh: "# 研究 Skill",
+      readmeSnippetEn: "# Research Skill",
+      categoryCode: "data",
+      categoryName: { zh: "数据研究", en: "Data Research" },
+      tags: ["研究", "数据"],
+      audiences: ["data"],
+      useCases: [
+        {
+          zh: "适合研究者做资料整理和报告生成。",
+          en: "Useful for research and report generation.",
+        },
+      ],
+      skillMdPaths: ["skills/research/SKILL.md"],
+      stars: 300,
+      forks: 21,
+      openIssues: 1,
+      watchers: 300,
+      language: "Markdown",
+      license: "MIT",
+      topics: ["skills", "research"],
+      homepage: "",
+      htmlUrl: "https://github.com/owner/research-skill",
+      createdAt: "2026-05-02T00:00:00.000Z",
+      updatedAt: "2026-06-14T00:00:00.000Z",
+      pushedAt: "2026-06-14T00:00:00.000Z",
       lastFetchedAt: "2026-06-16T02:00:00.000Z",
       fetchStatus: "ok",
-      downloadGrowth7d: null,
-      downloadGrowth30d: null,
+      rank: 2,
+      rankByCategory: 1,
+      growth7d: null,
+      growth30d: null,
       rankDelta7d: null,
       rankDelta30d: null,
       trendStatus: "collecting",
-      audiences: ["douyin", "data"],
-      useCases: [
-        { zh: "适合抖音数据分析。", en: "Useful for Douyin analysis." },
-      ],
+      chineseScore: 90,
+      skillSignalScore: 100,
+      featured: false,
     },
   ],
 };
@@ -150,65 +124,65 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-test("renders the RedFox skills gallery and filters skills", async ({
+test("renders the GitHub skills gallery and filters skills", async ({
   page,
 }) => {
   await page.goto("/?lang=en");
 
   await expect(
-    page.getByRole("heading", { name: "RedFox Skills Heat Ranking" }),
+    page.getByRole("heading", { name: "GitHub Open Skills Star Ranking" }),
   ).toBeVisible();
-  await expect(page.getByText("Top 3 by heat")).toBeVisible();
+  await expect(page.getByText("Top 3 by stars")).toBeVisible();
   await expect(page.getByText("Today picks")).toBeVisible();
   await expect(
     page.getByRole("button", { name: "Media creators", exact: true }),
   ).toBeVisible();
   await expect(
-    page.getByRole("button", { name: /7-day usage growth/i }),
+    page.getByRole("button", { name: /7-day star growth/i }),
   ).toBeVisible();
-  await expect(getSkillCard(page, "Multi-Platform Word Check")).toBeVisible();
+  await expect(getSkillCard(page, "content-skill")).toBeVisible();
 
   await page
-    .getByPlaceholder("Search skills, tags, platforms, or use cases")
-    .fill("Douyin");
-  await expect(getSkillCard(page, "Douyin Work Search")).toBeVisible();
-  await expect(page).toHaveURL(/q=Douyin/);
+    .getByPlaceholder("Search skills, tags, repos, or use cases")
+    .fill("research");
+  await expect(getSkillCard(page, "research-skill")).toBeVisible();
+  await expect(page).toHaveURL(/q=research/);
 });
 
 test("opens trend spotlights and keeps details available", async ({ page }) => {
   await page.goto("/?lang=en");
 
-  await page.getByRole("button", { name: /7-day usage growth/i }).click();
+  await page.getByRole("button", { name: /7-day star growth/i }).click();
   await expect(page).toHaveURL(/spotlight=growth7d/);
-  await expect(getSkillCard(page, "Multi-Platform Word Check")).toBeVisible();
+  await expect(getSkillCard(page, "content-skill")).toBeVisible();
 
-  await getSkillCard(page, "Multi-Platform Word Check")
+  await getSkillCard(page, "content-skill")
     .getByRole("button", {
       name: /View details/i,
     })
     .click();
   await expect(
-    page.getByRole("dialog", { name: "Multi-Platform Word Check" }),
+    page.getByRole("dialog", { name: "content-skill" }),
   ).toBeVisible();
 });
 
-test("opens details with RedFox/GitHub actions", async ({ page }) => {
+test("opens details with GitHub actions and skill paths", async ({ page }) => {
   await page.goto("/?lang=en");
-  await getSkillCard(page, "Multi-Platform Word Check")
+  await getSkillCard(page, "content-skill")
     .getByRole("button", {
       name: /View details/i,
     })
     .click();
 
   const drawer = page.getByRole("dialog", {
-    name: "Multi-Platform Word Check",
+    name: "content-skill",
   });
 
   await expect(
-    drawer.getByRole("link", { name: /Open RedFox/i }),
+    drawer.getByRole("link", { name: /Open GitHub/i }),
   ).toBeVisible();
   await expect(
-    drawer.getByRole("link", { name: /Open GitHub/i }),
+    drawer.getByRole("link", { name: /Open homepage/i }),
   ).toBeVisible();
   await expect(
     drawer.getByRole("button", { name: /Copy skill link/i }),
@@ -216,6 +190,7 @@ test("opens details with RedFox/GitHub actions", async ({ page }) => {
   await expect(
     drawer.getByRole("button", { name: /Save this skill/i }),
   ).toBeVisible();
+  await expect(drawer.getByText("skills/writing/SKILL.md")).toBeVisible();
 });
 
 test("persists quick filters, favorites, and detail drawers in the URL", async ({
@@ -223,8 +198,10 @@ test("persists quick filters, favorites, and detail drawers in the URL", async (
 }) => {
   await page.goto("/?lang=en");
 
-  await page.getByRole("button", { name: "Douyin", exact: true }).click();
-  await expect(page).toHaveURL(/audience=douyin/);
+  await page
+    .getByRole("button", { name: "Media creators", exact: true })
+    .click();
+  await expect(page).toHaveURL(/audience=media/);
 
   await page
     .getByRole("button", { name: /Save this skill/i })
@@ -241,16 +218,17 @@ test("persists quick filters, favorites, and detail drawers in the URL", async (
   await page.reload();
   await expect(page.getByText(/My favorites 1/).first()).toBeVisible();
 
-  await page.goto("/?lang=en&skill=multi-wordcheck");
+  await page.goto("/?lang=en&skill=owner%2Fcontent-skill");
   await expect(
-    page.getByRole("dialog", { name: "Multi-Platform Word Check" }),
+    page.getByRole("dialog", { name: "content-skill" }),
   ).toBeVisible();
   await expect(page.getByRole("heading", { name: "Use cases" })).toBeVisible();
 });
 
 test("keeps the mobile skills layout within the viewport", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/?lang=en");
-  await expect(getSkillCard(page, "Multi-Platform Word Check")).toBeVisible();
+  await expect(getSkillCard(page, "content-skill")).toBeVisible();
 
   const overflow = await page.evaluate(
     () => document.documentElement.scrollWidth - window.innerWidth,

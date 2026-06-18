@@ -1,785 +1,89 @@
 {
-  "schemaVersion": 2,
-  "generatedAt": "2026-06-16T03:09:35.068Z",
+  "schemaVersion": 3,
+  "generatedAt": "2026-06-16T07:10:29.440Z",
   "retentionDays": 180,
-  "skills": [
+  "repositories": [
     {
-      "skillCode": "ai-intelligence-investigator",
+      "repo": "bergside/awesome-design-skills",
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 38003,
-          "viewCount": 21339,
-          "heatScore": 1067,
-          "rank": 22,
-          "rankByCategory": 4
-        }
-      ]
-    },
-    {
-      "skillCode": "bilibili-ai-feed",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 24526,
-          "viewCount": 12417,
-          "heatScore": 1025,
-          "rank": 44,
-          "rankByCategory": 10
-        }
-      ]
-    },
-    {
-      "skillCode": "cn-last30days",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 40377,
-          "viewCount": 25257,
-          "heatScore": 1072,
-          "rank": 21,
-          "rankByCategory": 3
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-account-diagnosis",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 58219,
-          "viewCount": 59589,
-          "heatScore": 1160,
-          "rank": 6,
-          "rankByCategory": 2
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-ai-feed",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 54996,
-          "viewCount": 25351,
-          "heatScore": 1094,
-          "rank": 15,
-          "rankByCategory": 2
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-content-surge",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 49604,
-          "viewCount": 91047,
-          "heatScore": 1037,
-          "rank": 39,
-          "rankByCategory": 6
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-crawler",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 51864,
-          "viewCount": 43129,
-          "heatScore": 1033,
-          "rank": 42,
-          "rankByCategory": 8
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-daily-hot",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 46401,
-          "viewCount": 55745,
-          "heatScore": 1113,
-          "rank": 13,
-          "rankByCategory": 3
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-hot-trend",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 20216,
-          "viewCount": 89418,
-          "heatScore": 974,
-          "rank": 56,
-          "rankByCategory": 11
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-prohibited-word",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 71401,
-          "viewCount": 36792,
-          "heatScore": 1045,
-          "rank": 35,
-          "rankByCategory": 3
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-realtime-search",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 42687,
-          "viewCount": 64959,
-          "heatScore": 1020,
-          "rank": 47,
-          "rankByCategory": 11
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-rise-ranking",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 69050,
-          "viewCount": 68304,
-          "heatScore": 1055,
-          "rank": 31,
-          "rankByCategory": 5
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-search",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 15011,
-          "viewCount": 72541,
-          "heatScore": 957,
-          "rank": 59,
-          "rankByCategory": 12
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-similar-account",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 30954,
-          "viewCount": 30899,
-          "heatScore": 983,
-          "rank": 54,
-          "rankByCategory": 10
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-subscribe",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 37037,
-          "viewCount": 53962,
-          "heatScore": 1096,
-          "rank": 14,
-          "rankByCategory": 3
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-top-account",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 58887,
-          "viewCount": 63283,
-          "heatScore": 1162,
-          "rank": 5,
-          "rankByCategory": 1
-        }
-      ]
-    },
-    {
-      "skillCode": "douyin-weekly-surge",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 95293,
-          "viewCount": 99450,
-          "heatScore": 1085,
-          "rank": 17,
-          "rankByCategory": 4
-        }
-      ]
-    },
-    {
-      "skillCode": "gzh-ai-feed",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 86492,
-          "viewCount": 16768,
-          "heatScore": 1044,
-          "rank": 36,
-          "rankByCategory": 6
-        }
-      ]
-    },
-    {
-      "skillCode": "gzh-search-crawler",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 63167,
-          "viewCount": 23340,
-          "heatScore": 1029,
-          "rank": 43,
-          "rankByCategory": 9
-        }
-      ]
-    },
-    {
-      "skillCode": "gzh-subscribe",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 51910,
-          "viewCount": 33030,
-          "heatScore": 1022,
-          "rank": 45,
-          "rankByCategory": 1
-        }
-      ]
-    },
-    {
-      "skillCode": "image-gen",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 57816,
-          "viewCount": 48631,
-          "heatScore": 1157,
-          "rank": 7,
-          "rankByCategory": 2
-        }
-      ]
-    },
-    {
-      "skillCode": "multi-rewrite",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 83227,
-          "viewCount": 37964,
-          "heatScore": 1056,
-          "rank": 30,
-          "rankByCategory": 6
-        }
-      ]
-    },
-    {
-      "skillCode": "multi-wordcheck",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 45081,
-          "viewCount": 40422,
-          "heatScore": 1022,
-          "rank": 46,
-          "rankByCategory": 4
-        }
-      ]
-    },
-    {
-      "skillCode": "optimize-skill-md",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 43747,
-          "viewCount": 38301,
-          "heatScore": 1019,
-          "rank": 48,
-          "rankByCategory": 5
-        }
-      ]
-    },
-    {
-      "skillCode": "pdf-image-text-extractor",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 84459,
-          "viewCount": 30833,
-          "heatScore": 1061,
-          "rank": 27,
-          "rankByCategory": 2
-        }
-      ]
-    },
-    {
-      "skillCode": "seedance-video-gen",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 82271,
-          "viewCount": 30597,
-          "heatScore": 1179,
-          "rank": 1,
-          "rankByCategory": 1
-        }
-      ]
-    },
-    {
-      "skillCode": "seedream-5-lite",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 26793,
-          "viewCount": 41134,
-          "heatScore": 980,
-          "rank": 55,
-          "rankByCategory": 7
-        }
-      ]
-    },
-    {
-      "skillCode": "seedream-5.0-lite",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 15230,
-          "viewCount": 9442,
-          "heatScore": 1007,
-          "rank": 50,
-          "rankByCategory": 8
-        }
-      ]
-    },
-    {
-      "skillCode": "trending-hub",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 25079,
-          "viewCount": 40486,
-          "heatScore": 1093,
-          "rank": 16,
-          "rankByCategory": 3
-        }
-      ]
-    },
-    {
-      "skillCode": "trending-hub-top10",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 91289,
-          "viewCount": 33381,
-          "heatScore": 1060,
-          "rank": 28,
-          "rankByCategory": 5
-        }
-      ]
-    },
-    {
-      "skillCode": "video-downloader",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 78596,
-          "viewCount": 59969,
-          "heatScore": 1063,
-          "rank": 26,
-          "rankByCategory": 1
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-10w-hot",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 64103,
-          "viewCount": 79014,
-          "heatScore": 1172,
+          "stars": 1272,
+          "forks": 112,
           "rank": 4,
           "rankByCategory": 1
         }
       ]
     },
     {
-      "skillCode": "wechat-account-analyzer",
+      "repo": "FrancyJGLisboa/agent-skill-creator",
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 40015,
-          "viewCount": 34414,
-          "heatScore": 1003,
-          "rank": 52,
-          "rankByCategory": 9
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-cover",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 52495,
-          "viewCount": 68287,
-          "heatScore": 1155,
-          "rank": 8,
-          "rankByCategory": 2
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-fastest-growing",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 62539,
-          "viewCount": 107462,
-          "heatScore": 1147,
-          "rank": 9,
-          "rankByCategory": 3
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-original-hot",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 73097,
-          "viewCount": 64327,
-          "heatScore": 1057,
-          "rank": 29,
-          "rankByCategory": 5
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-prohibited-word",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 74765,
-          "viewCount": 87818,
-          "heatScore": 1065,
-          "rank": 24,
-          "rankByCategory": 6
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-rewrite",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 22122,
-          "viewCount": 29057,
-          "heatScore": 958,
-          "rank": 58,
-          "rankByCategory": 11
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-search",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 34721,
-          "viewCount": 80727,
-          "heatScore": 1130,
-          "rank": 12,
-          "rankByCategory": 4
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-similar-account",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 59622,
-          "viewCount": 59768,
-          "heatScore": 1050,
-          "rank": 34,
-          "rankByCategory": 8
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-title",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 83299,
-          "viewCount": 61441,
-          "heatScore": 1066,
-          "rank": 23,
-          "rankByCategory": 5
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-top-account",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 18207,
-          "viewCount": 107368,
-          "heatScore": 970,
-          "rank": 57,
-          "rankByCategory": 10
-        }
-      ]
-    },
-    {
-      "skillCode": "wechat-write",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 65101,
-          "viewCount": 78580,
-          "heatScore": 1053,
-          "rank": 33,
-          "rankByCategory": 7
-        }
-      ]
-    },
-    {
-      "skillCode": "xhs-title-scorer",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 107077,
-          "viewCount": 48696,
-          "heatScore": 1079,
-          "rank": 19,
-          "rankByCategory": 4
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-account-analyzer",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 12508,
-          "viewCount": 26406,
-          "heatScore": 916,
-          "rank": 60,
-          "rankByCategory": 9
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-ai-feed",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 20736,
-          "viewCount": 49289,
-          "heatScore": 1041,
-          "rank": 37,
-          "rankByCategory": 7
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-cover",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 23021,
-          "viewCount": 33314,
-          "heatScore": 1083,
-          "rank": 18,
-          "rankByCategory": 2
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-crawler",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 54599,
-          "viewCount": 38551,
-          "heatScore": 1147,
-          "rank": 10,
+          "stars": 1502,
+          "forks": 199,
+          "rank": 3,
           "rankByCategory": 1
         }
       ]
     },
     {
-      "skillCode": "xiaohongshu-dailytop",
+      "repo": "lingxling/awesome-skills-cn",
       "samples": [
         {
           "date": "2026-06-16",
-          "downloadCount": 65450,
-          "viewCount": 99722,
-          "heatScore": 1178,
+          "stars": 133,
+          "forks": 27,
+          "rank": 6,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "openai/skills",
+      "samples": [
+        {
+          "date": "2026-06-16",
+          "stars": 22270,
+          "forks": 1513,
+          "rank": 1,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "redfox-data/redfox-community",
+      "samples": [
+        {
+          "date": "2026-06-16",
+          "stars": 74,
+          "forks": 13,
+          "rank": 7,
+          "rankByCategory": 1
+        }
+      ]
+    },
+    {
+      "repo": "Weizhena/Deep-Research-skills",
+      "samples": [
+        {
+          "date": "2026-06-16",
+          "stars": 1136,
+          "forks": 98,
+          "rank": 5,
+          "rankByCategory": 2
+        }
+      ]
+    },
+    {
+      "repo": "Yuan1z0825/nature-skills",
+      "samples": [
+        {
+          "date": "2026-06-16",
+          "stars": 20331,
+          "forks": 1211,
           "rank": 2,
           "rankByCategory": 1
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-lowtop",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 97269,
-          "viewCount": 22833,
-          "heatScore": 1177,
-          "rank": 3,
-          "rankByCategory": 2
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-note-analyzer",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 33953,
-          "viewCount": 88735,
-          "heatScore": 1010,
-          "rank": 49,
-          "rankByCategory": 8
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-prohibited-word",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 25120,
-          "viewCount": 84737,
-          "heatScore": 988,
-          "rank": 53,
-          "rankByCategory": 6
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-rewrite",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 64297,
-          "viewCount": 84831,
-          "heatScore": 1054,
-          "rank": 32,
-          "rankByCategory": 7
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-search",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 44856,
-          "viewCount": 43801,
-          "heatScore": 1136,
-          "rank": 11,
-          "rankByCategory": 1
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-similar-account",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 70901,
-          "viewCount": 105631,
-          "heatScore": 1065,
-          "rank": 25,
-          "rankByCategory": 4
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-title-score",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 59536,
-          "viewCount": 40619,
-          "heatScore": 1034,
-          "rank": 40,
-          "rankByCategory": 6
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-top-account",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 87801,
-          "viewCount": 87910,
-          "heatScore": 1076,
-          "rank": 20,
-          "rankByCategory": 3
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-weeklytop",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 62744,
-          "viewCount": 32591,
-          "heatScore": 1033,
-          "rank": 41,
-          "rankByCategory": 7
-        }
-      ]
-    },
-    {
-      "skillCode": "xiaohongshu-write",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 70673,
-          "viewCount": 29824,
-          "heatScore": 1040,
-          "rank": 38,
-          "rankByCategory": 5
-        }
-      ]
-    },
-    {
-      "skillCode": "zhihu-rewrite",
-      "samples": [
-        {
-          "date": "2026-06-16",
-          "downloadCount": 36906,
-          "viewCount": 48091,
-          "heatScore": 1004,
-          "rank": 51,
-          "rankByCategory": 9
         }
       ]
     }

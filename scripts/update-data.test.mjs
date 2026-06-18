@@ -1,270 +1,296 @@
 import { describe, expect, it } from "vitest";
+import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
 import {
   addTrendMetricsToSnapshot,
   buildCandidates,
   buildSnapshot,
-  calculateHeatScore,
+  calculateChineseScore,
   createHistoryFromSnapshot,
-  displayStatusToBadge,
+  isAcceptedSkillPath,
   mergeHistoryPayloads,
   mergeSnapshotIntoHistory,
-  normalizeSkillCode,
-  parsePlatformInfo,
+  normalizeRepoName,
+  updateData,
 } from "./update-data.mjs";
 
-function redfoxSkill(overrides = {}) {
+function repoMeta(fullName, overrides = {}) {
+  const [owner, name] = fullName.split("/");
   return {
-    skillNo: overrides.skillNo ?? "wn2Hrw42",
-    skillName: overrides.skillName ?? "多平台违禁词检测",
-    nameEn: overrides.nameEn ?? "Multi-Platform Word Check",
-    skillCode: overrides.skillCode ?? "multi-wordcheck",
-    categoryId: overrides.categoryId ?? 8,
-    categories: overrides.categories ?? [
-      {
-        categoryCode: "efficiency_tools",
-        categoryName: "效率工具",
-      },
-    ],
-    description: overrides.description ?? null,
-    iconUrl: null,
-    icon: "iconfont:narrow",
-    price: 0,
-    usageCount: 0,
-    viewCount: overrides.viewCount ?? 400,
-    downloadCount: overrides.downloadCount ?? 300,
-    displayStatus: overrides.displayStatus ?? 1,
-    status: 1,
-    tags: overrides.tags ?? ["合规审核", "内容改写", "违禁词检测"],
-    introduce: overrides.introduce ?? "覆盖公众号、小红书、抖音的违禁词检测。",
-    introduceEn:
-      overrides.introduceEn ??
-      "Compliance checks for WeChat, Xiaohongshu, and Douyin.",
-    readme: overrides.readme ?? "# 多平台违禁词检测\n\n使用说明",
-    readmeEn: overrides.readmeEn ?? "# Multi-Platform Word Check\n\nUsage",
-    hasApiKey: true,
-    platformInfo:
-      overrides.platformInfo ??
-      '[{"name":"github","repo":"https://github.com/redfox-data/redfox-community/tree/main/skills/multi-wordcheck"},{"name":"skills-cli","repo":"redfox-data/redfox-community"}]',
-    sortOrder: 0,
-    createTime: overrides.createTime ?? "2026-05-27 20:27:54",
-    updateTime: overrides.updateTime ?? "2026-06-16 10:08:20",
+    full_name: fullName,
+    name,
+    owner: { login: owner },
+    description: overrides.description ?? "中文 Skill 仓库",
+    stargazers_count: overrides.stars ?? 100,
+    forks_count: overrides.forks ?? 10,
+    open_issues_count: overrides.openIssues ?? 2,
+    watchers_count: overrides.watchers ?? overrides.stars ?? 100,
+    language: overrides.language ?? "Markdown",
+    license: overrides.license ?? { spdx_id: "MIT", name: "MIT License" },
+    topics: overrides.topics ?? ["skills", "chinese"],
+    homepage: overrides.homepage ?? "",
+    html_url: `https://github.com/${fullName}`,
+    default_branch: overrides.defaultBranch ?? "main",
+    archived: overrides.archived ?? false,
+    disabled: false,
+    created_at: overrides.createdAt ?? "2026-05-01T00:00:00.000Z",
+    updated_at: overrides.updatedAt ?? "2026-06-14T00:00:00.000Z",
+    pushed_at: overrides.pushedAt ?? "2026-06-15T00:00:00.000Z",
   };
 }
 
-function createRedfoxFetch(recordsByPage) {
-  return async (url) => {
-    if (url.includes("/skills/categories")) {
-      return {
-        code: 2000,
-        data: [
-          {
-            id: 1,
-            categoryName: "全部",
-            nameEn: "All",
-            categoryCode: "all",
-            sortOrder: 0,
-          },
-          {
-            id: 8,
-            categoryName: "效率工具",
-            nameEn: "Efficiency Tools",
-            categoryCode: "efficiency_tools",
-            sortOrder: 7,
-          },
-        ],
-      };
-    }
-
-    const pageNum = Number(new URL(url).searchParams.get("pageNum"));
-    return {
-      code: 2000,
-      data: {
-        records: recordsByPage[pageNum] ?? [],
-        total: Object.values(recordsByPage).flat().length,
-        pages: Object.keys(recordsByPage).length,
-      },
-    };
+function tree(paths) {
+  return {
+    tree: paths.map((itemPath) => ({
+      path: itemPath,
+      type: "blob",
+    })),
   };
 }
 
-function createGitHubFetch() {
+function content(text) {
+  return {
+    content: Buffer.from(text, "utf8").toString("base64"),
+    encoding: "base64",
+  };
+}
+
+function createGithubFetch(routes) {
   return async (url) => {
-    if (url.endsWith("/contents/skills")) {
-      return [
-        {
-          name: "multi-wordcheck",
-          path: "skills/multi-wordcheck",
-          type: "dir",
-          html_url:
-            "https://github.com/redfox-data/redfox-community/tree/main/skills/multi-wordcheck",
-        },
-      ];
-    }
-
-    if (url.endsWith("/contents/skills/multi-wordcheck/SKILL.md")) {
-      return {
-        content: Buffer.from(
-          "---\nname: multi-wordcheck\ndescription: 多平台检测\n---\n",
-        ).toString("base64"),
-      };
-    }
-
+    const pathname = new URL(url).pathname;
+    const query = new URL(url).search;
+    const key = `${pathname}${query}`;
+    if (routes[key]) return routes[key];
+    if (routes[pathname]) return routes[pathname];
     throw new Error(`Unexpected GitHub URL: ${url}`);
   };
 }
 
-describe("update-data script helpers", () => {
-  it("normalizes RedFox skill codes and platform info", () => {
-    expect(normalizeSkillCode(" skills/douyin-search/ ")).toBe("douyin-search");
-    expect(
-      parsePlatformInfo(
-        '[{"name":"github","repo":"https://example.com"},{"name":"skills-cli","repo":"redfox-data/redfox-community"}]',
-      ),
-    ).toEqual([
-      {
-        name: "github",
-        value: "https://example.com",
-        url: "https://example.com",
-      },
-      {
-        name: "skills-cli",
-        value: "redfox-data/redfox-community",
-      },
-    ]);
-    expect(parsePlatformInfo("{broken")).toEqual([]);
+const curatedSkills = [
+  {
+    repo: "owner/content-skill",
+    category: "内容创作",
+    tags: ["写作", "中文"],
+    audiences: ["media", "writing"],
+    summary: {
+      zh: "面向自媒体创作者的中文写作 Skill。",
+      en: "Chinese writing skill for creators.",
+    },
+    featured: true,
+  },
+  {
+    repo: "owner/research-skill",
+    category: "数据研究",
+    tags: ["research"],
+    audiences: ["data"],
+    summary: {
+      zh: "用于资料研究和结构化报告的 Skill。",
+    },
+  },
+];
+
+describe("GitHub skill data helpers", () => {
+  it("normalizes repo names and accepts strict SKILL.md paths", () => {
+    expect(normalizeRepoName(" https://github.com/Owner/Repo ")).toBe(
+      "Owner/Repo",
+    );
+    expect(isAcceptedSkillPath("SKILL.md")).toBe(true);
+    expect(isAcceptedSkillPath("skills/writing/SKILL.md")).toBe(true);
+    expect(isAcceptedSkillPath("packs/skills/writing/SKILL.md")).toBe(true);
+    expect(isAcceptedSkillPath("README.md")).toBe(false);
   });
 
-  it("maps display badges and calculates deterministic heat score", () => {
-    expect(displayStatusToBadge(1)).toEqual({ zh: "热门", en: "Hot" });
-    expect(displayStatusToBadge(2)).toEqual({ zh: "推荐", en: "Recommended" });
-    expect(displayStatusToBadge(3)).toEqual({ zh: "上新", en: "New" });
+  it("scores Chinese-first descriptions higher than English-only text", () => {
     expect(
-      calculateHeatScore(
-        {
-          downloadCount: 300,
-          viewCount: 400,
-          displayStatus: 1,
-          updatedAt: "2026-06-16T02:08:20.000Z",
-        },
-        "2026-06-16T10:00:00.000Z",
+      calculateChineseScore(
+        "中文 Skill 仓库，提供写作、研究和内容生产能力。",
+        "English only skill repository.",
       ),
-    ).toBeGreaterThan(600);
+    ).toBeGreaterThan(calculateChineseScore("English only skill repository."));
   });
 
-  it("builds RedFox snapshots from paginated API and GitHub metadata", async () => {
-    const snapshot = await buildSnapshot({
-      redfoxFetch: createRedfoxFetch({
-        1: [redfoxSkill({ downloadCount: 300 })],
-        2: [
-          redfoxSkill({
-            skillNo: "abc",
-            skillCode: "douyin-search",
-            skillName: "抖音作品查询",
-            nameEn: "Douyin Search",
-            downloadCount: 200,
-            viewCount: 100,
-            displayStatus: 0,
-            platformInfo: "[]",
-          }),
-        ],
+  it("builds a GitHub stars snapshot from curated repositories", async () => {
+    const githubFetch = createGithubFetch({
+      "/repos/owner/content-skill": repoMeta("owner/content-skill", {
+        stars: 900,
+        forks: 88,
+        topics: ["skills", "content"],
       }),
-      githubFetch: createGitHubFetch(),
+      "/repos/owner/content-skill/git/trees/main?recursive=1": tree([
+        "skills/writing/SKILL.md",
+        "README.md",
+      ]),
+      "/repos/owner/content-skill/readme": content(
+        "# 中文写作 Skill\n\n适合公众号、小红书和长文创作。",
+      ),
+      "/repos/owner/content-skill/contents/skills%2Fwriting%2FSKILL.md":
+        content("---\nname: 中文写作\n---\n帮助创作者写作。"),
+      "/repos/owner/research-skill": repoMeta("owner/research-skill", {
+        stars: 300,
+        forks: 18,
+      }),
+      "/repos/owner/research-skill/git/trees/main?recursive=1": tree([
+        "skills/research/SKILL.md",
+      ]),
+      "/repos/owner/research-skill/readme": content("# Research Skill"),
+      "/repos/owner/research-skill/contents/skills%2Fresearch%2FSKILL.md":
+        content("资料研究 Skill"),
     });
 
-    expect(snapshot.schemaVersion).toBe(2);
-    expect(snapshot.skills).toHaveLength(2);
+    const snapshot = await buildSnapshot({
+      skillInputs: curatedSkills,
+      githubFetch,
+      generatedAt: "2026-06-16T00:00:00.000Z",
+    });
+
+    expect(snapshot).toMatchObject({
+      schemaVersion: 3,
+      source: "github-skills",
+    });
+    expect(snapshot.skills.map((skill) => skill.repo)).toEqual([
+      "owner/content-skill",
+      "owner/research-skill",
+    ]);
     expect(snapshot.skills[0]).toMatchObject({
-      skillCode: "multi-wordcheck",
-      displayBadge: { zh: "热门", en: "Hot" },
-      categoryCode: "efficiency_tools",
-      githubUrl:
-        "https://github.com/redfox-data/redfox-community/tree/main/skills/multi-wordcheck",
-      fetchStatus: "ok",
+      repo: "owner/content-skill",
+      stars: 900,
+      forks: 88,
+      skillMdPaths: ["skills/writing/SKILL.md"],
       rank: 1,
       rankByCategory: 1,
+      fetchStatus: "ok",
+      featured: true,
     });
-    expect(snapshot.skills[0].heatScore).toBeGreaterThan(
-      snapshot.skills[1].heatScore,
-    );
   });
 
-  it("reuses previous v2 snapshot when RedFox API fails", async () => {
+  it("discovers candidates while excluding MCP and agent framework projects", async () => {
+    const githubFetch = createGithubFetch({
+      "/search/repositories?q=SKILL.md+skills&sort=stars&order=desc&per_page=3":
+        {
+          items: [
+            repoMeta("owner/candidate-skill", {
+              stars: 50,
+              description: "A reusable SKILL.md library",
+            }),
+            repoMeta("modelcontextprotocol/servers", {
+              stars: 999,
+              description: "MCP server collection",
+              topics: ["mcp", "server"],
+            }),
+            repoMeta("owner/no-skill", {
+              stars: 20,
+              description: "No skill files here",
+            }),
+          ],
+        },
+      "/repos/owner/candidate-skill/git/trees/main?recursive=1": tree([
+        "skills/demo/SKILL.md",
+      ]),
+      "/repos/modelcontextprotocol/servers/git/trees/main?recursive=1": tree([
+        "README.md",
+      ]),
+      "/repos/owner/no-skill/git/trees/main?recursive=1": tree(["README.md"]),
+    });
+
+    const candidates = await buildCandidates({
+      queries: [
+        {
+          id: "skill-md",
+          query: "SKILL.md skills",
+          limit: 3,
+          reason: { zh: "包含 SKILL.md 关键词", en: "Mentions SKILL.md" },
+        },
+      ],
+      curatedRepos: new Set(["owner/content-skill"]),
+      githubFetch,
+      generatedAt: "2026-06-16T00:00:00.000Z",
+    });
+
+    expect(candidates.source).toBe("github-search");
+    expect(candidates.candidates.map((candidate) => candidate.repo)).toEqual([
+      "owner/candidate-skill",
+    ]);
+    expect(candidates.candidates[0]).toMatchObject({
+      matchedQuery: "skill-md",
+      alreadyCurated: false,
+      skillMdPaths: ["skills/demo/SKILL.md"],
+    });
+  });
+
+  it("falls back to the previous v3 snapshot when GitHub refresh fails", async () => {
     const previousSnapshot = {
-      schemaVersion: 2,
+      schemaVersion: 3,
       generatedAt: "2026-06-01T00:00:00.000Z",
-      source: "redfox-api+github",
+      source: "github-skills",
       categories: [],
-      sourceRepo: {
-        fullName: "redfox-data/redfox-community",
-        htmlUrl: "https://github.com/redfox-data/redfox-community",
-      },
       skills: [
         {
-          ...redfoxSkill(),
-          skillCode: "multi-wordcheck",
-          name: { zh: "多平台违禁词检测", en: "Word Check" },
-          description: { zh: "", en: "" },
-          introduce: { zh: "", en: "" },
-          readme: { zh: "", en: "" },
-          categoryCode: "efficiency_tools",
-          categoryName: { zh: "效率工具", en: "Efficiency Tools" },
-          categories: [],
+          repo: "owner/content-skill",
+          name: "content-skill",
+          descriptionZh: "旧快照",
+          descriptionEn: "",
+          readmeSnippetZh: "",
+          readmeSnippetEn: "",
+          categoryCode: "content",
+          categoryName: { zh: "内容创作", en: "Content Creation" },
           tags: [],
-          accessMethods: [],
-          redfoxUrl: "https://redfox.hk/skills/no/wn2Hrw42",
-          githubUrl: "",
-          githubPath: "",
-          heatScore: 10,
-          rank: 1,
-          rankByCategory: 1,
+          audiences: ["media"],
+          useCases: [],
+          skillMdPaths: ["skills/writing/SKILL.md"],
+          stars: 10,
+          forks: 1,
+          openIssues: 0,
+          watchers: 10,
+          language: "",
+          license: "",
+          topics: [],
+          homepage: "",
+          htmlUrl: "https://github.com/owner/content-skill",
           createdAt: "",
           updatedAt: "",
+          pushedAt: "",
           lastFetchedAt: "",
           fetchStatus: "ok",
-          downloadGrowth7d: null,
-          downloadGrowth30d: null,
+          rank: 1,
+          rankByCategory: 1,
+          growth7d: null,
+          growth30d: null,
           rankDelta7d: null,
           rankDelta30d: null,
           trendStatus: "collecting",
-          audiences: [],
-          useCases: [],
+          chineseScore: 50,
+          skillSignalScore: 100,
+          featured: false,
         },
       ],
     };
 
     const snapshot = await buildSnapshot({
-      redfoxFetch: async () => {
-        throw new Error("RedFox unavailable");
+      skillInputs: curatedSkills,
+      githubFetch: async () => {
+        throw new Error("rate limited");
       },
-      githubFetch: createGitHubFetch(),
       previousSnapshot,
+      generatedAt: "2026-06-16T00:00:00.000Z",
     });
 
-    expect(snapshot.source).toBe("redfox-api-fallback");
+    expect(snapshot.source).toBe("github-skills-fallback");
     expect(snapshot.skills[0]).toMatchObject({
-      skillCode: "multi-wordcheck",
+      repo: "owner/content-skill",
       fetchStatus: "fallback",
     });
   });
 
-  it("builds an empty candidate payload for compatibility", () => {
-    expect(buildCandidates("2026-06-01T00:00:00.000Z")).toEqual({
-      generatedAt: "2026-06-01T00:00:00.000Z",
-      source: "redfox-skills",
-      candidates: [],
-    });
-  });
-
-  it("seeds, merges, trims, and calculates usage growth history", () => {
+  it("seeds, merges, trims, and calculates star growth history", () => {
     const snapshot = {
-      schemaVersion: 2,
+      schemaVersion: 3,
       generatedAt: "2026-06-15T12:00:00.000Z",
       skills: [
         {
-          skillCode: "multi-wordcheck",
-          downloadCount: 300,
-          viewCount: 400,
-          heatScore: 900,
+          repo: "owner/content-skill",
+          stars: 300,
+          forks: 40,
           rank: 2,
           rankByCategory: 1,
           fetchStatus: "ok",
@@ -273,28 +299,26 @@ describe("update-data script helpers", () => {
     };
     const seeded = createHistoryFromSnapshot(snapshot);
 
-    expect(seeded.skills[0].samples[0]).toMatchObject({
+    expect(seeded.repositories[0].samples[0]).toMatchObject({
       date: "2026-06-15",
-      downloadCount: 300,
-      viewCount: 400,
-      heatScore: 900,
+      stars: 300,
+      forks: 40,
       rank: 2,
       rankByCategory: 1,
     });
 
     const history = {
-      schemaVersion: 2,
+      schemaVersion: 3,
       generatedAt: "2026-06-08T00:00:00.000Z",
       retentionDays: 180,
-      skills: [
+      repositories: [
         {
-          skillCode: "multi-wordcheck",
+          repo: "owner/content-skill",
           samples: [
             {
               date: "2026-06-08",
-              downloadCount: 210,
-              viewCount: 300,
-              heatScore: 810,
+              stars: 210,
+              forks: 30,
               rank: 5,
               rankByCategory: 1,
             },
@@ -306,28 +330,27 @@ describe("update-data script helpers", () => {
     const merged = mergeSnapshotIntoHistory(history, trended);
 
     expect(trended.skills[0]).toMatchObject({
-      downloadGrowth7d: 90,
+      growth7d: 90,
       rankDelta7d: 3,
       trendStatus: "collecting",
     });
-    expect(merged.skills[0].samples).toHaveLength(2);
+    expect(merged.repositories[0].samples).toHaveLength(2);
   });
 
-  it("merges committed and deployed history payloads", () => {
+  it("merges committed and deployed GitHub history payloads", () => {
     const merged = mergeHistoryPayloads([
       {
-        schemaVersion: 2,
+        schemaVersion: 3,
         generatedAt: "2026-06-01T00:00:00.000Z",
         retentionDays: 180,
-        skills: [
+        repositories: [
           {
-            skillCode: "a",
+            repo: "owner/a",
             samples: [
               {
                 date: "2026-06-01",
-                downloadCount: 1,
-                viewCount: 1,
-                heatScore: 1,
+                stars: 1,
+                forks: 1,
                 rank: 2,
                 rankByCategory: 1,
               },
@@ -336,18 +359,17 @@ describe("update-data script helpers", () => {
         ],
       },
       {
-        schemaVersion: 2,
+        schemaVersion: 3,
         generatedAt: "2026-06-02T00:00:00.000Z",
         retentionDays: 180,
-        skills: [
+        repositories: [
           {
-            skillCode: "a",
+            repo: "owner/a",
             samples: [
               {
                 date: "2026-06-02",
-                downloadCount: 2,
-                viewCount: 2,
-                heatScore: 2,
+                stars: 2,
+                forks: 1,
                 rank: 1,
                 rankByCategory: 1,
               },
@@ -357,7 +379,64 @@ describe("update-data script helpers", () => {
       },
     ]);
 
-    expect(merged.skills[0].samples).toHaveLength(2);
+    expect(merged.repositories[0].samples).toHaveLength(2);
     expect(merged.generatedAt).toBe("2026-06-02T00:00:00.000Z");
+  });
+
+  it("reuses previous candidates when GitHub search is temporarily unavailable", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "skills-data-"));
+    const skillsPath = path.join(tempDir, "skills.yml");
+    const discoveryPath = path.join(tempDir, "discovery-queries.yml");
+    const snapshotPath = path.join(tempDir, "snapshot.json");
+    const candidatesPath = path.join(tempDir, "candidates.json");
+    const historyPath = path.join(tempDir, "history.json");
+
+    await fs.writeFile(skillsPath, "skills: []\n");
+    await fs.writeFile(
+      discoveryPath,
+      "queries:\n  - id: skill-md\n    query: SKILL.md skills\n    limit: 1\n",
+    );
+    await fs.writeFile(
+      candidatesPath,
+      JSON.stringify({
+        generatedAt: "2026-06-01T00:00:00.000Z",
+        source: "github-search",
+        candidates: [
+          {
+            repo: "owner/candidate-skill",
+            name: "candidate-skill",
+            description: "candidate",
+            stars: 1,
+            forks: 0,
+            htmlUrl: "https://github.com/owner/candidate-skill",
+            language: "",
+            topics: [],
+            skillMdPaths: ["skills/demo/SKILL.md"],
+            matchedQuery: "skill-md",
+            reason: { zh: "发现", en: "discovered" },
+            alreadyCurated: false,
+            suggestedCategory: "content",
+            suggestedAudiences: ["beginner"],
+            confidence: 70,
+          },
+        ],
+      }),
+    );
+
+    const result = await updateData({
+      skillsPath,
+      discoveryPath,
+      snapshotPath,
+      candidatesPath,
+      historyPath,
+      githubFetch: async () => {
+        throw new Error("rate limited");
+      },
+    });
+
+    expect(result.candidates).toMatchObject({
+      source: "github-search-fallback",
+      candidates: [{ repo: "owner/candidate-skill" }],
+    });
   });
 });

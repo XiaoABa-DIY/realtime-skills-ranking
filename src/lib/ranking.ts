@@ -1,8 +1,8 @@
 import type {
   AudienceKey,
+  GithubSkillSnapshot,
   Locale,
   LocalizedText,
-  RedfoxSkillSnapshot,
   SortKey,
   SpotlightKey,
 } from "../types";
@@ -21,7 +21,7 @@ export const defaultSkillFilters: SkillFilters = {
   query: "",
   category: "",
   tag: "",
-  sortKey: "heat",
+  sortKey: "stars",
   audience: "",
   spotlight: "",
   favoritesOnly: false,
@@ -29,19 +29,18 @@ export const defaultSkillFilters: SkillFilters = {
 
 export const audienceKeys: AudienceKey[] = [
   "media",
-  "wechat",
-  "xiaohongshu",
-  "douyin",
+  "developer",
+  "writing",
+  "design",
   "data",
   "productivity",
-  "developer",
+  "beginner",
 ];
 
 export const spotlightKeys: SpotlightKey[] = [
-  "hot",
-  "recommended",
-  "new",
-  "topUses",
+  "topStars",
+  "featured",
+  "chineseFriendly",
   "recentlyUpdated",
   "growth7d",
   "growth30d",
@@ -66,190 +65,179 @@ export const audienceProfiles: Record<AudienceKey, AudienceProfile> = {
     key: "media",
     label: { zh: "自媒体", en: "Media creators" },
     description: {
-      zh: "选题、改写、素材处理和跨平台内容生产。",
-      en: "Topics, rewriting, asset work, and cross-platform publishing.",
+      zh: "选题、改写、账号运营和跨平台内容生产。",
+      en: "Topics, rewriting, account operations, and cross-platform content.",
     },
-    matchers: ["自媒体", "创作", "内容", "文案", "rewrite", "creator"],
-  },
-  wechat: {
-    key: "wechat",
-    label: { zh: "公众号运营", en: "WeChat operators" },
-    description: {
-      zh: "公众号选题、爆文分析、订阅监控和推文生产。",
-      en: "WeChat article ideas, analysis, monitoring, and publishing.",
-    },
-    matchers: ["公众号", "gzh", "wechat"],
-  },
-  xiaohongshu: {
-    key: "xiaohongshu",
-    label: { zh: "小红书创作者", en: "Xiaohongshu creators" },
-    description: {
-      zh: "笔记选题、账号诊断、文案改写和趋势跟踪。",
-      en: "RED notes, account diagnosis, copy rewriting, and trend tracking.",
-    },
-    matchers: ["小红书", "xiaohongshu", "xhs", "red"],
-  },
-  douyin: {
-    key: "douyin",
-    label: { zh: "抖音运营", en: "Douyin operators" },
-    description: {
-      zh: "抖音搜索、榜单、账号分析和视频内容复盘。",
-      en: "Douyin search, rankings, account analysis, and video review.",
-    },
-    matchers: ["抖音", "douyin", "tiktok"],
-  },
-  data: {
-    key: "data",
-    label: { zh: "数据分析", en: "Data analysts" },
-    description: {
-      zh: "榜单、搜索、采集、趋势和账号数据洞察。",
-      en: "Rankings, search, crawling, trends, and account insights.",
-    },
-    matchers: ["数据", "榜单", "查询", "分析", "搜索", "ranking", "search"],
-  },
-  productivity: {
-    key: "productivity",
-    label: { zh: "效率工具", en: "Productivity" },
-    description: {
-      zh: "提取、检测、下载、改写和批处理工具。",
-      en: "Extraction, checking, downloading, rewriting, and batch work.",
-    },
-    matchers: ["效率", "工具", "检测", "提取", "下载", "pdf", "tool"],
+    matchers: ["自媒体", "公众号", "小红书", "抖音", "creator", "content"],
   },
   developer: {
     key: "developer",
-    label: { zh: "Agent/开发者", en: "Agent builders" },
+    label: { zh: "程序员", en: "Developers" },
     description: {
-      zh: "适合用 SKILL.md、CLI、API Key 和开源源码扩展 Agent。",
-      en: "SKILL.md, CLI, API-key, and open-source agent extension users.",
+      zh: "面向编码、工程规范、代码审查和开发工作流的 Skill。",
+      en: "Skills for coding, engineering rules, reviews, and dev workflows.",
     },
-    matchers: ["skill", "api", "github", "cli", "agent", "开发"],
+    matchers: ["代码", "编程", "开发", "codex", "coding", "developer", "cli"],
+  },
+  writing: {
+    key: "writing",
+    label: { zh: "写作提示词", en: "Writing prompts" },
+    description: {
+      zh: "文章、报告、提示词、改写和编辑工作流。",
+      en: "Articles, reports, prompts, rewriting, and editing workflows.",
+    },
+    matchers: ["写作", "提示词", "prompt", "rewrite", "article", "report"],
+  },
+  design: {
+    key: "design",
+    label: { zh: "设计素材", en: "Design assets" },
+    description: {
+      zh: "视觉设计、图片、多媒体和品牌素材生产。",
+      en: "Visual design, media, brand assets, and creative production.",
+    },
+    matchers: ["设计", "视觉", "图片", "media", "image", "design"],
+  },
+  data: {
+    key: "data",
+    label: { zh: "数据分析", en: "Data analysis" },
+    description: {
+      zh: "资料研究、数据提取、搜索、榜单和结构化报告。",
+      en: "Research, extraction, search, rankings, and structured reports.",
+    },
+    matchers: ["数据", "研究", "检索", "搜索", "research", "data", "rag"],
+  },
+  productivity: {
+    key: "productivity",
+    label: { zh: "效率办公", en: "Productivity" },
+    description: {
+      zh: "文档处理、批量操作、格式转换和办公提效。",
+      en: "Documents, batch work, conversion, and office productivity.",
+    },
+    matchers: ["效率", "办公", "文档", "pdf", "tool", "productivity"],
+  },
+  beginner: {
+    key: "beginner",
+    label: { zh: "入门友好", en: "Beginner friendly" },
+    description: {
+      zh: "中文说明清楚、安装路径明确、适合第一次尝试 Skill。",
+      en: "Clear docs and setup paths for first-time skill users.",
+    },
+    matchers: ["入门", "教程", "中文", "guide", "tutorial", "learn"],
   },
 };
 
 export const spotlightViews: Record<SpotlightKey, SpotlightView> = {
-  hot: {
-    key: "hot",
-    label: { zh: "热门", en: "Hot" },
+  topStars: {
+    key: "topStars",
+    label: { zh: "高星榜", en: "Top stars" },
     description: {
-      zh: "RedFox 标记为热门或综合热度靠前的 skills。",
-      en: "Skills marked hot by RedFox or ranking high by heat score.",
+      zh: "按 GitHub Stars 展示开源热度最高的 Skills。",
+      en: "Open-source skills ranked by GitHub stars.",
     },
   },
-  recommended: {
-    key: "recommended",
-    label: { zh: "推荐", en: "Recommended" },
+  featured: {
+    key: "featured",
+    label: { zh: "人工精选", en: "Featured" },
     description: {
-      zh: "RedFox 推荐技能，适合直接试用。",
-      en: "RedFox recommended skills worth trying first.",
+      zh: "人工标记的中文友好或特别值得尝试的 Skill。",
+      en: "Manually highlighted Chinese-friendly or especially useful skills.",
     },
   },
-  new: {
-    key: "new",
-    label: { zh: "上新", en: "New" },
+  chineseFriendly: {
+    key: "chineseFriendly",
+    label: { zh: "中文友好", en: "Chinese friendly" },
     description: {
-      zh: "新发布或最近更新的 skills。",
-      en: "Newly published or recently updated skills.",
-    },
-  },
-  topUses: {
-    key: "topUses",
-    label: { zh: "使用量榜", en: "Most used" },
-    description: {
-      zh: "按 RedFox 页面展示的使用量排序。",
-      en: "Sorted by the usage count displayed on RedFox.",
+      zh: "中文 README、中文 SKILL.md 或中文摘要更充分的项目。",
+      en: "Projects with stronger Chinese README, SKILL.md, or summaries.",
     },
   },
   recentlyUpdated: {
     key: "recentlyUpdated",
     label: { zh: "最近更新", en: "Recently updated" },
     description: {
-      zh: "优先看最近维护的 skills。",
-      en: "Skills with the freshest update time.",
+      zh: "优先查看最近仍在维护的 Skill 项目。",
+      en: "Skills with fresher GitHub activity.",
     },
   },
   growth7d: {
     key: "growth7d",
-    label: { zh: "7 天使用增长", en: "7-day usage growth" },
+    label: { zh: "7 天涨星榜", en: "7-day star growth" },
     description: {
-      zh: "历史足够时按 7 天新增使用量排序。",
-      en: "Ranks by 7-day usage growth once history is available.",
+      zh: "历史足够后按 7 天新增 Stars 排序。",
+      en: "Ranks by 7-day star growth once history is available.",
     },
   },
   growth30d: {
     key: "growth30d",
-    label: { zh: "30 天使用增长", en: "30-day usage growth" },
+    label: { zh: "30 天涨星榜", en: "30-day star growth" },
     description: {
-      zh: "历史足够时按 30 天新增使用量排序。",
-      en: "Ranks by 30-day usage growth once history is available.",
+      zh: "历史足够后按 30 天新增 Stars 排序。",
+      en: "Ranks by 30-day star growth once history is available.",
     },
   },
   rankRisers: {
     key: "rankRisers",
     label: { zh: "排名上升最快", en: "Fastest risers" },
     description: {
-      zh: "按 7 天排名变化排序，历史不足时回退综合热度。",
-      en: "Sorts by 7-day rank movement, falling back to heat score.",
+      zh: "按 7 天排名变化排序，历史不足时回退到 Stars。",
+      en: "Sorts by 7-day rank movement, falling back to stars.",
     },
   },
 };
 
 export function uniqueSorted(values: string[]) {
-  return Array.from(new Set(values.filter(Boolean))).sort((a, b) =>
-    a.localeCompare(b, "zh-CN"),
-  );
+  return Array.from(new Set(values.filter(Boolean))).sort();
 }
 
-export function getFilterOptions(skills: RedfoxSkillSnapshot[]) {
+export function getFilterOptions(skills: GithubSkillSnapshot[]) {
   return {
     categories: uniqueSorted(skills.map((skill) => skill.categoryCode)),
     tags: uniqueSorted(skills.flatMap((skill) => skill.tags)),
   };
 }
 
-function skillText(skill: RedfoxSkillSnapshot, locale: Locale) {
+function skillText(skill: GithubSkillSnapshot, locale: Locale) {
   return [
-    skill.skillCode,
-    skill.skillNo,
-    skill.name.zh,
-    skill.name.en,
-    skill.name[locale],
+    skill.repo,
+    skill.name,
+    skill.descriptionZh,
+    skill.descriptionEn,
+    locale === "zh" ? skill.readmeSnippetZh : skill.readmeSnippetEn,
+    skill.readmeSnippetZh,
+    skill.readmeSnippetEn,
     skill.categoryCode,
     skill.categoryName.zh,
     skill.categoryName.en,
-    skill.description.zh,
-    skill.description.en,
-    skill.introduce.zh,
-    skill.introduce.en,
-    skill.displayBadge?.zh ?? "",
-    skill.displayBadge?.en ?? "",
-    ...(skill.audiences ?? []),
+    skill.license,
+    skill.language,
+    ...skill.skillMdPaths,
+    ...skill.audiences,
+    ...skill.tags,
+    ...skill.topics,
     ...(skill.useCases ?? []).flatMap((item) => [item.zh, item.en]),
-    ...skill.tags,
-    ...skill.accessMethods.flatMap((method) => [method.name, method.value]),
   ]
     .join(" ")
     .toLowerCase();
 }
 
-function matcherText(skill: RedfoxSkillSnapshot) {
+function matcherText(skill: GithubSkillSnapshot) {
   return [
-    skill.skillCode,
-    skill.name.zh,
-    skill.name.en,
+    skill.repo,
+    skill.name,
+    skill.descriptionZh,
+    skill.descriptionEn,
+    skill.readmeSnippetZh,
     skill.categoryCode,
     skill.categoryName.zh,
-    skill.categoryName.en,
-    skill.description.zh,
-    skill.introduce.zh,
     ...skill.tags,
-    ...skill.accessMethods.map((method) => method.name),
+    ...skill.topics,
+    ...skill.skillMdPaths,
   ]
     .join(" ")
     .toLowerCase();
 }
 
-export function inferAudiences(skill: RedfoxSkillSnapshot): AudienceKey[] {
+export function inferAudiences(skill: GithubSkillSnapshot): AudienceKey[] {
   if (skill.audiences?.length) return skill.audiences;
 
   const text = matcherText(skill);
@@ -259,29 +247,28 @@ export function inferAudiences(skill: RedfoxSkillSnapshot): AudienceKey[] {
     ),
   );
 
-  return inferred.length ? inferred : ["media"];
+  return inferred.length ? inferred : ["beginner"];
 }
 
 export function matchesAudience(
-  skill: RedfoxSkillSnapshot,
+  skill: GithubSkillSnapshot,
   audience: AudienceKey,
 ) {
   return inferAudiences(skill).includes(audience);
 }
 
-function matchesSpotlight(skill: RedfoxSkillSnapshot, spotlight: SpotlightKey) {
+function matchesSpotlight(skill: GithubSkillSnapshot, spotlight: SpotlightKey) {
   if (
     spotlight === "growth7d" ||
     spotlight === "growth30d" ||
     spotlight === "rankRisers" ||
-    spotlight === "topUses" ||
+    spotlight === "topStars" ||
     spotlight === "recentlyUpdated"
   ) {
     return true;
   }
-  if (spotlight === "hot") return skill.displayStatus === 1;
-  if (spotlight === "recommended") return skill.displayStatus === 2;
-  return skill.displayStatus === 3;
+  if (spotlight === "featured") return skill.featured;
+  return skill.chineseScore >= 45;
 }
 
 function nullableNumber(value: number | null | undefined) {
@@ -300,51 +287,50 @@ function compareNullableDesc(
   return bNumber - aNumber;
 }
 
-function compareByUpdated(a: RedfoxSkillSnapshot, b: RedfoxSkillSnapshot) {
-  return Date.parse(b.updatedAt || "0") - Date.parse(a.updatedAt || "0");
-}
-
-function compareByCreated(a: RedfoxSkillSnapshot, b: RedfoxSkillSnapshot) {
-  return Date.parse(b.createdAt || "0") - Date.parse(a.createdAt || "0");
-}
-
-function compareDefault(a: RedfoxSkillSnapshot, b: RedfoxSkillSnapshot) {
+function compareByUpdated(a: GithubSkillSnapshot, b: GithubSkillSnapshot) {
   return (
-    b.heatScore - a.heatScore ||
-    b.downloadCount - a.downloadCount ||
+    Date.parse(b.pushedAt || b.updatedAt || "0") -
+    Date.parse(a.pushedAt || a.updatedAt || "0")
+  );
+}
+
+function compareDefault(a: GithubSkillSnapshot, b: GithubSkillSnapshot) {
+  return (
+    b.stars - a.stars ||
+    b.chineseScore - a.chineseScore ||
     compareByUpdated(a, b) ||
-    a.skillCode.localeCompare(b.skillCode)
+    a.repo.localeCompare(b.repo)
   );
 }
 
 function compareTrendSpotlight(
-  a: RedfoxSkillSnapshot,
-  b: RedfoxSkillSnapshot,
+  a: GithubSkillSnapshot,
+  b: GithubSkillSnapshot,
   spotlight: SpotlightKey,
 ) {
   if (spotlight === "growth7d") {
     return (
-      compareNullableDesc(a.downloadGrowth7d, b.downloadGrowth7d) ||
+      compareNullableDesc(a.growth7d, b.growth7d) ||
       compareNullableDesc(a.rankDelta7d, b.rankDelta7d)
     );
   }
   if (spotlight === "growth30d") {
     return (
-      compareNullableDesc(a.downloadGrowth30d, b.downloadGrowth30d) ||
+      compareNullableDesc(a.growth30d, b.growth30d) ||
       compareNullableDesc(a.rankDelta30d, b.rankDelta30d)
     );
   }
   if (spotlight === "rankRisers") {
     return (
       compareNullableDesc(a.rankDelta7d, b.rankDelta7d) ||
-      compareNullableDesc(a.downloadGrowth7d, b.downloadGrowth7d)
+      compareNullableDesc(a.growth7d, b.growth7d)
     );
   }
   return 0;
 }
 
 export function filterAndSortSkills(
-  skills: RedfoxSkillSnapshot[],
+  skills: GithubSkillSnapshot[],
   filters: SkillFilters,
   locale: Locale,
   favoriteSkills: ReadonlySet<string> = new Set(),
@@ -355,7 +341,7 @@ export function filterAndSortSkills(
     .filter((skill) => {
       if (
         filters.favoritesOnly &&
-        !favoriteSkills.has(skill.skillCode.toLowerCase())
+        !favoriteSkills.has(skill.repo.toLowerCase())
       ) {
         return false;
       }
@@ -376,23 +362,17 @@ export function filterAndSortSkills(
       if (filters.spotlight) {
         const trend = compareTrendSpotlight(a, b, filters.spotlight);
         if (trend !== 0) return trend;
-        if (filters.spotlight === "topUses") {
-          return b.downloadCount - a.downloadCount || compareDefault(a, b);
-        }
         if (filters.spotlight === "recentlyUpdated") {
           return compareByUpdated(a, b) || compareDefault(a, b);
         }
-        if (filters.spotlight === "new") {
-          return compareByCreated(a, b) || compareByUpdated(a, b);
+        if (filters.spotlight === "chineseFriendly") {
+          return b.chineseScore - a.chineseScore || compareDefault(a, b);
         }
         return compareDefault(a, b);
       }
 
-      if (filters.sortKey === "uses") {
-        return b.downloadCount - a.downloadCount || compareDefault(a, b);
-      }
-      if (filters.sortKey === "views") {
-        return b.viewCount - a.viewCount || compareDefault(a, b);
+      if (filters.sortKey === "forks") {
+        return b.forks - a.forks || compareDefault(a, b);
       }
       if (filters.sortKey === "updated") {
         return compareByUpdated(a, b) || compareDefault(a, b);
@@ -400,45 +380,46 @@ export function filterAndSortSkills(
       if (filters.sortKey === "name") {
         return skillName(a, locale).localeCompare(
           skillName(b, locale),
-          "zh-CN",
+          locale === "zh" ? "zh-CN" : "en-US",
         );
       }
       return compareDefault(a, b);
     });
 }
 
-export function skillName(skill: RedfoxSkillSnapshot, locale: Locale) {
-  return skill.name[locale] || skill.name.zh || skill.skillCode;
+export function skillName(skill: GithubSkillSnapshot, locale: Locale) {
+  void locale;
+  return skill.name || skill.repo.split("/").at(-1) || skill.repo;
 }
 
-export function skillSummary(skill: RedfoxSkillSnapshot, locale: Locale) {
+export function skillSummary(skill: GithubSkillSnapshot, locale: Locale) {
   return (
-    skill.introduce[locale] ||
-    skill.description[locale] ||
-    skill.description.zh ||
-    skill.skillCode
+    (locale === "zh" ? skill.descriptionZh : skill.descriptionEn) ||
+    skill.descriptionZh ||
+    skill.descriptionEn ||
+    skill.repo
   );
 }
 
 export function calculateStats(
-  skills: RedfoxSkillSnapshot[],
+  skills: GithubSkillSnapshot[],
   generatedAt: string,
 ) {
   return {
     totalSkills: skills.length,
-    totalDownloads: skills.reduce((sum, skill) => sum + skill.downloadCount, 0),
-    totalViews: skills.reduce((sum, skill) => sum + skill.viewCount, 0),
+    totalStars: skills.reduce((sum, skill) => sum + skill.stars, 0),
+    totalForks: skills.reduce((sum, skill) => sum + skill.forks, 0),
     totalCategories: new Set(skills.map((skill) => skill.categoryCode)).size,
-    apiKeySkills: skills.filter((skill) => skill.hasApiKey).length,
+    chineseFriendly: skills.filter((skill) => skill.chineseScore >= 45).length,
     generatedAt,
   };
 }
 
-export function enrichSkills(skills: RedfoxSkillSnapshot[]) {
+export function enrichSkills(skills: GithubSkillSnapshot[]) {
   const globalRanks = new Map(
     [...skills]
       .sort(compareDefault)
-      .map((skill, index) => [skill.skillCode, index + 1]),
+      .map((skill, index) => [skill.repo, index + 1]),
   );
   const categoryRanks = new Map<string, number>();
 
@@ -449,38 +430,38 @@ export function enrichSkills(skills: RedfoxSkillSnapshot[]) {
       .filter((skill) => skill.categoryCode === category)
       .sort(compareDefault)
       .forEach((skill, index) => {
-        categoryRanks.set(skill.skillCode, index + 1);
+        categoryRanks.set(skill.repo, index + 1);
       });
   }
 
   return skills.map((skill) => ({
     ...skill,
-    rank: globalRanks.get(skill.skillCode) ?? skill.rank,
-    rankByCategory: categoryRanks.get(skill.skillCode) ?? skill.rankByCategory,
+    rank: globalRanks.get(skill.repo) ?? skill.rank,
+    rankByCategory: categoryRanks.get(skill.repo) ?? skill.rankByCategory,
     audiences: inferAudiences(skill),
-    downloadGrowth7d: skill.downloadGrowth7d ?? null,
-    downloadGrowth30d: skill.downloadGrowth30d ?? null,
+    growth7d: skill.growth7d ?? null,
+    growth30d: skill.growth30d ?? null,
     rankDelta7d: skill.rankDelta7d ?? null,
     rankDelta30d: skill.rankDelta30d ?? null,
     trendStatus:
       skill.trendStatus ??
-      (skill.downloadGrowth7d === null ||
-      skill.downloadGrowth7d === undefined ||
-      skill.downloadGrowth30d === null ||
-      skill.downloadGrowth30d === undefined
+      (skill.growth7d === null ||
+      skill.growth7d === undefined ||
+      skill.growth30d === null ||
+      skill.growth30d === undefined
         ? "collecting"
         : "ready"),
   }));
 }
 
 export function getRelatedSkills(
-  target: RedfoxSkillSnapshot,
-  skills: RedfoxSkillSnapshot[],
+  target: GithubSkillSnapshot,
+  skills: GithubSkillSnapshot[],
   limit = 4,
 ) {
   const targetAudiences = inferAudiences(target);
   return skills
-    .filter((skill) => skill.skillCode !== target.skillCode)
+    .filter((skill) => skill.repo !== target.repo)
     .map((skill) => {
       const sharedTags = skill.tags.filter((tag) => target.tags.includes(tag));
       const sharedAudiences = inferAudiences(skill).filter((audience) =>
@@ -490,7 +471,8 @@ export function getRelatedSkills(
         (skill.categoryCode === target.categoryCode ? 6 : 0) +
         sharedTags.length * 3 +
         sharedAudiences.length * 2 +
-        Math.min(skill.heatScore / 250, 4);
+        Math.min(skill.stars / 250, 4) +
+        Math.min(skill.chineseScore / 40, 2);
       return { skill, score };
     })
     .filter((item) => item.score > 0)
@@ -499,45 +481,39 @@ export function getRelatedSkills(
     .map((item) => item.skill);
 }
 
-export function deriveUseCases(skill: RedfoxSkillSnapshot): LocalizedText[] {
+export function deriveUseCases(skill: GithubSkillSnapshot): LocalizedText[] {
   if (skill.useCases?.length) return skill.useCases;
   const audiences = inferAudiences(skill);
   const useCases: LocalizedText[] = [];
 
   if (audiences.includes("media")) {
     useCases.push({
-      zh: "适合自媒体创作者做选题、改写、检测和内容生产。",
-      en: "Good for creators doing topic work, rewriting, checks, and production.",
-    });
-  }
-  if (audiences.includes("wechat")) {
-    useCases.push({
-      zh: "适合公众号运营做爆文分析、订阅监控和推文生产。",
-      en: "Useful for WeChat article analysis, monitoring, and publishing.",
-    });
-  }
-  if (audiences.includes("xiaohongshu")) {
-    useCases.push({
-      zh: "适合小红书笔记、账号诊断和种草文案优化。",
-      en: "Useful for RED notes, account diagnosis, and copy optimization.",
-    });
-  }
-  if (audiences.includes("douyin")) {
-    useCases.push({
-      zh: "适合抖音热点、账号、视频作品和搜索数据分析。",
-      en: "Useful for Douyin trends, accounts, videos, and search analysis.",
-    });
-  }
-  if (audiences.includes("data")) {
-    useCases.push({
-      zh: "适合研究热榜、搜索结果、账号数据和内容趋势。",
-      en: "Useful for rankings, search results, account data, and content trends.",
+      zh: "适合自媒体创作者做选题、改写、素材整理和内容生产。",
+      en: "Good for creators doing topics, rewriting, asset work, and production.",
     });
   }
   if (audiences.includes("developer")) {
     useCases.push({
-      zh: "适合 Agent/CLI 用户直接复用 SKILL.md 与脚本能力。",
-      en: "Useful for Agent and CLI users reusing SKILL.md and scripts.",
+      zh: "适合程序员把 SKILL.md 作为可复用开发工作流沉淀。",
+      en: "Useful for developers turning SKILL.md into reusable workflows.",
+    });
+  }
+  if (audiences.includes("writing")) {
+    useCases.push({
+      zh: "适合提示词、文章、报告和结构化写作流程。",
+      en: "Useful for prompts, articles, reports, and structured writing.",
+    });
+  }
+  if (audiences.includes("data")) {
+    useCases.push({
+      zh: "适合研究资料、搜索结果、数据洞察和报告生成。",
+      en: "Useful for research materials, search results, data insights, and reports.",
+    });
+  }
+  if (audiences.includes("productivity")) {
+    useCases.push({
+      zh: "适合文档处理、批量操作和日常办公提效。",
+      en: "Useful for document handling, batch work, and office productivity.",
     });
   }
 

@@ -1,17 +1,17 @@
-export const favoritesStorageKey = "redfox-skills-ranking:favorites:v1";
+export const favoritesStorageKey = "github-skills-ranking:favorites:v1";
 
 type StorageLike = Pick<Storage, "getItem" | "setItem">;
 
-export function normalizeSkillId(skillCode: string) {
-  return skillCode.trim().toLowerCase();
+export function normalizeSkillId(repo: string) {
+  return repo.trim().toLowerCase();
 }
 
-export function uniqueFavoriteSkills(skillCodes: string[]) {
+export function uniqueFavoriteSkills(repos: string[]) {
   const seen = new Set<string>();
   const unique: string[] = [];
 
-  for (const skillCode of skillCodes) {
-    const trimmed = skillCode.trim();
+  for (const repo of repos) {
+    const trimmed = repo.trim();
     const normalized = normalizeSkillId(trimmed);
     if (!trimmed || seen.has(normalized)) continue;
     seen.add(normalized);
@@ -46,10 +46,10 @@ export function readFavoriteSkills(storage = getBrowserStorage()) {
 }
 
 export function writeFavoriteSkills(
-  skillCodes: string[],
+  repos: string[],
   storage: StorageLike | null = getBrowserStorage(),
 ) {
-  const unique = uniqueFavoriteSkills(skillCodes);
+  const unique = uniqueFavoriteSkills(repos);
   if (!storage) return unique;
 
   try {
@@ -61,15 +61,13 @@ export function writeFavoriteSkills(
   return unique;
 }
 
-export function toggleFavoriteSkill(skillCodes: string[], skillCode: string) {
-  const normalized = normalizeSkillId(skillCode);
-  const exists = skillCodes.some(
-    (item) => normalizeSkillId(item) === normalized,
-  );
+export function toggleFavoriteSkill(repos: string[], repo: string) {
+  const normalized = normalizeSkillId(repo);
+  const exists = repos.some((item) => normalizeSkillId(item) === normalized);
   if (exists) {
-    return skillCodes.filter((item) => normalizeSkillId(item) !== normalized);
+    return repos.filter((item) => normalizeSkillId(item) !== normalized);
   }
-  return uniqueFavoriteSkills([...skillCodes, skillCode]);
+  return uniqueFavoriteSkills([...repos, repo]);
 }
 
 function getBrowserStorage(): StorageLike | null {

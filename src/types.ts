@@ -1,18 +1,17 @@
 export type Locale = "zh" | "en";
-export type SortKey = "heat" | "uses" | "views" | "updated" | "name";
+export type SortKey = "stars" | "forks" | "updated" | "name";
 export type AudienceKey =
   | "media"
-  | "wechat"
-  | "xiaohongshu"
-  | "douyin"
+  | "developer"
+  | "writing"
+  | "design"
   | "data"
   | "productivity"
-  | "developer";
+  | "beginner";
 export type SpotlightKey =
-  | "hot"
-  | "recommended"
-  | "new"
-  | "topUses"
+  | "topStars"
+  | "featured"
+  | "chineseFriendly"
   | "recentlyUpdated"
   | "growth7d"
   | "growth30d"
@@ -25,98 +24,101 @@ export interface LocalizedText {
   en: string;
 }
 
-export interface RedfoxCategory {
-  id?: number;
+export interface SkillCategory {
   code: string;
   name: LocalizedText;
   sortOrder: number;
 }
 
-export interface AccessMethod {
+export interface GithubSkillSnapshot {
+  repo: string;
   name: string;
-  value: string;
-  url?: string;
-}
-
-export interface RedfoxSkillSnapshot {
-  skillNo: string;
-  skillCode: string;
-  name: LocalizedText;
-  description: LocalizedText;
-  introduce: LocalizedText;
-  readme: LocalizedText;
+  descriptionZh: string;
+  descriptionEn: string;
+  readmeSnippetZh: string;
+  readmeSnippetEn: string;
   categoryCode: string;
   categoryName: LocalizedText;
-  categories: RedfoxCategory[];
   tags: string[];
-  icon: string;
-  iconUrl: string;
-  price: number;
-  usageCount: number;
-  viewCount: number;
-  downloadCount: number;
-  displayStatus: number;
-  displayBadge: LocalizedText | null;
-  status: number;
-  hasApiKey: boolean;
-  platformInfoRaw: string;
-  accessMethods: AccessMethod[];
-  redfoxUrl: string;
-  githubUrl: string;
-  githubPath: string;
-  heatScore: number;
-  rank: number;
-  rankByCategory: number;
+  audiences: AudienceKey[];
+  useCases: LocalizedText[];
+  skillMdPaths: string[];
+  stars: number;
+  forks: number;
+  openIssues: number;
+  watchers: number;
+  language: string;
+  license: string;
+  topics: string[];
+  homepage: string;
+  htmlUrl: string;
   createdAt: string;
   updatedAt: string;
+  pushedAt: string;
   lastFetchedAt: string;
   fetchStatus: FetchStatus;
   errorMessage?: string;
-  downloadGrowth7d: number | null;
-  downloadGrowth30d: number | null;
+  rank: number;
+  rankByCategory: number;
+  growth7d: number | null;
+  growth30d: number | null;
   rankDelta7d: number | null;
   rankDelta30d: number | null;
   trendStatus: TrendStatus;
-  audiences: AudienceKey[];
-  useCases: LocalizedText[];
+  chineseScore: number;
+  skillSignalScore: number;
+  featured: boolean;
 }
 
 export interface SnapshotPayload {
-  schemaVersion: 2;
+  schemaVersion: 3;
   generatedAt: string;
   source: string;
-  categories: RedfoxCategory[];
-  skills: RedfoxSkillSnapshot[];
-  sourceRepo: {
-    fullName: string;
-    htmlUrl: string;
-  };
+  categories: SkillCategory[];
+  skills: GithubSkillSnapshot[];
   errorMessage?: string;
+}
+
+export interface CandidateSkill {
+  repo: string;
+  name: string;
+  description: string;
+  stars: number;
+  forks: number;
+  htmlUrl: string;
+  language: string;
+  topics: string[];
+  skillMdPaths: string[];
+  matchedQuery: string;
+  reason: LocalizedText;
+  alreadyCurated: boolean;
+  suggestedCategory: string;
+  suggestedAudiences: AudienceKey[];
+  confidence: number;
 }
 
 export interface CandidatesPayload {
   generatedAt: string;
   source: string;
-  candidates: never[];
+  candidates: CandidateSkill[];
 }
 
 export interface TrendSample {
   date: string;
-  downloadCount: number;
-  viewCount: number;
-  heatScore: number;
+  stars: number;
+  forks: number;
   rank: number;
   rankByCategory: number;
 }
 
-export interface SkillHistory {
-  skillCode: string;
+export interface RepoHistory {
+  repo: string;
   samples: TrendSample[];
 }
 
 export interface HistoryPayload {
-  schemaVersion: 2;
+  schemaVersion: 3;
   generatedAt: string;
   retentionDays: number;
-  skills: SkillHistory[];
+  repositories: RepoHistory[];
 }

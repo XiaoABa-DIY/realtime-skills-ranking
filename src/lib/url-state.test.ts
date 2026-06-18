@@ -3,25 +3,25 @@ import { buildSearchParams, parseUrlState } from "./url-state";
 import { defaultSkillFilters } from "./ranking";
 
 describe("url state helpers", () => {
-  it("parses supported RedFox skill filters from query strings", () => {
+  it("parses supported GitHub skill filters from query strings", () => {
     const state = parseUrlState(
-      "?lang=en&q=douyin&audience=douyin&spotlight=topUses&sort=views&favorites=1&skill=douyin-search",
+      "?lang=en&q=writing&audience=media&spotlight=featured&sort=forks&favorites=1&skill=owner%2Fcontent-skill",
     );
 
     expect(state.locale).toBe("en");
-    expect(state.selectedSkill).toBe("douyin-search");
+    expect(state.selectedSkill).toBe("owner/content-skill");
     expect(state.filters).toMatchObject({
-      query: "douyin",
-      audience: "douyin",
-      spotlight: "topUses",
-      sortKey: "views",
+      query: "writing",
+      audience: "media",
+      spotlight: "featured",
+      sortKey: "forks",
       favoritesOnly: true,
     });
   });
 
   it("keeps old repo detail links as a compatibility fallback", () => {
-    expect(parseUrlState("?repo=multi-wordcheck").selectedSkill).toBe(
-      "multi-wordcheck",
+    expect(parseUrlState("?repo=owner%2Fresearch-skill").selectedSkill).toBe(
+      "owner/research-skill",
     );
   });
 
@@ -31,19 +31,19 @@ describe("url state helpers", () => {
         {
           ...defaultSkillFilters,
           audience: "media",
-          tag: "内容改写",
+          tag: "写作",
           favoritesOnly: true,
         },
         "zh",
-        "multi-wordcheck",
+        "owner/content-skill",
       ),
     ).toBe(
-      "?tag=%E5%86%85%E5%AE%B9%E6%94%B9%E5%86%99&audience=media&favorites=1&skill=multi-wordcheck",
+      "?tag=%E5%86%99%E4%BD%9C&audience=media&favorites=1&skill=owner%2Fcontent-skill",
     );
   });
 
-  it("parses and serializes trend spotlight links", () => {
-    const state = parseUrlState("?spotlight=growth7d&sort=uses");
+  it("parses and serializes GitHub trend spotlight links", () => {
+    const state = parseUrlState("?spotlight=growth7d&sort=stars");
 
     expect(state.filters.spotlight).toBe("growth7d");
     expect(

@@ -8,168 +8,162 @@ import {
   getRelatedSkills,
   inferAudiences,
 } from "./ranking";
-import type { RedfoxSkillSnapshot } from "../types";
+import type { GithubSkillSnapshot } from "../types";
 
 function makeSkill(
-  overrides: Partial<RedfoxSkillSnapshot>,
-): RedfoxSkillSnapshot {
+  overrides: Partial<GithubSkillSnapshot>,
+): GithubSkillSnapshot {
   return {
-    skillNo: overrides.skillNo ?? overrides.skillCode ?? "skill-no",
-    skillCode: overrides.skillCode ?? "skill-code",
-    name: overrides.name ?? { zh: "技能", en: "Skill" },
-    description: overrides.description ?? { zh: "", en: "" },
-    introduce: overrides.introduce ?? { zh: "", en: "" },
-    readme: overrides.readme ?? { zh: "", en: "" },
-    categoryCode: overrides.categoryCode ?? "data_query",
+    repo: overrides.repo ?? "owner/skill",
+    name: overrides.name ?? "Skill",
+    descriptionZh: overrides.descriptionZh ?? "中文 Skill",
+    descriptionEn: overrides.descriptionEn ?? "Chinese skill",
+    readmeSnippetZh: overrides.readmeSnippetZh ?? "",
+    readmeSnippetEn: overrides.readmeSnippetEn ?? "",
+    categoryCode: overrides.categoryCode ?? "content",
     categoryName: overrides.categoryName ?? {
-      zh: "数据查询",
-      en: "Data Query",
+      zh: "内容创作",
+      en: "Content Creation",
     },
-    categories: overrides.categories ?? [],
     tags: overrides.tags ?? [],
-    icon: "",
-    iconUrl: "",
-    price: 0,
-    usageCount: 0,
-    viewCount: overrides.viewCount ?? 0,
-    downloadCount: overrides.downloadCount ?? 0,
-    displayStatus: overrides.displayStatus ?? 0,
-    displayBadge: overrides.displayBadge ?? null,
-    status: 1,
-    hasApiKey: overrides.hasApiKey ?? false,
-    platformInfoRaw: "",
-    accessMethods: overrides.accessMethods ?? [],
-    redfoxUrl: `https://redfox.hk/skills/no/${overrides.skillNo ?? "skill-no"}`,
-    githubUrl: "",
-    githubPath: "",
-    heatScore: overrides.heatScore ?? 0,
-    rank: overrides.rank ?? 0,
-    rankByCategory: overrides.rankByCategory ?? 0,
+    audiences: overrides.audiences ?? [],
+    useCases: overrides.useCases ?? [],
+    skillMdPaths: overrides.skillMdPaths ?? ["skills/demo/SKILL.md"],
+    stars: overrides.stars ?? 0,
+    forks: overrides.forks ?? 0,
+    openIssues: overrides.openIssues ?? 0,
+    watchers: overrides.watchers ?? overrides.stars ?? 0,
+    language: overrides.language ?? "Markdown",
+    license: overrides.license ?? "MIT",
+    topics: overrides.topics ?? [],
+    homepage: overrides.homepage ?? "",
+    htmlUrl:
+      overrides.htmlUrl ??
+      `https://github.com/${overrides.repo ?? "owner/skill"}`,
     createdAt: overrides.createdAt ?? "2026-06-01T00:00:00.000Z",
     updatedAt: overrides.updatedAt ?? "2026-06-02T00:00:00.000Z",
+    pushedAt: overrides.pushedAt ?? "2026-06-02T00:00:00.000Z",
     lastFetchedAt: "2026-06-03T00:00:00.000Z",
-    fetchStatus: "ok",
-    downloadGrowth7d: overrides.downloadGrowth7d ?? null,
-    downloadGrowth30d: overrides.downloadGrowth30d ?? null,
+    fetchStatus: overrides.fetchStatus ?? "ok",
+    rank: overrides.rank ?? 0,
+    rankByCategory: overrides.rankByCategory ?? 0,
+    growth7d: overrides.growth7d ?? null,
+    growth30d: overrides.growth30d ?? null,
     rankDelta7d: overrides.rankDelta7d ?? null,
     rankDelta30d: overrides.rankDelta30d ?? null,
     trendStatus: overrides.trendStatus ?? "collecting",
-    audiences: overrides.audiences ?? [],
-    useCases: overrides.useCases ?? [],
+    chineseScore: overrides.chineseScore ?? 50,
+    skillSignalScore: overrides.skillSignalScore ?? 100,
+    featured: overrides.featured ?? false,
   };
 }
 
-const skills: RedfoxSkillSnapshot[] = [
+const skills: GithubSkillSnapshot[] = [
   makeSkill({
-    skillCode: "douyin-search",
-    name: { zh: "抖音作品查询", en: "Douyin Search" },
-    introduce: { zh: "查询抖音作品数据", en: "Search Douyin work data" },
-    categoryCode: "data_query",
-    tags: ["抖音", "数据查询"],
-    viewCount: 400,
-    downloadCount: 300,
-    heatScore: 900,
-    updatedAt: "2026-06-11T00:00:00.000Z",
+    repo: "owner/content-skill",
+    name: "content-skill",
+    descriptionZh: "公众号、小红书和长文写作 Skill",
+    categoryCode: "content",
+    tags: ["写作", "中文"],
+    stars: 900,
+    forks: 88,
+    audiences: ["media", "writing"],
+    featured: true,
   }),
   makeSkill({
-    skillCode: "multi-wordcheck",
-    name: { zh: "多平台违禁词检测", en: "Word Check" },
-    introduce: { zh: "公众号小红书抖音违禁词检测", en: "Compliance checks" },
-    categoryCode: "efficiency_tools",
-    categoryName: { zh: "效率工具", en: "Efficiency Tools" },
-    tags: ["合规审核", "内容改写"],
-    viewCount: 1000,
-    downloadCount: 500,
-    heatScore: 1000,
-    updatedAt: "2026-06-10T00:00:00.000Z",
+    repo: "owner/research-skill",
+    name: "research-skill",
+    descriptionZh: "资料研究、结构化报告和数据分析 Skill",
+    categoryCode: "data",
+    categoryName: { zh: "数据研究", en: "Data Research" },
+    tags: ["研究", "数据"],
+    stars: 300,
+    forks: 21,
+    audiences: ["data"],
   }),
 ];
 
 describe("ranking helpers", () => {
-  it("filters by query and category, then sorts by heat score", () => {
+  it("filters by query and category, then sorts by GitHub stars", () => {
     const result = filterAndSortSkills(
       skills,
       {
         ...defaultSkillFilters,
-        query: "抖音",
+        query: "skill",
       },
       "zh",
     );
 
-    expect(result.map((skill) => skill.skillCode)).toEqual([
-      "multi-wordcheck",
-      "douyin-search",
+    expect(result.map((skill) => skill.repo)).toEqual([
+      "owner/content-skill",
+      "owner/research-skill",
     ]);
   });
 
   it("builds unique filter options", () => {
     expect(getFilterOptions(skills)).toMatchObject({
-      categories: ["data_query", "efficiency_tools"],
-      tags: ["抖音", "合规审核", "内容改写", "数据查询"],
+      categories: ["content", "data"],
+      tags: ["中文", "写作", "数据", "研究"],
     });
   });
 
-  it("calculates dashboard totals", () => {
+  it("calculates GitHub dashboard totals", () => {
     expect(calculateStats(skills, "2026-06-01T00:00:00Z")).toMatchObject({
       totalSkills: 2,
-      totalDownloads: 800,
-      totalViews: 1400,
-      totalCategories: 2,
+      totalStars: 1200,
+      totalForks: 109,
+      chineseFriendly: 2,
     });
   });
 
-  it("filters by inferred audience and spotlight lists", () => {
-    const douyinSkills = filterAndSortSkills(
+  it("filters by inferred audience, featured spotlight, and favorites", () => {
+    const mediaSkills = filterAndSortSkills(
       skills,
-      { ...defaultSkillFilters, audience: "douyin" },
+      { ...defaultSkillFilters, audience: "media" },
       "zh",
     );
-    const toolSkills = filterAndSortSkills(
+    const featuredSkills = filterAndSortSkills(
       skills,
-      { ...defaultSkillFilters, audience: "productivity" },
+      { ...defaultSkillFilters, spotlight: "featured" },
       "zh",
     );
-
-    expect(douyinSkills.map((skill) => skill.skillCode)).toEqual([
-      "multi-wordcheck",
-      "douyin-search",
-    ]);
-    expect(toolSkills.map((skill) => skill.skillCode)).toEqual([
-      "multi-wordcheck",
-    ]);
-  });
-
-  it("filters to local favorites before sorting", () => {
-    const result = filterAndSortSkills(
+    const favoriteSkills = filterAndSortSkills(
       skills,
       {
         ...defaultSkillFilters,
-        query: "抖音",
         favoritesOnly: true,
       },
       "zh",
-      new Set(["douyin-search"]),
+      new Set(["owner/research-skill"]),
     );
 
-    expect(result.map((skill) => skill.skillCode)).toEqual(["douyin-search"]);
+    expect(mediaSkills.map((skill) => skill.repo)).toEqual([
+      "owner/content-skill",
+    ]);
+    expect(featuredSkills.map((skill) => skill.repo)).toEqual([
+      "owner/content-skill",
+    ]);
+    expect(favoriteSkills.map((skill) => skill.repo)).toEqual([
+      "owner/research-skill",
+    ]);
   });
 
-  it("sorts trend spotlights by usage growth and rank movement", () => {
+  it("sorts trend spotlights by star growth and rank movement", () => {
     const trendSkills = [
       makeSkill({
-        skillCode: "a",
-        heatScore: 20,
-        downloadGrowth7d: 12,
-        downloadGrowth30d: 80,
+        repo: "owner/a",
+        stars: 20,
+        growth7d: 12,
+        growth30d: 80,
         rankDelta7d: 4,
         rankDelta30d: 10,
         trendStatus: "ready",
       }),
       makeSkill({
-        skillCode: "b",
-        heatScore: 40,
-        downloadGrowth7d: 40,
-        downloadGrowth30d: 42,
+        repo: "owner/b",
+        stars: 40,
+        growth7d: 40,
+        growth30d: 42,
         rankDelta7d: 1,
         rankDelta30d: 2,
         trendStatus: "ready",
@@ -181,37 +175,37 @@ describe("ranking helpers", () => {
         trendSkills,
         { ...defaultSkillFilters, spotlight: "growth7d" },
         "en",
-      ).map((skill) => skill.skillCode),
-    ).toEqual(["b", "a"]);
+      ).map((skill) => skill.repo),
+    ).toEqual(["owner/b", "owner/a"]);
     expect(
       filterAndSortSkills(
         trendSkills,
         { ...defaultSkillFilters, spotlight: "growth30d" },
         "en",
-      ).map((skill) => skill.skillCode),
-    ).toEqual(["a", "b"]);
+      ).map((skill) => skill.repo),
+    ).toEqual(["owner/a", "owner/b"]);
     expect(
       filterAndSortSkills(
         trendSkills,
         { ...defaultSkillFilters, spotlight: "rankRisers" },
         "en",
-      ).map((skill) => skill.skillCode),
-    ).toEqual(["a", "b"]);
+      ).map((skill) => skill.repo),
+    ).toEqual(["owner/a", "owner/b"]);
   });
 
   it("derives ranks, audiences, and related skills", () => {
     const enriched = enrichSkills(skills);
-    const wordcheck = enriched.find(
-      (skill) => skill.skillCode === "multi-wordcheck",
+    const content = enriched.find(
+      (skill) => skill.repo === "owner/content-skill",
     )!;
 
-    expect(wordcheck).toMatchObject({
+    expect(content).toMatchObject({
       rank: 1,
       rankByCategory: 1,
     });
-    expect(inferAudiences(wordcheck)).toContain("douyin");
-    expect(getRelatedSkills(wordcheck, enriched, 1)[0].skillCode).toBe(
-      "douyin-search",
+    expect(inferAudiences(content)).toContain("media");
+    expect(getRelatedSkills(content, enriched, 1)[0].repo).toBe(
+      "owner/research-skill",
     );
   });
 });

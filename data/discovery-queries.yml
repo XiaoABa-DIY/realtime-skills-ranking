@@ -1,56 +1,40 @@
 queries:
-  - id: mcp-skills
-    query: "mcp server ai agents"
-    category: MCP & Tooling
-    limit: 8
+  - id: skill-md-stars
+    query: "SKILL.md skills"
+    limit: 12
+    category: 提示词/工作流
     reason:
-      zh: 与 MCP 工具连接和 Agent 能力扩展相关。
-      en: Related to MCP tool connections and agent capability extensions.
+      zh: GitHub 仓库描述中明确提到 SKILL.md 和 skills。
+      en: Repository description mentions SKILL.md and skills.
 
-  - id: ai-agent-frameworks
-    query: "ai agent framework language:Python"
-    category: Coding Agents
-    limit: 8
+  - id: chinese-skills
+    query: "SKILL.md 中文 skills"
+    limit: 12
+    category: 中文本地化
     reason:
-      zh: 可能是可编排 AI Agent 的开源框架。
-      en: Potential open-source framework for orchestrating AI agents.
+      zh: 可能是带中文说明或中文教程的 SKILL.md 项目。
+      en: Potential SKILL.md project with Chinese docs or tutorials.
 
-  - id: developer-ai-tools
-    query: "AI coding agent IDE CLI"
-    category: Developer Tools
+  - id: codex-skills
+    query: "codex-skills"
+    limit: 12
+    category: 编程开发
+    reason:
+      zh: 可能适配 Codex 或 SKILL.md 标准的开发者技能项目。
+      en: Potential developer skill project compatible with Codex or the SKILL.md standard.
+
+  - id: design-skills
+    query: "design SKILL.md skills"
     limit: 10
+    category: 设计与多媒体
     reason:
-      zh: 面向程序员的 AI 编码、IDE、CLI 或工程自动化工具。
-      en: AI coding, IDE, CLI, or engineering automation tools for developers.
+      zh: 可能包含设计、UI 或多媒体相关 SKILL.md。
+      en: Potential design, UI, or media SKILL.md repository.
 
-  - id: creator-ai-tools
-    query: "AI creator tool TTS OCR content"
-    category: Creator & Content
+  - id: research-skills
+    query: "research SKILL.md skills"
     limit: 10
+    category: 数据研究
     reason:
-      zh: 面向自媒体和内容创作者的语音、OCR、素材整理或内容生成工具。
-      en: Voice, OCR, research, or content generation tools for creators.
-
-  - id: ai-web-research-tools
-    query: "AI web crawler RAG extraction"
-    category: Data & Research
-    limit: 8
-    reason:
-      zh: 适合资料调研、网页抓取和 RAG 知识整理的工具。
-      en: Tools for web research, crawling, extraction, and RAG knowledge preparation.
-
-  - id: prompt-workflows
-    query: "prompt engineering guide AI"
-    category: Prompt & Workflow
-    limit: 8
-    reason:
-      zh: 与提示词、工作流或技能方法论相关。
-      en: Related to prompts, workflows, or skill methodology.
-
-  - id: ai-media-workflows
-    query: "AI image generation workflow"
-    category: Design & Media
-    limit: 8
-    reason:
-      zh: 可能提供 AI 图像或媒体生成工作流。
-      en: May provide AI image or media generation workflows.
+      zh: 可能包含研究、资料整理或报告生成相关 Skill。
+      en: Potential research, synthesis, or report-generation skill repository.

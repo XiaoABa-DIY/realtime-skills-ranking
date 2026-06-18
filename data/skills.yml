@@ -1,0 +1,67 @@
+skills:
+  - repo: Yuan1z0825/nature-skills
+    name: Nature Academic Skills
+    category: 数据研究
+    tags: [科研写作, Nature, 论文, 绘图, 中文]
+    audiences: [data, writing, beginner]
+    summary:
+      zh: 面向 Nature 论文表达、科研绘图、引用整理和学术写作的中文 Skill 集合。
+      en: Chinese-friendly skills for Nature-style academic writing, figures, citations, and research workflows.
+    featured: true
+
+  - repo: redfox-data/redfox-community
+    name: RedFox Community Skills
+    category: 内容创作
+    tags: [自媒体, 公众号, 小红书, 抖音, 中文]
+    audiences: [media, writing, data, productivity]
+    summary:
+      zh: 面向中文内容创作者的可复用 SKILL 集合，覆盖选题、账号分析、违禁词检测和文案改写。
+      en: Reusable Chinese creator skills for topic research, account analysis, compliance checks, and rewriting.
+    featured: true
+
+  - repo: Weizhena/Deep-Research-skills
+    name: Deep Research Skills
+    category: 数据研究
+    tags: [Deep Research, 报告, 调研, 中文]
+    audiences: [data, writing, beginner]
+    summary:
+      zh: 用于深度研究、资料补全、字段扩展和结构化报告生成的中英文 Skill 集合。
+      en: Bilingual skills for deep research, data enrichment, field expansion, and structured reports.
+    featured: true
+
+  - repo: lingxling/awesome-skills-cn
+    name: Awesome Skills CN
+    category: 中文本地化
+    tags: [中文, Skill合集, 教程, 学习]
+    audiences: [beginner, writing, developer, design]
+    summary:
+      zh: 中文学习版 Skill 合集，汇总多套热门 SKILL.md 项目并提供中文说明和教程。
+      en: Chinese learning-oriented skill collection that aggregates popular SKILL.md projects with local notes.
+
+  - repo: openai/skills
+    name: OpenAI Skills Catalog
+    category: 编程开发
+    tags: [Codex, OpenAI, 官方, Skills]
+    audiences: [developer, beginner]
+    summary:
+      zh: OpenAI Codex Skills Catalog，适合了解官方 SKILL.md 组织方式和可复用技能结构。
+      en: OpenAI Codex Skills Catalog for learning official SKILL.md structure and reusable skill patterns.
+    featured: true
+
+  - repo: bergside/awesome-design-skills
+    name: Awesome Design Skills
+    category: 设计与多媒体
+    tags: [设计, DESIGN.md, SKILL.md, UI, 视觉]
+    audiences: [design, developer]
+    summary:
+      zh: 设计类 DESIGN.md 与 SKILL.md 资源清单，适合做 UI、视觉和设计系统相关 Skill 发现。
+      en: A design-focused list of DESIGN.md and SKILL.md resources for UI, visual, and design-system workflows.
+
+  - repo: FrancyJGLisboa/agent-skill-creator
+    name: Agent Skill Creator
+    category: 提示词/工作流
+    tags: [Skill创建, 工作流, 模板]
+    audiences: [developer, productivity, beginner]
+    summary:
+      zh: 把工作流整理成可安装 SKILL.md 的创建工具，适合学习如何设计和打包新 Skill。
+      en: A workflow-to-SKILL.md creator for learning how to design and package reusable skills.

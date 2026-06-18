@@ -6,7 +6,7 @@ import {
   type SkillFilters,
 } from "./ranking";
 
-const sortKeys: SortKey[] = ["heat", "uses", "views", "updated", "name"];
+const sortKeys: SortKey[] = ["stars", "forks", "updated", "name"];
 const locales: Locale[] = ["zh", "en"];
 
 function safeValue(value: string | null) {
@@ -26,7 +26,7 @@ export interface UrlState {
 
 export function parseUrlState(search: string): UrlState {
   const params = new URLSearchParams(search);
-  const sortKey = oneOf(params.get("sort"), sortKeys) || "heat";
+  const sortKey = oneOf(params.get("sort"), sortKeys) || "stars";
   const locale = oneOf(params.get("lang"), locales) || "zh";
 
   return {
@@ -61,7 +61,7 @@ export function buildSearchParams(
   if (filters.query) params.set("q", filters.query);
   if (filters.category) params.set("category", filters.category);
   if (filters.tag) params.set("tag", filters.tag);
-  if (filters.sortKey !== "heat") params.set("sort", filters.sortKey);
+  if (filters.sortKey !== "stars") params.set("sort", filters.sortKey);
   if (filters.audience) params.set("audience", filters.audience);
   if (filters.spotlight) params.set("spotlight", filters.spotlight);
   if (filters.favoritesOnly) params.set("favorites", "1");

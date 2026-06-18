@@ -5,24 +5,52 @@ import prettier from "prettier";
 import YAML from "yaml";
 
 const ROOT = process.cwd();
+const DEFAULT_SKILLS = path.join(ROOT, "data", "skills.yml");
+const DEFAULT_DISCOVERY = path.join(ROOT, "data", "discovery-queries.yml");
 const DEFAULT_SNAPSHOT = path.join(ROOT, "public", "data", "snapshot.json");
 const DEFAULT_CANDIDATES = path.join(ROOT, "public", "data", "candidates.json");
 const DEFAULT_HISTORY = path.join(ROOT, "public", "data", "history.json");
-const REDFOX_API = "https://redfox.hk/story/web/api";
 const GITHUB_API = "https://api.github.com";
-const SOURCE_REPO = "redfox-data/redfox-community";
-const SOURCE_REPO_URL = `https://github.com/${SOURCE_REPO}`;
 export const HISTORY_RETENTION_DAYS = 180;
 
-const FALLBACK_CATEGORY = {
-  id: 0,
-  code: "redfox_community",
-  name: {
-    zh: "RedFox Community",
-    en: "RedFox Community",
+const CATEGORY_DEFINITIONS = [
+  { code: "content", zh: "内容创作", en: "Content Creation", sortOrder: 1 },
+  { code: "developer", zh: "编程开发", en: "Developer Skills", sortOrder: 2 },
+  {
+    code: "prompt-workflow",
+    zh: "提示词/工作流",
+    en: "Prompt & Workflow",
+    sortOrder: 3,
   },
-  sortOrder: 999,
-};
+  {
+    code: "design-media",
+    zh: "设计与多媒体",
+    en: "Design & Media",
+    sortOrder: 4,
+  },
+  { code: "data", zh: "数据研究", en: "Data Research", sortOrder: 5 },
+  { code: "productivity", zh: "效率办公", en: "Productivity", sortOrder: 6 },
+  {
+    code: "docs-knowledge",
+    zh: "文档知识库",
+    en: "Docs & Knowledge",
+    sortOrder: 7,
+  },
+  {
+    code: "chinese-localization",
+    zh: "中文本地化",
+    en: "Chinese Localization",
+    sortOrder: 8,
+  },
+];
+
+const CATEGORY_ALIASES = new Map(
+  CATEGORY_DEFINITIONS.flatMap((category) => [
+    [category.code.toLowerCase(), category],
+    [category.zh.toLowerCase(), category],
+    [category.en.toLowerCase(), category],
+  ]),
+);
 
 function nowIso() {
   return new Date().toISOString();
@@ -55,27 +83,58 @@ function asArray(value) {
     : [];
 }
 
-function isRecord(value) {
-  return value !== null && typeof value === "object" && !Array.isArray(value);
-}
-
 function timeoutSignal(timeoutMs) {
   return AbortSignal.timeout(timeoutMs);
 }
 
+function hasChinese(text) {
+  return /[\u3400-\u9fff]/.test(String(text ?? ""));
+}
+
+function countChinese(text) {
+  return (String(text ?? "").match(/[\u3400-\u9fff]/g) ?? []).length;
+}
+
+export function calculateChineseScore(...parts) {
+  const text = parts.filter(Boolean).join("\n");
+  if (!text) return 0;
+  const chineseChars = countChinese(text);
+  const ratio = chineseChars / Math.max(text.length, 1);
+  return Math.min(100, Math.round(chineseChars * 1.8 + ratio * 80));
+}
+
+export function normalizeRepoName(value) {
+  let repo = String(value ?? "").trim();
+  repo = repo.replace(/^https?:\/\/github\.com\//i, "");
+  repo = repo.replace(/^git@github\.com:/i, "");
+  repo = repo.replace(/\.git$/i, "");
+  repo = repo.replace(/^\/+|\/+$/g, "");
+  const [owner, name] = repo.split("/");
+  return owner && name ? `${owner}/${name}` : repo;
+}
+
+export function isAcceptedSkillPath(value) {
+  const skillPath = String(value ?? "").replace(/\\/g, "/");
+  return (
+    /^SKILL\.md$/i.test(skillPath) ||
+    /^skills\/.+\/SKILL\.md$/i.test(skillPath) ||
+    /\/skills\/.+\/SKILL\.md$/i.test(skillPath)
+  );
+}
+
 export function createJsonFetcher({
   token = "",
-  timeoutMs = 15_000,
-  userAgent = "redfox-skills-ranking",
+  timeoutMs = 20_000,
+  userAgent = "github-skills-ranking",
 } = {}) {
   return async function jsonFetch(url) {
-    const isGitHub = String(url).startsWith(GITHUB_API);
     const response = await fetch(url, {
       signal: timeoutSignal(timeoutMs),
       headers: {
-        Accept: isGitHub ? "application/vnd.github+json" : "application/json",
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
         "User-Agent": userAgent,
-        ...(isGitHub && token ? { Authorization: `Bearer ${token}` } : {}),
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
     });
 
@@ -101,209 +160,184 @@ export function createJsonFetcher({
   };
 }
 
-export function normalizeSkillCode(value) {
-  return String(value ?? "")
-    .trim()
-    .replace(/^skills\//, "")
-    .replace(/\/+$/g, "");
-}
-
-function normalizeRedfoxDate(value) {
-  const raw = String(value ?? "").trim();
+function decodeGitHubContent(payload) {
+  const raw = asString(payload?.content).replace(/\s/g, "");
   if (!raw) return "";
-  const normalized = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(raw)
-    ? `${raw.replace(" ", "T")}+08:00`
-    : raw;
-  const timestamp = Date.parse(normalized);
-  return Number.isFinite(timestamp) ? new Date(timestamp).toISOString() : "";
+  return Buffer.from(raw, "base64").toString("utf8");
 }
 
-export function parsePlatformInfo(value) {
-  const raw = String(value ?? "").trim();
-  if (!raw) return [];
-
+function frontmatter(text) {
+  const match = String(text ?? "").match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) return {};
   try {
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    return parsed
-      .filter((item) => isRecord(item) && item.name)
-      .map((item) => {
-        const methodValue = asString(item.repo || item.url || item.value);
-        return {
-          name: asString(item.name),
-          value: methodValue,
-          ...(methodValue.startsWith("http") ? { url: methodValue } : {}),
-        };
-      });
+    return YAML.parse(match[1]) ?? {};
   } catch {
-    return [];
+    return {};
   }
 }
 
-export function displayStatusToBadge(displayStatus) {
-  if (Number(displayStatus) === 1) return { zh: "热门", en: "Hot" };
-  if (Number(displayStatus) === 2) return { zh: "推荐", en: "Recommended" };
-  if (Number(displayStatus) === 3) return { zh: "上新", en: "New" };
-  return null;
+function truncateText(text, maxLength = 900) {
+  const normalized = String(text ?? "")
+    .replace(/\r/g, "")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+  return normalized.length > maxLength
+    ? `${normalized.slice(0, maxLength).trim()}...`
+    : normalized;
 }
 
-function daysSince(value, referenceIso) {
-  const timestamp = Date.parse(value || "");
-  const reference = Date.parse(referenceIso || "");
-  if (!Number.isFinite(timestamp) || !Number.isFinite(reference)) {
-    return Number.POSITIVE_INFINITY;
-  }
-  return Math.max(0, Math.floor((reference - timestamp) / 86_400_000));
-}
-
-export function calculateHeatScore(skill, generatedAt = nowIso()) {
-  const downloads = asFiniteNumber(skill.downloadCount);
-  const views = asFiniteNumber(skill.viewCount);
-  const status = asFiniteNumber(skill.displayStatus);
-  const badgeBoost = { 1: 120, 2: 90, 3: 75 }[status] ?? 0;
-  const age = daysSince(skill.updatedAt, generatedAt);
-  const recencyBoost = Number.isFinite(age) ? Math.max(0, 30 - age) * 2 : 0;
-
-  return Math.round(
-    Math.log(downloads + 1) * 70 +
-      Math.log(views + 1) * 20 +
-      badgeBoost +
-      recencyBoost,
-  );
-}
-
-function inferAudiencesFromText(skill) {
-  const text = [
-    skill.skillCode,
-    skill.name?.zh,
-    skill.name?.en,
-    skill.categoryCode,
-    skill.categoryName?.zh,
-    skill.categoryName?.en,
-    skill.description?.zh,
-    skill.introduce?.zh,
-    ...(skill.tags ?? []),
-    ...(skill.accessMethods ?? []).map((method) => method.name),
-  ]
-    .join(" ")
+function categoryFrom(value, fallbackText = "") {
+  const key = String(value ?? "")
+    .trim()
     .toLowerCase();
+  if (CATEGORY_ALIASES.has(key)) return CATEGORY_ALIASES.get(key);
+  const text = `${value} ${fallbackText}`.toLowerCase();
+  if (/设计|image|media|figma|ui|ux|visual|design/.test(text)) {
+    return CATEGORY_ALIASES.get("design-media");
+  }
+  if (/数据|研究|search|research|rag|analysis|分析/.test(text)) {
+    return CATEGORY_ALIASES.get("data");
+  }
+  if (/代码|编程|developer|coding|code|review/.test(text)) {
+    return CATEGORY_ALIASES.get("developer");
+  }
+  if (/prompt|workflow|提示|工作流/.test(text)) {
+    return CATEGORY_ALIASES.get("prompt-workflow");
+  }
+  if (/文档|知识|docs|knowledge|readme/.test(text)) {
+    return CATEGORY_ALIASES.get("docs-knowledge");
+  }
+  if (/中文|localization|translation|cn|chinese/.test(text)) {
+    return CATEGORY_ALIASES.get("chinese-localization");
+  }
+  if (/效率|office|pdf|productivity|tool/.test(text)) {
+    return CATEGORY_ALIASES.get("productivity");
+  }
+  return CATEGORY_ALIASES.get("content");
+}
+
+function categoryPayload(category) {
+  return {
+    code: category.code,
+    name: {
+      zh: category.zh,
+      en: category.en,
+    },
+    sortOrder: category.sortOrder,
+  };
+}
+
+function normalizeAudience(value) {
+  const text = String(value ?? "")
+    .trim()
+    .toLowerCase();
+  const aliases = {
+    自媒体: "media",
+    media: "media",
+    creator: "media",
+    creators: "media",
+    程序员: "developer",
+    developer: "developer",
+    developers: "developer",
+    写作: "writing",
+    writing: "writing",
+    prompt: "writing",
+    设计: "design",
+    design: "design",
+    数据: "data",
+    data: "data",
+    research: "data",
+    效率: "productivity",
+    productivity: "productivity",
+    beginner: "beginner",
+    入门: "beginner",
+  };
+  return aliases[text] ?? "";
+}
+
+function inferAudiences(input, text) {
+  const explicit = asArray(input?.audiences)
+    .map(normalizeAudience)
+    .filter(Boolean);
+  if (explicit.length) return [...new Set(explicit)];
+
+  const lower = String(text ?? "").toLowerCase();
   const audiences = [];
-
-  if (/自媒体|创作|内容|文案|rewrite|creator/.test(text))
+  if (/自媒体|公众号|小红书|抖音|creator|content/.test(lower)) {
     audiences.push("media");
-  if (/公众号|gzh|wechat/.test(text)) audiences.push("wechat");
-  if (/小红书|xiaohongshu|xhs|red/.test(text)) audiences.push("xiaohongshu");
-  if (/抖音|douyin|tiktok/.test(text)) audiences.push("douyin");
-  if (/数据|榜单|查询|分析|搜索|ranking|search/.test(text))
+  }
+  if (/代码|编程|developer|coding|code|codex|cli/.test(lower)) {
+    audiences.push("developer");
+  }
+  if (/写作|提示词|prompt|rewrite|article|report/.test(lower)) {
+    audiences.push("writing");
+  }
+  if (/设计|视觉|图片|image|design|figma|ui|ux/.test(lower)) {
+    audiences.push("design");
+  }
+  if (/数据|研究|search|research|rag|analysis|分析/.test(lower)) {
     audiences.push("data");
-  if (/效率|工具|检测|提取|下载|pdf|tool/.test(text))
+  }
+  if (/效率|办公|pdf|doc|tool|productivity/.test(lower)) {
     audiences.push("productivity");
-  if (/skill|api|github|cli|agent|开发/.test(text)) audiences.push("developer");
-
-  return audiences.length ? [...new Set(audiences)] : ["media"];
+  }
+  if (/入门|教程|中文|guide|tutorial|learn/.test(lower)) {
+    audiences.push("beginner");
+  }
+  return audiences.length ? [...new Set(audiences)] : ["beginner"];
 }
 
 function useCasesForAudiences(audiences) {
   const useCases = [];
   if (audiences.includes("media")) {
     useCases.push({
-      zh: "适合自媒体创作者做选题、改写、检测和内容生产。",
-      en: "Good for creators doing topics, rewriting, checks, and production.",
-    });
-  }
-  if (audiences.includes("wechat")) {
-    useCases.push({
-      zh: "适合公众号运营做爆文分析、订阅监控和推文生产。",
-      en: "Useful for WeChat article analysis, monitoring, and publishing.",
-    });
-  }
-  if (audiences.includes("xiaohongshu")) {
-    useCases.push({
-      zh: "适合小红书笔记、账号诊断和种草文案优化。",
-      en: "Useful for RED notes, account diagnosis, and copy optimization.",
-    });
-  }
-  if (audiences.includes("douyin")) {
-    useCases.push({
-      zh: "适合抖音热点、账号、视频作品和搜索数据分析。",
-      en: "Useful for Douyin trends, accounts, videos, and search analysis.",
-    });
-  }
-  if (audiences.includes("data")) {
-    useCases.push({
-      zh: "适合研究热榜、搜索结果、账号数据和内容趋势。",
-      en: "Useful for rankings, search results, account data, and content trends.",
+      zh: "适合自媒体创作者做选题、改写、素材整理和跨平台内容生产。",
+      en: "Good for creators doing topics, rewriting, assets, and publishing.",
     });
   }
   if (audiences.includes("developer")) {
     useCases.push({
-      zh: "适合 Agent/CLI 用户直接复用 SKILL.md 与脚本能力。",
-      en: "Useful for Agent and CLI users reusing SKILL.md and scripts.",
+      zh: "适合程序员把 SKILL.md 固化成可复用开发流程。",
+      en: "Useful for developers turning SKILL.md into reusable workflows.",
+    });
+  }
+  if (audiences.includes("writing")) {
+    useCases.push({
+      zh: "适合提示词、文章、报告和结构化写作。",
+      en: "Useful for prompts, articles, reports, and structured writing.",
+    });
+  }
+  if (audiences.includes("data")) {
+    useCases.push({
+      zh: "适合资料研究、数据分析、搜索结果整理和报告生成。",
+      en: "Useful for research, analysis, search synthesis, and reports.",
+    });
+  }
+  if (audiences.includes("productivity")) {
+    useCases.push({
+      zh: "适合文档处理、批量转换和日常办公提效。",
+      en: "Useful for document handling, batch conversion, and productivity.",
     });
   }
   return useCases.slice(0, 3);
 }
 
-function normalizeCategory(category) {
-  return {
-    id: asFiniteNumber(category.id, undefined),
-    code: asString(category.categoryCode || category.code || "unknown"),
-    name: {
-      zh: asString(category.categoryName || category.name?.zh || "未分类"),
-      en: asString(category.nameEn || category.name?.en || "Uncategorized"),
-    },
-    sortOrder: asFiniteNumber(category.sortOrder, 999),
-  };
-}
-
-function sortCategories(categories) {
-  return [...categories].sort(
-    (a, b) => a.sortOrder - b.sortOrder || a.code.localeCompare(b.code),
-  );
-}
-
-async function fetchRedfoxCategories(redfoxFetch) {
-  const payload = await redfoxFetch(`${REDFOX_API}/skills/categories`);
-  const categories = Array.isArray(payload?.data) ? payload.data : [];
-  return sortCategories(categories.map(normalizeCategory));
-}
-
-async function fetchRedfoxSkills(redfoxFetch, pageSize = 100) {
-  const skills = [];
-  let pageNum = 1;
-  let totalPages = 1;
-
-  do {
-    const url = new URL(`${REDFOX_API}/skills/list`);
-    url.searchParams.set("pageNum", String(pageNum));
-    url.searchParams.set("pageSize", String(pageSize));
-    const payload = await redfoxFetch(url.toString());
-    const data = payload?.data ?? {};
-    const records = Array.isArray(data.records) ? data.records : [];
-    skills.push(...records);
-    totalPages = Math.max(1, asFiniteNumber(data.pages, 1));
-    pageNum += 1;
-  } while (pageNum <= totalPages);
-
-  const seen = new Set();
-  return skills.filter((skill) => {
-    const code = normalizeSkillCode(skill.skillCode);
-    const key = code.toLowerCase();
-    if (!code || seen.has(key)) return false;
-    seen.add(key);
+function isExcludedRepo(repo, text = "") {
+  const lower =
+    `${repo?.full_name ?? ""} ${repo?.description ?? ""} ${(repo?.topics ?? []).join(" ")} ${text}`.toLowerCase();
+  if (
+    /\bmcp\b|modelcontextprotocol|model-context-protocol|mcp-server/.test(lower)
+  ) {
     return true;
-  });
-}
-
-function parseSkillFrontmatter(text) {
-  const match = String(text ?? "").match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  if (!match) return {};
-
-  try {
-    return YAML.parse(match[1]) ?? {};
-  } catch {
-    return {};
   }
+  if (
+    /agent framework|multi-agent framework|agent orchestration framework|autonomous agent framework/.test(
+      lower,
+    )
+  ) {
+    return true;
+  }
+  return false;
 }
 
 async function mapWithConcurrency(items, limit, mapper) {
@@ -324,190 +358,212 @@ async function mapWithConcurrency(items, limit, mapper) {
   return results;
 }
 
-async function fetchGitHubSkillIndex(githubFetch) {
+async function fetchRepo(githubFetch, repo) {
+  return githubFetch(`${GITHUB_API}/repos/${repo}`);
+}
+
+async function fetchSkillPaths(githubFetch, repo, branch) {
   const payload = await githubFetch(
-    `${GITHUB_API}/repos/${SOURCE_REPO}/contents/skills`,
+    `${GITHUB_API}/repos/${repo}/git/trees/${branch}?recursive=1`,
   );
-  const dirs = Array.isArray(payload)
-    ? payload.filter((item) => item.type === "dir")
-    : [];
+  const tree = Array.isArray(payload?.tree) ? payload.tree : [];
+  return tree
+    .filter((item) => item?.type === "blob" && isAcceptedSkillPath(item.path))
+    .map((item) => item.path)
+    .sort();
+}
 
-  const entries = await mapWithConcurrency(dirs, 6, async (item) => {
-    const base = {
-      skillCode: normalizeSkillCode(item.name),
-      githubPath: item.path,
-      githubUrl: item.html_url ?? `${SOURCE_REPO_URL}/tree/main/${item.path}`,
-      frontmatter: {},
-    };
+async function fetchReadme(githubFetch, repo) {
+  try {
+    const payload = await githubFetch(`${GITHUB_API}/repos/${repo}/readme`);
+    return decodeGitHubContent(payload);
+  } catch {
+    return "";
+  }
+}
 
-    try {
-      const file = await githubFetch(
-        `${GITHUB_API}/repos/${SOURCE_REPO}/contents/${item.path}/SKILL.md`,
-      );
-      const content = asString(file.content).replace(/\s/g, "");
-      const text = Buffer.from(content, "base64").toString("utf8");
-      return {
-        ...base,
-        frontmatter: parseSkillFrontmatter(text),
-      };
-    } catch {
-      return base;
+async function fetchContent(githubFetch, repo, filePath) {
+  try {
+    const encodedPath = encodeURIComponent(filePath);
+    const payload = await githubFetch(
+      `${GITHUB_API}/repos/${repo}/contents/${encodedPath}`,
+    );
+    return decodeGitHubContent(payload);
+  } catch {
+    return "";
+  }
+}
+
+function repoLicense(repo) {
+  return asString(repo?.license?.spdx_id || repo?.license?.name);
+}
+
+function buildDescription(input, repo, readme, skillText) {
+  const summary = input?.summary ?? {};
+  const repoDescription = asString(repo?.description);
+  const fallbackZh = hasChinese(repoDescription)
+    ? repoDescription
+    : hasChinese(readme)
+      ? truncateText(readme, 220)
+      : hasChinese(skillText)
+        ? truncateText(skillText, 220)
+        : repoDescription;
+
+  return {
+    zh: asString(summary.zh || fallbackZh || repoDescription),
+    en: asString(summary.en || repoDescription || summary.zh || fallbackZh),
+  };
+}
+
+async function buildSkillSnapshot(input, githubFetch, generatedAt) {
+  const repoName = normalizeRepoName(input.repo);
+  try {
+    const repo = await fetchRepo(githubFetch, repoName);
+    if (repo.archived || repo.disabled) {
+      throw new Error("Repository is archived or disabled.");
     }
-  });
+    const defaultBranch = asString(repo.default_branch, "main");
+    const skillMdPaths = await fetchSkillPaths(
+      githubFetch,
+      repoName,
+      defaultBranch,
+    );
+    if (skillMdPaths.length === 0) {
+      throw new Error("No accepted SKILL.md file found.");
+    }
 
-  return new Map(
-    entries.map((entry) => [entry.skillCode.toLowerCase(), entry]),
+    const readme = await fetchReadme(githubFetch, repoName);
+    const firstSkillText = await fetchContent(
+      githubFetch,
+      repoName,
+      skillMdPaths[0],
+    );
+    const fm = frontmatter(firstSkillText);
+    const description = buildDescription(input, repo, readme, firstSkillText);
+    const combinedText = [
+      repoName,
+      repo.description,
+      readme,
+      firstSkillText,
+      input.summary?.zh,
+      input.summary?.en,
+      ...asArray(input.tags),
+    ].join("\n");
+    const category = categoryFrom(input.category, combinedText);
+    const audiences = inferAudiences(input, combinedText);
+    const chineseScore = Math.max(
+      calculateChineseScore(description.zh, readme, firstSkillText),
+      input.summary?.zh ? 45 : 0,
+    );
+
+    return {
+      repo: repoName,
+      name: asString(
+        input.name || fm.name || repo.name || repoName.split("/").at(-1),
+      ),
+      descriptionZh: description.zh,
+      descriptionEn: description.en,
+      readmeSnippetZh: hasChinese(readme)
+        ? truncateText(readme)
+        : hasChinese(firstSkillText)
+          ? truncateText(firstSkillText)
+          : "",
+      readmeSnippetEn: truncateText(readme || firstSkillText),
+      categoryCode: category.code,
+      categoryName: categoryPayload(category).name,
+      tags: [
+        ...new Set(
+          [...asArray(input.tags), ...asArray(repo.topics)].slice(0, 12),
+        ),
+      ],
+      audiences,
+      useCases: useCasesForAudiences(audiences),
+      skillMdPaths,
+      stars: asFiniteNumber(repo.stargazers_count),
+      forks: asFiniteNumber(repo.forks_count),
+      openIssues: asFiniteNumber(repo.open_issues_count),
+      watchers: asFiniteNumber(repo.watchers_count, repo.stargazers_count),
+      language: asString(repo.language),
+      license: repoLicense(repo),
+      topics: asArray(repo.topics),
+      homepage: asString(input.homepage || repo.homepage),
+      htmlUrl: asString(repo.html_url, `https://github.com/${repoName}`),
+      createdAt: asString(repo.created_at),
+      updatedAt: asString(repo.updated_at),
+      pushedAt: asString(repo.pushed_at),
+      lastFetchedAt: generatedAt,
+      fetchStatus: "ok",
+      rank: 0,
+      rankByCategory: 0,
+      growth7d: null,
+      growth30d: null,
+      rankDelta7d: null,
+      rankDelta30d: null,
+      trendStatus: "collecting",
+      chineseScore,
+      skillSignalScore: Math.min(100, 60 + skillMdPaths.length * 5),
+      featured: Boolean(input.featured),
+    };
+  } catch (error) {
+    return {
+      repo: repoName,
+      name: repoName.split("/").at(-1) ?? repoName,
+      descriptionZh: asString(input.summary?.zh),
+      descriptionEn: asString(input.summary?.en || input.summary?.zh),
+      readmeSnippetZh: "",
+      readmeSnippetEn: "",
+      categoryCode: categoryFrom(input.category).code,
+      categoryName: categoryPayload(categoryFrom(input.category)).name,
+      tags: asArray(input.tags),
+      audiences: inferAudiences(
+        input,
+        `${input.summary?.zh ?? ""} ${input.summary?.en ?? ""}`,
+      ),
+      useCases: [],
+      skillMdPaths: [],
+      stars: 0,
+      forks: 0,
+      openIssues: 0,
+      watchers: 0,
+      language: "",
+      license: "",
+      topics: [],
+      homepage: asString(input.homepage),
+      htmlUrl: `https://github.com/${repoName}`,
+      createdAt: "",
+      updatedAt: "",
+      pushedAt: "",
+      lastFetchedAt: generatedAt,
+      fetchStatus: "error",
+      errorMessage: error?.message ?? "GitHub refresh failed.",
+      rank: 0,
+      rankByCategory: 0,
+      growth7d: null,
+      growth30d: null,
+      rankDelta7d: null,
+      rankDelta30d: null,
+      trendStatus: "collecting",
+      chineseScore: calculateChineseScore(input.summary?.zh),
+      skillSignalScore: 0,
+      featured: Boolean(input.featured),
+    };
+  }
+}
+
+function compareSkillDefault(a, b) {
+  return (
+    b.stars - a.stars ||
+    b.chineseScore - a.chineseScore ||
+    Date.parse(b.pushedAt || b.updatedAt || "0") -
+      Date.parse(a.pushedAt || a.updatedAt || "0") ||
+    a.repo.localeCompare(b.repo)
   );
-}
-
-function githubPathFromUrl(url) {
-  const raw = String(url ?? "");
-  const marker = "/tree/main/";
-  const index = raw.indexOf(marker);
-  return index >= 0 ? raw.slice(index + marker.length) : "";
-}
-
-function findGithubMethod(accessMethods) {
-  return accessMethods.find((method) => method.name.toLowerCase() === "github");
-}
-
-function normalizeApiSkill(
-  apiSkill,
-  categoriesByCode,
-  githubIndex,
-  generatedAt,
-) {
-  const skillCode = normalizeSkillCode(apiSkill.skillCode);
-  const accessMethods = parsePlatformInfo(apiSkill.platformInfo);
-  const githubMethod = findGithubMethod(accessMethods);
-  const githubEntry = githubIndex.get(skillCode.toLowerCase());
-  const apiCategory = Array.isArray(apiSkill.categories)
-    ? apiSkill.categories[0]
-    : null;
-  const categoryCode = asString(
-    apiCategory?.categoryCode ||
-      categoriesByCode.get(String(apiSkill.categoryId))?.code ||
-      FALLBACK_CATEGORY.code,
-  );
-  const category = categoriesByCode.get(categoryCode) ?? {
-    ...FALLBACK_CATEGORY,
-    code: categoryCode,
-    name: {
-      zh: asString(apiCategory?.categoryName || categoryCode),
-      en: asString(apiCategory?.categoryName || categoryCode),
-    },
-  };
-  const githubUrl = githubMethod?.url || githubEntry?.githubUrl || "";
-  const githubPath = githubEntry?.githubPath || githubPathFromUrl(githubUrl);
-  const updatedAt = normalizeRedfoxDate(apiSkill.updateTime);
-  const createdAt = normalizeRedfoxDate(apiSkill.createTime);
-  const frontmatter = githubEntry?.frontmatter ?? {};
-  const displayBadge = displayStatusToBadge(apiSkill.displayStatus);
-
-  const skill = {
-    skillNo: asString(apiSkill.skillNo || skillCode),
-    skillCode,
-    name: {
-      zh: asString(apiSkill.skillName || frontmatter.name || skillCode),
-      en: asString(
-        apiSkill.nameEn || frontmatter.name || apiSkill.skillName || skillCode,
-      ),
-    },
-    description: {
-      zh: asString(
-        apiSkill.description ||
-          frontmatter.description ||
-          apiSkill.introduce ||
-          "",
-      ),
-      en: asString(
-        apiSkill.description ||
-          frontmatter.description ||
-          apiSkill.introduceEn ||
-          "",
-      ),
-    },
-    introduce: {
-      zh: asString(
-        apiSkill.introduce ||
-          apiSkill.description ||
-          frontmatter.description ||
-          "",
-      ),
-      en: asString(
-        apiSkill.introduceEn ||
-          apiSkill.description ||
-          frontmatter.description ||
-          "",
-      ),
-    },
-    readme: {
-      zh: asString(apiSkill.readme),
-      en: asString(apiSkill.readmeEn || apiSkill.readme),
-    },
-    categoryCode: category.code,
-    categoryName: category.name,
-    categories: Array.isArray(apiSkill.categories)
-      ? apiSkill.categories.map((item) =>
-          normalizeCategory({
-            categoryCode: item.categoryCode,
-            categoryName: item.categoryName,
-            nameEn:
-              categoriesByCode.get(item.categoryCode)?.name.en ||
-              item.categoryName,
-            sortOrder:
-              categoriesByCode.get(item.categoryCode)?.sortOrder ?? 999,
-          }),
-        )
-      : [category],
-    tags: asArray(apiSkill.tags),
-    icon: asString(apiSkill.icon),
-    iconUrl: asString(apiSkill.iconUrl),
-    price: asFiniteNumber(apiSkill.price),
-    usageCount: asFiniteNumber(apiSkill.usageCount),
-    viewCount: asFiniteNumber(apiSkill.viewCount),
-    downloadCount: asFiniteNumber(apiSkill.downloadCount),
-    displayStatus: asFiniteNumber(apiSkill.displayStatus),
-    displayBadge,
-    status: asFiniteNumber(apiSkill.status),
-    hasApiKey: Boolean(apiSkill.hasApiKey),
-    platformInfoRaw: asString(apiSkill.platformInfo),
-    accessMethods,
-    redfoxUrl: `https://redfox.hk/skills/no/${apiSkill.skillNo}`,
-    githubUrl,
-    githubPath,
-    heatScore: 0,
-    rank: 0,
-    rankByCategory: 0,
-    createdAt,
-    updatedAt,
-    lastFetchedAt: generatedAt,
-    fetchStatus: "ok",
-    downloadGrowth7d: null,
-    downloadGrowth30d: null,
-    rankDelta7d: null,
-    rankDelta30d: null,
-    trendStatus: "collecting",
-    audiences: [],
-    useCases: [],
-  };
-
-  skill.heatScore = calculateHeatScore(skill, generatedAt);
-  skill.audiences = inferAudiencesFromText(skill);
-  skill.useCases = useCasesForAudiences(skill.audiences);
-  return skill;
 }
 
 function addRanks(skills) {
-  const sorted = [...skills].sort(
-    (a, b) =>
-      b.heatScore - a.heatScore ||
-      b.downloadCount - a.downloadCount ||
-      Date.parse(b.updatedAt || "0") - Date.parse(a.updatedAt || "0") ||
-      a.skillCode.localeCompare(b.skillCode),
-  );
+  const sorted = [...skills].sort(compareSkillDefault);
   const globalRanks = new Map(
-    sorted.map((skill, index) => [skill.skillCode, index + 1]),
+    sorted.map((skill, index) => [skill.repo.toLowerCase(), index + 1]),
   );
   const categoryRanks = new Map();
 
@@ -516,182 +572,216 @@ function addRanks(skills) {
   ]) {
     sorted
       .filter((skill) => skill.categoryCode === categoryCode)
-      .forEach((skill, index) => categoryRanks.set(skill.skillCode, index + 1));
+      .forEach((skill, index) =>
+        categoryRanks.set(skill.repo.toLowerCase(), index + 1),
+      );
   }
 
   return sorted.map((skill) => ({
     ...skill,
-    rank: globalRanks.get(skill.skillCode) ?? 0,
-    rankByCategory: categoryRanks.get(skill.skillCode) ?? 0,
+    rank: globalRanks.get(skill.repo.toLowerCase()) ?? 0,
+    rankByCategory: categoryRanks.get(skill.repo.toLowerCase()) ?? 0,
   }));
 }
 
-function buildCategoriesByCode(categories) {
-  const map = new Map();
-  for (const category of categories) {
-    map.set(category.code, category);
-    if (category.id !== undefined) map.set(String(category.id), category);
+function categoriesFromSkills(skills, inputs) {
+  const categories = new Map();
+  for (const input of inputs) {
+    const category = categoryFrom(input.category);
+    categories.set(category.code, categoryPayload(category));
   }
-  return map;
+  for (const skill of skills) {
+    categories.set(skill.categoryCode, {
+      code: skill.categoryCode,
+      name: skill.categoryName,
+      sortOrder:
+        CATEGORY_ALIASES.get(skill.categoryCode)?.sortOrder ??
+        CATEGORY_DEFINITIONS.length + 1,
+    });
+  }
+  return [...categories.values()].sort(
+    (a, b) => a.sortOrder - b.sortOrder || a.code.localeCompare(b.code),
+  );
 }
 
-function isV2Snapshot(snapshot) {
-  return snapshot?.schemaVersion === 2 && Array.isArray(snapshot?.skills);
+function isV3Snapshot(snapshot) {
+  return snapshot?.schemaVersion === 3 && Array.isArray(snapshot?.skills);
 }
 
-function markPreviousSnapshotFallback(previousSnapshot, error, generatedAt) {
+function markPreviousSnapshotFallback(
+  previousSnapshot,
+  error,
+  generatedAt,
+  skillInputs = [],
+) {
+  const allowedRepos = new Set(
+    skillInputs.map((input) => normalizeRepoName(input.repo).toLowerCase()),
+  );
+  const inputsByRepo = new Map(
+    skillInputs.map((input) => [
+      normalizeRepoName(input.repo).toLowerCase(),
+      input,
+    ]),
+  );
   return {
     ...previousSnapshot,
     generatedAt,
-    source: "redfox-api-fallback",
+    source: "github-skills-fallback",
     errorMessage:
-      error?.message ?? "RedFox API unavailable; reused previous snapshot.",
-    skills: previousSnapshot.skills.map((skill) => ({
-      ...skill,
-      fetchStatus: "fallback",
-      errorMessage:
-        error?.message ?? "RedFox API unavailable; reused previous snapshot.",
-      lastFetchedAt: generatedAt,
-    })),
-  };
-}
-
-function buildGitHubFallbackSnapshot(githubIndex, generatedAt, error) {
-  const categories = [FALLBACK_CATEGORY];
-  const skills = addRanks(
-    [...githubIndex.values()].map((entry) => {
-      const description = asString(entry.frontmatter?.description);
-      const skill = {
-        skillNo: entry.skillCode,
-        skillCode: entry.skillCode,
-        name: {
-          zh: asString(entry.frontmatter?.name || entry.skillCode),
-          en: asString(entry.frontmatter?.name || entry.skillCode),
-        },
-        description: { zh: description, en: description },
-        introduce: { zh: description, en: description },
-        readme: { zh: "", en: "" },
-        categoryCode: FALLBACK_CATEGORY.code,
-        categoryName: FALLBACK_CATEGORY.name,
-        categories,
-        tags: [],
-        icon: "",
-        iconUrl: "",
-        price: 0,
-        usageCount: 0,
-        viewCount: 0,
-        downloadCount: 0,
-        displayStatus: 0,
-        displayBadge: null,
-        status: 1,
-        hasApiKey: /REDFOX_API_KEY/.test(description),
-        platformInfoRaw: "",
-        accessMethods: [
-          {
-            name: "github",
-            value: entry.githubUrl,
-            url: entry.githubUrl,
-          },
-          {
-            name: "skills-cli",
-            value: SOURCE_REPO,
-          },
-        ],
-        redfoxUrl: "https://redfox.hk/skills",
-        githubUrl: entry.githubUrl,
-        githubPath: entry.githubPath,
-        heatScore: 0,
-        rank: 0,
-        rankByCategory: 0,
-        createdAt: "",
-        updatedAt: "",
-        lastFetchedAt: generatedAt,
-        fetchStatus: "error",
+      error?.message ?? "GitHub API unavailable; reused previous snapshot.",
+    skills: previousSnapshot.skills
+      .filter(
+        (skill) =>
+          allowedRepos.size === 0 ||
+          allowedRepos.has(normalizeRepoName(skill.repo).toLowerCase()),
+      )
+      .map((skill) => ({
+        ...skill,
+        name:
+          asString(
+            inputsByRepo.get(normalizeRepoName(skill.repo).toLowerCase())?.name,
+          ) || skill.name,
+        descriptionZh:
+          asString(
+            inputsByRepo.get(normalizeRepoName(skill.repo).toLowerCase())
+              ?.summary?.zh,
+          ) || skill.descriptionZh,
+        descriptionEn:
+          asString(
+            inputsByRepo.get(normalizeRepoName(skill.repo).toLowerCase())
+              ?.summary?.en,
+          ) || skill.descriptionEn,
+        fetchStatus: "fallback",
         errorMessage:
-          error?.message ??
-          "RedFox API unavailable; generated GitHub fallback catalog.",
-        downloadGrowth7d: null,
-        downloadGrowth30d: null,
-        rankDelta7d: null,
-        rankDelta30d: null,
-        trendStatus: "collecting",
-        audiences: ["developer"],
-        useCases: [
-          {
-            zh: "RedFox API 不可用时的 GitHub 开源目录兜底。",
-            en: "GitHub fallback catalog when the RedFox API is unavailable.",
-          },
-        ],
-      };
-      return skill;
-    }),
-  );
-
-  return {
-    schemaVersion: 2,
-    generatedAt,
-    source: "github-fallback",
-    categories,
-    skills,
-    sourceRepo: {
-      fullName: SOURCE_REPO,
-      htmlUrl: SOURCE_REPO_URL,
-    },
-    errorMessage: error?.message,
+          error?.message ?? "GitHub API unavailable; reused previous snapshot.",
+        lastFetchedAt: generatedAt,
+      })),
   };
 }
 
 export async function buildSnapshot({
-  redfoxFetch = createJsonFetcher(),
+  skillInputs = [],
   githubFetch = createJsonFetcher({ token: process.env.GITHUB_TOKEN }),
   previousSnapshot = null,
+  generatedAt = nowIso(),
 } = {}) {
-  const generatedAt = nowIso();
-  let githubIndex = new Map();
+  const inputs = skillInputs.map((input) => ({
+    ...input,
+    repo: normalizeRepoName(input.repo),
+  }));
 
-  try {
-    githubIndex = await fetchGitHubSkillIndex(githubFetch);
-  } catch (error) {
-    console.warn(
-      `GitHub skill index unavailable; continuing with RedFox API only. ${error?.message ?? ""}`,
+  const skills = await mapWithConcurrency(inputs, 5, (input) =>
+    buildSkillSnapshot(input, githubFetch, generatedAt),
+  );
+
+  if (
+    skills.length > 0 &&
+    skills.every((skill) => skill.fetchStatus === "error") &&
+    isV3Snapshot(previousSnapshot) &&
+    previousSnapshot.skills.length > 0
+  ) {
+    return markPreviousSnapshotFallback(
+      previousSnapshot,
+      new Error(skills[0].errorMessage ?? "GitHub refresh failed."),
+      generatedAt,
+      inputs,
     );
   }
 
-  try {
-    const categories = await fetchRedfoxCategories(redfoxFetch);
-    const categoryList = categories.length ? categories : [FALLBACK_CATEGORY];
-    const categoriesByCode = buildCategoriesByCode(categoryList);
-    const apiSkills = await fetchRedfoxSkills(redfoxFetch);
-    const skills = addRanks(
-      apiSkills.map((skill) =>
-        normalizeApiSkill(skill, categoriesByCode, githubIndex, generatedAt),
-      ),
-    );
+  const ranked = addRanks(skills);
+  return {
+    schemaVersion: 3,
+    generatedAt,
+    source: "github-skills",
+    categories: categoriesFromSkills(ranked, inputs),
+    skills: ranked,
+  };
+}
 
+async function verifyCandidate(githubFetch, item, query, curatedRepos) {
+  const repoName = normalizeRepoName(item.full_name);
+  if (!repoName || curatedRepos.has(repoName.toLowerCase())) {
+    return null;
+  }
+  if (isExcludedRepo(item)) return null;
+  try {
+    const branch = asString(item.default_branch, "main");
+    const skillMdPaths = await fetchSkillPaths(githubFetch, repoName, branch);
+    if (skillMdPaths.length === 0) return null;
+    if (isExcludedRepo(item, skillMdPaths.join(" "))) return null;
+    const text = `${item.description ?? ""} ${(item.topics ?? []).join(" ")} ${skillMdPaths.join(" ")}`;
+    const category = categoryFrom(query.category, text);
+    const audiences = inferAudiences(query, text);
     return {
-      schemaVersion: 2,
-      generatedAt,
-      source: "redfox-api+github",
-      categories: categoryList,
-      skills,
-      sourceRepo: {
-        fullName: SOURCE_REPO,
-        htmlUrl: SOURCE_REPO_URL,
+      repo: repoName,
+      name: asString(item.name, repoName.split("/").at(-1)),
+      description: asString(item.description),
+      stars: asFiniteNumber(item.stargazers_count),
+      forks: asFiniteNumber(item.forks_count),
+      htmlUrl: asString(item.html_url, `https://github.com/${repoName}`),
+      language: asString(item.language),
+      topics: asArray(item.topics),
+      skillMdPaths,
+      matchedQuery: asString(query.id),
+      reason: {
+        zh: asString(
+          query.reason?.zh || "GitHub 搜索发现包含 SKILL.md 的项目。",
+        ),
+        en: asString(query.reason?.en || "Discovered by GitHub search."),
       },
+      alreadyCurated: false,
+      suggestedCategory: category.code,
+      suggestedAudiences: audiences,
+      confidence: Math.min(100, 60 + skillMdPaths.length * 10),
     };
-  } catch (error) {
-    if (isV2Snapshot(previousSnapshot) && previousSnapshot.skills.length > 0) {
-      return markPreviousSnapshotFallback(previousSnapshot, error, generatedAt);
-    }
-    return buildGitHubFallbackSnapshot(githubIndex, generatedAt, error);
+  } catch {
+    return null;
   }
 }
 
-export function buildCandidates(generatedAt = nowIso()) {
+export async function buildCandidates({
+  queries = [],
+  curatedRepos = new Set(),
+  githubFetch = createJsonFetcher({ token: process.env.GITHUB_TOKEN }),
+  generatedAt = nowIso(),
+} = {}) {
+  const normalizedCurated = new Set(
+    [...curatedRepos].map((repo) => normalizeRepoName(repo).toLowerCase()),
+  );
+  const candidates = [];
+  const seen = new Set();
+
+  for (const query of queries) {
+    const url = new URL(`${GITHUB_API}/search/repositories`);
+    url.searchParams.set("q", asString(query.query));
+    url.searchParams.set("sort", "stars");
+    url.searchParams.set("order", "desc");
+    url.searchParams.set("per_page", String(asFiniteNumber(query.limit, 10)));
+    try {
+      const payload = await githubFetch(url.toString());
+      const items = Array.isArray(payload?.items) ? payload.items : [];
+      const verified = await mapWithConcurrency(items, 4, (item) =>
+        verifyCandidate(githubFetch, item, query, normalizedCurated),
+      );
+      for (const candidate of verified.filter(Boolean)) {
+        const key = candidate.repo.toLowerCase();
+        if (seen.has(key)) continue;
+        seen.add(key);
+        candidates.push(candidate);
+      }
+    } catch (error) {
+      console.warn(
+        `Discovery query "${query.id ?? query.query}" failed: ${error?.message ?? error}`,
+      );
+    }
+  }
+
   return {
     generatedAt,
-    source: "redfox-skills",
-    candidates: [],
+    source: "github-search",
+    candidates: candidates.sort(
+      (a, b) => b.stars - a.stars || a.repo.localeCompare(b.repo),
+    ),
   };
 }
 
@@ -700,38 +790,37 @@ function byDate(a, b) {
 }
 
 function normalizeHistory(history, retentionDays = HISTORY_RETENTION_DAYS) {
-  if (history?.schemaVersion !== 2 || !Array.isArray(history.skills)) {
+  if (history?.schemaVersion !== 3 || !Array.isArray(history.repositories)) {
     return {
-      schemaVersion: 2,
+      schemaVersion: 3,
       generatedAt: String(history?.generatedAt ?? nowIso()),
       retentionDays,
-      skills: [],
+      repositories: [],
     };
   }
 
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     generatedAt: String(history.generatedAt ?? nowIso()),
     retentionDays,
-    skills: history.skills
-      .filter((skillHistory) => skillHistory?.skillCode)
-      .map((skillHistory) => ({
-        skillCode: normalizeSkillCode(skillHistory.skillCode),
-        samples: Array.isArray(skillHistory.samples)
-          ? skillHistory.samples
+    repositories: history.repositories
+      .filter((repoHistory) => repoHistory?.repo)
+      .map((repoHistory) => ({
+        repo: normalizeRepoName(repoHistory.repo),
+        samples: Array.isArray(repoHistory.samples)
+          ? repoHistory.samples
               .filter((sample) => sample?.date)
               .map((sample) => ({
                 date: String(sample.date).slice(0, 10),
-                downloadCount: asFiniteNumber(sample.downloadCount),
-                viewCount: asFiniteNumber(sample.viewCount),
-                heatScore: asFiniteNumber(sample.heatScore),
+                stars: asFiniteNumber(sample.stars),
+                forks: asFiniteNumber(sample.forks),
                 rank: asFiniteNumber(sample.rank),
                 rankByCategory: asFiniteNumber(sample.rankByCategory),
               }))
               .sort(byDate)
           : [],
       }))
-      .filter((skillHistory) => skillHistory.samples.length > 0),
+      .filter((repoHistory) => repoHistory.samples.length > 0),
   };
 }
 
@@ -744,48 +833,47 @@ export function mergeHistoryPayloads(
     .map((history) =>
       normalizeHistory(history, history?.retentionDays ?? retentionDays),
     )
-    .filter((history) => history.skills.length > 0);
+    .filter((history) => history.repositories.length > 0);
   const generatedAt =
     normalizedHistories
       .map((history) => history.generatedAt)
       .filter(Boolean)
       .sort()
       .at(-1) ?? nowIso();
-  const historyBySkill = new Map();
+  const historyByRepo = new Map();
 
   for (const history of normalizedHistories) {
-    for (const skillHistory of history.skills) {
-      const key = skillHistory.skillCode.toLowerCase();
-      const existing = historyBySkill.get(key) ?? {
-        skillCode: skillHistory.skillCode,
+    for (const repoHistory of history.repositories) {
+      const key = repoHistory.repo.toLowerCase();
+      const existing = historyByRepo.get(key) ?? {
+        repo: repoHistory.repo,
         samples: new Map(),
       };
-      for (const sample of skillHistory.samples) {
+      for (const sample of repoHistory.samples) {
         existing.samples.set(sample.date, sample);
       }
-      historyBySkill.set(key, existing);
+      historyByRepo.set(key, existing);
     }
   }
 
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     generatedAt,
     retentionDays,
-    skills: [...historyBySkill.values()]
-      .map((skillHistory) => ({
-        skillCode: skillHistory.skillCode,
-        samples: [...skillHistory.samples.values()].sort(byDate),
+    repositories: [...historyByRepo.values()]
+      .map((repoHistory) => ({
+        repo: repoHistory.repo,
+        samples: [...repoHistory.samples.values()].sort(byDate),
       }))
-      .sort((a, b) => a.skillCode.localeCompare(b.skillCode)),
+      .sort((a, b) => a.repo.localeCompare(b.repo)),
   };
 }
 
 function createSampleFromSkill(skill, generatedAt) {
   return {
     date: toUtcDate(generatedAt),
-    downloadCount: asFiniteNumber(skill.downloadCount),
-    viewCount: asFiniteNumber(skill.viewCount),
-    heatScore: asFiniteNumber(skill.heatScore),
+    stars: asFiniteNumber(skill.stars),
+    forks: asFiniteNumber(skill.forks),
     rank: asFiniteNumber(skill.rank),
     rankByCategory: asFiniteNumber(skill.rankByCategory),
   };
@@ -800,17 +888,17 @@ export function createHistoryFromSnapshot(
   retentionDays = HISTORY_RETENTION_DAYS,
 ) {
   const generatedAt = snapshot?.generatedAt ?? nowIso();
-  const skills = isV2Snapshot(snapshot) ? snapshot.skills : [];
+  const skills = isV3Snapshot(snapshot) ? snapshot.skills : [];
 
   return normalizeHistory(
     {
-      schemaVersion: 2,
+      schemaVersion: 3,
       generatedAt,
       retentionDays,
-      skills: skills
-        .filter((skill) => skill?.skillCode && isReliableHistorySkill(skill))
+      repositories: skills
+        .filter((skill) => skill?.repo && isReliableHistorySkill(skill))
         .map((skill) => ({
-          skillCode: normalizeSkillCode(skill.skillCode),
+          repo: normalizeRepoName(skill.repo),
           samples: [createSampleFromSkill(skill, generatedAt)],
         })),
     },
@@ -837,7 +925,7 @@ function buildTrendMetric(skill, history, generatedAt, days) {
   }
 
   return {
-    growth: asFiniteNumber(skill.downloadCount) - previous.downloadCount,
+    growth: asFiniteNumber(skill.stars) - previous.stars,
     rankDelta: previous.rank - asFiniteNumber(skill.rank),
   };
 }
@@ -847,10 +935,10 @@ export function addTrendMetricsToSnapshot(snapshot, history) {
     history,
     history?.retentionDays ?? HISTORY_RETENTION_DAYS,
   );
-  const historyBySkill = new Map(
-    normalizedHistory.skills.map((skillHistory) => [
-      skillHistory.skillCode.toLowerCase(),
-      skillHistory,
+  const historyByRepo = new Map(
+    normalizedHistory.repositories.map((repoHistory) => [
+      repoHistory.repo.toLowerCase(),
+      repoHistory,
     ]),
   );
   const generatedAt = snapshot?.generatedAt ?? nowIso();
@@ -859,9 +947,11 @@ export function addTrendMetricsToSnapshot(snapshot, history) {
     ...snapshot,
     generatedAt,
     skills: (snapshot?.skills ?? []).map((skill) => {
-      const skillHistory = historyBySkill.get(skill.skillCode.toLowerCase());
-      const sevenDay = buildTrendMetric(skill, skillHistory, generatedAt, 7);
-      const thirtyDay = buildTrendMetric(skill, skillHistory, generatedAt, 30);
+      const repoHistory = historyByRepo.get(
+        normalizeRepoName(skill.repo).toLowerCase(),
+      );
+      const sevenDay = buildTrendMetric(skill, repoHistory, generatedAt, 7);
+      const thirtyDay = buildTrendMetric(skill, repoHistory, generatedAt, 30);
       const trendStatus =
         sevenDay.growth === null || thirtyDay.growth === null
           ? "collecting"
@@ -869,8 +959,8 @@ export function addTrendMetricsToSnapshot(snapshot, history) {
 
       return {
         ...skill,
-        downloadGrowth7d: sevenDay.growth,
-        downloadGrowth30d: thirtyDay.growth,
+        growth7d: sevenDay.growth,
+        growth30d: thirtyDay.growth,
         rankDelta7d: sevenDay.rankDelta,
         rankDelta30d: thirtyDay.rankDelta,
         trendStatus,
@@ -888,13 +978,13 @@ export function mergeSnapshotIntoHistory(
   const generatedAt = snapshot?.generatedAt ?? nowIso();
   const currentDate = toUtcDate(generatedAt);
   const cutoffDate = addUtcDays(currentDate, -(retentionDays - 1));
-  const historyBySkill = new Map(
-    normalizedHistory.skills.map((skillHistory) => [
-      skillHistory.skillCode.toLowerCase(),
+  const historyByRepo = new Map(
+    normalizedHistory.repositories.map((repoHistory) => [
+      repoHistory.repo.toLowerCase(),
       {
-        skillCode: skillHistory.skillCode,
+        repo: repoHistory.repo,
         samples: new Map(
-          skillHistory.samples
+          repoHistory.samples
             .filter((sample) => sample.date >= cutoffDate)
             .map((sample) => [sample.date, sample]),
         ),
@@ -903,33 +993,33 @@ export function mergeSnapshotIntoHistory(
   );
 
   for (const skill of snapshot?.skills ?? []) {
-    if (!skill?.skillCode || !isReliableHistorySkill(skill)) continue;
+    if (!skill?.repo || !isReliableHistorySkill(skill)) continue;
 
-    const key = normalizeSkillCode(skill.skillCode).toLowerCase();
-    const skillHistory = historyBySkill.get(key) ?? {
-      skillCode: normalizeSkillCode(skill.skillCode),
+    const key = normalizeRepoName(skill.repo).toLowerCase();
+    const repoHistory = historyByRepo.get(key) ?? {
+      repo: normalizeRepoName(skill.repo),
       samples: new Map(),
     };
-    skillHistory.samples.set(
+    repoHistory.samples.set(
       currentDate,
       createSampleFromSkill(skill, generatedAt),
     );
-    historyBySkill.set(key, skillHistory);
+    historyByRepo.set(key, repoHistory);
   }
 
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     generatedAt,
     retentionDays,
-    skills: [...historyBySkill.values()]
-      .map((skillHistory) => ({
-        skillCode: skillHistory.skillCode,
-        samples: [...skillHistory.samples.values()]
+    repositories: [...historyByRepo.values()]
+      .map((repoHistory) => ({
+        repo: repoHistory.repo,
+        samples: [...repoHistory.samples.values()]
           .filter((sample) => sample.date >= cutoffDate)
           .sort(byDate),
       }))
-      .filter((skillHistory) => skillHistory.samples.length > 0)
-      .sort((a, b) => a.skillCode.localeCompare(b.skillCode)),
+      .filter((repoHistory) => repoHistory.samples.length > 0)
+      .sort((a, b) => a.repo.localeCompare(b.repo)),
   };
 }
 
@@ -952,6 +1042,29 @@ async function readJsonIfExists(filePath) {
   }
 }
 
+async function readYamlIfExists(filePath, fallback = {}) {
+  try {
+    const raw = await fs.readFile(filePath, "utf8");
+    return YAML.parse(raw) ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+async function readSkills(filePath) {
+  const payload = await readYamlIfExists(filePath, { skills: [] });
+  return Array.isArray(payload.skills)
+    ? payload.skills
+    : Array.isArray(payload.repositories)
+      ? payload.repositories
+      : [];
+}
+
+async function readDiscoveryQueries(filePath) {
+  const payload = await readYamlIfExists(filePath, { queries: [] });
+  return Array.isArray(payload.queries) ? payload.queries : [];
+}
+
 async function readHistory(historyPath, deployedHistoryPath) {
   const committedHistory = await readJsonIfExists(historyPath);
   const deployedHistory = await readJsonIfExists(deployedHistoryPath);
@@ -959,17 +1072,21 @@ async function readHistory(historyPath, deployedHistoryPath) {
 }
 
 export async function updateData({
+  skillsPath = DEFAULT_SKILLS,
+  discoveryPath = DEFAULT_DISCOVERY,
   snapshotPath = DEFAULT_SNAPSHOT,
   candidatesPath = DEFAULT_CANDIDATES,
   historyPath = DEFAULT_HISTORY,
   deployedHistoryPath = process.env.DEPLOYED_HISTORY_PATH,
-  redfoxFetch = createJsonFetcher(),
   githubFetch = createJsonFetcher({ token: process.env.GITHUB_TOKEN }),
 } = {}) {
+  const skillInputs = await readSkills(skillsPath);
+  const discoveryQueries = await readDiscoveryQueries(discoveryPath);
   const previousSnapshot = await readJsonIfExists(snapshotPath);
+  const previousCandidates = await readJsonIfExists(candidatesPath);
   const previousHistory = await readHistory(historyPath, deployedHistoryPath);
   const snapshot = await buildSnapshot({
-    redfoxFetch,
+    skillInputs,
     githubFetch,
     previousSnapshot,
   });
@@ -982,7 +1099,22 @@ export async function updateData({
     snapshotWithTrends,
     HISTORY_RETENTION_DAYS,
   );
-  const candidates = buildCandidates(snapshotWithTrends.generatedAt);
+  const nextCandidates = await buildCandidates({
+    queries: discoveryQueries,
+    curatedRepos: new Set(skillInputs.map((skill) => skill.repo)),
+    githubFetch,
+    generatedAt: snapshotWithTrends.generatedAt,
+  });
+  const candidates =
+    nextCandidates.candidates.length === 0 &&
+    Array.isArray(previousCandidates?.candidates) &&
+    previousCandidates.candidates.length > 0
+      ? {
+          ...previousCandidates,
+          generatedAt: snapshotWithTrends.generatedAt,
+          source: "github-search-fallback",
+        }
+      : nextCandidates;
 
   await writeJson(snapshotPath, snapshotWithTrends);
   await writeJson(candidatesPath, candidates);
@@ -1000,9 +1132,9 @@ if (
   import.meta.url === pathToFileURL(process.argv[1]).href
 ) {
   updateData()
-    .then(({ snapshot, history }) => {
+    .then(({ snapshot, history, candidates }) => {
       console.log(
-        `Updated ${snapshot.skills.length} RedFox skills and ${history.skills.length} history timelines.`,
+        `Updated ${snapshot.skills.length} GitHub skills, ${candidates.candidates.length} candidates, and ${history.repositories.length} history timelines.`,
       );
     })
     .catch((error) => {

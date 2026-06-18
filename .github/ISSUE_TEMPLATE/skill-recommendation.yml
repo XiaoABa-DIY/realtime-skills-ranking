@@ -1,55 +1,54 @@
-name: 推荐 RedFox Skill
-description: 推荐一个适合加入或重点展示的 RedFox Skill
-title: "feat: 推荐 RedFox skill "
+name: 推荐 GitHub Skill
+description: 推荐一个包含 SKILL.md、适合加入星标榜的 GitHub 开源 Skill 仓库
+title: "feat: 推荐 GitHub skill "
 labels: ["skill-candidate"]
 body:
   - type: input
-    id: skill_name
+    id: github_url
     attributes:
-      label: Skill 名称或 skillCode
-      placeholder: multi-wordcheck
+      label: GitHub 仓库链接
+      placeholder: https://github.com/Yuan1z0825/nature-skills
     validations:
       required: true
   - type: input
-    id: redfox_url
+    id: skill_path
     attributes:
-      label: RedFox 详情页
-      placeholder: https://redfox.hk/skills/no/wn2Hrw42
+      label: SKILL.md 路径
+      placeholder: skills/nature-polishing/SKILL.md
     validations:
-      required: false
+      required: true
   - type: input
-    id: github_url
+    id: chinese_summary
     attributes:
-      label: GitHub 源码链接
-      placeholder: https://github.com/redfox-data/redfox-community/tree/main/skills/multi-wordcheck
+      label: 中文摘要
+      placeholder: 面向科研写作和图表生成的中文 Skill 集合
     validations:
-      required: false
+      required: true
   - type: checkboxes
     id: audiences
     attributes:
       label: 适合人群
       options:
         - label: 自媒体创作者
-        - label: 公众号运营
-        - label: 小红书创作者
-        - label: 抖音运营
-        - label: 数据分析
-        - label: 效率工具用户
-        - label: Agent/开发者
+        - label: 程序员
+        - label: 写作/提示词用户
+        - label: 设计/多媒体用户
+        - label: 数据分析/研究用户
+        - label: 效率办公用户
+        - label: 入门用户
   - type: dropdown
     id: category
     attributes:
       label: 建议分类
       options:
-        - 公众号创作技能包
-        - 小红书创作技能包
-        - 创作助手
-        - 灵感解析
-        - 数据查询
-        - 账号分析
-        - 作品分析
-        - 热门榜单
-        - 效率工具
+        - 内容创作
+        - 编程开发
+        - 提示词/工作流
+        - 设计与多媒体
+        - 数据研究
+        - 效率办公
+        - 文档知识库
+        - 中文本地化
         - 其他
     validations:
       required: true
@@ -57,13 +56,13 @@ body:
     id: use_cases
     attributes:
       label: 主要使用场景
-      description: 说明这个 skill 解决什么问题，适合在哪些工作流里使用。
+      description: 说明这个 Skill 解决什么问题，适合在哪些工作流里使用。
     validations:
       required: true
   - type: textarea
     id: reason
     attributes:
       label: 推荐理由
-      description: 说明为什么值得加入或重点展示。
+      description: 说明为什么值得加入正式榜单或重点展示。
     validations:
       required: true

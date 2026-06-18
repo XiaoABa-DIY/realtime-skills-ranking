@@ -5,16 +5,15 @@ import {
   ChartNoAxesCombined,
   Clock3,
   Copy,
-  Download,
   ExternalLink,
-  Eye,
-  Flame,
-  KeyRound,
+  GitFork,
+  Home,
   Languages,
   Layers3,
   Search,
   SlidersHorizontal,
   Sparkles,
+  Star,
   Tag,
   TerminalSquare,
   TrendingUp,
@@ -57,24 +56,20 @@ import {
 } from "./lib/url-state";
 import type {
   AudienceKey,
+  GithubSkillSnapshot,
   Locale,
-  RedfoxCategory,
-  RedfoxSkillSnapshot,
+  SkillCategory,
   SnapshotPayload,
   SortKey,
   SpotlightKey,
 } from "./types";
 
 const emptySnapshot: SnapshotPayload = {
-  schemaVersion: 2,
+  schemaVersion: 3,
   generatedAt: "",
   source: "empty",
   categories: [],
   skills: [],
-  sourceRepo: {
-    fullName: "redfox-data/redfox-community",
-    htmlUrl: "https://github.com/redfox-data/redfox-community",
-  },
 };
 
 const issueTemplateUrl =
@@ -82,21 +77,21 @@ const issueTemplateUrl =
 
 type QuickFilterKey =
   | "mediaTools"
-  | "wechatTools"
-  | "xhsTools"
-  | "douyinTools"
+  | "developerTools"
+  | "writingTools"
+  | "designTools"
   | "dataTools"
   | "productivityTools"
-  | "developerTools";
+  | "beginnerTools";
 
 const quickFilterKeys: QuickFilterKey[] = [
   "mediaTools",
-  "wechatTools",
-  "xhsTools",
-  "douyinTools",
+  "developerTools",
+  "writingTools",
+  "designTools",
   "dataTools",
   "productivityTools",
-  "developerTools",
+  "beginnerTools",
 ];
 
 function getInitialState() {
@@ -170,24 +165,22 @@ function SkillBadges({
   locale,
   limit = 3,
 }: {
-  skill: RedfoxSkillSnapshot;
+  skill: GithubSkillSnapshot;
   locale: Locale;
   limit?: number;
 }) {
   return (
     <div className="badge-row">
-      {skill.displayBadge ? (
-        <span className={`badge status status-${skill.displayStatus}`}>
-          {skill.displayBadge[locale]}
+      {skill.featured ? (
+        <span className="badge status status-2">{t(locale, "featured")}</span>
+      ) : null}
+      {skill.chineseScore >= 45 ? (
+        <span className="badge status status-3">
+          {t(locale, "chineseFriendly")}
         </span>
       ) : null}
       <span className="badge category">{skill.categoryName[locale]}</span>
-      {skill.hasApiKey ? (
-        <span className="badge api-key">
-          <KeyRound size={12} />
-          API Key
-        </span>
-      ) : null}
+      {skill.language ? <span className="badge">{skill.language}</span> : null}
       {skill.tags.slice(0, limit).map((tag) => (
         <span className="badge" key={tag}>
           {tag}
@@ -212,15 +205,15 @@ function TrendBadges({
   skill,
   locale,
 }: {
-  skill: RedfoxSkillSnapshot;
+  skill: GithubSkillSnapshot;
   locale: Locale;
 }) {
   const badges = [
-    skill.downloadGrowth7d !== null && skill.downloadGrowth7d !== undefined
-      ? `${formatSigned(skill.downloadGrowth7d, locale)} / 7d`
+    skill.growth7d !== null && skill.growth7d !== undefined
+      ? `${formatSigned(skill.growth7d, locale)} / 7d`
       : "",
-    skill.downloadGrowth30d !== null && skill.downloadGrowth30d !== undefined
-      ? `${formatSigned(skill.downloadGrowth30d, locale)} / 30d`
+    skill.growth30d !== null && skill.growth30d !== undefined
+      ? `${formatSigned(skill.growth30d, locale)} / 30d`
       : "",
     skill.rankDelta7d !== null && skill.rankDelta7d !== undefined
       ? formatRankDelta(skill.rankDelta7d)
@@ -250,18 +243,18 @@ function HeroSection({
   stale,
   topSkills,
   onStartExplore,
-  onHot,
+  onTopStars,
   onRecommendSkill,
   onSelectSkill,
 }: {
   locale: Locale;
   snapshot: SnapshotPayload;
   stale: boolean;
-  topSkills: RedfoxSkillSnapshot[];
+  topSkills: GithubSkillSnapshot[];
   onStartExplore: () => void;
-  onHot: () => void;
+  onTopStars: () => void;
   onRecommendSkill: () => void;
-  onSelectSkill: (skill: RedfoxSkillSnapshot) => void;
+  onSelectSkill: (skill: GithubSkillSnapshot) => void;
 }) {
   return (
     <section className="hero-panel">
@@ -278,9 +271,13 @@ function HeroSection({
             <Sparkles size={16} />
             {t(locale, "startExploring")}
           </button>
-          <button type="button" className="secondary-button" onClick={onHot}>
-            <Flame size={16} />
-            {t(locale, "viewHot")}
+          <button
+            type="button"
+            className="secondary-button"
+            onClick={onTopStars}
+          >
+            <Star size={16} />
+            {t(locale, "viewTopStars")}
           </button>
           <button
             type="button"
@@ -312,15 +309,15 @@ function HeroSection({
           <button
             type="button"
             className={`top-skill-card rank-${index + 1}`}
-            key={skill.skillCode}
+            key={skill.repo}
             onClick={() => onSelectSkill(skill)}
           >
             <span className="top-rank">#{index + 1}</span>
             <span>
               <strong>{skillName(skill, locale)}</strong>
-              <small>{skill.skillCode}</small>
+              <small>{skill.repo}</small>
             </span>
-            <em>{formatNumber(skill.heatScore, locale)}</em>
+            <em>{formatNumber(skill.stars, locale)}</em>
           </button>
         ))}
       </div>
@@ -329,8 +326,8 @@ function HeroSection({
 }
 
 interface RecommendedPick {
-  key: "topOverall" | "creatorPick" | "dataPick" | "toolPick";
-  skill: RedfoxSkillSnapshot;
+  key: "topOverall" | "creatorPick" | "developerPick" | "dataPick";
+  skill: GithubSkillSnapshot;
 }
 
 function FeaturedSkillCards({
@@ -343,8 +340,8 @@ function FeaturedSkillCards({
   picks: RecommendedPick[];
   locale: Locale;
   favoriteSkills: ReadonlySet<string>;
-  onSelect: (skill: RedfoxSkillSnapshot) => void;
-  onToggleFavorite: (skill: RedfoxSkillSnapshot) => void;
+  onSelect: (skill: GithubSkillSnapshot) => void;
+  onToggleFavorite: (skill: GithubSkillSnapshot) => void;
 }) {
   if (picks.length === 0) return null;
 
@@ -352,7 +349,7 @@ function FeaturedSkillCards({
     <section className="featured-section" aria-labelledby="featured-title">
       <div className="section-head">
         <div>
-          <p>{t(locale, "redfoxSource")}</p>
+          <p>{t(locale, "githubSource")}</p>
           <h2 id="featured-title">
             <Sparkles size={20} />
             {t(locale, "todayPicks")}
@@ -375,14 +372,14 @@ function FeaturedSkillCards({
             <SkillBadges skill={pick.skill} locale={locale} limit={2} />
             <div className="pick-stats">
               <span>
-                <Download size={14} />
-                {formatNumber(pick.skill.downloadCount, locale)}
+                <Star size={14} />
+                {formatNumber(pick.skill.stars, locale)}
               </span>
               <span>
-                <Eye size={14} />
-                {formatNumber(pick.skill.viewCount, locale)}
+                <GitFork size={14} />
+                {formatNumber(pick.skill.forks, locale)}
               </span>
-              <span>{formatNumber(pick.skill.heatScore, locale)}</span>
+              <span>{formatNumber(pick.skill.chineseScore, locale)}</span>
             </div>
             <div className="pick-actions">
               <button
@@ -394,7 +391,7 @@ function FeaturedSkillCards({
               </button>
               <FavoriteButton
                 compact
-                active={favoriteSkills.has(pick.skill.skillCode.toLowerCase())}
+                active={favoriteSkills.has(pick.skill.repo.toLowerCase())}
                 locale={locale}
                 onClick={() => onToggleFavorite(pick.skill)}
               />
@@ -453,12 +450,11 @@ function CategoryChips({
   active,
   onSelect,
 }: {
-  categories: RedfoxCategory[];
+  categories: SkillCategory[];
   locale: Locale;
   active: string;
   onSelect: (category: string) => void;
 }) {
-  const visible = categories.filter((category) => category.code !== "all");
   return (
     <div className="category-chip-row" aria-label={t(locale, "category")}>
       <button
@@ -468,7 +464,7 @@ function CategoryChips({
       >
         {t(locale, "all")}
       </button>
-      {visible.map((category) => (
+      {categories.map((category) => (
         <button
           type="button"
           className={
@@ -491,7 +487,7 @@ function SkillCard({
   onSelect,
   onToggleFavorite,
 }: {
-  skill: RedfoxSkillSnapshot;
+  skill: GithubSkillSnapshot;
   locale: Locale;
   favorite: boolean;
   onSelect: () => void;
@@ -503,26 +499,26 @@ function SkillCard({
         <span className="rank-pill">#{skill.rank}</span>
         <span className="skill-title-block">
           <strong>{skillName(skill, locale)}</strong>
-          <small>{skill.skillCode}</small>
+          <small>{skill.repo}</small>
         </span>
       </button>
       <p>{skillSummary(skill, locale)}</p>
       <SkillBadges skill={skill} locale={locale} />
       <div className="skill-stats">
         <span>
-          <Download size={14} />
-          <b>{formatNumber(skill.downloadCount, locale)}</b>
-          {t(locale, "usage")}
+          <Star size={14} />
+          <b>{formatNumber(skill.stars, locale)}</b>
+          {t(locale, "stars")}
         </span>
         <span>
-          <Eye size={14} />
-          <b>{formatNumber(skill.viewCount, locale)}</b>
-          {t(locale, "views")}
+          <GitFork size={14} />
+          <b>{formatNumber(skill.forks, locale)}</b>
+          {t(locale, "forks")}
         </span>
         <span>
-          <TrendingUp size={14} />
-          <b>{formatNumber(skill.heatScore, locale)}</b>
-          {t(locale, "heatScore")}
+          <TerminalSquare size={14} />
+          <b>{formatNumber(skill.skillMdPaths.length, locale)}</b>
+          {t(locale, "skillFiles")}
         </span>
       </div>
       <div className="trend-line">
@@ -561,7 +557,7 @@ function EmptyRankingState({
           <SlidersHorizontal size={16} />
           {t(locale, "clearFilters")}
         </button>
-        {["抖音", "小红书", "违禁词"].map((query) => (
+        {["写作", "研究", "中文"].map((query) => (
           <button
             type="button"
             className="detail-link"
@@ -579,6 +575,13 @@ function EmptyRankingState({
   );
 }
 
+function skillFileUrl(skill: GithubSkillSnapshot, skillPath: string) {
+  return `${skill.htmlUrl}/blob/HEAD/${skillPath
+    .split("/")
+    .map(encodeURIComponent)
+    .join("/")}`;
+}
+
 function DetailDrawer({
   skill,
   skills,
@@ -589,18 +592,19 @@ function DetailDrawer({
   onClose,
   onSelectRelated,
 }: {
-  skill: RedfoxSkillSnapshot | null;
-  skills: RedfoxSkillSnapshot[];
+  skill: GithubSkillSnapshot | null;
+  skills: GithubSkillSnapshot[];
   locale: Locale;
   favorite: boolean;
-  onShare: (skillCode?: string) => void;
-  onToggleFavorite: (skill: RedfoxSkillSnapshot) => void;
+  onShare: (repo?: string) => void;
+  onToggleFavorite: (skill: GithubSkillSnapshot) => void;
   onClose: () => void;
-  onSelectRelated: (skill: RedfoxSkillSnapshot) => void;
+  onSelectRelated: (skill: GithubSkillSnapshot) => void;
 }) {
   if (!skill) return null;
   const related = getRelatedSkills(skill, skills, 4);
-  const readme = skill.readme[locale] || skill.readme.zh;
+  const readme =
+    locale === "zh" ? skill.readmeSnippetZh : skill.readmeSnippetEn;
 
   return (
     <div className="drawer-backdrop" onClick={onClose}>
@@ -615,7 +619,7 @@ function DetailDrawer({
           <div>
             <p className="eyebrow">{t(locale, "detail")}</p>
             <h2>{skillName(skill, locale)}</h2>
-            <span>{skill.skillCode}</span>
+            <span>{skill.repo}</span>
           </div>
           <button
             type="button"
@@ -628,19 +632,10 @@ function DetailDrawer({
         </div>
 
         <div className="drawer-actions">
-          <a
-            className="primary-button"
-            href={skill.redfoxUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <ExternalLink size={16} />
-            {t(locale, "openRedfox")}
-          </a>
-          {skill.githubUrl ? (
+          {skill.htmlUrl ? (
             <a
-              className="secondary-button"
-              href={skill.githubUrl}
+              className="primary-button"
+              href={skill.htmlUrl}
               target="_blank"
               rel="noreferrer"
             >
@@ -648,15 +643,31 @@ function DetailDrawer({
               {t(locale, "openGithub")}
             </a>
           ) : (
-            <button type="button" className="secondary-button" disabled>
+            <button type="button" className="primary-button" disabled>
               <ExternalLink size={16} />
               {t(locale, "githubUnavailable")}
+            </button>
+          )}
+          {skill.homepage ? (
+            <a
+              className="secondary-button"
+              href={skill.homepage}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Home size={16} />
+              {t(locale, "openHomepage")}
+            </a>
+          ) : (
+            <button type="button" className="secondary-button" disabled>
+              <Home size={16} />
+              {t(locale, "homepageUnavailable")}
             </button>
           )}
           <button
             type="button"
             className="secondary-button"
-            onClick={() => onShare(skill.skillCode)}
+            onClick={() => onShare(skill.repo)}
           >
             <Copy size={16} />
             {t(locale, "shareSkill")}
@@ -678,18 +689,18 @@ function DetailDrawer({
             icon={<ChartNoAxesCombined size={16} />}
           />
           <MetricCard
-            label={t(locale, "usage")}
-            value={formatNumber(skill.downloadCount, locale)}
-            icon={<Download size={16} />}
+            label={t(locale, "stars")}
+            value={formatNumber(skill.stars, locale)}
+            icon={<Star size={16} />}
           />
           <MetricCard
-            label={t(locale, "views")}
-            value={formatNumber(skill.viewCount, locale)}
-            icon={<Eye size={16} />}
+            label={t(locale, "forks")}
+            value={formatNumber(skill.forks, locale)}
+            icon={<GitFork size={16} />}
           />
           <MetricCard
-            label={t(locale, "heatScore")}
-            value={formatNumber(skill.heatScore, locale)}
+            label={t(locale, "chineseScore")}
+            value={formatNumber(skill.chineseScore, locale)}
             icon={<TrendingUp size={16} />}
           />
         </div>
@@ -704,28 +715,46 @@ function DetailDrawer({
         </section>
 
         <section className="drawer-section">
-          <h3>{t(locale, "accessMethods")}</h3>
+          <h3>{t(locale, "skillPaths")}</h3>
           <div className="access-list">
-            {skill.accessMethods.map((method) => (
-              <span key={`${method.name}-${method.value}`}>
+            {skill.skillMdPaths.map((skillPath) => (
+              <span key={skillPath}>
                 <TerminalSquare size={14} />
-                {method.url ? (
-                  <a href={method.url} target="_blank" rel="noreferrer">
-                    {method.name}
-                  </a>
-                ) : (
-                  <b>{method.name}</b>
-                )}
-                <small>{method.value}</small>
+                <a
+                  href={skillFileUrl(skill, skillPath)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {skillPath}
+                </a>
+                <small>
+                  {t(locale, "sourceRepo")}: {skill.repo}
+                </small>
               </span>
             ))}
+          </div>
+        </section>
+
+        <section className="drawer-section">
+          <h3>{t(locale, "repositoryMetrics")}</h3>
+          <div className="access-list">
             <span>
-              <KeyRound size={14} />
-              <b>
-                {skill.hasApiKey
-                  ? t(locale, "apiKeyRequired")
-                  : t(locale, "apiKeyFree")}
-              </b>
+              <b>{t(locale, "language")}</b>
+              <small>{skill.language || "-"}</small>
+            </span>
+            <span>
+              <b>{t(locale, "license")}</b>
+              <small>{skill.license || "-"}</small>
+            </span>
+            <span>
+              <b>{t(locale, "issues")}</b>
+              <small>{formatNumber(skill.openIssues, locale)}</small>
+            </span>
+            <span>
+              <b>{t(locale, "updatedAt")}</b>
+              <small>
+                {formatDateTime(skill.pushedAt || skill.updatedAt, locale)}
+              </small>
             </span>
           </div>
         </section>
@@ -734,14 +763,14 @@ function DetailDrawer({
           <h3>{t(locale, "similarSkills")}</h3>
           {related.length ? (
             <div className="related-list">
-              {related.map((item) => (
+              {related.map((relatedSkill) => (
                 <button
                   type="button"
-                  key={item.skillCode}
-                  onClick={() => onSelectRelated(item)}
+                  key={relatedSkill.repo}
+                  onClick={() => onSelectRelated(relatedSkill)}
                 >
-                  <strong>{skillName(item, locale)}</strong>
-                  <small>{item.skillCode}</small>
+                  <strong>{skillName(relatedSkill, locale)}</strong>
+                  <small>{skillSummary(relatedSkill, locale)}</small>
                 </button>
               ))}
             </div>
@@ -767,9 +796,7 @@ function App() {
   const [initialState] = useState(() => getInitialState());
   const [locale, setLocale] = useState<Locale>(initialState.locale);
   const [filters, setFilters] = useState<SkillFilters>(initialState.filters);
-  const [selectedSkillCode, setSelectedSkillCode] = useState(
-    initialState.selectedSkill,
-  );
+  const [selectedRepo, setSelectedRepo] = useState(initialState.selectedSkill);
   const [snapshot, setSnapshot] = useState<SnapshotPayload>(emptySnapshot);
   const [favorites, setFavorites] = useState<string[]>(() =>
     readFavoriteSkills(),
@@ -810,18 +837,16 @@ function App() {
   );
   const options = useMemo(() => getFilterOptions(skills), [skills]);
   const topSkills = useMemo(
-    () => [...skills].sort((a, b) => b.heatScore - a.heatScore).slice(0, 3),
+    () => [...skills].sort((a, b) => b.stars - a.stars).slice(0, 3),
     [skills],
   );
   const recommendedPicks = useMemo(() => getRecommendedPicks(skills), [skills]);
   const selectedSkill = useMemo(
     () =>
       skills.find(
-        (skill) =>
-          skill.skillCode.toLowerCase() === selectedSkillCode.toLowerCase() ||
-          skill.skillNo === selectedSkillCode,
+        (skill) => skill.repo.toLowerCase() === selectedRepo.toLowerCase(),
       ) ?? null,
-    [skills, selectedSkillCode],
+    [skills, selectedRepo],
   );
   const activeFilters = useMemo(
     () =>
@@ -845,7 +870,7 @@ function App() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const nextSearch = buildSearchParams(filters, locale, selectedSkillCode);
+    const nextSearch = buildSearchParams(filters, locale, selectedRepo);
     if (window.location.search !== nextSearch) {
       window.history.replaceState(
         {},
@@ -853,7 +878,7 @@ function App() {
         `${window.location.pathname}${nextSearch}`,
       );
     }
-  }, [filters, locale, selectedSkillCode]);
+  }, [filters, locale, selectedRepo]);
 
   function updateFilters(
     next: SkillFilters | ((current: SkillFilters) => SkillFilters),
@@ -890,30 +915,26 @@ function App() {
     }));
   }
 
-  function toggleFavorite(skill: RedfoxSkillSnapshot) {
+  function toggleFavorite(skill: GithubSkillSnapshot) {
     setFavorites((current) => {
-      const next = toggleFavoriteSkill(current, skill.skillCode);
+      const next = toggleFavoriteSkill(current, skill.repo);
       return writeFavoriteSkills(next);
     });
   }
 
-  function openSkill(skill: RedfoxSkillSnapshot) {
-    setSelectedSkillCode(skill.skillCode);
+  function openSkill(skill: GithubSkillSnapshot) {
+    setSelectedRepo(skill.repo);
   }
 
   function applyQuickFilter(key: QuickFilterKey) {
     const quickFilters: Record<QuickFilterKey, Partial<SkillFilters>> = {
-      mediaTools: { audience: "media", spotlight: "recommended", query: "" },
-      wechatTools: { audience: "wechat", category: "gzh_skills", query: "" },
-      xhsTools: { audience: "xiaohongshu", category: "xhs_skills", query: "" },
-      douyinTools: { audience: "douyin", query: "douyin" },
-      dataTools: { audience: "data", spotlight: "topUses", query: "" },
-      productivityTools: {
-        audience: "productivity",
-        category: "efficiency_tools",
-        query: "",
-      },
-      developerTools: { audience: "developer", query: "api" },
+      mediaTools: { audience: "media", query: "" },
+      developerTools: { audience: "developer", query: "" },
+      writingTools: { audience: "writing", query: "prompt" },
+      designTools: { audience: "design", query: "" },
+      dataTools: { audience: "data", query: "" },
+      productivityTools: { audience: "productivity", query: "" },
+      beginnerTools: { audience: "beginner", spotlight: "chineseFriendly" },
     };
 
     updateFilters((current) => ({
@@ -930,8 +951,8 @@ function App() {
     }
   }
 
-  function viewHot() {
-    updateFilters((current) => ({ ...current, spotlight: "hot" }));
+  function viewTopStars() {
+    updateFilters((current) => ({ ...current, spotlight: "topStars" }));
     startExploring();
   }
 
@@ -939,8 +960,8 @@ function App() {
     window.location.href = issueTemplateUrl;
   }
 
-  async function copyShareLink(skillCode = "") {
-    const url = makeShareUrl(window.location.href, filters, locale, skillCode);
+  async function copyShareLink(repo = "") {
+    const url = makeShareUrl(window.location.href, filters, locale, repo);
     try {
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(url);
@@ -1024,7 +1045,7 @@ function App() {
         stale={snapshotStale}
         topSkills={topSkills}
         onStartExplore={startExploring}
-        onHot={viewHot}
+        onTopStars={viewTopStars}
         onRecommendSkill={recommendSkill}
         onSelectSkill={openSkill}
       />
@@ -1042,26 +1063,26 @@ function App() {
         </p>
       ) : null}
 
-      <section className="metrics-row" aria-label="RedFox metrics">
+      <section className="metrics-row" aria-label="GitHub metrics">
         <MetricCard
           label={t(locale, "metricsSkills")}
           value={formatNumber(stats.totalSkills, locale)}
           icon={<Layers3 size={18} />}
         />
         <MetricCard
-          label={t(locale, "metricsDownloads")}
-          value={formatNumber(stats.totalDownloads, locale)}
-          icon={<Download size={18} />}
+          label={t(locale, "metricsStars")}
+          value={formatNumber(stats.totalStars, locale)}
+          icon={<Star size={18} />}
         />
         <MetricCard
-          label={t(locale, "metricsViews")}
-          value={formatNumber(stats.totalViews, locale)}
-          icon={<Eye size={18} />}
+          label={t(locale, "metricsForks")}
+          value={formatNumber(stats.totalForks, locale)}
+          icon={<GitFork size={18} />}
         />
         <MetricCard
-          label={t(locale, "metricsApiKey")}
-          value={formatNumber(stats.apiKeySkills, locale)}
-          icon={<KeyRound size={18} />}
+          label={t(locale, "metricsChinese")}
+          value={formatNumber(stats.chineseFriendly, locale)}
+          icon={<TrendingUp size={18} />}
         />
       </section>
 
@@ -1174,9 +1195,8 @@ function App() {
                 setFilter("sortKey", event.target.value as SortKey)
               }
             >
-              <option value="heat">{t(locale, "sortHeat")}</option>
-              <option value="uses">{t(locale, "sortUses")}</option>
-              <option value="views">{t(locale, "sortViews")}</option>
+              <option value="stars">{t(locale, "sortStars")}</option>
+              <option value="forks">{t(locale, "sortForks")}</option>
               <option value="updated">{t(locale, "sortUpdated")}</option>
               <option value="name">{t(locale, "sortName")}</option>
             </select>
@@ -1268,10 +1288,10 @@ function App() {
             <div className="skills-grid">
               {filteredSkills.map((skill) => (
                 <SkillCard
-                  key={skill.skillCode}
+                  key={skill.repo}
                   skill={skill}
                   locale={locale}
-                  favorite={favoriteSkillSet.has(skill.skillCode.toLowerCase())}
+                  favorite={favoriteSkillSet.has(skill.repo.toLowerCase())}
                   onSelect={() => openSkill(skill)}
                   onToggleFavorite={() => toggleFavorite(skill)}
                 />
@@ -1287,11 +1307,11 @@ function App() {
         locale={locale}
         favorite={Boolean(
           selectedSkill &&
-          favoriteSkillSet.has(selectedSkill.skillCode.toLowerCase()),
+          favoriteSkillSet.has(selectedSkill.repo.toLowerCase()),
         )}
         onShare={copyShareLink}
         onToggleFavorite={toggleFavorite}
-        onClose={() => setSelectedSkillCode("")}
+        onClose={() => setSelectedRepo("")}
         onSelectRelated={openSkill}
       />
     </main>
@@ -1299,7 +1319,7 @@ function App() {
 }
 
 function categoryName(
-  categories: RedfoxCategory[],
+  categories: SkillCategory[],
   code: string,
   locale: Locale,
 ) {
@@ -1308,29 +1328,29 @@ function categoryName(
   );
 }
 
-function getRecommendedPicks(skills: RedfoxSkillSnapshot[]): RecommendedPick[] {
+function getRecommendedPicks(skills: GithubSkillSnapshot[]): RecommendedPick[] {
   const sorted = [...skills].sort(
-    (a, b) => b.heatScore - a.heatScore || b.downloadCount - a.downloadCount,
+    (a, b) => b.stars - a.stars || b.chineseScore - a.chineseScore,
   );
   const used = new Set<string>();
 
   function take(
     key: RecommendedPick["key"],
-    predicate: (skill: RedfoxSkillSnapshot) => boolean,
+    predicate: (skill: GithubSkillSnapshot) => boolean,
   ): RecommendedPick | null {
     const skill =
-      sorted.find((item) => !used.has(item.skillCode) && predicate(item)) ??
-      sorted.find((item) => !used.has(item.skillCode));
+      sorted.find((item) => !used.has(item.repo) && predicate(item)) ??
+      sorted.find((item) => !used.has(item.repo));
     if (!skill) return null;
-    used.add(skill.skillCode);
+    used.add(skill.repo);
     return { key, skill };
   }
 
   return [
     take("topOverall", () => true),
     take("creatorPick", (skill) => matchesAudience(skill, "media")),
+    take("developerPick", (skill) => matchesAudience(skill, "developer")),
     take("dataPick", (skill) => matchesAudience(skill, "data")),
-    take("toolPick", (skill) => matchesAudience(skill, "productivity")),
   ].filter((pick): pick is RecommendedPick => Boolean(pick));
 }
 
@@ -1341,17 +1361,15 @@ function isSnapshotOlderThan(generatedAt: string, hours: number) {
 }
 
 function isQuickFilterActive(key: QuickFilterKey, filters: SkillFilters) {
-  if (key === "mediaTools") {
-    return filters.audience === "media" && filters.spotlight === "recommended";
-  }
-  if (key === "wechatTools") return filters.audience === "wechat";
-  if (key === "xhsTools") return filters.audience === "xiaohongshu";
-  if (key === "douyinTools") return filters.audience === "douyin";
-  if (key === "dataTools") {
-    return filters.audience === "data" && filters.spotlight === "topUses";
-  }
+  if (key === "mediaTools") return filters.audience === "media";
+  if (key === "developerTools") return filters.audience === "developer";
+  if (key === "writingTools") return filters.audience === "writing";
+  if (key === "designTools") return filters.audience === "design";
+  if (key === "dataTools") return filters.audience === "data";
   if (key === "productivityTools") return filters.audience === "productivity";
-  return filters.audience === "developer";
+  return (
+    filters.audience === "beginner" && filters.spotlight === "chineseFriendly"
+  );
 }
 
 export default App;
