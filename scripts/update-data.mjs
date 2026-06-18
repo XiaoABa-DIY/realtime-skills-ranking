@@ -14,6 +14,11 @@ import {
   fetchContributors,
   fetchHnMentions,
   fetchHfMetrics,
+  fetchStargazerTimeline,
+  fetchRepoStatistics,
+  classifyPlatform,
+  assessSafety,
+  buildSourceEntry,
 } from "./ecosystem-enrich.mjs";
 
 const ROOT = process.cwd();
@@ -775,13 +780,58 @@ export async function buildSnapshot({
     }
   }
 
+  // Add platform, safety, and source tracking to enriched skills
+  for (let i = 0; i < enrichedSkills.length; i++) {
+    const skill = enrichedSkills[i];
+    if (skill.fetchStatus !== "ok") {
+      skill.platform = "generic";
+      skill.safetyLevel = "review";
+      skill.safetyNotes = ["GitHub API refresh failed"];
+      skill.sources = [buildSourceEntry("manual", false, ["API unavailable"])];
+      skill.primarySource = "manual";
+      skill.hasSkillMd = skill.skillMdPaths.length > 0;
+      skill.hasReadme = !!(skill.readmeSnippetZh || skill.readmeSnippetEn);
+      skill.hasRelease = (skill.releaseCount ?? 0) > 0;
+      skill.id = normalizeRepoName(skill.repo);
+      continue;
+    }
+    const text = [
+      skill.name,
+      skill.descriptionZh,
+      skill.descriptionEn,
+      ...skill.tags,
+    ].join(" ");
+    skill.platform = classifyPlatform(text);
+    const safety = assessSafety(skill);
+    skill.safetyLevel = safety.level;
+    skill.safetyNotes = safety.notes;
+    skill.sources = [
+      buildSourceEntry("github", true),
+      buildSourceEntry(
+        "github-stats",
+        skill.weeklyCommits > 0 || skill.releaseCount > 0,
+        [],
+      ),
+    ];
+    if (skill.weeklyCommits > 0) {
+      skill.sources.push(buildSourceEntry("github-timeline", true));
+    }
+    skill.primarySource = "github";
+    skill.hasSkillMd = skill.skillMdPaths.length > 0;
+    skill.hasReadme = !!(skill.readmeSnippetZh || skill.readmeSnippetEn);
+    skill.hasRelease = (skill.releaseCount ?? 0) > 0;
+    skill.id = normalizeRepoName(skill.repo);
+  }
+
   return {
-    schemaVersion: 3,
+    schemaVersion: 4,
     generatedAt,
     source: "agent-skills-radar",
     categories: categoriesFromSkills(enrichedSkills, inputs),
     skills: enrichedSkills,
     ecosystemBreakdown: computeEcosystemBreakdown(enrichedSkills),
+    platformBreakdown: computePlatformBreakdown(enrichedSkills),
+    sourceBreakdown: computeSourceBreakdown(enrichedSkills),
     totalEcosystemSources: countTotalEcosystemSources(enrichedSkills),
     lastEcosystemSync: nowIso(),
     hnMentionsCount: 0,
@@ -978,7 +1028,10 @@ export function createHistoryFromSnapshot(
   retentionDays = HISTORY_RETENTION_DAYS,
 ) {
   const generatedAt = snapshot?.generatedAt ?? nowIso();
-  const skills = isV3Snapshot(snapshot) ? snapshot.skills : [];
+  const skills =
+    snapshot?.schemaVersion === 3 || snapshot?.schemaVersion === 4
+      ? snapshot.skills
+      : [];
 
   return normalizeHistory(
     {
@@ -1215,6 +1268,24 @@ export async function updateData({
     candidates,
     history,
   };
+}
+
+function computePlatformBreakdown(skills) {
+  const breakdown = { claude: 0, codex: 0, copilot: 0, generic: 0, unknown: 0 };
+  for (const skill of skills) {
+    const p = skill.platform || "generic";
+    if (breakdown[p] !== undefined) breakdown[p]++;
+  }
+  return breakdown;
+}
+
+function computeSourceBreakdown(skills) {
+  const breakdown = {};
+  for (const skill of skills) {
+    const src = skill.primarySource || "github";
+    breakdown[src] = (breakdown[src] || 0) + 1;
+  }
+  return breakdown;
 }
 
 if (

@@ -506,3 +506,108 @@ export function countTotalEcosystemSources(skills) {
   }
   return sources.size;
 }
+// ─── GitHub Stargazers Timeline ──────────────────────────────
+
+export async function fetchStargazerTimeline(githubFetch, repo) {
+  try {
+    const url = `${GITHUB_API}/repos/${repo}/stargazers`;
+    const payload = await githubFetch(
+      url + "?per_page=1&sort=created&direction=asc",
+    );
+    const firstStar =
+      payload?.length > 0
+        ? asString(payload[0]?.starred_at || payload[0]?.starredAt || "")
+        : "";
+    if (!firstStar) return { firstStarDate: null, estimatedTotalStars: 0 };
+    const firstDate = Date.parse(firstStar);
+    const now = Date.now();
+    if (!Number.isFinite(firstDate))
+      return { firstStarDate: null, estimatedTotalStars: 0 };
+    const daysSinceFirst = (now - firstDate) / 86400000;
+    if (daysSinceFirst <= 0)
+      return { firstStarDate: null, estimatedTotalStars: 0 };
+    const avgStarsPerDay = 1 / Math.max(daysSinceFirst, 1);
+    const estimatedTotal = Math.round(avgStarsPerDay * daysSinceFirst * 1.1);
+    return {
+      firstStarDate: new Date(firstDate).toISOString().slice(0, 10),
+      daysSinceFirstStar: Math.round(daysSinceFirst),
+      estimatedTotalStars: estimatedTotal,
+    };
+  } catch {
+    return { firstStarDate: null, estimatedTotalStars: 0 };
+  }
+}
+
+// ─── GitHub Repository Statistics ─────────────────────────────
+
+export async function fetchRepoStatistics(githubFetch, repo) {
+  try {
+    const url = `${GITHUB_API}/repos/${repo}/stats/participation`;
+    const payload = await githubFetch(url);
+    const participation = payload?.all || [];
+    const last12Weeks = participation.slice(-12);
+    const totalCommits12w = last12Weeks.reduce(
+      (sum, w) => sum + asFiniteNumber(w?.c, 0),
+      0,
+    );
+    return {
+      totalCommitsLast12Weeks: totalCommits12w,
+      contributorCount:
+        participation.length > 0
+          ? Object.keys(participation[0] || {}).filter((k) => k !== "total")
+              .length
+          : 0,
+    };
+  } catch {
+    return { totalCommitsLast12Weeks: 0, contributorCount: 0 };
+  }
+}
+
+// ─── Platform classification ──────────────────────────────────
+
+export function classifyPlatform(text) {
+  if (/claude|anthropic|\.claude\//i.test(text)) return "claude";
+  if (/codex|openai|\.openai\//i.test(text)) return "codex";
+  if (/copilot|github[_-]?skill/i.test(text)) return "copilot";
+  return "generic";
+}
+
+// ─── Safety assessment ────────────────────────────────────────
+
+export function assessSafety(skill) {
+  const notes = [];
+  let level = "safe";
+  if (skill.skillMdPaths.length === 0) {
+    notes.push("No SKILL.md file found");
+    level = "warning";
+  }
+  if (skill.openIssues > 100) {
+    notes.push("High issue count, possible unresolved problems");
+    if (level === "safe") level = "review";
+  }
+  const daysSincePushed =
+    (Date.now() - Date.parse(skill.pushedAt || "2000-01-01")) / 86400000;
+  if (daysSincePushed > 730) {
+    notes.push("Not updated in over 2 years, may be abandoned");
+    level = "warning";
+  } else if (daysSincePushed > 365) {
+    notes.push("Not updated in over 1 year");
+    if (level === "safe") level = "review";
+  }
+  if (!skill.license || skill.license === "") {
+    notes.push("No open source license");
+    if (level === "safe") level = "review";
+  }
+  return { level, notes };
+}
+
+// ─── Source tracking ──────────────────────────────────────────
+
+export function buildSourceEntry(source, ok, errors) {
+  return {
+    source,
+    fetchedAt: new Date().toISOString(),
+    ok,
+    errors: errors || [],
+  };
+}

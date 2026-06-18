@@ -64,8 +64,6 @@ function makeSkill(
         badge: "Universal",
       },
     ],
-    hnMetric: overrides.hnMetric,
-    productHuntVotes: overrides.productHuntVotes,
     relatedMCPs: overrides.relatedMCPs ?? [],
     popularityScore: overrides.popularityScore ?? 50,
     activityScore: overrides.activityScore ?? 30,
@@ -77,6 +75,20 @@ function makeSkill(
     latestRelease: overrides.latestRelease,
     weeklyCommits: overrides.weeklyCommits ?? 0,
     contributors: overrides.contributors ?? 0,
+    id: overrides.id ?? overrides.repo ?? "owner/skill",
+    platform: overrides.platform ?? "generic",
+    hasSkillMd: overrides.hasSkillMd ?? true,
+    hasReadme: overrides.hasReadme ?? true,
+    hasRelease: overrides.hasRelease ?? false,
+    safetyLevel: overrides.safetyLevel ?? "safe",
+    safetyNotes: overrides.safetyNotes ?? [],
+    sources: overrides.sources ?? [
+      { source: "github", fetchedAt: "2026-06-18T00:00:00.000Z", ok: true },
+    ],
+    primarySource: overrides.primarySource ?? "github",
+    radarScore: overrides.radarScore ?? 50,
+    growthScore: overrides.growthScore ?? 50,
+    safetyScore: overrides.safetyScore ?? 70,
   };
 }
 

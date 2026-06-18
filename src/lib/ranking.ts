@@ -432,12 +432,6 @@ export function filterAndSortSkills(
           compareDefault(a, b)
         );
       }
-      if (filters.sortKey === "adoption") {
-        return (
-          (b.adoptionScore ?? 0) - (a.adoptionScore ?? 0) ||
-          compareDefault(a, b)
-        );
-      }
       if (filters.sortKey === "ecosystem") {
         return (
           (b.ecosystemScore ?? 0) - (a.ecosystemScore ?? 0) ||
@@ -452,6 +446,78 @@ export function filterAndSortSkills(
       }
       return compareDefault(a, b);
     });
+}
+
+export function calculateRadarScores(
+  skill: GithubSkillSnapshot,
+): Pick<
+  GithubSkillSnapshot,
+  | "popularityScore"
+  | "activityScore"
+  | "growthScore"
+  | "ecosystemScore"
+  | "safetyScore"
+  | "radarScore"
+  | "compositeScore"
+> {
+  const starScore = Math.min(100, Math.log2(Math.max(skill.stars, 1)) * 12);
+  const forkScore = Math.min(40, Math.log2(Math.max(skill.forks, 1)) * 8);
+  const popularity = Math.min(100, Math.round(starScore + forkScore * 0.5));
+
+  const daysSincePushed = skill.pushedAt
+    ? (Date.now() - Date.parse(skill.pushedAt)) / 86400000
+    : 999;
+  const recencyBonus = Math.max(0, 30 - daysSincePushed) / 30;
+  const commitBonus = Math.min(30, (skill as any).weeklyCommits ?? 0 * 2);
+  const releaseBonus = Math.min(15, (skill.releaseCount ?? 0) * 3);
+  const activity = Math.min(
+    100,
+    Math.round(recencyBonus * 40 + commitBonus + releaseBonus + 10),
+  );
+
+  const growth7d = (skill as any).growth7d ?? 0;
+  const growth30d = (skill as any).growth30d ?? 0;
+  const growthFrom7d = Math.min(50, growth7d * 5);
+  const growthFrom30d = Math.min(30, growth30d * 1.5);
+  const growth = Math.min(100, Math.round(growthFrom7d + growthFrom30d + 20));
+
+  const ecoCount = skill.ecosystems?.length ?? 0;
+  const hasMcp = skill.ecosystems?.some((e) => e.ecosystem === "mcp") ? 1 : 0;
+  const verifiedEcos = skill.ecosystems?.filter((e) => e.verified).length ?? 0;
+  const ecosystem = Math.min(
+    100,
+    Math.round(ecoCount * 12 + hasMcp * 20 + verifiedEcos * 15),
+  );
+
+  let safety = 70;
+  if (skill.license && skill.license !== "") safety += 10;
+  if ((skill as any).contributors && (skill as any).contributors > 1)
+    safety += 10;
+  if (skill.openIssues > 50) safety -= 10;
+  if (daysSincePushed > 365) safety -= 15;
+  if (skill.skillMdPaths.length === 0) safety -= 20;
+  safety = Math.min(100, Math.max(0, Math.round(safety)));
+
+  const radarScore = Math.min(
+    100,
+    Math.round(
+      popularity * 0.25 +
+        activity * 0.25 +
+        growth * 0.2 +
+        ecosystem * 0.15 +
+        safety * 0.15,
+    ),
+  );
+
+  return {
+    popularityScore: popularity,
+    activityScore: activity,
+    growthScore: growth,
+    ecosystemScore: ecosystem,
+    safetyScore: safety,
+    radarScore,
+    compositeScore: radarScore,
+  };
 }
 
 export function skillName(skill: GithubSkillSnapshot, locale: Locale) {
@@ -501,34 +567,43 @@ export function enrichSkills(skills: GithubSkillSnapshot[]) {
       });
   }
 
-  return skills.map((skill) => ({
-    ...skill,
-    rank: globalRanks.get(skill.repo) ?? skill.rank,
-    rankByCategory: categoryRanks.get(skill.repo) ?? skill.rankByCategory,
-    audiences: inferAudiences(skill),
-    growth7d: skill.growth7d ?? null,
-    growth30d: skill.growth30d ?? null,
-    rankDelta7d: skill.rankDelta7d ?? null,
-    rankDelta30d: skill.rankDelta30d ?? null,
-    trendStatus:
-      skill.trendStatus ??
-      (skill.growth7d === null ||
-      skill.growth7d === undefined ||
-      skill.growth30d === null ||
-      skill.growth30d === undefined
-        ? "collecting"
-        : "ready"),
-    popularityScore: skill.popularityScore ?? 0,
-    activityScore: skill.activityScore ?? 0,
-    adoptionScore: skill.adoptionScore ?? 0,
-    officialScore: skill.officialScore ?? 0,
-    ecosystemScore: skill.ecosystemScore ?? 0,
-    compositeScore: skill.compositeScore ?? 0,
-    ecosystems: skill.ecosystems ?? [],
-    releaseCount: skill.releaseCount ?? 0,
-    weeklyCommits: skill.weeklyCommits ?? 0,
-    contributors: skill.contributors ?? 0,
-  }));
+  return skills.map((skill) => {
+    const scores = calculateRadarScores(skill);
+    return {
+      ...skill,
+      ...scores,
+      rank: globalRanks.get(skill.repo) ?? skill.rank,
+      rankByCategory: categoryRanks.get(skill.repo) ?? skill.rankByCategory,
+      audiences: inferAudiences(skill),
+      growth7d: skill.growth7d ?? null,
+      growth30d: skill.growth30d ?? null,
+      rankDelta7d: skill.rankDelta7d ?? null,
+      rankDelta30d: skill.rankDelta30d ?? null,
+      trendStatus:
+        skill.trendStatus ??
+        (skill.growth7d === null ||
+        skill.growth7d === undefined ||
+        skill.growth30d === null ||
+        skill.growth30d === undefined
+          ? "collecting"
+          : "ready"),
+      ecosystems: skill.ecosystems ?? [],
+      releaseCount: skill.releaseCount ?? 0,
+      weeklyCommits: skill.weeklyCommits ?? 0,
+      contributors: skill.contributors ?? 0,
+      safetyLevel: (skill as any).safetyLevel ?? "safe",
+      safetyNotes: (skill as any).safetyNotes ?? [],
+      hasSkillMd: (skill as any).hasSkillMd ?? skill.skillMdPaths.length > 0,
+      hasReadme:
+        (skill as any).hasReadme ??
+        !!(skill.readmeSnippetZh || skill.readmeSnippetEn),
+      hasRelease: (skill as any).hasRelease ?? (skill.releaseCount ?? 0) > 0,
+      platform: (skill as any).platform ?? "generic",
+      sources: (skill as any).sources ?? [],
+      primarySource: (skill as any).primarySource ?? "github",
+      id: (skill as any).id ?? skill.repo,
+    };
+  });
 }
 
 export function getRelatedSkills(

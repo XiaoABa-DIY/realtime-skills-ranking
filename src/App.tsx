@@ -35,8 +35,8 @@ import { formatDateTime, formatNumber } from "./lib/format";
 import {
   audienceKeys,
   audienceProfiles,
-  calculateStats,
   calculateSkillQualityScore,
+  calculateStats,
   defaultSkillFilters,
   deriveUseCases,
   enrichSkills,
@@ -66,7 +66,7 @@ import type {
 } from "./types";
 
 const emptySnapshot: SnapshotPayload = {
-  schemaVersion: 3,
+  schemaVersion: 4,
   generatedAt: "",
   source: "empty",
   categories: [],
@@ -81,6 +81,25 @@ const emptySnapshot: SnapshotPayload = {
   },
   totalEcosystemSources: 0,
   hnMentionsCount: 0,
+  platformBreakdown: {
+    claude: 0,
+    codex: 0,
+    copilot: 0,
+    generic: 0,
+    unknown: 0,
+  },
+  sourceBreakdown: {
+    manual: 0,
+    github: 0,
+    "github-code-search": 0,
+    "github-topic": 0,
+    "anthropic-official": 0,
+    "openai-codex-docs": 0,
+    "copilot-docs": 0,
+    huggingface: 0,
+    hackernews: 0,
+    producthunt: 0,
+  },
 };
 
 const issueTemplateUrl =
@@ -562,22 +581,62 @@ function CategoryChips({
   );
 }
 
-function EcosystemBadges({
+function PlatformBadges({
   ecosystems,
+  platform,
 }: {
   ecosystems: { ecosystem: string; verified: boolean; badge?: string }[];
+  platform?: string;
 }) {
-  if (!ecosystems?.length) return null;
+  if (!ecosystems?.length && !platform) return null;
+  const badges = [];
+  if (platform && platform !== "generic") {
+    badges.push({ cls: `eco-badge eco-${platform}`, text: platform });
+  }
+  for (const e of (ecosystems || []).slice(0, 3)) {
+    if (e.ecosystem !== platform) {
+      badges.push({
+        cls: `eco-badge eco-${e.ecosystem}`,
+        text: e.badge || e.ecosystem,
+      });
+    }
+  }
+  if (badges.length === 0) return null;
   return (
     <div className="badge-row ecosystem-row">
-      {ecosystems.slice(0, 3).map((e) => (
+      {badges.map((b, i) => (
+        <span key={i} className={b.cls}>
+          {b.text}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function SourceBadges({
+  sources,
+}: {
+  sources: { source: string; ok: boolean }[];
+}) {
+  if (!sources?.length) return null;
+  const icons: Record<string, string> = {
+    github: "\u2605",
+    "github-code-search": "\u2398",
+    "github-topic": "\u2604",
+    "anthropic-official": "\u2713",
+    hackernews: "HN",
+    huggingface: "HF",
+    producthunt: "PH",
+  };
+  return (
+    <div className="badge-row source-row">
+      {sources.slice(0, 4).map((s, i) => (
         <span
-          key={e.ecosystem}
-          className={`badge eco-badge eco-${e.ecosystem}`}
-          title={e.badge}
+          key={i}
+          className={`badge source-badge ${s.ok ? "source-ok" : "source-err"}`}
+          title={s.source}
         >
-          {e.verified ? "\u2713 " : ""}
-          {e.badge || e.ecosystem}
+          {icons[s.source] || s.source.split("-")[0].toUpperCase()}
         </span>
       ))}
     </div>
@@ -611,8 +670,8 @@ function RankingItem({
       <p className="ranking-summary">{skillSummary(skill, locale)}</p>
       <div className="ranking-meta">
         <span className="quality-pill">
-          <TrendingUp size={14} />
-          {t(locale, "compositeScore")} {skill.compositeScore}
+          <Sparkles size={14} />
+          <b>{skill.radarScore}</b> {t(locale, "radarScore")}
         </span>
         <span>
           <Star size={14} />
@@ -629,7 +688,8 @@ function RankingItem({
         <TrendBadges skill={skill} locale={locale} />
       </div>
       <SkillBadges skill={skill} locale={locale} limit={3} />
-      <EcosystemBadges ecosystems={skill.ecosystems} />
+      <PlatformBadges ecosystems={skill.ecosystems} platform={skill.platform} />
+      <SourceBadges sources={skill.sources} />
       <div className="ranking-actions">
         <button type="button" className="detail-link" onClick={onSelect}>
           {t(locale, "viewDetails")}
