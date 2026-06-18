@@ -468,15 +468,15 @@ export function calculateRadarScores(
     ? (Date.now() - Date.parse(skill.pushedAt)) / 86400000
     : 999;
   const recencyBonus = Math.max(0, 30 - daysSincePushed) / 30;
-  const commitBonus = Math.min(30, (skill as any).weeklyCommits ?? 0 * 2);
+  const commitBonus = Math.min(30, skill.weeklyCommits ?? 0 * 2);
   const releaseBonus = Math.min(15, (skill.releaseCount ?? 0) * 3);
   const activity = Math.min(
     100,
     Math.round(recencyBonus * 40 + commitBonus + releaseBonus + 10),
   );
 
-  const growth7d = (skill as any).growth7d ?? 0;
-  const growth30d = (skill as any).growth30d ?? 0;
+  const growth7d = skill.growth7d ?? 0;
+  const growth30d = skill.growth30d ?? 0;
   const growthFrom7d = Math.min(50, growth7d * 5);
   const growthFrom30d = Math.min(30, growth30d * 1.5);
   const growth = Math.min(100, Math.round(growthFrom7d + growthFrom30d + 20));
@@ -491,8 +491,7 @@ export function calculateRadarScores(
 
   let safety = 70;
   if (skill.license && skill.license !== "") safety += 10;
-  if ((skill as any).contributors && (skill as any).contributors > 1)
-    safety += 10;
+  if (skill.contributors && skill.contributors > 1) safety += 10;
   if (skill.openIssues > 50) safety -= 10;
   if (daysSincePushed > 365) safety -= 15;
   if (skill.skillMdPaths.length === 0) safety -= 20;
@@ -591,17 +590,16 @@ export function enrichSkills(skills: GithubSkillSnapshot[]) {
       releaseCount: skill.releaseCount ?? 0,
       weeklyCommits: skill.weeklyCommits ?? 0,
       contributors: skill.contributors ?? 0,
-      safetyLevel: (skill as any).safetyLevel ?? "safe",
-      safetyNotes: (skill as any).safetyNotes ?? [],
-      hasSkillMd: (skill as any).hasSkillMd ?? skill.skillMdPaths.length > 0,
+      safetyLevel: skill.safetyLevel ?? "safe",
+      safetyNotes: skill.safetyNotes ?? [],
+      hasSkillMd: skill.hasSkillMd ?? skill.skillMdPaths.length > 0,
       hasReadme:
-        (skill as any).hasReadme ??
-        !!(skill.readmeSnippetZh || skill.readmeSnippetEn),
-      hasRelease: (skill as any).hasRelease ?? (skill.releaseCount ?? 0) > 0,
-      platform: (skill as any).platform ?? "generic",
-      sources: (skill as any).sources ?? [],
-      primarySource: (skill as any).primarySource ?? "github",
-      id: (skill as any).id ?? skill.repo,
+        skill.hasReadme ?? !!(skill.readmeSnippetZh || skill.readmeSnippetEn),
+      hasRelease: skill.hasRelease ?? (skill.releaseCount ?? 0) > 0,
+      platform: skill.platform ?? "generic",
+      sources: skill.sources ?? [],
+      primarySource: skill.primarySource ?? "github",
+      id: skill.id ?? skill.repo,
     };
   });
 }
