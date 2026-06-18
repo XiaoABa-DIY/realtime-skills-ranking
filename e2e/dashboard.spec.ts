@@ -111,7 +111,9 @@ function skillPattern(skill: string) {
 }
 
 function getSkillCard(page: Page, skill: string) {
-  return page.locator(".skill-card", { hasText: skillPattern(skill) }).first();
+  return page
+    .locator(".ranking-item", { hasText: skillPattern(skill) })
+    .first();
 }
 
 test.beforeEach(async ({ page }) => {
@@ -130,13 +132,17 @@ test("renders the GitHub skills gallery and filters skills", async ({
   await page.goto("/?lang=en");
 
   await expect(
-    page.getByRole("heading", { name: "GitHub Open Skills Star Ranking" }),
+    page.getByRole("heading", { name: "AI Skills Radar" }),
   ).toBeVisible();
-  await expect(page.getByText("Top 3 by stars")).toBeVisible();
-  await expect(page.getByText("Today picks")).toBeVisible();
+  await expect(page.getByText("Today Top Skill")).toBeVisible();
+  await expect(page.getByText("Recommended entry points")).toBeVisible();
+  await expect(
+    page.getByRole("region", { name: /Ranking list/i }),
+  ).toBeVisible();
   await expect(
     page.getByRole("button", { name: "Media creators", exact: true }),
   ).toBeVisible();
+  await page.getByRole("button", { name: /Advanced filters/i }).click();
   await expect(
     page.getByRole("button", { name: /7-day star growth/i }),
   ).toBeVisible();
@@ -152,6 +158,7 @@ test("renders the GitHub skills gallery and filters skills", async ({
 test("opens trend spotlights and keeps details available", async ({ page }) => {
   await page.goto("/?lang=en");
 
+  await page.getByRole("button", { name: /Advanced filters/i }).click();
   await page.getByRole("button", { name: /7-day star growth/i }).click();
   await expect(page).toHaveURL(/spotlight=growth7d/);
   await expect(getSkillCard(page, "content-skill")).toBeVisible();

@@ -132,21 +132,47 @@ describe("App", () => {
     });
   });
 
-  it("renders the GitHub open skills exploration sections", async () => {
+  it("renders the radar search hero and ranking list workspace", async () => {
     render(<App />);
 
     expect(
       await screen.findByRole("heading", {
-        name: "GitHub Open Skills Star Ranking",
+        name: "AI Skills Radar",
       }),
     ).toBeInTheDocument();
-    expect(screen.getByText("Top 3 by stars")).toBeInTheDocument();
-    expect(screen.getByText("Today picks")).toBeInTheDocument();
+    expect(screen.getByText("Today Top Skill")).toBeInTheDocument();
+    expect(screen.getByText("Recommended entry points")).toBeInTheDocument();
     expect(screen.getAllByText("Media creators").length).toBeGreaterThan(0);
+    await userEvent.click(
+      screen.getByRole("button", { name: /Advanced filters/i }),
+    );
+    expect(
+      screen.getByRole("region", { name: /Ranking list/i }),
+    ).toBeInTheDocument();
     expect(screen.getByText("7-day star growth")).toBeInTheDocument();
     expect(screen.getByText("Fastest risers")).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/Search skills/i)).toBeInTheDocument();
     expect(screen.getAllByText("content-skill").length).toBeGreaterThan(0);
+  });
+
+  it("searches from the hero and reveals advanced filters on demand", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await screen.findByRole("heading", { name: "AI Skills Radar" });
+
+    await user.type(screen.getByPlaceholderText(/Search skills/i), "research");
+
+    await waitFor(() => expect(window.location.search).toContain("q=research"));
+    expect(screen.getAllByText("research-skill").length).toBeGreaterThan(0);
+
+    expect(
+      screen.queryByRole("combobox", { name: /Tag/i }),
+    ).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /Advanced filters/i }));
+
+    expect(screen.getByRole("combobox", { name: /Tag/i })).toBeInTheDocument();
   });
 
   it("opens a detail drawer with GitHub actions and skill paths", async () => {
@@ -169,7 +195,7 @@ describe("App", () => {
     ).toBeInTheDocument();
     expect(screen.getByText("skills/writing/SKILL.md")).toBeInTheDocument();
     expect(screen.getAllByText("+90 / 7d").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("↑2").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("rank +2").length).toBeGreaterThan(0);
   });
 
   it("keeps quick filters in the URL and persists local favorites", async () => {
@@ -193,6 +219,7 @@ describe("App", () => {
       expect(window.location.search).toContain("spotlight=topStars"),
     );
 
+    await user.click(screen.getByRole("button", { name: /Advanced filters/i }));
     await user.click(
       screen.getByRole("button", { name: /7-day star growth/i }),
     );

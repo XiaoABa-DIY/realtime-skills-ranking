@@ -196,9 +196,9 @@ function formatSigned(value: number, locale: Locale) {
 
 function formatRankDelta(value: number | null | undefined) {
   if (value === null || value === undefined) return "";
-  if (value > 0) return `↑${value}`;
-  if (value < 0) return `↓${Math.abs(value)}`;
-  return "0";
+  if (value > 0) return `rank +${value}`;
+  if (value < 0) return `rank -${Math.abs(value)}`;
+  return "rank 0";
 }
 
 function TrendBadges({
@@ -242,6 +242,8 @@ function HeroSection({
   snapshot,
   stale,
   topSkills,
+  query,
+  onQueryChange,
   onStartExplore,
   onTopStars,
   onRecommendSkill,
@@ -251,17 +253,32 @@ function HeroSection({
   snapshot: SnapshotPayload;
   stale: boolean;
   topSkills: GithubSkillSnapshot[];
+  query: string;
+  onQueryChange: (query: string) => void;
   onStartExplore: () => void;
   onTopStars: () => void;
   onRecommendSkill: () => void;
   onSelectSkill: (skill: GithubSkillSnapshot) => void;
 }) {
+  const topSkill = topSkills[0] ?? null;
+  const runnersUp = topSkills.slice(1, 3);
+
   return (
     <section className="hero-panel">
       <div className="hero-copy">
         <p className="eyebrow">{t(locale, "officialOnly")}</p>
+        <h1>{t(locale, "appTitle")}</h1>
         <h2>{t(locale, "heroTitle")}</h2>
         <p>{t(locale, "heroLead")}</p>
+        <label className="hero-search">
+          <Search size={20} />
+          <input
+            aria-label={t(locale, "searchPlaceholder")}
+            value={query}
+            onChange={(event) => onQueryChange(event.target.value)}
+            placeholder={t(locale, "searchPlaceholder")}
+          />
+        </label>
         <div className="hero-cta">
           <button
             type="button"
@@ -300,26 +317,48 @@ function HeroSection({
         </div>
       </div>
 
-      <div className="top-three-panel" aria-label={t(locale, "topThree")}>
+      <div className="top-three-panel" aria-label={t(locale, "todayTopSkill")}>
         <div className="top-three-head">
           <ChartNoAxesCombined size={18} />
-          <strong>{t(locale, "topThree")}</strong>
+          <strong>{t(locale, "todayTopSkill")}</strong>
         </div>
-        {topSkills.map((skill, index) => (
+        {topSkill ? (
           <button
             type="button"
-            className={`top-skill-card rank-${index + 1}`}
-            key={skill.repo}
-            onClick={() => onSelectSkill(skill)}
+            className="top-skill-card hero-top-card"
+            onClick={() => onSelectSkill(topSkill)}
           >
-            <span className="top-rank">#{index + 1}</span>
+            <span className="top-rank">#1</span>
             <span>
-              <strong>{skillName(skill, locale)}</strong>
-              <small>{skill.repo}</small>
+              <strong>{skillName(topSkill, locale)}</strong>
+              <small>{topSkill.repo}</small>
             </span>
-            <em>{formatNumber(skill.stars, locale)}</em>
+            <em>{formatNumber(topSkill.stars, locale)}</em>
           </button>
-        ))}
+        ) : null}
+        <div className="hero-trend-list">
+          {runnersUp.map((skill, index) => (
+            <button
+              type="button"
+              className="trend-row"
+              key={skill.repo}
+              onClick={() => onSelectSkill(skill)}
+            >
+              <span>#{index + 2}</span>
+              <strong>{skillName(skill, locale)}</strong>
+              <em>{formatNumber(skill.stars, locale)}</em>
+            </button>
+          ))}
+        </div>
+        <div className="hero-source-card">
+          <small>{t(locale, "lastRefresh")}</small>
+          <strong>
+            {snapshot.generatedAt
+              ? formatDateTime(snapshot.generatedAt, locale)
+              : "-"}
+          </strong>
+          <span>{t(locale, "githubSource")}</span>
+        </div>
       </div>
     </section>
   );
@@ -480,7 +519,7 @@ function CategoryChips({
   );
 }
 
-function SkillCard({
+function RankingItem({
   skill,
   locale,
   favorite,
@@ -494,37 +533,34 @@ function SkillCard({
   onToggleFavorite: () => void;
 }) {
   return (
-    <article className={skill.rank <= 3 ? "skill-card top-card" : "skill-card"}>
-      <button type="button" className="skill-card-main" onClick={onSelect}>
+    <article
+      className={skill.rank <= 3 ? "ranking-item top-item" : "ranking-item"}
+    >
+      <button type="button" className="ranking-main" onClick={onSelect}>
         <span className="rank-pill">#{skill.rank}</span>
         <span className="skill-title-block">
           <strong>{skillName(skill, locale)}</strong>
           <small>{skill.repo}</small>
         </span>
       </button>
-      <p>{skillSummary(skill, locale)}</p>
-      <SkillBadges skill={skill} locale={locale} />
-      <div className="skill-stats">
+      <p className="ranking-summary">{skillSummary(skill, locale)}</p>
+      <div className="ranking-meta">
         <span>
           <Star size={14} />
           <b>{formatNumber(skill.stars, locale)}</b>
-          {t(locale, "stars")}
         </span>
         <span>
           <GitFork size={14} />
           <b>{formatNumber(skill.forks, locale)}</b>
-          {t(locale, "forks")}
         </span>
         <span>
-          <TerminalSquare size={14} />
-          <b>{formatNumber(skill.skillMdPaths.length, locale)}</b>
-          {t(locale, "skillFiles")}
+          <Clock3 size={14} />
+          {formatDateTime(skill.pushedAt || skill.updatedAt, locale)}
         </span>
-      </div>
-      <div className="trend-line">
         <TrendBadges skill={skill} locale={locale} />
       </div>
-      <div className="skill-card-actions">
+      <SkillBadges skill={skill} locale={locale} limit={3} />
+      <div className="ranking-actions">
         <button type="button" className="detail-link" onClick={onSelect}>
           {t(locale, "viewDetails")}
         </button>
@@ -805,6 +841,7 @@ function App() {
   const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">(
     "idle",
   );
+  const [advancedOpen, setAdvancedOpen] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -992,7 +1029,7 @@ function App() {
           </div>
           <div>
             <p className="eyebrow">{t(locale, "workbench")}</p>
-            <h1>{t(locale, "appTitle")}</h1>
+            <strong className="brand-title">{t(locale, "appTitle")}</strong>
             <p>{t(locale, "appSubtitle")}</p>
           </div>
         </div>
@@ -1044,6 +1081,8 @@ function App() {
         snapshot={snapshot}
         stale={snapshotStale}
         topSkills={topSkills}
+        query={filters.query}
+        onQueryChange={(query) => setFilter("query", query)}
         onStartExplore={startExploring}
         onTopStars={viewTopStars}
         onRecommendSkill={recommendSkill}
@@ -1100,150 +1139,8 @@ function App() {
         onSelect={applyQuickFilter}
       />
 
-      <section className="gallery-layout" id="skills-gallery">
-        <aside className="filter-panel">
-          <div className="panel-title">
-            <Search size={16} />
-            <strong>{t(locale, "searchPlaceholder")}</strong>
-          </div>
-          <label className="search-box">
-            <Search size={16} />
-            <input
-              aria-label={t(locale, "searchPlaceholder")}
-              value={filters.query}
-              onChange={(event) => setFilter("query", event.target.value)}
-              placeholder={t(locale, "searchPlaceholder")}
-            />
-          </label>
-
-          <div className="filter-group">
-            <div className="panel-title small">
-              <UsersRound size={15} />
-              <span>{t(locale, "audienceViews")}</span>
-            </div>
-            <div className="toggle-grid">
-              {audienceKeys.map((audience) => {
-                const profile = audienceProfiles[audience];
-                const count = skills.filter((skill) =>
-                  matchesAudience(skill, audience),
-                ).length;
-                return (
-                  <button
-                    type="button"
-                    key={audience}
-                    className={
-                      filters.audience === audience
-                        ? "toggle-card active"
-                        : "toggle-card"
-                    }
-                    aria-pressed={filters.audience === audience}
-                    onClick={() => toggleAudience(audience)}
-                  >
-                    <strong>{profile.label[locale]}</strong>
-                    <small>{formatNumber(count, locale)}</small>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="filter-group">
-            <div className="panel-title small">
-              <ArrowDownWideNarrow size={15} />
-              <span>{t(locale, "spotlightViews")}</span>
-            </div>
-            <div className="toggle-grid">
-              {spotlightKeys.map((spotlight) => (
-                <button
-                  type="button"
-                  key={spotlight}
-                  className={
-                    filters.spotlight === spotlight
-                      ? "toggle-card active"
-                      : "toggle-card"
-                  }
-                  aria-pressed={filters.spotlight === spotlight}
-                  onClick={() => toggleSpotlight(spotlight)}
-                >
-                  <strong>{spotlightViews[spotlight].label[locale]}</strong>
-                  <small>{spotlightViews[spotlight].description[locale]}</small>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <label className="field">
-            <span>{t(locale, "tag")}</span>
-            <select
-              value={filters.tag}
-              onChange={(event) => setFilter("tag", event.target.value)}
-            >
-              <option value="">{`${t(locale, "all")} ${t(locale, "tag")}`}</option>
-              {options.tags.map((tagValue) => (
-                <option key={tagValue} value={tagValue}>
-                  {tagValue}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className="field">
-            <span>{t(locale, "sortBy")}</span>
-            <select
-              value={filters.sortKey}
-              onChange={(event) =>
-                setFilter("sortKey", event.target.value as SortKey)
-              }
-            >
-              <option value="stars">{t(locale, "sortStars")}</option>
-              <option value="forks">{t(locale, "sortForks")}</option>
-              <option value="updated">{t(locale, "sortUpdated")}</option>
-              <option value="name">{t(locale, "sortName")}</option>
-            </select>
-          </label>
-
-          <button
-            type="button"
-            className={
-              filters.favoritesOnly
-                ? "favorite-filter active"
-                : "favorite-filter"
-            }
-            aria-pressed={filters.favoritesOnly}
-            onClick={() => setFilter("favoritesOnly", !filters.favoritesOnly)}
-          >
-            <BookmarkCheck size={16} />
-            <span>
-              <strong>{t(locale, "favoritesOnly")}</strong>
-              <small>
-                {t(locale, "myFavorites")} {favorites.length}
-              </small>
-            </span>
-          </button>
-
-          {activeFilters.length ? (
-            <div className="active-filters">
-              <span>{t(locale, "selectedFilters")}</span>
-              <div className="badge-row">
-                {activeFilters.map((filter) => (
-                  <span className="badge" key={filter}>
-                    {filter}
-                  </span>
-                ))}
-              </div>
-              <button
-                type="button"
-                className="secondary-button full-width"
-                onClick={clearFilters}
-              >
-                <SlidersHorizontal size={16} />
-                {t(locale, "clearFilters")}
-              </button>
-            </div>
-          ) : null}
-        </aside>
-
-        <section className="skills-panel">
+      <section className="ranking-workspace" id="skills-gallery">
+        <section className="skills-panel" aria-label={t(locale, "rankingList")}>
           <div className="section-head">
             <div>
               <p>{t(locale, "rankingInsight")}</p>
@@ -1262,12 +1159,166 @@ function App() {
             </button>
           </div>
 
-          <CategoryChips
-            categories={snapshot.categories}
-            locale={locale}
-            active={filters.category}
-            onSelect={(category) => setFilter("category", category)}
-          />
+          <div className="ranking-toolbar">
+            <CategoryChips
+              categories={snapshot.categories}
+              locale={locale}
+              active={filters.category}
+              onSelect={(category) => setFilter("category", category)}
+            />
+            <div className="toolbar-actions">
+              <label className="field inline-field">
+                <span>{t(locale, "sortBy")}</span>
+                <select
+                  value={filters.sortKey}
+                  onChange={(event) =>
+                    setFilter("sortKey", event.target.value as SortKey)
+                  }
+                >
+                  <option value="stars">{t(locale, "sortStars")}</option>
+                  <option value="forks">{t(locale, "sortForks")}</option>
+                  <option value="updated">{t(locale, "sortUpdated")}</option>
+                  <option value="name">{t(locale, "sortName")}</option>
+                </select>
+              </label>
+              <button
+                type="button"
+                className={
+                  advancedOpen
+                    ? "secondary-button active-action"
+                    : "secondary-button"
+                }
+                aria-expanded={advancedOpen}
+                onClick={() => setAdvancedOpen((open) => !open)}
+              >
+                <SlidersHorizontal size={16} />
+                {advancedOpen
+                  ? t(locale, "hideAdvancedFilters")
+                  : t(locale, "advancedFilters")}
+              </button>
+            </div>
+          </div>
+
+          {advancedOpen ? (
+            <div className="advanced-filter-panel">
+              <div className="filter-group">
+                <div className="panel-title small">
+                  <UsersRound size={15} />
+                  <span>{t(locale, "audienceViews")}</span>
+                </div>
+                <div className="toggle-grid compact-grid">
+                  {audienceKeys.map((audience) => {
+                    const profile = audienceProfiles[audience];
+                    const count = skills.filter((skill) =>
+                      matchesAudience(skill, audience),
+                    ).length;
+                    return (
+                      <button
+                        type="button"
+                        key={audience}
+                        className={
+                          filters.audience === audience
+                            ? "toggle-card active"
+                            : "toggle-card"
+                        }
+                        aria-pressed={filters.audience === audience}
+                        onClick={() => toggleAudience(audience)}
+                      >
+                        <strong>{profile.label[locale]}</strong>
+                        <small>{formatNumber(count, locale)}</small>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="filter-group">
+                <div className="panel-title small">
+                  <ArrowDownWideNarrow size={15} />
+                  <span>{t(locale, "spotlightViews")}</span>
+                </div>
+                <div className="toggle-grid compact-grid">
+                  {spotlightKeys.map((spotlight) => (
+                    <button
+                      type="button"
+                      key={spotlight}
+                      className={
+                        filters.spotlight === spotlight
+                          ? "toggle-card active"
+                          : "toggle-card"
+                      }
+                      aria-pressed={filters.spotlight === spotlight}
+                      onClick={() => toggleSpotlight(spotlight)}
+                    >
+                      <strong>{spotlightViews[spotlight].label[locale]}</strong>
+                      <small>
+                        {spotlightViews[spotlight].description[locale]}
+                      </small>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="advanced-fields">
+                <label className="field">
+                  <span>{t(locale, "tag")}</span>
+                  <select
+                    value={filters.tag}
+                    onChange={(event) => setFilter("tag", event.target.value)}
+                  >
+                    <option value="">{`${t(locale, "all")} ${t(locale, "tag")}`}</option>
+                    {options.tags.map((tagValue) => (
+                      <option key={tagValue} value={tagValue}>
+                        {tagValue}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+
+                <button
+                  type="button"
+                  className={
+                    filters.favoritesOnly
+                      ? "favorite-filter active"
+                      : "favorite-filter"
+                  }
+                  aria-pressed={filters.favoritesOnly}
+                  onClick={() =>
+                    setFilter("favoritesOnly", !filters.favoritesOnly)
+                  }
+                >
+                  <BookmarkCheck size={16} />
+                  <span>
+                    <strong>{t(locale, "favoritesOnly")}</strong>
+                    <small>
+                      {t(locale, "myFavorites")} {favorites.length}
+                    </small>
+                  </span>
+                </button>
+              </div>
+
+              {activeFilters.length ? (
+                <div className="active-filters">
+                  <span>{t(locale, "selectedFilters")}</span>
+                  <div className="badge-row">
+                    {activeFilters.map((filter) => (
+                      <span className="badge" key={filter}>
+                        {filter}
+                      </span>
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={clearFilters}
+                  >
+                    <SlidersHorizontal size={16} />
+                    {t(locale, "clearFilters")}
+                  </button>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
 
           {loadError ? <p className="notice error">{loadError}</p> : null}
           {skills.length === 0 ? (
@@ -1285,9 +1336,9 @@ function App() {
               }
             />
           ) : (
-            <div className="skills-grid">
+            <div className="ranking-list">
               {filteredSkills.map((skill) => (
-                <SkillCard
+                <RankingItem
                   key={skill.repo}
                   skill={skill}
                   locale={locale}
