@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 3,
-  "generatedAt": "2026-06-18T04:41:13.132Z",
+  "schemaVersion": 4,
+  "generatedAt": "2026-06-18T07:48:31.303Z",
   "source": "agent-skills-radar",
   "categories": [
     {
@@ -98,19 +98,19 @@
         "skills/.system/skill-creator/SKILL.md",
         "skills/.system/skill-installer/SKILL.md"
       ],
-      "stars": 22428,
+      "stars": 22442,
       "forks": 1522,
       "openIssues": 276,
-      "watchers": 22428,
+      "watchers": 22442,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/openai/skills",
       "createdAt": "2025-11-25T06:25:42Z",
-      "updatedAt": "2026-06-18T04:37:54Z",
+      "updatedAt": "2026-06-18T07:46:47Z",
       "pushedAt": "2026-06-17T19:15:40Z",
-      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
+      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
       "fetchStatus": "ok",
       "rank": 1,
       "rankByCategory": 1,
@@ -148,7 +148,32 @@
       "releaseCount": 0,
       "latestRelease": "",
       "weeklyCommits": 0,
-      "contributors": 0
+      "contributors": 0,
+      "platform": "codex",
+      "safetyLevel": "review",
+      "safetyNotes": [
+        "High issue count, possible unresolved problems",
+        "No open source license"
+      ],
+      "sources": [
+        {
+          "source": "github",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-stats",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": false,
+          "errors": []
+        }
+      ],
+      "primarySource": "github",
+      "hasSkillMd": true,
+      "hasReadme": true,
+      "hasRelease": false,
+      "id": "openai/skills"
     },
     {
       "repo": "Yuan1z0825/nature-skills",
@@ -193,19 +218,19 @@
         "skills/nature-reviewer/SKILL.md",
         "skills/nature-writing/SKILL.md"
       ],
-      "stars": 20878,
-      "forks": 1233,
+      "stars": 20936,
+      "forks": 1235,
       "openIssues": 2,
-      "watchers": 20878,
+      "watchers": 20936,
       "language": "Python",
       "license": "MIT",
       "topics": ["codex-skills", "nature", "nature-skills"],
       "homepage": "",
       "htmlUrl": "https://github.com/Yuan1z0825/nature-skills",
       "createdAt": "2026-04-24T03:11:46Z",
-      "updatedAt": "2026-06-18T04:38:58Z",
+      "updatedAt": "2026-06-18T07:46:22Z",
       "pushedAt": "2026-06-17T19:20:27Z",
-      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
+      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
       "fetchStatus": "ok",
       "rank": 2,
       "rankByCategory": 1,
@@ -243,7 +268,29 @@
       "releaseCount": 0,
       "latestRelease": "",
       "weeklyCommits": 0,
-      "contributors": 0
+      "contributors": 0,
+      "platform": "codex",
+      "safetyLevel": "safe",
+      "safetyNotes": [],
+      "sources": [
+        {
+          "source": "github",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-stats",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": false,
+          "errors": []
+        }
+      ],
+      "primarySource": "github",
+      "hasSkillMd": true,
+      "hasReadme": true,
+      "hasRelease": false,
+      "id": "Yuan1z0825/nature-skills"
     },
     {
       "repo": "FrancyJGLisboa/agent-skill-creator",
@@ -267,19 +314,19 @@
         }
       ],
       "skillMdPaths": ["SKILL.md"],
-      "stars": 1529,
+      "stars": 1531,
       "forks": 201,
       "openIssues": 0,
-      "watchers": 1529,
+      "watchers": 1531,
       "language": "Python",
       "license": "MIT",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/FrancyJGLisboa/agent-skill-creator",
       "createdAt": "2025-10-18T15:01:46Z",
-      "updatedAt": "2026-06-18T03:19:39Z",
+      "updatedAt": "2026-06-18T07:44:19Z",
       "pushedAt": "2026-06-13T20:00:23Z",
-      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
+      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
       "fetchStatus": "ok",
       "rank": 3,
       "rankByCategory": 1,
@@ -317,7 +364,29 @@
       "releaseCount": 0,
       "latestRelease": "",
       "weeklyCommits": 0,
-      "contributors": 0
+      "contributors": 0,
+      "platform": "generic",
+      "safetyLevel": "safe",
+      "safetyNotes": [],
+      "sources": [
+        {
+          "source": "github",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-stats",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": false,
+          "errors": []
+        }
+      ],
+      "primarySource": "github",
+      "hasSkillMd": true,
+      "hasReadme": true,
+      "hasRelease": false,
+      "id": "FrancyJGLisboa/agent-skill-creator"
     },
     {
       "repo": "bergside/awesome-design-skills",
@@ -418,10 +487,10 @@
         "skills/vibrant/SKILL.md",
         "skills/vintage/SKILL.md"
       ],
-      "stars": 1296,
+      "stars": 1301,
       "forks": 112,
       "openIssues": 3,
-      "watchers": 1296,
+      "watchers": 1301,
       "language": "",
       "license": "MIT",
       "topics": [
@@ -447,9 +516,9 @@
       "homepage": "https://www.typeui.sh/design-skills",
       "htmlUrl": "https://github.com/bergside/awesome-design-skills",
       "createdAt": "2026-03-09T08:55:36Z",
-      "updatedAt": "2026-06-17T23:33:29Z",
+      "updatedAt": "2026-06-18T06:38:50Z",
       "pushedAt": "2026-05-25T18:28:08Z",
-      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
+      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
       "fetchStatus": "ok",
       "rank": 4,
       "rankByCategory": 1,
@@ -493,7 +562,29 @@
       "releaseCount": 0,
       "latestRelease": "",
       "weeklyCommits": 0,
-      "contributors": 0
+      "contributors": 0,
+      "platform": "generic",
+      "safetyLevel": "safe",
+      "safetyNotes": [],
+      "sources": [
+        {
+          "source": "github",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-stats",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": false,
+          "errors": []
+        }
+      ],
+      "primarySource": "github",
+      "hasSkillMd": true,
+      "hasReadme": true,
+      "hasRelease": false,
+      "id": "bergside/awesome-design-skills"
     },
     {
       "repo": "Weizhena/Deep-Research-skills",
@@ -551,10 +642,10 @@
         "skills/research-zh/research-report/SKILL.md",
         "skills/research-zh/research/SKILL.md"
       ],
-      "stars": 1196,
+      "stars": 1200,
       "forks": 100,
       "openIssues": 2,
-      "watchers": 1196,
+      "watchers": 1200,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -570,9 +661,9 @@
       "homepage": "",
       "htmlUrl": "https://github.com/Weizhena/Deep-Research-skills",
       "createdAt": "2025-12-29T05:00:00Z",
-      "updatedAt": "2026-06-18T04:13:18Z",
+      "updatedAt": "2026-06-18T07:41:56Z",
       "pushedAt": "2026-05-07T16:08:07Z",
-      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
+      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
       "fetchStatus": "ok",
       "rank": 5,
       "rankByCategory": 2,
@@ -616,7 +707,29 @@
       "releaseCount": 0,
       "latestRelease": "",
       "weeklyCommits": 0,
-      "contributors": 0
+      "contributors": 0,
+      "platform": "claude",
+      "safetyLevel": "safe",
+      "safetyNotes": [],
+      "sources": [
+        {
+          "source": "github",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-stats",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": false,
+          "errors": []
+        }
+      ],
+      "primarySource": "github",
+      "hasSkillMd": true,
+      "hasReadme": true,
+      "hasRelease": false,
+      "id": "Weizhena/Deep-Research-skills"
     },
     {
       "repo": "lingxling/awesome-skills-cn",
@@ -5588,7 +5701,7 @@
       "createdAt": "2026-02-13T01:01:34Z",
       "updatedAt": "2026-06-18T02:28:25Z",
       "pushedAt": "2026-06-04T12:09:30Z",
-      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
+      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
       "fetchStatus": "ok",
       "rank": 6,
       "rankByCategory": 1,
@@ -5650,7 +5763,29 @@
       "releaseCount": 0,
       "latestRelease": "",
       "weeklyCommits": 0,
-      "contributors": 0
+      "contributors": 0,
+      "platform": "claude",
+      "safetyLevel": "safe",
+      "safetyNotes": [],
+      "sources": [
+        {
+          "source": "github",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-stats",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": false,
+          "errors": []
+        }
+      ],
+      "primarySource": "github",
+      "hasSkillMd": true,
+      "hasReadme": true,
+      "hasRelease": false,
+      "id": "lingxling/awesome-skills-cn"
     },
     {
       "repo": "redfox-data/redfox-community",
@@ -5704,6 +5839,7 @@
         "skills/multi-wordcheck/SKILL.md",
         "skills/optimize-skill-md/SKILL.md",
         "skills/pdf-image-text-extractor/SKILL.md",
+        "skills/playlet-douyin-feed/SKILL.md",
         "skills/seedance-video-gen/SKILL.md",
         "skills/seedream-5-lite/SKILL.md",
         "skills/stock-feed/SKILL.md",
@@ -5751,9 +5887,9 @@
       "homepage": "",
       "htmlUrl": "https://github.com/redfox-data/redfox-community",
       "createdAt": "2026-05-12T06:26:09Z",
-      "updatedAt": "2026-06-18T03:01:45Z",
-      "pushedAt": "2026-06-17T12:52:47Z",
-      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
+      "updatedAt": "2026-06-18T07:09:04Z",
+      "pushedAt": "2026-06-18T07:09:00Z",
+      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
       "fetchStatus": "ok",
       "rank": 7,
       "rankByCategory": 1,
@@ -5791,7 +5927,29 @@
       "releaseCount": 0,
       "latestRelease": "",
       "weeklyCommits": 0,
-      "contributors": 0
+      "contributors": 0,
+      "platform": "generic",
+      "safetyLevel": "review",
+      "safetyNotes": ["No open source license"],
+      "sources": [
+        {
+          "source": "github",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-stats",
+          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "ok": false,
+          "errors": []
+        }
+      ],
+      "primarySource": "github",
+      "hasSkillMd": true,
+      "hasReadme": true,
+      "hasRelease": false,
+      "id": "redfox-data/redfox-community"
     }
   ],
   "ecosystemBreakdown": {
@@ -5802,7 +5960,15 @@
     "huggingface": 1,
     "mcp": 1
   },
+  "platformBreakdown": {
+    "claude": 2,
+    "codex": 2,
+    "copilot": 0,
+    "generic": 3,
+    "unknown": 0
+  },
+  "sourceBreakdown": { "github": 7 },
   "totalEcosystemSources": 6,
-  "lastEcosystemSync": "2026-06-18T04:41:18.610Z",
+  "lastEcosystemSync": "2026-06-18T07:48:36.774Z",
   "hnMentionsCount": 0
 }
