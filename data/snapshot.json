@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-06-18T07:48:31.303Z",
+  "generatedAt": "2026-06-18T11:58:35.521Z",
   "source": "agent-skills-radar",
   "categories": [
     {
@@ -98,19 +98,19 @@
         "skills/.system/skill-creator/SKILL.md",
         "skills/.system/skill-installer/SKILL.md"
       ],
-      "stars": 22442,
-      "forks": 1522,
+      "stars": 22461,
+      "forks": 1524,
       "openIssues": 276,
-      "watchers": 22442,
+      "watchers": 22461,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/openai/skills",
       "createdAt": "2025-11-25T06:25:42Z",
-      "updatedAt": "2026-06-18T07:46:47Z",
+      "updatedAt": "2026-06-18T11:48:25Z",
       "pushedAt": "2026-06-17T19:15:40Z",
-      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
+      "lastFetchedAt": "2026-06-18T11:58:35.521Z",
       "fetchStatus": "ok",
       "rank": 1,
       "rankByCategory": 1,
@@ -158,13 +158,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": false,
           "errors": []
         }
@@ -180,8 +180,8 @@
       "name": "Nature Academic Skills",
       "descriptionZh": "面向 Nature 论文表达、科研绘图、引用整理和学术写作的中文 Skill 集合。",
       "descriptionEn": "Chinese-friendly skills for Nature-style academic writing, figures, citations, and research workflows.",
-      "readmeSnippetZh": "# nature-skills\n\n大家好，我是 nature skills 的创立者袁一哲。感谢大家持续关注 `nature-skills`。我们在抖音更新了很多视频教程，大家可以根据名称检索查看，希望真心能够帮助到大家。\n\n如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，会尽量推进实现。我们也欢迎 PR，但请按照本文后面的贡献格式提交，方便更高效地审核与合并。\n\n<table>\n  <tr>\n    <td align=\"center\">\n      <b>视频教程请关注抖音</b><br>\n      <img width=\"500\" alt=\"视频教程请关注抖音\" src=\"https://github.com/user-attachments/assets/1eefda21-86a4-4081-96e4-d40dea9e1e7b\" />\n    </td>\n    <td align=\"center\">\n      <b>青创人才交流群，记得入群修改备注</b><br>\n      <img width=\"500\" alt=\"5分钟内修改备注\" src=\"https://github.com/user-attachments/assets/2e541ba8-de46-485b-9caa-608244ad2639\" />\n    </td>\n  </tr>\n</table>\n\n---\n\n## 安装\n\n`nature-skills` 是一组围绕 `SKILL.md` 组织的可复用技能包。每个 `skills/nature-*` 目录都是一个可安装单元，部分技能还依赖 `skills/_shared/` 中的共享内容。\n\n### Codex 推荐安装方式\n\n最简单的方式是把仓库链接交给 Codex，并让它安装完整技能目录：\n\n```text\nhttps://github.com/Yuan1z0825/nature-skills.git\n```\n\n推荐提示词：\n\n```text\n请从这个仓库安装 Codex skills：\nhttps://git...",
-      "readmeSnippetEn": "# nature-skills\n\n大家好，我是 nature skills 的创立者袁一哲。感谢大家持续关注 `nature-skills`。我们在抖音更新了很多视频教程，大家可以根据名称检索查看，希望真心能够帮助到大家。\n\n如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，会尽量推进实现。我们也欢迎 PR，但请按照本文后面的贡献格式提交，方便更高效地审核与合并。\n\n<table>\n  <tr>\n    <td align=\"center\">\n      <b>视频教程请关注抖音</b><br>\n      <img width=\"500\" alt=\"视频教程请关注抖音\" src=\"https://github.com/user-attachments/assets/1eefda21-86a4-4081-96e4-d40dea9e1e7b\" />\n    </td>\n    <td align=\"center\">\n      <b>青创人才交流群，记得入群修改备注</b><br>\n      <img width=\"500\" alt=\"5分钟内修改备注\" src=\"https://github.com/user-attachments/assets/2e541ba8-de46-485b-9caa-608244ad2639\" />\n    </td>\n  </tr>\n</table>\n\n---\n\n## 安装\n\n`nature-skills` 是一组围绕 `SKILL.md` 组织的可复用技能包。每个 `skills/nature-*` 目录都是一个可安装单元，部分技能还依赖 `skills/_shared/` 中的共享内容。\n\n### Codex 推荐安装方式\n\n最简单的方式是把仓库链接交给 Codex，并让它安装完整技能目录：\n\n```text\nhttps://github.com/Yuan1z0825/nature-skills.git\n```\n\n推荐提示词：\n\n```text\n请从这个仓库安装 Codex skills：\nhttps://git...",
+      "readmeSnippetZh": "# nature-skills\n\n大家好，我是 nature skills 的创立者袁一哲。感谢大家持续关注 `nature-skills`。我们在抖音更新了很多视频教程，大家可以根据名称检索查看，希望真心能够帮助到大家。\n\n如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，会尽量推进实现。我们也欢迎 PR，但请按照本文后面的贡献格式提交，方便更高效地审核与合并。\n\n<table>\n  <tr>\n    <td align=\"center\">\n      <b>视频教程请关注抖音</b><br>\n      <img width=\"500\" alt=\"视频教程请关注抖音\" src=\"https://github.com/user-attachments/assets/1eefda21-86a4-4081-96e4-d40dea9e1e7b\" />\n    </td>\n    <td align=\"center\">\n      <b>青春中国（袁一哲）</b><br>\n      <img width=\"500\" alt=\"青春中国（袁一哲）\" src=\"assets/youth-china-yuan-yizhe.png\" />\n    </td>\n  </tr>\n</table>\n\n---\n\n## 安装\n\n`nature-skills` 是一组围绕 `SKILL.md` 组织的可复用技能包。每个 `skills/nature-*` 目录都是一个可安装单元，部分技能还依赖 `skills/_shared/` 中的共享内容。\n\n### Codex 推荐安装方式\n\n最简单的方式是把仓库链接交给 Codex，并让它安装完整技能目录：\n\n```text\nhttps://github.com/Yuan1z0825/nature-skills.git\n```\n\n推荐提示词：\n\n```text\n请从这个仓库安装 Codex skills：\nhttps://github.com/Yuan1z0825/nature-skills.git\n\n请把 skills/ 下的完...",
+      "readmeSnippetEn": "# nature-skills\n\n大家好，我是 nature skills 的创立者袁一哲。感谢大家持续关注 `nature-skills`。我们在抖音更新了很多视频教程，大家可以根据名称检索查看，希望真心能够帮助到大家。\n\n如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，会尽量推进实现。我们也欢迎 PR，但请按照本文后面的贡献格式提交，方便更高效地审核与合并。\n\n<table>\n  <tr>\n    <td align=\"center\">\n      <b>视频教程请关注抖音</b><br>\n      <img width=\"500\" alt=\"视频教程请关注抖音\" src=\"https://github.com/user-attachments/assets/1eefda21-86a4-4081-96e4-d40dea9e1e7b\" />\n    </td>\n    <td align=\"center\">\n      <b>青春中国（袁一哲）</b><br>\n      <img width=\"500\" alt=\"青春中国（袁一哲）\" src=\"assets/youth-china-yuan-yizhe.png\" />\n    </td>\n  </tr>\n</table>\n\n---\n\n## 安装\n\n`nature-skills` 是一组围绕 `SKILL.md` 组织的可复用技能包。每个 `skills/nature-*` 目录都是一个可安装单元，部分技能还依赖 `skills/_shared/` 中的共享内容。\n\n### Codex 推荐安装方式\n\n最简单的方式是把仓库链接交给 Codex，并让它安装完整技能目录：\n\n```text\nhttps://github.com/Yuan1z0825/nature-skills.git\n```\n\n推荐提示词：\n\n```text\n请从这个仓库安装 Codex skills：\nhttps://github.com/Yuan1z0825/nature-skills.git\n\n请把 skills/ 下的完...",
       "categoryCode": "data",
       "categoryName": { "zh": "数据研究", "en": "Data Research" },
       "tags": [
@@ -218,19 +218,19 @@
         "skills/nature-reviewer/SKILL.md",
         "skills/nature-writing/SKILL.md"
       ],
-      "stars": 20936,
-      "forks": 1235,
+      "stars": 20998,
+      "forks": 1237,
       "openIssues": 2,
-      "watchers": 20936,
+      "watchers": 20998,
       "language": "Python",
       "license": "MIT",
       "topics": ["codex-skills", "nature", "nature-skills"],
       "homepage": "",
       "htmlUrl": "https://github.com/Yuan1z0825/nature-skills",
       "createdAt": "2026-04-24T03:11:46Z",
-      "updatedAt": "2026-06-18T07:46:22Z",
-      "pushedAt": "2026-06-17T19:20:27Z",
-      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
+      "updatedAt": "2026-06-18T11:57:41Z",
+      "pushedAt": "2026-06-18T10:08:25Z",
+      "lastFetchedAt": "2026-06-18T11:58:35.521Z",
       "fetchStatus": "ok",
       "rank": 2,
       "rankByCategory": 1,
@@ -275,13 +275,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": false,
           "errors": []
         }
@@ -326,7 +326,7 @@
       "createdAt": "2025-10-18T15:01:46Z",
       "updatedAt": "2026-06-18T07:44:19Z",
       "pushedAt": "2026-06-13T20:00:23Z",
-      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
+      "lastFetchedAt": "2026-06-18T11:58:35.521Z",
       "fetchStatus": "ok",
       "rank": 3,
       "rankByCategory": 1,
@@ -371,13 +371,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": false,
           "errors": []
         }
@@ -487,10 +487,10 @@
         "skills/vibrant/SKILL.md",
         "skills/vintage/SKILL.md"
       ],
-      "stars": 1301,
+      "stars": 1303,
       "forks": 112,
       "openIssues": 3,
-      "watchers": 1301,
+      "watchers": 1303,
       "language": "",
       "license": "MIT",
       "topics": [
@@ -516,9 +516,9 @@
       "homepage": "https://www.typeui.sh/design-skills",
       "htmlUrl": "https://github.com/bergside/awesome-design-skills",
       "createdAt": "2026-03-09T08:55:36Z",
-      "updatedAt": "2026-06-18T06:38:50Z",
+      "updatedAt": "2026-06-18T08:51:24Z",
       "pushedAt": "2026-05-25T18:28:08Z",
-      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
+      "lastFetchedAt": "2026-06-18T11:58:35.521Z",
       "fetchStatus": "ok",
       "rank": 4,
       "rankByCategory": 1,
@@ -569,13 +569,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": false,
           "errors": []
         }
@@ -642,10 +642,10 @@
         "skills/research-zh/research-report/SKILL.md",
         "skills/research-zh/research/SKILL.md"
       ],
-      "stars": 1200,
+      "stars": 1206,
       "forks": 100,
       "openIssues": 2,
-      "watchers": 1200,
+      "watchers": 1206,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -661,9 +661,9 @@
       "homepage": "",
       "htmlUrl": "https://github.com/Weizhena/Deep-Research-skills",
       "createdAt": "2025-12-29T05:00:00Z",
-      "updatedAt": "2026-06-18T07:41:56Z",
+      "updatedAt": "2026-06-18T10:50:22Z",
       "pushedAt": "2026-05-07T16:08:07Z",
-      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
+      "lastFetchedAt": "2026-06-18T11:58:35.521Z",
       "fetchStatus": "ok",
       "rank": 5,
       "rankByCategory": 2,
@@ -714,13 +714,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": false,
           "errors": []
         }
@@ -5701,7 +5701,7 @@
       "createdAt": "2026-02-13T01:01:34Z",
       "updatedAt": "2026-06-18T02:28:25Z",
       "pushedAt": "2026-06-04T12:09:30Z",
-      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
+      "lastFetchedAt": "2026-06-18T11:58:35.521Z",
       "fetchStatus": "ok",
       "rank": 6,
       "rankByCategory": 1,
@@ -5770,13 +5770,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": false,
           "errors": []
         }
@@ -5840,6 +5840,7 @@
         "skills/optimize-skill-md/SKILL.md",
         "skills/pdf-image-text-extractor/SKILL.md",
         "skills/playlet-douyin-feed/SKILL.md",
+        "skills/playlet-wechat-feed/SKILL.md",
         "skills/seedance-video-gen/SKILL.md",
         "skills/seedream-5-lite/SKILL.md",
         "skills/stock-feed/SKILL.md",
@@ -5877,19 +5878,19 @@
         "skills/xiaohongshu-write/SKILL.md",
         "skills/zhihu-rewrite/SKILL.md"
       ],
-      "stars": 100,
+      "stars": 102,
       "forks": 21,
       "openIssues": 0,
-      "watchers": 100,
+      "watchers": 102,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/redfox-data/redfox-community",
       "createdAt": "2026-05-12T06:26:09Z",
-      "updatedAt": "2026-06-18T07:09:04Z",
-      "pushedAt": "2026-06-18T07:09:00Z",
-      "lastFetchedAt": "2026-06-18T07:48:31.303Z",
+      "updatedAt": "2026-06-18T11:20:38Z",
+      "pushedAt": "2026-06-18T08:59:27Z",
+      "lastFetchedAt": "2026-06-18T11:58:35.521Z",
       "fetchStatus": "ok",
       "rank": 7,
       "rankByCategory": 1,
@@ -5934,13 +5935,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-06-18T07:48:36.773Z",
+          "fetchedAt": "2026-06-18T11:58:41.247Z",
           "ok": false,
           "errors": []
         }
@@ -5969,6 +5970,6 @@
   },
   "sourceBreakdown": { "github": 7 },
   "totalEcosystemSources": 6,
-  "lastEcosystemSync": "2026-06-18T07:48:36.774Z",
+  "lastEcosystemSync": "2026-06-18T11:58:41.247Z",
   "hnMentionsCount": 0
 }
