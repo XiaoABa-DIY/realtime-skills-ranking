@@ -303,6 +303,43 @@ function compareDefault(a: GithubSkillSnapshot, b: GithubSkillSnapshot) {
   );
 }
 
+function clampScore(value: number) {
+  return Math.max(0, Math.min(100, value));
+}
+
+function recencyScore(skill: GithubSkillSnapshot, now: number) {
+  const updatedAt = Date.parse(skill.pushedAt || skill.updatedAt || "");
+  if (!Number.isFinite(updatedAt)) return 10;
+  const ageDays = Math.max(0, (now - updatedAt) / 86_400_000);
+  if (ageDays <= 30) return 100;
+  if (ageDays <= 90) return 70;
+  if (ageDays <= 180) return 35;
+  return 10;
+}
+
+export function calculateSkillQualityScore(
+  skill: GithubSkillSnapshot,
+  now = Date.now(),
+) {
+  const docsLength = `${skill.readmeSnippetZh ?? ""} ${
+    skill.readmeSnippetEn ?? ""
+  }`.trim().length;
+  const docsScore = clampScore((docsLength / 800) * 100);
+  const heatScore = clampScore(
+    (Math.log(skill.stars + skill.forks * 2 + 1) / Math.log(100_000)) * 100,
+  );
+  const licenseScore = skill.license ? 100 : 40;
+
+  return Math.round(
+    clampScore(skill.skillSignalScore) * 0.3 +
+      docsScore * 0.2 +
+      recencyScore(skill, now) * 0.2 +
+      heatScore * 0.15 +
+      clampScore(skill.chineseScore) * 0.1 +
+      licenseScore * 0.05,
+  );
+}
+
 function compareTrendSpotlight(
   a: GithubSkillSnapshot,
   b: GithubSkillSnapshot,

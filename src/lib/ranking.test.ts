@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   calculateStats,
+  calculateSkillQualityScore,
   defaultSkillFilters,
   enrichSkills,
   filterAndSortSkills,
@@ -207,5 +208,35 @@ describe("ranking helpers", () => {
     expect(getRelatedSkills(content, enriched, 1)[0].repo).toBe(
       "owner/research-skill",
     );
+  });
+
+  it("calculates a bounded quality score from completeness, docs, freshness, heat, Chinese friendliness, and license", () => {
+    const strong = makeSkill({
+      stars: 1200,
+      forks: 120,
+      chineseScore: 90,
+      skillSignalScore: 100,
+      license: "MIT",
+      pushedAt: "2026-06-01T00:00:00.000Z",
+      readmeSnippetZh: "中文说明".repeat(180),
+      readmeSnippetEn: "English docs ".repeat(80),
+    });
+    const weak = makeSkill({
+      stars: 5,
+      forks: 0,
+      chineseScore: 10,
+      skillSignalScore: 30,
+      license: "",
+      pushedAt: "2025-01-01T00:00:00.000Z",
+      readmeSnippetZh: "",
+      readmeSnippetEn: "",
+    });
+
+    expect(
+      calculateSkillQualityScore(strong, Date.parse("2026-06-16T00:00:00Z")),
+    ).toBeGreaterThan(80);
+    expect(
+      calculateSkillQualityScore(weak, Date.parse("2026-06-16T00:00:00Z")),
+    ).toBeLessThan(35);
   });
 });

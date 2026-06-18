@@ -132,10 +132,10 @@ test("renders the GitHub skills gallery and filters skills", async ({
   await page.goto("/?lang=en");
 
   await expect(
-    page.getByRole("heading", { name: "AI Skills Radar" }),
+    page.getByRole("heading", { name: "Agent Skills Radar" }),
   ).toBeVisible();
   await expect(page.getByText("Today Top Skill")).toBeVisible();
-  await expect(page.getByText("Recommended entry points")).toBeVisible();
+  await expect(page.getByText("Scenario quick start")).toBeVisible();
   await expect(
     page.getByRole("region", { name: /Ranking list/i }),
   ).toBeVisible();
@@ -146,6 +146,7 @@ test("renders the GitHub skills gallery and filters skills", async ({
   await expect(
     page.getByRole("button", { name: /7-day star growth/i }),
   ).toBeVisible();
+  await page.getByRole("button", { name: /Close/i }).click();
   await expect(getSkillCard(page, "content-skill")).toBeVisible();
 
   await page
@@ -158,8 +159,7 @@ test("renders the GitHub skills gallery and filters skills", async ({
 test("opens trend spotlights and keeps details available", async ({ page }) => {
   await page.goto("/?lang=en");
 
-  await page.getByRole("button", { name: /Advanced filters/i }).click();
-  await page.getByRole("button", { name: /7-day star growth/i }).click();
+  await page.getByRole("button", { name: /Fastest growth/i }).click();
   await expect(page).toHaveURL(/spotlight=growth7d/);
   await expect(getSkillCard(page, "content-skill")).toBeVisible();
 

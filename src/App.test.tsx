@@ -137,29 +137,32 @@ describe("App", () => {
 
     expect(
       await screen.findByRole("heading", {
-        name: "AI Skills Radar",
+        name: "Agent Skills Radar",
       }),
     ).toBeInTheDocument();
     expect(screen.getByText("Today Top Skill")).toBeInTheDocument();
-    expect(screen.getByText("Recommended entry points")).toBeInTheDocument();
+    expect(
+      screen.getByLabelText("Today Top Skill").querySelectorAll(".trend-row"),
+    ).toHaveLength(0);
+    expect(screen.getByText("Scenario quick start")).toBeInTheDocument();
     expect(screen.getAllByText("Media creators").length).toBeGreaterThan(0);
-    await userEvent.click(
-      screen.getByRole("button", { name: /Advanced filters/i }),
-    );
     expect(
       screen.getByRole("region", { name: /Ranking list/i }),
     ).toBeInTheDocument();
-    expect(screen.getByText("7-day star growth")).toBeInTheDocument();
-    expect(screen.getByText("Fastest risers")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /Fastest growth/i }),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Fastest risers")).not.toBeInTheDocument();
     expect(screen.getByPlaceholderText(/Search skills/i)).toBeInTheDocument();
     expect(screen.getAllByText("content-skill").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Quality/).length).toBeGreaterThan(0);
   });
 
   it("searches from the hero and reveals advanced filters on demand", async () => {
     const user = userEvent.setup();
     render(<App />);
 
-    await screen.findByRole("heading", { name: "AI Skills Radar" });
+    await screen.findByRole("heading", { name: "Agent Skills Radar" });
 
     await user.type(screen.getByPlaceholderText(/Search skills/i), "research");
 
@@ -172,7 +175,27 @@ describe("App", () => {
 
     await user.click(screen.getByRole("button", { name: /Advanced filters/i }));
 
+    expect(
+      screen.getByRole("dialog", { name: /Advanced filters/i }),
+    ).toBeInTheDocument();
     expect(screen.getByRole("combobox", { name: /Tag/i })).toBeInTheDocument();
+  });
+
+  it("uses scenario cards and spotlight shortcuts as first-class filters", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await screen.findByRole("heading", { name: "Agent Skills Radar" });
+
+    await user.click(screen.getByRole("button", { name: /Content creation/i }));
+    await waitFor(() =>
+      expect(window.location.search).toContain("audience=media"),
+    );
+
+    await user.click(screen.getByRole("button", { name: /Fastest growth/i }));
+    await waitFor(() =>
+      expect(window.location.search).toContain("spotlight=growth7d"),
+    );
   });
 
   it("opens a detail drawer with GitHub actions and skill paths", async () => {
@@ -196,6 +219,7 @@ describe("App", () => {
     expect(screen.getByText("skills/writing/SKILL.md")).toBeInTheDocument();
     expect(screen.getAllByText("+90 / 7d").length).toBeGreaterThan(0);
     expect(screen.getAllByText("rank +2").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Quality/).length).toBeGreaterThan(0);
   });
 
   it("keeps quick filters in the URL and persists local favorites", async () => {
@@ -214,15 +238,12 @@ describe("App", () => {
     );
     expect(window.location.search).toContain("favorites=1");
 
-    await user.click(screen.getByRole("button", { name: /View top stars/i }));
+    await user.click(screen.getByRole("button", { name: /^Top stars$/i }));
     await waitFor(() =>
       expect(window.location.search).toContain("spotlight=topStars"),
     );
 
-    await user.click(screen.getByRole("button", { name: /Advanced filters/i }));
-    await user.click(
-      screen.getByRole("button", { name: /7-day star growth/i }),
-    );
+    await user.click(screen.getByRole("button", { name: /Fastest growth/i }));
     await waitFor(() =>
       expect(window.location.search).toContain("spotlight=growth7d"),
     );

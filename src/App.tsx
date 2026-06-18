@@ -36,6 +36,7 @@ import {
   audienceKeys,
   audienceProfiles,
   calculateStats,
+  calculateSkillQualityScore,
   defaultSkillFilters,
   deriveUseCases,
   enrichSkills,
@@ -92,6 +93,13 @@ const quickFilterKeys: QuickFilterKey[] = [
   "dataTools",
   "productivityTools",
   "beginnerTools",
+];
+
+const spotlightShortcutKeys: SpotlightKey[] = [
+  "growth7d",
+  "recentlyUpdated",
+  "chineseFriendly",
+  "topStars",
 ];
 
 function getInitialState() {
@@ -245,7 +253,7 @@ function HeroSection({
   query,
   onQueryChange,
   onStartExplore,
-  onTopStars,
+  onFastestGrowth,
   onRecommendSkill,
   onSelectSkill,
 }: {
@@ -256,12 +264,11 @@ function HeroSection({
   query: string;
   onQueryChange: (query: string) => void;
   onStartExplore: () => void;
-  onTopStars: () => void;
+  onFastestGrowth: () => void;
   onRecommendSkill: () => void;
   onSelectSkill: (skill: GithubSkillSnapshot) => void;
 }) {
   const topSkill = topSkills[0] ?? null;
-  const runnersUp = topSkills.slice(1, 3);
 
   return (
     <section className="hero-panel">
@@ -291,10 +298,10 @@ function HeroSection({
           <button
             type="button"
             className="secondary-button"
-            onClick={onTopStars}
+            onClick={onFastestGrowth}
           >
-            <Star size={16} />
-            {t(locale, "viewTopStars")}
+            <TrendingUp size={16} />
+            {t(locale, "viewFastestGrowth")}
           </button>
           <button
             type="button"
@@ -304,16 +311,6 @@ function HeroSection({
             <ExternalLink size={16} />
             {t(locale, "contributeSkill")}
           </button>
-        </div>
-        <div className={stale ? "freshness-strip warning" : "freshness-strip"}>
-          <Clock3 size={15} />
-          <span>
-            {stale ? t(locale, "dataMayBeStale") : t(locale, "lastRefresh")}:{" "}
-            {snapshot.generatedAt
-              ? formatDateTime(snapshot.generatedAt, locale)
-              : "-"}
-          </span>
-          <b>{snapshot.source}</b>
         </div>
       </div>
 
@@ -332,32 +329,23 @@ function HeroSection({
             <span>
               <strong>{skillName(topSkill, locale)}</strong>
               <small>{topSkill.repo}</small>
+              <small className="top-skill-summary">
+                {skillSummary(topSkill, locale)}
+              </small>
             </span>
             <em>{formatNumber(topSkill.stars, locale)}</em>
           </button>
         ) : null}
-        <div className="hero-trend-list">
-          {runnersUp.map((skill, index) => (
-            <button
-              type="button"
-              className="trend-row"
-              key={skill.repo}
-              onClick={() => onSelectSkill(skill)}
-            >
-              <span>#{index + 2}</span>
-              <strong>{skillName(skill, locale)}</strong>
-              <em>{formatNumber(skill.stars, locale)}</em>
-            </button>
-          ))}
-        </div>
-        <div className="hero-source-card">
+        <div
+          className={stale ? "hero-source-card warning" : "hero-source-card"}
+        >
           <small>{t(locale, "lastRefresh")}</small>
           <strong>
             {snapshot.generatedAt
               ? formatDateTime(snapshot.generatedAt, locale)
               : "-"}
           </strong>
-          <span>{t(locale, "githubSource")}</span>
+          <span>{stale ? t(locale, "dataMayBeStale") : snapshot.source}</span>
         </div>
       </div>
     </section>
@@ -365,8 +353,13 @@ function HeroSection({
 }
 
 interface RecommendedPick {
-  key: "topOverall" | "creatorPick" | "developerPick" | "dataPick";
+  key:
+    | "contentCreation"
+    | "developerToolkit"
+    | "researchDesk"
+    | "chineseFriendlyStart";
   skill: GithubSkillSnapshot;
+  filters: Partial<SkillFilters>;
 }
 
 function FeaturedSkillCards({
@@ -374,12 +367,14 @@ function FeaturedSkillCards({
   locale,
   favoriteSkills,
   onSelect,
+  onApplyScenario,
   onToggleFavorite,
 }: {
   picks: RecommendedPick[];
   locale: Locale;
   favoriteSkills: ReadonlySet<string>;
   onSelect: (skill: GithubSkillSnapshot) => void;
+  onApplyScenario: (pick: RecommendedPick) => void;
   onToggleFavorite: (skill: GithubSkillSnapshot) => void;
 }) {
   if (picks.length === 0) return null;
@@ -402,7 +397,7 @@ function FeaturedSkillCards({
             <button
               type="button"
               className="pick-main"
-              onClick={() => onSelect(pick.skill)}
+              onClick={() => onApplyScenario(pick)}
             >
               <span className="pick-label">{t(locale, pick.key)}</span>
               <strong>{skillName(pick.skill, locale)}</strong>
@@ -424,6 +419,13 @@ function FeaturedSkillCards({
               <button
                 type="button"
                 className="detail-link"
+                onClick={() => onApplyScenario(pick)}
+              >
+                {t(locale, "exploreScenario")}
+              </button>
+              <button
+                type="button"
+                className="ghost-button"
                 onClick={() => onSelect(pick.skill)}
               >
                 {t(locale, "viewDetails")}
@@ -483,6 +485,37 @@ function QuickFilterChips({
   );
 }
 
+function SpotlightShortcuts({
+  locale,
+  active,
+  onSelect,
+}: {
+  locale: Locale;
+  active: SpotlightKey | "";
+  onSelect: (spotlight: SpotlightKey) => void;
+}) {
+  return (
+    <div className="spotlight-shortcuts" aria-label={t(locale, "rankingLens")}>
+      <span>{t(locale, "rankingLens")}</span>
+      {spotlightShortcutKeys.map((spotlight) => (
+        <button
+          type="button"
+          key={spotlight}
+          className={active === spotlight ? "lens-chip active" : "lens-chip"}
+          aria-pressed={active === spotlight}
+          onClick={() => onSelect(spotlight)}
+        >
+          {spotlight === "growth7d"
+            ? t(locale, "fastestGrowth")
+            : spotlight === "recentlyUpdated"
+              ? t(locale, "recentActivity")
+              : spotlightViews[spotlight].label[locale]}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function CategoryChips({
   categories,
   locale,
@@ -532,6 +565,8 @@ function RankingItem({
   onSelect: () => void;
   onToggleFavorite: () => void;
 }) {
+  const qualityScore = calculateSkillQualityScore(skill);
+
   return (
     <article
       className={skill.rank <= 3 ? "ranking-item top-item" : "ranking-item"}
@@ -545,6 +580,10 @@ function RankingItem({
       </button>
       <p className="ranking-summary">{skillSummary(skill, locale)}</p>
       <div className="ranking-meta">
+        <span className="quality-pill">
+          <TrendingUp size={14} />
+          {t(locale, "qualityScore")} {qualityScore}
+        </span>
         <span>
           <Star size={14} />
           <b>{formatNumber(skill.stars, locale)}</b>
@@ -611,6 +650,195 @@ function EmptyRankingState({
   );
 }
 
+function AdvancedFilterDrawer({
+  open,
+  locale,
+  skills,
+  categories,
+  filters,
+  options,
+  favoritesCount,
+  activeFilters,
+  onClose,
+  onToggleAudience,
+  onToggleSpotlight,
+  onSelectCategory,
+  onSetTag,
+  onToggleFavorites,
+  onClearFilters,
+}: {
+  open: boolean;
+  locale: Locale;
+  skills: GithubSkillSnapshot[];
+  categories: SkillCategory[];
+  filters: SkillFilters;
+  options: ReturnType<typeof getFilterOptions>;
+  favoritesCount: number;
+  activeFilters: string[];
+  onClose: () => void;
+  onToggleAudience: (audience: AudienceKey) => void;
+  onToggleSpotlight: (spotlight: SpotlightKey) => void;
+  onSelectCategory: (category: string) => void;
+  onSetTag: (tag: string) => void;
+  onToggleFavorites: () => void;
+  onClearFilters: () => void;
+}) {
+  if (!open) return null;
+
+  return (
+    <div className="filter-drawer-backdrop" onClick={onClose}>
+      <aside
+        className="filter-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label={t(locale, "advancedFilters")}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div className="drawer-header compact-header">
+          <div>
+            <p className="eyebrow">{t(locale, "advancedFilters")}</p>
+            <h2>{t(locale, "filterDrawerTitle")}</h2>
+          </div>
+          <button
+            type="button"
+            className="icon-button"
+            aria-label={t(locale, "close")}
+            onClick={onClose}
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        <section className="filter-drawer-section">
+          <div className="panel-title small">
+            <UsersRound size={15} />
+            <span>{t(locale, "audienceViews")}</span>
+          </div>
+          <div className="toggle-grid compact-grid">
+            {audienceKeys.map((audience) => {
+              const profile = audienceProfiles[audience];
+              const count = skills.filter((skill) =>
+                matchesAudience(skill, audience),
+              ).length;
+              return (
+                <button
+                  type="button"
+                  key={audience}
+                  className={
+                    filters.audience === audience
+                      ? "toggle-card active"
+                      : "toggle-card"
+                  }
+                  aria-pressed={filters.audience === audience}
+                  onClick={() => onToggleAudience(audience)}
+                >
+                  <strong>{profile.label[locale]}</strong>
+                  <small>{formatNumber(count, locale)}</small>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="filter-drawer-section">
+          <div className="panel-title small">
+            <Tag size={15} />
+            <span>{t(locale, "category")}</span>
+          </div>
+          <CategoryChips
+            categories={categories}
+            locale={locale}
+            active={filters.category}
+            onSelect={onSelectCategory}
+          />
+        </section>
+
+        <section className="filter-drawer-section">
+          <div className="panel-title small">
+            <ArrowDownWideNarrow size={15} />
+            <span>{t(locale, "spotlightViews")}</span>
+          </div>
+          <div className="toggle-grid compact-grid">
+            {spotlightKeys.map((spotlight) => (
+              <button
+                type="button"
+                key={spotlight}
+                className={
+                  filters.spotlight === spotlight
+                    ? "toggle-card active"
+                    : "toggle-card"
+                }
+                aria-pressed={filters.spotlight === spotlight}
+                onClick={() => onToggleSpotlight(spotlight)}
+              >
+                <strong>{spotlightViews[spotlight].label[locale]}</strong>
+                <small>{spotlightViews[spotlight].description[locale]}</small>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <section className="filter-drawer-section">
+          <label className="field">
+            <span>{t(locale, "tag")}</span>
+            <select
+              value={filters.tag}
+              onChange={(event) => onSetTag(event.target.value)}
+            >
+              <option value="">{`${t(locale, "all")} ${t(locale, "tag")}`}</option>
+              {options.tags.map((tagValue) => (
+                <option key={tagValue} value={tagValue}>
+                  {tagValue}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <button
+            type="button"
+            className={
+              filters.favoritesOnly
+                ? "favorite-filter active"
+                : "favorite-filter"
+            }
+            aria-pressed={filters.favoritesOnly}
+            onClick={onToggleFavorites}
+          >
+            <BookmarkCheck size={16} />
+            <span>
+              <strong>{t(locale, "favoritesOnly")}</strong>
+              <small>
+                {t(locale, "myFavorites")} {favoritesCount}
+              </small>
+            </span>
+          </button>
+        </section>
+
+        {activeFilters.length ? (
+          <div className="active-filters">
+            <span>{t(locale, "selectedFilters")}</span>
+            <div className="badge-row">
+              {activeFilters.map((filter) => (
+                <span className="badge" key={filter}>
+                  {filter}
+                </span>
+              ))}
+            </div>
+            <button
+              type="button"
+              className="secondary-button"
+              onClick={onClearFilters}
+            >
+              <SlidersHorizontal size={16} />
+              {t(locale, "clearFilters")}
+            </button>
+          </div>
+        ) : null}
+      </aside>
+    </div>
+  );
+}
+
 function skillFileUrl(skill: GithubSkillSnapshot, skillPath: string) {
   return `${skill.htmlUrl}/blob/HEAD/${skillPath
     .split("/")
@@ -639,6 +867,7 @@ function DetailDrawer({
 }) {
   if (!skill) return null;
   const related = getRelatedSkills(skill, skills, 4);
+  const qualityScore = calculateSkillQualityScore(skill);
   const readme =
     locale === "zh" ? skill.readmeSnippetZh : skill.readmeSnippetEn;
 
@@ -738,6 +967,11 @@ function DetailDrawer({
             label={t(locale, "chineseScore")}
             value={formatNumber(skill.chineseScore, locale)}
             icon={<TrendingUp size={16} />}
+          />
+          <MetricCard
+            label={t(locale, "qualityScore")}
+            value={formatNumber(qualityScore, locale)}
+            icon={<Sparkles size={16} />}
           />
         </div>
 
@@ -988,8 +1222,18 @@ function App() {
     }
   }
 
-  function viewTopStars() {
-    updateFilters((current) => ({ ...current, spotlight: "topStars" }));
+  function viewFastestGrowth() {
+    updateFilters((current) => ({ ...current, spotlight: "growth7d" }));
+    startExploring();
+  }
+
+  function applyScenario(pick: RecommendedPick) {
+    updateFilters((current) => ({
+      ...current,
+      ...pick.filters,
+      tag: "",
+      category: pick.filters.category ?? "",
+    }));
     startExploring();
   }
 
@@ -1084,7 +1328,7 @@ function App() {
         query={filters.query}
         onQueryChange={(query) => setFilter("query", query)}
         onStartExplore={startExploring}
-        onTopStars={viewTopStars}
+        onFastestGrowth={viewFastestGrowth}
         onRecommendSkill={recommendSkill}
         onSelectSkill={openSkill}
       />
@@ -1130,6 +1374,7 @@ function App() {
         locale={locale}
         favoriteSkills={favoriteSkillSet}
         onSelect={openSkill}
+        onApplyScenario={applyScenario}
         onToggleFavorite={toggleFavorite}
       />
 
@@ -1160,11 +1405,10 @@ function App() {
           </div>
 
           <div className="ranking-toolbar">
-            <CategoryChips
-              categories={snapshot.categories}
+            <SpotlightShortcuts
               locale={locale}
-              active={filters.category}
-              onSelect={(category) => setFilter("category", category)}
+              active={filters.spotlight}
+              onSelect={toggleSpotlight}
             />
             <div className="toolbar-actions">
               <label className="field inline-field">
@@ -1189,136 +1433,13 @@ function App() {
                     : "secondary-button"
                 }
                 aria-expanded={advancedOpen}
-                onClick={() => setAdvancedOpen((open) => !open)}
+                onClick={() => setAdvancedOpen(true)}
               >
                 <SlidersHorizontal size={16} />
-                {advancedOpen
-                  ? t(locale, "hideAdvancedFilters")
-                  : t(locale, "advancedFilters")}
+                {t(locale, "advancedFilters")}
               </button>
             </div>
           </div>
-
-          {advancedOpen ? (
-            <div className="advanced-filter-panel">
-              <div className="filter-group">
-                <div className="panel-title small">
-                  <UsersRound size={15} />
-                  <span>{t(locale, "audienceViews")}</span>
-                </div>
-                <div className="toggle-grid compact-grid">
-                  {audienceKeys.map((audience) => {
-                    const profile = audienceProfiles[audience];
-                    const count = skills.filter((skill) =>
-                      matchesAudience(skill, audience),
-                    ).length;
-                    return (
-                      <button
-                        type="button"
-                        key={audience}
-                        className={
-                          filters.audience === audience
-                            ? "toggle-card active"
-                            : "toggle-card"
-                        }
-                        aria-pressed={filters.audience === audience}
-                        onClick={() => toggleAudience(audience)}
-                      >
-                        <strong>{profile.label[locale]}</strong>
-                        <small>{formatNumber(count, locale)}</small>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className="filter-group">
-                <div className="panel-title small">
-                  <ArrowDownWideNarrow size={15} />
-                  <span>{t(locale, "spotlightViews")}</span>
-                </div>
-                <div className="toggle-grid compact-grid">
-                  {spotlightKeys.map((spotlight) => (
-                    <button
-                      type="button"
-                      key={spotlight}
-                      className={
-                        filters.spotlight === spotlight
-                          ? "toggle-card active"
-                          : "toggle-card"
-                      }
-                      aria-pressed={filters.spotlight === spotlight}
-                      onClick={() => toggleSpotlight(spotlight)}
-                    >
-                      <strong>{spotlightViews[spotlight].label[locale]}</strong>
-                      <small>
-                        {spotlightViews[spotlight].description[locale]}
-                      </small>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="advanced-fields">
-                <label className="field">
-                  <span>{t(locale, "tag")}</span>
-                  <select
-                    value={filters.tag}
-                    onChange={(event) => setFilter("tag", event.target.value)}
-                  >
-                    <option value="">{`${t(locale, "all")} ${t(locale, "tag")}`}</option>
-                    {options.tags.map((tagValue) => (
-                      <option key={tagValue} value={tagValue}>
-                        {tagValue}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-
-                <button
-                  type="button"
-                  className={
-                    filters.favoritesOnly
-                      ? "favorite-filter active"
-                      : "favorite-filter"
-                  }
-                  aria-pressed={filters.favoritesOnly}
-                  onClick={() =>
-                    setFilter("favoritesOnly", !filters.favoritesOnly)
-                  }
-                >
-                  <BookmarkCheck size={16} />
-                  <span>
-                    <strong>{t(locale, "favoritesOnly")}</strong>
-                    <small>
-                      {t(locale, "myFavorites")} {favorites.length}
-                    </small>
-                  </span>
-                </button>
-              </div>
-
-              {activeFilters.length ? (
-                <div className="active-filters">
-                  <span>{t(locale, "selectedFilters")}</span>
-                  <div className="badge-row">
-                    {activeFilters.map((filter) => (
-                      <span className="badge" key={filter}>
-                        {filter}
-                      </span>
-                    ))}
-                  </div>
-                  <button
-                    type="button"
-                    className="secondary-button"
-                    onClick={clearFilters}
-                  >
-                    <SlidersHorizontal size={16} />
-                    {t(locale, "clearFilters")}
-                  </button>
-                </div>
-              ) : null}
-            </div>
-          ) : null}
 
           {loadError ? <p className="notice error">{loadError}</p> : null}
           {skills.length === 0 ? (
@@ -1351,6 +1472,26 @@ function App() {
           )}
         </section>
       </section>
+
+      <AdvancedFilterDrawer
+        open={advancedOpen}
+        locale={locale}
+        skills={skills}
+        categories={snapshot.categories}
+        filters={filters}
+        options={options}
+        favoritesCount={favorites.length}
+        activeFilters={activeFilters}
+        onClose={() => setAdvancedOpen(false)}
+        onToggleAudience={toggleAudience}
+        onToggleSpotlight={toggleSpotlight}
+        onSelectCategory={(category) => setFilter("category", category)}
+        onSetTag={(tag) => setFilter("tag", tag)}
+        onToggleFavorites={() =>
+          setFilter("favoritesOnly", !filters.favoritesOnly)
+        }
+        onClearFilters={clearFilters}
+      />
 
       <DetailDrawer
         skill={selectedSkill}
@@ -1387,6 +1528,7 @@ function getRecommendedPicks(skills: GithubSkillSnapshot[]): RecommendedPick[] {
 
   function take(
     key: RecommendedPick["key"],
+    filters: Partial<SkillFilters>,
     predicate: (skill: GithubSkillSnapshot) => boolean,
   ): RecommendedPick | null {
     const skill =
@@ -1394,14 +1536,24 @@ function getRecommendedPicks(skills: GithubSkillSnapshot[]): RecommendedPick[] {
       sorted.find((item) => !used.has(item.repo));
     if (!skill) return null;
     used.add(skill.repo);
-    return { key, skill };
+    return { key, skill, filters };
   }
 
   return [
-    take("topOverall", () => true),
-    take("creatorPick", (skill) => matchesAudience(skill, "media")),
-    take("developerPick", (skill) => matchesAudience(skill, "developer")),
-    take("dataPick", (skill) => matchesAudience(skill, "data")),
+    take("contentCreation", { audience: "media" }, (skill) =>
+      matchesAudience(skill, "media"),
+    ),
+    take("developerToolkit", { audience: "developer" }, (skill) =>
+      matchesAudience(skill, "developer"),
+    ),
+    take("researchDesk", { audience: "data" }, (skill) =>
+      matchesAudience(skill, "data"),
+    ),
+    take(
+      "chineseFriendlyStart",
+      { spotlight: "chineseFriendly" },
+      (skill) => skill.chineseScore >= 45,
+    ),
   ].filter((pick): pick is RecommendedPick => Boolean(pick));
 }
 
