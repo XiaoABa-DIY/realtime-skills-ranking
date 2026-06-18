@@ -71,7 +71,14 @@ const emptySnapshot: SnapshotPayload = {
   source: "empty",
   categories: [],
   skills: [],
-  ecosystemBreakdown: { claude: 0, codex: 0, copilot: 0, universal: 0, huggingface: 0, mcp: 0 },
+  ecosystemBreakdown: {
+    claude: 0,
+    codex: 0,
+    copilot: 0,
+    universal: 0,
+    huggingface: 0,
+    mcp: 0,
+  },
   totalEcosystemSources: 0,
   hnMentionsCount: 0,
 };
@@ -569,7 +576,8 @@ function EcosystemBadges({
           className={`badge eco-badge eco-${e.ecosystem}`}
           title={e.badge}
         >
-          {e.verified ? "\u2713 " : ""}{e.badge || e.ecosystem}
+          {e.verified ? "\u2713 " : ""}
+          {e.badge || e.ecosystem}
         </span>
       ))}
     </div>
@@ -1002,28 +1010,55 @@ function DetailDrawer({
           <h3>{t(locale, "compositeScore")}</h3>
           <div className="radar-grid">
             <div className="radar-item">
-              <span className="radar-label">{t(locale, "popularityScore")}</span>
-              <div className="radar-bar"><div className="radar-fill" style={{ width: skill.popularityScore + "%" }} /></div>
+              <span className="radar-label">
+                {t(locale, "popularityScore")}
+              </span>
+              <div className="radar-bar">
+                <div
+                  className="radar-fill"
+                  style={{ width: skill.popularityScore + "%" }}
+                />
+              </div>
               <span className="radar-value">{skill.popularityScore}</span>
             </div>
             <div className="radar-item">
               <span className="radar-label">{t(locale, "activityScore")}</span>
-              <div className="radar-bar"><div className="radar-fill" style={{ width: skill.activityScore + "%" }} /></div>
+              <div className="radar-bar">
+                <div
+                  className="radar-fill"
+                  style={{ width: skill.activityScore + "%" }}
+                />
+              </div>
               <span className="radar-value">{skill.activityScore}</span>
             </div>
             <div className="radar-item">
               <span className="radar-label">{t(locale, "adoptionScore")}</span>
-              <div className="radar-bar"><div className="radar-fill" style={{ width: skill.adoptionScore + "%" }} /></div>
+              <div className="radar-bar">
+                <div
+                  className="radar-fill"
+                  style={{ width: skill.adoptionScore + "%" }}
+                />
+              </div>
               <span className="radar-value">{skill.adoptionScore}</span>
             </div>
             <div className="radar-item">
               <span className="radar-label">{t(locale, "officialScore")}</span>
-              <div className="radar-bar"><div className="radar-fill" style={{ width: skill.officialScore + "%" }} /></div>
+              <div className="radar-bar">
+                <div
+                  className="radar-fill"
+                  style={{ width: skill.officialScore + "%" }}
+                />
+              </div>
               <span className="radar-value">{skill.officialScore}</span>
             </div>
             <div className="radar-item">
               <span className="radar-label">{t(locale, "ecosystemScore")}</span>
-              <div className="radar-bar"><div className="radar-fill" style={{ width: skill.ecosystemScore + "%" }} /></div>
+              <div className="radar-bar">
+                <div
+                  className="radar-fill"
+                  style={{ width: skill.ecosystemScore + "%" }}
+                />
+              </div>
               <span className="radar-value">{skill.ecosystemScore}</span>
             </div>
           </div>
@@ -1038,8 +1073,14 @@ function DetailDrawer({
             <h3>{t(locale, "ecosystemCompatibility")}</h3>
             <div className="ecosystem-grid">
               {skill.ecosystems.map((eco) => (
-                <div key={eco.ecosystem} className={`eco-card eco-${eco.ecosystem}`}>
-                  <span className="eco-badge-large">{eco.verified ? "\u2713 " : ""}{eco.badge || eco.ecosystem}</span>
+                <div
+                  key={eco.ecosystem}
+                  className={`eco-card eco-${eco.ecosystem}`}
+                >
+                  <span className="eco-badge-large">
+                    {eco.verified ? "\u2713 " : ""}
+                    {eco.badge || eco.ecosystem}
+                  </span>
                 </div>
               ))}
             </div>
@@ -1049,10 +1090,24 @@ function DetailDrawer({
         <section className="drawer-section">
           <h3>{t(locale, "repositoryActivity")}</h3>
           <div className="access-list">
-            <span><b>{t(locale, "releaseCount")}</b><small>{skill.releaseCount ?? 0}</small></span>
-            <span><b>{t(locale, "weeklyCommits")}</b><small>{skill.weeklyCommits ?? 0}</small></span>
-            <span><b>{t(locale, "contributors")}</b><small>{skill.contributors ?? 0}</small></span>
-            {skill.latestRelease ? (<span><b>{t(locale, "lastRelease")}</b><small>{formatDateTime(skill.latestRelease, locale)}</small></span>) : null}
+            <span>
+              <b>{t(locale, "releaseCount")}</b>
+              <small>{skill.releaseCount ?? 0}</small>
+            </span>
+            <span>
+              <b>{t(locale, "weeklyCommits")}</b>
+              <small>{skill.weeklyCommits ?? 0}</small>
+            </span>
+            <span>
+              <b>{t(locale, "contributors")}</b>
+              <small>{skill.contributors ?? 0}</small>
+            </span>
+            {skill.latestRelease ? (
+              <span>
+                <b>{t(locale, "lastRelease")}</b>
+                <small>{formatDateTime(skill.latestRelease, locale)}</small>
+              </span>
+            ) : null}
           </div>
         </section>
 

@@ -1,5 +1,14 @@
 export type Locale = "zh" | "en";
-export type SortKey = "stars" | "forks" | "updated" | "name" | "popularity" | "activity" | "adoption" | "ecosystem" | "composite";
+export type SortKey =
+  | "stars"
+  | "forks"
+  | "updated"
+  | "name"
+  | "popularity"
+  | "activity"
+  | "adoption"
+  | "ecosystem"
+  | "composite";
 export type AudienceKey =
   | "media"
   | "developer"

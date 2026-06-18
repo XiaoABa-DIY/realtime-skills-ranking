@@ -82,7 +82,9 @@ export async function fetchAnthropicSkills(githubFetch) {
         const treeItems = Array.isArray(tree?.tree) ? tree.tree : [];
         for (const item of treeItems) {
           if (item?.type === "blob" && item.path.match(/SKILL\.md$/i)) {
-            const skillName = item.path.replace(/SKILL\.md$/i, "").toLowerCase();
+            const skillName = item.path
+              .replace(/SKILL\.md$/i, "")
+              .toLowerCase();
             verified.add(`${repo}/${skillName}`);
           }
         }
@@ -176,13 +178,17 @@ export async function fetchCommitActivity(githubFetch, repo) {
   try {
     const url = `${GITHUB_API}/repos/${repo}/stats/push_counts`;
     const payload = await githubFetch(url);
-    const weeks = Array.isArray(payload?.push_counts) ? payload.push_counts : [];
+    const weeks = Array.isArray(payload?.push_counts)
+      ? payload.push_counts
+      : [];
     const recentWeeks = weeks.slice(-12);
     const totalCommits = recentWeeks.reduce(
       (sum, w) => sum + asFiniteNumber(w?.count, 0),
       0,
     );
-    const weeklyAvg = Math.round(totalCommits / Math.max(recentWeeks.length, 1));
+    const weeklyAvg = Math.round(
+      totalCommits / Math.max(recentWeeks.length, 1),
+    );
     return { weeklyCommits: weeklyAvg, commitHistoryLength: weeks.length };
   } catch {
     return { weeklyCommits: 0, commitHistoryLength: 0 };
@@ -307,7 +313,9 @@ export function classifyEcosystem(skill) {
     ...skill.tags,
     ...skill.topics,
     ...skill.skillMdPaths,
-  ].join(" ").toLowerCase();
+  ]
+    .join(" ")
+    .toLowerCase();
 
   // Claude
   if (
@@ -415,15 +423,14 @@ export function calculateEcosystemScores(skill, commitData, releaseData) {
   const activity = Math.min(
     100,
     Math.round(
-      (asFiniteNumber(commitData?.weeklyCommits, 0) * 2 +
+      asFiniteNumber(commitData?.weeklyCommits, 0) * 2 +
         recencyBonus * 20 +
-        (releaseData?.releaseCount || 0) * 5),
+        (releaseData?.releaseCount || 0) * 5,
     ),
   );
 
   // Adoption Score (0-100): forks relative to stars + contributor count
-  const forkRatio =
-    skill.stars > 0 ? skill.forks / skill.stars : 0;
+  const forkRatio = skill.stars > 0 ? skill.forks / skill.stars : 0;
   const adoption = Math.min(
     100,
     Math.round(
@@ -445,7 +452,9 @@ export function calculateEcosystemScores(skill, commitData, releaseData) {
   const hasMcp = skill.ecosystems.some((e) => e.ecosystem === "mcp");
   const ecosystem = Math.min(
     100,
-    ecosystemCount * 15 + (hasMcp ? 25 : 0) + (skill.relatedMCPs?.length || 0) * 5,
+    ecosystemCount * 15 +
+      (hasMcp ? 25 : 0) +
+      (skill.relatedMCPs?.length || 0) * 5,
   );
 
   // Composite Score: weighted combination

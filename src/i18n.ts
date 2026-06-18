@@ -3,7 +3,8 @@ import type { Locale } from "./types";
 export const messages = {
   zh: {
     appTitle: "Agent Skills Radar",
-    appSubtitle: "搜索、筛选和收藏多生态 Agent Skills：Claude / Codex / Copilot / 通用。",
+    appSubtitle:
+      "搜索、筛选和收藏多生态 Agent Skills：Claude / Codex / Copilot / 通用。",
     workbench: "Skills 工作台",
     heroTitle: "发现可复用的 Agent Skills、Claude/Codex Skills 与自动化工作流",
     heroLead:

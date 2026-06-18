@@ -56,7 +56,14 @@ function makeSkill(
     chineseScore: overrides.chineseScore ?? 50,
     skillSignalScore: overrides.skillSignalScore ?? 100,
     featured: overrides.featured ?? false,
-    ecosystems: overrides.ecosystems ?? [{ ecosystem: "universal", compatible: true, verified: false, badge: "Universal" }],
+    ecosystems: overrides.ecosystems ?? [
+      {
+        ecosystem: "universal",
+        compatible: true,
+        verified: false,
+        badge: "Universal",
+      },
+    ],
     hnMetric: overrides.hnMetric,
     productHuntVotes: overrides.productHuntVotes,
     relatedMCPs: overrides.relatedMCPs ?? [],

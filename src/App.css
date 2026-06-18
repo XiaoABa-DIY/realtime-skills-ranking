@@ -1450,7 +1450,6 @@ h1 {
   }
 }
 
-
 /* ─── Radar score bars ─── */
 .radar-section {
   margin-top: 1.5rem;
@@ -1533,12 +1532,30 @@ h1 {
   gap: 0.25rem;
 }
 
-.eco-claude { background: #2e2e3e; border-color: #7c6bc0; }
-.eco-codex { background: #1e3a4e; border-color: #2196f3; }
-.eco-copilot { background: #2e3e2e; border-color: #4caf50; }
-.eco-universal { background: #3e3e2e; border-color: #ff9800; }
-.eco-mcp { background: #2e3e3e; border-color: #00bcd4; }
-.eco-huggingface { background: #3e2e2e; border-color: #ff6f00; }
+.eco-claude {
+  background: #2e2e3e;
+  border-color: #7c6bc0;
+}
+.eco-codex {
+  background: #1e3a4e;
+  border-color: #2196f3;
+}
+.eco-copilot {
+  background: #2e3e2e;
+  border-color: #4caf50;
+}
+.eco-universal {
+  background: #3e3e2e;
+  border-color: #ff9800;
+}
+.eco-mcp {
+  background: #2e3e3e;
+  border-color: #00bcd4;
+}
+.eco-huggingface {
+  background: #3e2e2e;
+  border-color: #ff6f00;
+}
 
 /* ─── Ecosystem badges in ranking list ─── */
 .ecosystem-row {
@@ -1553,12 +1570,36 @@ h1 {
   opacity: 0.85;
 }
 
-.eco-badge.eco-claude { background: #2e2e3e; border-color: #7c6bc0; color: #b8a9e8; }
-.eco-badge.eco-codex { background: #1e3a4e; border-color: #2196f3; color: #64b5f6; }
-.eco-badge.eco-copilot { background: #2e3e2e; border-color: #4caf50; color: #81c784; }
-.eco-badge.eco-universal { background: #3e3e2e; border-color: #ff9800; color: #ffb74d; }
-.eco-badge.eco-mcp { background: #2e3e3e; border-color: #00bcd4; color: #4dd0e1; }
-.eco-badge.eco-huggingface { background: #3e2e2e; border-color: #ff6f00; color: #ffa726; }
+.eco-badge.eco-claude {
+  background: #2e2e3e;
+  border-color: #7c6bc0;
+  color: #b8a9e8;
+}
+.eco-badge.eco-codex {
+  background: #1e3a4e;
+  border-color: #2196f3;
+  color: #64b5f6;
+}
+.eco-badge.eco-copilot {
+  background: #2e3e2e;
+  border-color: #4caf50;
+  color: #81c784;
+}
+.eco-badge.eco-universal {
+  background: #3e3e2e;
+  border-color: #ff9800;
+  color: #ffb74d;
+}
+.eco-badge.eco-mcp {
+  background: #2e3e3e;
+  border-color: #00bcd4;
+  color: #4dd0e1;
+}
+.eco-badge.eco-huggingface {
+  background: #3e2e2e;
+  border-color: #ff6f00;
+  color: #ffa726;
+}
 
 /* ─── Mini score bars in ranking list ─── */
 .mini-score-bar {
@@ -1593,7 +1634,6 @@ h1 {
   font-weight: 600;
   color: var(--accent-green);
 }
-
 
 /* Radar score bars */
 .radar-section {
@@ -1666,12 +1706,30 @@ h1 {
   align-items: center;
   gap: 0.25rem;
 }
-.eco-claude { background: #2e2e3e; border-color: #7c6bc0; }
-.eco-codex { background: #1e3a4e; border-color: #2196f3; }
-.eco-copilot { background: #2e3e2e; border-color: #4caf50; }
-.eco-universal { background: #3e3e2e; border-color: #ff9800; }
-.eco-mcp { background: #2e3e3e; border-color: #00bcd4; }
-.eco-huggingface { background: #3e2e2e; border-color: #ff6f00; }
+.eco-claude {
+  background: #2e2e3e;
+  border-color: #7c6bc0;
+}
+.eco-codex {
+  background: #1e3a4e;
+  border-color: #2196f3;
+}
+.eco-copilot {
+  background: #2e3e2e;
+  border-color: #4caf50;
+}
+.eco-universal {
+  background: #3e3e2e;
+  border-color: #ff9800;
+}
+.eco-mcp {
+  background: #2e3e3e;
+  border-color: #00bcd4;
+}
+.eco-huggingface {
+  background: #3e2e2e;
+  border-color: #ff6f00;
+}
 
 /* Ecosystem badges in ranking list */
 .ecosystem-row {
@@ -1684,9 +1742,33 @@ h1 {
   border: 1px solid var(--line);
   opacity: 0.85;
 }
-.eco-badge.eco-claude { background: #2e2e3e; border-color: #7c6bc0; color: #b8a9e8; }
-.eco-badge.eco-codex { background: #1e3a4e; border-color: #2196f3; color: #64b5f6; }
-.eco-badge.eco-copilot { background: #2e3e2e; border-color: #4caf50; color: #81c784; }
-.eco-badge.eco-universal { background: #3e3e2e; border-color: #ff9800; color: #ffb74d; }
-.eco-badge.eco-mcp { background: #2e3e3e; border-color: #00bcd4; color: #4dd0e1; }
-.eco-badge.eco-huggingface { background: #3e2e2e; border-color: #ff6f00; color: #ffa726; }
+.eco-badge.eco-claude {
+  background: #2e2e3e;
+  border-color: #7c6bc0;
+  color: #b8a9e8;
+}
+.eco-badge.eco-codex {
+  background: #1e3a4e;
+  border-color: #2196f3;
+  color: #64b5f6;
+}
+.eco-badge.eco-copilot {
+  background: #2e3e2e;
+  border-color: #4caf50;
+  color: #81c784;
+}
+.eco-badge.eco-universal {
+  background: #3e3e2e;
+  border-color: #ff9800;
+  color: #ffb74d;
+}
+.eco-badge.eco-mcp {
+  background: #2e3e3e;
+  border-color: #00bcd4;
+  color: #4dd0e1;
+}
+.eco-badge.eco-huggingface {
+  background: #3e2e2e;
+  border-color: #ff6f00;
+  color: #ffa726;
+}

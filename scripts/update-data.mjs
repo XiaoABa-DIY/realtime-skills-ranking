@@ -753,9 +753,10 @@ export async function buildSnapshot({
       ...skill,
       ecosystems,
       weeklyCommits: commitData.weeklyCommits,
-      contributors: commitData.commitHistoryLength > 0
-        ? await fetchContributors(githubFetch, skill.repo)
-        : 0,
+      contributors:
+        commitData.commitHistoryLength > 0
+          ? await fetchContributors(githubFetch, skill.repo)
+          : 0,
       releaseCount: releaseData.releaseCount,
       latestRelease: releaseData.latestRelease,
       ...scored,

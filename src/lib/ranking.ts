@@ -421,19 +421,34 @@ export function filterAndSortSkills(
         );
       }
       if (filters.sortKey === "popularity") {
-        return (b.popularityScore ?? 0) - (a.popularityScore ?? 0) || compareDefault(a, b);
+        return (
+          (b.popularityScore ?? 0) - (a.popularityScore ?? 0) ||
+          compareDefault(a, b)
+        );
       }
       if (filters.sortKey === "activity") {
-        return (b.activityScore ?? 0) - (a.activityScore ?? 0) || compareDefault(a, b);
+        return (
+          (b.activityScore ?? 0) - (a.activityScore ?? 0) ||
+          compareDefault(a, b)
+        );
       }
       if (filters.sortKey === "adoption") {
-        return (b.adoptionScore ?? 0) - (a.adoptionScore ?? 0) || compareDefault(a, b);
+        return (
+          (b.adoptionScore ?? 0) - (a.adoptionScore ?? 0) ||
+          compareDefault(a, b)
+        );
       }
       if (filters.sortKey === "ecosystem") {
-        return (b.ecosystemScore ?? 0) - (a.ecosystemScore ?? 0) || compareDefault(a, b);
+        return (
+          (b.ecosystemScore ?? 0) - (a.ecosystemScore ?? 0) ||
+          compareDefault(a, b)
+        );
       }
       if (filters.sortKey === "composite") {
-        return (b.compositeScore ?? 0) - (a.compositeScore ?? 0) || compareDefault(a, b);
+        return (
+          (b.compositeScore ?? 0) - (a.compositeScore ?? 0) ||
+          compareDefault(a, b)
+        );
       }
       return compareDefault(a, b);
     });
