@@ -3,12 +3,12 @@ import type { Locale } from "./types";
 export const messages = {
   zh: {
     appTitle: "Agent Skills Radar",
-    appSubtitle: "搜索、筛选和收藏真正包含 SKILL.md 的 GitHub 开源 Skills。",
+    appSubtitle: "搜索、筛选和收藏多生态 Agent Skills：Claude / Codex / Copilot / 通用。",
     workbench: "Skills 工作台",
     heroTitle: "发现可复用的 Agent Skills、Claude/Codex Skills 与自动化工作流",
     heroLead:
       "搜索 Skill、仓库、场景或工具名，直接进入增长榜、中文友好榜和场景筛选。",
-    officialOnly: "GitHub REST API + 人工精选清单",
+    officialOnly: "GitHub + Anthropic + OpenAI + MCP + HN",
     startExploring: "开始探索",
     viewTopStars: "查看高星榜",
     viewFastestGrowth: "本周增长最快",
@@ -103,6 +103,18 @@ export const messages = {
     growth30d: "30 天涨星榜",
     rankRisers: "排名上升最快",
     trendCollecting: "趋势数据收集中",
+    popularityScore: "流行度",
+    activityScore: "活跃度",
+    adoptionScore: "采用度",
+    officialScore: "官方认证",
+    ecosystemScore: "生态分",
+    compositeScore: "综合分",
+    ecosystemCompatibility: "生态兼容",
+    repositoryActivity: "仓库活动",
+    lastRelease: "最新 Release",
+    releaseCount: "Release 数",
+    weeklyCommits: "周提交",
+    contributors: "贡献者",
     githubSource: "GitHub 开源数据",
     rankingInsight:
       "默认按 GitHub Stars 排序；中文说明、SKILL.md 信号和最近更新时间用于辅助展示。",
@@ -117,13 +129,13 @@ export const messages = {
   en: {
     appTitle: "Agent Skills Radar",
     appSubtitle:
-      "Search, filter, and save GitHub open skills that really contain SKILL.md.",
+      "Search, filter, and save multi-ecosystem Agent Skills: Claude / Codex / Copilot / Universal.",
     workbench: "Skills workbench",
     heroTitle:
       "Discover reusable Agent Skills, Claude/Codex skills, and automation workflows",
     heroLead:
       "Search by skill, repository, use case, or tool name, then jump into growth, Chinese-friendly, and scenario lenses.",
-    officialOnly: "GitHub REST API + curated seed list",
+    officialOnly: "GitHub + Anthropic + OpenAI + MCP + HN",
     startExploring: "Start exploring",
     viewTopStars: "View top stars",
     viewFastestGrowth: "Fastest this week",
@@ -219,6 +231,18 @@ export const messages = {
     growth30d: "30-day star growth",
     rankRisers: "Fastest risers",
     trendCollecting: "Trend data collecting",
+    popularityScore: "Popularity",
+    activityScore: "Activity",
+    adoptionScore: "Adoption",
+    officialScore: "Official",
+    ecosystemScore: "Ecosystem",
+    compositeScore: "Composite",
+    ecosystemCompatibility: "Ecosystem compatibility",
+    repositoryActivity: "Repository activity",
+    lastRelease: "Latest release",
+    releaseCount: "Releases",
+    weeklyCommits: "Weekly commits",
+    contributors: "Contributors",
     githubSource: "GitHub open data",
     rankingInsight:
       "Default ranking uses GitHub stars; Chinese docs, SKILL.md signals, and freshness help with discovery.",

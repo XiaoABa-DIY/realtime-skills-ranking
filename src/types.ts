@@ -1,5 +1,5 @@
 export type Locale = "zh" | "en";
-export type SortKey = "stars" | "forks" | "updated" | "name";
+export type SortKey = "stars" | "forks" | "updated" | "name" | "popularity" | "activity" | "adoption" | "ecosystem" | "composite";
 export type AudienceKey =
   | "media"
   | "developer"
@@ -18,6 +18,27 @@ export type SpotlightKey =
   | "rankRisers";
 export type TrendStatus = "ready" | "collecting";
 export type FetchStatus = "ok" | "fallback" | "error";
+
+export type EcosystemKey =
+  | "claude"
+  | "codex"
+  | "copilot"
+  | "universal"
+  | "huggingface"
+  | "mcp";
+
+export interface EcosystemMetric {
+  ecosystem: EcosystemKey;
+  compatible: boolean;
+  verified: boolean;
+  badge?: string;
+}
+
+export interface HnMetric {
+  mentions30d: number;
+  points: number;
+  comments: number;
+}
 
 export interface LocalizedText {
   zh: string;
@@ -42,6 +63,10 @@ export interface GithubSkillSnapshot {
   tags: string[];
   audiences: AudienceKey[];
   useCases: LocalizedText[];
+  ecosystems: EcosystemMetric[];
+  hnMetric?: HnMetric;
+  productHuntVotes?: number;
+  relatedMCPs: string[];
   skillMdPaths: string[];
   stars: number;
   forks: number;
@@ -60,6 +85,12 @@ export interface GithubSkillSnapshot {
   errorMessage?: string;
   rank: number;
   rankByCategory: number;
+  popularityScore: number;
+  activityScore: number;
+  adoptionScore: number;
+  officialScore: number;
+  ecosystemScore: number;
+  compositeScore: number;
   growth7d: number | null;
   growth30d: number | null;
   rankDelta7d: number | null;
@@ -67,6 +98,10 @@ export interface GithubSkillSnapshot {
   trendStatus: TrendStatus;
   chineseScore: number;
   skillSignalScore: number;
+  releaseCount: number;
+  latestRelease?: string;
+  weeklyCommits: number;
+  contributors: number;
   featured: boolean;
 }
 
@@ -76,6 +111,10 @@ export interface SnapshotPayload {
   source: string;
   categories: SkillCategory[];
   skills: GithubSkillSnapshot[];
+  ecosystemBreakdown: Record<EcosystemKey, number>;
+  totalEcosystemSources: number;
+  lastEcosystemSync?: string;
+  hnMentionsCount: number;
   errorMessage?: string;
 }
 

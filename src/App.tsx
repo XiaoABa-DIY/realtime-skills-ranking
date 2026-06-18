@@ -71,6 +71,9 @@ const emptySnapshot: SnapshotPayload = {
   source: "empty",
   categories: [],
   skills: [],
+  ecosystemBreakdown: { claude: 0, codex: 0, copilot: 0, universal: 0, huggingface: 0, mcp: 0 },
+  totalEcosystemSources: 0,
+  hnMentionsCount: 0,
 };
 
 const issueTemplateUrl =
@@ -552,6 +555,27 @@ function CategoryChips({
   );
 }
 
+function EcosystemBadges({
+  ecosystems,
+}: {
+  ecosystems: { ecosystem: string; verified: boolean; badge?: string }[];
+}) {
+  if (!ecosystems?.length) return null;
+  return (
+    <div className="badge-row ecosystem-row">
+      {ecosystems.slice(0, 3).map((e) => (
+        <span
+          key={e.ecosystem}
+          className={`badge eco-badge eco-${e.ecosystem}`}
+          title={e.badge}
+        >
+          {e.verified ? "\u2713 " : ""}{e.badge || e.ecosystem}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function RankingItem({
   skill,
   locale,
@@ -565,8 +589,6 @@ function RankingItem({
   onSelect: () => void;
   onToggleFavorite: () => void;
 }) {
-  const qualityScore = calculateSkillQualityScore(skill);
-
   return (
     <article
       className={skill.rank <= 3 ? "ranking-item top-item" : "ranking-item"}
@@ -582,7 +604,7 @@ function RankingItem({
       <div className="ranking-meta">
         <span className="quality-pill">
           <TrendingUp size={14} />
-          {t(locale, "qualityScore")} {qualityScore}
+          {t(locale, "compositeScore")} {skill.compositeScore}
         </span>
         <span>
           <Star size={14} />
@@ -599,6 +621,7 @@ function RankingItem({
         <TrendBadges skill={skill} locale={locale} />
       </div>
       <SkillBadges skill={skill} locale={locale} limit={3} />
+      <EcosystemBadges ecosystems={skill.ecosystems} />
       <div className="ranking-actions">
         <button type="button" className="detail-link" onClick={onSelect}>
           {t(locale, "viewDetails")}
@@ -974,6 +997,64 @@ function DetailDrawer({
             icon={<Sparkles size={16} />}
           />
         </div>
+
+        <section className="drawer-section radar-section">
+          <h3>{t(locale, "compositeScore")}</h3>
+          <div className="radar-grid">
+            <div className="radar-item">
+              <span className="radar-label">{t(locale, "popularityScore")}</span>
+              <div className="radar-bar"><div className="radar-fill" style={{ width: skill.popularityScore + "%" }} /></div>
+              <span className="radar-value">{skill.popularityScore}</span>
+            </div>
+            <div className="radar-item">
+              <span className="radar-label">{t(locale, "activityScore")}</span>
+              <div className="radar-bar"><div className="radar-fill" style={{ width: skill.activityScore + "%" }} /></div>
+              <span className="radar-value">{skill.activityScore}</span>
+            </div>
+            <div className="radar-item">
+              <span className="radar-label">{t(locale, "adoptionScore")}</span>
+              <div className="radar-bar"><div className="radar-fill" style={{ width: skill.adoptionScore + "%" }} /></div>
+              <span className="radar-value">{skill.adoptionScore}</span>
+            </div>
+            <div className="radar-item">
+              <span className="radar-label">{t(locale, "officialScore")}</span>
+              <div className="radar-bar"><div className="radar-fill" style={{ width: skill.officialScore + "%" }} /></div>
+              <span className="radar-value">{skill.officialScore}</span>
+            </div>
+            <div className="radar-item">
+              <span className="radar-label">{t(locale, "ecosystemScore")}</span>
+              <div className="radar-bar"><div className="radar-fill" style={{ width: skill.ecosystemScore + "%" }} /></div>
+              <span className="radar-value">{skill.ecosystemScore}</span>
+            </div>
+          </div>
+          <div className="radar-total">
+            <strong>{t(locale, "compositeScore")}:</strong>{" "}
+            <span className="radar-total-value">{skill.compositeScore}</span>
+          </div>
+        </section>
+
+        {skill.ecosystems?.length ? (
+          <section className="drawer-section">
+            <h3>{t(locale, "ecosystemCompatibility")}</h3>
+            <div className="ecosystem-grid">
+              {skill.ecosystems.map((eco) => (
+                <div key={eco.ecosystem} className={`eco-card eco-${eco.ecosystem}`}>
+                  <span className="eco-badge-large">{eco.verified ? "\u2713 " : ""}{eco.badge || eco.ecosystem}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        <section className="drawer-section">
+          <h3>{t(locale, "repositoryActivity")}</h3>
+          <div className="access-list">
+            <span><b>{t(locale, "releaseCount")}</b><small>{skill.releaseCount ?? 0}</small></span>
+            <span><b>{t(locale, "weeklyCommits")}</b><small>{skill.weeklyCommits ?? 0}</small></span>
+            <span><b>{t(locale, "contributors")}</b><small>{skill.contributors ?? 0}</small></span>
+            {skill.latestRelease ? (<span><b>{t(locale, "lastRelease")}</b><small>{formatDateTime(skill.latestRelease, locale)}</small></span>) : null}
+          </div>
+        </section>
 
         <section className="drawer-section">
           <h3>{t(locale, "useCases")}</h3>

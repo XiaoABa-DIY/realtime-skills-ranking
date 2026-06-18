@@ -146,7 +146,7 @@ describe("GitHub skill data helpers", () => {
 
     expect(snapshot).toMatchObject({
       schemaVersion: 3,
-      source: "github-skills",
+      source: "agent-skills-radar",
     });
     expect(snapshot.skills.map((skill) => skill.repo)).toEqual([
       "owner/content-skill",
@@ -222,7 +222,7 @@ describe("GitHub skill data helpers", () => {
     const previousSnapshot = {
       schemaVersion: 3,
       generatedAt: "2026-06-01T00:00:00.000Z",
-      source: "github-skills",
+      source: "agent-skills-radar",
       categories: [],
       skills: [
         {

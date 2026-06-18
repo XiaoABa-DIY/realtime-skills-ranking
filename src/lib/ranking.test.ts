@@ -56,6 +56,20 @@ function makeSkill(
     chineseScore: overrides.chineseScore ?? 50,
     skillSignalScore: overrides.skillSignalScore ?? 100,
     featured: overrides.featured ?? false,
+    ecosystems: overrides.ecosystems ?? [{ ecosystem: "universal", compatible: true, verified: false, badge: "Universal" }],
+    hnMetric: overrides.hnMetric,
+    productHuntVotes: overrides.productHuntVotes,
+    relatedMCPs: overrides.relatedMCPs ?? [],
+    popularityScore: overrides.popularityScore ?? 50,
+    activityScore: overrides.activityScore ?? 30,
+    adoptionScore: overrides.adoptionScore ?? 40,
+    officialScore: overrides.officialScore ?? 20,
+    ecosystemScore: overrides.ecosystemScore ?? 15,
+    compositeScore: overrides.compositeScore ?? 35,
+    releaseCount: overrides.releaseCount ?? 0,
+    latestRelease: overrides.latestRelease,
+    weeklyCommits: overrides.weeklyCommits ?? 0,
+    contributors: overrides.contributors ?? 0,
   };
 }
 

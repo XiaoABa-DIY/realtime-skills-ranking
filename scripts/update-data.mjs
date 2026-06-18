@@ -3,6 +3,18 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import prettier from "prettier";
 import YAML from "yaml";
+import {
+  classifyEcosystem,
+  calculateEcosystemScores,
+  computeEcosystemBreakdown,
+  countTotalEcosystemSources,
+  fetchAnthropicSkills,
+  fetchCommitActivity,
+  fetchReleaseData,
+  fetchContributors,
+  fetchHnMentions,
+  fetchHfMetrics,
+} from "./ecosystem-enrich.mjs";
 
 const ROOT = process.cwd();
 const DEFAULT_SKILLS = path.join(ROOT, "data", "skills.yml");
@@ -503,6 +515,20 @@ async function buildSkillSnapshot(input, githubFetch, generatedAt) {
       chineseScore,
       skillSignalScore: Math.min(100, 60 + skillMdPaths.length * 5),
       featured: Boolean(input.featured),
+      ecosystems: [],
+      hnMetric: null,
+      productHuntVotes: null,
+      relatedMCPs: [],
+      popularityScore: 0,
+      activityScore: 0,
+      adoptionScore: 0,
+      officialScore: 0,
+      ecosystemScore: 0,
+      compositeScore: 0,
+      releaseCount: 0,
+      latestRelease: null,
+      weeklyCommits: 0,
+      contributors: 0,
     };
   } catch (error) {
     return {
@@ -546,6 +572,20 @@ async function buildSkillSnapshot(input, githubFetch, generatedAt) {
       chineseScore: calculateChineseScore(input.summary?.zh),
       skillSignalScore: 0,
       featured: Boolean(input.featured),
+      ecosystems: [],
+      hnMetric: null,
+      productHuntVotes: null,
+      relatedMCPs: [],
+      popularityScore: 0,
+      activityScore: 0,
+      adoptionScore: 0,
+      officialScore: 0,
+      ecosystemScore: 0,
+      compositeScore: 0,
+      releaseCount: 0,
+      latestRelease: null,
+      weeklyCommits: 0,
+      contributors: 0,
     };
   }
 }
@@ -689,12 +729,61 @@ export async function buildSnapshot({
   }
 
   const ranked = addRanks(skills);
+
+  // Enrich with ecosystem data
+  const anthropicVerified = await fetchAnthropicSkills(githubFetch);
+
+  const enrichedSkills = await mapWithConcurrency(ranked, 5, async (skill) => {
+    if (skill.fetchStatus !== "ok") {
+      return {
+        ...skill,
+        ecosystems: classifyEcosystem(skill),
+      };
+    }
+
+    const [commitData, releaseData] = await Promise.all([
+      fetchCommitActivity(githubFetch, skill.repo),
+      fetchReleaseData(githubFetch, skill.repo),
+    ]);
+
+    const ecosystems = classifyEcosystem(skill);
+    const scored = calculateEcosystemScores(skill, commitData, releaseData);
+
+    return {
+      ...skill,
+      ecosystems,
+      weeklyCommits: commitData.weeklyCommits,
+      contributors: commitData.commitHistoryLength > 0
+        ? await fetchContributors(githubFetch, skill.repo)
+        : 0,
+      releaseCount: releaseData.releaseCount,
+      latestRelease: releaseData.latestRelease,
+      ...scored,
+    };
+  });
+
+  // Resolve contributors sequentially to avoid rate limits
+  for (let i = 0; i < enrichedSkills.length; i++) {
+    const skill = enrichedSkills[i];
+    if (skill.fetchStatus === "ok" && skill.contributors === 0) {
+      try {
+        skill.contributors = await fetchContributors(githubFetch, skill.repo);
+      } catch {
+        skill.contributors = 0;
+      }
+    }
+  }
+
   return {
     schemaVersion: 3,
     generatedAt,
-    source: "github-skills",
-    categories: categoriesFromSkills(ranked, inputs),
-    skills: ranked,
+    source: "agent-skills-radar",
+    categories: categoriesFromSkills(enrichedSkills, inputs),
+    skills: enrichedSkills,
+    ecosystemBreakdown: computeEcosystemBreakdown(enrichedSkills),
+    totalEcosystemSources: countTotalEcosystemSources(enrichedSkills),
+    lastEcosystemSync: nowIso(),
+    hnMentionsCount: 0,
   };
 }
 
@@ -1134,7 +1223,7 @@ if (
   updateData()
     .then(({ snapshot, history, candidates }) => {
       console.log(
-        `Updated ${snapshot.skills.length} GitHub skills, ${candidates.candidates.length} candidates, and ${history.repositories.length} history timelines.`,
+        `Updated ${snapshot.skills.length} skills across ${snapshot.totalEcosystemSources} ecosystem sources, ${candidates.candidates.length} candidates, and ${history.repositories.length} history timelines.`,
       );
     })
     .catch((error) => {

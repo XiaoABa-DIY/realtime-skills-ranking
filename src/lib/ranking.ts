@@ -420,6 +420,21 @@ export function filterAndSortSkills(
           locale === "zh" ? "zh-CN" : "en-US",
         );
       }
+      if (filters.sortKey === "popularity") {
+        return (b.popularityScore ?? 0) - (a.popularityScore ?? 0) || compareDefault(a, b);
+      }
+      if (filters.sortKey === "activity") {
+        return (b.activityScore ?? 0) - (a.activityScore ?? 0) || compareDefault(a, b);
+      }
+      if (filters.sortKey === "adoption") {
+        return (b.adoptionScore ?? 0) - (a.adoptionScore ?? 0) || compareDefault(a, b);
+      }
+      if (filters.sortKey === "ecosystem") {
+        return (b.ecosystemScore ?? 0) - (a.ecosystemScore ?? 0) || compareDefault(a, b);
+      }
+      if (filters.sortKey === "composite") {
+        return (b.compositeScore ?? 0) - (a.compositeScore ?? 0) || compareDefault(a, b);
+      }
       return compareDefault(a, b);
     });
 }
@@ -488,6 +503,16 @@ export function enrichSkills(skills: GithubSkillSnapshot[]) {
       skill.growth30d === undefined
         ? "collecting"
         : "ready"),
+    popularityScore: skill.popularityScore ?? 0,
+    activityScore: skill.activityScore ?? 0,
+    adoptionScore: skill.adoptionScore ?? 0,
+    officialScore: skill.officialScore ?? 0,
+    ecosystemScore: skill.ecosystemScore ?? 0,
+    compositeScore: skill.compositeScore ?? 0,
+    ecosystems: skill.ecosystems ?? [],
+    releaseCount: skill.releaseCount ?? 0,
+    weeklyCommits: skill.weeklyCommits ?? 0,
+    contributors: skill.contributors ?? 0,
   }));
 }
 

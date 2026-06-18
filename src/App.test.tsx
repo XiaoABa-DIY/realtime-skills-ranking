@@ -155,7 +155,7 @@ describe("App", () => {
     expect(screen.queryByText("Fastest risers")).not.toBeInTheDocument();
     expect(screen.getByPlaceholderText(/Search skills/i)).toBeInTheDocument();
     expect(screen.getAllByText("content-skill").length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/Quality/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText((text) => text.includes("Quality") || text.includes("Composite")).length).toBeGreaterThan(0);
   });
 
   it("searches from the hero and reveals advanced filters on demand", async () => {
@@ -219,7 +219,7 @@ describe("App", () => {
     expect(screen.getByText("skills/writing/SKILL.md")).toBeInTheDocument();
     expect(screen.getAllByText("+90 / 7d").length).toBeGreaterThan(0);
     expect(screen.getAllByText("rank +2").length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/Quality/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText((text) => text.includes("Quality") || text.includes("Composite")).length).toBeGreaterThan(0);
   });
 
   it("keeps quick filters in the URL and persists local favorites", async () => {
