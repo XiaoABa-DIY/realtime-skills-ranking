@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-06-18T02:58:10.994Z",
-  "source": "github-skills",
+  "generatedAt": "2026-06-18T04:41:13.132Z",
+  "source": "agent-skills-radar",
   "categories": [
     {
       "code": "content",
@@ -98,19 +98,19 @@
         "skills/.system/skill-creator/SKILL.md",
         "skills/.system/skill-installer/SKILL.md"
       ],
-      "stars": 22424,
-      "forks": 1521,
+      "stars": 22428,
+      "forks": 1522,
       "openIssues": 276,
-      "watchers": 22424,
+      "watchers": 22428,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/openai/skills",
       "createdAt": "2025-11-25T06:25:42Z",
-      "updatedAt": "2026-06-18T02:51:03Z",
+      "updatedAt": "2026-06-18T04:37:54Z",
       "pushedAt": "2026-06-17T19:15:40Z",
-      "lastFetchedAt": "2026-06-18T02:58:10.994Z",
+      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
       "fetchStatus": "ok",
       "rank": 1,
       "rankByCategory": 1,
@@ -121,7 +121,34 @@
       "trendStatus": "collecting",
       "chineseScore": 45,
       "skillSignalScore": 100,
-      "featured": true
+      "featured": true,
+      "ecosystems": [
+        {
+          "ecosystem": "codex",
+          "compatible": true,
+          "verified": false,
+          "badge": "Codex Compatible"
+        },
+        {
+          "ecosystem": "universal",
+          "compatible": true,
+          "verified": false,
+          "badge": "Universal"
+        }
+      ],
+      "hnMetric": null,
+      "productHuntVotes": null,
+      "relatedMCPs": [],
+      "popularityScore": 100,
+      "activityScore": 20,
+      "adoptionScore": 100,
+      "officialScore": 20,
+      "ecosystemScore": 0,
+      "compositeScore": 53,
+      "releaseCount": 0,
+      "latestRelease": "",
+      "weeklyCommits": 0,
+      "contributors": 0
     },
     {
       "repo": "Yuan1z0825/nature-skills",
@@ -166,19 +193,19 @@
         "skills/nature-reviewer/SKILL.md",
         "skills/nature-writing/SKILL.md"
       ],
-      "stars": 20854,
-      "forks": 1231,
+      "stars": 20878,
+      "forks": 1233,
       "openIssues": 2,
-      "watchers": 20854,
+      "watchers": 20878,
       "language": "Python",
       "license": "MIT",
       "topics": ["codex-skills", "nature", "nature-skills"],
       "homepage": "",
       "htmlUrl": "https://github.com/Yuan1z0825/nature-skills",
       "createdAt": "2026-04-24T03:11:46Z",
-      "updatedAt": "2026-06-18T02:57:26Z",
+      "updatedAt": "2026-06-18T04:38:58Z",
       "pushedAt": "2026-06-17T19:20:27Z",
-      "lastFetchedAt": "2026-06-18T02:58:10.994Z",
+      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
       "fetchStatus": "ok",
       "rank": 2,
       "rankByCategory": 1,
@@ -189,7 +216,34 @@
       "trendStatus": "collecting",
       "chineseScore": 100,
       "skillSignalScore": 100,
-      "featured": true
+      "featured": true,
+      "ecosystems": [
+        {
+          "ecosystem": "codex",
+          "compatible": true,
+          "verified": false,
+          "badge": "Codex Compatible"
+        },
+        {
+          "ecosystem": "universal",
+          "compatible": true,
+          "verified": false,
+          "badge": "Universal"
+        }
+      ],
+      "hnMetric": null,
+      "productHuntVotes": null,
+      "relatedMCPs": [],
+      "popularityScore": 100,
+      "activityScore": 20,
+      "adoptionScore": 100,
+      "officialScore": 20,
+      "ecosystemScore": 0,
+      "compositeScore": 53,
+      "releaseCount": 0,
+      "latestRelease": "",
+      "weeklyCommits": 0,
+      "contributors": 0
     },
     {
       "repo": "FrancyJGLisboa/agent-skill-creator",
@@ -213,19 +267,19 @@
         }
       ],
       "skillMdPaths": ["SKILL.md"],
-      "stars": 1528,
+      "stars": 1529,
       "forks": 201,
       "openIssues": 0,
-      "watchers": 1528,
+      "watchers": 1529,
       "language": "Python",
       "license": "MIT",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/FrancyJGLisboa/agent-skill-creator",
       "createdAt": "2025-10-18T15:01:46Z",
-      "updatedAt": "2026-06-18T02:21:23Z",
+      "updatedAt": "2026-06-18T03:19:39Z",
       "pushedAt": "2026-06-13T20:00:23Z",
-      "lastFetchedAt": "2026-06-18T02:58:10.994Z",
+      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
       "fetchStatus": "ok",
       "rank": 3,
       "rankByCategory": 1,
@@ -236,7 +290,34 @@
       "trendStatus": "collecting",
       "chineseScore": 49,
       "skillSignalScore": 65,
-      "featured": false
+      "featured": false,
+      "ecosystems": [
+        {
+          "ecosystem": "claude",
+          "compatible": true,
+          "verified": false,
+          "badge": "Claude Compatible"
+        },
+        {
+          "ecosystem": "universal",
+          "compatible": true,
+          "verified": false,
+          "badge": "Universal"
+        }
+      ],
+      "hnMetric": null,
+      "productHuntVotes": null,
+      "relatedMCPs": [],
+      "popularityScore": 78,
+      "activityScore": 17,
+      "adoptionScore": 100,
+      "officialScore": 0,
+      "ecosystemScore": 0,
+      "compositeScore": 44,
+      "releaseCount": 0,
+      "latestRelease": "",
+      "weeklyCommits": 0,
+      "contributors": 0
     },
     {
       "repo": "bergside/awesome-design-skills",
@@ -338,7 +419,7 @@
         "skills/vintage/SKILL.md"
       ],
       "stars": 1296,
-      "forks": 113,
+      "forks": 112,
       "openIssues": 3,
       "watchers": 1296,
       "language": "",
@@ -368,7 +449,7 @@
       "createdAt": "2026-03-09T08:55:36Z",
       "updatedAt": "2026-06-17T23:33:29Z",
       "pushedAt": "2026-05-25T18:28:08Z",
-      "lastFetchedAt": "2026-06-18T02:58:10.994Z",
+      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
       "fetchStatus": "ok",
       "rank": 4,
       "rankByCategory": 1,
@@ -379,7 +460,40 @@
       "trendStatus": "collecting",
       "chineseScore": 45,
       "skillSignalScore": 100,
-      "featured": false
+      "featured": false,
+      "ecosystems": [
+        {
+          "ecosystem": "claude",
+          "compatible": true,
+          "verified": false,
+          "badge": "Claude Compatible"
+        },
+        {
+          "ecosystem": "codex",
+          "compatible": true,
+          "verified": false,
+          "badge": "Codex Compatible"
+        },
+        {
+          "ecosystem": "universal",
+          "compatible": true,
+          "verified": false,
+          "badge": "Universal"
+        }
+      ],
+      "hnMetric": null,
+      "productHuntVotes": null,
+      "relatedMCPs": [],
+      "popularityScore": 92,
+      "activityScore": 4,
+      "adoptionScore": 100,
+      "officialScore": 0,
+      "ecosystemScore": 0,
+      "compositeScore": 44,
+      "releaseCount": 0,
+      "latestRelease": "",
+      "weeklyCommits": 0,
+      "contributors": 0
     },
     {
       "repo": "Weizhena/Deep-Research-skills",
@@ -437,10 +551,10 @@
         "skills/research-zh/research-report/SKILL.md",
         "skills/research-zh/research/SKILL.md"
       ],
-      "stars": 1194,
+      "stars": 1196,
       "forks": 100,
       "openIssues": 2,
-      "watchers": 1194,
+      "watchers": 1196,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -456,9 +570,9 @@
       "homepage": "",
       "htmlUrl": "https://github.com/Weizhena/Deep-Research-skills",
       "createdAt": "2025-12-29T05:00:00Z",
-      "updatedAt": "2026-06-18T02:24:00Z",
+      "updatedAt": "2026-06-18T04:13:18Z",
       "pushedAt": "2026-05-07T16:08:07Z",
-      "lastFetchedAt": "2026-06-18T02:58:10.994Z",
+      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
       "fetchStatus": "ok",
       "rank": 5,
       "rankByCategory": 2,
@@ -469,7 +583,40 @@
       "trendStatus": "collecting",
       "chineseScore": 54,
       "skillSignalScore": 100,
-      "featured": true
+      "featured": true,
+      "ecosystems": [
+        {
+          "ecosystem": "claude",
+          "compatible": true,
+          "verified": false,
+          "badge": "Claude Compatible"
+        },
+        {
+          "ecosystem": "codex",
+          "compatible": true,
+          "verified": false,
+          "badge": "Codex Compatible"
+        },
+        {
+          "ecosystem": "universal",
+          "compatible": true,
+          "verified": false,
+          "badge": "Universal"
+        }
+      ],
+      "hnMetric": null,
+      "productHuntVotes": null,
+      "relatedMCPs": [],
+      "popularityScore": 81,
+      "activityScore": 0,
+      "adoptionScore": 100,
+      "officialScore": 20,
+      "ecosystemScore": 0,
+      "compositeScore": 43,
+      "releaseCount": 0,
+      "latestRelease": "",
+      "weeklyCommits": 0,
+      "contributors": 0
     },
     {
       "repo": "lingxling/awesome-skills-cn",
@@ -5441,7 +5588,7 @@
       "createdAt": "2026-02-13T01:01:34Z",
       "updatedAt": "2026-06-18T02:28:25Z",
       "pushedAt": "2026-06-04T12:09:30Z",
-      "lastFetchedAt": "2026-06-18T02:58:10.994Z",
+      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
       "fetchStatus": "ok",
       "rank": 6,
       "rankByCategory": 1,
@@ -5452,7 +5599,58 @@
       "trendStatus": "collecting",
       "chineseScore": 100,
       "skillSignalScore": 100,
-      "featured": false
+      "featured": false,
+      "ecosystems": [
+        {
+          "ecosystem": "claude",
+          "compatible": true,
+          "verified": false,
+          "badge": "Claude Compatible"
+        },
+        {
+          "ecosystem": "codex",
+          "compatible": true,
+          "verified": false,
+          "badge": "Codex Compatible"
+        },
+        {
+          "ecosystem": "copilot",
+          "compatible": true,
+          "verified": false,
+          "badge": "Copilot Compatible"
+        },
+        {
+          "ecosystem": "mcp",
+          "compatible": true,
+          "verified": false,
+          "badge": "MCP-enabled"
+        },
+        {
+          "ecosystem": "huggingface",
+          "compatible": true,
+          "verified": false,
+          "badge": "HF Connected"
+        },
+        {
+          "ecosystem": "universal",
+          "compatible": true,
+          "verified": false,
+          "badge": "Universal"
+        }
+      ],
+      "hnMetric": null,
+      "productHuntVotes": null,
+      "relatedMCPs": [],
+      "popularityScore": 66,
+      "activityScore": 11,
+      "adoptionScore": 26,
+      "officialScore": 0,
+      "ecosystemScore": 0,
+      "compositeScore": 24,
+      "releaseCount": 0,
+      "latestRelease": "",
+      "weeklyCommits": 0,
+      "contributors": 0
     },
     {
       "repo": "redfox-data/redfox-community",
@@ -5543,19 +5741,19 @@
         "skills/xiaohongshu-write/SKILL.md",
         "skills/zhihu-rewrite/SKILL.md"
       ],
-      "stars": 99,
+      "stars": 100,
       "forks": 21,
       "openIssues": 0,
-      "watchers": 99,
+      "watchers": 100,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/redfox-data/redfox-community",
       "createdAt": "2026-05-12T06:26:09Z",
-      "updatedAt": "2026-06-18T02:38:47Z",
+      "updatedAt": "2026-06-18T03:01:45Z",
       "pushedAt": "2026-06-17T12:52:47Z",
-      "lastFetchedAt": "2026-06-18T02:58:10.994Z",
+      "lastFetchedAt": "2026-06-18T04:41:13.132Z",
       "fetchStatus": "ok",
       "rank": 7,
       "rankByCategory": 1,
@@ -5566,7 +5764,45 @@
       "trendStatus": "collecting",
       "chineseScore": 100,
       "skillSignalScore": 100,
-      "featured": true
+      "featured": true,
+      "ecosystems": [
+        {
+          "ecosystem": "claude",
+          "compatible": true,
+          "verified": false,
+          "badge": "Claude Compatible"
+        },
+        {
+          "ecosystem": "universal",
+          "compatible": true,
+          "verified": false,
+          "badge": "Universal"
+        }
+      ],
+      "hnMetric": null,
+      "productHuntVotes": null,
+      "relatedMCPs": [],
+      "popularityScore": 48,
+      "activityScore": 20,
+      "adoptionScore": 23,
+      "officialScore": 20,
+      "ecosystemScore": 0,
+      "compositeScore": 25,
+      "releaseCount": 0,
+      "latestRelease": "",
+      "weeklyCommits": 0,
+      "contributors": 0
     }
-  ]
+  ],
+  "ecosystemBreakdown": {
+    "claude": 5,
+    "codex": 5,
+    "copilot": 1,
+    "universal": 7,
+    "huggingface": 1,
+    "mcp": 1
+  },
+  "totalEcosystemSources": 6,
+  "lastEcosystemSync": "2026-06-18T04:41:18.610Z",
+  "hnMentionsCount": 0
 }
