@@ -53,4 +53,15 @@ describe("url state helpers", () => {
       ),
     ).toBe("?lang=en&spotlight=rankRisers");
   });
+
+  it("parses and serializes radar score sort links", () => {
+    expect(parseUrlState("?sort=radarScore").filters.sortKey).toBe(
+      "radarScore",
+    );
+    expect(parseUrlState("?sort=growth").filters.sortKey).toBe("growth");
+    expect(parseUrlState("?sort=ecosystem").filters.sortKey).toBe("ecosystem");
+    expect(
+      buildSearchParams({ ...defaultSkillFilters, sortKey: "composite" }, "zh"),
+    ).toBe("?sort=composite");
+  });
 });

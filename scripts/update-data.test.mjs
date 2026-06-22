@@ -218,7 +218,7 @@ describe("GitHub skill data helpers", () => {
     });
   });
 
-  it("falls back to the previous v3 snapshot when GitHub refresh fails", async () => {
+  it("falls back to the previous v4 snapshot when GitHub refresh fails", async () => {
     const previousSnapshot = {
       schemaVersion: 4,
       generatedAt: "2026-06-01T00:00:00.000Z",
@@ -275,10 +275,11 @@ describe("GitHub skill data helpers", () => {
       generatedAt: "2026-06-16T00:00:00.000Z",
     });
 
-    expect(snapshot.source).toBe("agent-skills-radar");
+    expect(snapshot.source).toBe("agent-skills-radar-fallback");
     expect(snapshot.skills[0]).toMatchObject({
       repo: "owner/content-skill",
-      fetchStatus: "error",
+      fetchStatus: "fallback",
+      stars: 10,
     });
   });
 

@@ -1619,6 +1619,20 @@ function App() {
                   <option value="forks">{t(locale, "sortForks")}</option>
                   <option value="updated">{t(locale, "sortUpdated")}</option>
                   <option value="name">{t(locale, "sortName")}</option>
+                  <option value="radarScore">
+                    {t(locale, "sortRadarScore")}
+                  </option>
+                  <option value="popularity">
+                    {t(locale, "sortPopularity")}
+                  </option>
+                  <option value="activity">{t(locale, "sortActivity")}</option>
+                  <option value="growth">{t(locale, "sortGrowth")}</option>
+                  <option value="ecosystem">
+                    {t(locale, "sortEcosystem")}
+                  </option>
+                  <option value="composite">
+                    {t(locale, "sortComposite")}
+                  </option>
                 </select>
               </label>
               <button

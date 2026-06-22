@@ -1,5 +1,4 @@
 // Ecosystem enrichment: multi-source data for Agent Skills Radar
-import YAML from "yaml";
 
 const GITHUB_API = "https://api.github.com";
 const HN_SEARCH_API = "https://hn.algolia.com/api/v1/search";
@@ -176,14 +175,12 @@ export async function discoverByTopics(githubFetch, limit = 30) {
 
 export async function fetchCommitActivity(githubFetch, repo) {
   try {
-    const url = `${GITHUB_API}/repos/${repo}/stats/push_counts`;
+    const url = `${GITHUB_API}/repos/${repo}/stats/commit_activity`;
     const payload = await githubFetch(url);
-    const weeks = Array.isArray(payload?.push_counts)
-      ? payload.push_counts
-      : [];
+    const weeks = Array.isArray(payload) ? payload : [];
     const recentWeeks = weeks.slice(-12);
     const totalCommits = recentWeeks.reduce(
-      (sum, w) => sum + asFiniteNumber(w?.count, 0),
+      (sum, week) => sum + asFiniteNumber(week?.total, 0),
       0,
     );
     const weeklyAvg = Math.round(
@@ -225,14 +222,10 @@ export async function fetchReleaseData(githubFetch, repo) {
 export async function fetchContributors(githubFetch, repo) {
   try {
     const url = new URL(`${GITHUB_API}/repos/${repo}/contributors`);
-    url.searchParams.set("per_page", 1);
-    const headers = await githubFetch(url.toString() + "_HEADERS");
-    const link = headers?.link || "";
-    if (link.includes('rel="last"')) {
-      const match = link.match(/page=(\d+)>;\s*rel="last"/);
-      if (match) return parseInt(match[1], 10);
-    }
-    return 0;
+    url.searchParams.set("per_page", "100");
+    url.searchParams.set("anon", "true");
+    const payload = await githubFetch(url.toString());
+    return Array.isArray(payload) ? payload.length : 0;
   } catch {
     return 0;
   }
@@ -389,7 +382,7 @@ export function classifyEcosystem(skill) {
   return ecosystems;
 }
 
-export function addOfficialFlags(skill, anthropicVerified, allEcosystemData) {
+export function addOfficialFlags(skill, anthropicVerified) {
   return skill.ecosystems.map((e) => {
     const enhanced = { ...e };
     const repoLower = skill.repo.toLowerCase();

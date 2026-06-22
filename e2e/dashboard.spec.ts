@@ -154,6 +154,11 @@ test("renders the GitHub skills gallery and filters skills", async ({
     .fill("research");
   await expect(getSkillCard(page, "research-skill")).toBeVisible();
   await expect(page).toHaveURL(/q=research/);
+
+  await page
+    .getByRole("combobox", { name: /Sort/i })
+    .selectOption("radarScore");
+  await expect(page).toHaveURL(/sort=radarScore/);
 });
 
 test("opens trend spotlights and keeps details available", async ({ page }) => {

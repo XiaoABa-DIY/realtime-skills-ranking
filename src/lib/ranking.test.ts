@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   calculateStats,
+  calculateRadarScores,
   calculateSkillQualityScore,
   defaultSkillFilters,
   enrichSkills,
@@ -225,6 +226,72 @@ describe("ranking helpers", () => {
         "en",
       ).map((skill) => skill.repo),
     ).toEqual(["owner/a", "owner/b"]);
+  });
+
+  it("sorts by radar and growth score dimensions", () => {
+    const radarSkills = [
+      makeSkill({
+        repo: "owner/steady",
+        stars: 100,
+        forks: 10,
+        growth7d: 1,
+        growth30d: 2,
+        ecosystems: [],
+      }),
+      makeSkill({
+        repo: "owner/surging",
+        stars: 40,
+        forks: 5,
+        growth7d: 20,
+        growth30d: 60,
+        ecosystems: [
+          {
+            ecosystem: "universal",
+            compatible: true,
+            verified: false,
+          },
+          {
+            ecosystem: "codex",
+            compatible: true,
+            verified: true,
+          },
+        ],
+      }),
+    ].map((skill) => enrichSkills([skill])[0]);
+
+    expect(
+      filterAndSortSkills(
+        radarSkills,
+        { ...defaultSkillFilters, sortKey: "growth" },
+        "en",
+      ).map((skill) => skill.repo),
+    ).toEqual(["owner/surging", "owner/steady"]);
+    expect(
+      filterAndSortSkills(
+        radarSkills,
+        { ...defaultSkillFilters, sortKey: "radarScore" },
+        "en",
+      )[0].repo,
+    ).toBe("owner/surging");
+  });
+
+  it("weights weekly commits twice in radar activity score", () => {
+    const inactive = calculateRadarScores(
+      makeSkill({
+        weeklyCommits: 0,
+        releaseCount: 0,
+        pushedAt: "2026-01-01T00:00:00.000Z",
+      }),
+    );
+    const active = calculateRadarScores(
+      makeSkill({
+        weeklyCommits: 10,
+        releaseCount: 0,
+        pushedAt: "2026-01-01T00:00:00.000Z",
+      }),
+    );
+
+    expect(active.activityScore - inactive.activityScore).toBe(20);
   });
 
   it("derives ranks, audiences, and related skills", () => {

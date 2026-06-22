@@ -6,7 +6,13 @@ import tseslint from "typescript-eslint";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
-  globalIgnores(["dist", "coverage", "playwright-report", "test-results"]),
+  globalIgnores([
+    ".deploy",
+    "dist",
+    "coverage",
+    "playwright-report",
+    "test-results",
+  ]),
   {
     files: ["**/*.{ts,tsx}"],
     extends: [
@@ -17,6 +23,13 @@ export default defineConfig([
     ],
     languageOptions: {
       globals: globals.browser,
+    },
+  },
+  {
+    files: ["scripts/**/*.mjs"],
+    extends: [js.configs.recommended],
+    languageOptions: {
+      globals: globals.node,
     },
   },
 ]);

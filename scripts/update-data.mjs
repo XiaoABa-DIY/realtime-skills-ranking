@@ -8,14 +8,9 @@ import {
   calculateEcosystemScores,
   computeEcosystemBreakdown,
   countTotalEcosystemSources,
-  fetchAnthropicSkills,
   fetchCommitActivity,
   fetchReleaseData,
   fetchContributors,
-  fetchHnMentions,
-  fetchHfMetrics,
-  fetchStargazerTimeline,
-  fetchRepoStatistics,
   classifyPlatform,
   assessSafety,
   buildSourceEntry,
@@ -649,8 +644,11 @@ function categoriesFromSkills(skills, inputs) {
   );
 }
 
-function isV3Snapshot(snapshot) {
-  return snapshot?.schemaVersion === 3 && Array.isArray(snapshot?.skills);
+function isReusableSnapshot(snapshot) {
+  return (
+    (snapshot?.schemaVersion === 3 || snapshot?.schemaVersion === 4) &&
+    Array.isArray(snapshot?.skills)
+  );
 }
 
 function markPreviousSnapshotFallback(
@@ -659,6 +657,8 @@ function markPreviousSnapshotFallback(
   generatedAt,
   skillInputs = [],
 ) {
+  const fallbackMessage =
+    error?.message ?? "GitHub API unavailable; reused previous snapshot.";
   const allowedRepos = new Set(
     skillInputs.map((input) => normalizeRepoName(input.repo).toLowerCase()),
   );
@@ -668,39 +668,92 @@ function markPreviousSnapshotFallback(
       input,
     ]),
   );
-  return {
-    ...previousSnapshot,
-    generatedAt,
-    source: "github-skills-fallback",
-    errorMessage:
-      error?.message ?? "GitHub API unavailable; reused previous snapshot.",
-    skills: previousSnapshot.skills
-      .filter(
-        (skill) =>
-          allowedRepos.size === 0 ||
-          allowedRepos.has(normalizeRepoName(skill.repo).toLowerCase()),
-      )
-      .map((skill) => ({
+  const skills = previousSnapshot.skills
+    .filter(
+      (skill) =>
+        allowedRepos.size === 0 ||
+        allowedRepos.has(normalizeRepoName(skill.repo).toLowerCase()),
+    )
+    .map((skill) => {
+      const repo = normalizeRepoName(skill.repo);
+      const input = inputsByRepo.get(repo.toLowerCase());
+      const normalizedSkill = {
         ...skill,
-        name:
-          asString(
-            inputsByRepo.get(normalizeRepoName(skill.repo).toLowerCase())?.name,
-          ) || skill.name,
+        id: asString(skill.id || repo),
+        repo,
+        name: asString(input?.name) || skill.name,
         descriptionZh:
-          asString(
-            inputsByRepo.get(normalizeRepoName(skill.repo).toLowerCase())
-              ?.summary?.zh,
-          ) || skill.descriptionZh,
+          asString(input?.summary?.zh) || asString(skill.descriptionZh),
         descriptionEn:
-          asString(
-            inputsByRepo.get(normalizeRepoName(skill.repo).toLowerCase())
-              ?.summary?.en,
-          ) || skill.descriptionEn,
+          asString(input?.summary?.en) || asString(skill.descriptionEn),
+        relatedMCPs: asArray(skill.relatedMCPs),
+        popularityScore: asFiniteNumber(skill.popularityScore),
+        adoptionScore: asFiniteNumber(skill.adoptionScore),
+        officialScore: asFiniteNumber(skill.officialScore),
+        activityScore: asFiniteNumber(skill.activityScore),
+        growthScore: asFiniteNumber(skill.growthScore),
+        ecosystemScore: asFiniteNumber(skill.ecosystemScore),
+        safetyScore: asFiniteNumber(skill.safetyScore, 70),
+        radarScore: asFiniteNumber(skill.radarScore),
+        compositeScore: asFiniteNumber(skill.compositeScore),
+        releaseCount: asFiniteNumber(skill.releaseCount),
+        weeklyCommits: asFiniteNumber(skill.weeklyCommits),
+        contributors: asFiniteNumber(skill.contributors),
+        safetyLevel: skill.safetyLevel ?? "review",
+        safetyNotes: asArray(skill.safetyNotes),
+        hasSkillMd: skill.hasSkillMd ?? asArray(skill.skillMdPaths).length > 0,
+        hasReadme:
+          skill.hasReadme ??
+          Boolean(skill.readmeSnippetZh || skill.readmeSnippetEn),
+        hasRelease: skill.hasRelease ?? asFiniteNumber(skill.releaseCount) > 0,
         fetchStatus: "fallback",
-        errorMessage:
-          error?.message ?? "GitHub API unavailable; reused previous snapshot.",
+        errorMessage: fallbackMessage,
         lastFetchedAt: generatedAt,
-      })),
+      };
+      const ecosystems = Array.isArray(skill.ecosystems)
+        ? skill.ecosystems
+        : classifyEcosystem(normalizedSkill);
+      const platform =
+        skill.platform ??
+        classifyPlatform(
+          [
+            normalizedSkill.name,
+            normalizedSkill.descriptionZh,
+            normalizedSkill.descriptionEn,
+            ...asArray(normalizedSkill.tags),
+          ].join(" "),
+        );
+
+      return {
+        ...normalizedSkill,
+        ecosystems,
+        platform,
+        sources: Array.isArray(skill.sources)
+          ? skill.sources
+          : [buildSourceEntry("github", false, [fallbackMessage])],
+        primarySource: skill.primarySource ?? "github",
+      };
+    });
+
+  return {
+    schemaVersion: 4,
+    generatedAt,
+    source: "agent-skills-radar-fallback",
+    categories:
+      previousSnapshot.categories ?? categoriesFromSkills(skills, skillInputs),
+    skills,
+    ecosystemBreakdown:
+      previousSnapshot.ecosystemBreakdown ?? computeEcosystemBreakdown(skills),
+    platformBreakdown:
+      previousSnapshot.platformBreakdown ?? computePlatformBreakdown(skills),
+    sourceBreakdown:
+      previousSnapshot.sourceBreakdown ?? computeSourceBreakdown(skills),
+    totalEcosystemSources:
+      previousSnapshot.totalEcosystemSources ??
+      countTotalEcosystemSources(skills),
+    lastEcosystemSync: previousSnapshot.lastEcosystemSync ?? generatedAt,
+    hnMentionsCount: previousSnapshot.hnMentionsCount ?? 0,
+    errorMessage: fallbackMessage,
   };
 }
 
@@ -722,7 +775,7 @@ export async function buildSnapshot({
   if (
     skills.length > 0 &&
     skills.every((skill) => skill.fetchStatus === "error") &&
-    isV3Snapshot(previousSnapshot) &&
+    isReusableSnapshot(previousSnapshot) &&
     previousSnapshot.skills.length > 0
   ) {
     return markPreviousSnapshotFallback(
@@ -734,9 +787,6 @@ export async function buildSnapshot({
   }
 
   const ranked = addRanks(skills);
-
-  // Enrich with ecosystem data
-  const anthropicVerified = await fetchAnthropicSkills(githubFetch);
 
   const enrichedSkills = await mapWithConcurrency(ranked, 5, async (skill) => {
     if (skill.fetchStatus !== "ok") {

@@ -420,6 +420,11 @@ export function filterAndSortSkills(
           locale === "zh" ? "zh-CN" : "en-US",
         );
       }
+      if (filters.sortKey === "radarScore") {
+        return (
+          (b.radarScore ?? 0) - (a.radarScore ?? 0) || compareDefault(a, b)
+        );
+      }
       if (filters.sortKey === "popularity") {
         return (
           (b.popularityScore ?? 0) - (a.popularityScore ?? 0) ||
@@ -430,6 +435,11 @@ export function filterAndSortSkills(
         return (
           (b.activityScore ?? 0) - (a.activityScore ?? 0) ||
           compareDefault(a, b)
+        );
+      }
+      if (filters.sortKey === "growth") {
+        return (
+          (b.growthScore ?? 0) - (a.growthScore ?? 0) || compareDefault(a, b)
         );
       }
       if (filters.sortKey === "ecosystem") {
@@ -468,7 +478,7 @@ export function calculateRadarScores(
     ? (Date.now() - Date.parse(skill.pushedAt)) / 86400000
     : 999;
   const recencyBonus = Math.max(0, 30 - daysSincePushed) / 30;
-  const commitBonus = Math.min(30, skill.weeklyCommits ?? 0 * 2);
+  const commitBonus = Math.min(30, (skill.weeklyCommits ?? 0) * 2);
   const releaseBonus = Math.min(15, (skill.releaseCount ?? 0) * 3);
   const activity = Math.min(
     100,

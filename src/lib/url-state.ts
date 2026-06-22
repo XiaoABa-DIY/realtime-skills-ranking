@@ -6,7 +6,18 @@ import {
   type SkillFilters,
 } from "./ranking";
 
-const sortKeys: SortKey[] = ["stars", "forks", "updated", "name"];
+const sortKeys: SortKey[] = [
+  "stars",
+  "forks",
+  "updated",
+  "name",
+  "radarScore",
+  "popularity",
+  "activity",
+  "growth",
+  "ecosystem",
+  "composite",
+];
 const locales: Locale[] = ["zh", "en"];
 
 function safeValue(value: string | null) {
