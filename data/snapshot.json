@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-07-01T10:56:47.961Z",
+  "generatedAt": "2026-07-01T18:21:45.246Z",
   "source": "agent-skills-radar",
   "categories": [
     {
@@ -40,8 +40,8 @@
       "name": "Nature Academic Skills",
       "descriptionZh": "面向 Nature 论文表达、科研绘图、引用整理和学术写作的中文 Skill 集合。",
       "descriptionEn": "Chinese-friendly skills for Nature-style academic writing, figures, citations, and research workflows.",
-      "readmeSnippetZh": "# nature-skills\n\n* 大家好，我是 nature skills 的创立者袁一哲。感谢大家持续关注 `nature-skills`。我们在抖音更新了很多视频教程，大家可以根据名称检索查看，希望真心能够帮助到大家。\n* 如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，会尽量推进实现。我们也欢迎 PR，但请按照本文后面的贡献格式提交，方便更高效地审核与合并。\n* 懒蛋创造算法，我创建skill就是为了解放自己科研过程中的重复劳动，大家也要思考，电脑上面的很多重复性操作哪些可以设计skill替代掉！\n* 有粉丝朋友跟我说要打赏，支持我去持续更新nature-skills，这个事大家放心你们不打赏我一样更新，大家不妨说把钱购买我的知识星球大家一起去交流我设计skills背后的哲学思想。知识星球的收费是最低档50/年，星球名称：Nature Skills以及背后的哲学。很多朋友还是学生党，所以完全不需要有任何“必须加入知识星球”的压力，可以在下方的交流群里面交流，只不过我的思想会发布到知识星球，并有知识星球会员的专属群聊！\n\n# 自己的一些浅薄观点\n* 如果每所大学都能着手构建一套围绕课程的‘技能工具包’，让那些被反复验证过的知识框架和研究方法，变成可以便捷调用的通用模块，或许就能把师生从大量重复、繁琐的基础事务中解放出来。这样一来，大家就不用再花费过多精力去‘重复造轮子’，而是能腾出双手和大脑，去回归自己的天性，去深度思考那些更有价值、更贴近真实问题的创新想法，并最终拥有足够的执行力去把它真正落地。这不仅是效率的提升，更是对创造力的松绑，让教育的重心从‘规训’转向‘激发’。\n* skill其实是这个过渡时代留给我们的一份珍贵礼物，它不只是一套静态的工具，更是凝结了无数专家隐性经验的知识晶体，会成为未来大语言模型最优质的训练语料。我设想，在不久的将来，基础模型会逐渐把所有这些零散的skill内化吸收，整合进自己的认知体系里，那时它就不再是简单调用工具，而是把自己变成了一个真正融会贯通、无所不包的超级智能体——skill完成了它的历史使命，而我...",
-      "readmeSnippetEn": "# nature-skills\n\n* 大家好，我是 nature skills 的创立者袁一哲。感谢大家持续关注 `nature-skills`。我们在抖音更新了很多视频教程，大家可以根据名称检索查看，希望真心能够帮助到大家。\n* 如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，会尽量推进实现。我们也欢迎 PR，但请按照本文后面的贡献格式提交，方便更高效地审核与合并。\n* 懒蛋创造算法，我创建skill就是为了解放自己科研过程中的重复劳动，大家也要思考，电脑上面的很多重复性操作哪些可以设计skill替代掉！\n* 有粉丝朋友跟我说要打赏，支持我去持续更新nature-skills，这个事大家放心你们不打赏我一样更新，大家不妨说把钱购买我的知识星球大家一起去交流我设计skills背后的哲学思想。知识星球的收费是最低档50/年，星球名称：Nature Skills以及背后的哲学。很多朋友还是学生党，所以完全不需要有任何“必须加入知识星球”的压力，可以在下方的交流群里面交流，只不过我的思想会发布到知识星球，并有知识星球会员的专属群聊！\n\n# 自己的一些浅薄观点\n* 如果每所大学都能着手构建一套围绕课程的‘技能工具包’，让那些被反复验证过的知识框架和研究方法，变成可以便捷调用的通用模块，或许就能把师生从大量重复、繁琐的基础事务中解放出来。这样一来，大家就不用再花费过多精力去‘重复造轮子’，而是能腾出双手和大脑，去回归自己的天性，去深度思考那些更有价值、更贴近真实问题的创新想法，并最终拥有足够的执行力去把它真正落地。这不仅是效率的提升，更是对创造力的松绑，让教育的重心从‘规训’转向‘激发’。\n* skill其实是这个过渡时代留给我们的一份珍贵礼物，它不只是一套静态的工具，更是凝结了无数专家隐性经验的知识晶体，会成为未来大语言模型最优质的训练语料。我设想，在不久的将来，基础模型会逐渐把所有这些零散的skill内化吸收，整合进自己的认知体系里，那时它就不再是简单调用工具，而是把自己变成了一个真正融会贯通、无所不包的超级智能体——skill完成了它的历史使命，而我...",
+      "readmeSnippetZh": "# nature-skills (面向全球AI学者收录SKILL)\n\n* 大家好，我是 nature skills 的创立者袁一哲。感谢大家持续关注 `nature-skills`。我们在抖音更新了很多视频教程，大家可以根据名称检索查看，希望真心能够帮助到大家。\n* 如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，会尽量推进实现。我们也欢迎 PR，但请按照本文后面的贡献格式提交，方便更高效地审核与合并。\n* 面向全球AI学者收录通用科研skill，nature-skills是skill期刊的雏形，不以讲故事假大空的科研为目标，这里只在乎能否真正解决领域问题！\n* 知识星球名称：Nature Skills以及背后的哲学！\n\n# 自己的一些浅薄观点\n* 最近发现，我设计的Nature-skills被谷歌DeepMind关注并借鉴，他们参考了其中的引用体系、脚本思路以及技能设计哲学，推出了Science-skills。说实话，这让我挺欣慰的——当国外的顶尖AI机构开始从我们的工作中汲取灵感时，说明中国开发者的原创思想正在被世界看见。这不是被复制的失落，而是中国力量在开源土壤里生根后，自然向外生长出的影响力。\n* 我们设计Skills的重心，从来不是要求每个人都来啃透这套思想，而是这套思想本身就具备被机器理解并复用的能力。你如果想创立一个全新的Skill，或者把它适配到自己的专属领域，根本不需要从头学起——直接把Nature-Skills的GitHub地址发给Codex，它就能自动学习其中的设计精髓，帮你完成新Skill的创建和修改。这才是思想的真正解放：它不再依赖口口相传，而是通过AI直接流淌进每一个需要它的角落。\n* Nature-Skills真正的价值，或许并不在于那些具体的技能模块，而在于它悄悄推开了一扇新的大门——它让很多人第一次意识到，原来可以借助Codex或智能体来操控本地电脑做科研。我有幸见证并陪伴了许多人完成了科研范式的转变，当他们惊叹‘原来科研还可以这样去做’的那一刻，这种认知上的破壁和解放，远比Skills本身更让我觉得有意义。它不...",
+      "readmeSnippetEn": "# nature-skills (面向全球AI学者收录SKILL)\n\n* 大家好，我是 nature skills 的创立者袁一哲。感谢大家持续关注 `nature-skills`。我们在抖音更新了很多视频教程，大家可以根据名称检索查看，希望真心能够帮助到大家。\n* 如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，会尽量推进实现。我们也欢迎 PR，但请按照本文后面的贡献格式提交，方便更高效地审核与合并。\n* 面向全球AI学者收录通用科研skill，nature-skills是skill期刊的雏形，不以讲故事假大空的科研为目标，这里只在乎能否真正解决领域问题！\n* 知识星球名称：Nature Skills以及背后的哲学！\n\n# 自己的一些浅薄观点\n* 最近发现，我设计的Nature-skills被谷歌DeepMind关注并借鉴，他们参考了其中的引用体系、脚本思路以及技能设计哲学，推出了Science-skills。说实话，这让我挺欣慰的——当国外的顶尖AI机构开始从我们的工作中汲取灵感时，说明中国开发者的原创思想正在被世界看见。这不是被复制的失落，而是中国力量在开源土壤里生根后，自然向外生长出的影响力。\n* 我们设计Skills的重心，从来不是要求每个人都来啃透这套思想，而是这套思想本身就具备被机器理解并复用的能力。你如果想创立一个全新的Skill，或者把它适配到自己的专属领域，根本不需要从头学起——直接把Nature-Skills的GitHub地址发给Codex，它就能自动学习其中的设计精髓，帮你完成新Skill的创建和修改。这才是思想的真正解放：它不再依赖口口相传，而是通过AI直接流淌进每一个需要它的角落。\n* Nature-Skills真正的价值，或许并不在于那些具体的技能模块，而在于它悄悄推开了一扇新的大门——它让很多人第一次意识到，原来可以借助Codex或智能体来操控本地电脑做科研。我有幸见证并陪伴了许多人完成了科研范式的转变，当他们惊叹‘原来科研还可以这样去做’的那一刻，这种认知上的破壁和解放，远比Skills本身更让我觉得有意义。它不...",
       "categoryCode": "data",
       "categoryName": { "zh": "数据研究", "en": "Data Research" },
       "tags": [
@@ -81,23 +81,23 @@
         "skills/nature-reviewer/SKILL.md",
         "skills/nature-writing/SKILL.md"
       ],
-      "stars": 24893,
-      "forks": 1506,
+      "stars": 24986,
+      "forks": 1516,
       "openIssues": 1,
-      "watchers": 24893,
+      "watchers": 24986,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": ["codex-skills", "nature", "nature-skills"],
       "homepage": "",
       "htmlUrl": "https://github.com/Yuan1z0825/nature-skills",
       "createdAt": "2026-04-24T03:11:46Z",
-      "updatedAt": "2026-07-01T10:56:40Z",
-      "pushedAt": "2026-07-01T09:21:31Z",
-      "lastFetchedAt": "2026-07-01T10:56:47.961Z",
+      "updatedAt": "2026-07-01T18:05:54Z",
+      "pushedAt": "2026-07-01T12:59:56Z",
+      "lastFetchedAt": "2026-07-01T18:21:45.246Z",
       "fetchStatus": "ok",
       "rank": 1,
       "rankByCategory": 1,
-      "growth7d": 1931,
+      "growth7d": 2024,
       "growth30d": null,
       "rankDelta7d": 0,
       "rankDelta30d": null,
@@ -138,19 +138,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         }
@@ -224,23 +224,23 @@
         "skills/.system/skill-creator/SKILL.md",
         "skills/.system/skill-installer/SKILL.md"
       ],
-      "stars": 23095,
+      "stars": 23114,
       "forks": 1565,
       "openIssues": 279,
-      "watchers": 23095,
+      "watchers": 23114,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/openai/skills",
       "createdAt": "2025-11-25T06:25:42Z",
-      "updatedAt": "2026-07-01T10:46:03Z",
+      "updatedAt": "2026-07-01T18:10:58Z",
       "pushedAt": "2026-06-24T02:36:15Z",
-      "lastFetchedAt": "2026-07-01T10:56:47.961Z",
+      "lastFetchedAt": "2026-07-01T18:21:45.246Z",
       "fetchStatus": "ok",
       "rank": 2,
       "rankByCategory": 1,
-      "growth7d": 274,
+      "growth7d": 293,
       "growth30d": null,
       "rankDelta7d": 0,
       "rankDelta30d": null,
@@ -284,19 +284,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         }
@@ -329,23 +329,23 @@
         }
       ],
       "skillMdPaths": ["SKILL.md"],
-      "stars": 1695,
+      "stars": 1699,
       "forks": 213,
       "openIssues": 0,
-      "watchers": 1695,
+      "watchers": 1699,
       "language": "Python",
       "license": "MIT",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/FrancyJGLisboa/agent-skill-creator",
       "createdAt": "2025-10-18T15:01:46Z",
-      "updatedAt": "2026-07-01T08:38:13Z",
+      "updatedAt": "2026-07-01T17:31:51Z",
       "pushedAt": "2026-06-13T20:00:23Z",
-      "lastFetchedAt": "2026-07-01T10:56:47.961Z",
+      "lastFetchedAt": "2026-07-01T18:21:45.246Z",
       "fetchStatus": "ok",
       "rank": 3,
       "rankByCategory": 1,
-      "growth7d": 80,
+      "growth7d": 84,
       "growth30d": null,
       "rankDelta7d": 0,
       "rankDelta30d": null,
@@ -386,19 +386,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         }
@@ -508,10 +508,10 @@
         "skills/vibrant/SKILL.md",
         "skills/vintage/SKILL.md"
       ],
-      "stars": 1487,
-      "forks": 135,
+      "stars": 1492,
+      "forks": 137,
       "openIssues": 6,
-      "watchers": 1487,
+      "watchers": 1492,
       "language": "",
       "license": "MIT",
       "topics": [
@@ -537,13 +537,13 @@
       "homepage": "https://www.typeui.sh/design-skills",
       "htmlUrl": "https://github.com/bergside/awesome-design-skills",
       "createdAt": "2026-03-09T08:55:36Z",
-      "updatedAt": "2026-07-01T10:43:55Z",
+      "updatedAt": "2026-07-01T16:24:29Z",
       "pushedAt": "2026-06-28T10:05:22Z",
-      "lastFetchedAt": "2026-07-01T10:56:47.961Z",
+      "lastFetchedAt": "2026-07-01T18:21:45.246Z",
       "fetchStatus": "ok",
       "rank": 4,
       "rankByCategory": 1,
-      "growth7d": 93,
+      "growth7d": 98,
       "growth30d": null,
       "rankDelta7d": 0,
       "rankDelta30d": null,
@@ -575,14 +575,14 @@
       "productHuntVotes": null,
       "relatedMCPs": [],
       "popularityScore": 94,
-      "activityScore": 18,
+      "activityScore": 22,
       "adoptionScore": 100,
       "officialScore": 0,
       "ecosystemScore": 0,
-      "compositeScore": 48,
+      "compositeScore": 49,
       "releaseCount": 0,
       "latestRelease": "",
-      "weeklyCommits": 0,
+      "weeklyCommits": 2,
       "contributors": 1,
       "platform": "generic",
       "safetyLevel": "safe",
@@ -590,14 +590,20 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
-          "ok": false,
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-timeline",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
+          "ok": true,
           "errors": []
         }
       ],
@@ -663,10 +669,10 @@
         "skills/research-zh/research-report/SKILL.md",
         "skills/research-zh/research/SKILL.md"
       ],
-      "stars": 1437,
+      "stars": 1443,
       "forks": 112,
       "openIssues": 1,
-      "watchers": 1437,
+      "watchers": 1443,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -682,13 +688,13 @@
       "homepage": "",
       "htmlUrl": "https://github.com/Weizhena/Deep-Research-skills",
       "createdAt": "2025-12-29T05:00:00Z",
-      "updatedAt": "2026-07-01T10:44:34Z",
+      "updatedAt": "2026-07-01T15:45:37Z",
       "pushedAt": "2026-05-07T16:08:07Z",
-      "lastFetchedAt": "2026-07-01T10:56:47.961Z",
+      "lastFetchedAt": "2026-07-01T18:21:45.246Z",
       "fetchStatus": "ok",
       "rank": 5,
       "rankByCategory": 2,
-      "growth7d": 132,
+      "growth7d": 138,
       "growth30d": null,
       "rankDelta7d": 0,
       "rankDelta30d": null,
@@ -735,13 +741,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": false,
           "errors": []
         }
@@ -865,23 +871,23 @@
         "skills/xiaohongshu-write/SKILL.md",
         "skills/zhihu-rewrite/SKILL.md"
       ],
-      "stars": 189,
+      "stars": 191,
       "forks": 32,
       "openIssues": 0,
-      "watchers": 189,
+      "watchers": 191,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/redfox-data/redfox-community",
       "createdAt": "2026-05-12T06:26:09Z",
-      "updatedAt": "2026-07-01T09:56:25Z",
+      "updatedAt": "2026-07-01T15:49:05Z",
       "pushedAt": "2026-07-01T09:33:55Z",
-      "lastFetchedAt": "2026-07-01T10:56:47.961Z",
+      "lastFetchedAt": "2026-07-01T18:21:45.246Z",
       "fetchStatus": "ok",
       "rank": 6,
       "rankByCategory": 1,
-      "growth7d": 62,
+      "growth7d": 64,
       "growth30d": null,
       "rankDelta7d": 1,
       "rankDelta30d": null,
@@ -907,14 +913,14 @@
       "productHuntVotes": null,
       "relatedMCPs": [],
       "popularityScore": 55,
-      "activityScore": 20,
+      "activityScore": 52,
       "adoptionScore": 29,
       "officialScore": 20,
       "ecosystemScore": 0,
-      "compositeScore": 28,
+      "compositeScore": 36,
       "releaseCount": 0,
       "latestRelease": "",
-      "weeklyCommits": 0,
+      "weeklyCommits": 16,
       "contributors": 6,
       "platform": "generic",
       "safetyLevel": "review",
@@ -922,14 +928,20 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
-          "ok": false,
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-timeline",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
+          "ok": true,
           "errors": []
         }
       ],
@@ -5907,9 +5919,9 @@
       "homepage": "",
       "htmlUrl": "https://github.com/lingxling/awesome-skills-cn",
       "createdAt": "2026-02-13T01:01:34Z",
-      "updatedAt": "2026-07-01T05:42:18Z",
+      "updatedAt": "2026-07-01T12:49:53Z",
       "pushedAt": "2026-06-04T12:09:30Z",
-      "lastFetchedAt": "2026-07-01T10:56:47.961Z",
+      "lastFetchedAt": "2026-07-01T18:21:45.246Z",
       "fetchStatus": "ok",
       "rank": 7,
       "rankByCategory": 1,
@@ -5963,14 +5975,14 @@
       "productHuntVotes": null,
       "relatedMCPs": [],
       "popularityScore": 68,
-      "activityScore": 2,
+      "activityScore": 4,
       "adoptionScore": 28,
       "officialScore": 0,
       "ecosystemScore": 0,
-      "compositeScore": 23,
+      "compositeScore": 24,
       "releaseCount": 0,
       "latestRelease": "",
-      "weeklyCommits": 0,
+      "weeklyCommits": 1,
       "contributors": 1,
       "platform": "claude",
       "safetyLevel": "safe",
@@ -5978,14 +5990,20 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-01T10:56:52.864Z",
-          "ok": false,
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-timeline",
+          "fetchedAt": "2026-07-01T18:21:48.527Z",
+          "ok": true,
           "errors": []
         }
       ],
@@ -6013,6 +6031,6 @@
   },
   "sourceBreakdown": { "github": 7 },
   "totalEcosystemSources": 6,
-  "lastEcosystemSync": "2026-07-01T10:56:52.865Z",
+  "lastEcosystemSync": "2026-07-01T18:21:48.527Z",
   "hnMentionsCount": 0
 }
