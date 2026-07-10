@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-09T22:48:45.087Z",
+  "generatedAt": "2026-07-10T10:36:04.629Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 72336,
-      "forks": 6034,
+      "stars": 72456,
+      "forks": 6038,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
       "topics": [
@@ -35,6 +35,7 @@
         "understand-anything-plugin/skills/understand-diff/SKILL.md",
         "understand-anything-plugin/skills/understand-domain/SKILL.md",
         "understand-anything-plugin/skills/understand-explain/SKILL.md",
+        "understand-anything-plugin/skills/understand-figma/SKILL.md",
         "understand-anything-plugin/skills/understand-knowledge/SKILL.md",
         "understand-anything-plugin/skills/understand-onboard/SKILL.md",
         "understand-anything-plugin/skills/understand/SKILL.md"
@@ -46,15 +47,15 @@
       },
       "alreadyCurated": false,
       "suggestedCategory": "developer",
-      "suggestedAudiences": ["developer", "data", "productivity"],
+      "suggestedAudiences": ["developer", "design", "data", "productivity"],
       "confidence": 100
     },
     {
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 30580,
-      "forks": 3080,
+      "stars": 30619,
+      "forks": 3081,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -248,8 +249,8 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running agentic tasks. Crash-proof markdown plans that survive context loss and /clear, plus a deterministic completion gate and multi-agent shared state on disk. Manus-style. Works with Claude Code, Codex CLI, Cursor, Kiro, OpenCode and 60+ agents via the SKILL.md standard.",
-      "stars": 25119,
-      "forks": 2123,
+      "stars": 25148,
+      "forks": 2128,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Python",
       "topics": [
@@ -307,8 +308,8 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 23344,
-      "forks": 2639,
+      "stars": 23377,
+      "forks": 2641,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
       "topics": [
@@ -355,8 +356,8 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 11942,
-      "forks": 1106,
+      "stars": 12030,
+      "forks": 1116,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -378,7 +379,7 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 2669,
+      "stars": 2670,
       "forks": 444,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
@@ -470,7 +471,7 @@
       "repo": "elementalsouls/Claude-OSINT",
       "name": "Claude-OSINT",
       "description": "Two paired Claude skills · 90+ recon modules · 48 secret-regex patterns · 80+ dorks · 9 read-only credential validators · 27 attack-path templates · 5,500+ lines of structured tradecraft. Drop-in SKILL.md files that turn Claude into a god-mode external recon operator for authorized red-team and bug-bounty engagements.",
-      "stars": 1918,
+      "stars": 1920,
       "forks": 366,
       "htmlUrl": "https://github.com/elementalsouls/Claude-OSINT",
       "language": "Python",
@@ -493,8 +494,8 @@
       "repo": "dzcmemory-web/bazi-ziwei-skill",
       "name": "bazi-ziwei-skill",
       "description": "AI 八字 + 紫微斗数排盘与综合印证 Skill：算法精准排盘（不靠 LLM 猜），三种分析模式，一键生成水墨风 HTML 命盘海报。兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent。",
-      "stars": 603,
-      "forks": 89,
+      "stars": 616,
+      "forks": 94,
       "htmlUrl": "https://github.com/dzcmemory-web/bazi-ziwei-skill",
       "language": "TypeScript",
       "topics": [
@@ -657,6 +658,7 @@
         "projects/templates/template_autoresearch_project/.agents/skills/template-autoresearch-project/SKILL.md",
         "projects/templates/template_autoscientists/.agents/skills/template-autoscientists/SKILL.md",
         "projects/templates/template_code_project/.agents/skills/template-code-project/SKILL.md",
+        "projects/templates/template_data_descriptor/.agents/skills/template-data-descriptor/SKILL.md",
         "projects/templates/template_eda_notebook/.agents/skills/template-eda-notebook/SKILL.md",
         "projects/templates/template_gold_refinement/.agents/skills/template-gold-refinement/SKILL.md",
         "projects/templates/template_literature_meta_analysis/.agents/skills/template-literature-meta-analysis/SKILL.md",
@@ -666,6 +668,8 @@
         "projects/templates/template_pitch_deck/.agents/skills/template-pitch-deck/SKILL.md",
         "projects/templates/template_pools_rules_tools/.agents/skills/template-pools-rules-tools/SKILL.md",
         "projects/templates/template_prose_project/.agents/skills/template-prose-project/SKILL.md",
+        "projects/templates/template_redacted_report/.agents/skills/template-redacted-report/SKILL.md",
+        "projects/templates/template_registered_report/.agents/skills/template-registered-report/SKILL.md",
         "projects/templates/template_search_project/.agents/skills/template-search-project/SKILL.md",
         "projects/templates/template_sia/.agents/skills/template-sia/SKILL.md",
         "projects/templates/template_storybook/.agents/skills/template-storybook/SKILL.md",
@@ -679,7 +683,13 @@
       },
       "alreadyCurated": false,
       "suggestedCategory": "data",
-      "suggestedAudiences": ["developer", "data", "productivity", "beginner"],
+      "suggestedAudiences": [
+        "developer",
+        "writing",
+        "data",
+        "productivity",
+        "beginner"
+      ],
       "confidence": 100
     },
     {
@@ -918,13 +928,13 @@
         "skills"
       ],
       "skillMdPaths": [
+        "skills/01-agent-engineering/adaptive-quality-gate/SKILL.md",
         "skills/01-agent-engineering/deep-research/SKILL.md",
         "skills/01-agent-engineering/find-skills/SKILL.md",
         "skills/01-agent-engineering/project-cleanup-audit/SKILL.md",
         "skills/01-agent-engineering/santa-method/SKILL.md",
         "skills/01-agent-engineering/skill-creator/SKILL.md",
         "skills/01-agent-engineering/skill-lifecycle-manager/SKILL.md",
-        "skills/01-agent-engineering/skill-upgrade/SKILL.md",
         "skills/02-coding-languages/swift/liquid-glass-design/SKILL.md",
         "skills/03-frameworks/frontend-design/SKILL.md",
         "skills/06-data-search/bioc-fulltext-fetch/SKILL.md",
