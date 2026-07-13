@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-13T22:39:02.678Z",
+  "generatedAt": "2026-07-13T23:36:23.501Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 73806,
+      "stars": 73808,
       "forks": 6149,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -249,7 +249,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running agentic tasks. Crash-proof markdown plans that survive context loss and /clear, plus a deterministic completion gate and multi-agent shared state on disk. Manus-style. Works with Claude Code, Codex CLI, Cursor, Kiro, OpenCode and 60+ agents via the SKILL.md standard.",
-      "stars": 25277,
+      "stars": 25279,
       "forks": 2134,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Python",
@@ -356,7 +356,7 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 12536,
+      "stars": 12540,
       "forks": 1164,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
