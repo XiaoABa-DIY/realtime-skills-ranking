@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-19T09:27:03.967Z",
+  "generatedAt": "2026-07-19T10:54:38.772Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 75110,
+      "stars": 75117,
       "forks": 6250,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -54,8 +54,8 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 148 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 31176,
-      "forks": 3116,
+      "stars": 31182,
+      "forks": 3117,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -249,7 +249,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running agentic tasks. Crash-proof markdown plans that survive context loss and /clear, plus a deterministic completion gate and multi-agent shared state on disk. Manus-style. Works with Claude Code, Codex CLI, Cursor, Kiro, OpenCode and 60+ agents via the SKILL.md standard.",
-      "stars": 25482,
+      "stars": 25484,
       "forks": 2152,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Python",
@@ -309,8 +309,8 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 23840,
-      "forks": 2674,
+      "stars": 23843,
+      "forks": 2675,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
       "topics": [
@@ -357,8 +357,8 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 13125,
-      "forks": 1224,
+      "stars": 13131,
+      "forks": 1226,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -967,16 +967,16 @@
     {
       "repo": "MantaDigital/stingray-agent-skills",
       "name": "stingray-agent-skills",
-      "description": "Operate your Stingray crypto research account from any SKILL.md-compatible agent — Claude Code, Codex, Cursor, and 40+ more.",
+      "description": "Build and test trading strategies with Stingray from any SKILL.md-compatible agent, including Claude Code, Codex, Cursor, and more.",
       "stars": 5,
       "forks": 0,
       "htmlUrl": "https://github.com/MantaDigital/stingray-agent-skills",
       "language": "Shell",
       "topics": [
         "agent-skills",
+        "backtesting",
         "claude-code",
         "codex",
-        "crypto",
         "cursor",
         "gemini-cli",
         "github-copilot",
@@ -986,7 +986,9 @@
         "research",
         "signals",
         "skill-md",
-        "stingray"
+        "stingray",
+        "strategy-builder",
+        "trading-strategies"
       ],
       "skillMdPaths": ["skills/stingray/SKILL.md"],
       "matchedQuery": "research-skills",
@@ -996,7 +998,7 @@
       },
       "alreadyCurated": false,
       "suggestedCategory": "data",
-      "suggestedAudiences": ["developer", "data"],
+      "suggestedAudiences": ["developer", "design", "data"],
       "confidence": 70
     },
     {
