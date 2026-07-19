@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-19T19:55:06.586Z",
+  "generatedAt": "2026-07-19T20:52:18.372Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 75165,
+      "stars": 75166,
       "forks": 6252,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -249,7 +249,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running agentic tasks. Crash-proof markdown plans that survive context loss and /clear, plus a deterministic completion gate and multi-agent shared state on disk. Manus-style. Works with Claude Code, Codex CLI, Cursor, Kiro, OpenCode and 60+ agents via the SKILL.md standard.",
-      "stars": 25517,
+      "stars": 25518,
       "forks": 2153,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Python",
@@ -357,7 +357,7 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 13164,
+      "stars": 13166,
       "forks": 1228,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
@@ -594,7 +594,7 @@
       "name": "humanities-writing-companion",
       "description": "End-to-end humanities writing assistant — an Agent Skill (open SKILL.md format). 11 modes from Socratic research-question sharpening through AI-use disclosure. Bilingual (EN/中文), discipline-aware (literature/history/philosophy/art/religion/linguistics + cross-disciplinary). Four-layer critique, calibratable devils advocate, voice preservation.",
       "stars": 95,
-      "forks": 9,
+      "forks": 10,
       "htmlUrl": "https://github.com/tizzy916/humanities-writing-companion",
       "language": "Python",
       "topics": [
