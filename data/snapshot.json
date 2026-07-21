@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-07-21T14:22:56.779Z",
+  "generatedAt": "2026-07-21T16:01:34.913Z",
   "source": "agent-skills-radar",
   "categories": [
     {
@@ -85,24 +85,24 @@
         "skills/nature-statistics/SKILL.md",
         "skills/nature-writing/SKILL.md"
       ],
-      "stars": 30231,
+      "stars": 30244,
       "forks": 1780,
       "openIssues": 2,
-      "watchers": 30231,
+      "watchers": 30244,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": ["codex-skills", "nature", "nature-skills"],
       "homepage": "",
       "htmlUrl": "https://github.com/Yuan1z0825/nature-skills",
       "createdAt": "2026-04-24T03:11:46Z",
-      "updatedAt": "2026-07-21T14:11:01Z",
+      "updatedAt": "2026-07-21T15:55:46Z",
       "pushedAt": "2026-07-21T07:42:33Z",
-      "lastFetchedAt": "2026-07-21T14:22:56.779Z",
+      "lastFetchedAt": "2026-07-21T16:01:34.913Z",
       "fetchStatus": "ok",
       "rank": 1,
       "rankByCategory": 1,
-      "growth7d": 1612,
-      "growth30d": 8450,
+      "growth7d": 1625,
+      "growth30d": 8463,
       "rankDelta7d": 0,
       "rankDelta30d": 1,
       "trendStatus": "ready",
@@ -148,19 +148,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         }
@@ -234,24 +234,24 @@
         "skills/.system/skill-creator/SKILL.md",
         "skills/.system/skill-installer/SKILL.md"
       ],
-      "stars": 24013,
+      "stars": 24015,
       "forks": 1631,
       "openIssues": 276,
-      "watchers": 24013,
+      "watchers": 24015,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/openai/skills",
       "createdAt": "2025-11-25T06:25:42Z",
-      "updatedAt": "2026-07-21T14:17:48Z",
+      "updatedAt": "2026-07-21T15:54:17Z",
       "pushedAt": "2026-07-14T16:47:46Z",
-      "lastFetchedAt": "2026-07-21T14:22:56.779Z",
+      "lastFetchedAt": "2026-07-21T16:01:34.913Z",
       "fetchStatus": "ok",
       "rank": 2,
       "rankByCategory": 1,
-      "growth7d": 307,
-      "growth30d": 1363,
+      "growth7d": 309,
+      "growth30d": 1365,
       "rankDelta7d": 0,
       "rankDelta30d": -1,
       "trendStatus": "ready",
@@ -294,19 +294,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         }
@@ -316,108 +316,6 @@
       "hasReadme": true,
       "hasRelease": false,
       "id": "openai/skills"
-    },
-    {
-      "repo": "FrancyJGLisboa/agent-skill-creator",
-      "name": "Agent Skill Creator",
-      "descriptionZh": "把工作流整理成可安装 SKILL.md 的创建工具，适合学习如何设计和打包新 Skill。",
-      "descriptionEn": "A workflow-to-SKILL.md creator for learning how to design and package reusable skills.",
-      "readmeSnippetZh": "",
-      "readmeSnippetEn": "# Agent Skill Creator\n\n**Turn any workflow into reusable AI agent software that installs on 17 platforms — no spec writing, no prompt engineering, no coding required.**\n\n[![CI](https://github.com/FrancyJGLisboa/agent-skill-creator/actions/workflows/ci.yml/badge.svg)](https://github.com/FrancyJGLisboa/agent-skill-creator/actions/workflows/ci.yml)\n[![Agent Skills Open Standard](https://img.shields.io/badge/Agent%20Skills-Open%20Standard-blue)](https://github.com/anthropics/agent-skills-spec)\n[![Platforms](https://img.shields.io/badge/installs%20on-17%20platforms-7c3aed)](docs/INSTALL.md)\n[![Version](https://img.shields.io/badge/version-6.0.0-brightgreen)]()\n[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]()\n\n<p align=\"center\">\n  <img src=\"assets/architecture.png\" width=\"820\"\n       alt=\"Architecture: a plain-English description enters the 5-phase creator pipeline; the...",
-      "categoryCode": "prompt-workflow",
-      "categoryName": { "zh": "提示词/工作流", "en": "Prompt & Workflow" },
-      "tags": ["Skill创建", "工作流", "模板"],
-      "audiences": ["developer", "productivity", "beginner"],
-      "useCases": [
-        {
-          "zh": "适合程序员把 SKILL.md 固化成可复用开发流程。",
-          "en": "Useful for developers turning SKILL.md into reusable workflows."
-        },
-        {
-          "zh": "适合文档处理、批量转换和日常办公提效。",
-          "en": "Useful for document handling, batch conversion, and productivity."
-        }
-      ],
-      "skillMdPaths": ["SKILL.md"],
-      "stars": 1891,
-      "forks": 222,
-      "openIssues": 0,
-      "watchers": 1891,
-      "language": "Python",
-      "license": "MIT",
-      "topics": [],
-      "homepage": "https://francyjglisboa.github.io/agent-skill-creator/",
-      "htmlUrl": "https://github.com/FrancyJGLisboa/agent-skill-creator",
-      "createdAt": "2025-10-18T15:01:46Z",
-      "updatedAt": "2026-07-21T14:11:25Z",
-      "pushedAt": "2026-07-21T08:59:24Z",
-      "lastFetchedAt": "2026-07-21T14:22:56.779Z",
-      "fetchStatus": "ok",
-      "rank": 3,
-      "rankByCategory": 1,
-      "growth7d": 60,
-      "growth30d": 318,
-      "rankDelta7d": 0,
-      "rankDelta30d": 0,
-      "trendStatus": "ready",
-      "chineseScore": 49,
-      "skillSignalScore": 65,
-      "featured": false,
-      "ecosystems": [
-        {
-          "ecosystem": "claude",
-          "compatible": true,
-          "verified": false,
-          "badge": "Claude Compatible"
-        },
-        {
-          "ecosystem": "universal",
-          "compatible": true,
-          "verified": false,
-          "badge": "Universal"
-        }
-      ],
-      "hnMetric": null,
-      "productHuntVotes": null,
-      "relatedMCPs": [],
-      "popularityScore": 80,
-      "activityScore": 32,
-      "adoptionScore": 100,
-      "officialScore": 0,
-      "ecosystemScore": 0,
-      "compositeScore": 48,
-      "releaseCount": 0,
-      "latestRelease": "",
-      "weeklyCommits": 6,
-      "contributors": 3,
-      "platform": "generic",
-      "safetyLevel": "safe",
-      "safetyNotes": [],
-      "sources": [
-        {
-          "source": "github",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
-          "ok": true,
-          "errors": []
-        },
-        {
-          "source": "github-stats",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
-          "ok": true,
-          "errors": []
-        },
-        {
-          "source": "github-timeline",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
-          "ok": true,
-          "errors": []
-        }
-      ],
-      "primarySource": "github",
-      "hasSkillMd": true,
-      "hasReadme": true,
-      "hasRelease": false,
-      "id": "FrancyJGLisboa/agent-skill-creator"
     },
     {
       "repo": "bergside/awesome-design-skills",
@@ -518,10 +416,10 @@
         "skills/vibrant/SKILL.md",
         "skills/vintage/SKILL.md"
       ],
-      "stars": 1883,
-      "forks": 172,
+      "stars": 1900,
+      "forks": 174,
       "openIssues": 7,
-      "watchers": 1883,
+      "watchers": 1900,
       "language": "",
       "license": "MIT",
       "topics": [
@@ -547,16 +445,16 @@
       "homepage": "https://www.typeui.sh/design-skills",
       "htmlUrl": "https://github.com/bergside/awesome-design-skills",
       "createdAt": "2026-03-09T08:55:36Z",
-      "updatedAt": "2026-07-21T14:04:30Z",
+      "updatedAt": "2026-07-21T15:54:50Z",
       "pushedAt": "2026-06-28T10:05:22Z",
-      "lastFetchedAt": "2026-07-21T14:22:56.779Z",
+      "lastFetchedAt": "2026-07-21T16:01:34.913Z",
       "fetchStatus": "ok",
-      "rank": 4,
+      "rank": 3,
       "rankByCategory": 1,
-      "growth7d": 113,
-      "growth30d": 546,
-      "rankDelta7d": 0,
-      "rankDelta30d": 0,
+      "growth7d": 130,
+      "growth30d": 563,
+      "rankDelta7d": 1,
+      "rankDelta30d": 1,
       "trendStatus": "ready",
       "chineseScore": 45,
       "skillSignalScore": 100,
@@ -600,19 +498,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         }
@@ -622,6 +520,108 @@
       "hasReadme": true,
       "hasRelease": false,
       "id": "bergside/awesome-design-skills"
+    },
+    {
+      "repo": "FrancyJGLisboa/agent-skill-creator",
+      "name": "Agent Skill Creator",
+      "descriptionZh": "把工作流整理成可安装 SKILL.md 的创建工具，适合学习如何设计和打包新 Skill。",
+      "descriptionEn": "A workflow-to-SKILL.md creator for learning how to design and package reusable skills.",
+      "readmeSnippetZh": "",
+      "readmeSnippetEn": "# Agent Skill Creator\n\n**Turn any workflow into reusable AI agent software that installs on 17 platforms — no spec writing, no prompt engineering, no coding required.**\n\n[![CI](https://github.com/FrancyJGLisboa/agent-skill-creator/actions/workflows/ci.yml/badge.svg)](https://github.com/FrancyJGLisboa/agent-skill-creator/actions/workflows/ci.yml)\n[![Agent Skills Open Standard](https://img.shields.io/badge/Agent%20Skills-Open%20Standard-blue)](https://github.com/anthropics/agent-skills-spec)\n[![Platforms](https://img.shields.io/badge/installs%20on-17%20platforms-7c3aed)](docs/INSTALL.md)\n[![Version](https://img.shields.io/badge/version-6.0.0-brightgreen)]()\n[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]()\n\n<p align=\"center\">\n  <img src=\"assets/architecture.png\" width=\"820\"\n       alt=\"Architecture: a plain-English description enters the 5-phase creator pipeline; the...",
+      "categoryCode": "prompt-workflow",
+      "categoryName": { "zh": "提示词/工作流", "en": "Prompt & Workflow" },
+      "tags": ["Skill创建", "工作流", "模板"],
+      "audiences": ["developer", "productivity", "beginner"],
+      "useCases": [
+        {
+          "zh": "适合程序员把 SKILL.md 固化成可复用开发流程。",
+          "en": "Useful for developers turning SKILL.md into reusable workflows."
+        },
+        {
+          "zh": "适合文档处理、批量转换和日常办公提效。",
+          "en": "Useful for document handling, batch conversion, and productivity."
+        }
+      ],
+      "skillMdPaths": ["SKILL.md"],
+      "stars": 1891,
+      "forks": 222,
+      "openIssues": 0,
+      "watchers": 1891,
+      "language": "Python",
+      "license": "MIT",
+      "topics": [],
+      "homepage": "https://francyjglisboa.github.io/agent-skill-creator/",
+      "htmlUrl": "https://github.com/FrancyJGLisboa/agent-skill-creator",
+      "createdAt": "2025-10-18T15:01:46Z",
+      "updatedAt": "2026-07-21T14:11:25Z",
+      "pushedAt": "2026-07-21T08:59:24Z",
+      "lastFetchedAt": "2026-07-21T16:01:34.913Z",
+      "fetchStatus": "ok",
+      "rank": 4,
+      "rankByCategory": 1,
+      "growth7d": 60,
+      "growth30d": 318,
+      "rankDelta7d": -1,
+      "rankDelta30d": -1,
+      "trendStatus": "ready",
+      "chineseScore": 49,
+      "skillSignalScore": 65,
+      "featured": false,
+      "ecosystems": [
+        {
+          "ecosystem": "claude",
+          "compatible": true,
+          "verified": false,
+          "badge": "Claude Compatible"
+        },
+        {
+          "ecosystem": "universal",
+          "compatible": true,
+          "verified": false,
+          "badge": "Universal"
+        }
+      ],
+      "hnMetric": null,
+      "productHuntVotes": null,
+      "relatedMCPs": [],
+      "popularityScore": 80,
+      "activityScore": 32,
+      "adoptionScore": 100,
+      "officialScore": 0,
+      "ecosystemScore": 0,
+      "compositeScore": 48,
+      "releaseCount": 0,
+      "latestRelease": "",
+      "weeklyCommits": 6,
+      "contributors": 3,
+      "platform": "generic",
+      "safetyLevel": "safe",
+      "safetyNotes": [],
+      "sources": [
+        {
+          "source": "github",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-stats",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-timeline",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
+          "ok": true,
+          "errors": []
+        }
+      ],
+      "primarySource": "github",
+      "hasSkillMd": true,
+      "hasReadme": true,
+      "hasRelease": false,
+      "id": "FrancyJGLisboa/agent-skill-creator"
     },
     {
       "repo": "Weizhena/Deep-Research-skills",
@@ -679,10 +679,10 @@
         "skills/research-zh/research-report/SKILL.md",
         "skills/research-zh/research/SKILL.md"
       ],
-      "stars": 1712,
+      "stars": 1713,
       "forks": 138,
       "openIssues": 3,
-      "watchers": 1712,
+      "watchers": 1713,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -698,14 +698,14 @@
       "homepage": "",
       "htmlUrl": "https://github.com/Weizhena/Deep-Research-skills",
       "createdAt": "2025-12-29T05:00:00Z",
-      "updatedAt": "2026-07-21T13:11:00Z",
+      "updatedAt": "2026-07-21T14:30:04Z",
       "pushedAt": "2026-05-07T16:08:07Z",
-      "lastFetchedAt": "2026-07-21T14:22:56.779Z",
+      "lastFetchedAt": "2026-07-21T16:01:34.913Z",
       "fetchStatus": "ok",
       "rank": 5,
       "rankByCategory": 2,
-      "growth7d": 70,
-      "growth30d": 462,
+      "growth7d": 71,
+      "growth30d": 463,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -751,13 +751,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": false,
           "errors": []
         }
@@ -881,24 +881,24 @@
         "skills/xiaohongshu-write/SKILL.md",
         "skills/zhihu-rewrite/SKILL.md"
       ],
-      "stars": 268,
+      "stars": 270,
       "forks": 38,
       "openIssues": 0,
-      "watchers": 268,
+      "watchers": 270,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/redfox-data/redfox-community",
       "createdAt": "2026-05-12T06:26:09Z",
-      "updatedAt": "2026-07-21T09:14:36Z",
+      "updatedAt": "2026-07-21T15:58:37Z",
       "pushedAt": "2026-07-21T09:14:12Z",
-      "lastFetchedAt": "2026-07-21T14:22:56.779Z",
+      "lastFetchedAt": "2026-07-21T16:01:34.913Z",
       "fetchStatus": "ok",
       "rank": 6,
       "rankByCategory": 1,
-      "growth7d": 14,
-      "growth30d": 151,
+      "growth7d": 16,
+      "growth30d": 153,
       "rankDelta7d": 0,
       "rankDelta30d": 1,
       "trendStatus": "ready",
@@ -938,19 +938,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         }
@@ -10556,7 +10556,7 @@
       "createdAt": "2026-02-13T01:01:34Z",
       "updatedAt": "2026-07-21T09:37:49Z",
       "pushedAt": "2026-07-16T05:31:34Z",
-      "lastFetchedAt": "2026-07-21T14:22:56.779Z",
+      "lastFetchedAt": "2026-07-21T16:01:34.913Z",
       "fetchStatus": "ok",
       "rank": 7,
       "rankByCategory": 1,
@@ -10625,13 +10625,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-07-21T14:23:00.651Z",
+          "fetchedAt": "2026-07-21T16:01:39.605Z",
           "ok": false,
           "errors": []
         }
@@ -10660,6 +10660,6 @@
   },
   "sourceBreakdown": { "github": 7 },
   "totalEcosystemSources": 6,
-  "lastEcosystemSync": "2026-07-21T14:23:00.651Z",
+  "lastEcosystemSync": "2026-07-21T16:01:39.606Z",
   "hnMentionsCount": 0
 }
