@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-22T16:46:26.636Z",
+  "generatedAt": "2026-07-22T18:08:19.690Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 75622,
+      "stars": 75629,
       "forks": 6295,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -55,7 +55,7 @@
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 148 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
       "stars": 31473,
-      "forks": 3136,
+      "forks": 3138,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -249,8 +249,8 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Claude Code, Codex, Cursor, Kiro, OpenCode and 60+ agents via the Agent Skills standard.",
-      "stars": 25625,
-      "forks": 2158,
+      "stars": 25627,
+      "forks": 2157,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Python",
       "topics": [
@@ -309,7 +309,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 23986,
+      "stars": 23989,
       "forks": 2682,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
@@ -357,8 +357,8 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 14377,
-      "forks": 1324,
+      "stars": 14398,
+      "forks": 1327,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -381,8 +381,8 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 2762,
-      "forks": 448,
+      "stars": 2763,
+      "forks": 449,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
       "topics": [
@@ -547,7 +547,7 @@
       "repo": "gamedev-skills/awesome-gamedev-agent-skills",
       "name": "awesome-gamedev-agent-skills",
       "description": "Game-development Agent Skills for AI coding agents: install once and a master router loads the right skill for your engine and task. 66 original, version-pinned skills (plus a master router) in the portable SKILL.md format that runs across Claude Code, Cursor, Codex, Copilot, Gemini CLI and more, for Godot, Unity, Unreal, web and beyond.",
-      "stars": 322,
+      "stars": 323,
       "forks": 23,
       "htmlUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
       "language": "Python",
@@ -686,41 +686,10 @@
       "confidence": 100
     },
     {
-      "repo": "bergside/design-md-figma",
-      "name": "design-md-figma",
-      "description": "Figma plugin that extracts local style guidelines and generates DESIGN.md and SKILL.md files for AI tools such as Claude Code, Codex, Cursor, and other AI tools",
-      "stars": 133,
-      "forks": 20,
-      "htmlUrl": "https://github.com/bergside/design-md-figma",
-      "language": "TypeScript",
-      "topics": [
-        "agentic",
-        "agents",
-        "agentskills",
-        "design",
-        "design-md",
-        "design-system",
-        "designmd",
-        "figma",
-        "skill",
-        "typeui"
-      ],
-      "skillMdPaths": [".agents/skills/figma-plugin/SKILL.md"],
-      "matchedQuery": "design-skills",
-      "reason": {
-        "zh": "可能包含设计、UI 或多媒体相关 SKILL.md。",
-        "en": "Potential design, UI, or media SKILL.md repository."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "design-media",
-      "suggestedAudiences": ["developer", "design", "productivity", "beginner"],
-      "confidence": 70
-    },
-    {
       "repo": "tizzy916/humanities-writing-companion",
       "name": "humanities-writing-companion",
       "description": "End-to-end humanities writing assistant — an Agent Skill (open SKILL.md format). 11 modes from Socratic research-question sharpening through AI-use disclosure. Bilingual (EN/中文), discipline-aware (literature/history/philosophy/art/religion/linguistics + cross-disciplinary). Four-layer critique, calibratable devils advocate, voice preservation.",
-      "stars": 132,
+      "stars": 134,
       "forks": 15,
       "htmlUrl": "https://github.com/tizzy916/humanities-writing-companion",
       "language": "Python",
@@ -756,6 +725,37 @@
         "data",
         "beginner"
       ],
+      "confidence": 70
+    },
+    {
+      "repo": "bergside/design-md-figma",
+      "name": "design-md-figma",
+      "description": "Figma plugin that extracts local style guidelines and generates DESIGN.md and SKILL.md files for AI tools such as Claude Code, Codex, Cursor, and other AI tools",
+      "stars": 133,
+      "forks": 20,
+      "htmlUrl": "https://github.com/bergside/design-md-figma",
+      "language": "TypeScript",
+      "topics": [
+        "agentic",
+        "agents",
+        "agentskills",
+        "design",
+        "design-md",
+        "design-system",
+        "designmd",
+        "figma",
+        "skill",
+        "typeui"
+      ],
+      "skillMdPaths": [".agents/skills/figma-plugin/SKILL.md"],
+      "matchedQuery": "design-skills",
+      "reason": {
+        "zh": "可能包含设计、UI 或多媒体相关 SKILL.md。",
+        "en": "Potential design, UI, or media SKILL.md repository."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "design-media",
+      "suggestedAudiences": ["developer", "design", "productivity", "beginner"],
       "confidence": 70
     },
     {
