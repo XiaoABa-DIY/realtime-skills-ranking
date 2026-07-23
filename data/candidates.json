@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T21:43:35.092Z",
+  "generatedAt": "2026-07-23T22:40:10.521Z",
   "source": "github-search",
   "candidates": [
     {
@@ -54,7 +54,7 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 148 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 31559,
+      "stars": 31560,
       "forks": 3146,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
@@ -357,8 +357,8 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 14747,
-      "forks": 1354,
+      "stars": 14753,
+      "forks": 1355,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -497,7 +497,7 @@
       "name": "bazi-ziwei-skill",
       "description": "AI 八字 + 紫微斗数排盘与综合印证 Skill：算法精准排盘（不靠 LLM 猜），三种分析模式，一键生成水墨风 HTML 命盘海报。兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent。",
       "stars": 710,
-      "forks": 110,
+      "forks": 111,
       "htmlUrl": "https://github.com/dzcmemory-web/bazi-ziwei-skill",
       "language": "TypeScript",
       "topics": [
