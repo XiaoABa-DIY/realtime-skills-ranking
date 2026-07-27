@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-27T21:12:25.161Z",
+  "generatedAt": "2026-07-27T22:28:30.043Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 76410,
+      "stars": 76413,
       "forks": 6390,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -54,7 +54,7 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 170,000+ scientists worldwide. 154 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 31919,
+      "stars": 31921,
       "forks": 3172,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
@@ -254,7 +254,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Claude Code, Codex, Cursor, Kiro, OpenCode and 60+ agents via the Agent Skills standard.",
-      "stars": 25788,
+      "stars": 25789,
       "forks": 2162,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Python",
@@ -767,8 +767,8 @@
       "repo": "tigerless-labs/design-harness",
       "name": "design-harness",
       "description": "Feed your agent papers and half-formed ideas — it links them into a system design you can defend. Markdown keeps the record; a visual canvas makes it readable. An Agent Skill for Claude Code & any SKILL.md-compatible agent.",
-      "stars": 113,
-      "forks": 17,
+      "stars": 114,
+      "forks": 18,
       "htmlUrl": "https://github.com/tigerless-labs/design-harness",
       "language": "Python",
       "topics": [
