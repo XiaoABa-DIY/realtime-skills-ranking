@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-29T20:02:17.573Z",
+  "generatedAt": "2026-07-29T21:12:34.833Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 76700,
-      "forks": 6421,
+      "stars": 76703,
+      "forks": 6422,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
       "topics": [
@@ -54,7 +54,7 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 170,000+ scientists worldwide. 158 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 32112,
+      "stars": 32116,
       "forks": 3185,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
@@ -259,7 +259,7 @@
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Claude Code, Codex, Cursor, Kiro, OpenCode and 60+ agents via the Agent Skills standard.",
       "stars": 25837,
-      "forks": 2163,
+      "forks": 2164,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Python",
       "topics": [
@@ -366,7 +366,7 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 15307,
+      "stars": 15308,
       "forks": 1414,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
