@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-03T22:41:22.516Z",
+  "generatedAt": "2026-08-03T23:48:43.535Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 77347,
+      "stars": 77348,
       "forks": 6488,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -54,8 +54,8 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 170,000+ scientists worldwide. 158 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 32521,
-      "forks": 3221,
+      "stars": 32522,
+      "forks": 3222,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -366,7 +366,7 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 15547,
+      "stars": 15548,
       "forks": 1434,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
@@ -698,7 +698,7 @@
       "repo": "tizzy916/humanities-writing-companion",
       "name": "humanities-writing-companion",
       "description": "End-to-end humanities writing assistant — an Agent Skill (open SKILL.md format). 11 modes from Socratic research-question sharpening through AI-use disclosure. Bilingual (EN/中文), discipline-aware (literature/history/philosophy/art/religion/linguistics + cross-disciplinary). Four-layer critique, calibratable devils advocate, voice preservation.",
-      "stars": 316,
+      "stars": 319,
       "forks": 40,
       "htmlUrl": "https://github.com/tizzy916/humanities-writing-companion",
       "language": "Python",
