@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-07T19:39:13.764Z",
+  "generatedAt": "2026-08-07T20:22:47.056Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 77871,
+      "stars": 77872,
       "forks": 6544,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -103,6 +103,7 @@
         "skills/database-lookup/SKILL.md",
         "skills/datamol/SKILL.md",
         "skills/deepchem/SKILL.md",
+        "skills/deepspot-m/SKILL.md",
         "skills/deeptools/SKILL.md",
         "skills/depmap/SKILL.md",
         "skills/dhdna-profiler/SKILL.md",
@@ -602,8 +603,8 @@
       "repo": "0xwilliamortiz/claude-red",
       "name": "claude-red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 494,
-      "forks": 64,
+      "stars": 533,
+      "forks": 68,
       "htmlUrl": "https://github.com/0xwilliamortiz/claude-red",
       "language": "JavaScript",
       "topics": [
