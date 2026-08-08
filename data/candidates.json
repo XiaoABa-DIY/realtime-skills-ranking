@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-07T23:59:17.266Z",
+  "generatedAt": "2026-08-08T02:10:19.861Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 77881,
-      "forks": 6544,
+      "stars": 77890,
+      "forks": 6545,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
       "topics": [
@@ -54,7 +54,7 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 170,000+ scientists worldwide. 158 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 32921,
+      "stars": 32928,
       "forks": 3246,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
@@ -260,8 +260,8 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Claude Code, Codex, Cursor, Kiro, OpenCode and 60+ agents via the Agent Skills standard.",
-      "stars": 26042,
-      "forks": 2179,
+      "stars": 26041,
+      "forks": 2178,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Shell",
       "topics": [
@@ -321,7 +321,7 @@
       "name": "baoyu-skills",
       "description": "",
       "stars": 24705,
-      "forks": 2752,
+      "forks": 2753,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
       "topics": [
@@ -368,8 +368,8 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 15746,
-      "forks": 1458,
+      "stars": 15750,
+      "forks": 1459,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -392,8 +392,8 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 2848,
-      "forks": 466,
+      "stars": 2849,
+      "forks": 467,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
       "topics": [
@@ -514,7 +514,7 @@
       "repo": "dzcmemory-web/bazi-ziwei-skill",
       "name": "bazi-ziwei-skill",
       "description": "AI 八字 + 紫微斗数排盘与综合印证 Skill：算法精准排盘（不靠 LLM 猜），三种分析模式，一键生成水墨风 HTML 命盘海报。兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent。",
-      "stars": 775,
+      "stars": 776,
       "forks": 124,
       "htmlUrl": "https://github.com/dzcmemory-web/bazi-ziwei-skill",
       "language": "TypeScript",
@@ -584,30 +584,10 @@
       "confidence": 90
     },
     {
-      "repo": "feichanggege/ecommerce-visual-copywriting-skill",
-      "name": "ecommerce-visual-copywriting-skill",
-      "description": "电商视觉文案设计SOP Skill - 让电商设计小白也能一键做出5年资深设计经验的商品图片.兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent",
-      "stars": 559,
-      "forks": 68,
-      "htmlUrl": "https://github.com/feichanggege/ecommerce-visual-copywriting-skill",
-      "language": "Python",
-      "topics": [],
-      "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "skill-md-stars",
-      "reason": {
-        "zh": "GitHub 仓库描述中明确提到 SKILL.md 和 skills。",
-        "en": "Repository description mentions SKILL.md and skills."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "prompt-workflow",
-      "suggestedAudiences": ["developer", "design"],
-      "confidence": 70
-    },
-    {
       "repo": "0xwilliamortiz/claude-red",
       "name": "claude-red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 558,
+      "stars": 560,
       "forks": 69,
       "htmlUrl": "https://github.com/0xwilliamortiz/claude-red",
       "language": "JavaScript",
@@ -692,6 +672,26 @@
       "suggestedCategory": "prompt-workflow",
       "suggestedAudiences": ["developer", "writing", "design", "data"],
       "confidence": 100
+    },
+    {
+      "repo": "feichanggege/ecommerce-visual-copywriting-skill",
+      "name": "ecommerce-visual-copywriting-skill",
+      "description": "电商视觉文案设计SOP Skill - 让电商设计小白也能一键做出5年资深设计经验的商品图片.兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent",
+      "stars": 559,
+      "forks": 68,
+      "htmlUrl": "https://github.com/feichanggege/ecommerce-visual-copywriting-skill",
+      "language": "Python",
+      "topics": [],
+      "skillMdPaths": ["SKILL.md"],
+      "matchedQuery": "skill-md-stars",
+      "reason": {
+        "zh": "GitHub 仓库描述中明确提到 SKILL.md 和 skills。",
+        "en": "Repository description mentions SKILL.md and skills."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "prompt-workflow",
+      "suggestedAudiences": ["developer", "design"],
+      "confidence": 70
     },
     {
       "repo": "tizzy916/humanities-writing-companion",
