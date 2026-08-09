@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-09T20:43:26.607Z",
+  "generatedAt": "2026-08-09T21:15:28.872Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 78520,
-      "forks": 6592,
+      "stars": 78526,
+      "forks": 6594,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
       "topics": [
@@ -369,7 +369,7 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 15805,
+      "stars": 15806,
       "forks": 1467,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
@@ -547,8 +547,8 @@
       "repo": "0xwilliamortiz/claude-red",
       "name": "claude-red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 700,
-      "forks": 88,
+      "stars": 701,
+      "forks": 89,
       "htmlUrl": "https://github.com/0xwilliamortiz/claude-red",
       "language": "JavaScript",
       "topics": [
