@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-12T19:23:24.948Z",
+  "generatedAt": "2026-08-12T20:08:58.035Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79100,
+      "stars": 79104,
       "forks": 6641,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -366,6 +366,26 @@
       "confidence": 100
     },
     {
+      "repo": "Nutlope/hallmark",
+      "name": "hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "stars": 24347,
+      "forks": 1226,
+      "htmlUrl": "https://github.com/Nutlope/hallmark",
+      "language": "CSS",
+      "topics": [],
+      "skillMdPaths": ["skills/hallmark/SKILL.md"],
+      "matchedQuery": "codex-skills",
+      "reason": {
+        "zh": "可能适配 Codex 或 SKILL.md 标准的开发者技能项目。",
+        "en": "Potential developer skill project compatible with Codex or the SKILL.md standard."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "developer",
+      "suggestedAudiences": ["developer", "design"],
+      "confidence": 70
+    },
+    {
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
@@ -609,7 +629,7 @@
       "repo": "gamedev-skills/awesome-gamedev-agent-skills",
       "name": "awesome-gamedev-agent-skills",
       "description": "67 game-dev skills for AI coding agents — Godot, Unity, Unreal, Phaser, PixiJS, three.js, Bevy, pygame, LÖVE, Roblox. Portable SKILL.md Agent Skills (the format Anthropic launched as Claude Skills), with a router that loads the right skill for your engine and task. Runs in Claude Code, Cursor, Kiro, Codex, Copilot, Gemini CLI and more.",
-      "stars": 492,
+      "stars": 493,
       "forks": 40,
       "htmlUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
       "language": "Python",
