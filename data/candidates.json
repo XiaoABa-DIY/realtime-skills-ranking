@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-14T19:37:31.284Z",
+  "generatedAt": "2026-08-14T20:15:19.485Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79335,
+      "stars": 79336,
       "forks": 6663,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -54,7 +54,7 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 170,000+ scientists worldwide. 158 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 33512,
+      "stars": 33515,
       "forks": 3283,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
@@ -322,7 +322,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 24999,
+      "stars": 25001,
       "forks": 2791,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
@@ -370,7 +370,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 24885,
+      "stars": 24888,
       "forks": 1257,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -1335,26 +1335,6 @@
       "alreadyCurated": false,
       "suggestedCategory": "chinese-localization",
       "suggestedAudiences": ["developer", "beginner"],
-      "confidence": 70
-    },
-    {
-      "repo": "pjj1234/skill-md2pdf",
-      "name": "skill-md2pdf",
-      "description": "中文 Markdown 转打印级 PDF 的 Hermes skill — 借鉴 huashu-design 设计语言,Chrome 渲染,支持彩色 emoji、封面、表格",
-      "stars": 0,
-      "forks": 0,
-      "htmlUrl": "https://github.com/pjj1234/skill-md2pdf",
-      "language": "CSS",
-      "topics": [],
-      "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "chinese-skills",
-      "reason": {
-        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
-        "en": "Potential SKILL.md project with Chinese docs or tutorials."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "chinese-localization",
-      "suggestedAudiences": ["design", "productivity", "beginner"],
       "confidence": 70
     },
     {
