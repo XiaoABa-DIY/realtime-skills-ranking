@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-14T20:56:13.049Z",
+  "generatedAt": "2026-08-14T21:28:12.668Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79335,
+      "stars": 79338,
       "forks": 6663,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -262,7 +262,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-      "stars": 26167,
+      "stars": 26168,
       "forks": 2188,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Shell",
@@ -370,7 +370,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 24890,
+      "stars": 24892,
       "forks": 1257,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
