@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T21:28:12.668Z",
+  "generatedAt": "2026-08-14T21:52:18.304Z",
   "source": "github-search",
   "candidates": [
     {
@@ -262,7 +262,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-      "stars": 26168,
+      "stars": 26167,
       "forks": 2188,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Shell",
@@ -370,7 +370,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 24892,
+      "stars": 24896,
       "forks": 1257,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -390,7 +390,7 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 16025,
+      "stars": 16024,
       "forks": 1491,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
@@ -414,7 +414,7 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 2914,
+      "stars": 2915,
       "forks": 479,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
