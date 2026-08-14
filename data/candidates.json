@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T16:33:13.089Z",
+  "generatedAt": "2026-08-14T17:38:43.308Z",
   "source": "github-search",
   "candidates": [
     {
@@ -321,7 +321,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 24998,
+      "stars": 24999,
       "forks": 2791,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
@@ -369,7 +369,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 24861,
+      "stars": 24871,
       "forks": 1255,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -389,7 +389,7 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 16023,
+      "stars": 16025,
       "forks": 1491,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
@@ -413,7 +413,7 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 2913,
+      "stars": 2914,
       "forks": 479,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
