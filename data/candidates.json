@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-15T12:39:27.010Z",
+  "generatedAt": "2026-08-15T13:17:49.044Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79372,
+      "stars": 79376,
       "forks": 6667,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -54,8 +54,8 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 170,000+ scientists worldwide. 161 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 33568,
-      "forks": 3285,
+      "stars": 33570,
+      "forks": 3286,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -262,7 +262,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-      "stars": 26171,
+      "stars": 26173,
       "forks": 2188,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Shell",
@@ -319,6 +319,26 @@
       "confidence": 100
     },
     {
+      "repo": "Nutlope/hallmark",
+      "name": "hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "stars": 25022,
+      "forks": 1269,
+      "htmlUrl": "https://github.com/Nutlope/hallmark",
+      "language": "CSS",
+      "topics": [],
+      "skillMdPaths": ["skills/hallmark/SKILL.md"],
+      "matchedQuery": "codex-skills",
+      "reason": {
+        "zh": "可能适配 Codex 或 SKILL.md 标准的开发者技能项目。",
+        "en": "Potential developer skill project compatible with Codex or the SKILL.md standard."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "developer",
+      "suggestedAudiences": ["developer", "design"],
+      "confidence": 70
+    },
+    {
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
@@ -367,31 +387,11 @@
       "confidence": 100
     },
     {
-      "repo": "Nutlope/hallmark",
-      "name": "hallmark",
-      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25017,
-      "forks": 1269,
-      "htmlUrl": "https://github.com/Nutlope/hallmark",
-      "language": "CSS",
-      "topics": [],
-      "skillMdPaths": ["skills/hallmark/SKILL.md"],
-      "matchedQuery": "codex-skills",
-      "reason": {
-        "zh": "可能适配 Codex 或 SKILL.md 标准的开发者技能项目。",
-        "en": "Potential developer skill project compatible with Codex or the SKILL.md standard."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "developer",
-      "suggestedAudiences": ["developer", "design"],
-      "confidence": 70
-    },
-    {
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
       "stars": 16032,
-      "forks": 1493,
+      "forks": 1494,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -1001,10 +1001,61 @@
       "confidence": 100
     },
     {
+      "repo": "comsky/remy-skill-recipes",
+      "name": "remy-skill-recipes",
+      "description": "Engineering-grade SKILL.md recipes for LLM agents: 12 structured workflows for review, docs, research, and GitHub automation.",
+      "stars": 12,
+      "forks": 1,
+      "htmlUrl": "https://github.com/comsky/remy-skill-recipes",
+      "language": "Python",
+      "topics": [
+        "ai-agents",
+        "automation",
+        "claude-code",
+        "codex",
+        "copilot",
+        "cursor",
+        "github",
+        "llm",
+        "prompt-engineering",
+        "skill-md",
+        "vscode"
+      ],
+      "skillMdPaths": [
+        "skills/architecture-spec/SKILL.md",
+        "skills/branch-context-check/SKILL.md",
+        "skills/change-reaudit/SKILL.md",
+        "skills/cjk-text-wrap-audit/SKILL.md",
+        "skills/competitive-feature-benchmark/SKILL.md",
+        "skills/docs-finalize-and-commit/SKILL.md",
+        "skills/finalize-and-commit/SKILL.md",
+        "skills/frontend-decision-sync/SKILL.md",
+        "skills/gh-ship-pr/SKILL.md",
+        "skills/notion-format/SKILL.md",
+        "skills/oss-code-analysis/SKILL.md",
+        "skills/ux-sentinel/SKILL.md"
+      ],
+      "matchedQuery": "research-skills",
+      "reason": {
+        "zh": "可能包含研究、资料整理或报告生成相关 Skill。",
+        "en": "Potential research, synthesis, or report-generation skill repository."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "data",
+      "suggestedAudiences": [
+        "developer",
+        "writing",
+        "design",
+        "data",
+        "productivity"
+      ],
+      "confidence": 100
+    },
+    {
       "repo": "dhicoc/dsh-reverse-skill",
       "name": "dsh-reverse-skill",
       "description": "Complete reverse-skill (85 SKILL.md) as a DeepSeek Harness (dsh) Cordis plugin — reverse engineering, authorized pentesting and security research skill pack.",
-      "stars": 13,
+      "stars": 12,
       "forks": 4,
       "htmlUrl": "https://github.com/dhicoc/dsh-reverse-skill",
       "language": "PowerShell",
@@ -1069,57 +1120,6 @@
       "alreadyCurated": false,
       "suggestedCategory": "data",
       "suggestedAudiences": ["developer", "data", "productivity"],
-      "confidence": 100
-    },
-    {
-      "repo": "comsky/remy-skill-recipes",
-      "name": "remy-skill-recipes",
-      "description": "Engineering-grade SKILL.md recipes for LLM agents: 12 structured workflows for review, docs, research, and GitHub automation.",
-      "stars": 12,
-      "forks": 1,
-      "htmlUrl": "https://github.com/comsky/remy-skill-recipes",
-      "language": "Python",
-      "topics": [
-        "ai-agents",
-        "automation",
-        "claude-code",
-        "codex",
-        "copilot",
-        "cursor",
-        "github",
-        "llm",
-        "prompt-engineering",
-        "skill-md",
-        "vscode"
-      ],
-      "skillMdPaths": [
-        "skills/architecture-spec/SKILL.md",
-        "skills/branch-context-check/SKILL.md",
-        "skills/change-reaudit/SKILL.md",
-        "skills/cjk-text-wrap-audit/SKILL.md",
-        "skills/competitive-feature-benchmark/SKILL.md",
-        "skills/docs-finalize-and-commit/SKILL.md",
-        "skills/finalize-and-commit/SKILL.md",
-        "skills/frontend-decision-sync/SKILL.md",
-        "skills/gh-ship-pr/SKILL.md",
-        "skills/notion-format/SKILL.md",
-        "skills/oss-code-analysis/SKILL.md",
-        "skills/ux-sentinel/SKILL.md"
-      ],
-      "matchedQuery": "research-skills",
-      "reason": {
-        "zh": "可能包含研究、资料整理或报告生成相关 Skill。",
-        "en": "Potential research, synthesis, or report-generation skill repository."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "data",
-      "suggestedAudiences": [
-        "developer",
-        "writing",
-        "design",
-        "data",
-        "productivity"
-      ],
       "confidence": 100
     },
     {
