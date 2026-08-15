@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-15T13:17:49.044Z",
+  "generatedAt": "2026-08-15T13:52:10.452Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79376,
+      "stars": 79379,
       "forks": 6667,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -322,7 +322,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25022,
+      "stars": 25026,
       "forks": 1269,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -414,7 +414,7 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 2920,
+      "stars": 2921,
       "forks": 479,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
