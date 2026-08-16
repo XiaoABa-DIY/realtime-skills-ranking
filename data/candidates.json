@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T22:47:14.133Z",
+  "generatedAt": "2026-08-16T23:20:54.622Z",
   "source": "github-search",
   "candidates": [
     {
@@ -322,7 +322,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25290,
+      "stars": 25295,
       "forks": 1286,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -390,7 +390,7 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 16058,
+      "stars": 16059,
       "forks": 1496,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
