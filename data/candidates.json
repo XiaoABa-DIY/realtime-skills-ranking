@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-16T13:19:35.161Z",
+  "generatedAt": "2026-08-16T13:53:05.863Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79473,
+      "stars": 79475,
       "forks": 6674,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -55,7 +55,7 @@
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 170,000+ scientists worldwide. 161 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
       "stars": 33635,
-      "forks": 3289,
+      "forks": 3290,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -322,7 +322,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25215,
+      "stars": 25219,
       "forks": 1283,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -342,7 +342,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 25042,
+      "stars": 25043,
       "forks": 2791,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
@@ -390,7 +390,7 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 16052,
+      "stars": 16053,
       "forks": 1497,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
@@ -1313,6 +1313,32 @@
       "confidence": 100
     },
     {
+      "repo": "MNICKZ/docs-driven-workflow",
+      "name": "docs-driven-workflow",
+      "description": "Stop AI coding agents from shipping undocumented changes — declare scope before editing, log every change after. Claude Skill / SKILL.md, Chinese instructions with EN+中文 triggers.",
+      "stars": 1,
+      "forks": 0,
+      "htmlUrl": "https://github.com/MNICKZ/docs-driven-workflow",
+      "language": "",
+      "topics": [
+        "agent-skills",
+        "ai-workflows",
+        "claude-code",
+        "claude-skills",
+        "skill-md"
+      ],
+      "skillMdPaths": ["SKILL.md"],
+      "matchedQuery": "chinese-skills",
+      "reason": {
+        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
+        "en": "Potential SKILL.md project with Chinese docs or tutorials."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "chinese-localization",
+      "suggestedAudiences": ["developer", "productivity", "beginner"],
+      "confidence": 70
+    },
+    {
       "repo": "Yangge521/dev-skills-zh",
       "name": "dev-skills-zh",
       "description": "中文开发者 AI Agent 技能包 | 21 SKILL.md for Claude Code / Cursor / Codex / Gemini CLI | 含 GPU 视频推理压测实战数据",
@@ -1359,37 +1385,6 @@
         "beginner"
       ],
       "confidence": 100
-    },
-    {
-      "repo": "codeErrorSleep/auntie-letter-style",
-      "name": "auntie-letter-style",
-      "description": "把粗俗 / 现代中文, 一键改写成《给阿嬷的情书》那种'半文半白、克制深情'的古风雅句。A SKILL.md for Claude Code / OpenCode / Codex / any LLM.",
-      "stars": 0,
-      "forks": 0,
-      "htmlUrl": "https://github.com/codeErrorSleep/auntie-letter-style",
-      "language": "",
-      "topics": [
-        "agent-skills",
-        "ai-agent",
-        "ai-skills",
-        "chinese",
-        "classical-chinese",
-        "claude-code",
-        "codex",
-        "llm",
-        "opencode",
-        "prompt-engineering"
-      ],
-      "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "chinese-skills",
-      "reason": {
-        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
-        "en": "Potential SKILL.md project with Chinese docs or tutorials."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "chinese-localization",
-      "suggestedAudiences": ["developer", "writing", "beginner"],
-      "confidence": 70
     },
     {
       "repo": "feeling6667/skill-cn-locale",
