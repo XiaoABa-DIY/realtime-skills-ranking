@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-16T14:23:44.655Z",
+  "generatedAt": "2026-08-16T14:49:49.242Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79480,
-      "forks": 6674,
+      "stars": 79486,
+      "forks": 6675,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
       "topics": [
@@ -262,7 +262,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-      "stars": 26194,
+      "stars": 26199,
       "forks": 2190,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Shell",
@@ -322,7 +322,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25224,
+      "stars": 25229,
       "forks": 1283,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -342,7 +342,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 25045,
+      "stars": 25048,
       "forks": 2791,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
@@ -914,7 +914,7 @@
       "repo": "dhicoc/dsh-reverse-skill",
       "name": "dsh-reverse-skill",
       "description": "Complete reverse-skill (85 SKILL.md) as a DeepSeek Harness (dsh) Cordis plugin — reverse engineering, authorized pentesting and security research skill pack.",
-      "stars": 19,
+      "stars": 20,
       "forks": 5,
       "htmlUrl": "https://github.com/dhicoc/dsh-reverse-skill",
       "language": "PowerShell",
@@ -1213,6 +1213,32 @@
       "confidence": 70
     },
     {
+      "repo": "MNICKZ/docs-driven-workflow",
+      "name": "docs-driven-workflow",
+      "description": "Stop AI coding agents from shipping undocumented changes — declare scope before editing, log every change after. Claude Skill / SKILL.md, Chinese instructions with EN+中文 triggers.",
+      "stars": 2,
+      "forks": 0,
+      "htmlUrl": "https://github.com/MNICKZ/docs-driven-workflow",
+      "language": "",
+      "topics": [
+        "agent-skills",
+        "ai-workflows",
+        "claude-code",
+        "claude-skills",
+        "skill-md"
+      ],
+      "skillMdPaths": ["SKILL.md"],
+      "matchedQuery": "chinese-skills",
+      "reason": {
+        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
+        "en": "Potential SKILL.md project with Chinese docs or tutorials."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "chinese-localization",
+      "suggestedAudiences": ["developer", "productivity", "beginner"],
+      "confidence": 70
+    },
+    {
       "repo": "ney1464/litflow",
       "name": "litflow",
       "description": "LitFlow 是一个面向科研论文精读的通用 agent skill，适用于 Codex、Hermes 及其他兼容 SKILL.md 的智能体。它可以辅助完成论文分诊、全文精读、关键图表提取、中文 Obsidian 笔记生成，以及概念、人物、方法和创新点索引沉淀，适合用于文献阅读、课题积累和综述写作准备。",
@@ -1311,32 +1337,6 @@
       "suggestedCategory": "chinese-localization",
       "suggestedAudiences": ["developer", "productivity", "beginner"],
       "confidence": 100
-    },
-    {
-      "repo": "MNICKZ/docs-driven-workflow",
-      "name": "docs-driven-workflow",
-      "description": "Stop AI coding agents from shipping undocumented changes — declare scope before editing, log every change after. Claude Skill / SKILL.md, Chinese instructions with EN+中文 triggers.",
-      "stars": 1,
-      "forks": 0,
-      "htmlUrl": "https://github.com/MNICKZ/docs-driven-workflow",
-      "language": "",
-      "topics": [
-        "agent-skills",
-        "ai-workflows",
-        "claude-code",
-        "claude-skills",
-        "skill-md"
-      ],
-      "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "chinese-skills",
-      "reason": {
-        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
-        "en": "Potential SKILL.md project with Chinese docs or tutorials."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "chinese-localization",
-      "suggestedAudiences": ["developer", "productivity", "beginner"],
-      "confidence": 70
     },
     {
       "repo": "Yangge521/dev-skills-zh",
