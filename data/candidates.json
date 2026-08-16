@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-16T21:20:56.596Z",
+  "generatedAt": "2026-08-16T21:45:36.924Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79513,
+      "stars": 79514,
       "forks": 6679,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -263,7 +263,7 @@
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
       "stars": 26199,
-      "forks": 2190,
+      "forks": 2189,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Shell",
       "topics": [
@@ -322,7 +322,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25283,
+      "stars": 25286,
       "forks": 1286,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -342,7 +342,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 25050,
+      "stars": 25052,
       "forks": 2791,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
