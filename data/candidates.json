@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T23:20:54.622Z",
+  "generatedAt": "2026-08-16T23:44:53.577Z",
   "source": "github-search",
   "candidates": [
     {
@@ -322,7 +322,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25295,
+      "stars": 25297,
       "forks": 1286,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
