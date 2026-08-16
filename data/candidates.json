@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T19:02:43.927Z",
+  "generatedAt": "2026-08-16T19:33:43.842Z",
   "source": "github-search",
   "candidates": [
     {
@@ -322,8 +322,8 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25264,
-      "forks": 1285,
+      "stars": 25268,
+      "forks": 1286,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
       "topics": [],
@@ -342,7 +342,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 25049,
+      "stars": 25050,
       "forks": 2791,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
