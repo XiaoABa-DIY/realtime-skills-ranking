@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-16T11:28:40.787Z",
+  "generatedAt": "2026-08-16T11:49:31.013Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79468,
+      "stars": 79470,
       "forks": 6675,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -322,8 +322,8 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25204,
-      "forks": 1282,
+      "stars": 25208,
+      "forks": 1283,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
       "topics": [],
@@ -342,7 +342,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 25040,
+      "stars": 25041,
       "forks": 2791,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
@@ -611,7 +611,7 @@
       "name": "ecommerce-visual-copywriting-skill",
       "description": "电商视觉文案设计SOP Skill - 让电商设计小白也能一键做出5年资深设计经验的商品图片.兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent",
       "stars": 601,
-      "forks": 73,
+      "forks": 74,
       "htmlUrl": "https://github.com/feichanggege/ecommerce-visual-copywriting-skill",
       "language": "Python",
       "topics": [],
@@ -1273,6 +1273,46 @@
       "confidence": 70
     },
     {
+      "repo": "hackerFish/awesome-dsh-skills",
+      "name": "awesome-dsh-skills",
+      "description": "实测可用的 DeepSeek Harness 技能库：每个 SKILL.md 都通过格式校验与加载冒烟，复制即用（中文优先）",
+      "stars": 1,
+      "forks": 0,
+      "htmlUrl": "https://github.com/hackerFish/awesome-dsh-skills",
+      "language": "JavaScript",
+      "topics": [
+        "chinese",
+        "curated-list",
+        "deepseek-harness",
+        "dsh",
+        "dsh-skill",
+        "skills"
+      ],
+      "skillMdPaths": [
+        "skills/dsh-changelog/SKILL.md",
+        "skills/dsh-chinese-docs/SKILL.md",
+        "skills/dsh-code-review/SKILL.md",
+        "skills/dsh-debug-session/SKILL.md",
+        "skills/dsh-dependency-audit/SKILL.md",
+        "skills/dsh-doc-sync/SKILL.md",
+        "skills/dsh-git-commit/SKILL.md",
+        "skills/dsh-plugin-dev/SKILL.md",
+        "skills/dsh-pr-review/SKILL.md",
+        "skills/dsh-refactor-safe/SKILL.md",
+        "skills/dsh-task-breakdown/SKILL.md",
+        "skills/dsh-test-first/SKILL.md"
+      ],
+      "matchedQuery": "chinese-skills",
+      "reason": {
+        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
+        "en": "Potential SKILL.md project with Chinese docs or tutorials."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "chinese-localization",
+      "suggestedAudiences": ["developer", "productivity", "beginner"],
+      "confidence": 100
+    },
+    {
       "repo": "Yangge521/dev-skills-zh",
       "name": "dev-skills-zh",
       "description": "中文开发者 AI Agent 技能包 | 21 SKILL.md for Claude Code / Cursor / Codex / Gemini CLI | 含 GPU 视频推理压测实战数据",
@@ -1369,26 +1409,6 @@
       "alreadyCurated": false,
       "suggestedCategory": "chinese-localization",
       "suggestedAudiences": ["developer", "beginner"],
-      "confidence": 70
-    },
-    {
-      "repo": "pjj1234/skill-md2pdf",
-      "name": "skill-md2pdf",
-      "description": "中文 Markdown 转打印级 PDF 的 Hermes skill — 借鉴 huashu-design 设计语言,Chrome 渲染,支持彩色 emoji、封面、表格",
-      "stars": 0,
-      "forks": 0,
-      "htmlUrl": "https://github.com/pjj1234/skill-md2pdf",
-      "language": "CSS",
-      "topics": [],
-      "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "chinese-skills",
-      "reason": {
-        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
-        "en": "Potential SKILL.md project with Chinese docs or tutorials."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "chinese-localization",
-      "suggestedAudiences": ["design", "productivity", "beginner"],
       "confidence": 70
     },
     {
