@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-17T23:00:47.925Z",
+  "generatedAt": "2026-08-17T23:36:36.381Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79620,
+      "stars": 79622,
       "forks": 6683,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -322,7 +322,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25543,
+      "stars": 25547,
       "forks": 1300,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -507,7 +507,7 @@
       "name": "Claude-OSINT",
       "description": "8 Claude skills · 100+ recon capabilities · 80 secret-regex patterns · 80+ dorks · 9 read-only credential validators · 27 attack-path templates · ~10,000 lines of structured tradecraft. Drop-in SKILL.md files that turn Claude into a god-mode external recon operator for authorized red-team and bug-bounty engagements.",
       "stars": 2306,
-      "forks": 428,
+      "forks": 429,
       "htmlUrl": "https://github.com/elementalsouls/Claude-OSINT",
       "language": "Python",
       "topics": ["agentskills", "claude", "skills"],
