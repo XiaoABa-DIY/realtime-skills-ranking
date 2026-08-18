@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T23:43:55.739Z",
+  "generatedAt": "2026-08-18T23:58:29.209Z",
   "source": "github-search",
   "candidates": [
     {
@@ -54,7 +54,7 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 33833,
+      "stars": 33834,
       "forks": 3301,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
@@ -323,7 +323,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25700,
+      "stars": 25702,
       "forks": 1315,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
