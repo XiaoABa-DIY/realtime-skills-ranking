@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T23:36:31.755Z",
+  "generatedAt": "2026-08-19T23:58:59.291Z",
   "source": "github-search",
   "candidates": [
     {
@@ -263,7 +263,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-      "stars": 26251,
+      "stars": 26252,
       "forks": 2199,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Shell",
@@ -323,7 +323,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25796,
+      "stars": 25798,
       "forks": 1323,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -343,7 +343,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 25165,
+      "stars": 25166,
       "forks": 2796,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
@@ -392,7 +392,7 @@
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
       "stars": 16168,
-      "forks": 1508,
+      "forks": 1509,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
