@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T22:00:55.905Z",
+  "generatedAt": "2026-08-19T22:41:50.717Z",
   "source": "github-search",
   "candidates": [
     {
@@ -323,7 +323,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 25793,
+      "stars": 25794,
       "forks": 1322,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -392,7 +392,7 @@
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
       "stars": 16168,
-      "forks": 1507,
+      "forks": 1508,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -415,7 +415,7 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 2945,
+      "stars": 2944,
       "forks": 480,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
