@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T21:55:31.777Z",
+  "generatedAt": "2026-08-20T22:29:22.221Z",
   "source": "github-search",
   "candidates": [
     {
@@ -323,7 +323,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26150,
+      "stars": 26151,
       "forks": 1337,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -343,7 +343,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 25201,
+      "stars": 25202,
       "forks": 2799,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
@@ -631,7 +631,7 @@
       "repo": "gamedev-skills/awesome-gamedev-agent-skills",
       "name": "awesome-gamedev-agent-skills",
       "description": "67 game-dev skills for AI coding agents — Godot, Unity, Unreal, Phaser, PixiJS, three.js, Bevy, pygame, LÖVE, Roblox. Portable SKILL.md Agent Skills (the format Anthropic launched as Claude Skills), with a router that loads the right skill for your engine and task. Runs in Claude Code, Cursor, Kiro, Codex, Copilot, Gemini CLI and more.",
-      "stars": 576,
+      "stars": 577,
       "forks": 44,
       "htmlUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
       "language": "Python",
