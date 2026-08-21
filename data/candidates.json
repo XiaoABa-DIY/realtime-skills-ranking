@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-21T13:46:33.911Z",
+  "generatedAt": "2026-08-21T14:36:15.850Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 79995,
+      "stars": 80002,
       "forks": 6713,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -54,7 +54,7 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 34054,
+      "stars": 34057,
       "forks": 3311,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26343,
+      "stars": 26346,
       "forks": 1344,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -399,7 +399,8 @@
       "skillMdPaths": [
         "plugins/claude-code/skills/skillopt-sleep/SKILL.md",
         "plugins/codex/skills/skillopt-sleep/SKILL.md",
-        "plugins/cursor/skills/skillopt-sleep/SKILL.md"
+        "plugins/cursor/skills/skillopt-sleep/SKILL.md",
+        "plugins/dsh/skills/skillopt-sleep/SKILL.md"
       ],
       "matchedQuery": "skill-md-stars",
       "reason": {
@@ -409,13 +410,13 @@
       "alreadyCurated": false,
       "suggestedCategory": "prompt-workflow",
       "suggestedAudiences": ["developer"],
-      "confidence": 90
+      "confidence": 100
     },
     {
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 2945,
+      "stars": 2946,
       "forks": 481,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
@@ -570,7 +571,7 @@
       "name": "ecommerce-visual-copywriting-skill",
       "description": "电商视觉文案设计SOP Skill - 让电商设计小白也能一键做出5年资深设计经验的商品图片.兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent",
       "stars": 626,
-      "forks": 76,
+      "forks": 77,
       "htmlUrl": "https://github.com/feichanggege/ecommerce-visual-copywriting-skill",
       "language": "Python",
       "topics": [],
@@ -1071,6 +1072,26 @@
         "beginner"
       ],
       "confidence": 100
+    },
+    {
+      "repo": "sugarforever/open-design-skill",
+      "name": "open-design-skill",
+      "description": "A community SKILL.md companion to Open Design",
+      "stars": 16,
+      "forks": 2,
+      "htmlUrl": "https://github.com/sugarforever/open-design-skill",
+      "language": "JavaScript",
+      "topics": [],
+      "skillMdPaths": ["SKILL.md"],
+      "matchedQuery": "design-skills",
+      "reason": {
+        "zh": "可能包含设计、UI 或多媒体相关 SKILL.md。",
+        "en": "Potential design, UI, or media SKILL.md repository."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "design-media",
+      "suggestedAudiences": ["design"],
+      "confidence": 70
     },
     {
       "repo": "comsky/remy-skill-recipes",
