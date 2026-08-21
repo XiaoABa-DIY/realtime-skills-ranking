@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-08-21T19:41:08.980Z",
+  "generatedAt": "2026-08-21T19:58:08.891Z",
   "source": "agent-skills-radar",
   "categories": [
     {
@@ -99,7 +99,7 @@
       "createdAt": "2026-04-24T03:11:46Z",
       "updatedAt": "2026-08-21T19:37:30Z",
       "pushedAt": "2026-08-20T07:03:35Z",
-      "lastFetchedAt": "2026-08-21T19:41:08.980Z",
+      "lastFetchedAt": "2026-08-21T19:58:08.891Z",
       "fetchStatus": "ok",
       "rank": 1,
       "rankByCategory": 1,
@@ -150,19 +150,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         }
@@ -236,24 +236,24 @@
         "skills/.system/skill-creator/SKILL.md",
         "skills/.system/skill-installer/SKILL.md"
       ],
-      "stars": 25096,
+      "stars": 25097,
       "forks": 1703,
       "openIssues": 289,
-      "watchers": 25096,
+      "watchers": 25097,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/openai/skills",
       "createdAt": "2025-11-25T06:25:42Z",
-      "updatedAt": "2026-08-21T18:17:30Z",
+      "updatedAt": "2026-08-21T19:53:01Z",
       "pushedAt": "2026-07-14T16:47:46Z",
-      "lastFetchedAt": "2026-08-21T19:41:08.980Z",
+      "lastFetchedAt": "2026-08-21T19:58:08.891Z",
       "fetchStatus": "ok",
       "rank": 2,
       "rankByCategory": 1,
-      "growth7d": 156,
-      "growth30d": 1025,
+      "growth7d": 157,
+      "growth30d": 1026,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -296,13 +296,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": false,
           "errors": []
         }
@@ -443,7 +443,7 @@
       "createdAt": "2026-03-09T08:55:36Z",
       "updatedAt": "2026-08-21T17:18:25Z",
       "pushedAt": "2026-06-28T10:05:22Z",
-      "lastFetchedAt": "2026-08-21T19:41:08.980Z",
+      "lastFetchedAt": "2026-08-21T19:58:08.891Z",
       "fetchStatus": "ok",
       "rank": 3,
       "rankByCategory": 1,
@@ -494,19 +494,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         }
@@ -551,7 +551,7 @@
       "createdAt": "2025-10-18T15:01:46Z",
       "updatedAt": "2026-08-21T19:34:03Z",
       "pushedAt": "2026-08-11T17:40:59Z",
-      "lastFetchedAt": "2026-08-21T19:41:08.980Z",
+      "lastFetchedAt": "2026-08-21T19:58:08.891Z",
       "fetchStatus": "ok",
       "rank": 4,
       "rankByCategory": 1,
@@ -596,19 +596,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         }
@@ -696,7 +696,7 @@
       "createdAt": "2025-12-29T05:00:00Z",
       "updatedAt": "2026-08-21T15:44:58Z",
       "pushedAt": "2026-05-07T16:08:07Z",
-      "lastFetchedAt": "2026-08-21T19:41:08.980Z",
+      "lastFetchedAt": "2026-08-21T19:58:08.891Z",
       "fetchStatus": "ok",
       "rank": 5,
       "rankByCategory": 2,
@@ -747,13 +747,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": false,
           "errors": []
         }
@@ -942,7 +942,7 @@
       "createdAt": "2026-05-12T06:26:09Z",
       "updatedAt": "2026-08-21T17:09:55Z",
       "pushedAt": "2026-08-20T12:21:10Z",
-      "lastFetchedAt": "2026-08-21T19:41:08.980Z",
+      "lastFetchedAt": "2026-08-21T19:58:08.891Z",
       "fetchStatus": "ok",
       "rank": 6,
       "rankByCategory": 1,
@@ -987,19 +987,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         }
@@ -10605,7 +10605,7 @@
       "createdAt": "2026-02-13T01:01:34Z",
       "updatedAt": "2026-08-21T13:52:11Z",
       "pushedAt": "2026-07-16T05:31:34Z",
-      "lastFetchedAt": "2026-08-21T19:41:08.980Z",
+      "lastFetchedAt": "2026-08-21T19:58:08.891Z",
       "fetchStatus": "ok",
       "rank": 7,
       "rankByCategory": 1,
@@ -10674,13 +10674,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-21T19:41:12.638Z",
+          "fetchedAt": "2026-08-21T19:58:11.642Z",
           "ok": false,
           "errors": []
         }
@@ -10709,6 +10709,6 @@
   },
   "sourceBreakdown": { "github": 7 },
   "totalEcosystemSources": 6,
-  "lastEcosystemSync": "2026-08-21T19:41:12.638Z",
+  "lastEcosystemSync": "2026-08-21T19:58:11.642Z",
   "hnMentionsCount": 0
 }
