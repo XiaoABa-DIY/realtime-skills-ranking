@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-22T20:29:13.680Z",
+  "generatedAt": "2026-08-22T20:52:27.513Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 80121,
+      "stars": 80122,
       "forks": 6729,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -54,7 +54,7 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 34129,
+      "stars": 34130,
       "forks": 3317,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
@@ -508,7 +508,7 @@
       "repo": "elementalsouls/Claude-OSINT",
       "name": "Claude-OSINT",
       "description": "8 Claude skills · 100+ recon capabilities · 80 secret-regex patterns · 80+ dorks · 9 read-only credential validators · 27 attack-path templates · ~10,000 lines of structured tradecraft. Drop-in SKILL.md files that turn Claude into a god-mode external recon operator for authorized red-team and bug-bounty engagements.",
-      "stars": 2322,
+      "stars": 2323,
       "forks": 432,
       "htmlUrl": "https://github.com/elementalsouls/Claude-OSINT",
       "language": "Python",
