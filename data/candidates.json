@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T09:43:13.089Z",
+  "generatedAt": "2026-08-22T10:01:21.024Z",
   "source": "github-search",
   "candidates": [
     {
@@ -7,7 +7,7 @@
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
       "stars": 80076,
-      "forks": 6721,
+      "forks": 6722,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
       "topics": [
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26456,
+      "stars": 26462,
       "forks": 1350,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -391,7 +391,7 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 16240,
+      "stars": 16241,
       "forks": 1519,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
@@ -632,7 +632,7 @@
       "repo": "gamedev-skills/awesome-gamedev-agent-skills",
       "name": "awesome-gamedev-agent-skills",
       "description": "67 game-dev skills for AI coding agents — Godot, Unity, Unreal, Phaser, PixiJS, three.js, Bevy, pygame, LÖVE, Roblox. Portable SKILL.md Agent Skills (the format Anthropic launched as Claude Skills), with a router that loads the right skill for your engine and task. Runs in Claude Code, Cursor, Kiro, Codex, Copilot, Gemini CLI and more.",
-      "stars": 591,
+      "stars": 592,
       "forks": 46,
       "htmlUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
       "language": "Python",
