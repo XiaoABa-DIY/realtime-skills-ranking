@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-22T19:04:09.930Z",
+  "generatedAt": "2026-08-22T19:35:16.067Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 80116,
+      "stars": 80117,
       "forks": 6729,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26578,
+      "stars": 26580,
       "forks": 1353,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -632,7 +632,7 @@
       "repo": "gamedev-skills/awesome-gamedev-agent-skills",
       "name": "awesome-gamedev-agent-skills",
       "description": "67 game-dev skills for AI coding agents — Godot, Unity, Unreal, Phaser, PixiJS, three.js, Bevy, pygame, LÖVE, Roblox. Portable SKILL.md Agent Skills (the format Anthropic launched as Claude Skills), with a router that loads the right skill for your engine and task. Runs in Claude Code, Cursor, Kiro, Codex, Copilot, Gemini CLI and more.",
-      "stars": 599,
+      "stars": 600,
       "forks": 47,
       "htmlUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
       "language": "Python",
