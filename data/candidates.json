@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T19:56:41.435Z",
+  "generatedAt": "2026-08-23T20:29:24.507Z",
   "source": "github-search",
   "candidates": [
     {
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26733,
+      "stars": 26736,
       "forks": 1363,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -283,7 +283,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-      "stars": 26311,
+      "stars": 26313,
       "forks": 2205,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Shell",
@@ -954,7 +954,7 @@
       "repo": "ElmatadorZ/MoneyAtlas-ClaudeSkill-Agent",
       "name": "MoneyAtlas-ClaudeSkill-Agent",
       "description": "Money Atlas Skill.md (Claude Skill) For AI Agent A Genesis Protocol-powered intelligence system for financial markets, macroeconomics, and geopolitics.  Core Systems - Genesis Protocol (First Principle + System Thinking) - SMC Layer Engine (Quant price structure) ",
-      "stars": 53,
+      "stars": 54,
       "forks": 13,
       "htmlUrl": "https://github.com/ElmatadorZ/MoneyAtlas-ClaudeSkill-Agent",
       "language": "Python",
