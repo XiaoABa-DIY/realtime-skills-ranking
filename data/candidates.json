@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-23T09:43:43.312Z",
+  "generatedAt": "2026-08-23T10:02:00.364Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 80169,
+      "stars": 80173,
       "forks": 6733,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26683,
+      "stars": 26682,
       "forks": 1357,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -343,8 +343,8 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 25260,
-      "forks": 2802,
+      "stars": 25261,
+      "forks": 2803,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
       "topics": [
@@ -539,8 +539,8 @@
       "repo": "dzcmemory-web/bazi-ziwei-skill",
       "name": "bazi-ziwei-skill",
       "description": "AI 八字 + 紫微斗数排盘与综合印证 Skill：算法精准排盘（不靠 LLM 猜），三种分析模式，一键生成水墨风 HTML 命盘海报。兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent。",
-      "stars": 870,
-      "forks": 136,
+      "stars": 871,
+      "forks": 137,
       "htmlUrl": "https://github.com/dzcmemory-web/bazi-ziwei-skill",
       "language": "TypeScript",
       "topics": [
