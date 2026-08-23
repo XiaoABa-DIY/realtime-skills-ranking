@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T19:35:15.031Z",
+  "generatedAt": "2026-08-23T19:56:41.435Z",
   "source": "github-search",
   "candidates": [
     {
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26730,
+      "stars": 26733,
       "forks": 1363,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -508,7 +508,7 @@
       "repo": "elementalsouls/Claude-OSINT",
       "name": "Claude-OSINT",
       "description": "8 Claude skills · 100+ recon capabilities · 80 secret-regex patterns · 80+ dorks · 9 read-only credential validators · 27 attack-path templates · ~10,000 lines of structured tradecraft. Drop-in SKILL.md files that turn Claude into a god-mode external recon operator for authorized red-team and bug-bounty engagements.",
-      "stars": 2326,
+      "stars": 2327,
       "forks": 434,
       "htmlUrl": "https://github.com/elementalsouls/Claude-OSINT",
       "language": "Python",
