@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-23T22:23:08.887Z",
+  "generatedAt": "2026-08-23T22:48:36.047Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 80215,
+      "stars": 80216,
       "forks": 6736,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26740,
+      "stars": 26742,
       "forks": 1365,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -570,7 +570,7 @@
       "repo": "feichanggege/ecommerce-visual-copywriting-skill",
       "name": "ecommerce-visual-copywriting-skill",
       "description": "电商视觉文案设计SOP Skill - 让电商设计小白也能一键做出5年资深设计经验的商品图片.兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent",
-      "stars": 635,
+      "stars": 636,
       "forks": 78,
       "htmlUrl": "https://github.com/feichanggege/ecommerce-visual-copywriting-skill",
       "language": "Python",
