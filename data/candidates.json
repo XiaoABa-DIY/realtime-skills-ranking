@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-24T17:16:16.257Z",
+  "generatedAt": "2026-08-24T17:58:02.624Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 80322,
-      "forks": 6756,
+      "stars": 80323,
+      "forks": 6755,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
       "topics": [
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26856,
+      "stars": 26859,
       "forks": 1370,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -741,7 +741,7 @@
       "repo": "tizzy916/humanities-writing-companion",
       "name": "humanities-writing-companion",
       "description": "End-to-end humanities writing assistant — an Agent Skill (open SKILL.md format). 11 modes from Socratic research-question sharpening through AI-use disclosure. Bilingual (EN/中文), discipline-aware (literature/history/philosophy/art/religion/linguistics + cross-disciplinary). Four-layer critique, calibratable devils advocate, voice preservation.",
-      "stars": 363,
+      "stars": 364,
       "forks": 42,
       "htmlUrl": "https://github.com/tizzy916/humanities-writing-companion",
       "language": "Python",
