@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T19:30:32.983Z",
+  "generatedAt": "2026-08-24T20:02:54.606Z",
   "source": "github-search",
   "candidates": [
     {
@@ -54,7 +54,7 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 34271,
+      "stars": 34276,
       "forks": 3322,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26865,
+      "stars": 26864,
       "forks": 1371,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -283,7 +283,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-      "stars": 26337,
+      "stars": 26338,
       "forks": 2206,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Shell",
@@ -343,7 +343,7 @@
       "repo": "JimLiu/baoyu-skills",
       "name": "baoyu-skills",
       "description": "",
-      "stars": 25291,
+      "stars": 25290,
       "forks": 2805,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
