@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-08-25T19:55:45.912Z",
+  "generatedAt": "2026-08-25T20:31:40.654Z",
   "source": "agent-skills-radar",
   "categories": [
     {
@@ -99,7 +99,7 @@
       "createdAt": "2026-04-24T03:11:46Z",
       "updatedAt": "2026-08-25T19:21:35Z",
       "pushedAt": "2026-08-25T02:43:05Z",
-      "lastFetchedAt": "2026-08-25T19:55:45.912Z",
+      "lastFetchedAt": "2026-08-25T20:31:40.654Z",
       "fetchStatus": "ok",
       "rank": 1,
       "rankByCategory": 1,
@@ -150,19 +150,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         }
@@ -248,7 +248,7 @@
       "createdAt": "2025-11-25T06:25:42Z",
       "updatedAt": "2026-08-25T17:50:58Z",
       "pushedAt": "2026-07-14T16:47:46Z",
-      "lastFetchedAt": "2026-08-25T19:55:45.912Z",
+      "lastFetchedAt": "2026-08-25T20:31:40.654Z",
       "fetchStatus": "ok",
       "rank": 2,
       "rankByCategory": 1,
@@ -296,13 +296,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": false,
           "errors": []
         }
@@ -443,7 +443,7 @@
       "createdAt": "2026-03-09T08:55:36Z",
       "updatedAt": "2026-08-25T13:59:13Z",
       "pushedAt": "2026-06-28T10:05:22Z",
-      "lastFetchedAt": "2026-08-25T19:55:45.912Z",
+      "lastFetchedAt": "2026-08-25T20:31:40.654Z",
       "fetchStatus": "ok",
       "rank": 3,
       "rankByCategory": 1,
@@ -494,19 +494,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         }
@@ -526,7 +526,20 @@
       "readmeSnippetEn": "# Agent Skill Creator\n\n**Turn work you already do into a reusable agent workflow—and see it work once before calling it done.**\n\n[![CI](https://github.com/FrancyJGLisboa/agent-skill-creator/actions/workflows/ci.yml/badge.svg)](https://github.com/FrancyJGLisboa/agent-skill-creator/actions/workflows/ci.yml)\n[![Agent Skills Open Standard](https://img.shields.io/badge/Agent%20Skills-Open%20Standard-blue)](https://github.com/anthropics/agent-skills-spec)\n[![Platforms](https://img.shields.io/badge/installs%20on-17%20platforms-7c3aed)](docs/INSTALL.md)\n[![Version](https://img.shields.io/badge/version-6.1.0-brightgreen)]()\n[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]()\n\n[Website](https://francyjglisboa.github.io/agent-skill-creator/) ·\n[Installation](docs/INSTALL.md) ·\n[Governed team marketplace](docs/TEAM_MARKETPLACE.md) ·\n[GitLab team registry](docs/GITLAB_TEAM_REGISTR...",
       "categoryCode": "prompt-workflow",
       "categoryName": { "zh": "提示词/工作流", "en": "Prompt & Workflow" },
-      "tags": ["Skill创建", "工作流", "模板"],
+      "tags": [
+        "Skill创建",
+        "工作流",
+        "模板",
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "cursor",
+        "developer-tools",
+        "evals",
+        "github-copilot",
+        "governance"
+      ],
       "audiences": ["developer", "productivity", "beginner"],
       "useCases": [
         {
@@ -545,13 +558,24 @@
       "watchers": 2327,
       "language": "Python",
       "license": "MIT",
-      "topics": [],
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "cursor",
+        "developer-tools",
+        "evals",
+        "github-copilot",
+        "governance",
+        "skill-marketplace"
+      ],
       "homepage": "https://francyjglisboa.github.io/agent-skill-creator/",
       "htmlUrl": "https://github.com/FrancyJGLisboa/agent-skill-creator",
       "createdAt": "2025-10-18T15:01:46Z",
-      "updatedAt": "2026-08-25T19:26:40Z",
+      "updatedAt": "2026-08-25T20:30:03Z",
       "pushedAt": "2026-08-25T17:56:24Z",
-      "lastFetchedAt": "2026-08-25T19:55:45.912Z",
+      "lastFetchedAt": "2026-08-25T20:31:40.654Z",
       "fetchStatus": "ok",
       "rank": 4,
       "rankByCategory": 1,
@@ -571,6 +595,18 @@
           "badge": "Claude Compatible"
         },
         {
+          "ecosystem": "codex",
+          "compatible": true,
+          "verified": false,
+          "badge": "Codex Compatible"
+        },
+        {
+          "ecosystem": "copilot",
+          "compatible": true,
+          "verified": false,
+          "badge": "Copilot Compatible"
+        },
+        {
           "ecosystem": "universal",
           "compatible": true,
           "verified": false,
@@ -580,35 +616,35 @@
       "hnMetric": null,
       "productHuntVotes": null,
       "relatedMCPs": [],
-      "popularityScore": 83,
+      "popularityScore": 93,
       "activityScore": 30,
       "adoptionScore": 100,
       "officialScore": 0,
       "ecosystemScore": 0,
-      "compositeScore": 48,
+      "compositeScore": 51,
       "releaseCount": 0,
       "latestRelease": "",
       "weeklyCommits": 5,
       "contributors": 3,
-      "platform": "generic",
+      "platform": "claude",
       "safetyLevel": "safe",
       "safetyNotes": [],
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         }
@@ -696,7 +732,7 @@
       "createdAt": "2025-12-29T05:00:00Z",
       "updatedAt": "2026-08-25T19:42:25Z",
       "pushedAt": "2026-08-23T03:25:28Z",
-      "lastFetchedAt": "2026-08-25T19:55:45.912Z",
+      "lastFetchedAt": "2026-08-25T20:31:40.654Z",
       "fetchStatus": "ok",
       "rank": 5,
       "rankByCategory": 2,
@@ -747,13 +783,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": false,
           "errors": []
         }
@@ -940,9 +976,9 @@
       "homepage": "",
       "htmlUrl": "https://github.com/redfox-data/redfox-community",
       "createdAt": "2026-05-12T06:26:09Z",
-      "updatedAt": "2026-08-25T19:51:20Z",
+      "updatedAt": "2026-08-25T19:59:02Z",
       "pushedAt": "2026-08-24T10:05:33Z",
-      "lastFetchedAt": "2026-08-25T19:55:45.912Z",
+      "lastFetchedAt": "2026-08-25T20:31:40.654Z",
       "fetchStatus": "ok",
       "rank": 6,
       "rankByCategory": 1,
@@ -987,19 +1023,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         }
@@ -10605,7 +10641,7 @@
       "createdAt": "2026-02-13T01:01:34Z",
       "updatedAt": "2026-08-25T05:53:44Z",
       "pushedAt": "2026-07-16T05:31:34Z",
-      "lastFetchedAt": "2026-08-25T19:55:45.912Z",
+      "lastFetchedAt": "2026-08-25T20:31:40.654Z",
       "fetchStatus": "ok",
       "rank": 7,
       "rankByCategory": 1,
@@ -10674,13 +10710,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-08-25T19:55:50.068Z",
+          "fetchedAt": "2026-08-25T20:31:44.234Z",
           "ok": false,
           "errors": []
         }
@@ -10694,21 +10730,21 @@
   ],
   "ecosystemBreakdown": {
     "claude": 6,
-    "codex": 5,
-    "copilot": 1,
+    "codex": 6,
+    "copilot": 2,
     "universal": 7,
     "huggingface": 1,
     "mcp": 1
   },
   "platformBreakdown": {
-    "claude": 3,
+    "claude": 4,
     "codex": 2,
     "copilot": 0,
-    "generic": 2,
+    "generic": 1,
     "unknown": 0
   },
   "sourceBreakdown": { "github": 7 },
   "totalEcosystemSources": 6,
-  "lastEcosystemSync": "2026-08-25T19:55:50.068Z",
+  "lastEcosystemSync": "2026-08-25T20:31:44.235Z",
   "hnMentionsCount": 0
 }
