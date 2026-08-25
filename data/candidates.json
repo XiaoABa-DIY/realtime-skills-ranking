@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-25T21:44:18.960Z",
+  "generatedAt": "2026-08-25T22:02:46.346Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 80476,
+      "stars": 80477,
       "forks": 6771,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -264,7 +264,7 @@
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
       "stars": 26989,
-      "forks": 1374,
+      "forks": 1373,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
       "topics": [],
