@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-25T20:31:40.654Z",
+  "generatedAt": "2026-08-25T21:03:50.747Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 80471,
+      "stars": 80475,
       "forks": 6771,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -55,7 +55,7 @@
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
       "stars": 34445,
-      "forks": 3344,
+      "forks": 3345,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26977,
+      "stars": 26981,
       "forks": 1374,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -283,7 +283,7 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-      "stars": 26358,
+      "stars": 26359,
       "forks": 2210,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Shell",
@@ -416,7 +416,7 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 2963,
+      "stars": 2964,
       "forks": 482,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
@@ -534,37 +534,6 @@
       "suggestedCategory": "prompt-workflow",
       "suggestedAudiences": ["beginner"],
       "confidence": 100
-    },
-    {
-      "repo": "dzcmemory-web/bazi-ziwei-skill",
-      "name": "bazi-ziwei-skill",
-      "description": "AI 八字 + 紫微斗数排盘与综合印证 Skill：算法精准排盘（不靠 LLM 猜），三种分析模式，一键生成水墨风 HTML 命盘海报。兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent。",
-      "stars": 903,
-      "forks": 140,
-      "htmlUrl": "https://github.com/dzcmemory-web/bazi-ziwei-skill",
-      "language": "TypeScript",
-      "topics": [
-        "ai-agent",
-        "bazi",
-        "bazi-suanming",
-        "chinese-astrology",
-        "claude-skill",
-        "fortune-telling",
-        "metaphysics",
-        "skill-md",
-        "ziwei",
-        "ziwei-doushu"
-      ],
-      "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "skill-md-stars",
-      "reason": {
-        "zh": "GitHub 仓库描述中明确提到 SKILL.md 和 skills。",
-        "en": "Repository description mentions SKILL.md and skills."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "prompt-workflow",
-      "suggestedAudiences": ["developer", "data"],
-      "confidence": 70
     },
     {
       "repo": "feichanggege/ecommerce-visual-copywriting-skill",
@@ -763,13 +732,13 @@
         "voice-preservation"
       ],
       "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "chinese-skills",
+      "matchedQuery": "skill-md-stars",
       "reason": {
-        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
-        "en": "Potential SKILL.md project with Chinese docs or tutorials."
+        "zh": "GitHub 仓库描述中明确提到 SKILL.md 和 skills。",
+        "en": "Repository description mentions SKILL.md and skills."
       },
       "alreadyCurated": false,
-      "suggestedCategory": "chinese-localization",
+      "suggestedCategory": "prompt-workflow",
       "suggestedAudiences": [
         "developer",
         "writing",
