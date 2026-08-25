@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-25T04:40:00.768Z",
+  "generatedAt": "2026-08-25T05:17:28.602Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 80377,
+      "stars": 80378,
       "forks": 6763,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -54,7 +54,7 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 34328,
+      "stars": 34333,
       "forks": 3328,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 26899,
+      "stars": 26901,
       "forks": 1373,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -391,8 +391,8 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 16308,
-      "forks": 1532,
+      "stars": 16309,
+      "forks": 1533,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -1120,37 +1120,10 @@
       "confidence": 70
     },
     {
-      "repo": "haotong-Duan/tensor-network-research",
-      "name": "tensor-network-research",
-      "description": "A research-grade Agent Skill for tensor network research — works with any agent supporting the SKILL.md standard",
-      "stars": 5,
-      "forks": 0,
-      "htmlUrl": "https://github.com/haotong-Duan/tensor-network-research",
-      "language": "",
-      "topics": [
-        "agent-skill",
-        "machine-learning",
-        "matrix-product-states",
-        "scientific-computing",
-        "tensor-decomposition",
-        "tensor-network"
-      ],
-      "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "research-skills",
-      "reason": {
-        "zh": "可能包含研究、资料整理或报告生成相关 Skill。",
-        "en": "Potential research, synthesis, or report-generation skill repository."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "data",
-      "suggestedAudiences": ["data", "beginner"],
-      "confidence": 70
-    },
-    {
       "repo": "hackerFish/awesome-dsh-skills",
       "name": "awesome-dsh-skills",
       "description": "实测可用的 DeepSeek Harness 技能库：每个 SKILL.md 都通过格式校验与加载冒烟，复制即用（中文优先）",
-      "stars": 4,
+      "stars": 5,
       "forks": 1,
       "htmlUrl": "https://github.com/hackerFish/awesome-dsh-skills",
       "language": "JavaScript",
@@ -1195,6 +1168,33 @@
       "suggestedCategory": "chinese-localization",
       "suggestedAudiences": ["developer", "productivity", "beginner"],
       "confidence": 100
+    },
+    {
+      "repo": "haotong-Duan/tensor-network-research",
+      "name": "tensor-network-research",
+      "description": "A research-grade Agent Skill for tensor network research — works with any agent supporting the SKILL.md standard",
+      "stars": 5,
+      "forks": 0,
+      "htmlUrl": "https://github.com/haotong-Duan/tensor-network-research",
+      "language": "",
+      "topics": [
+        "agent-skill",
+        "machine-learning",
+        "matrix-product-states",
+        "scientific-computing",
+        "tensor-decomposition",
+        "tensor-network"
+      ],
+      "skillMdPaths": ["SKILL.md"],
+      "matchedQuery": "research-skills",
+      "reason": {
+        "zh": "可能包含研究、资料整理或报告生成相关 Skill。",
+        "en": "Potential research, synthesis, or report-generation skill repository."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "data",
+      "suggestedAudiences": ["data", "beginner"],
+      "confidence": 70
     },
     {
       "repo": "MNICKZ/docs-driven-workflow",
