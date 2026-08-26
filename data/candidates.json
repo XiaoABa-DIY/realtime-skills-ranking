@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-26T04:40:51.811Z",
+  "generatedAt": "2026-08-26T05:17:07.378Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 80512,
+      "stars": 80513,
       "forks": 6775,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -54,8 +54,8 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 34480,
-      "forks": 3347,
+      "stars": 34483,
+      "forks": 3348,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -263,7 +263,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 27050,
+      "stars": 27054,
       "forks": 1378,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -344,7 +344,7 @@
       "name": "baoyu-skills",
       "description": "",
       "stars": 25338,
-      "forks": 2812,
+      "forks": 2813,
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
       "language": "TypeScript",
       "topics": [
