@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-31T20:41:25.829Z",
+  "generatedAt": "2026-09-01T00:05:40.389Z",
   "retentionDays": 180,
   "repositories": [
     {
@@ -533,6 +533,13 @@
         },
         {
           "date": "2026-08-31",
+          "stars": 2591,
+          "forks": 247,
+          "rank": 3,
+          "rankByCategory": 1
+        },
+        {
+          "date": "2026-09-01",
           "stars": 2591,
           "forks": 247,
           "rank": 3,
@@ -1074,6 +1081,13 @@
           "forks": 258,
           "rank": 4,
           "rankByCategory": 1
+        },
+        {
+          "date": "2026-09-01",
+          "stars": 2362,
+          "forks": 258,
+          "rank": 4,
+          "rankByCategory": 1
         }
       ]
     },
@@ -1607,6 +1621,13 @@
         },
         {
           "date": "2026-08-31",
+          "stars": 267,
+          "forks": 46,
+          "rank": 7,
+          "rankByCategory": 1
+        },
+        {
+          "date": "2026-09-01",
           "stars": 267,
           "forks": 46,
           "rank": 7,
@@ -2148,6 +2169,13 @@
           "forks": 1720,
           "rank": 2,
           "rankByCategory": 1
+        },
+        {
+          "date": "2026-09-01",
+          "stars": 25306,
+          "forks": 1720,
+          "rank": 2,
+          "rankByCategory": 1
         }
       ]
     },
@@ -2681,6 +2709,13 @@
         },
         {
           "date": "2026-08-31",
+          "stars": 390,
+          "forks": 50,
+          "rank": 6,
+          "rankByCategory": 1
+        },
+        {
+          "date": "2026-09-01",
           "stars": 390,
           "forks": 50,
           "rank": 6,
@@ -3222,6 +3257,13 @@
           "forks": 170,
           "rank": 5,
           "rankByCategory": 2
+        },
+        {
+          "date": "2026-09-01",
+          "stars": 2068,
+          "forks": 171,
+          "rank": 5,
+          "rankByCategory": 2
         }
       ]
     },
@@ -3756,6 +3798,13 @@
         {
           "date": "2026-08-31",
           "stars": 38145,
+          "forks": 2118,
+          "rank": 1,
+          "rankByCategory": 1
+        },
+        {
+          "date": "2026-09-01",
+          "stars": 38146,
           "forks": 2118,
           "rank": 1,
           "rankByCategory": 1
