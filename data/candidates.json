@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-13T00:24:03.168Z",
+  "generatedAt": "2026-09-13T05:11:58.192Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 82300,
-      "forks": 6918,
+      "stars": 82336,
+      "forks": 6921,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
       "topics": [
@@ -54,8 +54,8 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 44603,
-      "forks": 4044,
+      "stars": 44627,
+      "forks": 4047,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -265,8 +265,8 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 28488,
-      "forks": 1454,
+      "stars": 28497,
+      "forks": 1455,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
       "topics": [],
@@ -285,8 +285,8 @@
       "repo": "OthmanAdi/planning-with-files",
       "name": "planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-      "stars": 26834,
-      "forks": 2234,
+      "stars": 26837,
+      "forks": 2235,
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
       "language": "Python",
       "topics": [
@@ -345,8 +345,8 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 16954,
-      "forks": 1589,
+      "stars": 16963,
+      "forks": 1590,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -370,8 +370,8 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 3589,
-      "forks": 552,
+      "stars": 3684,
+      "forks": 560,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
       "topics": [
@@ -482,7 +482,7 @@
       "repo": "elementalsouls/Claude-OSINT",
       "name": "Claude-OSINT",
       "description": "8 Claude skills · 100+ recon capabilities · 80 secret-regex patterns · 80+ dorks · 9 read-only credential validators · 27 attack-path templates · ~10,000 lines of structured tradecraft. Drop-in SKILL.md files that turn Claude into a god-mode external recon operator for authorized red-team and bug-bounty engagements.",
-      "stars": 2598,
+      "stars": 2599,
       "forks": 475,
       "htmlUrl": "https://github.com/elementalsouls/Claude-OSINT",
       "language": "Python",
@@ -699,7 +699,7 @@
       "repo": "tizzy916/humanities-writing-companion",
       "name": "humanities-writing-companion",
       "description": "End-to-end humanities writing assistant — an Agent Skill (open SKILL.md format). 11 modes from Socratic research-question sharpening through AI-use disclosure. Bilingual (EN/中文), discipline-aware (literature/history/philosophy/art/religion/linguistics + cross-disciplinary). Four-layer critique, calibratable devils advocate, voice preservation.",
-      "stars": 402,
+      "stars": 403,
       "forks": 44,
       "htmlUrl": "https://github.com/tizzy916/humanities-writing-companion",
       "language": "Python",
@@ -1192,6 +1192,26 @@
       "confidence": 70
     },
     {
+      "repo": "forrestneo/iphone-candid-photo-cn",
+      "name": "iphone-candid-photo-cn",
+      "description": "iPhone 随手拍风格照片提示词 Skill,全中文输出 | iPhone candid photo prompt skill with Chinese output. SKILL.md format, works with ZCode / Claude Code / Codex / any SKILL.md-compatible agent.",
+      "stars": 2,
+      "forks": 0,
+      "htmlUrl": "https://github.com/forrestneo/iphone-candid-photo-cn",
+      "language": "",
+      "topics": [],
+      "skillMdPaths": ["SKILL.md"],
+      "matchedQuery": "chinese-skills",
+      "reason": {
+        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
+        "en": "Potential SKILL.md project with Chinese docs or tutorials."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "chinese-localization",
+      "suggestedAudiences": ["developer", "writing", "beginner"],
+      "confidence": 70
+    },
+    {
       "repo": "ney1464/litflow",
       "name": "litflow",
       "description": "LitFlow 是一个面向科研论文精读的通用 agent skill，适用于 Codex、Hermes 及其他兼容 SKILL.md 的智能体。它可以辅助完成论文分诊、全文精读、关键图表提取、中文 Obsidian 笔记生成，以及概念、人物、方法和创新点索引沉淀，适合用于文献阅读、课题积累和综述写作准备。",
@@ -1249,26 +1269,6 @@
       "alreadyCurated": false,
       "suggestedCategory": "chinese-localization",
       "suggestedAudiences": ["beginner"],
-      "confidence": 70
-    },
-    {
-      "repo": "forrestneo/iphone-candid-photo-cn",
-      "name": "iphone-candid-photo-cn",
-      "description": "iPhone 随手拍风格照片提示词 Skill,全中文输出 | iPhone candid photo prompt skill with Chinese output. SKILL.md format, works with ZCode / Claude Code / Codex / any SKILL.md-compatible agent.",
-      "stars": 1,
-      "forks": 0,
-      "htmlUrl": "https://github.com/forrestneo/iphone-candid-photo-cn",
-      "language": "",
-      "topics": [],
-      "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "chinese-skills",
-      "reason": {
-        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
-        "en": "Potential SKILL.md project with Chinese docs or tutorials."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "chinese-localization",
-      "suggestedAudiences": ["developer", "writing", "beginner"],
       "confidence": 70
     },
     {
