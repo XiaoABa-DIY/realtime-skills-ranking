@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-09-17T15:33:25.428Z",
+  "generatedAt": "2026-09-17T19:17:23.552Z",
   "source": "agent-skills-radar",
   "categories": [
     {
@@ -87,24 +87,24 @@
         "skills/nature-statistics/SKILL.md",
         "skills/nature-writing/SKILL.md"
       ],
-      "stars": 42812,
-      "forks": 2273,
+      "stars": 42827,
+      "forks": 2274,
       "openIssues": 1,
-      "watchers": 42812,
+      "watchers": 42827,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": ["codex-skills", "nature", "nature-skills"],
       "homepage": "",
       "htmlUrl": "https://github.com/Yuan1z0825/nature-skills",
       "createdAt": "2026-04-24T03:11:46Z",
-      "updatedAt": "2026-09-17T15:30:10Z",
+      "updatedAt": "2026-09-17T18:53:58Z",
       "pushedAt": "2026-09-16T08:50:46Z",
-      "lastFetchedAt": "2026-09-17T15:33:25.428Z",
+      "lastFetchedAt": "2026-09-17T19:17:23.552Z",
       "fetchStatus": "ok",
       "rank": 1,
       "rankByCategory": 1,
-      "growth7d": 2163,
-      "growth30d": 6941,
+      "growth7d": 2178,
+      "growth30d": 6956,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -150,19 +150,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         }
@@ -236,24 +236,24 @@
         "skills/.system/skill-creator/SKILL.md",
         "skills/.system/skill-installer/SKILL.md"
       ],
-      "stars": 27413,
-      "forks": 1838,
+      "stars": 27416,
+      "forks": 1840,
       "openIssues": 297,
-      "watchers": 27413,
+      "watchers": 27416,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/openai/skills",
       "createdAt": "2025-11-25T06:25:42Z",
-      "updatedAt": "2026-09-17T15:27:07Z",
+      "updatedAt": "2026-09-17T18:02:33Z",
       "pushedAt": "2026-09-08T20:35:26Z",
-      "lastFetchedAt": "2026-09-17T15:33:25.428Z",
+      "lastFetchedAt": "2026-09-17T19:17:23.552Z",
       "fetchStatus": "ok",
       "rank": 2,
       "rankByCategory": 1,
-      "growth7d": 559,
-      "growth30d": 2392,
+      "growth7d": 562,
+      "growth30d": 2395,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -296,13 +296,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": false,
           "errors": []
         }
@@ -412,10 +412,10 @@
         "skills/vibrant/SKILL.md",
         "skills/vintage/SKILL.md"
       ],
-      "stars": 2819,
+      "stars": 2823,
       "forks": 273,
       "openIssues": 13,
-      "watchers": 2819,
+      "watchers": 2823,
       "language": "",
       "license": "MIT",
       "topics": [
@@ -441,14 +441,14 @@
       "homepage": "https://www.typeui.sh/design-skills",
       "htmlUrl": "https://github.com/bergside/awesome-design-skills",
       "createdAt": "2026-03-09T08:55:36Z",
-      "updatedAt": "2026-09-17T12:13:17Z",
+      "updatedAt": "2026-09-17T19:05:54Z",
       "pushedAt": "2026-06-28T10:05:22Z",
-      "lastFetchedAt": "2026-09-17T15:33:25.428Z",
+      "lastFetchedAt": "2026-09-17T19:17:23.552Z",
       "fetchStatus": "ok",
       "rank": 3,
       "rankByCategory": 1,
-      "growth7d": 87,
-      "growth30d": 404,
+      "growth7d": 91,
+      "growth30d": 408,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -494,13 +494,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": false,
           "errors": []
         }
@@ -549,10 +549,10 @@
         ".agents/skills/live-weather-briefing-skill/SKILL.md",
         "SKILL.md"
       ],
-      "stars": 2392,
+      "stars": 2395,
       "forks": 264,
       "openIssues": 3,
-      "watchers": 2392,
+      "watchers": 2395,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -570,14 +570,14 @@
       "homepage": "https://francyjglisboa.github.io/agent-skills-platform/",
       "htmlUrl": "https://github.com/FrancyJGLisboa/agent-skills-platform",
       "createdAt": "2025-10-18T15:01:46Z",
-      "updatedAt": "2026-09-17T14:39:48Z",
+      "updatedAt": "2026-09-17T17:41:08Z",
       "pushedAt": "2026-09-15T17:31:46Z",
-      "lastFetchedAt": "2026-09-17T15:33:25.428Z",
+      "lastFetchedAt": "2026-09-17T19:17:23.552Z",
       "fetchStatus": "ok",
       "rank": 4,
       "rankByCategory": 1,
-      "growth7d": 11,
-      "growth30d": 124,
+      "growth7d": 14,
+      "growth30d": 127,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -629,19 +629,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         }
@@ -708,10 +708,10 @@
         "skills/research-zh/research-report/SKILL.md",
         "skills/research-zh/research/SKILL.md"
       ],
-      "stars": 2180,
+      "stars": 2183,
       "forks": 176,
       "openIssues": 0,
-      "watchers": 2180,
+      "watchers": 2183,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -727,14 +727,14 @@
       "homepage": "",
       "htmlUrl": "https://github.com/Weizhena/Deep-Research-skills",
       "createdAt": "2025-12-29T05:00:00Z",
-      "updatedAt": "2026-09-17T14:31:41Z",
+      "updatedAt": "2026-09-17T16:08:05Z",
       "pushedAt": "2026-08-23T03:25:28Z",
-      "lastFetchedAt": "2026-09-17T15:33:25.428Z",
+      "lastFetchedAt": "2026-09-17T19:17:23.552Z",
       "fetchStatus": "ok",
       "rank": 5,
       "rankByCategory": 2,
-      "growth7d": 43,
-      "growth30d": 206,
+      "growth7d": 46,
+      "growth30d": 209,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -780,13 +780,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": false,
           "errors": []
         }
@@ -979,7 +979,7 @@
       "createdAt": "2026-05-12T06:26:09Z",
       "updatedAt": "2026-09-17T15:19:15Z",
       "pushedAt": "2026-09-16T09:37:14Z",
-      "lastFetchedAt": "2026-09-17T15:33:25.428Z",
+      "lastFetchedAt": "2026-09-17T19:17:23.552Z",
       "fetchStatus": "ok",
       "rank": 6,
       "rankByCategory": 1,
@@ -1024,19 +1024,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         }
@@ -10642,7 +10642,7 @@
       "createdAt": "2026-02-13T01:01:34Z",
       "updatedAt": "2026-09-16T14:41:14Z",
       "pushedAt": "2026-07-16T05:31:34Z",
-      "lastFetchedAt": "2026-09-17T15:33:25.428Z",
+      "lastFetchedAt": "2026-09-17T19:17:23.552Z",
       "fetchStatus": "ok",
       "rank": 7,
       "rankByCategory": 1,
@@ -10711,13 +10711,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-09-17T15:33:29.249Z",
+          "fetchedAt": "2026-09-17T19:17:26.732Z",
           "ok": false,
           "errors": []
         }
@@ -10746,6 +10746,6 @@
   },
   "sourceBreakdown": { "github": 7 },
   "totalEcosystemSources": 6,
-  "lastEcosystemSync": "2026-09-17T15:33:29.250Z",
+  "lastEcosystemSync": "2026-09-17T19:17:26.732Z",
   "hnMentionsCount": 0
 }
