@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-21T00:24:26.671Z",
+  "generatedAt": "2026-10-21T05:08:43.422Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 87250,
+      "stars": 87290,
       "forks": 7363,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
@@ -54,8 +54,8 @@
       "repo": "tt-a1i/archify",
       "name": "archify",
       "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
-      "stars": 86442,
-      "forks": 5845,
+      "stars": 86579,
+      "forks": 5854,
       "htmlUrl": "https://github.com/tt-a1i/archify",
       "language": "JavaScript",
       "topics": [
@@ -100,8 +100,8 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 53264,
-      "forks": 4706,
+      "stars": 53330,
+      "forks": 4710,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -323,7 +323,7 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 30452,
+      "stars": 30480,
       "forks": 1571,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
@@ -343,8 +343,8 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 18590,
-      "forks": 1765,
+      "stars": 18594,
+      "forks": 1764,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -368,8 +368,8 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 7638,
-      "forks": 1005,
+      "stars": 7642,
+      "forks": 1006,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
       "topics": [
@@ -512,8 +512,8 @@
       "repo": "gamedev-skills/awesome-gamedev-agent-skills",
       "name": "awesome-gamedev-agent-skills",
       "description": "74 game-dev skills for AI coding agents — Godot, Unity, Unreal, Phaser, PixiJS, three.js, Bevy, pygame, LÖVE, Roblox. Portable SKILL.md Agent Skills (the format Anthropic launched as Claude Skills), with a router that loads the right skill for your engine and task. Runs in Claude Code, Cursor, Kiro, Codex, Copilot, Gemini CLI and more.",
-      "stars": 1829,
-      "forks": 151,
+      "stars": 1957,
+      "forks": 162,
       "htmlUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
       "language": "Python",
       "topics": [
@@ -657,8 +657,8 @@
       "repo": "ythx-101/live-panel-skill",
       "name": "live-panel-skill",
       "description": "Config-driven animated architecture diagrams: turn one JSON file into a terminal-style, always-running diagram or a light-theme infographic that moves. Outputs H.264 mp4 or a live web page; also a Claude Code style skill (SKILL.md).",
-      "stars": 783,
-      "forks": 102,
+      "stars": 786,
+      "forks": 103,
       "htmlUrl": "https://github.com/ythx-101/live-panel-skill",
       "language": "JavaScript",
       "topics": [],
@@ -719,8 +719,8 @@
       "repo": "tizzy916/humanities-writing-companion",
       "name": "humanities-writing-companion",
       "description": "End-to-end humanities writing assistant — an Agent Skill (open SKILL.md format). 11 modes from Socratic research-question sharpening through AI-use disclosure. Bilingual (EN/中文), discipline-aware (literature/history/philosophy/art/religion/linguistics + cross-disciplinary). Four-layer critique, calibratable devils advocate, voice preservation.",
-      "stars": 458,
-      "forks": 47,
+      "stars": 459,
+      "forks": 48,
       "htmlUrl": "https://github.com/tizzy916/humanities-writing-companion",
       "language": "Python",
       "topics": [
@@ -761,7 +761,7 @@
       "repo": "arpitg1304/robotics-agent-skills",
       "name": "robotics-agent-skills",
       "description": "Agent skills that make AI coding assistants write production-grade robotics software. ROS1, ROS2, design patterns, SOLID principles, and testing — for Claude Code, Cursor, Copilot, and any SKILL.md-compatible agent.",
-      "stars": 381,
+      "stars": 383,
       "forks": 49,
       "htmlUrl": "https://github.com/arpitg1304/robotics-agent-skills",
       "language": "Python",
@@ -1242,6 +1242,26 @@
       "confidence": 70
     },
     {
+      "repo": "CatherineHasAGun/absurdity",
+      "name": "absurdity",
+      "description": "把任何正常内容，一本正经地变成中文互联网「抽象」内容——抽象文案、复古梗图、正经旁白配音、抽象视频脚本及成片，分阶段确认产出。适用于所有遵循 SKILL.md 规范的 Agent 平台。",
+      "stars": 2,
+      "forks": 0,
+      "htmlUrl": "https://github.com/CatherineHasAGun/absurdity",
+      "language": "Python",
+      "topics": [],
+      "skillMdPaths": ["SKILL.md"],
+      "matchedQuery": "chinese-skills",
+      "reason": {
+        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
+        "en": "Potential SKILL.md project with Chinese docs or tutorials."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "chinese-localization",
+      "suggestedAudiences": ["beginner"],
+      "confidence": 70
+    },
+    {
       "repo": "Mvyvn/dsh-skill-manager",
       "name": "dsh-skill-manager",
       "description": "为 DSH 打造的技能管理器插件：扫描/一键导入技能、分组启停、默认组与全部禁用、会话级选择器、全中文 UI，AI 可经 skillmg_* 工具自主管理。A DSH skill-manager plugin: scan & one-click import skills, group enable/disable via atomic SKILL.md rename, default group & all-off mode, per-session picker, all-Chinese UI, and AI self-service via skillmg_* tools.",
@@ -1279,26 +1299,6 @@
       "alreadyCurated": false,
       "suggestedCategory": "chinese-localization",
       "suggestedAudiences": ["writing", "beginner"],
-      "confidence": 70
-    },
-    {
-      "repo": "CatherineHasAGun/absurdity",
-      "name": "absurdity",
-      "description": "把任何正常内容，一本正经地变成中文互联网「抽象」内容——抽象文案、复古梗图、正经旁白配音、抽象视频脚本及成片，分阶段确认产出。适用于所有遵循 SKILL.md 规范的 Agent 平台。",
-      "stars": 1,
-      "forks": 0,
-      "htmlUrl": "https://github.com/CatherineHasAGun/absurdity",
-      "language": "Python",
-      "topics": [],
-      "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "chinese-skills",
-      "reason": {
-        "zh": "可能是带中文说明或中文教程的 SKILL.md 项目。",
-        "en": "Potential SKILL.md project with Chinese docs or tutorials."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "chinese-localization",
-      "suggestedAudiences": ["beginner"],
       "confidence": 70
     },
     {
