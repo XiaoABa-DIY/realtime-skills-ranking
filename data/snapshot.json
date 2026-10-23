@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-10-23T06:30:14.947Z",
+  "generatedAt": "2026-10-23T12:00:07.779Z",
   "source": "agent-skills-radar",
   "categories": [
     {
@@ -90,24 +90,24 @@
         "skills/nature-statistics/SKILL.md",
         "skills/nature-writing/SKILL.md"
       ],
-      "stars": 50188,
-      "forks": 2611,
-      "openIssues": 2,
-      "watchers": 50188,
+      "stars": 50245,
+      "forks": 2614,
+      "openIssues": 3,
+      "watchers": 50245,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": ["codex-skills", "nature", "nature-skills"],
       "homepage": "",
       "htmlUrl": "https://github.com/Yuan1z0825/nature-skills",
       "createdAt": "2026-04-24T03:11:46Z",
-      "updatedAt": "2026-10-23T06:25:17Z",
+      "updatedAt": "2026-10-23T11:55:59Z",
       "pushedAt": "2026-10-22T02:40:33Z",
-      "lastFetchedAt": "2026-10-23T06:30:14.947Z",
+      "lastFetchedAt": "2026-10-23T12:00:07.779Z",
       "fetchStatus": "ok",
       "rank": 1,
       "rankByCategory": 1,
-      "growth7d": 1460,
-      "growth30d": 5974,
+      "growth7d": 1517,
+      "growth30d": 6031,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -153,19 +153,19 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-timeline",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
           "ok": true,
           "errors": []
         }
@@ -239,24 +239,24 @@
         "skills/.system/skill-creator/SKILL.md",
         "skills/.system/skill-installer/SKILL.md"
       ],
-      "stars": 28256,
-      "forks": 1947,
+      "stars": 28266,
+      "forks": 1948,
       "openIssues": 295,
-      "watchers": 28256,
+      "watchers": 28266,
       "language": "Python",
       "license": "",
       "topics": [],
       "homepage": "",
       "htmlUrl": "https://github.com/openai/skills",
       "createdAt": "2025-11-25T06:25:42Z",
-      "updatedAt": "2026-10-23T06:09:19Z",
+      "updatedAt": "2026-10-23T11:39:08Z",
       "pushedAt": "2026-09-08T20:35:26Z",
-      "lastFetchedAt": "2026-10-23T06:30:14.947Z",
+      "lastFetchedAt": "2026-10-23T12:00:07.779Z",
       "fetchStatus": "ok",
       "rank": 2,
       "rankByCategory": 1,
-      "growth7d": 150,
-      "growth30d": 669,
+      "growth7d": 160,
+      "growth30d": 679,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -299,13 +299,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
           "ok": false,
           "errors": []
         }
@@ -415,10 +415,10 @@
         "skills/vibrant/SKILL.md",
         "skills/vintage/SKILL.md"
       ],
-      "stars": 3311,
-      "forks": 317,
+      "stars": 3317,
+      "forks": 318,
       "openIssues": 16,
-      "watchers": 3311,
+      "watchers": 3317,
       "language": "",
       "license": "MIT",
       "topics": [
@@ -444,14 +444,14 @@
       "homepage": "https://www.typeui.sh/design-skills",
       "htmlUrl": "https://github.com/bergside/awesome-design-skills",
       "createdAt": "2026-03-09T08:55:36Z",
-      "updatedAt": "2026-10-23T03:56:58Z",
+      "updatedAt": "2026-10-23T11:23:28Z",
       "pushedAt": "2026-06-28T10:05:22Z",
-      "lastFetchedAt": "2026-10-23T06:30:14.947Z",
+      "lastFetchedAt": "2026-10-23T12:00:07.779Z",
       "fetchStatus": "ok",
       "rank": 3,
       "rankByCategory": 1,
-      "growth7d": 100,
-      "growth30d": 408,
+      "growth7d": 106,
+      "growth30d": 414,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -497,13 +497,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
           "ok": false,
           "errors": []
         }
@@ -513,6 +513,151 @@
       "hasReadme": true,
       "hasRelease": false,
       "id": "bergside/awesome-design-skills"
+    },
+    {
+      "repo": "Weizhena/Deep-Research-skills",
+      "name": "Deep Research Skills",
+      "descriptionZh": "用于深度研究、资料补全、字段扩展和结构化报告生成的中英文 Skill 集合。",
+      "descriptionEn": "Bilingual skills for deep research, data enrichment, field expansion, and structured reports.",
+      "readmeSnippetZh": "# Deep Research Skill for Claude Code / OpenCode / Codex\n\n[English](README.md) | [中文](README.zh.md)\n\n> If you find this project helpful, please give it a star! :star:\n\n> Inspired by [RhinoInsight: Improving Deep Research through Control Mechanisms for Model Behavior and Context](https://arxiv.org/abs/2511.18743)\n\nA structured research workflow skill for Claude Code, OpenCode, and Codex, supporting two-phase research: outline generation (extensible) and deep investigation. Human-in-the-loop design ensures precise control at every stage.\n\n![Deep Research Skills Workflow](workflow.png)\n\n## Use Cases\n\n- **Academic Research**: Paper surveys, benchmark reviews, literature analysis\n- **Technical Research**: Technology comparison, framework evaluation, tool selection\n- **Market Research**: Competitor analysis, industry trends, product comparison\n- **Due Diligence**: Company research, investment...",
+      "readmeSnippetEn": "# Deep Research Skill for Claude Code / OpenCode / Codex\n\n[English](README.md) | [中文](README.zh.md)\n\n> If you find this project helpful, please give it a star! :star:\n\n> Inspired by [RhinoInsight: Improving Deep Research through Control Mechanisms for Model Behavior and Context](https://arxiv.org/abs/2511.18743)\n\nA structured research workflow skill for Claude Code, OpenCode, and Codex, supporting two-phase research: outline generation (extensible) and deep investigation. Human-in-the-loop design ensures precise control at every stage.\n\n![Deep Research Skills Workflow](workflow.png)\n\n## Use Cases\n\n- **Academic Research**: Paper surveys, benchmark reviews, literature analysis\n- **Technical Research**: Technology comparison, framework evaluation, tool selection\n- **Market Research**: Competitor analysis, industry trends, product comparison\n- **Due Diligence**: Company research, investment...",
+      "categoryCode": "data",
+      "categoryName": { "zh": "数据研究", "en": "Data Research" },
+      "tags": [
+        "Deep Research",
+        "报告",
+        "调研",
+        "中文",
+        "claude-code",
+        "claude-code-skills",
+        "deep-research-agent",
+        "gpt-skills",
+        "llm-agent",
+        "opencode",
+        "opencode-skills",
+        "research"
+      ],
+      "audiences": ["data", "writing", "beginner"],
+      "useCases": [
+        {
+          "zh": "适合提示词、文章、报告和结构化写作。",
+          "en": "Useful for prompts, articles, reports, and structured writing."
+        },
+        {
+          "zh": "适合资料研究、数据分析、搜索结果整理和报告生成。",
+          "en": "Useful for research, analysis, search synthesis, and reports."
+        }
+      ],
+      "skillMdPaths": [
+        "skills/research-codex-en/research-add-fields/SKILL.md",
+        "skills/research-codex-en/research-add-items/SKILL.md",
+        "skills/research-codex-en/research-deep/SKILL.md",
+        "skills/research-codex-en/research-report/SKILL.md",
+        "skills/research-codex-en/research/SKILL.md",
+        "skills/research-codex-zh/research-add-fields/SKILL.md",
+        "skills/research-codex-zh/research-add-items/SKILL.md",
+        "skills/research-codex-zh/research-deep/SKILL.md",
+        "skills/research-codex-zh/research-report/SKILL.md",
+        "skills/research-codex-zh/research/SKILL.md",
+        "skills/research-en/research-add-fields/SKILL.md",
+        "skills/research-en/research-add-items/SKILL.md",
+        "skills/research-en/research-deep/SKILL.md",
+        "skills/research-en/research-report/SKILL.md",
+        "skills/research-en/research/SKILL.md",
+        "skills/research-zh/research-add-fields/SKILL.md",
+        "skills/research-zh/research-add-items/SKILL.md",
+        "skills/research-zh/research-deep/SKILL.md",
+        "skills/research-zh/research-report/SKILL.md",
+        "skills/research-zh/research/SKILL.md"
+      ],
+      "stars": 2409,
+      "forks": 198,
+      "openIssues": 2,
+      "watchers": 2409,
+      "language": "Python",
+      "license": "MIT",
+      "topics": [
+        "claude-code",
+        "claude-code-skills",
+        "deep-research-agent",
+        "gpt-skills",
+        "llm-agent",
+        "opencode",
+        "opencode-skills",
+        "research"
+      ],
+      "homepage": "",
+      "htmlUrl": "https://github.com/Weizhena/Deep-Research-skills",
+      "createdAt": "2025-12-29T05:00:00Z",
+      "updatedAt": "2026-10-23T08:17:10Z",
+      "pushedAt": "2026-08-23T03:25:28Z",
+      "lastFetchedAt": "2026-10-23T12:00:07.779Z",
+      "fetchStatus": "ok",
+      "rank": 4,
+      "rankByCategory": 2,
+      "growth7d": 40,
+      "growth30d": 177,
+      "rankDelta7d": 1,
+      "rankDelta30d": 1,
+      "trendStatus": "ready",
+      "chineseScore": 54,
+      "skillSignalScore": 100,
+      "featured": true,
+      "ecosystems": [
+        {
+          "ecosystem": "claude",
+          "compatible": true,
+          "verified": false,
+          "badge": "Claude Compatible"
+        },
+        {
+          "ecosystem": "codex",
+          "compatible": true,
+          "verified": false,
+          "badge": "Codex Compatible"
+        },
+        {
+          "ecosystem": "universal",
+          "compatible": true,
+          "verified": false,
+          "badge": "Universal"
+        }
+      ],
+      "hnMetric": null,
+      "productHuntVotes": null,
+      "relatedMCPs": [],
+      "popularityScore": 90,
+      "activityScore": 0,
+      "adoptionScore": 100,
+      "officialScore": 20,
+      "ecosystemScore": 0,
+      "compositeScore": 46,
+      "releaseCount": 0,
+      "latestRelease": "",
+      "weeklyCommits": 0,
+      "contributors": 3,
+      "platform": "claude",
+      "safetyLevel": "safe",
+      "safetyNotes": [],
+      "sources": [
+        {
+          "source": "github",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
+          "ok": true,
+          "errors": []
+        },
+        {
+          "source": "github-stats",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
+          "ok": false,
+          "errors": []
+        }
+      ],
+      "primarySource": "github",
+      "hasSkillMd": true,
+      "hasReadme": true,
+      "hasRelease": false,
+      "id": "Weizhena/Deep-Research-skills"
     },
     {
       "repo": "FrancyJGLisboa/agent-skill-creator",
@@ -575,14 +720,14 @@
       "createdAt": "2025-10-18T15:01:46Z",
       "updatedAt": "2026-10-22T16:58:59Z",
       "pushedAt": "2026-09-15T17:31:46Z",
-      "lastFetchedAt": "2026-10-23T06:30:14.947Z",
+      "lastFetchedAt": "2026-10-23T12:00:07.779Z",
       "fetchStatus": "ok",
-      "rank": 4,
+      "rank": 5,
       "rankByCategory": 1,
       "growth7d": 4,
       "growth30d": 6,
-      "rankDelta7d": 0,
-      "rankDelta30d": 0,
+      "rankDelta7d": -1,
+      "rankDelta30d": -1,
       "trendStatus": "ready",
       "chineseScore": 49,
       "skillSignalScore": 70,
@@ -617,162 +762,11 @@
       "productHuntVotes": null,
       "relatedMCPs": [],
       "popularityScore": 93,
-      "activityScore": 14,
+      "activityScore": 0,
       "adoptionScore": 100,
       "officialScore": 0,
       "ecosystemScore": 0,
-      "compositeScore": 47,
-      "releaseCount": 0,
-      "latestRelease": "",
-      "weeklyCommits": 7,
-      "contributors": 3,
-      "platform": "claude",
-      "safetyLevel": "safe",
-      "safetyNotes": [],
-      "sources": [
-        {
-          "source": "github",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
-          "ok": true,
-          "errors": []
-        },
-        {
-          "source": "github-stats",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
-          "ok": true,
-          "errors": []
-        },
-        {
-          "source": "github-timeline",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
-          "ok": true,
-          "errors": []
-        }
-      ],
-      "primarySource": "github",
-      "hasSkillMd": true,
-      "hasReadme": true,
-      "hasRelease": false,
-      "id": "FrancyJGLisboa/agent-skill-creator"
-    },
-    {
-      "repo": "Weizhena/Deep-Research-skills",
-      "name": "Deep Research Skills",
-      "descriptionZh": "用于深度研究、资料补全、字段扩展和结构化报告生成的中英文 Skill 集合。",
-      "descriptionEn": "Bilingual skills for deep research, data enrichment, field expansion, and structured reports.",
-      "readmeSnippetZh": "# Deep Research Skill for Claude Code / OpenCode / Codex\n\n[English](README.md) | [中文](README.zh.md)\n\n> If you find this project helpful, please give it a star! :star:\n\n> Inspired by [RhinoInsight: Improving Deep Research through Control Mechanisms for Model Behavior and Context](https://arxiv.org/abs/2511.18743)\n\nA structured research workflow skill for Claude Code, OpenCode, and Codex, supporting two-phase research: outline generation (extensible) and deep investigation. Human-in-the-loop design ensures precise control at every stage.\n\n![Deep Research Skills Workflow](workflow.png)\n\n## Use Cases\n\n- **Academic Research**: Paper surveys, benchmark reviews, literature analysis\n- **Technical Research**: Technology comparison, framework evaluation, tool selection\n- **Market Research**: Competitor analysis, industry trends, product comparison\n- **Due Diligence**: Company research, investment...",
-      "readmeSnippetEn": "# Deep Research Skill for Claude Code / OpenCode / Codex\n\n[English](README.md) | [中文](README.zh.md)\n\n> If you find this project helpful, please give it a star! :star:\n\n> Inspired by [RhinoInsight: Improving Deep Research through Control Mechanisms for Model Behavior and Context](https://arxiv.org/abs/2511.18743)\n\nA structured research workflow skill for Claude Code, OpenCode, and Codex, supporting two-phase research: outline generation (extensible) and deep investigation. Human-in-the-loop design ensures precise control at every stage.\n\n![Deep Research Skills Workflow](workflow.png)\n\n## Use Cases\n\n- **Academic Research**: Paper surveys, benchmark reviews, literature analysis\n- **Technical Research**: Technology comparison, framework evaluation, tool selection\n- **Market Research**: Competitor analysis, industry trends, product comparison\n- **Due Diligence**: Company research, investment...",
-      "categoryCode": "data",
-      "categoryName": { "zh": "数据研究", "en": "Data Research" },
-      "tags": [
-        "Deep Research",
-        "报告",
-        "调研",
-        "中文",
-        "claude-code",
-        "claude-code-skills",
-        "deep-research-agent",
-        "gpt-skills",
-        "llm-agent",
-        "opencode",
-        "opencode-skills",
-        "research"
-      ],
-      "audiences": ["data", "writing", "beginner"],
-      "useCases": [
-        {
-          "zh": "适合提示词、文章、报告和结构化写作。",
-          "en": "Useful for prompts, articles, reports, and structured writing."
-        },
-        {
-          "zh": "适合资料研究、数据分析、搜索结果整理和报告生成。",
-          "en": "Useful for research, analysis, search synthesis, and reports."
-        }
-      ],
-      "skillMdPaths": [
-        "skills/research-codex-en/research-add-fields/SKILL.md",
-        "skills/research-codex-en/research-add-items/SKILL.md",
-        "skills/research-codex-en/research-deep/SKILL.md",
-        "skills/research-codex-en/research-report/SKILL.md",
-        "skills/research-codex-en/research/SKILL.md",
-        "skills/research-codex-zh/research-add-fields/SKILL.md",
-        "skills/research-codex-zh/research-add-items/SKILL.md",
-        "skills/research-codex-zh/research-deep/SKILL.md",
-        "skills/research-codex-zh/research-report/SKILL.md",
-        "skills/research-codex-zh/research/SKILL.md",
-        "skills/research-en/research-add-fields/SKILL.md",
-        "skills/research-en/research-add-items/SKILL.md",
-        "skills/research-en/research-deep/SKILL.md",
-        "skills/research-en/research-report/SKILL.md",
-        "skills/research-en/research/SKILL.md",
-        "skills/research-zh/research-add-fields/SKILL.md",
-        "skills/research-zh/research-add-items/SKILL.md",
-        "skills/research-zh/research-deep/SKILL.md",
-        "skills/research-zh/research-report/SKILL.md",
-        "skills/research-zh/research/SKILL.md"
-      ],
-      "stars": 2407,
-      "forks": 197,
-      "openIssues": 2,
-      "watchers": 2407,
-      "language": "Python",
-      "license": "MIT",
-      "topics": [
-        "claude-code",
-        "claude-code-skills",
-        "deep-research-agent",
-        "gpt-skills",
-        "llm-agent",
-        "opencode",
-        "opencode-skills",
-        "research"
-      ],
-      "homepage": "",
-      "htmlUrl": "https://github.com/Weizhena/Deep-Research-skills",
-      "createdAt": "2025-12-29T05:00:00Z",
-      "updatedAt": "2026-10-23T05:49:31Z",
-      "pushedAt": "2026-08-23T03:25:28Z",
-      "lastFetchedAt": "2026-10-23T06:30:14.947Z",
-      "fetchStatus": "ok",
-      "rank": 5,
-      "rankByCategory": 2,
-      "growth7d": 38,
-      "growth30d": 175,
-      "rankDelta7d": 0,
-      "rankDelta30d": 0,
-      "trendStatus": "ready",
-      "chineseScore": 54,
-      "skillSignalScore": 100,
-      "featured": true,
-      "ecosystems": [
-        {
-          "ecosystem": "claude",
-          "compatible": true,
-          "verified": false,
-          "badge": "Claude Compatible"
-        },
-        {
-          "ecosystem": "codex",
-          "compatible": true,
-          "verified": false,
-          "badge": "Codex Compatible"
-        },
-        {
-          "ecosystem": "universal",
-          "compatible": true,
-          "verified": false,
-          "badge": "Universal"
-        }
-      ],
-      "hnMetric": null,
-      "productHuntVotes": null,
-      "relatedMCPs": [],
-      "popularityScore": 90,
-      "activityScore": 0,
-      "adoptionScore": 100,
-      "officialScore": 20,
-      "ecosystemScore": 0,
-      "compositeScore": 46,
+      "compositeScore": 43,
       "releaseCount": 0,
       "latestRelease": "",
       "weeklyCommits": 0,
@@ -783,13 +777,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
           "ok": false,
           "errors": []
         }
@@ -798,7 +792,7 @@
       "hasSkillMd": true,
       "hasReadme": true,
       "hasRelease": false,
-      "id": "Weizhena/Deep-Research-skills"
+      "id": "FrancyJGLisboa/agent-skill-creator"
     },
     {
       "repo": "redfox-data/redfox-community",
@@ -998,7 +992,7 @@
       "createdAt": "2026-05-12T06:26:09Z",
       "updatedAt": "2026-10-22T11:46:12Z",
       "pushedAt": "2026-10-22T11:46:07Z",
-      "lastFetchedAt": "2026-10-23T06:30:14.947Z",
+      "lastFetchedAt": "2026-10-23T12:00:07.779Z",
       "fetchStatus": "ok",
       "rank": 6,
       "rankByCategory": 1,
@@ -1028,14 +1022,14 @@
       "productHuntVotes": null,
       "relatedMCPs": [],
       "popularityScore": 75,
-      "activityScore": 39,
+      "activityScore": 19,
       "adoptionScore": 53,
       "officialScore": 20,
       "ecosystemScore": 0,
-      "compositeScore": 42,
+      "compositeScore": 37,
       "releaseCount": 0,
       "latestRelease": "",
-      "weeklyCommits": 10,
+      "weeklyCommits": 0,
       "contributors": 7,
       "platform": "claude",
       "safetyLevel": "review",
@@ -1043,20 +1037,14 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
-          "ok": true,
-          "errors": []
-        },
-        {
-          "source": "github-timeline",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
-          "ok": true,
+          "fetchedAt": "2026-10-23T12:00:14.331Z",
+          "ok": false,
           "errors": []
         }
       ],
@@ -9646,10 +9634,10 @@
         "vercel-labs-agent-skills/skills/vercel-cli-with-tokens/SKILL.md",
         "vercel-labs-agent-skills/skills/vercel-optimize/SKILL.md"
       ],
-      "stars": 317,
+      "stars": 318,
       "forks": 55,
       "openIssues": 9,
-      "watchers": 317,
+      "watchers": 318,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -9670,14 +9658,14 @@
       "homepage": "",
       "htmlUrl": "https://github.com/lingxling/awesome-skills-cn",
       "createdAt": "2026-02-13T01:01:34Z",
-      "updatedAt": "2026-10-21T03:19:35Z",
+      "updatedAt": "2026-10-23T08:28:04Z",
       "pushedAt": "2026-10-07T03:42:59Z",
-      "lastFetchedAt": "2026-10-23T06:30:14.947Z",
+      "lastFetchedAt": "2026-10-23T12:00:07.779Z",
       "fetchStatus": "ok",
       "rank": 7,
       "rankByCategory": 1,
-      "growth7d": 5,
-      "growth30d": 29,
+      "growth7d": 6,
+      "growth30d": 30,
       "rankDelta7d": 0,
       "rankDelta30d": 0,
       "trendStatus": "ready",
@@ -9741,13 +9729,13 @@
       "sources": [
         {
           "source": "github",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.332Z",
           "ok": true,
           "errors": []
         },
         {
           "source": "github-stats",
-          "fetchedAt": "2026-10-23T06:30:18.972Z",
+          "fetchedAt": "2026-10-23T12:00:14.332Z",
           "ok": false,
           "errors": []
         }
@@ -9776,6 +9764,6 @@
   },
   "sourceBreakdown": { "github": 7 },
   "totalEcosystemSources": 6,
-  "lastEcosystemSync": "2026-10-23T06:30:18.973Z",
+  "lastEcosystemSync": "2026-10-23T12:00:14.332Z",
   "hnMentionsCount": 0
 }
