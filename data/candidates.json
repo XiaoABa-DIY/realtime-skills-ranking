@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-12T22:40:46.345Z",
+  "generatedAt": "2026-11-13T02:56:46.786Z",
   "source": "github-search",
   "candidates": [
     {
       "repo": "tt-a1i/archify",
       "name": "archify",
       "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
-      "stars": 95906,
-      "forks": 6558,
+      "stars": 95970,
+      "forks": 6565,
       "htmlUrl": "https://github.com/tt-a1i/archify",
       "language": "JavaScript",
       "topics": [
@@ -52,8 +52,8 @@
       "repo": "Egonex-AI/Understand-Anything",
       "name": "Understand-Anything",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-      "stars": 92382,
-      "forks": 7885,
+      "stars": 92411,
+      "forks": 7887,
       "htmlUrl": "https://github.com/Egonex-AI/Understand-Anything",
       "language": "TypeScript",
       "topics": [
@@ -100,8 +100,8 @@
       "repo": "K-Dense-AI/scientific-agent-skills",
       "name": "scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "stars": 56958,
-      "forks": 4999,
+      "stars": 56977,
+      "forks": 5002,
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "language": "Python",
       "topics": [
@@ -323,8 +323,8 @@
       "repo": "Nutlope/hallmark",
       "name": "hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "stars": 53971,
-      "forks": 2883,
+      "stars": 54055,
+      "forks": 2885,
       "htmlUrl": "https://github.com/Nutlope/hallmark",
       "language": "CSS",
       "topics": [],
@@ -343,8 +343,8 @@
       "repo": "microsoft/SkillOpt",
       "name": "SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
-      "stars": 19040,
-      "forks": 1822,
+      "stars": 19046,
+      "forks": 1824,
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
       "language": "Python",
       "topics": ["agent-skills", "self-evolving-agents"],
@@ -368,7 +368,7 @@
       "repo": "SnailSploit/Claude-Red",
       "name": "Claude-Red",
       "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "stars": 10662,
+      "stars": 10668,
       "forks": 1433,
       "htmlUrl": "https://github.com/SnailSploit/Claude-Red",
       "language": "Python",
@@ -481,8 +481,8 @@
       "repo": "elementalsouls/Claude-OSINT",
       "name": "Claude-OSINT",
       "description": "8 Claude skills · 100+ recon capabilities · 80 secret-regex patterns · 80+ dorks · 9 read-only credential validators · 27 attack-path templates · ~10,000 lines of structured tradecraft. Drop-in SKILL.md files that turn Claude into a god-mode external recon operator for authorized red-team and bug-bounty engagements.",
-      "stars": 3020,
-      "forks": 551,
+      "stars": 3021,
+      "forks": 552,
       "htmlUrl": "https://github.com/elementalsouls/Claude-OSINT",
       "language": "Python",
       "topics": ["agentskills", "claude", "skills"],
@@ -512,7 +512,7 @@
       "repo": "feichanggege/ecommerce-visual-copywriting-skill",
       "name": "ecommerce-visual-copywriting-skill",
       "description": "电商视觉文案设计SOP Skill - 让电商设计小白也能一键做出5年资深设计经验的商品图片.兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent. AI-powered e-commerce visual strategy skill for main images, PDP/A+, copywriting, localization, evidence-aware compliance and image prompts.",
-      "stars": 1079,
+      "stars": 1081,
       "forks": 110,
       "htmlUrl": "https://github.com/feichanggege/ecommerce-visual-copywriting-skill",
       "language": "Python",
@@ -849,50 +849,6 @@
       "confidence": 70
     },
     {
-      "repo": "ythx-101/huatu-skill",
-      "name": "huatu-skill",
-      "description": "Agent Skill (SKILL.md) for Codex and other agents: turn articles and research into Xiaohongshu/RedNote carousel PNGs or self-contained ELI5 HTML explainers, with local Playwright rendering and fail-closed visual QA. 把长文和研究做成小红书图文轮播与一页式视觉解释器。",
-      "stars": 29,
-      "forks": 3,
-      "htmlUrl": "https://github.com/ythx-101/huatu-skill",
-      "language": "Python",
-      "topics": [
-        "agent-skills",
-        "ai-agent",
-        "carousel",
-        "claude-code",
-        "codex",
-        "design-tools",
-        "eli5",
-        "html-to-image",
-        "infographic",
-        "playwright",
-        "rednote",
-        "skill-md",
-        "social-media-design",
-        "visual-explainer",
-        "xiaohongshu",
-        "xiaohongshu-carousel"
-      ],
-      "skillMdPaths": ["SKILL.md"],
-      "matchedQuery": "research-skills",
-      "reason": {
-        "zh": "可能包含研究、资料整理或报告生成相关 Skill。",
-        "en": "Potential research, synthesis, or report-generation skill repository."
-      },
-      "alreadyCurated": false,
-      "suggestedCategory": "data",
-      "suggestedAudiences": [
-        "media",
-        "developer",
-        "writing",
-        "design",
-        "data",
-        "productivity"
-      ],
-      "confidence": 70
-    },
-    {
       "repo": "a-attia/scicomp-research-skills",
       "name": "scicomp-research-skills",
       "description": "Agent skills + workflow templates for scientific-computing research (papers and software). Forked from Master-cai/Research-Paper-Writing-Skills; restructured to the agents.md / OpenCode SKILL.md standard; adds a literature-survey skill (BibTeX + PDF + pdftotext + survey notes) and a paper-skeleton template. Multi-client, multi-machine.",
@@ -1006,6 +962,31 @@
       "suggestedCategory": "data",
       "suggestedAudiences": ["developer", "design", "data", "beginner"],
       "confidence": 70
+    },
+    {
+      "repo": "florencevision/grok-skills",
+      "name": "grok-skills",
+      "description": "A curated collection of modular skills for Grok and xAI agents. Each skill is a self-contained package (SKILL.md + optional resources) for specialized capabilities like prompt engineering, research, image generation, coding, and more.",
+      "stars": 6,
+      "forks": 2,
+      "htmlUrl": "https://github.com/florencevision/grok-skills",
+      "language": "",
+      "topics": [],
+      "skillMdPaths": [
+        "skills/ai-usage-mastery/SKILL.md",
+        "skills/code-architect/SKILL.md",
+        "skills/image-prompt-expert/SKILL.md",
+        "skills/research-assistant/SKILL.md"
+      ],
+      "matchedQuery": "research-skills",
+      "reason": {
+        "zh": "可能包含研究、资料整理或报告生成相关 Skill。",
+        "en": "Potential research, synthesis, or report-generation skill repository."
+      },
+      "alreadyCurated": false,
+      "suggestedCategory": "data",
+      "suggestedAudiences": ["developer", "writing", "design", "data"],
+      "confidence": 100
     },
     {
       "repo": "forrestneo/iphone-candid-photo-cn",
